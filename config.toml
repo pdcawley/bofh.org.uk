@@ -1,0 +1,17 @@
+baseurl = "http://www.bofh.org.uk/"
+languageCode = "en-us"
+title = "Just a Summary"
+PygmentsCodeFences = true
+pygmentsusecolors = true
+theme = "start-bootstrap-clean"
+
+[permalinks]
+    post = "/:year/:month/:day/:slug"
+
+[blackfriday]
+    hrefTargetBlank = false
+    fractions = true
+
+[params]
+    Author = "Piers Cawley"
+    DateForm = "Jan 1, 2006"
