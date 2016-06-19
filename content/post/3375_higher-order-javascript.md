@@ -283,7 +283,7 @@ But for sheer readability, I'll take the memoized form.
 
 ### I promise to pay the bearer on demand...
 
-Suppose you have 1000 things which are sortable, and you want to find the first ten. You *could* sort the entire list and just grab the first ten elements of the sorted list. But that's an O (&lt;var&gt;n&lt;/var&gt;log&lt;sub&gt;2&lt;/sub&gt;&lt;var&gt;n&lt;/var&gt;) algorithm. What if we had a means of only sorting the first <var>m</var> elements and then stopping (or pausing)?
+Suppose you have 1000 things which are sortable, and you want to find the first ten. You *could* sort the entire list and just grab the first ten elements of the sorted list. But that's an O (<var>n</var>log<sub>2</sub><var>n</var>) algorithm. What if we had a means of only sorting the first <var>m</var> elements and then stopping (or pausing)?
 
 We do. Or we will. And to do this, we're going to use a functional data structure called a Stream.
 
