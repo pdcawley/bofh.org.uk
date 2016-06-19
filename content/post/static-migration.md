@@ -13,7 +13,7 @@ I wish I'd done it earlier.<!--more--> I also wish I'd not decided that Textile 
 
 ## Why move?
 
-The straw that broke the camel's back was when I updated Publify and Ruby and spent the next few hours wrestling with Apache and Passenger trying to get the site back up. When the error messages told me that things weren't working because I didn't have a javascript runtime installed on my host, I knew that the time had come to just go with a system of files in a directory, served up by a simple minded webserver.
+The straw that broke this camel's back was when I updated Publify and Ruby and spent the next few hours wrestling with Apache and Passenger trying to get the site back up. When the error messages told me that things weren't working because I didn't have a javascript runtime installed on my host, I knew that the time had come to just go with a system of files in a directory, served up by a simple minded webserver.
 
 ## No comments
 
