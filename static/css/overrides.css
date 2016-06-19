@@ -40,3 +40,7 @@ a:hover {
 .sidebar-title {
    font-weight: 700;
 }
+
+.highlight > pre {
+   background-color: initial;
+}
