@@ -178,9 +178,11 @@ Array::each = map.to_method()
 
 Hopefully it's obvious what's going on here. If it isn't, you might want to reread everything so far and press on when you've got the hang of it. Remember, higher order programming arises from applying the following principles:
 
-#### Principle 1: Functions can take functions as arguments
+<dl>
+<dt>Principle 1</dt> <dd>Functions can take functions as arguments</dd>
 
-#### Principle 2: Functions can return new functions
+<dt>Principle 2</dt> <dd> Functions can return new functions</dd>
+</dl>
 
 That's all there is too it. Everything else is just working through the implications. Just remember that if `counter_from = (n) -> () -> n = n + 1`, then `c1 = counter_from 1` and `c2 = counter_from 2` are two different functions that do not share the same `n`. Easy, no?
 
