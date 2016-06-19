@@ -5,6 +5,7 @@ PygmentsCodeFences = true
 pygmentsusecolors = true
 theme = "start-bootstrap-clean"
 Paginate = 40
+googleAnalytics = "UA-135014-1"
 
 [[menu.main]]
     name = "Archives"
