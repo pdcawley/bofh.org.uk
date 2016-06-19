@@ -442,15 +442,12 @@ print_stream(
 
 We see output like:
 
-```
-1.  qspart(\[41,7,6,13,43,47,23,15,34,22\]) -&gt; 7,6,13,23,15,34,22|41|43,47
-2.  qspart(\[7,6,13,23,15,34,22\]) -&gt; 6|7|13,23,15,34,22
-    6
-3.  qspart(\[13,23,15,34,22\]) -&gt; |13|23,15,34,22
-    7
-4.  qspart(\[23,15,34,22\]) -&gt; 15,22|23|34
-5.  qspart(\[15,22\]) -&gt; |15|22
-    13
+```coffeescript
+1.  qspart([41,7,6,13,43,47,23,15,34,22]) # -> 7,6,13,23,15,34,22|41|43,47
+2.  qspart([7,6,13,23,15,34,22])          # -> 6|7|13,23,15,34,22
+3.  qspart([13,23,15,34,22])              # -> |13|23,15,34,22
+4.  qspart([23,15,34,22])                 # -> 15,22|23|34
+5.  qspart([15,22])                       # -> |15|22
 ```
 
 Which gives us some idea of the shape of the computation. Notice how we only call `qspart` when necessary and we're doing the minimum amount of work needed to get the first three entries from the sorted list.
@@ -473,4 +470,4 @@ When it comes down to it, that higher order functions are just functions and met
 
 For those of you who are finding the CoffeeScript a wee bit daunting (I personally like the lack of noise, but your mileage may vary), there's a thread on [sitepoint](http://www.sitepoint.com/forums/showthread.php?t=713645) which translates many of the examples here into more idiomatic Javascript than the CoffeeScript compiler can manage. You may find it useful.
 
-I've written a followup post on [asynchronouse streams](http://www.bofh.org.uk/2010/11/24/asynchronous-streams) which discusses using higher order techniques in the browser window to do something a little more 'real' than the examples shown here.
+I've written a followup post on [asynchronous streams](http://www.bofh.org.uk/2010/11/24/asynchronous-streams) which discusses using higher order techniques in the browser window to do something a little more 'real' than the examples shown here.
