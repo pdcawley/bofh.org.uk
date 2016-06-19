@@ -22,5 +22,5 @@ This first pass at migration has eliminated all the comments. They're still in m
 
 ## Blogging schedule
 
-I'm making no promises about restarting blogging I'm afraid; The shift to static generation has been an itch I've needed to scratch and, as I was building another site with Hugo anyway, now seemed like the opportune moment to port things over. 
+I'm making no promises about restarting blogging I'm afraid; The shift to static generation has been an itch I've needed to scratch and, as I was building another site with Hugo anyway, now seemed like the opportune moment to move things over. 
 
