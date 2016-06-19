@@ -1,7 +1,7 @@
 +++
 date = "2016-06-19T20:04:31+01:00"
 description = "Finally catching up with Dominus"
-draft = true
+draft = false
 image = "/img/about-bg.jpg"
 title = "Static migration"
 
