@@ -3,7 +3,7 @@ title = "Reading 'The Traits Paper'"
 slug = "reading-the-traits-paper"
 date = "2013-04-14T10:18:00+00:00"
 draft = false
-
+description = "Where do Moose roles come from and what are they for?"
 +++
 
 There appear to be two camps around the way Moose::Roles busily arguing about whether the following code should emit a warning:

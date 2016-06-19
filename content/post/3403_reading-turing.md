@@ -10,6 +10,9 @@ Some things never disappoint. And reading Alan Turing is one of those things. In
 
 Wow.
 
+[turing1947]: http://www.vordenker.de/downloads/turing-vorlesung.pdf
+<!--more-->
+
 Seriously. Wow. He's talking about programming the [ACE][wpACE], the ['pilot'][wppilotACE] version of which didn't run its first program until 1950. And the [Manchester 'Baby'][wpManchesterBaby], the first stored program electronic computer, was more than a year away from running its first program. It sounds like it might be dreadfully speclative and either handwavy or as out there and daft as the usual crop of 'futurologist' type predictions.
 
 As you can probably guess from the fact that I'm bothering to write this up, it was nothing of the sort. I suggest you nip off and read it for yourself. It won't take you long and it's well worth your time. Then come back here and find out if the same things struck you that struck me.
@@ -61,7 +64,6 @@ Job security code makes me so bloody angry. There are precious few of us develop
 
 I'm not scared that I'm going to program myself out of a job. I'm more worried that I'm never going to be able to retire because as a society and a profession we're doing such a monumentally piss poor job of educating the next generation of programmers and some of us seem to be doing a bang up job of being unthinkingly hostile to the 50% of the talent pool who are blessed with two X chromosomes. But that's probably a rant for another day.
 
-[turing1947]: http://www.vordenker.de/downloads/turing-vorlesung.pdf
 [wpACE]: http://en.wikipedia.org/wiki/Automatic_Computing_Engine
 [wppilotACE]: http://en.wikipedia.org/wiki/Pilot_ACE
 [wpManchesterBaby]: http://en.wikipedia.org/wiki/Manchester_Small-Scale_Experimental_Machine

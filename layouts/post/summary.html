@@ -1,0 +1,18 @@
+               <div class="post-preview">
+                 <a href="{{ .Permalink }}">
+                      <h2 class="post-title">{{ .Title }}</h2>
+                      <h3 class="post-subtitle">{{ .Description }}</h3>
+                    </a>
+                    {{ if in .RawContent "<!--more-->" }}
+                    <div class="post-summary">
+                      {{ .Summary | markdownify }}
+                      {{ if .Truncated }}
+                      <span class="read-more-link"><a href="{{ .RelPermalink }}">More...</a></span>
+                      {{ end }}
+                    </div>
+                    
+                    {{ end }}
+                    <p class="post-meta">Posted by <a href="#">{{ .Site.Params.Author }}</a> on {{ dateFormat .Site.Params.DateForm .Date }}
+                  </p>
+                </div>
+                <hr>

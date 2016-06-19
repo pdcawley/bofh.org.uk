@@ -4,9 +4,21 @@ title = "Just a Summary"
 PygmentsCodeFences = true
 pygmentsusecolors = true
 theme = "start-bootstrap-clean"
+Paginate = 40
+
+[[menu.main]]
+    name = "Archives"
+    url = "/post"
+    weight = 1
+
+[[menu.main]]
+    name = "About Piers"
+    url = "/pages/about"
+    weight = 2
 
 [permalinks]
     post = "/:year/:month/:day/:slug"
+    page = "/pages/:slug"
 
 [blackfriday]
     hrefTargetBlank = false
@@ -15,3 +27,5 @@ theme = "start-bootstrap-clean"
 [params]
     Author = "Piers Cawley"
     DateForm = "Jan 1, 2006"
+    Description = "Piers Cawley practices punditry"
+    stylesheet = "overrides.css"

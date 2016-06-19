@@ -1,0 +1,42 @@
+.post-summary {
+   margin-bottom: -20px;
+}
+
+
+h2, h3, h4, h5, h6,
+.h2, .h3, .h4, .h5, .h6 {
+   margin-bottom: -0.7em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+   font-weight: 700;
+}
+
+.archives h2,
+.archives h3,
+.archives h4,
+.archives h5,
+.archives h6,
+.archives .h2,
+.archives .h3,
+.archives .h4,
+.archives .h5,
+.archives .h6 {
+   margin-bottom: .2em;
+}
+
+.archives p.post-meta {
+   margin-bottom: .2em;
+}
+
+a:hover {
+   text-decoration: underline;
+}
+
+#sidebar {
+   font-size: 18px;
+}
+
+.sidebar-title {
+   font-weight: 700;
+}

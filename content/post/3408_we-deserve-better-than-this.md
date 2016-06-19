@@ -1,15 +1,17 @@
 +++
-title = "We Deserve Better Than This"
+title = "We Deserve Better"
 slug = "we-deserve-better-than-this"
 date = "2014-01-11T11:01:29+00:00"
 draft = false
-
+description = "A short history of a broken consensus"
 +++
 
 ## A long time ago
+
 One hundred years ago, we got caught up in a really stupid war. War’s never what you’d call a good idea, but the first world war is the benchmark of stupidity (unless you’re Michael Gove, but he’s fast becoming the new benchmark of stupidity).
 
 Something strange happened at the end of the war. In 1914, only around 30% of the adult population had the vote. By February 1918, a general election was years overdue. The Russians had killed the Tsar and were embracing communism; the women’s suffrage movement was threatening to start up again; and millions of returning soldiers — men used to violence by now — would have no say in how they would be governed.
+<!--more-->
 
 Parliament read the tea leaves and passed the [Representation of the People Act](http://en.wikipedia.org/wiki/Representation_of_the_People_Act_1918), extended the franchise to all men over 21 and many women over 30. This tripled the size of the electorate, 43% of which was now female (if they’d allowed younger women the Vote, then women would have had a clear majority because the war had killed so many men. Voting ages were equalised in 1928).
 
