@@ -92,7 +92,7 @@ sum = (xs) -> inject 0, ((a,b) -> a+b), xs
 prod = (xs) -> inject 1, ((a,b) -> a*b), xs
 ```
 
-If we were writing this in a language that didn't have an OO feel to it, we'd probably call the extracted function @foldl@, but the OO languages that already have it, it tends to be called @inject@ or, in Smalltalk @inject: into:@ and implemented as part of the enumerating protocol of a collection. Smalltalkers will tell you that @inject:into:@ is the fundamental method for enumerating a collection, pretty much everything else in the protocol can be implemented in terms of it (so it's a good idea to make it as fast as you possibly can). In Ruby, meanwhile, @inject@ is implemented in terms of @each@, which seems the wrong way around for me. Here's a few typical functions for messing with collections, implemented in terms of @inject@:
+If we were writing this in a language that didn't have an OO feel to it, we'd probably call the extracted function `foldl`, but the OO languages that already have it, it tends to be called `inject` or, in Smalltalk `inject: into:` and implemented as part of the enumerating protocol of a collection. Smalltalkers will tell you that `inject:into:` is the fundamental method for enumerating a collection, pretty much everything else in the protocol can be implemented in terms of it (so it's a good idea to make it as fast as you possibly can). In Ruby, meanwhile, `inject` is implemented in terms of `each`, which seems the wrong way around for me. Here's a few typical functions for messing with collections, implemented in terms of `inject`:
 
 
 ```coffeescript
@@ -108,7 +108,7 @@ each = (f, xs) ->
 
 ### I see repetition!
 
-Have you noticed it? Everything written in terms of @inject@ has the form:
+Have you noticed it? Everything written in terms of `inject` has the form:
 
 ```coffeescript
 something = (..., xs) -> inject ..., xs
