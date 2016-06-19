@@ -18,37 +18,30 @@ Perl's reputation as a language that's fine for writing short scripts, but which
 
 But Desperate Perl isn't the only language in the binary. Large scale programming with Perl uses, or should use, a different subset of the language. A key indicator that you're looking at large scale Perl is when the script or library starts with something along the lines of:
 
-<code>
-
-<pre>
+```perl
 \#!/usr/bin/perl
 use strict;
 use warnings;
-</code>
+```
 
 or, if it's a library:
 
-<code>
-
-<pre>
+```perl
 package Whatever;
 use Moose;
-</code>
-
+```
 There are other signifiers, but the important thing is that the code is written in `strict` compliant Perl. `use strict` crops up so often that the recent crop of modern (or enlightened if you prefer) perl modules, like Moose, turn it on by default. Indeed, if you're using Perl 5, version 12 and you begin your code with `use 5.12.0`, Perl turns on strictures as well as enabling all the new features of the language.
 
 We've had `strict` and `warnings` since forever and they've been strongly recommended for everything longer than about two lines since forever too. Those of us who program in Perl for a living get rather annoyed by the 'Desperate Perl' blinkers worn, however unwittingly, by so many outside our community. We write our code in a subtly different language. We write tests first, we have done for years. We write clean, maintainable, object oriented code. Nowadays we use Moose to help us with that; Perl's out of the box OO features are, let us say, idiosyncratic - Moose makes our lives better.
 
 Large Scale Perl is about more than just what's in the distribution. Large Scale Perl has a wider culture than just the contents of the distribution. It's about learning to use the CPAN and the CPAN toolchain. When I start to work on anything perl related that I expect to live for more than I couple of minutes, I start by doing:
 
-<code>
-
-<pre>
+```perl
 $ mkdir ProjectName
 $ cd ProjectName
 $ mkdir t lib
 $ $EDITOR t/initial.t
-</code>
+```
 
 Because I'm writing large scale perl, my modules go under `lib`, my tests go under `t`, any scripts I expect to install in my path go in script and they don't have a `.pl` suffix. I lay my code out this way because, well, that's just how it's done. I run my tests from the project directory by doing `prove -l ./t` and, when I realise I have something that's worth distributing (or deploying to the staging server), I add a `Module::Install` based `Makefile.PL` that lists my prerequisites, the scripts to install and various bits of metadata. By now, this is second nature - many clever people over the years have come to a collective decision about what a good Perl project looks like and they've written a fabulous toolchain for me as well.
 

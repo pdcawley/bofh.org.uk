@@ -28,80 +28,65 @@ Stevan finished Class::MOP and it got used as the basis for Moose, which is esse
 
 Another, more recent development, is Devel::Declare. Devel::Declare is, in accordance with the long history of Perl, completely batshit insane. What it does is lets you trip the perl parser up and, while it's standing there looking at the pretty birds flying around its head, you can run ahead and rewrite the code that it's about to parse. Well, I say run, but what I mean is hobble ahead wearing narrow blinkers and mittens. You can accomplish amazing things in such circumstances, but it's not fun. Devel::Declare enabled my current favourite module on CPAN: MooseX::Declare, which I've talked about here:
 
-<object width="400" height="300">
-<param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=4627327&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=255&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=4627327&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=255&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="400" height="300"></embed></object>
+<iframe src="https://player.vimeo.com/video/4627327" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/4627327">An introduction to MooseX::Declare</a> from <a href="https://vimeo.com/user1158507">Piers Cawley</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
-<p>
-<a href="http://vimeo.com/4627327">An introduction to MooseX::Declare</a> from <a href="http://vimeo.com/user1158507">Piers Cawley</a> on <a href="http://vimeo.com">Vimeo</a>.
-
-</p>
 MooseX::Declare lets me kill boilerplate. Instead of writing:
 
-<code>
-
-<pre>
+```perl
 package Something;
 use Moose;
 
-has an\_attribute =&gt; (is =&gt; 'rw');
+has an_attribute => (is => 'rw');
 
-sub a\_method {
-my($self, $with, $parameters)
-= @\_;
-...
+sub a_method {
+    my($self, $with, $parameters) = @_;
+    ...
 }
-</code>
+```
 
 I can write:
 
-<code>
-
-<pre>
+```perl
 use MooseX::Declare;
 class Something {
-has an\_attribute =&gt; (is =&gt; 'rw');
-
-method a\_method($with, $parameters) {
-...
+    has an_attribute => (is => 'rw');
+    
+    method a_method($with, $parameters) {
+        ...
+    }
 }
-}
-</code>
+```
 
 which makes me happy. This is being done by a module which is written in Perl. It relies on a couple of modules that are implemented in C, but the bulk of the work is done in Perl itself.
 
 So, that's addressed one of the annoyances that led me to Ruby. What about 'objects everwhere'. I got used writing things like:
 
-<code>
-
-<pre>
+```ruby
 5.times { |each| ... }
-</code>
+```
 
 Surely I'm not going to able to write:
 
-<code>
-
-<pre>
-5-&gt;times(sub {...})
-</code>
+```perl
+5->times(sub {...})
+```
 
 in perl?
 
 Well...
 
-<code>
-
-<pre>
+```perl
 use Moose::Autobox;
 sub Moose::Autobox::SCALAR::times {
-my($count, $block) = @\_;
-1-&gt;to($count)-&gt;each\_key($block);
+    my($count, $block) = @_;
+    1->to($count)->each_key($block);
 }
 
-5-&gt;times(sub {$\_-&gt;say});
-</code>
+5->times(sub {$_->say});
+```
 
-Bingo! I'd like to be able to write <code>5-&gt;times { $\_-&gt;say }</code> but can't quite manage it. Give PerlX::MethodCallWithBlock a little more time though...
+Bingo! I'd like to be able to write <code>5->times { $\_->say }</code> but can't quite manage it. Give PerlX::MethodCallWithBlock a little more time though...
 
 So, while I was away, most of the issues I had with Perl, issues that had driven me into the arms of Ruby, had been addressed.
 
@@ -111,7 +96,7 @@ The new Perl tech is great, but all it does is removes barriers. I wasn't attach
 
 What I am attached to is the group of friends I've made in the Perl community over the years. Many of whom I've never actually met face to face.
 
-I felt like such a curmudgeonly old fart in the Ruby community (more specifically, the Rails community). Everything's shiny and new and awesome. And, I suppose when you're coming to the language from something like PHP, it *is* shiny and new and awesome. But it gets wearing after a while. And the arrogance? My dear! The arrogance! Admittedly, some people have a lot to be arrogant about - I still cheer DHH's "Fuck you![](" slide, but others... not so much. The kind of "Look) Ruby is uniquely suited to writing DSLs!" bullshit<a href='#tcs-example'><sup>1</sup></a> that sends chromatic off in fits of apoplexy annoyed me too, especially when I was looking at the kind of examples they were presenting as exemplary and remembering Perl from 5 years before that did the same thing but with cleaner language-like interfaces.
+I felt like such a curmudgeonly old fart in the Ruby community (more specifically, the Rails community). Everything's shiny and new and awesome. And, I suppose when you're coming to the language from something like PHP, it *is* shiny and new and awesome. But it gets wearing after a while. And the arrogance? My dear! The arrogance! Admittedly, some people have a lot to be arrogant about - I still cheer DHH's "Fuck you! slide, but others... not so much. The kind of "Look Ruby is uniquely suited to writing DSLs!" bullshit<a href='#tcs-example'><sup>1</sup></a> that sends chromatic off in fits of apoplexy annoyed me too, especially when I was looking at the kind of examples they were presenting as exemplary and remembering Perl from 5 years before that did the same thing but with cleaner language-like interfaces.
 
 Coming back to Perl may well be a straightforward retreat to competence. I may be rationalizing like mad. But right now, it feels like I left Ruby because the ruby community, in the West at least, isn't a fun place for me to be. The sexism is just the icing on that particular cake.
 
@@ -119,14 +104,13 @@ Coming back to Perl may well be a straightforward retreat to competence. I may b
 <sup>1</sup> Here's my response to Rspec:
 
 </p>
-<code>
 
-<pre>
+```perl
 testclass exercises Something {
-test that we can create an object {
-isa\_ok $test-&gt;subject-&gt;new, 'Something';
+    test that we can create an object {
+        isa_ok $test->subject->new, 'Something';
+    }
 }
-}
-</code>
+```
 
 Note the lack of perlish furniture in the `test that we can create an object` part. No need to quote the strings, no meaningless <code>do</code>s scattered about the place, no <code>:symbol</code>s appearing at random. Okay, so I have to quote `'Something'` in the implementation block, but the implementation block is unadulterated Perl. I don't claim that only Perl can do this. I do claim that, right now at least, Ruby can't.
