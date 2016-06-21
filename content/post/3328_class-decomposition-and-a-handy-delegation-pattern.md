@@ -197,7 +197,7 @@ method set_weight (PercentageInt $weight,
 }
 ```
 
-h4. Type coercion is wonderful
+#### Type coercion is wonderful
 
 Generally, I'm not a fan of static typing. I'm from the "duck type all the way" school of programming,<span style="text-align:left;">[sup&gt;3</sup>](#decomp-haskell)</span> so most of my method declarations have no type declarations. But type declarations, especially ones that coerce, make so much sense on methods that make up the public protocol of a class. I only use type declarations on internal methods when I need a narrower coercion, or if I'm using [MooseX::Multimethods](http://search.cpan.org/dist/MooseX-Multimethods), which I still haven't used for anything but exploration.
 
