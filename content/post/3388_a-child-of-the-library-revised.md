@@ -6,7 +6,7 @@ draft = false
 
 +++
 
-Here's a revised version of <span style="text-align:left;">[cite&gt;A Child of the Library</cite>](http://www.bofh.org.uk/2011/02/08/save-our-libraries)</span>.
+Here's a revised version of [<cite>A Child of the Library</cite>](http://www.bofh.org.uk/2011/02/08/save-our-libraries).
 
 <a class="embed" href="http://soundcloud.com/pdcawley/child-of-the-library-revised">Child Of The Library (Revised)</a>
 
