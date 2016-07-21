@@ -6,8 +6,7 @@ draft = false
 
 +++
 
-<object height="81" width="100%">
-<param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F21781291"></param> <param name="allowscriptaccess" value="always"></param> <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F21781291" type="application/x-shockwave-flash" width="100%"></embed> </object> <span><a href="http://soundcloud.com/pdcawley/pretty-saro">Pretty Saro</a> by <a href="http://soundcloud.com/pdcawley">pdcawley</a></span>
+<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/21781291&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
 
 I'm a wee bit late writing this because it's mostly about my summer trip to the [Swannanoa Gathering](http://www.swangathering.com/) at Warren Wilson College near Asheville, North Carolina. It just so happened that YAPC (Yet Another Perl Conference) was held in Asheville this year, the week before the gathering's [Traditional Song Week](http://www.swangathering.com/Catalog/TS/sgtssched.html). Well, I'm a perl hacker. I sing traditional songs. My employer was paying for me to attend YAPC and were willing for me to extend my stay in America by a week. It was a no brainer really.
 
