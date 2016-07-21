@@ -462,3 +462,9 @@ div.oembedall-lanyard .first{
 margin: 0 0 0 2.857%;
 
 }
+
+.oembedall-container a.embed,
+.oembedall-container .oembedall-closehide,
+.oembedall-container br {
+   display: none;
+}

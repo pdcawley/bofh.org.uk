@@ -40,7 +40,9 @@
     <script src="{{ .Site.BaseURL }}/js/clean-blog.js"></script>
 
     <script src="{{ .Site.BaseURL }}/js/jquery.oembed.js"></script>
-    <script> $(function(){ $("a.embed").oembed(); }); </script>
+    <script> $(function(){
+       $("a.embed").oembed();
+     }); </script>
 
 
     {{ template "_internal/google_analytics.html" . }}
