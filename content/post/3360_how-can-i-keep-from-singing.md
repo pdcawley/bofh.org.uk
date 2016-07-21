@@ -7,8 +7,7 @@ draft = false
 +++
 
 <p>
-<object height="81" width="100%">
-<param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fpdcawley%2Fhow-can-i-keep-from-singing"></param> <param name="allowscriptaccess" value="always"></param> <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fpdcawley%2Fhow-can-i-keep-from-singing" type="application/x-shockwave-flash" width="100%"></embed> </object> <span><a href="http://soundcloud.com/pdcawley/how-can-i-keep-from-singing">How Can I Keep From Singing</a> by <a href="http://soundcloud.com/pdcawley">pdcawley</a></span>
+<a class="embed" href="http://soundcloud.com/pdcawley/how-can-i-keep-from-singing">How Can I Keep From Singing</a>
 
 </p>
 <p>

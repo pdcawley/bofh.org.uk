@@ -6,8 +6,7 @@ draft = false
 
 +++
 
-<object height="81" width="100%">
-<param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fpdcawley%2Fcome-write-me-down"></param> <param name="allowscriptaccess" value="always"></param> <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2Fpdcawley%2Fcome-write-me-down" type="application/x-shockwave-flash" width="100%"></embed> </object> <span><a href="http://soundcloud.com/pdcawley/come-write-me-down">Come Write Me Down</a> by <a href="http://soundcloud.com/pdcawley">pdcawley</a></span>
+<a class="embed" href="http://soundcloud.com/pdcawley/come-write-me-down">Come Write Me Down</a>
 
 Everybody knows Come Write Me Down, and everyone got it from the [Copper family](http://www.thecopperfamily.com/) of Rottingdean, who deserve a blog entry far longer than I feel like typing on an iPhone.
 

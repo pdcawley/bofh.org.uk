@@ -6,8 +6,7 @@ draft = false
 
 +++
 
-<object height="81" width="100%">
-&lt;param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F6785389&secret\_url=false"&gt;</param> <param name="allowscriptaccess" value="always"></param> &lt;embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F6785389&secret\_url=false" type="application/x-shockwave-flash" width="100%"&gt;</embed> </object> <span><a href="http://soundcloud.com/pdcawley/tamlyn">Tamlyn</a> by <a href="http://soundcloud.com/pdcawley">pdcawley</a></span>
+<a class="embed" href="http://soundcloud.com/pdcawley/tamlyn">Tamlyn</a>
 
 Ah, Tamlyn, one of the 'muckle sangs' appropriate to this time of year. This isn't the first time I've recorded this and put it online, but I lost the original AIFF files and Bandcamp doesn't accept lossy files.
 

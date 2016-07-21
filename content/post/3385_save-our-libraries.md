@@ -8,8 +8,7 @@ draft = false
 
 So, on Saturday, the opening line, and pretty much the entire tune, of a song banged on my head as we went to our local Library to fill our boots with books and generally get with the "Save our Libraries" message. Here it is. Sing it out. Sing it loud.
 
-<object height="81" width="100%">
-&lt;param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F10270379%3Fsecret\_token%3Ds-nwTNE&secret\_url=true"&gt;</param> <param name="allowscriptaccess" value="always"></param> &lt;embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F10270379%3Fsecret\_token%3Ds-nwTNE&secret\_url=true" type="application/x-shockwave-flash" width="100%"&gt;</embed> </object> <span><a href="http://soundcloud.com/pdcawley/child-of-the-library/s-nwTNE">Child of the Library</a> by <a href="http://soundcloud.com/pdcawley">pdcawley</a></span>
+<a class="embed" href="http://soundcloud.com/pdcawley/child-of-the-library/s-nwTNE">Child of the Library</a>
 
 <iframe width="560" height="345" src="http://www.youtube.com/embed/MDi5JtS1H-g" frameborder="0" allowfullscreen></iframe>
 
@@ -63,8 +62,7 @@ The 'I' in the song, isn't *quite* me and it isn't quite Gill either. Most impor
 
 There's a revised version of the recording with additional notes at: http://www.bofh.org.uk/2011/04/04/a-child-of-the-library-revised, or just press play:
 
-<object height="81" width="100%">
-<param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F13031396"></param> <param name="allowscriptaccess" value="always"></param> <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F13031396" type="application/x-shockwave-flash" width="100%"></embed> </object> <span><a href="http://soundcloud.com/pdcawley/child-of-the-library-revised">Child Of The Library (Revised)</a> by <a href="http://soundcloud.com/pdcawley">pdcawley</a></span>
+<a class="embed" href="http://soundcloud.com/pdcawley/child-of-the-library-revised">Child Of The Library (Revised)</a>
 
 ##### August 9th 2011
 

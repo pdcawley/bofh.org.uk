@@ -8,8 +8,7 @@ draft = false
 
 Here's a revised version of <span style="text-align:left;">[cite&gt;A Child of the Library</cite>](http://www.bofh.org.uk/2011/02/08/save-our-libraries)</span>.
 
-<object height="81" width="100%">
-<param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F13031396"></param> <param name="allowscriptaccess" value="always"></param> <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F13031396" type="application/x-shockwave-flash" width="100%"></embed> </object> <span><a href="http://soundcloud.com/pdcawley/child-of-the-library-revised">Child Of The Library (Revised)</a> by <a href="http://soundcloud.com/pdcawley">pdcawley</a></span>
+<a class="embed" href="http://soundcloud.com/pdcawley/child-of-the-library-revised">Child Of The Library (Revised)</a>
 
 Whenever I learn a new song, there's a period of making it "mine". This happens as I sing it out to different audiences and find out which bits work, which bits are hard to sing and all the other little details that you only find out when there's a living, breathing, listening and (hopefully) singing audience in front of you.
 
