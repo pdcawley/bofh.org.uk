@@ -1,4 +1,5 @@
 +++
+series = "Repertoire Project"
 title = "False True Love"
 slug = "false-true-love"
 date = "2010-07-10T15:26:00+00:00"

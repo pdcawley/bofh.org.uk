@@ -1,4 +1,5 @@
 +++
+series = "Repertoire Project"
 title = "How can I keep from Singing"
 slug = "how-can-i-keep-from-singing"
 date = "2010-07-10T12:01:00+00:00"

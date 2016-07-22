@@ -1,4 +1,5 @@
 +++
+series = "Repertoire Project"
 title = "Save Our Libraries"
 slug = "save-our-libraries"
 date = "2011-02-09T02:50:00+00:00"

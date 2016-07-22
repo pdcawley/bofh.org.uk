@@ -1,4 +1,5 @@
 +++
+series = "Repertoire Project"
 title = "The Blackbird, by Dave Webber"
 slug = "the-blackbird-by-dave-webber"
 date = "2010-11-06T07:29:00+00:00"

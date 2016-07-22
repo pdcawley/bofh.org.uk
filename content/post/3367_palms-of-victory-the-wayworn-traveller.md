@@ -1,4 +1,5 @@
 +++
+series = "Repertoire Project"
 title = "Palms of Victory/The Wayworn Traveller"
 slug = "palms-of-victory-the-wayworn-traveller"
 date = "2010-08-01T00:11:00+00:00"

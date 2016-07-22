@@ -26,6 +26,9 @@ googleAnalytics = "UA-135014-1"
     hrefTargetBlank = false
     fractions = true
 
+[taxonomies]
+series = "series"
+
 [params]
     Author = "Piers Cawley"
     DateForm = "Jan 1, 2006"

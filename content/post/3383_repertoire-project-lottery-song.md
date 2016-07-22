@@ -1,4 +1,5 @@
 +++
+series = "Repertoire Project"
 title = "Repertoire Project: Lottery Song"
 slug = "repertoire-project-lottery-song"
 date = "2011-01-31T16:00:00+00:00"
