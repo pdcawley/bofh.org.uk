@@ -110,11 +110,11 @@ screw head</a>
 
 ### What's with the bakery stuff, I thought you were a programmer?
 
-Well, yes, I am a programmer. But I'm also suffering from RSI, which makes
-programming painful and low level but annoying depression and a general sense
-of what's the bloody point about programming as a career.[^1] Making a real
-product that people really need in the real world is really appealing to me.
-And doing a job that will force me to take some exercise has its charms too.
+Well, yes, I am a programmer. But I'm also suffering from RSI - which makes
+programming painful, low level depression and a general sense of what's the
+bloody point about programming as a career.[^1] Making a real product that
+people really need in the real world is really appealing to me. Really. And
+doing a job that will force me to take some exercise has its charms too.
 
 Also, if you're going to have a mid-life crisis, at least get something tasty
 out of it.
