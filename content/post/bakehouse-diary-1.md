@@ -12,7 +12,7 @@ Almost a year ago now, I hired a tail lift van and hared off down to the Isle
 of Wight to fetch my lovely 'new'[^3] deck oven.
 
 <a href="https://www.instagram.com/p/BIKWHSogUz2/?taken-by=theloafery"
-class="embed">They don't make 'em like this any more</a>
+class="embed">They don't make 'em like this any more</a><!--more-->
 
 We manhandled the bits off the van with a pallet truck, put 'em up on blocks
 in the garage and left them to their own devices while the folk at the market
