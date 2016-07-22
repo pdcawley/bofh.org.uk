@@ -8,3 +8,4 @@ draft = false
 +++
 
 <a href="http://soundcloud.com/pdcawley/the-pretty-ploughboy" class="embed">The Pretty Ploughboy</a>
+<!--more-->

@@ -8,6 +8,7 @@ draft = false
 +++
 
 <a class="embed" href="http://soundcloud.com/pdcawley/come-write-me-down">Come Write Me Down</a>
+<!--more-->
 
 Everybody knows Come Write Me Down, and everyone got it from the [Copper family](http://www.thecopperfamily.com/) of Rottingdean, who deserve a blog entry far longer than I feel like typing on an iPhone.
 

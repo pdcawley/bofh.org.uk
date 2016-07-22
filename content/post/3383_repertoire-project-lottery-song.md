@@ -8,6 +8,7 @@ draft = false
 +++
 
 <span><a href="http://soundcloud.com/pdcawley/lottery-song" class="embed">Lottery Song</a></span>
+<!--more-->
 
 This is the only song I've written. I don't really think of myself as a songwriter at all, but Gill was doing a songwriting module on the Folk degree at Newcastle University and was writing a suite of songs about the lottery. She was stuck trying to write something about how lottery winners think the money won't change them but it does. As I was driving her into town for her lecture, I suggested that maybe what she should do was change the viewpoint and try and write something from the point of view of a friend of the big winner.
 

@@ -9,6 +9,7 @@ draft = false
 
 <p>
 <a class="embed" href="http://soundcloud.com/pdcawley/how-can-i-keep-from-singing">How Can I Keep From Singing</a>
+<!--more-->
 
 </p>
 <p>

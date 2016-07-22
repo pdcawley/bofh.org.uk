@@ -7,7 +7,10 @@ draft = false
 
 +++
 
-<a href="http://soundcloud.com/pdcawley/pretty-saro" class="embed">Pretty Saro</a> 
+<a href="http://soundcloud.com/pdcawley/pretty-saro" class="embed">Pretty Saro</a>
+<!--more-->
+
+<!--more-->
 
 I'm a wee bit late writing this because it's mostly about my summer trip to the [Swannanoa Gathering](http://www.swangathering.com/) at Warren Wilson College near Asheville, North Carolina. It just so happened that YAPC (Yet Another Perl Conference) was held in Asheville this year, the week before the gathering's [Traditional Song Week](http://www.swangathering.com/Catalog/TS/sgtssched.html). Well, I'm a perl hacker. I sing traditional songs. My employer was paying for me to attend YAPC and were willing for me to extend my stay in America by a week. It was a no brainer really.
 

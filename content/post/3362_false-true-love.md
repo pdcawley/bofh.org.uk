@@ -8,6 +8,7 @@ draft = false
 +++
 
 <a class="embed" href="http://soundcloud.com/pdcawley/false-true-love">False True Love</a> 
+<!--more-->
 
 Right, this is the 'real' song for today.
 
