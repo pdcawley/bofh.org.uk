@@ -9,14 +9,24 @@ Paginate = 40
 googleAnalytics = "UA-135014-1"
 
 [[menu.main]]
+    name = "Bakehouse Diary"
+    url = "/series/bakehouse-diary"
+    weight = 5
+
+[[menu.main]]
+    name = "Recordings"
+    url = "/series/repertoire-project"
+    weight = 6
+
+[[menu.main]]
     name = "Archives"
     url = "/post/"
-    weight = 1
+    weight = 10
 
 [[menu.main]]
     name = "About Piers"
     url = "/pages/about/"
-    weight = 2
+    weight = 20
 
 [permalinks]
     post = "/:year/:month/:day/:slug"
