@@ -7,10 +7,10 @@
                     <div class="post-summary">
                       {{ .Summary | markdownify }}
                       {{ if .Truncated }}
-                      <span class="read-more-link"><a href="{{ .RelPermalink }}">More...</a></span>
+                      <div><span class="read-more-link"><a href="{{ .RelPermalink }}">More...</a></span></div>
                       {{ end }}
                     </div>
-                    
+
                     {{ end }}
                     <p class="post-meta">Posted by <a href="#">{{ .Site.Params.Author }}</a> on {{ dateFormat .Site.Params.DateForm .Date }}
                   </p>
