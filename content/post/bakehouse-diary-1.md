@@ -9,10 +9,12 @@ series = "Bakehouse Diary"
 +++
 
 Almost a year ago now, I hired a tail lift van and hared off down to the Isle
-of Wight to fetch my lovely 'new'[^3] deck oven.
+of Wight to fetch my lovely 'new' deck oven.
 
 <a href="https://www.instagram.com/p/BIKWHSogUz2/?taken-by=theloafery"
-class="embed">They don't make 'em like this any more</a><!--more-->
+class="embed">They don't make 'em like this any more</a>
+
+<!--more-->
 
 We manhandled the bits off the van with a pallet truck, put 'em up on blocks
 in the garage and left them to their own devices while the folk at the market
@@ -156,14 +158,3 @@ fitted yet and I'm not sure I'm going to.
     finessed to fit into my Miele oven , they clash with the rails but fit in
     happily once the bake stone is in place. I've just checked, and I think
     Aga runners take a US half-sheet. It's a minefield I tell you.
-
-[^3]: For very specific values of 'new'. They've not manufactured this
-      particular model for 30 years, but the design doesn't really date. A
-      modern deck oven will have substantially fancier control circuitry
-      probably using thermocouples and a microcontroller to do PID style
-      control, which is more efficient and controlled than the stone aged
-      thermostatic control in this beast. There's nothing to stop me picking
-      up a dedicated PID controller or two (that can do 3 phase) and
-      retrofitting them though. I know one chap who's used a Raspberry Pi to
-      add PID control to one of his baking ovens (not a deck oven though -
-      single phase is so much less scary)
