@@ -9,7 +9,7 @@ slug = "bakehouse-diary-2"
 
 +++
 
-Not much progress on the "getting the oven ready front this week". I sheared anotehr machine screw!
+Not much progress on the "getting the oven ready front this week". I sheared another machine screw!
 
 <a href="https://www.instagram.com/p/BIUhqezAacy/" class="embed"><img src="https://scontent.cdninstagram.com/t51.2885-15/e35/13735837_813784245425740_1298615526_n.jpg?ig_cache_key=MTMwMjgxNDI0NzAzNzgwNjM4Ng%3D%3D.2" alt="Drat! Another machine screw sheared"></a>
 
