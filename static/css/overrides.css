@@ -469,3 +469,26 @@ margin: 0 0 0 2.857%;
 .oembedall-container br {
    display: none;
 }
+
+code.has-jax {
+   font: inherit;
+   font-size: 100%;
+   background: inherit;
+   border: inherit;
+   color: #404040;
+}
+
+article table td,
+article table th {
+   padding: 6px 13px;
+   border: 1px solid #ddd;
+}
+
+article table tr {
+   
+}
+
+article table tr:nth-child(2n) {
+   background-color: #f8f8f8;
+}
+
