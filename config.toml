@@ -1,4 +1,4 @@
-baseurl = "http://www.bofh.org.uk/"
+baseurl = "https://www.bofh.org.uk/"
 languageCode = "en-us"
 title = "Just a Summary"
 PygmentsCodeFences = true
