@@ -8,18 +8,15 @@ draft = false
 
 Joss Whedon writes [strong female characters](http://www.youtube.com/watch?v=cYaczoJMRhs), he's the mind behind some of my favourite TV ever and he's a wise man. Here he is reacting to seeing camera phone footage of the murder of Dua Khalil Aswad on CNN almost alongside the trailer for Captivity:
 
-<blockquote>
-The trailer resembles nothing so much as the CNN story on Dua Khalil. Pretty much all you learn is that Elisha Cuthbert is beautiful, then kidnapped, inventively, repeatedly and horrifically tortured, and that the first thing she screams is "I'm sorry".
+> The trailer resembles nothing so much as the CNN story on Dua Khalil. Pretty much all you learn is that Elisha Cuthbert is beautiful, then kidnapped, inventively, repeatedly and horrifically tortured, and that the first thing she screams is "I'm sorry".
 
-"I'm sorry."
+> "I'm sorry."
 
-What is wrong with women?
+> What is wrong with women?
 
-I mean wrong. Physically. Spiritually. Something unnatural, something destructive, something that needs to be corrected.
+> I mean wrong. Physically. Spiritually. Something unnatural, something destructive, something that needs to be corrected.
 
-How did more than half the people in the world come out incorrectly? I have spent a good part of my life trying to do that math, and I'm no closer to a viable equation. And I have yet to find a culture that doesn't buy into it. Women's inferiority - in fact, their malevolence - is as ingrained in American popular culture as it is anywhere they're sporting burkhas. I find it in movies, I hear it in the jokes of colleagues, I see it plastered on billboards, and not just the ones for horror movies. Women are weak. Women are manipulative. Women are somehow morally unfinished. (Objectification: another tangential rant avoided.) And the logical extension of this line of thinking is that women are, at the very least, expendable.
-
-</blockquote>
+> How did more than half the people in the world come out incorrectly? I have spent a good part of my life trying to do that math, and I'm no closer to a viable equation. And I have yet to find a culture that doesn't buy into it. Women's inferiority - in fact, their malevolence - is as ingrained in American popular culture as it is anywhere they're sporting burkhas. I find it in movies, I hear it in the jokes of colleagues, I see it plastered on billboards, and not just the ones for horror movies. Women are weak. Women are manipulative. Women are somehow morally unfinished. (Objectification: another tangential rant avoided.) And the logical extension of this line of thinking is that women are, at the very least, expendable.
 
 You should read the [whole thing](http://whedonesque.com/comments/13271). Seriously.
 
