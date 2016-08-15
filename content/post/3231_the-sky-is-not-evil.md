@@ -45,6 +45,6 @@ Yes, there are bigger fights than the cause of equality for women in the open so
 ### Further reading
 
 -   [Why geeks should study acting](http://gilesbowkett.blogspot.com/2007/04/why-geeks-should-study-acting.html) by Giles Bowkett
--   [The Male Privilege Checklist](http://www.amptoons.com/blog/the-male-privilege-checklist/) from [Alas, a blog](http://www.amptoons.com/blog) which is a source of thought provoking and occasionally discomforting articles for this white european male. It's also my original source for the Joss Whedon article that inspired this entry.
+-   [The Male Privilege Checklist](http://amptoons.com/blog/?page_id=2402) from [Alas, a blog](http://www.amptoons.com/blog) which is a source of thought provoking and occasionally discomforting articles for this white european male. It's also my original source for the Joss Whedon article that inspired this entry.
 
 [1] Don't get me started on the geek attitude to homosexuality...
