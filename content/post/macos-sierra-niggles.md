@@ -8,7 +8,7 @@ title = "MacOS Sierra Niggles"
 
 +++
 
-I shouldn't be surprised; every time I upgrade the OS on my Macbook a few
+I shouldn't be surprised. Every time I upgrade the OS on my Macbook a few
 little behaviours I'd taken for granted start breaking. It's just the way of
 the world. Here's a couple of things I've fixed already
 
