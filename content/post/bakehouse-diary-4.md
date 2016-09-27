@@ -13,7 +13,7 @@ pretty much where we are back in week three, except that Dad is slowly
 progressing on building the lifting frame which we're going to use to
 reassemble the deck oven in my garage so I can finish the process of either getting
 the rust off the soles, or replacing them with 'stone'. Apparently steel has
-been ordered so it's just a matter of time.
+been ordered so it's just a matter of time.<!--more-->
 
 The final bakehouse site is still lined up and it should be possible to sort
 out the 3-phase and plumbing in there quickly once we're definitely ready to

@@ -12,6 +12,8 @@ I shouldn't be surprised; every time I upgrade the OS on my Macbook a few
 little behaviours I'd taken for granted start breaking. It's just the way of
 the world. Here's a couple of things I've fixed already
 
+<!--more-->
+
 ### Respect my `.zshenv` ###
 
 MacOS comes with a tool called `path_helper`. It's great. It sets up more or
