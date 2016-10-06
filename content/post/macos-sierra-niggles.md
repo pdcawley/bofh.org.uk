@@ -51,7 +51,7 @@ on earth just happened until I remember the zsh startup sequence and fix
 If you're being driven up the wall by this, then this is what my `/etc/zshrc`
 looks like now:
 
-```sh
+```
 # Correctly display UTF-8 with combining characters.
 if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
         setopt combiningchars
