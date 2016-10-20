@@ -30,7 +30,7 @@ discussion and teaching. Serious, but far from po-faced. That was Soundpost's
 first event and they've been delivering enjoyable and stimulating events ever
 since.
 
-[Arts Emergency](arts-emergency.org) makes badges which read "sometimes if you
+[Arts Emergency](http://arts-emergency.org) makes badges which read "sometimes if you
 want something to exist you have to make it yourself". The beauty of Soundpost
 is that I can
 make [something else I want to exist](https://singingtogether.co.uk) because
