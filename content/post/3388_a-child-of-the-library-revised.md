@@ -9,7 +9,7 @@ draft = false
 
 Here's a revised version of [<cite>A Child of the Library</cite>](http://www.bofh.org.uk/2011/02/08/save-our-libraries).
 
-<a class="embed" href="http://soundcloud.com/pdcawley/child-of-the-library-revised">Child Of The Library (Revised)</a>
+<a class="embed" href="http://soundcloud.com/pdcawley/child-of-the-library">Child Of The Library</a>
 <!--more-->
 
 Whenever I learn a new song, there's a period of making it "mine". This happens as I sing it out to different audiences and find out which bits work, which bits are hard to sing and all the other little details that you only find out when there's a living, breathing, listening and (hopefully) singing audience in front of you.
