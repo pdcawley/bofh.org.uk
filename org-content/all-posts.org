@@ -5,7 +5,7 @@
 
 * Bakehouse Diary :@bakehouse-diary:
 
-** DONE Bakehouse Diary
+** TODO Bakehouse Diary
    :PROPERTIES:
    :EXPORT_FILE_NAME: back-to-the-bakehouse
    :EXPORT_DATE: [2018-02-01 Thu]
