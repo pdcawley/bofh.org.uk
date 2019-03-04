@@ -291,11 +291,11 @@ SELECT ingredient, quantity
  So... choose tools that let you program them. I choose emacs and PostgreSQL, you might choose vim and SQLite or Atom and a NoSQL database, or you might just live in your Smalltalk image. Once you start to see your computing environment as truly soft and malleable, you can do amazing things, assisted by a computer that is truly /yours/.
 
 
-** DRAFT "A recipe is just a directed acyclic graph…"
+** DONE "A recipe is just a directed acyclic graph…"
    :PROPERTIES:
    :export_hugo_slug: recursive-sql-recipes
    :export_file_name: recursive-sql-recipes
-   :export_date: 2019-02-26
+   :export_date: 2019-03-04
    :export_hugo_custom_front_matter: :series "Bakehouse diary"
    :END:
 
@@ -336,6 +336,7 @@ In [[/2019/02/25/baking-with-emacs][the last post]] I handwaved the way I repres
 [[file:formulae.svg]]
 #+end_RESULTS
 
+#+hugo: more
 
 And here's how we represent that in the database[fn:6]:
 

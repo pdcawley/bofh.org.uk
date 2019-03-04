@@ -1,10 +1,10 @@
 +++
 title = "A recipe is just a directed acyclic graph…"
 author = ["Piers Cawley"]
-date = 2019-02-26
-lastmod = 2019-03-04T14:08:58+00:00
+date = 2019-03-04
+lastmod = 2019-03-04T15:49:33+00:00
 slug = "recursive-sql-recipes"
-draft = true
+draft = false
 series = "Bakehouse diary"
 +++
 
@@ -16,6 +16,8 @@ In [the last post](/2019/02/25/baking-with-emacs) I handwaved the way I represen
 {{< figure src="/ox-hugo/formulae.svg" >}}
 
 </div>
+
+<!--more-->
 
 And here's how we represent that in the database[^fn:2]:
 
@@ -119,7 +121,7 @@ Here's what happens when we have an order for 3 small loaves and two large ones
 
 We're only making 1.86 kg of dough? What's going on?
 
-It turns out that the way a `UNION` works is akin to doing `SELECT DISTINCT` on the combined table, so it selects only unique rows. When two orders end up requiring exactly the same amount of the 'same' dough, then they'll get smashed together and we'll lose half the weight. This is not ideal. I fixed it by adding a 'path' to the query, keeping track of how we arrived at a particular formula. Something like:
+It turns out that the way a `UNION` works is akin to doing `SELECT DISTINCT` on the combined table, so it selects only unique rows. When two orders end up requiring exactly the same amount of the 'same' dough, they get smashed together and we lose half the weight. This is not ideal.[^fn:5] I fixed it by adding a 'path' to the query, keeping track of how we arrived at a particular formula. Something like:
 
 ```sql
 WITH RECURSIVE po(product, quantity) AS (
@@ -184,22 +186,10 @@ In order to see what's going on, we can change the final `SELECT` to `SELECT for
 | Mother           | Small White Wild.Basic White Sour.Mother | Organic white flour | 0.38   |
 | Mother           | Small White Wild.Basic White Sour.Mother | Water               | 0.30   |
 
-Which shows that we're considering two lots of Basic White Sour with exactly the same weights, but we (and more importantly, the database engine) know that they're distinct amounts because we get to them through different routes.
-
-The thing that's nagging at me now is that I repeat what's essentially the same query structure in a couple of different views and the path through the graph doesn't change unless I adjust a recipe, so I'm wondering if I could make a materialised view that has enough information to shortcut the calculations for both making the production list (what needs to be mixed, when) and for working out my costings (to put a price on a loaf, you need to know how much the raw ingredients cost, and that involves walking the tree again. Maybe a table like:
-
-| product          | sub-formula      | ingredient  | is\_raw | factor | lead time |
-|------------------|------------------|-------------|---------|--------|-----------|
-| Large White Wild | Basic White Sour | White Flour | TRUE    | 0.403  | 1 day     |
-| Large White Wild | Basic White Sour | Salt        | TRUE    | 0.012  | 1 day     |
-| Large White Wild | Basic White Sour | Water       | TRUE    | 0.222  | 1 day     |
-| Large White Wild | Basic White Sour | 80% Starter | FALSE   | 0.462  | 1 day     |
-| Large White Wild | 80% Starter      | White Flour | TRUE    | 0.288  | 2 days    |
-| Large White Wild | 80% Starter      | Water       | TRUE    | 0.173  | 2 days    |
-
-If we have that table, then two days before our bread is due, if we have an order for 10 white loaves, we'll need to mix \\(9.3 × .288 \approxeq 2.68\\) kg of flour and \\(9.3 × 0.173 \approxeq 1.61\\) kg of water. And if flour costs a £0.86/kg and salt is £0.41/kg, then the .93 kg of dough we need will cost \\(0.93(0.41 × 0.0121 + 0.86(0.403 + 0.288)) \approxeq £0.56\\).
+Which shows that we're considering two lots of Basic White Sour with exactly the same weights, but we (and more importantly, the database engine) know that they're distinct amounts because we get to them through different routes. Hurrah! The problem is solved and we can accurately work out what we should be mixing.
 
 [^fn:1]: If you ignore the fact that a starter is made of flour, water and starter. Which, of course, we're going to.
 [^fn:2]: This table is the result of a query on my real database, where the quantities are in kg, as opposed to the graph representation which was handrolled and adjusted to use bakers' percentages which is how formulae are traditionally written.
 [^fn:3]: The real table has extra information about customers and order dates.
 [^fn:4]: I'm writing this using the literate programming capabilities of org-mode, so the code you see is being run against my production database, and the results are using my working formulae. Which is why we're not querying the real `production_order` table.
+[^fn:5]: It's _especially_ not ideal when you don't spot there's a problem and end up making far fewer loaves than you expect. Or on one _really_ annoying occasion, making a dough that was far too dry because we lost some water along the way. You can correct this during the mix, but it was a nasty shock.
