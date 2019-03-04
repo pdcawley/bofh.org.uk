@@ -39,6 +39,17 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- https://github.com/mathjax/MathJax/issues/1988#issuecomment-384978927
+         Use plain Javascript to prevent the use of window.eval(). Then
+         'unsafe-eval' won't be needed to be added to script-src CSP.
+
+         Also move the mathjax config to a separate file from the inline script so
+         that 'unsafe-inline can also be removed from script-src CSP.
+    -->
+    <script src="{{ "js/mathjax-config.js" | absURL }}"></script>
+    <!-- https://gohugo.io/content-management/formats/#mathjax-with-hugo -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_SVG"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
 </head>
 
 <body>
