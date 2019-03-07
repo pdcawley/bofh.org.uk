@@ -28,6 +28,8 @@ a:hover {
    text-decoration: underline;
 }
 
+a { text-decoration: underline; };
+
 #sidebar {
    font-size: 18px;
 }
