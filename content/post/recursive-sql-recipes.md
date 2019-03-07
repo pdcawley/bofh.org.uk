@@ -2,7 +2,7 @@
 title = "A recipe is just a directed acyclic graph…"
 author = ["Piers Cawley"]
 date = 2019-03-04
-lastmod = 2019-03-04T15:49:33+00:00
+lastmod = 2019-03-07T12:00:55+00:00
 slug = "recursive-sql-recipes"
 draft = false
 series = "Bakehouse diary"

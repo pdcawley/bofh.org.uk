@@ -2,7 +2,7 @@
 title = "Bakehouse Diary"
 author = ["Piers Cawley"]
 date = 2018-02-01T00:00:00+00:00
-lastmod = 2019-02-25T17:37:59+00:00
+lastmod = 2019-03-07T12:00:54+00:00
 draft = false
 description = "Back to the bakehouse"
 series = "Bakehouse Diary"
@@ -15,7 +15,7 @@ really important bits of kit are all in place and looking good.
 We celebrated getting in by turning one of the decks up as high as it
 would go and making lots of pizzas and a few loaves of bread.
 
-{{<figure src="/ox-hugo/margherita-pizza.jpg" caption="An early pizza" width="100%">}}
+{{< figure src="/ox-hugo/margherita-pizza.jpg" caption="Figure 1: An early pizza" width="100%" >}}
 
 <!--more-->
 
@@ -108,7 +108,7 @@ to be far too many pizza doughballs.
 On Friday 21st of December, I pulled my first loaves out of my ~40
 year old oven, and _damn_, but they were good.
 
-{{<figure src="/ox-hugo/first-loaf.jpg" caption="The first loaf" width="100%">}}
+{{< figure src="/ox-hugo/first-loaf.jpg" caption="Figure 2: The first loaf" width="100%" >}}
 
 
 ## What next? {#what-next}

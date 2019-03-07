@@ -218,7 +218,7 @@ I come into the bakehouse, open up Emacs and type =M-m o c B= and up comes the s
 
  Of course, that's not the full set of formulae, because it doesn't tell you how to make 'Seedy malt dough', but that's just another formula, which consists of flour, water, starter, salt and a multiseed 'soaker', where the starter and the soaker are the results of other formulae, which are (finally) made from basic ingredients[fn:2]. I did consider reaching for the object oriented hammer at this point, but thought that I might be able to do everything I needed without leaving SQL. It was relatively straightforward to move the shape of the calculations in the Bread Matters spreadsheet into my database schema, the only real sticking point being the recursive nature of the formulae, but it turns out that recursive queries are a thing in modern SQL, albeit a little tricky to get absolutely right[fn:3] first time.
 
- If you're curious about the details of the schema, you can find it in my [[https://github.com/pdcawley/bakehouse][github repo]] for the bakery.
+ If you're curious[fn:14] about the details of the schema, you can find it in my [[https://github.com/pdcawley/bakehouse][github repo]] for the bakery.
 
  So now, a few days before a bake, I'd setup my ~production_order~ table with the orders for the bake, and run a query on the ~production_list~ view to find out what I needed to mix when. And all was great. Well, sort of. I had to add a bit extra onto the quantities in the initial starter mix to allow for the bits that get stuck to the bowl and lost to the final dough, and it was all very well until I wanted to bake two days in a row (a bake is a two day process from mixing the starters on a Wednesday evening, through mixing, fermenting and shaping on Thursday to baking the resulting loaves at four on Friday morning). But, vitally, it was much, much easier to add and adjust formulae, and the limitations were no worse than the limitations of the spreadsheet. All was well.
 
@@ -566,7 +566,7 @@ We can use the same table to calculate the raw material costs for a given recipe
 I think, however, I'm going to leave it alone until I have to write another recursive view that walks the same graph, at which point I'll bite the bullet and do the pre-calculated version.
 
 
-* DONE Asshole Free Devil's Advocacy :philosophy:blether:
+* DONE Asshole Free Devil's Advocacy :philosophy:blether:c
   :properties:
   :export_file_name: devils-advocacy-without-asshattery
   :export_hugo_slug: devils-advocacy-without-tears
@@ -595,6 +595,8 @@ I think, however, I'm going to leave it alone until I have to write another recu
    Don't keep doing it, mind, or you'll start looking like the kite flying asshole again.
 
 * Footnotes
+
+[fn:14] And several of you seem to be, so I wrote [[/2019/03/04/recursive-sql-recipes/][another post]] with a bit more detail and some sample code.
 
 [fn:13] NB: I've not tested this because I don't have the precalculated table, but it seems like it should work. In fact, thinking about it, we could probably build the ~precalc~ table so that we can simply do ~precalc.factor * po.quantity~, since any change that affects recipe weight will also affect our precalculated table.
 

@@ -2,9 +2,10 @@
 title = "Running a bakery on Emacs and PostgreSQL"
 author = ["Piers Cawley"]
 date = 2019-02-25
-lastmod = 2019-02-25T17:37:59+00:00
+lastmod = 2019-03-07T12:00:54+00:00
 slug = "baking-with-emacs"
 draft = false
+series = "Bakehouse diary"
 +++
 
 Just over a year ago now, I finally opened the bakery I'd been dreaming of for years. It's been a big change in my life, from spending all my time sat in front of a computer, to spending most of it making actual stuff. And stuff that makes people happy, at that. It's been a huge change, but I can't think of a single job change that's ever made me as happy as this one.
@@ -30,11 +31,11 @@ The key insight is that a bakery formula is so cliched that it can be represente
 
 Of course, that's not the full set of formulae, because it doesn't tell you how to make 'Seedy malt dough', but that's just another formula, which consists of flour, water, starter, salt and a multiseed 'soaker', where the starter and the soaker are the results of other formulae, which are (finally) made from basic ingredients[^fn:1]. I did consider reaching for the object oriented hammer at this point, but thought that I might be able to do everything I needed without leaving SQL. It was relatively straightforward to move the shape of the calculations in the Bread Matters spreadsheet into my database schema, the only real sticking point being the recursive nature of the formulae, but it turns out that recursive queries are a thing in modern SQL, albeit a little tricky to get absolutely right[^fn:2] first time.
 
-If you're curious about the details of the schema, you can find it in my [github repo](https://github.com/pdcawley/bakehouse) for the bakery.
+If you're curious[^fn:3] about the details of the schema, you can find it in my [github repo](https://github.com/pdcawley/bakehouse) for the bakery.
 
 So now, a few days before a bake, I'd setup my `production_order` table with the orders for the bake, and run a query on the `production_list` view to find out what I needed to mix when. And all was great. Well, sort of. I had to add a bit extra onto the quantities in the initial starter mix to allow for the bits that get stuck to the bowl and lost to the final dough, and it was all very well until I wanted to bake two days in a row (a bake is a two day process from mixing the starters on a Wednesday evening, through mixing, fermenting and shaping on Thursday to baking the resulting loaves at four on Friday morning). But, vitally, it was much, much easier to add and adjust formulae, and the limitations were no worse than the limitations of the spreadsheet. All was well.
 
-It's the nature of business that you need to keep records. How much got baked? How much sold? Did we clean the floor? Were there any accidents? What sort? How do we prevent them next time? The list is endless. It all needs to be recorded, for both legal and pragmatic reasons. So I started a day book. This is just an .org file[^fn:3]. Every day I come into the bakery, I run `org-capture` and I get a template for the day's entry in the daybook, which I fill in as the day goes on.
+It's the nature of business that you need to keep records. How much got baked? How much sold? Did we clean the floor? Were there any accidents? What sort? How do we prevent them next time? The list is endless. It all needs to be recorded, for both legal and pragmatic reasons. So I started a day book. This is just an .org file[^fn:4]. Every day I come into the bakery, I run `org-capture` and I get a template for the day's entry in the daybook, which I fill in as the day goes on.
 
 One of the features of org-mode is `org-babel`, a literate programming environment, which lets me write something like:
 
@@ -114,4 +115,5 @@ So... choose tools that let you program them. I choose emacs and PostgreSQL, you
 
 [^fn:1]: with a certain amount of handwaving to deal with the fact that a starter is strictly made with flour, water and starter.
 [^fn:2]: A few bakes went a little weird before I finally got things sorted.
-[^fn:3]: Org-mode is an amazing emacs package that's a sort of outliner/task manager/publishing tool/spreadsheet/diary/literate programming environment. It's bewilderingly capable, and is probably the primary driver of the emacs renaissance as people are coming to the editor for org-mode, and porting the rest of their environment - hence the rise of `evil-mode`, the emacs vim emulation layer.
+[^fn:3]: And several of you seem to be, so I wrote [another post](/2019/03/04/recursive-sql-recipes/) with a bit more detail and some sample code.
+[^fn:4]: Org-mode is an amazing emacs package that's a sort of outliner/task manager/publishing tool/spreadsheet/diary/literate programming environment. It's bewilderingly capable, and is probably the primary driver of the emacs renaissance as people are coming to the editor for org-mode, and porting the rest of their environment - hence the rise of `evil-mode`, the emacs vim emulation layer.
