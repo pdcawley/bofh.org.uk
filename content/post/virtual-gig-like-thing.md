@@ -1,8 +1,8 @@
 +++
 title = "My Virtual Gig-Like Thing"
 author = ["Piers Cawley"]
-date = 2020-04-08
-lastmod = 2020-04-08T16:47:06+01:00
+date = 2020-04-08T00:00:00
+lastmod = 2020-04-08T16:53:57+01:00
 slug = "virtual-gig-like-thing"
 draft = false
 +++
