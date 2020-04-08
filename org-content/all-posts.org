@@ -631,7 +631,7 @@ I think, however, I'm going to leave it alone until I have to write another recu
 
     Right... onwards to /The Tombs of Atuan./
 
-* My Virtual Gig-Like Thing
+* DONE My Virtual Gig-Like Thing
   :PROPERTIES:
   :export_hugo_slug: virtual-gig-like-thing
   :export_date: 2020-04-08
