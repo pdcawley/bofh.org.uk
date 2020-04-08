@@ -662,7 +662,7 @@ I think, however, I'm going to leave it alone until I have to write another recu
 
 ** Ticket Prices
    It's the internet! It won't cost you a penny to watch me perform. However,
-   right now, daft stuff like this is my ownly potential source of income, so
+   right now, daft stuff like this is my only potential source of income, so
    I would be deeply grateful if you could either [[https://ko-fi.com/pdcawley]["Buy me a coffee"]] via Ko-Fi
    or [[https://twitch.tv/signup][sign up]] for a free Twitch account and subscribe to my channel.
 

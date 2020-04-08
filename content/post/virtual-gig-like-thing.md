@@ -2,7 +2,7 @@
 title = "My Virtual Gig-Like Thing"
 author = ["Piers Cawley"]
 date = 2020-04-08
-lastmod = 2020-04-08T16:38:31+01:00
+lastmod = 2020-04-08T16:47:06+01:00
 slug = "virtual-gig-like-thing"
 draft = false
 +++
@@ -31,7 +31,7 @@ hoping it'll be a lot of fun.
 ## Ticket Prices {#ticket-prices}
 
 It's the internet! It won't cost you a penny to watch me perform. However,
-right now, daft stuff like this is my ownly potential source of income, so
+right now, daft stuff like this is my only potential source of income, so
 I would be deeply grateful if you could either ["Buy me a coffee"](https://ko-fi.com/pdcawley) via Ko-Fi
 or [sign up](https://twitch.tv/signup) for a free Twitch account and subscribe to my channel.
 
