@@ -2,7 +2,7 @@
 title = "Running a bakery on Emacs and PostgreSQL"
 author = ["Piers Cawley"]
 date = 2019-02-25
-lastmod = 2020-05-03T16:48:41+01:00
+lastmod = 2020-05-04T00:07:11+01:00
 slug = "baking-with-emacs"
 draft = false
 series = "Bakehouse diary"

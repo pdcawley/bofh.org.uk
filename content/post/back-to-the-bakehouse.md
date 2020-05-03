@@ -2,7 +2,7 @@
 title = "Bakehouse Diary"
 author = ["Piers Cawley"]
 date = 2018-02-01T00:00:00+00:00
-lastmod = 2019-03-07T12:00:54+00:00
+lastmod = 2020-05-04T00:07:10+01:00
 draft = false
 description = "Back to the bakehouse"
 series = "Bakehouse Diary"
