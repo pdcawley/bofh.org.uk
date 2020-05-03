@@ -3,4 +3,4 @@
 	url = git@github.com:humboldtux/startbootstrap-clean-blog.git
 [submodule "themes/hugo-tufte"]
 	path = themes/hugo-tufte
-	url = git@github.com:pdcawley/hugo-tufte.git
+	url = https://github.com/pdcawley/hugo-tufte.git
