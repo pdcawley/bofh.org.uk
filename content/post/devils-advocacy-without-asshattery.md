@@ -2,7 +2,7 @@
 title = "Asshole Free Devil's Advocacy"
 author = ["Piers Cawley"]
 date = 2018-10-25
-lastmod = 2020-05-04T00:07:12+01:00
+lastmod = 2020-05-04T00:15:22+01:00
 slug = "devils-advocacy-without-tears"
 tags = ["philosophy", "blether"]
 draft = false

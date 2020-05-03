@@ -4,6 +4,7 @@
 #+hugo_auto_set_lastmod: t
 #+startup: inlineimages
 #+property: header-args:sql :session reporter :exports result :colnames yes  :engine postgresql :results replace table
+#+hugo_paired_shortcodes: %table %marginnote
 
 #+seq_todo: TODO DRAFT DONE
 
