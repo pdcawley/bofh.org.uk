@@ -4,6 +4,3 @@
 [submodule "themes/hugo-tufte"]
 	path = themes/hugo-tufte
 	url = git@github.com:pdcawley/hugo-tufte.git
-[submodule "themes/jeremyf-tufte"]
-	path = themes/jeremyf-tufte
-	url = git@github.com:jeremyf/hugo-tufte.git

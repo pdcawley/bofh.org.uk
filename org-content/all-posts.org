@@ -216,13 +216,13 @@ I come into the bakehouse, open up Emacs and type =M-m o c B= and up comes the s
  | Small Seedy Malt | Seedy malt dough | .61 kg   |
  | Large Seedy Malt | Seedy malt dough | .92 kg   |
 
- Of course, that's not the full set of formulae, because it doesn't tell you how to make 'Seedy malt dough', but that's just another formula, which consists of flour, water, starter, salt and a multiseed 'soaker', where the starter and the soaker are the results of other formulae, which are (finally) made from basic ingredients[fn:2]. I did consider reaching for the object oriented hammer at this point, but thought that I might be able to do everything I needed without leaving SQL. It was relatively straightforward to move the shape of the calculations in the Bread Matters spreadsheet into my database schema, the only real sticking point being the recursive nature of the formulae, but it turns out that recursive queries are a thing in modern SQL, albeit a little tricky to get absolutely right[fn:3] first time.
+Of course, that's not the full set of formulae, because it doesn't tell you how to make 'Seedy malt dough', but that's just another formula, which consists of flour, water, starter, salt and a multiseed 'soaker', where the starter and the soaker are the results of other formulae, which are (finally) made from basic ingredients{{%marginnote%}}With a certain amount of handwaving to deal with the fact that a starter is strictly made with flour, water and starter.{{%/marginnote%}}. I did consider reaching for the object oriented hammer at this point, but thought that I might be able to do everything I needed without leaving SQL. It was relatively straightforward to move the shape of the calculations in the Bread Matters spreadsheet into my database schema, the only real sticking point being the recursive nature of the formulae, but it turns out that recursive queries are a thing in modern SQL, albeit a little tricky to get absolutely right{{% marginnote %}}A few bakes went a little weird before I finally got things sorted.{{% /marginnote %}} first time.
 
- If you're curious[fn:14] about the details of the schema, you can find it in my [[https://github.com/pdcawley/bakehouse][github repo]] for the bakery.
+ If you're curious{{% marginnote %}} And several of you seem to be, so I wrote [[/2019/03/04/recursive-sql-recipes/][another post]] with a bit more detail and some sample code.{{% /marginnote %}} about the details of the schema, you can find it in my [[https://github.com/pdcawley/bakehouse][github repo]] for the bakery.
 
  So now, a few days before a bake, I'd setup my ~production_order~ table with the orders for the bake, and run a query on the ~production_list~ view to find out what I needed to mix when. And all was great. Well, sort of. I had to add a bit extra onto the quantities in the initial starter mix to allow for the bits that get stuck to the bowl and lost to the final dough, and it was all very well until I wanted to bake two days in a row (a bake is a two day process from mixing the starters on a Wednesday evening, through mixing, fermenting and shaping on Thursday to baking the resulting loaves at four on Friday morning). But, vitally, it was much, much easier to add and adjust formulae, and the limitations were no worse than the limitations of the spreadsheet. All was well.
 
- It's the nature of business that you need to keep records. How much got baked? How much sold? Did we clean the floor? Were there any accidents? What sort? How do we prevent them next time? The list is endless. It all needs to be recorded, for both legal and pragmatic reasons. So I started a day book. This is just an .org file[fn:4]. Every day I come into the bakery, I run ~org-capture~ and I get a template for the day's entry in the daybook, which I fill in as the day goes on.
+ It's the nature of business that you need to keep records. How much got baked? How much sold? Did we clean the floor? Were there any accidents? What sort? How do we prevent them next time? The list is endless. It all needs to be recorded, for both legal and pragmatic reasons. So I started a day book. This is just an .org file{{% marginnote %}} Org-mode is an amazing emacs package that's a sort of outliner/task manager/publishing tool/spreadsheet/diary/literate programming environment. It's bewilderingly capable, and is probably the primary driver of the emacs renaissance as people are coming to the editor for org-mode, and porting the rest of their environment - hence the rise of ~evil-mode~, the emacs vim emulation layer.{{% /marginnote %}}. Every day I come into the bakery, I run ~org-capture~ and I get a template for the day's entry in the daybook, which I fill in as the day goes on.
 
  One of the features of org-mode is ~org-babel~, a literate programming environment, which lets me write something like:
 
@@ -296,10 +296,10 @@ SELECT ingredient, quantity
    :export_hugo_slug: recursive-sql-recipes
    :export_file_name: recursive-sql-recipes
    :export_date: 2019-03-04
-   :export_hugo_custom_front_matter: :series "Bakehouse diary"
+   :export_hugo_custom_front_matter: :series "Bakehouse diary" :math true
    :END:
 
-In [[/2019/02/25/baking-with-emacs][the last post]] I handwaved the way I represented bakery formulae in the bakery database, so here's a little more detail. It helps to think of a bakery formula as a node on a directed acyclic[fn:5] graph with weighted edges, where the weights are literally weights. Here's the graph a for a couple of products
+In [[/2019/02/25/baking-with-emacs][the last post]] I handwaved the way I represented bakery formulae in the bakery database, so here's a little more detail. It helps to think of a bakery formula as a node on a directed acyclic{{% marginnote %}}If you ignore the fact that a starter is made of flour, water and starter. Which, of course, we're going to.{{% /marginnote %}} graph with weighted edges, where the weights are literally weights. Here's the graph a for a  couple of products
 
 # #+begin_src dot :file formulae.svg :exports none :results file :cmdline -Tsvg
 # digraph G {
@@ -338,7 +338,7 @@ In [[/2019/02/25/baking-with-emacs][the last post]] I handwaved the way I repres
 
 #+hugo: more
 
-And here's how we represent that in the database[fn:6]:
+And here's how we represent that in the database{{% marginnote %}}This table is the result of a query on my real database, where the quantities are in kg, as opposed to the graph representation which was handrolled and adjusted to use bakers' percentages which is how formulae are traditionally written.{{% /marginnote %}}:
 
 #+begin_comment
 #+begin_src sql :exports results
@@ -380,14 +380,14 @@ If I were going to be doing these calculations by hand, it would definitely pay 
 
 I'm going to simplify things a little (the real database understands about dates, and we need to know a little more about recipes, products and ingredients than will fit in the ~recipe_item~ table that describes the graph) but this should give you an idea of the recursive queries that drive production planning.
 
-Let's introduct a ~production_order~ table, where we stash our orders[fn:7]:
+Let's introduct a ~production_order~ table, where we stash our orders{{% marginnote %}}The real table has extra information about customers and order dates.{{% /marginnote %}}:
 
 | product          | quantity |
 |------------------+----------|
 | Small White Wild |        5 |
 | Small Seedy Malt |        5 |
 
-And that's all we need to fire off a recursive query[fn:8].
+And that's all we need to fire off a recursive query{{% marginnote %}}I'm writing this using the literate programming capabilities of org-mode, so the code you see is being run against my production database, and the results are using my working formulae. Which is why we're not querying the real ~production_order~ table.{{% /marginnote %}}.
 
 #+begin_src sql
 WITH RECURSIVE po(product, quantity) AS (
@@ -457,7 +457,7 @@ Here's what happens when we have an order for 3 small loaves and two large ones
 
 We're only making 1.86 kg of dough? What's going on?
 
-It turns out that the way a ~UNION~ works is akin to doing ~SELECT DISTINCT~ on the combined table, so it selects only unique rows. When two orders end up requiring exactly the same amount of the 'same' dough, they get smashed together and we lose half the weight. This is not ideal.[fn:9] I fixed it by adding a 'path' to the query, keeping track of how we arrived at a particular formula. Something like:
+It turns out that the way a ~UNION~ works is akin to doing ~SELECT DISTINCT~ on the combined table, so it selects only unique rows. When two orders end up requiring exactly the same amount of the 'same' dough, they get smashed together and we lose half the weight. This is not ideal.{{% marginnote %}}It's /especially/ not ideal when you don't spot there's a problem and end up making far fewer loaves than you expect. Or on one /really/ annoying occasion, making a dough that was far too dry because we lost some water along the way. You can correct this during the mix, but it was a nasty shock.{{% /marginnote %}} I fixed it by adding a 'path' to the query, keeping track of how we arrived at a particular formula. Something like:
 
 #+begin_src sql
 WITH RECURSIVE po(product, quantity) AS (
@@ -502,7 +502,6 @@ This query gives us:
 | Mother           | Water               |   0.60 |
 | Small White Wild | Basic White Sour    |   1.86 |
 
-
 This time we're making 3.74 kg of dough, which is right.
 
 In order to see what's going on, we can change the final ~SELECT~ to ~SELECT formula, path, ingredient, round(quantity,2) weight FROM job~, and now we get:
@@ -526,15 +525,15 @@ In order to see what's going on, we can change the final ~SELECT~ to ~SELECT for
 
 Which shows that we're considering two lots of Basic White Sour with exactly the same weights, but we (and more importantly, the database engine) know that they're distinct amounts because we get to them through different routes. Hurrah! The problem is solved and we can accurately work out what we should be mixing.
 
-** What's still missing
+*** What's still missing
 
-   As a baker, I know that, if I've got an order for bread on Friday, then I need to mix the starters on Wednesday night, then spend Tuesday mixing, fermenting and shaping the loaves, which will spend the night in the retarder ready to be baked at 4 on Friday morning. But the schema I've outlined here doesn't. In my full bakehouse schema, I have a few extra tables which hold timing data and such. In particular, I have a ~product~ table, which knows about everything I sell. This table knows holds info about how many I can make per hour of work and the bake time and temperature. Then there's a ~recipe~ table[fn:10] which holds information about how long a formula needs to rest[fn:11]. The real queries take this into account to allow us to work back from the ~due_date~ of a real order to the day we need to do the work. If you want to dig into how I handle dates[fn:12] you can check out the repository at [[https://github.com/pdcawley/bakehouse/]].
+    As a baker, I know that, if I've got an order for bread on Friday, then I need to mix the starters on Wednesday night, then spend Tuesday mixing, fermenting and shaping the loaves, which will spend the night in the retarder ready to be baked at 4 on Friday morning. But the schema I've outlined here doesn't. In my full bakehouse schema, I have a few extra tables which hold timing data and such. In particular, I have a ~product~ table, which knows about everything I sell. This table knows holds info about how many I can make per hour of work and the bake time and temperature. Then there's a ~recipe~ table which holds information about how long a formula needs to rest{{% marginnote %}}This could be the bulk fermentation time if it's a formula for a dough or a starter, a proof time if it's a loaf, or a soaking time for a soaker (a soaker is usually a mixture of seeds or fruit and a liquid, usually water, but occasionally fruit juice or booze depending on the final product){{% /marginnote %}}. The real queries take this into account to allow us to work back from the ~due_date~ of a real order to the day we need to do the work. If you want to dig into how I handle dates  you can check out the repository at [[https://github.com/pdcawley/bakehouse/]].
 
 ** The perils of writing stuff up
 
    Never write your work up for your blog. Especially if you're mostly happy with it. As I was writing this, I realised there's an annoying bit of code duplication that I think I can eliminate. In the current code, I repeat what's essentially the same query structure in a couple of different views, but the formula graph is essentially static unless I add or adjust a recipe. Now I'm wondering if I could make a materialised view that has enough information to shortcut the calculations for both making the production list (what needs to be mixed, when) and for working out my costings (to put a price on a loaf, you need to know how much the raw ingredients cost, and that involves walking the tree again. Maybe a table like:
 
-| product          | sub_formula      | ingredient  | factor | lead_time |
+ | product          | sub_formula      | ingredient  | factor | lead_time |
 |------------------+------------------+-------------+--------+-----------|
 | Large White Wild | Basic White Sour | White Flour |  0.403 | 1 day     |
 | Large White Wild | Basic White Sour | Salt        |  0.012 | 1 day     |
@@ -543,7 +542,7 @@ Which shows that we're considering two lots of Basic White Sour with exactly the
 | Large White Wild | 80% Starter      | White Flour |  0.288 | 2 days    |
 | Large White Wild | 80% Starter      | Water       |  0.173 | 2 days    |
 
-If we have that table, then two days before our bread is due, if we have an order for 10 white loaves, we'll need to mix \(9.3 × .288 \approxeq 2.68\) kg of flour and $9.3 × 0.173 \approxeq 1.61$ kg of water. Which we can do with a simple non-recursive ~SELECT~. Something like:[fn:13]
+If we have that table, then two days before our bread is due, if we have an order for 10 white loaves, we'll need to mix \(9.3 × .288 \approxeq 2.68\) kg of flour and $9.3 × 0.173 \approxeq 1.61$ kg of water. Which we can do with a simple non-recursive ~SELECT~. Something like:[fn:9]
 
 #+begin_src sql
 WITH weighted(formula, ingredient, weight, due) AS (
@@ -566,7 +565,7 @@ We can use the same table to calculate the raw material costs for a given recipe
 I think, however, I'm going to leave it alone until I have to write another recursive view that walks the same graph, at which point I'll bite the bullet and do the pre-calculated version.
 
 
-* DONE Asshole Free Devil's Advocacy :philosophy:blether:c
+* DONE Asshole Free Devil's Advocacy :philosophy:blether:
   :properties:
   :export_file_name: devils-advocacy-without-asshattery
   :export_hugo_slug: devils-advocacy-without-tears
@@ -582,15 +581,11 @@ I think, however, I'm going to leave it alone until I have to write another recu
 
    Seriously, why does the Devil need an advocate? If you want to play DA because you think the position you want to argue has some merit, then argue the position honestly and own it. If it doesn't survive the discussion (or is shouted down), then "Ah right, I hadn't thought of that, you're right" or words to that effect and file that position in your memory as a bad one (along with the skeleton of /why/ it's bad). Nothing wrong with holding strong opinions, the thing that's bad is holding onto them if they're shown to be bad. If the group you're talking with just shouts you down and doesn't convince you that your position is a bad one, maybe find a different group? Or agree with them to steer clear of that topic.
 
-   What's really intellectually dishonest is to say "I was only playing Devil's Advocate!" after an idea has been shot down. I'm sure your intentions are entirely honorable, but what if they weren't? Say you genuinely held that the best thing to do with the children of the poor was to turn them into cheap and delicious meals for the richest in society. Say you advanced this position to your friends and were utterly appalled by the idea. Then maybe you'd try to distance yourself from it by saying "Whoah! Guys[fn:1]! I was only playing Devil's Advocate!"
+   What's really intellectually dishonest is to say "I was only playing Devil's Advocate!" after an idea has been shot down. I'm sure your intentions are entirely honorable, but what if they weren't? Say you genuinely held that the best thing to do with the children of the poor was to turn them into cheap and delicious meals for the richest in society. Say you advanced this position to your friends and were utterly appalled by the idea. Then maybe you'd try to distance yourself from it by saying "Whoah! Guys{{% marginnote %}}​ I know. But the kind of people who make this move in an argument are usually the kind of people who'd address a mixed group of folk as "guys".{{% /marginnote %}}! I was only playing Devil's Advocate!"
 
    When I hear someone playing that card, how am I supposed to distinguish between the well-meaning "There is this argument I've come across that I'm not sure I agree with, but it maybe has some merit and I don't know how I'd argue convincingly against it" types and the assholes who were flying a kite? Maybe the non-assholes will have friends who'll tell me that "They might seem like a bit of an arse, but they're not really." I've been that guy, and I don't want to be him again. Why is it okay for me to load the work of explaining that I'm not dickhead onto my friends rather than just not acting like a dickhead in the first place? Eventually, friends get tired. Eventually they'll shift to "Yeah, I know he seems like an ass, and he kind of is, but..." and then one day, they won't be your friends any more.
 
-
-
-** Be up front
-
-   Before you introduce the idea you want to play Devil's advocate for, say something like "D'you mind if I play Devil's advocate for a moment?" And when the group tells you "Yes, we do mind. Why help the devil?" listen to them. If it's genuinely that you've heard some argument that on the face of it seems repugnant, but you can't find a hole in it, then say as much: "What's wrong with this idea? Clearly feeding poor babies to the 1% is utterly repellant, but I can't find an effective counterargument."
+   {{% newthought %}}Before you introduce the idea{{% /newthought %}} you want to play Devil's Advocate for, say something like "D'you mind if I play Devil's Advocate for a moment?" And when the group tells you "Yes, we do mind. Why help the devil?" listen to them. If it's genuinely that you've heard some argument that on the face of it seems repugnant, but you can't find a hole in it, then say as much: "What's wrong with this idea? Clearly feeding poor babies to the 1% is utterly repellant, but I can't find an effective counterargument."
 
    Don't keep doing it, mind, or you'll start looking like the kite flying asshole again.
 
@@ -611,19 +606,19 @@ I think, however, I'm going to leave it alone until I have to write another recu
 
    #+hugo: more
 
-   I remember one Saturday with 50p in my pocket from singing for a couple of weddings at St George's church in Doncaster (25p for each wedding, paid cash in hand on the day. It always felt like a bonus after singing Bach's /Jesu Joy of Man's Desiring/ in the side chapel as the register was signed in the vestry and Magnus Black, the choir and organmaster, brought that beautiful tune dancing with such delicacy from in instrument that would shake the walls later as the happy couple left the church to Vidor's toccata and fugue[fn:20]). I was never one for saving, I'm still not, so I was straight round to Donny's nearest thing to a bookshop, the WH Smith in the Arndale in search of something to read. A voracious reader, I'd gone through all the /Swallows and Amazons/ and /Narnia/ books and I needed more. The cover of the second Puffin edition, with its white youths and bizzare half man half hawk fascinated me, so I handed over my 50p[fn:15] and headed home with my prize.
+   I remember one Saturday with 50p in my pocket from singing for a couple of weddings at St George's church in Doncaster (25p for each wedding, paid cash in hand on the day. It always felt like a bonus after singing Bach's /Jesu Joy of Man's Desiring/ in the side chapel as the register was signed in the vestry and Magnus Black, the choir and organmaster, brought that beautiful tune dancing with such delicacy from in instrument that would shake the walls later as the happy couple left the church to Vidor's toccata and fugue[fn:11]). I was never one for saving, I'm still not, so I was straight round to Donny's nearest thing to a bookshop, the WH Smith in the Arndale in search of something to read. A voracious reader, I'd gone through all the /Swallows and Amazons/ and /Narnia/ books and I needed more. The cover of the second Puffin edition, with its white youths and bizzare half man half hawk fascinated me, so I handed over my 50p[fn:12] and headed home with my prize.
 
    I read /A Wizard of Earthsea/ once or twice and loved it, but I've not reread it since. As a kid, I borrowed rest of the then trilogy from the library and found them rather hard going at  (my memory says that I found /The Tombs of Atuan/ a real slog. I got through it, but it took a couple of goes and at least one renewal to get to the end). A few weeks ago though, I went to the [[https://www.soundpost.org.uk/][Sound Post]] 'Modern Fairies' singing weekend and fell into conversation with [[https://terriwindling.com][Terri Windling]] about the books that had shaped me and I told her about my experience with the Earthsea trilogy and I thought maybe I'd been a little too young for them (I think I was eight or nine when I read AWoE, and maybe twelve when I read /The Tombs of Atuan/ and /The Furthest Shore/). I hadn't revisted them since. Terri made me promise to reread them and to let her know what I thought. So that's what I'm doing. Terri, this book report's for you. I owe you a few more and I promise I'll get to them.
 
    By the way, if you've never read /A Wizard of Earthsea,/ there will be spoilers in this article. Read the book before continuing. It shouldn't take you long, and it's well worth the time.
 
-    It's not so much what happens in this story as the way it's told that left its impression on me. Earthsea is made of words – all stories are, of course – sung into being by Segoy. Words are power. A wizard spends a large part of his[fn:16] education learning the "the Deeds of heroes and the Lays of wisdom" and year under the Master Namer just learning the true names of things in the Old Speech: the language of dragons; the language in which the world was made. In the period when the book is set, there is written language, but I get the feeling that it's very much the preserve of the wise. Songs, orally transmitted, are how the people of the archipelago hold their history and Le Guin's language reflects that. Every sentence seems to have been shaped to be spoken, and beautifully so. I kept stopping and reading passages out because the words were just so... right.
+    It's not so much what happens in this story as the way it's told that left its impression on me. Earthsea is made of words – all stories are, of course – sung into being by Segoy. Words are power. A wizard spends a large part of his{{% marginnote %}}The wizards are all men. There are female witches in the story, but at this stage of the tale they're definitely underpowered and untrustworthy compared to the men. Le Guin fixes this later.{{% /marginnote %}} education learning the "the Deeds of heroes and the Lays of wisdom" and year under the Master Namer just learning the true names of things in the Old Speech: the language of dragons; the language in which the world was made. In the period when the book is set, there is written language, but I get the feeling that it's very much the preserve of the wise. Songs, orally transmitted, are how the people of the archipelago hold their history and Le Guin's language reflects that. Every sentence seems to have been shaped to be spoken, and beautifully so. I kept stopping and reading passages out because the words were just so... right.
 
-    I sometimes wonder who the tale's narrator is telling the story to. It's a question that can break a lot of first person SF and exposes lazy storytelling. If a book that's supposedly the product of a completely different culture or time feels like it's written for an early 21st century reader, it breaks the book for me.[fn:17] The language and idiom of /A Wizard of Earthsea/ seem entirely right and consistent. We learn so much about the world as Ged's story is told from things mentioned in passing. We know that this happened a long time ago and it's assumed we already know about /The Deed of Ged/, /The Creation of Ea/ and all the other songs, deeds and festivals that are referred to in passing through the book. At the end we are told that no songs have survived that tell how Ged came to terms with his shadow – the entire book is a footnote in a much larger story that's just out of reach. I'm reminded of the fact that we only have the Norse myths we know because an ancient Icelander worried that readers wouldn't recognize the allusions in the sagas and eddas, so they wrote down the bones of the older stories to help future readers understand. If Le Guin had left Earthsea at this point, all we would know of Earthsea would be the glimpses of it in this story. And what glimpses they are.
+    I sometimes wonder who the tale's narrator is telling the story to. It's a question that can break a lot of first person SF and exposes lazy storytelling. If a book that's supposedly the product of a completely different culture or time feels like it's written for an early 21st century reader, it breaks the book for me.[fn:14] The language and idiom of /A Wizard of Earthsea/ seem entirely right and consistent. We learn so much about the world as Ged's story is told from things mentioned in passing. We know that this happened a long time ago and it's assumed we already know about /The Deed of Ged/, /The Creation of Ea/ and all the other songs, deeds and festivals that are referred to in passing through the book. At the end we are told that no songs have survived that tell how Ged came to terms with his shadow – the entire book is a footnote in a much larger story that's just out of reach. I'm reminded of the fact that we only have the Norse myths we know because an ancient Icelander worried that readers wouldn't recognize the allusions in the sagas and eddas, so they wrote down the bones of the older stories to help future readers understand. If Le Guin had left Earthsea at this point, all we would know of Earthsea would be the glimpses of it in this story. And what glimpses they are.
 
     You can find echoes /A Wizard of Earthsea/ in so much subsequent fantasy literature. The possibility of a wizard being trapped in another, for instance. Pratchett plays with and develops this in the /Witches/ sequence of Discworld books, for instance. I loved this sentence though: "And no one knows how many of the dolphins that leap in the waters of the Inmost Sea were men once, wise men, who forgot their wisdom and their name in the joy of the restless sea." If I had the power to become a dolphin I wouldn't be keen to return to the body of a fat 51 year old with diabetes and a bunch of aches and pains that I try not to think about. You can keep your wisdom sometimes.
 
-    As a kid, I didn't really understand what was going on with Ged and his Shadow. It was easy to see myself in the ever noticed that he didn't have the same colour skin as me). I loved learning and especially /knowing/. It wasn't hard to take my undoubtedly superior intelligence[fn:19] as analogous to a wizard's power. Then, though, the shape of the story confused me, especially the ending. Ged and his friend sail off the page. The sea becomes land. Ged steps off the boat and confronts the Shadow, addressing it with his own name. And the shadow disappears/merges with Ged. And they all live on to do the Deeds which are sung of them. What? Nine year old me had no /idea/ what was going on there, but the imagery stuck.
+    As a kid, I didn't really understand what was going on with Ged and his Shadow. It was easy to see myself in the ever noticed that he didn't have the same colour skin as me). I loved learning and especially /knowing/. It wasn't hard to take my undoubtedly superior intelligence[fn:15] as analogous to a wizard's power. Then, though, the shape of the story confused me, especially the ending. Ged and his friend sail off the page. The sea becomes land. Ged steps off the boat and confronts the Shadow, addressing it with his own name. And the shadow disappears/merges with Ged. And they all live on to do the Deeds which are sung of them. What? Nine year old me had no /idea/ what was going on there, but the imagery stuck.
 
     Now, of course, it all seems a clearer. Thesis. Antithesis. Synthesis. Ged does a terrible thing in his ignorance  and pride. In shame he runs from it, almost losing his humanity in the process. He is tempted by a dark power, but rejects it. A friend and teacher restores him to himself and tells him that running is the sure road to doom. He turns and chases his Shadow instead. Finally he comes to an acceptance that the Shadow is a part of himself and by giving it his name he reintegrates that part into himself and finally becomes a whole man. There you go – no need to read the book now.
 
@@ -647,7 +642,7 @@ I think, however, I'm going to leave it alone until I have to write another recu
 
    It all kicks off at 7pm, UK time with a kind of Q&A session and
    introduction to Twitch for newcomers. I'm particurly planning to help
-   other independent musicians reach their audience through the platform.[fn:18]
+   other independent musicians reach their audience through the platform.[fn:16]
 
 
    Then, I plan to follow the Royal Traditions/Singing Together format of two
@@ -696,48 +691,18 @@ I think, however, I'm going to leave it alone until I have to write another recu
     I've not heard of yet. In some ways, it's never been easier for you to
     support the work of artists you love.
 
-
 * Footnotes
 
-[fn:18] Recent deals with [[https://soundcloud.com][SoundCloud]] have made it /much/ easier for experienced
+[fn:9] NB: I've not tested this because I don't have the precalculated table, but it seems like it should work. In fact, thinking about it, we could probably build the ~precalc~ table so that we can simply do ~precalc.factor * po.quantity~, since any change that affects recipe weight will also affect our precalculated table.
+
+[fn:11] That was if we were lucky. It was usually Mendelssohn – not bad, Magnus was far too good an organist for it to sound dull, but not a patch on Vidor.
+
+[fn:12] The bibliography I found tells me that it probably cost 35p, so I no doubt bought a load of sweets as well – books and sugar have always been my vices.
+
+[fn:14] Sometimes I don't care though. God alone knows why Bertie Wooster is telling the Jeeves stories, or who he's telling them too – I'm just very glad he's chosen to tell them at all.
+
+[fn:15] Yeah. I know. I must have been insufferable as a kid (and an adult, if I'm honest). First to stick their hand up in every class. Happy to "Well, actually..." at every opportunity.
+
+[fn:16] Recent deals with [[https://soundcloud.com][SoundCloud]] have made it /much/ easier for experienced
    performers to access the means to get paid on Twitch, and it seems to be
    the most transparent platform for getting paid.
-
-
-[fn:20] That was if we were lucky. It was usually Mendelssohn – not bad, Magnus was far too good an organist for it to sound dull, but not a patch on Vidor.
-
-[fn:19] Yeah. I know. I must have been insufferable as a kid (and an adult, if I'm honest). First to stick their hand up in every class. Happy to "Well, actually..." at every opportunity.
-
-[fn:17] Sometimes I don't care though. God alone knows why Bertie Wooster is telling the Jeeves stories, or who he's telling them too – I'm just very glad he's chosen to tell them at all.
-
-[fn:16] The wizards are all men. There are female witches in the story, but at this stage of the tale they're definitely underpowered and untrustworthy compared to the men. Le Guin fixes this later.
-
-[fn:15] The bibliography I found tells me that it probably cost 35p, so I no doubt bought a load of sweets as well – books and sugar have always been my vices.
-
-[fn:14] And several of you seem to be, so I wrote [[/2019/03/04/recursive-sql-recipes/][another post]] with a bit more detail and some sample code.
-
-[fn:13] NB: I've not tested this because I don't have the precalculated table, but it seems like it should work. In fact, thinking about it, we could probably build the ~precalc~ table so that we can simply do ~precalc.factor * po.quantity~, since any change that affects recipe weight will also affect our precalculated table.
-
-[fn:12] Which is currently far more complicated than I need it to be. I had optimistic thoughts about doing accurate scheduling within the database, but getting that right is more complicated than I want to think about, and for the limited product range I currently have, it's easy enough to do in my head.
-
-[fn:11] This could be the bulk fermentation time if it's a formula for a dough or a starter, a proof time if it's a loaf, or a soaking time for a soaker (a soaker is usually a mixture of seeds or fruit and a liquid, usually water, but occasionally fruit juice or booze depending on the final product)
-
-[fn:10] Which should really be called the ~formula~ table, I suppose.
-
-[fn:9] It's /especially/ not ideal when you don't spot there's a problem and end up making far fewer loaves than you expect. Or on one /really/ annoying occasion, making a dough that was far too dry because we lost some water along the way. You can correct this during the mix, but it was a nasty shock.
-
-[fn:8] I'm writing this using the literate programming capabilities of org-mode, so the code you see is being run against my production database, and the results are using my working formulae. Which is why we're not querying the real ~production_order~ table.
-
-[fn:7] The real table has extra information about customers and order dates.
-
-[fn:6] This table is the result of a query on my real database, where the quantities are in kg, as opposed to the graph representation which was handrolled and adjusted to use bakers' percentages which is how formulae are traditionally written.
-
-[fn:4] Org-mode is an amazing emacs package that's a sort of outliner/task manager/publishing tool/spreadsheet/diary/literate programming environment. It's bewilderingly capable, and is probably the primary driver of the emacs renaissance as people are coming to the editor for org-mode, and porting the rest of their environment - hence the rise of ~evil-mode~, the emacs vim emulation layer.
-
-[fn:3] A few bakes went a little weird before I finally got things sorted.
-
-[fn:2] with a certain amount of handwaving to deal with the fact that a starter is strictly made with flour, water and starter.
-
-[fn:1]​ I know. But the kind of people who make this move in an argument are usually the kind of people who'd address a mixed group of folk as "guys".
-
-[fn:5] If you ignore the fact that a starter is made of flour, water and starter. Which, of course, we're going to.

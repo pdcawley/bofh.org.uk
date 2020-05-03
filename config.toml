@@ -1,32 +1,71 @@
 baseurl = "https://www.bofh.org.uk/"
+layoutdir = "layouts"
+contentdir = "content"
+publishdir = "public"
+canonifyurls = "true"
+theme = "hugo-tufte"
 languageCode = "en-us"
 title = "Just a Summary"
 PygmentsCodeFences = true
 pygmentsusecolors = true
 pygmentsstyle = "monokai"
-theme = "start-bootstrap-clean"
 Paginate = 40
 googleAnalytics = "UA-135014-1"
 
-[[menu.main]]
+[markup.goldmark.renderer]
+    unsafe = true
+
+[[menu.topnav]]
+    name = "Home"
+    pre = "<i class='fa fa-home'></i> "
+    weight = -110
+    identifier = "home"
+    url = "/"
+
+[[menu.topnav]]
     name = "Bakehouse Diary"
+    pre = "<i class='fa fa-book'></i> "
     url = "/series/bakehouse-diary"
     weight = 5
 
-[[menu.main]]
+[[menu.topnav]]
     name = "Recordings"
+    pre = "<i class='fa fa-music'></i> "
     url = "/series/repertoire-project"
     weight = 6
 
-[[menu.main]]
-    name = "Archives"
+[[menu.topnav]]
+    name = "Posts"
+    pre = "<i class='fa fa-book'></i> "
     url = "/post/"
     weight = 10
 
-[[menu.main]]
+[[menu.topnav]]
     name = "About Piers"
     url = "/pages/about/"
+    pre = "<i class='fa fa-info-circle'></i> "
     weight = 20
+
+[[menu.footer]]
+    name = ""
+    pre = "<i class='fa fa-github fa-2x'></i> "
+    identifier = "github"
+    url = "https://github.com/pdcawley/"
+    weight = -100
+
+[[menu.footer]]
+    name = ""
+    pre = "<i class='fa fa-twitter fa-2x'></i> "
+    url = "https://twitter.com/pdcawley"
+    identifier = "twitter"
+    weight = -90
+
+[[menu.footer]]
+    name = ""
+    pre = "<i class='fa fa-twitch fa-2x'></i> "
+    weight = -80
+    url = "https://twitch.tv/telear"
+    identifer = "twitch"
 
 [permalinks]
     post = "/:year/:month/:day/:slug"
@@ -37,10 +76,16 @@ googleAnalytics = "UA-135014-1"
     fractions = true
 
 [taxonomies]
-series = "series"
+    series = "series"
+    category = "categories"
+    tag = "tags"
 
 [params]
-    Author = "Piers Cawley"
+    Author = "<span class='given-name'>Piers</span> <span class='surname'>Cawley</span>"
     DateForm = "Jan 1, 2006"
+    subtitle = "Piers Cawley practices punditry"
+    copyrightHolder = "Piers Cawley"
     Description = "Piers Cawley practices punditry"
     stylesheet = "overrides.css"
+    iso8601_format = "2006-01-02"
+    pagination_size = 40

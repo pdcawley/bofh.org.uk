@@ -1,0 +1,38 @@
+#+hugo_section: page/
+#+hugo_base_dir: ../
+#+hugo_auto_set_lastmod: t
+#+startup: inlineimages
+#+property: header-args:sql :session reporter :exports result :colnames yes :engine postgresql :results replace table
+
+#+seq_todo: TODO DRAFT DONE
+
+* Joining Twitch as a viewer
+  There are multiple platforms available where you can watch and interact with people sharing music;  how to play their favourite video game; tips on sewing makeshift surgical masks; and a bewildering panoply of other stuff. If you're after carefully edited, scripted and polished stuff, then [[https://youtube.com][YouTube]] and [[https://vimeo.com/][Vimeo]] are the websites for you. If you're after something a little more loose and interactive, where you can ask questions and give immediate feedback and the like, then [[https://twitch.tv/][Twitch.tv]] could easily be Your Place.
+
+
+** Just watching anonymously
+   You /can/ treat Twitch as just another TV channel -- find something that interests you and just watch. But, if you're anything like I was when I first started watching people playing [[https://dwarffortresswiki.org/][Dwarf Fortress]] to pick up tips on how to avoid killing all my dwarfs quite so quickly, you will end up wanting to ask questions. You might fancy chucking them the digital equivalent of a few coins, or paying a subscription to support their work. To do that, you're going to need a Twitch account.
+
+A word to the wise; once you set up the account, Twitch will suggest (in manner that seems to imply that there is no alternative) that you download their desktop app. You don't need to do this. I have the Twitch app on my mobile devices, but on a desktop system, everything works brilliantly from the browser and I suggest you stick with that.
+
+*** Signing up with Amazon Prime
+
+   If you're an Amazon Prime subscriber, subscribe via [[https://twitch.amazon.com/prime][twitch.amazon.com/prime]] and Amazon will let you subscribe to one favoured Twitch streamer for free. You don't pay a penny, but they get paid as if you'd taken out a basic subscription. The only catch is that these subscriptions do not autorenew. You have to resubscribe every month, or subscribe to someone else if you feel like spreading the love.[fn:1]
+
+*** Signing up without Amazon Prime
+
+    No Amazon Prime? No matter, [[https://twitch.tv/signup][twitch.tv/signup]] is the place to go. It's a pretty straightforward free account. You can make a dedicated Twitch account (which would be my choice) or you can just login with Facebook.
+
+
+** Using your account
+
+   Once you have an account, you can start to participate in the chat associated with the channels you're watching. You can follow people and get notifications when they come on line (I confess, I turn the notifications off, but my default page when I go to Twitch is [[https://twitch.tv/following/live][twitch.tv/following/live]], which shows me which of my favourites are online at the moment.
+
+   Now you've got an account, there's nothing to stop you streaming yourself; if you are, in any way, a singer, I can't recommend downloading [[https://twitch.tv/sings/download][Twitch Sings]] and having a play. Lots of great karaoke tunes to have a crack at, join in with other singers and share duet seeds so they can join in with you, and if you fancy going live, there's a big friendly button down in the bottom left hand corner that will get you online with nothing extra to download. Find out if you enjoy yourself before fiddling with all the extra software.
+
+   But you don't /have/ to stream; I was on Twitch for the best part of a year, just occasionally hanging in streamers' chats and passing the time of day before I bit the bullet and started to stream myself. Some corners of the site have rather more assholes per square inch than others (popular shooty bang games, I'm looking at you) but if you're like me and enjoy the crafty and artistic areas, you're going to find some really lovely communities to join. Just have a great time!
+
+
+* Footnotes
+
+[fn:1] Obviously, I'd love it it you subscribed to my channel, but I also like the idea of everyone passing a little of the money that would otherwise be going into Amazon's gaping money maw on to any independent creator at all, whether it's me or not.

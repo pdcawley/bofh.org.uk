@@ -1,7 +1,6 @@
 +++
 categories = []
 date = "2016-09-27T11:40:07+01:00"
-description = ""
 draft = false
 image = "/img/about-bg.jpg"
 title = "MacOS Sierra Niggles"
