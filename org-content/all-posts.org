@@ -642,7 +642,9 @@ I think, however, I'm going to leave it alone until I have to write another recu
 
    It all kicks off at 7pm, UK time with a kind of Q&A session and
    introduction to Twitch for newcomers. I'm particurly planning to help
-   other independent musicians reach their audience through the platform.[fn:16]
+   other independent musicians reach their audience through the platform.{{% marginnote %}}Recent deals with [[https://soundcloud.com][SoundCloud]] have made it /much/ easier for experienced
+   performers to access the means to get paid on Twitch, and it seems to be
+   the most transparent platform for getting paid.{{% /marginnote %}}
 
 
    Then, I plan to follow the Royal Traditions/Singing Together format of two
@@ -702,7 +704,3 @@ I think, however, I'm going to leave it alone until I have to write another recu
 [fn:14] Sometimes I don't care though. God alone knows why Bertie Wooster is telling the Jeeves stories, or who he's telling them too – I'm just very glad he's chosen to tell them at all.
 
 [fn:15] Yeah. I know. I must have been insufferable as a kid (and an adult, if I'm honest). First to stick their hand up in every class. Happy to "Well, actually..." at every opportunity.
-
-[fn:16] Recent deals with [[https://soundcloud.com][SoundCloud]] have made it /much/ easier for experienced
-   performers to access the means to get paid on Twitch, and it seems to be
-   the most transparent platform for getting paid.

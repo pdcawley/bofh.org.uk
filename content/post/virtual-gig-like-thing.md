@@ -2,7 +2,7 @@
 title = "My Virtual Gig-Like Thing"
 author = ["Piers Cawley"]
 date = 2020-04-08T00:00:00
-lastmod = 2020-04-08T16:53:57+01:00
+lastmod = 2020-05-04T00:04:57+01:00
 slug = "virtual-gig-like-thing"
 draft = false
 +++
@@ -16,7 +16,9 @@ at a  full folk club style gig from my study to my
 
 It all kicks off at 7pm, UK time with a kind of Q&A session and
 introduction to Twitch for newcomers. I'm particurly planning to help
-other independent musicians reach their audience through the platform.[^fn:1]
+other independent musicians reach their audience through the platform.{{% marginnote %}}Recent deals with [SoundCloud](https://soundcloud.com) have made it _much_ easier for experienced
+performers to access the means to get paid on Twitch, and it seems to be
+the most transparent platform for getting paid.{{% /marginnote %}}
 
 Then, I plan to follow the Royal Traditions/Singing Together format of two
 forty minute sets of folk material with a 10 minute refreshment and raffle
@@ -68,5 +70,3 @@ Other performers have other ways for you to support them, whether it be
 public amazon wishlist, paypal tip jar, patreon page or some other service
 I've not heard of yet. In some ways, it's never been easier for you to
 support the work of artists you love.
-
-[^fn:1]: Recent deals with [SoundCloud](https://soundcloud.com) have made it _much_ easier for experienced performers to access the means to get paid on Twitch, and it seems to be the most transparent platform for getting paid.
