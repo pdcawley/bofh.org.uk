@@ -6,13 +6,13 @@ draft = false
 
 +++
 
-I just realised something about the workings of new style Typo Sidebars: it's just an application of the [Parameter Object](http://www.c2.com/cgi/wiki?ParameterObject) design pattern; the `render_sidebar` helper method takes a `Sidebar` parameter object and produces a chunk of HTML. The fact that we persist the parameter object using ActiveRecord is almost beside the point - the persistence is more important to theÂ  `render_sidebars` method than anything else.
+I just realised something about the workings of new style Typo Sidebars: it's just an application of the [Parameter Object](http://www.c2.com/cgi/wiki?ParameterObject) design pattern; the `render_sidebar` helper method takes a `Sidebar` parameter object and produces a chunk of HTML. The fact that we persist the parameter object using ActiveRecord is almost beside the point - the persistence is more important to the `render_sidebars` method than anything else.
 
 Old style sidebars couldn't really be called an application of any design pattern. Maybe that's what bugged me about them, they lacked the [Quality Without a Name](/articles/2003/07/29/the-quality-without-a-name). I'm not sure that the new sidebar architecture has the Quality either, but it's much nearer to having it.
 
 When I was learning to play [Go](http://en.wikipedia.org/wiki/Go) someone told me that it's easier to remember professional games than those of amateurs because the moves in a professional game are generally more 'right' than those of weaker players. To a good go player, the 'right' move has an obvious purpose (or, more likely, purposes). Bad moves don't.
 
-Maybe something similar applies to code. In good code it's clear what each piece does - maybe it can be seen as an example of a design pattern, maybe not - and the pieces relate well to each other. In bad code, the intent and relationships are muddied.Â 
+Maybe something similar applies to code. In good code it's clear what each piece does - maybe it can be seen as an example of a design pattern, maybe not - and the pieces relate well to each other. In bad code, the intent and relationships are muddied.
 
 ### Do Design Patterns Help?
 
