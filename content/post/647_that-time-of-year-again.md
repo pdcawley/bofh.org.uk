@@ -8,7 +8,7 @@ draft = false
 
 I'm still in two minds about going to [EuroOSCON](http://conferences.oreillynet.com/euos2006/) this year. That's not quite true. I *want* to go, but I can't *afford* to go. I certainly can't afford to pay for my own ticket, and if I could I would probably have put it towards a Macbook Pro.
 
-Looking at Eurostar prices, it looks like it'd cost me at least Â£285 + food and taxis to do the 'hallway track', which is arguably the most interesting part of these conferences.
+Looking at Eurostar prices, it looks like it'd cost me at least £285 + food and taxis to do the 'hallway track', which is arguably the most interesting part of these conferences.
 
 Still, at least one of my photos will be there. I just got mail from Fotango asking if they could use my photo of Simon Wardley at last year's EuroOSCON for his attendee photo.
 
