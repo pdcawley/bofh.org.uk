@@ -11,7 +11,7 @@ title = "The Meaning of Soundpost"
 Do you know [Soundpost](http://www.soundpost.org.uk)? They're awesome. In
 March 2011 I (and everyone else on
 the [Royal Traditions](http://royaltraditions.co.uk) mailing list I suspect)
-got some email from [Fay Hield](fayhield.com) talking about her "exciting
+got some email from [Fay Hield](http://fayhield.com) talking about her "exciting
 plans" to run a "weekend of singing workshops, talks and socialising with some
 of the finest and most thought provoking singers on the English folk scene."
 and wanted to gauge interest and suggestions as to what sort of sessions we'd
