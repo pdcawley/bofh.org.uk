@@ -1,3 +1,6 @@
 [submodule "themes/hugo-tufte"]
 	path = themes/hugo-tufte
 	url = https://github.com/pdcawley/hugo-tufte.git
+[submodule "themes/hugo-atom-feed"]
+	path = themes/hugo-atom-feed
+	url = https://github.com/kaushalmodi/hugo-atom-feed.git

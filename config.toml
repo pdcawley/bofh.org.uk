@@ -3,7 +3,7 @@ layoutdir = "layouts"
 contentdir = "content"
 publishdir = "public"
 canonifyurls = "true"
-theme = "hugo-tufte"
+theme = ["hugo-atom-feed", "hugo-tufte"]
 languageCode = "en-gb"
 title = "Just a Summary"
 PygmentsCodeFences = true
@@ -11,6 +11,23 @@ pygmentsusecolors = true
 pygmentsstyle = "monokai"
 Paginate = 40
 googleAnalytics = "UA-135014-1"
+
+[mediaTypes."application/atom+xml"]
+    suffixes = ["xml"]
+
+[outputs]
+    home = ["HTML", "RSS", "ATOM"]
+
+[outputFormats.Atom]
+  # https://validator.w3.org/feed/docs/atom.html#whatIsAtom
+  name = "Atom"
+  mediaType = "application/atom+xml"
+  baseName = "atom" # generated file = <baseName>.<mediaType."application/atom+xml".suffixes[0]> = atom.xml
+  isPlainText = false
+  rel = "alternate"
+  isHTML = false
+  noUgly = true
+  permalinkable = false
 
 [markup.goldmark.renderer]
     unsafe = true
