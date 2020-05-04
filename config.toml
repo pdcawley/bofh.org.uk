@@ -29,6 +29,9 @@ googleAnalytics = "UA-135014-1"
   noUgly = true
   permalinkable = false
 
+[services.RSS]
+    Limit = 40
+
 [markup.goldmark.renderer]
     unsafe = true
 
