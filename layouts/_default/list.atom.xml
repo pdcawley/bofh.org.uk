@@ -1,57 +1,57 @@
 {{ printf `<?xml version="1.0" encoding="utf-8"?>` | safeHTML }} {{/* ref: https://validator.w3.org/feed/docs/atom.html */}}
 <feed xmlns="http://www.w3.org/2005/Atom"{{ with site.LanguageCode }} xml:lang="{{ . }}"{{ end }}>
-    <generator uri="https://gohugo.io/" version="{{ hugo.Version }}">Hugo</generator>
-    {{- $title := site.Title -}}
-    {{- with .Title -}}
-        {{- if (not (eq . site.Title)) -}}
-            {{- $title = printf `%s %s %s` . (i18n "feed_title_on" | default "on") site.Title -}}
-        {{- end -}}
+<generator uri="https://gohugo.io/" version="{{ hugo.Version }}">Hugo</generator>
+{{- $title := site.Title -}}
+{{- with .Title -}}
+{{- if (not (eq . site.Title)) -}}
+    {{- $title = printf `%s %s %s` . (i18n "feed_title_on" | default "on") site.Title -}}
+{{- end -}}
+{{- end -}}
+{{- if .IsTranslated -}}
+{{ $title = printf "%s (%s)" $title (index site.Data.i18n.languages .Lang) }}
+{{- end -}}
+{{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
+{{ with (or (.Param "subtitle") (.Param "tagline")) }}
+{{ printf `<subtitle type="html"><![CDATA[%s]]></subtitle>` . | safeHTML }}
+{{ end }}
+{{ $output_formats := .OutputFormats }}
+{{ range $output_formats -}}
+{{- $rel := (or (and (eq "atom" (.Name | lower)) "self") "alternate") -}}
+{{ with $output_formats.Get .Name }}
+    {{ printf `<link href=%q rel=%q type=%q title=%q />` .Permalink $rel .MediaType.Type .Name | safeHTML }}
+{{- end -}}
+{{- end }}
+{{- range .Translations }}
+{{ $output_formats := .OutputFormats }}
+{{- $lang := .Lang }}
+{{- $langstr := index site.Data.i18n.languages .Lang }}
+{{ range $output_formats -}}
+    {{ with $output_formats.Get .Name }}
+	{{ printf `<link href=%q rel="alternate" type=%q hreflang=%q title="[%s] %s" />` .Permalink .MediaType.Type $lang $langstr .Name | safeHTML }}
     {{- end -}}
-    {{- if .IsTranslated -}}
-        {{ $title = printf "%s (%s)" $title (index site.Data.i18n.languages .Lang) }}
-    {{- end -}}
-    {{ printf `<title type="html"><![CDATA[%s]]></title>` $title | safeHTML }}
-    {{ with (or (.Param "subtitle") (.Param "tagline")) }}
-        {{ printf `<subtitle type="html"><![CDATA[%s]]></subtitle>` . | safeHTML }}
-    {{ end }}
-    {{ $output_formats := .OutputFormats }}
-    {{ range $output_formats -}}
-        {{- $rel := (or (and (eq "atom" (.Name | lower)) "self") "alternate") -}}
-        {{ with $output_formats.Get .Name }}
-            {{ printf `<link href=%q rel=%q type=%q title=%q />` .Permalink $rel .MediaType.Type .Name | safeHTML }}
-        {{- end -}}
-    {{- end }}
-    {{- range .Translations }}
-        {{ $output_formats := .OutputFormats }}
-        {{- $lang := .Lang }}
-        {{- $langstr := index site.Data.i18n.languages .Lang }}
-        {{ range $output_formats -}}
-            {{ with $output_formats.Get .Name }}
-                {{ printf `<link href=%q rel="alternate" type=%q hreflang=%q title="[%s] %s" />` .Permalink .MediaType.Type $lang $langstr .Name | safeHTML }}
-            {{- end -}}
-        {{- end }}
-    {{- end }}
-    <updated>{{ now.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
-    {{ with site.Copyright }}
-        {{- $copyright := replace . "{year}" now.Year -}} {{/* In case the site.copyright uses a special string "{year}" */}}
-        {{- $copyright = replace $copyright "&copy;" "©" -}}
-        <rights>{{ $copyright | plainify }}</rights>
-    {{- end }}
-    {{ with .Param "feed" }}
-        {{/* For this to work, the $icon file should be present in the assets/ directory */}}
-        {{- $icon := .icon | default "icon.svg" -}}
-        {{- with resources.Get $icon -}}
-            <icon>{{ (. | fingerprint).Permalink }}</icon>
-        {{- end }}
+{{- end }}
+{{- end }}
+<updated>{{ now.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+{{ with site.Copyright }}
+{{- $copyright := replace . "{year}" now.Year -}} {{/* In case the site.copyright uses a special string "{year}" */}}
+{{- $copyright = replace $copyright "&copy;" "©" -}}
+<rights>{{ $copyright | plainify }}</rights>
+{{- end }}
+{{ with .Param "feed" }}
+{{/* For this to work, the $icon file should be present in the assets/ directory */}}
+{{- $icon := .icon | default "icon.svg" -}}
+{{- with resources.Get $icon -}}
+    <icon>{{ (. | fingerprint).Permalink }}</icon>
+{{- end }}
 
-        {{/* For this to work, the $logo file should be present in the assets/ directory */}}
-        {{- $logo := .logo | default "logo.svg" -}}
-        {{- with resources.Get $logo -}}
-            <logo>{{ (. | fingerprint).Permalink }}</logo>
-        {{- end }}
-    {{ end }}
-    <author>
-      <name>Piers Cawley</name>
+{{/* For this to work, the $logo file should be present in the assets/ directory */}}
+{{- $logo := .logo | default "logo.svg" -}}
+{{- with resources.Get $logo -}}
+    <logo>{{ (. | fingerprint).Permalink }}</logo>
+{{- end }}
+{{ end }}
+<author>
+<name>Piers Cawley</name>
       <email>pdcawley@bofh.org.uk</email>
     </author>
     {{ with site.Params.id }}
@@ -88,7 +88,7 @@
             {{- end }}
             <author>
                 <name>Piers Cawley</name>
-                <email>pdcawley@bofh.org.uk</name>
+                <email>pdcawley@bofh.org.uk</email>
             </author>
             <published>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published>
             <updated>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
