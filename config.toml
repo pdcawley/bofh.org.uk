@@ -1,4 +1,4 @@
-baseurl = "https://www.bofh.org.uk/"
+baseurl = "https://bofh.org.uk/"
 layoutdir = "layouts"
 contentdir = "content"
 publishdir = "public"
