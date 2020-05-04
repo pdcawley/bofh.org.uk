@@ -6,7 +6,7 @@ draft = false
 
 +++
 
-Right, we've cut a Typo 5 gem and it's on rubyforge and heading to various mirrors I hope. FrÃ©dÃ©ric's writing the release notification which will be appearing on [Typosphere](http://blog.typosphere.org/) Real Soon Now.
+Right, we've cut a Typo 5 gem and it's on rubyforge and heading to various mirrors I hope. Frédèric's writing the release notification which will be appearing on [Typosphere](http://blog.typosphere.org/) Real Soon Now.
 
 It's been a surprisingly tricky process - we're now requiring Rails 2.0.2 because the workings of `view_paths` have changed in a way which means we can't quite make themes with Rails 2.0 *and* 2.0.2 and working with the edge seems like the more sensible proposition. If you're on the bleeding edge, you should find that you get the right Rails via svn:externals anyway.
 
