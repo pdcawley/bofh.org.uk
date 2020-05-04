@@ -6,7 +6,7 @@ draft = false
 
 +++
 
-> Mum was often the only women \[at British Leyland sales conferences\]. In those days it was apparently common for presenters to slip the occasional naked lady into the slides â€“ â€œjust to keep everyone awakeâ€. When this happened, thereâ€™d be slightly embarrassed laughter and a few heads would turn to look at mum. Who ignored it. It doesn't happen so often any more
+> Mum was often the only women \[at British Leyland sales conferences\]. In those days it was apparently common for presenters to slip the occasional naked lady into the slides "just to keep everyone awake". When this happened, there' be slightly embarrassed laughter and a few heads would turn to look at mum. Who ignored it. It doesn't happen so often any more
 
 That was me writing about [Women in Open Source](http://www.bofh.org.uk/2005/11/02/women-in-open-source) in 2005. This is [Sarah Allen](http://www.ultrasaurus.com/sarahblog/2009/04/gender-and-sex-at-gogaruco/) writing about Matt Aimonetti's talk, "CouchDB + Ruby: Perform like a Pr0n star" which:
 
