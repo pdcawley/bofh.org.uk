@@ -1,6 +1,3 @@
-[submodule "themes/start-bootstrap-clean"]
-	path = themes/start-bootstrap-clean
-	url = git@github.com:humboldtux/startbootstrap-clean-blog.git
 [submodule "themes/hugo-tufte"]
 	path = themes/hugo-tufte
 	url = https://github.com/pdcawley/hugo-tufte.git
