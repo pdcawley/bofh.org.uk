@@ -6,7 +6,7 @@ draft = false
 
 +++
 
-Graeme ([@mathie](http://twitter.com/mathie)) Matthieson is one of the good guys. He's also one of the people behind the [Scottish Ruby Conference](http://scottishrubyconference.com/) (nÃ© Scotland on Rails).
+Graeme ([@mathie](http://twitter.com/mathie)) Matthieson is one of the good guys. He's also one of the people behind the [Scottish Ruby Conference](http://scottishrubyconference.com/) (née Scotland on Rails).
 
 I spent my own money to go to the first one they ran, and it was a great conference. To judge from the tweets around this year's conference, they're not slacking off at all. Even though I'm back to being a Perl programmer nowadays, I wish I'd been in Edinburgh last week.
 
