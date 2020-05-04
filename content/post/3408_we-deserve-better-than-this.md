@@ -59,7 +59,7 @@ It pains me to say this, but not everything the coalition has done is evil. And 
 
 There’s an election due in 2015. 2015, the 70th anniversary of the Attlee revolution. It’s time to do it again. Vote. Vote progressive. Vote independent or green. Hold your nose and vote Liberal or Labour. Join a fucking party and work to change their outlook. Vote pragmatic. But, whatever you do, vote. _Especially_ if you’re young. Politicians only care about keeping the people who vote happy — if you don’t vote, they’ll ignore you. If it makes some other part of their constituency happy, they’ll shit on you from great height (though I think that may backfire yet — the thing about grandparents is, they tend to like their grandchildren and don’t like seeing them get the shitty end of the stick)
 
-You could listen to Russell Brand and not vote ’cos it’s “irrelevant” — there’s a revolution coming! You could. But you’d be an idiot and you’d be waiting a long time. There’s been one progressive revolution that actually stuck in this country, and that was achieved by voting.
+You could listen to Russell Brand and not vote ’cos it’s “irrelevant” — there’s a revolution coming! You could. But you’d be an idiot and you’d be waiting a long time. There’s been one progressive revolution that actually stuck in this country, and that was achieved by voting.
 
 Demand the nationalisation of public goods; the Post Office, Rail, Water, Gas, Electricity. Encourage small businesses and _making_ stuff. Build new public housing. Demand real transparency in markets and government. Fuck landlords. Fuck rentiers. 
 
