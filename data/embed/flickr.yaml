@@ -1,0 +1,2 @@
+pattern: "^https?://(www\\.)?flic(\\.kr/<p>|kr\\.com/photos/).*"
+endpoint: "http://flickr.com/services/oembed/"

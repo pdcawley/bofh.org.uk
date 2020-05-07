@@ -11,7 +11,7 @@ slug = "bakehouse-diary-2"
 
 Not much progress on the "getting the oven ready front this week". I sheared another machine screw!
 
-<a href="https://www.instagram.com/p/BIUhqezAacy/" class="embed"><img src="https://scontent.cdninstagram.com/t51.2885-15/e35/13735837_813784245425740_1298615526_n.jpg?ig_cache_key=MTMwMjgxNDI0NzAzNzgwNjM4Ng%3D%3D.2" alt="Drat! Another machine screw sheared"></a>
+{{< embed "https://www.instagram.com/p/BIUhqezAacy/" >}}
 
 At least this one was on the retaining bar that holds the oven soles in place;
 I'd rather not have sheared it, but since I'm going to be drilling stuff out
@@ -41,9 +41,9 @@ almost certain to go bust. The working formula is more along the lines of:
 <div>[\begin{eqnarray*}
 Price_{wholesale} & = & \sum\nolimits_{i \in \lbrace ingredients, labour, package, transport \rbrace}\frac{cost_i}{gross\_margin} \\
 
-Price_{RRP} & = & (1 + retail\_markup) \times Price_{wholesale} 
+Price_{RRP} & = & (1 + retail\_markup) \times Price_{wholesale}
 \end{eqnarray*}]</div>
- 
+
 With rules of thumb like `$cost_{transport} = 0.1 \times
 Price_{wholesale}$`[^1] and `$cost_{labour} \approx 1.1 \times
 cost_{ingredients}$`, which can be replaced with `$cost_{labour} =
@@ -109,16 +109,16 @@ a classic 'complicated' multi-stage recipe which involves making up:
   is quite heavily enriched and full of fruit, you want your yeast to be good
   and active. This gets made a couple of hours before mixing the dough
   properly.
-  
+
 Then you make up your Stollen dough with the ferment, eggs, more flour, more
 milk and work in some butter too, which gives you a lovely soft rich dough.
 After an hour or so, you mix in the fruit, let it relax, then scale up the
 dough and the marzipan and make up your stollen, prove, bake, slather with
 melted butter and try to resist scoffing all at once.
-  
+
 If I were simply after working out the ingredient cost per loaf, I could
 represent this recipe in the database with a simple table like so:
- 
+
 | product | ingredient         | weight(kg) |
 |---------|--------------------|------------|
 | Stollen | Ground almonds     |      0.060 |
@@ -137,7 +137,7 @@ represent this recipe in the database with a simple table like so:
 | Stollen | Raisins            |      0.060 |
 | Stollen | Candied mixed peel |      0.050 |
 | Stollen | Rum                |      0.020 |
- 
+
 but that throws away a bunch of information and is a surprising pain in the
 arse to type. It's also very hard to look at that table and deduce anything
 about what needs doing when in the stollen making process. So we write the
@@ -251,7 +251,7 @@ but I hope I'll be able to keep making progress on the bakehouse software.
 [^1]: You will note that the transport cost is defined as a fraction of the
     wholesale price, but the wholesale price is defined in terms of the raw
     cost of the product, which includes the transport cost.
-    
+
     At this point, it's good to remember your algebra. After a certain amount
     of fiddling, it's possible to define the transport cost solely in terms of
     the other input costs and the desired markup. It comes out as

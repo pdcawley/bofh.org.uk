@@ -11,8 +11,7 @@ series = "Bakehouse Diary"
 Almost a year ago now, I hired a tail lift van and hared off down to the Isle
 of Wight to fetch my lovely 'new' deck oven.
 
-<a href="https://www.instagram.com/p/BIKWHSogUz2/?taken-by=theloafery"
-class="embed">They don't make 'em like this any more</a>
+{{< embed "https://www.instagram.com/p/BIKWHSogUz2/?taken-by=theloafery" >}}
 
 <!--more-->
 
@@ -22,7 +21,7 @@ dithered over whether I'd be allowed to install it on market stall (I got the
 answer just over a month ago, it was "No", but that's probably good news).
 
 What I _should_ have been doing in this time was checking out the wiring and,
-maybe trying to test one or two of the decks. 
+maybe trying to test one or two of the decks.
 
 But now I've got a bakehouse site lined up, which means there's no time
 like the present...
@@ -35,8 +34,7 @@ hot oven. The end result is a lovely crusty loaf, crisp on the bottom and with
 a lovely variation in the crust where the dough is slashed just before it goes
 into the oven. Something like this.
 
-<a href="https://www.instagram.com/p/7hdnWbiHiD/?taken-by=theloafery"
-class="embed">A small Mîche</a>
+{{< embed "https://www.instagram.com/p/7hdnWbiHiD/?taken-by=theloafery" >}}
 
 When I bake these at home, I put a big lump of stone into the oven before I
 turn it on and even when the oven's up to heat I'll give it a while before
@@ -46,12 +44,11 @@ make a difference to the end result.
 Traditionally, if you want to bake on the sole of the oven, you get ceramic or
 stone soles, but I used to bake on the sole of an Aga and I know that a good
 heavy metal sole will do the job just as well. Which is just as well because
-the soles in the deck oven are either steel or cast iron. 
+the soles in the deck oven are either steel or cast iron.
 
 There's a catch though.
 
-<a href="https://www.instagram.com/p/BIKTottAW9K/?taken-by=theloafery"
-class="embed">brown sole</a>
+{{< embed "https://www.instagram.com/p/BIKTottAW9K/?taken-by=theloafery" >}}
 
 Metal you want to cook on shouldn't be that colour.
 
@@ -74,18 +71,16 @@ Those brass screws have been in place for a long time. So far I've succesfully
 unscrewed six screws and sheared off the heads of six more. Joy. I see fun
 with left handed drill bits in my future.
 
-<a href="https://www.instagram.com/p/BIKUgLKA2X9/?taken-by=theloafery" class="embed">Shear delight</a>
+{{< embed "https://www.instagram.com/p/BIKUgLKA2X9/?taken-by=theloafery" >}}
 
 Then there's the machine screws that hold the retaining bars in place. These are
 proving to be right little sods. I've been dosing them with WD-40 "Fast
 release penetrant spray" for ages now and they're still refusing to shift. A
 friend on Twitter has recommended another product, Plus Gas, which I'll be
 trying as soon as I can get hold of some, but otherwise... well, at least I
-already needed to get a lefthanded drill to cope with the brass screws. 
+already needed to get a lefthanded drill to cope with the brass screws.
 
-<a
-href="https://www.instagram.com/p/BIKU5uZgfrs/?taken-by=theloafery" class="embed">Recalcitrant
-screw head</a>
+{{< embed "https://www.instagram.com/p/BIKU5uZgfrs/?taken-by=theloafery" >}}
 
 ## Progress
 
@@ -131,7 +126,7 @@ can eliminate with a bit of programming know how.
 
 A deck oven is the weapon of choice for your average artisan baker. It's a
 stack of independent boxes of hot. Mine has 5 decks, each of which can hold 2
-British standard baking trays, which are 30″×18″.[^2] 
+British standard baking trays, which are 30″×18″.[^2]
 
 If you're used to domestic oven dimensions, you might be thinking that a stack
 of 5 ovens will be impossibly tall, but since we're never going to have to
@@ -151,7 +146,7 @@ fitted yet and I'm not sure I'm going to.
     you're Portugese because the Portugese (apparently) still use the same
     size as us Brits. I have no idea why. Maybe it's got something to do with
     St George.
-    
+
     The inch sizes don't really play nicely with modern domestic oven sizes
     either. I have some US-sized half sheet trays (Lovely solid things, from
     <http://bakerybits.co.uk/>, highly recommended) that have to be slightly

@@ -7,7 +7,7 @@ draft = false
 
 +++
 
-<a class="embed" href="http://soundcloud.com/pdcawley/little-musgrave">Little Musgrave</a>
+{{< embed "http://soundcloud.com/pdcawley/little-musgrave" >}}
 <!--more-->
 
 What can you say about Little Musgrave (Child 81 for those who care about such things)? It's old. Apparently it's quoted from by Beaumont and Fletcher in their 1611 play 'Knight of the Burning Pestle'.

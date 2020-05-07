@@ -7,8 +7,7 @@ draft = false
 
 +++
 
-<a href="http://soundcloud.com/pdcawley/pretty-saro" class="embed">Pretty Saro</a>
-<!--more-->
+{{< embed "http://soundcloud.com/pdcawley/pretty-saro" >}}
 
 <!--more-->
 

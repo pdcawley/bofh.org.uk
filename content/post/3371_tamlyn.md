@@ -7,7 +7,7 @@ draft = false
 
 +++
 
-<a class="embed" href="http://soundcloud.com/pdcawley/tamlyn">Tamlyn</a>
+{{< embed "http://soundcloud.com/pdcawley/tamlyn" >}}
 <!--more-->
 
 Ah, Tamlyn, one of the 'muckle sangs' appropriate to this time of year. This isn't the first time I've recorded this and put it online, but I lost the original AIFF files and Bandcamp doesn't accept lossy files.

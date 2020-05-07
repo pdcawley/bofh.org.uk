@@ -1,0 +1,2 @@
+pattern: "^https?://(youtu\\.be|(www\\.)?youtube\\.com/).*"
+endpoint: "http://youtube.com/oembed"

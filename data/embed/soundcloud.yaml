@@ -1,0 +1,2 @@
+pattern: "^https?://(www\\.)?soundcloud\\.com/.*"
+endpoint: "http://soundcloud.com/oembed"

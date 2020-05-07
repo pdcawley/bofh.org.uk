@@ -7,5 +7,5 @@ draft = false
 
 +++
 
-<a class="embed" href="http://soundcloud.com/pdcawley/the-grey-cock">The Grey Cock</a>
+{{< embed "http://soundcloud.com/pdcawley/the-grey-cock" >}}
 <!--more-->
