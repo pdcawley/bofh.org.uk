@@ -1,10 +1,10 @@
 +++
 title = "Adding a generic oembed handler for Hugo"
 author = ["Piers Cawley"]
-lastmod = 2020-05-08T22:00:27+01:00
+lastmod = 2020-05-09T12:24:26+01:00
 slug = "oembed-for-hugo"
 tags = ["hugo"]
-draft = true
+draft = false
 +++
 
 If you're at all like me, you have content on a bunch of different sites (Instagram, Youtube, Flickr, Soundcloud, Bandcamp...) and, especially for multimedia content, it's great to be able to link to 'live' versions of that content. Of course, all those sites will let you 'share' content and usually have an 'embed' option that hands you a bunch of HTML that you can paste into your blog entry. But screw that! I'm a programmer for whom laziness is one of the cardinal virtues -- if it's at all possible, I prefer to let the computer do the work for me.{{< marginnote >}}If nothing else, once I've got the programming right, it's less likely to screw up than me{{< /marginnote >}}

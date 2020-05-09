@@ -695,7 +695,7 @@ public amazon wishlist, paypal tip jar, patreon page or some other service
 I've not heard of yet. In some ways, it's never been easier for you to
 support the work of artists you love.
 
-* DRAFT Adding a generic oembed handler for Hugo                       :hugo:
+* DONE Adding a generic oembed handler for Hugo                        :hugo:
 :PROPERTIES:
 :export_hugo_slug: oembed-for-hugo
 :export_file_name: oembed-for-hugo
