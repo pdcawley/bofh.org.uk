@@ -1,3 +1,4 @@
+# -*- mode: org; mode: visual-line-mode; mode: visual-fill-column-mode; mode: org-hugo-auto-export-mode -*-
 #+hugo_section: post/
 #+hugo_base_dir: ../
 #+export_hugo_weight: auto
@@ -10,16 +11,16 @@
 
 
 * Bakehouse Diary :@bakehouse-diary:
-  :properties:
-  :export_hugo_custom_front_matter: :series "Bakehouse Diary"
-  :end:
+:PROPERTIES:
+:export_hugo_custom_front_matter: :series "Bakehouse Diary"
+:END:
 
 ** Bakehouse Diary
-   :properties:
-   :export_file_name: back-to-the-bakehouse
-   :export_date: [2018-02-01 Thu]
-   :export_hugo_custom_front_matter: :description "Back to the bakehouse" :series "Bakehouse Diary"
-   :end:
+:PROPERTIES:
+:export_file_name: back-to-the-bakehouse
+:export_date: [2018-02-01 Thu]
+:export_hugo_custom_front_matter: :description "Back to the bakehouse" :series "Bakehouse Diary"
+:END:
 
 I know! It's been a while. But we're in! I have baked, and it was
 good. There's still a ton of stuff to do (plumbing, mostly) but the
@@ -30,13 +31,13 @@ would go and making lots of pizzas and a few loaves of bread.
 
 #+attr_html: :width 100%
 #+caption: An early pizza
-[[./back-to-the-bakehouse/margherita-pizza.jpg]]
+[[file:./back-to-the-bakehouse/margherita-pizza.jpg]]
 
 #+hugo: more
 
 *** The story so far…
 
-In my [[/2016/11/11/taking-stock/][last entry]] (over a year ago, argh! Gill is /much/ better) the
+In my [[file:/2016/11/11/taking-stock/][last entry]] (over a year ago, argh! Gill is /much/ better) the
 oven and all my kit were still in my garage, up on blocks waiting for
 Dad to build an A-frame so we could winch it up and assemble it. Which
 happened, and we managed to get one section of oven up onto the base.
@@ -121,134 +122,134 @@ to be far too many pizza doughballs.
 On Friday 21st of December, I pulled my first loaves out of my ~40
 year old oven, and /damn/, but they were good.
 
-#+ATTR_HTML: :width 100%
-#+CAPTION: The first loaf
-[[./back-to-the-bakehouse/first-loaf.jpg]]
+#+attr_html: :width 100%
+#+caption: The first loaf
+[[file:./back-to-the-bakehouse/first-loaf.jpg]]
 
 *** What next?
 
-    Of course, no enterprise like this is ever finished, here's a
-    selection from my to do list.
+Of course, no enterprise like this is ever finished, here's a
+selection from my to do list.
 
 
 **** Plumbing
-     A bigger sink! Water near the scale so I'm not carrying buckets
-     back and forth! A handwash basin!
+A bigger sink! Water near the scale so I'm not carrying buckets
+back and forth! A handwash basin!
 
 **** Qualifications
-     Environmental Health Officers do like you to have a certificate
-     to show you're not a complete moron when it comes to hygiene.
-     Breadmaking is relatively low risk because everything gets so
-     very hot during the cooking process, but even so.
+Environmental Health Officers do like you to have a certificate
+to show you're not a complete moron when it comes to hygiene.
+Breadmaking is relatively low risk because everything gets so
+very hot during the cooking process, but even so.
 
 **** Refrigeration
-     Right now everything's at the ambient temperature, which can mean
-     staying in the bake house until the early hours in order to get
-     the loaves into the oven when they're perfectly proved. A better
-     approach would be to stick the dough into a retarder (big
-     fridge, racked for standard bakers' sheet pans) and bake them
-     first thing in the morning after a decent night's sleep. I have a
-     retarder, but transport is annoyingly tricky because it's 2m
-     tall, and should ideally be transported vertically too.
+Right now everything's at the ambient temperature, which can mean
+staying in the bake house until the early hours in order to get
+the loaves into the oven when they're perfectly proved. A better
+approach would be to stick the dough into a retarder (big
+fridge, racked for standard bakers' sheet pans) and bake them
+first thing in the morning after a decent night's sleep. I have a
+retarder, but transport is annoyingly tricky because it's 2m
+tall, and should ideally be transported vertically too.
 
 **** Fitness
-     Right now, I can just about cope with two bakes a week, but if
-     I'm going to actually make money at this, I'm going to need to be
-     able to manage more. Hopefully, as I bake it'll improve my
-     fitness, so as demand grows I'll be able to meet it.
+Right now, I can just about cope with two bakes a week, but if
+I'm going to actually make money at this, I'm going to need to be
+able to manage more. Hopefully, as I bake it'll improve my
+fitness, so as demand grows I'll be able to meet it.
 
 **** Marketing
-     Oh boy, do I suck at marketing? Still, the product is good and
-     there's nobody else in the local area making this sort of bread,
-     so I have a few advantages. I still haven't made a Loafery
-     website though. At least I have the loafery.co.uk domain.
+Oh boy, do I suck at marketing? Still, the product is good and
+there's nobody else in the local area making this sort of bread,
+so I have a few advantages. I still haven't made a Loafery
+website though. At least I have the loafery.co.uk domain.
 
 **** Online ordering
-     If I can get people ordering online, I can use that to produce
-     production schedules, and generally have a better idea of how
-     much to make on each bake day, which help minimise any wasted
-     bread. With two bakes done this year, I've sold every loaf - I'd
-     like to keep that up.
+If I can get people ordering online, I can use that to produce
+production schedules, and generally have a better idea of how
+much to make on each bake day, which help minimise any wasted
+bread. With two bakes done this year, I've sold every loaf - I'd
+like to keep that up.
 
 *** In the next bakehouse diary...
-    I'll talk about how a bake goes and the process of developing an
-    initial range of products, sourcing flour and other ingredients
-    and hopefully some news about online ordering.
+I'll talk about how a bake goes and the process of developing an
+initial range of products, sourcing flour and other ingredients
+and hopefully some news about online ordering.
 
 
 
 
 ** DRAFT Literate Baking
-   :PROPERTIES:
-   :EXPORT_DATE: 2018-10-25
-   :export_file_name: literate-baking
-   :END:
+:PROPERTIES:
+:EXPORT_DATE: 2018-10-25
+:export_file_name: literate-baking
+:END:
 
-   My baking day goes like this:
+My baking day goes like this:
 
 I come into the bakehouse, open up Emacs and type =M-m o c B= and up comes the skeleton of an entry for my baking daybook. I review it quickly, then type =C-c C-c=
 
 ** DONE Running a bakery on Emacs and PostgreSQL
-   :PROPERTIES:
-   :EXPORT_FILE_NAME: baking-with-emacs
-   :export_hugo_slug: baking-with-emacs
-   :export_hugo_custom_front_matter: :series "Bakehouse diary"
-   :export_date: 2019-02-25
-   :END:
+:PROPERTIES:
+:EXPORT_FILE_NAME: baking-with-emacs
+:export_hugo_slug: baking-with-emacs
+:export_hugo_custom_front_matter: :series "Bakehouse diary"
+:export_date: 2019-02-25
+:END:
 
- Just over a year ago now, I finally opened the bakery I'd been dreaming of for years. It's been a big change in my life, from spending all my time sat in front of a computer, to spending most of it making actual stuff. And stuff that makes people happy, at that. It's been a huge change, but I can't think of a single job change that's ever made me as happy as this one.
+Just over a year ago now, I finally opened the bakery I'd been dreaming of for years. It's been a big change in my life, from spending all my time sat in front of a computer, to spending most of it making actual stuff. And stuff that makes people happy, at that. It's been a huge change, but I can't think of a single job change that's ever made me as happy as this one.
 
- #+hugo: more
+#+hugo: more
 
- One of the big changes that came with going pro was that suddenly I was having to work out how much stuff I needed to mix to fill the orders I needed. On the face of it, this is really simple, just work out how much dough you need, then work out what quantities to mix to make that much dough. Easy. You can do it with a pencil and paper. Or, in traditional bakers' fashion, by scrawling with your finger on a floured work bench.
+One of the big changes that came with going pro was that suddenly I was having to work out how much stuff I needed to mix to fill the orders I needed. On the face of it, this is really simple, just work out how much dough you need, then work out what quantities to mix to make that much dough. Easy. You can do it with a pencil and paper. Or, in traditional bakers' fashion, by scrawling with your finger on a floured work bench.
 
- And that's how I coped for a few weeks early on. But I kept making mistakes, which makes for an inconsistent product (bread is very forgiving, you have to work quite hard to make something that isn't bread, but consistency /matters/). I needed to automate.
+And that's how I coped for a few weeks early on. But I kept making mistakes, which makes for an inconsistent product (bread is very forgiving, you have to work quite hard to make something that isn't bread, but consistency /matters/). I needed to automate.
 
- I'd been on one of Bread Matters' "Baking for a Living" courses and as part of the course materials had received a copy of a spreadsheet that could be used to go from a list of orders to a list of ingredients to mix alongside accurate costings and other useful bits and bobs. It was great and certainly opened my eyes to the possibilities for automation of this part of the job.
+I'd been on one of Bread Matters' "Baking for a Living" courses and as part of the course materials had received a copy of a spreadsheet that could be used to go from a list of orders to a list of ingredients to mix alongside accurate costings and other useful bits and bobs. It was great and certainly opened my eyes to the possibilities for automation of this part of the job.
 
- And then I tried to add a new recipe.
+And then I tried to add a new recipe.
 
- Spreadsheets aren't my favourite computational model so maybe it was just my lack of experience with them, but adding a new recipe was like pulling teeth; lots of tedious copying, pasting and repetition of formulae. It just seemed wrong, especially as the underlying computations were so straightforward (ish). There had to be a better way.
+Spreadsheets aren't my favourite computational model so maybe it was just my lack of experience with them, but adding a new recipe was like pulling teeth; lots of tedious copying, pasting and repetition of formulae. It just seemed wrong, especially as the underlying computations were so straightforward (ish). There had to be a better way.
 
- The key insight is that a bakery formula is so cliched that it can be represented as data. Here's the formula for seedy malt loaves:
+The key insight is that a bakery formula is so cliched that it can be represented as data. Here's the formula for seedy malt loaves:
 
- | recipe           | ingredient       | quantity |
- |------------------+------------------+----------|
- | Small Seedy Malt | Seedy malt dough | .61 kg   |
- | Large Seedy Malt | Seedy malt dough | .92 kg   |
+| recipe           | ingredient       | quantity |
+|------------------+------------------+----------|
+| Small Seedy Malt | Seedy malt dough | .61 kg   |
+| Large Seedy Malt | Seedy malt dough | .92 kg   |
 
 Of course, that's not the full set of formulae, because it doesn't tell you how to make 'Seedy malt dough', but that's just another formula, which consists of flour, water, starter, salt and a multiseed 'soaker', where the starter and the soaker are the results of other formulae, which are (finally) made from basic ingredients{{%marginnote%}}With a certain amount of handwaving to deal with the fact that a starter is strictly made with flour, water and starter.{{%/marginnote%}}. I did consider reaching for the object oriented hammer at this point, but thought that I might be able to do everything I needed without leaving SQL. It was relatively straightforward to move the shape of the calculations in the Bread Matters spreadsheet into my database schema, the only real sticking point being the recursive nature of the formulae, but it turns out that recursive queries are a thing in modern SQL, albeit a little tricky to get absolutely right{{% marginnote %}}A few bakes went a little weird before I finally got things sorted.{{% /marginnote %}} first time.
 
- If you're curious{{% marginnote %}} And several of you seem to be, so I wrote [[/2019/03/04/recursive-sql-recipes/][another post]] with a bit more detail and some sample code.{{% /marginnote %}} about the details of the schema, you can find it in my [[https://github.com/pdcawley/bakehouse][github repo]] for the bakery.
+If you're curious{{% marginnote %}} And several of you seem to be, so I wrote [[file:/2019/03/04/recursive-sql-recipes/][another post]] with a bit more detail and some sample code.{{% /marginnote %}} about the details of the schema, you can find it in my [[https://github.com/pdcawley/bakehouse][github repo]] for the bakery.
 
- So now, a few days before a bake, I'd setup my ~production_order~ table with the orders for the bake, and run a query on the ~production_list~ view to find out what I needed to mix when. And all was great. Well, sort of. I had to add a bit extra onto the quantities in the initial starter mix to allow for the bits that get stuck to the bowl and lost to the final dough, and it was all very well until I wanted to bake two days in a row (a bake is a two day process from mixing the starters on a Wednesday evening, through mixing, fermenting and shaping on Thursday to baking the resulting loaves at four on Friday morning). But, vitally, it was much, much easier to add and adjust formulae, and the limitations were no worse than the limitations of the spreadsheet. All was well.
+So now, a few days before a bake, I'd setup my ~production_order~ table with the orders for the bake, and run a query on the ~production_list~ view to find out what I needed to mix when. And all was great. Well, sort of. I had to add a bit extra onto the quantities in the initial starter mix to allow for the bits that get stuck to the bowl and lost to the final dough, and it was all very well until I wanted to bake two days in a row (a bake is a two day process from mixing the starters on a Wednesday evening, through mixing, fermenting and shaping on Thursday to baking the resulting loaves at four on Friday morning). But, vitally, it was much, much easier to add and adjust formulae, and the limitations were no worse than the limitations of the spreadsheet. All was well.
 
- It's the nature of business that you need to keep records. How much got baked? How much sold? Did we clean the floor? Were there any accidents? What sort? How do we prevent them next time? The list is endless. It all needs to be recorded, for both legal and pragmatic reasons. So I started a day book. This is just an .org file{{% marginnote %}} Org-mode is an amazing emacs package that's a sort of outliner/task manager/publishing tool/spreadsheet/diary/literate programming environment. It's bewilderingly capable, and is probably the primary driver of the emacs renaissance as people are coming to the editor for org-mode, and porting the rest of their environment - hence the rise of ~evil-mode~, the emacs vim emulation layer.{{% /marginnote %}}. Every day I come into the bakery, I run ~org-capture~ and I get a template for the day's entry in the daybook, which I fill in as the day goes on.
+It's the nature of business that you need to keep records. How much got baked? How much sold? Did we clean the floor? Were there any accidents? What sort? How do we prevent them next time? The list is endless. It all needs to be recorded, for both legal and pragmatic reasons. So I started a day book. This is just an .org file{{% marginnote %}} Org-mode is an amazing emacs package that's a sort of outliner/task manager/publishing tool/spreadsheet/diary/literate programming environment. It's bewilderingly capable, and is probably the primary driver of the emacs renaissance as people are coming to the editor for org-mode, and porting the rest of their environment - hence the rise of ~evil-mode~, the emacs vim emulation layer.{{% /marginnote %}}. Every day I come into the bakery, I run ~org-capture~ and I get a template for the day's entry in the daybook, which I fill in as the day goes on.
 
- One of the features of org-mode is ~org-babel~, a literate programming environment, which lets me write something like:
+One of the features of org-mode is ~org-babel~, a literate programming environment, which lets me write something like:
 
- #+begin_src org
+#+begin_src org
 ,#+begin_src sql
 SELECT ingredient, quantity
   FROM bakehouse.production_list
  WHERE work_date = 'today';
 ,#+end_src
- #+end_src
+#+end_src
 
- and then, with the cursor somewhere in the code block, hit ~C-c C-c~ whereupon Emacs will run that SQL against the bakery database and populate a table like:
+and then, with the cursor somewhere in the code block, hit ~C-c C-c~ whereupon Emacs will run that SQL against the bakery database and populate a table like:
 
- | ingredient  | quantity |
- |-------------+----------|
- | Old starter |      1.3 |
- | Water       |     2.08 |
- | White flour |      2.6 |
- | ...         | ...      |
+| ingredient  | quantity |
+|-------------+----------|
+| Old starter |      1.3 |
+| Water       |     2.08 |
+| White flour |      2.6 |
+| ...         |      ... |
 
- If that were all org-mode did to assist, it'd be awesome enough, but the queries I make are a little more complex than that, the current version of the database understands about dates and can cope with overlapping bakes, but all that makes the queries a little more complex. Org-mode helps with that too, because I can file away snippets of code in a 'library of babel' and just reference them from the daybook. And I can set arbitrary variables at any point in the hierarchy of the document.
+If that were all org-mode did to assist, it'd be awesome enough, but the queries I make are a little more complex than that, the current version of the database understands about dates and can cope with overlapping bakes, but all that makes the queries a little more complex. Org-mode helps with that too, because I can file away snippets of code in a 'library of babel' and just reference them from the daybook. And I can set arbitrary variables at any point in the hierarchy of the document.
 
- So I have a bit of code in my emacs config that tweaks the day's entry in a daybook like so:
+So I have a bit of code in my emacs config that tweaks the day's entry in a daybook like so:
 
- #+begin_src emacs-lisp
+#+begin_src emacs-lisp
   (defun pdc//in-bakery-daybook? ()
     "Are we in the bakery daybook?"
     (equal (buffer-name) "CAPTURE-loafery-daybook.org"))
@@ -271,36 +272,36 @@ SELECT ingredient, quantity
 
   (add-hook 'org-capture-before-finalize-hook
             #'pdc/org-capture-before-finalize-daybook-entry)
- #+end_src
+#+end_src
 
- It won't win any code beauty contests, but it does the job of setting a ~work_date~ variable for the day's entry and running any code in the subtree as part of the capture process. The capture template has lines like ~#+call:mixes()~, which call the stored code snippets, that reference the variable set in the current subtree and so make the query for the right day. This means that all I have to do to know what I should be doing when I get into the bakehouse is to run an org-capture and check the resulting entry in my daybook. Provided, that is, that I've added the appropriate rows to the database.
+It won't win any code beauty contests, but it does the job of setting a ~work_date~ variable for the day's entry and running any code in the subtree as part of the capture process. The capture template has lines like ~#+call:mixes()~, which call the stored code snippets, that reference the variable set in the current subtree and so make the query for the right day. This means that all I have to do to know what I should be doing when I get into the bakehouse is to run an org-capture and check the resulting entry in my daybook. Provided, that is, that I've added the appropriate rows to the database.
 
 *** Next steps
 
- The software isn't done, of course, no software ever is. But it's good enough that it's been managing my mixes without a hitch for the last few months, telling me what to pack for which customer and generally removing the need to work anything out with a pencil and paper. It's nowhere near as mature or capable of commercial production management software, but it fits me. I understand what it does and why, how it does it, the limitations it has and how to work around them. When it becomes annoying enough, I might sit down and work out how to fix it, but I'll do that when I'm in the right frame of mind. My current list of niggles looks something like this:
+The software isn't done, of course, no software ever is. But it's good enough that it's been managing my mixes without a hitch for the last few months, telling me what to pack for which customer and generally removing the need to work anything out with a pencil and paper. It's nowhere near as mature or capable of commercial production management software, but it fits me. I understand what it does and why, how it does it, the limitations it has and how to work around them. When it becomes annoying enough, I might sit down and work out how to fix it, but I'll do that when I'm in the right frame of mind. My current list of niggles looks something like this:
 
- - Accounting :: The database already knows how to do costings based on raw ingredient costs etc, but I should probably be able to use it to keep my books as well, using ~org-ledger~
- - Parametric recipes :: At a certain point, it becomes easier to mix a 'stiff starter' in my mixer than it is to just mix the usual wet starter by hand. This breakpoint comes at around 3kg of flour. Right now, I manage this by looking at the mixes for my starters and, if it looks like a lot, changing the order to use 2-stage versions of the formulae and running the query again. I think it should be possible to automate this through a more sophisticated query, but I need to work that out.
- - Better scheduling :: things get weird if a batch of dough would be more than I can mix in a single go. Right now there are other physical limitations that mean that I simply can't make that much bread anyway, but once I get a few more bannetons and racks, this will become a much more pressing issue.
- - Order management :: Right now, I manage orders through Postico talking to the database, which is okay, but a little frustrating in places. An autocompleting environment for orders within emacs would be a much neater way to manage things.
+- Accounting :: The database already knows how to do costings based on raw ingredient costs etc, but I should probably be able to use it to keep my books as well, using ~org-ledger~
+- Parametric recipes :: At a certain point, it becomes easier to mix a 'stiff starter' in my mixer than it is to just mix the usual wet starter by hand. This breakpoint comes at around 3kg of flour. Right now, I manage this by looking at the mixes for my starters and, if it looks like a lot, changing the order to use 2-stage versions of the formulae and running the query again. I think it should be possible to automate this through a more sophisticated query, but I need to work that out.
+- Better scheduling :: things get weird if a batch of dough would be more than I can mix in a single go. Right now there are other physical limitations that mean that I simply can't make that much bread anyway, but once I get a few more bannetons and racks, this will become a much more pressing issue.
+- Order management :: Right now, I manage orders through Postico talking to the database, which is okay, but a little frustrating in places. An autocompleting environment for orders within emacs would be a much neater way to manage things.
 
 *** Putting the personal in personal computing
- Computers are amazing. They are versatile tools even if you don't know how to program them, because there's almost always an app for what you want, or something close enough that you cant work around its infelicities. It's quite remarkable the things that folks can do with their kit with no programming skill at all.
+Computers are amazing. They are versatile tools even if you don't know how to program them, because there's almost always an app for what you want, or something close enough that you cant work around its infelicities. It's quite remarkable the things that folks can do with their kit with no programming skill at all.
 
- But... learn to program, and a whole other vista of possibility opens up to you. With good programmable tooling you're only really limited by your skill and understanding. Instead of accommodating yourself to your software, you can accommodate your software to you, and make the right functionality trade-offs for you. There's a brilliant commercial piece of music looping sofware I use that could be massively more brilliant if there were a way of picking up the tempo automatically from the first recorded loop - it would free me from having to sing to a click and generally make the whole process easier. The developers have other (understandable) priorities, like porting the app to windows. And they're not wrong to do so. There were folk clamoring for a windows version, and if a developer isn't making money from a commercial application, then development will stop. I'm definitely not complaining, the feature is not so dramatically necessary that I'm prepared to spend the time learning how to do real time music programming in order to implement it, but if I want software to dance to /my/ tune then doing it myself is the only way.
+But... learn to program, and a whole other vista of possibility opens up to you. With good programmable tooling you're only really limited by your skill and understanding. Instead of accommodating yourself to your software, you can accommodate your software to you, and make the right functionality trade-offs for you. There's a brilliant commercial piece of music looping sofware I use that could be massively more brilliant if there were a way of picking up the tempo automatically from the first recorded loop - it would free me from having to sing to a click and generally make the whole process easier. The developers have other (understandable) priorities, like porting the app to windows. And they're not wrong to do so. There were folk clamoring for a windows version, and if a developer isn't making money from a commercial application, then development will stop. I'm definitely not complaining, the feature is not so dramatically necessary that I'm prepared to spend the time learning how to do real time music programming in order to implement it, but if I want software to dance to /my/ tune then doing it myself is the only way.
 
- So... choose tools that let you program them. I choose emacs and PostgreSQL, you might choose vim and SQLite or Atom and a NoSQL database, or you might just live in your Smalltalk image. Once you start to see your computing environment as truly soft and malleable, you can do amazing things, assisted by a computer that is truly /yours/.
+So... choose tools that let you program them. I choose emacs and PostgreSQL, you might choose vim and SQLite or Atom and a NoSQL database, or you might just live in your Smalltalk image. Once you start to see your computing environment as truly soft and malleable, you can do amazing things, assisted by a computer that is truly /yours/.
 
 
 ** DONE "A recipe is just a directed acyclic graph…"
-   :PROPERTIES:
-   :export_hugo_slug: recursive-sql-recipes
-   :export_file_name: recursive-sql-recipes
-   :export_date: 2019-03-04
-   :export_hugo_custom_front_matter: :series "Bakehouse diary" :math true
-   :END:
+:PROPERTIES:
+:export_hugo_slug: recursive-sql-recipes
+:export_file_name: recursive-sql-recipes
+:export_date: 2019-03-04
+:export_hugo_custom_front_matter: :series "Bakehouse diary" :math true
+:END:
 
-In [[/2019/02/25/baking-with-emacs][the last post]] I handwaved the way I represented bakery formulae in the bakery database, so here's a little more detail. It helps to think of a bakery formula as a node on a directed acyclic{{% marginnote %}}If you ignore the fact that a starter is made of flour, water and starter. Which, of course, we're going to.{{% /marginnote %}} graph with weighted edges, where the weights are literally weights. Here's the graph a for a  couple of products
+In [[file:/2019/02/25/baking-with-emacs][the last post]] I handwaved the way I represented bakery formulae in the bakery database, so here's a little more detail. It helps to think of a bakery formula as a node on a directed acyclic{{% marginnote %}}If you ignore the fact that a starter is made of flour, water and starter. Which, of course, we're going to.{{% /marginnote %}} graph with weighted edges, where the weights are literally weights. Here's the graph a for a  couple of products
 
 # #+begin_src dot :file formulae.svg :exports none :results file :cmdline -Tsvg
 # digraph G {
@@ -332,7 +333,7 @@ In [[/2019/02/25/baking-with-emacs][the last post]] I handwaved the way I repres
 # }
 # #+end_src
 
-#+RESULTS:
+#+results:
 #+begin_RESULTS
 [[file:formulae.svg]]
 #+end_RESULTS
@@ -356,7 +357,7 @@ select name, ingredient, format('%s kg', ROUND(amount, 2)) from f order by name;
 #+end_src
 #+end_comment
 
-#+RESULTS:
+#+results:
 | name             | ingredient                    | format  |
 |------------------+-------------------------------+---------|
 | Small Seedy Malt | Seedy Malt Dough              | 0.63 kg |
@@ -417,7 +418,7 @@ SELECT product formula, ingredient, ROUND(sum(quantity),2) quantity from job gro
 
 Which gives the following result:
 
-#+RESULTS:
+#+results:
 | formula          | ingredient          | quantity |
 |------------------+---------------------+----------|
 | Basic White Sour | Sea salt            |     0.09 |
@@ -491,7 +492,7 @@ SELECT product formula, ingredient, round(sum(quantity),2) weight from job group
 
 This query gives us:
 
-#+RESULTS:
+#+results:
 | formula          | ingredient          | weight |
 |------------------+---------------------+--------|
 | Basic White Sour | Sea salt            |   0.05 |
@@ -528,13 +529,13 @@ Which shows that we're considering two lots of Basic White Sour with exactly the
 
 *** What's still missing
 
-    As a baker, I know  if I've got an order for bread on Friday, then I need to mix the starters on Wednesday night, then spend Tuesday mixing, fermenting and shaping the loaves, which will spend the night in the retarder ready to be baked at 4 on Friday morning. But the schema I've outlined here doesn't. In my full bakehouse schema, I have a few extra tables which hold timing data and such. In particular, I have a ~product~ table, which knows about everything I sell. This table knows holds info about how many I can make per hour of work and the bake time and temperature. Then there's a ~recipe~ table which holds information about how long a formula needs to rest{{% marginnote %}}This could be the bulk fermentation time if it's a formula for a dough or a starter, a proof time if it's a loaf, or a soaking time for a soaker (a soaker is usually a mixture of seeds or fruit and a liquid, usually water, but occasionally fruit juice or booze depending on the final product){{% /marginnote %}}. The real queries take this into account to allow us to work back from the ~due_date~ of a real order to the day we need to do the work. If you want to dig into how I handle dates  you can check out the repository at [[https://github.com/pdcawley/bakehouse/]].
+As a baker, I know  if I've got an order for bread on Friday, then I need to mix the starters on Wednesday night, then spend Tuesday mixing, fermenting and shaping the loaves, which will spend the night in the retarder ready to be baked at 4 on Friday morning. But the schema I've outlined here doesn't. In my full bakehouse schema, I have a few extra tables which hold timing data and such. In particular, I have a ~product~ table, which knows about everything I sell. This table knows holds info about how many I can make per hour of work and the bake time and temperature. Then there's a ~recipe~ table which holds information about how long a formula needs to rest{{% marginnote %}}This could be the bulk fermentation time if it's a formula for a dough or a starter, a proof time if it's a loaf, or a soaking time for a soaker (a soaker is usually a mixture of seeds or fruit and a liquid, usually water, but occasionally fruit juice or booze depending on the final product){{% /marginnote %}}. The real queries take this into account to allow us to work back from the ~due_date~ of a real order to the day we need to do the work. If you want to dig into how I handle dates  you can check out the repository at [[https://github.com/pdcawley/bakehouse/]].
 
 ** The perils of writing stuff up
 
-   Never write your work up for your blog. Especially if you're mostly happy with it. As I was writing this, I realised there's an annoying bit of code duplication that I think I can eliminate. In the current code, I repeat what's essentially the same query structure in a couple of different views, but the formula graph is essentially static unless I add or adjust a recipe. Now I'm wondering if I could make a materialised view that has enough information to shortcut the calculations for both making the production list (what needs to be mixed, when) and for working out my costings (to put a price on a loaf, you need to know how much the raw ingredients cost, and that involves walking the tree again. Maybe a table like:
+Never write your work up for your blog. Especially if you're mostly happy with it. As I was writing this, I realised there's an annoying bit of code duplication that I think I can eliminate. In the current code, I repeat what's essentially the same query structure in a couple of different views, but the formula graph is essentially static unless I add or adjust a recipe. Now I'm wondering if I could make a materialised view that has enough information to shortcut the calculations for both making the production list (what needs to be mixed, when) and for working out my costings (to put a price on a loaf, you need to know how much the raw ingredients cost, and that involves walking the tree again. Maybe a table like:
 
- | product          | sub_formula      | ingredient  | factor | lead_time |
+| product          | sub_formula      | ingredient  | factor | lead_time |
 |------------------+------------------+-------------+--------+-----------|
 | Large White Wild | Basic White Sour | White Flour |  0.403 | 1 day     |
 | Large White Wild | Basic White Sour | Salt        |  0.012 | 1 day     |
@@ -566,132 +567,225 @@ We can use the same table to calculate the raw material costs for a given recipe
 I think, however, I'm going to leave it alone until I have to write another recursive view that walks the same graph, at which point I'll bite the bullet and do the pre-calculated version.
 
 
-* DONE Asshole Free Devil's Advocacy :philosophy:blether:
-  :properties:
-  :export_file_name: devils-advocacy-without-asshattery
-  :export_hugo_slug: devils-advocacy-without-tears
-  :export_date: 2018-10-25
-  :end:
+* DONE Asshole Free Devil's Advocacy                     :philosophy:blether:
+:PROPERTIES:
+:export_file_name: devils-advocacy-without-asshattery
+:export_hugo_slug: devils-advocacy-without-tears
+:export_date: 2018-10-25
+:END:
 
 
-  So, you want to play Devil's Advocate, but you're afraid you might come across as a bit (or a lot) of an asshole? Here's some suggestions for how to avoid that.
+So, you want to play Devil's Advocate, but you're afraid you might come across as a bit (or a lot) of an asshole? Here's some suggestions for how to avoid that.
 
 #+hugo: more
 
 ** Maybe don't?
 
-   Seriously, why does the Devil need an advocate? If you want to play DA because you think the position you want to argue has some merit, then argue the position honestly and own it. If it doesn't survive the discussion (or is shouted down), then "Ah right, I hadn't thought of that, you're right" or words to that effect and file that position in your memory as a bad one (along with the skeleton of /why/ it's bad). Nothing wrong with holding strong opinions, the thing that's bad is holding onto them if they're shown to be bad. If the group you're talking with just shouts you down and doesn't convince you that your position is a bad one, maybe find a different group? Or agree with them to steer clear of that topic.
+Seriously, why does the Devil need an advocate? If you want to play DA because you think the position you want to argue has some merit, then argue the position honestly and own it. If it doesn't survive the discussion (or is shouted down), then "Ah right, I hadn't thought of that, you're right" or words to that effect and file that position in your memory as a bad one (along with the skeleton of /why/ it's bad). Nothing wrong with holding strong opinions, the thing that's bad is holding onto them if they're shown to be bad. If the group you're talking with just shouts you down and doesn't convince you that your position is a bad one, maybe find a different group? Or agree with them to steer clear of that topic.
 
-   What's really intellectually dishonest is to say "I was only playing Devil's Advocate!" after an idea has been shot down. I'm sure your intentions are entirely honorable, but what if they weren't? Say you genuinely held that the best thing to do with the children of the poor was to turn them into cheap and delicious meals for the richest in society. Say you advanced this position to your friends and were utterly appalled by the idea. Then maybe you'd try to distance yourself from it by saying "Whoah! Guys{{% marginnote %}}​ I know. But the kind of people who make this move in an argument are usually the kind of people who'd address a mixed group of folk as "guys".{{% /marginnote %}}! I was only playing Devil's Advocate!"
+What's really intellectually dishonest is to say "I was only playing Devil's Advocate!" after an idea has been shot down. I'm sure your intentions are entirely honorable, but what if they weren't? Say you genuinely held that the best thing to do with the children of the poor was to turn them into cheap and delicious meals for the richest in society. Say you advanced this position to your friends and were utterly appalled by the idea. Then maybe you'd try to distance yourself from it by saying "Whoah! Guys{{% marginnote %}}​ I know. But the kind of people who make this move in an argument are usually the kind of people who'd address a mixed group of folk as "guys".{{% /marginnote %}}! I was only playing Devil's Advocate!"
 
-   When I hear someone playing that card, how am I supposed to distinguish between the well-meaning "There is this argument I've come across that I'm not sure I agree with, but it maybe has some merit and I don't know how I'd argue convincingly against it" types and the assholes who were flying a kite? Maybe the non-assholes will have friends who'll tell me that "They might seem like a bit of an arse, but they're not really." I've been that guy, and I don't want to be him again. Why is it okay for me to load the work of explaining that I'm not dickhead onto my friends rather than just not acting like a dickhead in the first place? Eventually, friends get tired. Eventually they'll shift to "Yeah, I know he seems like an ass, and he kind of is, but..." and then one day, they won't be your friends any more.
+When I hear someone playing that card, how am I supposed to distinguish between the well-meaning "There is this argument I've come across that I'm not sure I agree with, but it maybe has some merit and I don't know how I'd argue convincingly against it" types and the assholes who were flying a kite? Maybe the non-assholes will have friends who'll tell me that "They might seem like a bit of an arse, but they're not really." I've been that guy, and I don't want to be him again. Why is it okay for me to load the work of explaining that I'm not dickhead onto my friends rather than just not acting like a dickhead in the first place? Eventually, friends get tired. Eventually they'll shift to "Yeah, I know he seems like an ass, and he kind of is, but..." and then one day, they won't be your friends any more.
 
-   {{% newthought %}}Before you introduce the idea{{% /newthought %}} you want to play Devil's Advocate for, say something like "D'you mind if I play Devil's Advocate for a moment?" And when the group tells you "Yes, we do mind. Why help the devil?" listen to them. If it's genuinely that you've heard some argument that on the face of it seems repugnant, but you can't find a hole in it, then say as much: "What's wrong with this idea? Clearly feeding poor babies to the 1% is utterly repellant, but I can't find an effective counterargument."
+{{% newthought %}}Before you introduce the idea{{% /newthought %}} you want to play Devil's Advocate for, say something like "D'you mind if I play Devil's Advocate for a moment?" And when the group tells you "Yes, we do mind. Why help the devil?" listen to them. If it's genuinely that you've heard some argument that on the face of it seems repugnant, but you can't find a hole in it, then say as much: "What's wrong with this idea? Clearly feeding poor babies to the 1% is utterly repellant, but I can't find an effective counterargument."
 
-   Don't keep doing it, mind, or you'll start looking like the kite flying asshole again.
+Don't keep doing it, mind, or you'll start looking like the kite flying asshole again.
 
 * Book Reports                                            :@book-report:
-  :PROPERTIES:
-  :export_hugo_custom_front_matter: :series "Book Reports"
-  :END:
+:PROPERTIES:
+:export_hugo_custom_front_matter: :series "Book Reports"
+:END:
 
 ** DONE A Wizard of Earthsea
-   :PROPERTIES:
-   :EXPORT_FILE_NAME: a-wizard-of-earthsea
-   :export_hugo_slug: a-wizard-of-earthsea
-   :export_date: 2019-05-30
-   :END:
-   This was the first.
+:PROPERTIES:
+:EXPORT_FILE_NAME: a-wizard-of-earthsea
+:export_hugo_slug: a-wizard-of-earthsea
+:export_date: 2019-05-30
+:END:
+This was the first.
 
-   Before I read Tolkien at the suggestion of the wonderful Miss Reese, my teacher for my last year of primary school; before I pulled Diana Wynne Jones, Alan Garner, Susan Cooper and others from the shelves of Bawtry's small, but enchanting branch library; before Anne McCaffrey's DragonSong found me in my school library and set a fire in my imagination. Before all that, I read /A Wizard of Earthsea/ and it stuck with me.
+Before I read Tolkien at the suggestion of the wonderful Miss Reese, my teacher for my last year of primary school; before I pulled Diana Wynne Jones, Alan Garner, Susan Cooper and others from the shelves of Bawtry's small, but enchanting branch library; before Anne McCaffrey's DragonSong found me in my school library and set a fire in my imagination. Before all that, I read /A Wizard of Earthsea/ and it stuck with me.
 
-   #+hugo: more
+#+hugo: more
 
-   I remember one Saturday with 50p in my pocket from singing for a couple of weddings at St George's church in Doncaster (25p for each wedding, paid cash in hand on the day. It always felt like a bonus after singing Bach's /Jesu Joy of Man's Desiring/ in the side chapel as the register was signed in the vestry and Magnus Black, the choir and organmaster, brought that beautiful tune dancing with such delicacy from in instrument that would shake the walls later as the happy couple left the church to Vidor's toccata and fugue{{% marginnote %}}That was if we were lucky. It was usually Mendelssohn – not bad, Magnus was far too good an organist for it to sound dull, but not a patch on Vidor.{{% /marginnote %}}). I was never one for saving, I'm still not, so I was straight round to Donny's nearest thing to a bookshop, the WH Smith in the Arndale in search of something to read. A voracious reader, I'd gone through all the /Swallows and Amazons/ and /Narnia/ books and I needed more. The cover of the second Puffin edition, with its white youths and bizzare half man half hawk fascinated me, so I handed over my 50p{{% marginnote %}}The bibliography I found tells me that it probably cost 35p, so I no doubt bought a load of sweets as well – books and sugar have always been my vices.{{% /marginnote %}} and headed home with my prize.
+I remember one Saturday with 50p in my pocket from singing for a couple of weddings at St George's church in Doncaster (25p for each wedding, paid cash in hand on the day. It always felt like a bonus after singing Bach's /Jesu Joy of Man's Desiring/ in the side chapel as the register was signed in the vestry and Magnus Black, the choir and organmaster, brought that beautiful tune dancing with such delicacy from in instrument that would shake the walls later as the happy couple left the church to Vidor's toccata and fugue{{% marginnote %}}That was if we were lucky. It was usually Mendelssohn – not bad, Magnus was far too good an organist for it to sound dull, but not a patch on Vidor.{{% /marginnote %}}). I was never one for saving, I'm still not, so I was straight round to Donny's nearest thing to a bookshop, the WH Smith in the Arndale in search of something to read. A voracious reader, I'd gone through all the /Swallows and Amazons/ and /Narnia/ books and I needed more. The cover of the second Puffin edition, with its white youths and bizzare half man half hawk fascinated me, so I handed over my 50p{{% marginnote %}}The bibliography I found tells me that it probably cost 35p, so I no doubt bought a load of sweets as well – books and sugar have always been my vices.{{% /marginnote %}} and headed home with my prize.
 
-   I read /A Wizard of Earthsea/ once or twice and loved it, but I've not reread it since. As a kid, I borrowed rest of the then trilogy from the library and found them rather hard going at  (my memory says that I found /The Tombs of Atuan/ a real slog. I got through it, but it took a couple of goes and at least one renewal to get to the end). A few weeks ago though, I went to the [[https://www.soundpost.org.uk/][Sound Post]] 'Modern Fairies' singing weekend and fell into conversation with [[https://terriwindling.com][Terri Windling]] about the books that had shaped me and I told her about my experience with the Earthsea trilogy and I thought maybe I'd been a little too young for them (I think I was eight or nine when I read AWoE, and maybe twelve when I read /The Tombs of Atuan/ and /The Furthest Shore/). I hadn't revisted them since. Terri made me promise to reread them and to let her know what I thought. So that's what I'm doing. Terri, this book report's for you. I owe you a few more and I promise I'll get to them.
+I read /A Wizard of Earthsea/ once or twice and loved it, but I've not reread it since. As a kid, I borrowed rest of the then trilogy from the library and found them rather hard going at  (my memory says that I found /The Tombs of Atuan/ a real slog. I got through it, but it took a couple of goes and at least one renewal to get to the end). A few weeks ago though, I went to the [[https://www.soundpost.org.uk/][Sound Post]] 'Modern Fairies' singing weekend and fell into conversation with [[https://terriwindling.com][Terri Windling]] about the books that had shaped me and I told her about my experience with the Earthsea trilogy and I thought maybe I'd been a little too young for them (I think I was eight or nine when I read AWoE, and maybe twelve when I read /The Tombs of Atuan/ and /The Furthest Shore/). I hadn't revisted them since. Terri made me promise to reread them and to let her know what I thought. So that's what I'm doing. Terri, this book report's for you. I owe you a few more and I promise I'll get to them.
 
-   By the way, if you've never read /A Wizard of Earthsea,/ there will be spoilers in this article. Read the book before continuing. It shouldn't take you long, and it's well worth the time.
+By the way, if you've never read /A Wizard of Earthsea,/ there will be spoilers in this article. Read the book before continuing. It shouldn't take you long, and it's well worth the time.
 
-    It's not so much what happens in this story as the way it's told that left its impression on me. Earthsea is made of words – all stories are, of course – sung into being by Segoy. Words are power. A wizard spends a large part of his{{% marginnote %}}The wizards are all men. There are female witches in the story, but at this stage of the tale they're definitely underpowered and untrustworthy compared to the men. Le Guin fixes this later.{{% /marginnote %}} education learning the "the Deeds of heroes and the Lays of wisdom" and year under the Master Namer just learning the true names of things in the Old Speech: the language of dragons; the language in which the world was made. In the period when the book is set, there is written language, but I get the feeling that it's very much the preserve of the wise. Songs, orally transmitted, are how the people of the archipelago hold their history and Le Guin's language reflects that. Every sentence seems to have been shaped to be spoken, and beautifully so. I kept stopping and reading passages out because the words were just so... right.
+It's not so much what happens in this story as the way it's told that left its impression on me. Earthsea is made of words – all stories are, of course – sung into being by Segoy. Words are power. A wizard spends a large part of his{{% marginnote %}}The wizards are all men. There are female witches in the story, but at this stage of the tale they're definitely underpowered and untrustworthy compared to the men. Le Guin fixes this later.{{% /marginnote %}} education learning the "the Deeds of heroes and the Lays of wisdom" and year under the Master Namer just learning the true names of things in the Old Speech: the language of dragons; the language in which the world was made. In the period when the book is set, there is written language, but I get the feeling that it's very much the preserve of the wise. Songs, orally transmitted, are how the people of the archipelago hold their history and Le Guin's language reflects that. Every sentence seems to have been shaped to be spoken, and beautifully so. I kept stopping and reading passages out because the words were just so... right.
 
-    I sometimes wonder who the tale's narrator is telling the story to. It's a question that can break a lot of first person SF and exposes lazy storytelling. If a book that's supposedly the product of a completely different culture or time feels like it's written for an early 21st century reader, it breaks the book for me.{{% marginnote %}}Sometimes I don't care though. God alone knows why Bertie Wooster is telling the Jeeves stories, or who he's telling them too – I'm just very glad he's chosen to tell them at all.{{% /marginnote %}} The language and idiom of /A Wizard of Earthsea/ seem entirely right and consistent. We learn so much about the world as Ged's story is told from things mentioned in passing. We know that this happened a long time ago and it's assumed we already know about /The Deed of Ged/, /The Creation of Ea/ and all the other songs, deeds and festivals that are referred to in passing through the book. At the end we are told that no songs have survived that tell how Ged came to terms with his shadow – the entire book is a footnote in a much larger story that's just out of reach. I'm reminded of the fact that we only have the Norse myths we know because an ancient Icelander worried that readers wouldn't recognize the allusions in the sagas and eddas, so they wrote down the bones of the older stories to help future readers understand. If Le Guin had left Earthsea at this point, all we would know of Earthsea would be the glimpses of it in this story. And what glimpses they are.
+I sometimes wonder who the tale's narrator is telling the story to. It's a question that can break a lot of first person SF and exposes lazy storytelling. If a book that's supposedly the product of a completely different culture or time feels like it's written for an early 21st century reader, it breaks the book for me.{{% marginnote %}}Sometimes I don't care though. God alone knows why Bertie Wooster is telling the Jeeves stories, or who he's telling them too – I'm just very glad he's chosen to tell them at all.{{% /marginnote %}} The language and idiom of /A Wizard of Earthsea/ seem entirely right and consistent. We learn so much about the world as Ged's story is told from things mentioned in passing. We know that this happened a long time ago and it's assumed we already know about /The Deed of Ged/, /The Creation of Ea/ and all the other songs, deeds and festivals that are referred to in passing through the book. At the end we are told that no songs have survived that tell how Ged came to terms with his shadow – the entire book is a footnote in a much larger story that's just out of reach. I'm reminded of the fact that we only have the Norse myths we know because an ancient Icelander worried that readers wouldn't recognize the allusions in the sagas and eddas, so they wrote down the bones of the older stories to help future readers understand. If Le Guin had left Earthsea at this point, all we would know of Earthsea would be the glimpses of it in this story. And what glimpses they are.
 
-    You can find echoes /A Wizard of Earthsea/ in so much subsequent fantasy literature. The possibility of a wizard being trapped in another, for instance. Pratchett plays with and develops this in the /Witches/ sequence of Discworld books, for instance. I loved this sentence though: "And no one knows how many of the dolphins that leap in the waters of the Inmost Sea were men once, wise men, who forgot their wisdom and their name in the joy of the restless sea." If I had the power to become a dolphin I wouldn't be keen to return to the body of a fat 51 year old with diabetes and a bunch of aches and pains that I try not to think about. You can keep your wisdom sometimes.
+You can find echoes /A Wizard of Earthsea/ in so much subsequent fantasy literature. The possibility of a wizard being trapped in another, for instance. Pratchett plays with and develops this in the /Witches/ sequence of Discworld books, for instance. I loved this sentence though: "And no one knows how many of the dolphins that leap in the waters of the Inmost Sea were men once, wise men, who forgot their wisdom and their name in the joy of the restless sea." If I had the power to become a dolphin I wouldn't be keen to return to the body of a fat 51 year old with diabetes and a bunch of aches and pains that I try not to think about. You can keep your wisdom sometimes.
 
-    As a kid, I didn't really understand what was going on with Ged and his Shadow. It was easy to see myself in the ever noticed that he didn't have the same colour skin as me). I loved learning and especially /knowing/. It wasn't hard to take my undoubtedly superior intelligence{{% marginnote %}}Yeah. I know. I must have been insufferable as a kid (and an adult, if I'm honest). First to stick their hand up in every class. Happy to "Well, actually..." at every opportunity.{{% /marginnote %}} as analogous to a wizard's power. Then, though, the shape of the story confused me, especially the ending. Ged and his friend sail off the page. The sea becomes land. Ged steps off the boat and confronts the Shadow, addressing it with his own name. And the shadow disappears/merges with Ged. And they all live on to do the Deeds which are sung of them. What? Nine year old me had no /idea/ what was going on there, but the imagery stuck.
+As a kid, I didn't really understand what was going on with Ged and his Shadow. It was easy to see myself in the ever noticed that he didn't have the same colour skin as me). I loved learning and especially /knowing/. It wasn't hard to take my undoubtedly superior intelligence{{% marginnote %}}Yeah. I know. I must have been insufferable as a kid (and an adult, if I'm honest). First to stick their hand up in every class. Happy to "Well, actually..." at every opportunity.{{% /marginnote %}} as analogous to a wizard's power. Then, though, the shape of the story confused me, especially the ending. Ged and his friend sail off the page. The sea becomes land. Ged steps off the boat and confronts the Shadow, addressing it with his own name. And the shadow disappears/merges with Ged. And they all live on to do the Deeds which are sung of them. What? Nine year old me had no /idea/ what was going on there, but the imagery stuck.
 
-    Now, of course, it all seems a clearer. Thesis. Antithesis. Synthesis. Ged does a terrible thing in his ignorance  and pride. In shame he runs from it, almost losing his humanity in the process. He is tempted by a dark power, but rejects it. A friend and teacher restores him to himself and tells him that running is the sure road to doom. He turns and chases his Shadow instead. Finally he comes to an acceptance that the Shadow is a part of himself and by giving it his name he reintegrates that part into himself and finally becomes a whole man. There you go – no need to read the book now.
+Now, of course, it all seems a clearer. Thesis. Antithesis. Synthesis. Ged does a terrible thing in his ignorance  and pride. In shame he runs from it, almost losing his humanity in the process. He is tempted by a dark power, but rejects it. A friend and teacher restores him to himself and tells him that running is the sure road to doom. He turns and chases his Shadow instead. Finally he comes to an acceptance that the Shadow is a part of himself and by giving it his name he reintegrates that part into himself and finally becomes a whole man. There you go – no need to read the book now.
 
-    Of course you need to read this book. It's language sings and the places and people it evokes are beautifully drawn. Rereading this after more than 30 years, so much was familiar. I would have said I'd forgotten almost all of it but the bare outline of the story and a few character names, but that stuff clearly went in deep and helped make me myself because as I read, the whole shape of the thing unfolded in my head. It was almost like recognising roads and pathways in a place you holidayed repeatedly as a kid, then didn't return for 20 years. Familiar and surprising at the same time. "Oh yeah, that's where Daniel used to live! And do you remember walking up there to buy ice creams at the village shop? Oh! I'd forgotten this view!"
+Of course you need to read this book. It's language sings and the places and people it evokes are beautifully drawn. Rereading this after more than 30 years, so much was familiar. I would have said I'd forgotten almost all of it but the bare outline of the story and a few character names, but that stuff clearly went in deep and helped make me myself because as I read, the whole shape of the thing unfolded in my head. It was almost like recognising roads and pathways in a place you holidayed repeatedly as a kid, then didn't return for 20 years. Familiar and surprising at the same time. "Oh yeah, that's where Daniel used to live! And do you remember walking up there to buy ice creams at the village shop? Oh! I'd forgotten this view!"
 
-    Right... onwards to /The Tombs of Atuan./
+Right... onwards to /The Tombs of Atuan./
 
 * DONE My Virtual Gig-Like Thing
-  :PROPERTIES:
-  :export_hugo_slug: virtual-gig-like-thing
-  :export_date: 2020-04-08T00:00:00
-  :EXPORT_FILE_NAME: virtual-gig-like-thing
-  :END:
+:PROPERTIES:
+:export_hugo_slug: virtual-gig-like-thing
+:export_date: 2020-04-08T00:00:00
+:EXPORT_FILE_NAME: virtual-gig-like-thing
+:END:
 
-  On Thursday the 9th of April at 7pm UK time, I'm streaming my first attempt
-  at a  full folk club style gig from my study to my
-  [[https://twitch.tv/telear][Twitch stream]] and I would  love for you to be there.
+On Thursday the 9th of April at 7pm UK time, I'm streaming my first attempt
+at a  full folk club style gig from my study to my
+[[https://twitch.tv/telear][Twitch stream]] and I would  love for you to be there.
 
 
 ** Schedule
 
-   It all kicks off at 7pm, UK time with a kind of Q&A session and
-   introduction to Twitch for newcomers. I'm particurly planning to help
-   other independent musicians reach their audience through the platform.{{% marginnote %}}Recent deals with [[https://soundcloud.com][SoundCloud]] have made it /much/ easier for experienced
-   performers to access the means to get paid on Twitch, and it seems to be
-   the most transparent platform for getting paid.{{% /marginnote %}}
+It all kicks off at 7pm, UK time with a kind of Q&A session and
+introduction to Twitch for newcomers. I'm particurly planning to help
+other independent musicians reach their audience through the platform.{{% marginnote %}}Recent deals with [[https://soundcloud.com][SoundCloud]] have made it /much/ easier for experienced
+performers to access the means to get paid on Twitch, and it seems to be
+the most transparent platform for getting paid.{{% /marginnote %}}
 
 
-   Then, I plan to follow the Royal Traditions/Singing Together format of two
-   forty minute sets of folk material with a 10 minute refreshment and raffle
-   break in the middle.
+Then, I plan to follow the Royal Traditions/Singing Together format of two
+forty minute sets of folk material with a 10 minute refreshment and raffle
+break in the middle.
 
-   After the folk club concert I'll be jumping onto [[https://twitch.tv/sings/download/][Twitch Sings]] to round out
-   the evening singing implausible songs with friends from that community and
-   any folky friends who've managed to get themselves up on Twitch by then. I'm
-   hoping it'll be a lot of fun.
+After the folk club concert I'll be jumping onto [[https://twitch.tv/sings/download/][Twitch Sings]] to round out
+the evening singing implausible songs with friends from that community and
+any folky friends who've managed to get themselves up on Twitch by then. I'm
+hoping it'll be a lot of fun.
 
 
 ** Ticket Prices
-   It's the internet! It won't cost you a penny to watch me perform. However,
-   right now, daft stuff like this is my only potential source of income, so
-   I would be deeply grateful if you could either [[https://ko-fi.com/pdcawley]["Buy me a coffee"]] via Ko-Fi
-   or [[https://twitch.tv/signup][sign up]] for a free Twitch account and subscribe to my channel.
+It's the internet! It won't cost you a penny to watch me perform. However,
+right now, daft stuff like this is my only potential source of income, so
+I would be deeply grateful if you could either [[https://ko-fi.com/pdcawley]["Buy me a coffee"]] via Ko-Fi
+or [[https://twitch.tv/signup][sign up]] for a free Twitch account and subscribe to my channel.
 
 *** Free money for your favourites!
-    If you are an Amazon Prime subscriber and you don't yet have a Twitch
-    Subscription, there's a wonderful thing you can do that means that Amazon
-    will give me (or any other streamer you enjoy) some money and it won't
-    cost you a penny. [[https://twitch.amazon.com/prime][Sign up]] for Twitch Prime, which is just like a regular
-    twitch account, but you can subscribe to one channel for free each month.
-    The streamer gets paid by Twitch as if you'd signed up for a regular
-    subscription, but you don't get charged a penny because you're already
-    paying Amazon for your Prime account. The only difference between a Prime
-    subscription and a regular one on Twitch is that you can't set up a Prime
-    sub to renew. If you would like to keep making regular payments to the
-    streamer of your choice, you need to remember to resubscribe every month.
+If you are an Amazon Prime subscriber and you don't yet have a Twitch
+Subscription, there's a wonderful thing you can do that means that Amazon
+will give me (or any other streamer you enjoy) some money and it won't
+cost you a penny. [[https://twitch.amazon.com/prime][Sign up]] for Twitch Prime, which is just like a regular
+twitch account, but you can subscribe to one channel for free each month.
+The streamer gets paid by Twitch as if you'd signed up for a regular
+subscription, but you don't get charged a penny because you're already
+paying Amazon for your Prime account. The only difference between a Prime
+subscription and a regular one on Twitch is that you can't set up a Prime
+sub to renew. If you would like to keep making regular payments to the
+streamer of your choice, you need to remember to resubscribe every month.
 
 *** One off tips
-    A Ko-Fi coffee comes in at £3, but if you want to tip me or any other
-    twitch performer with an arbitrary amount, then Twitch Bits are your
-    friend. You buy 'em from [[https://bits.twitch.tv/][Twitch]] and can then use them as a virtual
-    currency. For the performer, 100 bits is equivalent to $1, but they will
-    cost you more than that to buy, because Twitch are (understandably, it's
-    not a cheap platform to run!) going to have to take a cut somewhere. By
-    loading it on the cost of bits to the giver, they make things really
-    transparent. It's not like the weird alchemy where you pay a music
-    streaming site 69p for a track or whatever and, unbeknownst to you unless
-    you really dig into it, the artist sees maybe 6p of that.
+A Ko-Fi coffee comes in at £3, but if you want to tip me or any other
+twitch performer with an arbitrary amount, then Twitch Bits are your
+friend. You buy 'em from [[https://bits.twitch.tv/][Twitch]] and can then use them as a virtual
+currency. For the performer, 100 bits is equivalent to $1, but they will
+cost you more than that to buy, because Twitch are (understandably, it's
+not a cheap platform to run!) going to have to take a cut somewhere. By
+loading it on the cost of bits to the giver, they make things really
+transparent. It's not like the weird alchemy where you pay a music
+streaming site 69p for a track or whatever and, unbeknownst to you unless
+you really dig into it, the artist sees maybe 6p of that.
 
-    Other performers have other ways for you to support them, whether it be
-    public amazon wishlist, paypal tip jar, patreon page or some other service
-    I've not heard of yet. In some ways, it's never been easier for you to
-    support the work of artists you love.
+Other performers have other ways for you to support them, whether it be
+public amazon wishlist, paypal tip jar, patreon page or some other service
+I've not heard of yet. In some ways, it's never been easier for you to
+support the work of artists you love.
 
-* Footnotes
+* DRAFT Adding a generic oembed handler for Hugo                       :hugo:
+:PROPERTIES:
+:export_hugo_slug: oembed-for-hugo
+:export_file_name: oembed-for-hugo
+:END:
+If you're at all like me, you have content on a bunch of different sites (Instagram, Youtube, Flickr, Soundcloud, Bandcamp...) and, especially for multimedia content, it's great to be able to link to 'live' versions of that content. Of course, all those sites will let you 'share' content and usually have an 'embed' option that hands you a bunch of HTML that you can paste into your blog entry. But screw that! I'm a programmer for whom laziness is one of the cardinal virtues -- if it's at all possible, I prefer to let the computer do the work for me.{{< marginnote >}}If nothing else, once I've got the programming right, it's less likely to screw up than me{{< /marginnote >}}
+
+Hugo[fn:2] sort of supports this out of the box with its ~youtube~, ~instagram~, ~vimeo~ etc. built in shortcodes. The thing is, they're not lazy enough -- you have to dig into each URL to extract a content ID and pass that in to ~{{%/* youtube kb-Aq6S4QZQ */%}}~ or whatever. Which would be kind of fine, if you weren't used to the way sites like Facebook, Twitter, Tumblr and so on work. With those sites, you enter a URL and they disappear off behind the scenes and fill in a fancy preview of the page you linked to. Why can't Hugo do that?
+
+<!--more-->
+
+Well, it can. It just takes a little work.[fn:1] The ~question~ to ask is how do all those user friendly sites do there thing? Twitter and Facebook, being the walled garden behemoths that they are do it by dictating two different microformats{{% marginnote %}}
+Of bloody course!
+{{%/marginnote%}} that live in a page's ~HEAD~ section. The microformat approach has a good deal to be said for it: In theory, you can just make a ~HEAD~ request to the URL you're interested in, parse out the microformat of your choice and build your own media card. I've not worked out how to do this yet though. However, before Twitter and FB started throwing their weight around, there was an open standard that lots of sites support, it's /really/ easy to use. It's called [[https://oembed.com/][oembed]] and it's great. The idea is that it too is discoverable via a ~HEAD~ request to your media page. You look for something matching src_html{<link rel="alternate" type="application/json+oembed" href="..." ...>}, make a JSON request to the ~href~ url and paste in the contents of the ~html~ key in the object you get back. The catch, of course, is that you still end up having to parse the document's HEAD.
+
+The cool thing about ~oembed~, though, is that you /can/ discover its endpoints that way,{{<marginnote>}}Though, I'm seeing fewer and fewer oembed links cropping up in sites that I /know/ support the protocol{{</marginnote>}} but there's also a big list of known endpoints on the [[https://oembed.com/][Oembed homepage]], which is also available as a big old JSON object if you want to go the full programmatic route. There are JavaScript libraries available that will walk your webpage and the JSON object and replace all your links with chunks of embedded content, that that's what I used to use on this site. But... that's not how I currently roll at Just A Summary. There are currently no ~<script>~ tags to be found on here and I plan to keep it that way. So I wrote a Hugo shortcode. Here it is:
+
+#+name: Initial embed shortcode
+#+caption: Initial embed shortcode
+#+begin_src go-html-template
+{{ $url := (.Get 0) }}
+{{- range $.Site.Data.embed }}
+  {{- if le 1 ( findRE .pattern $url | len ) }}
+    {{- with (getJSON .endpoint "?" (querify "format" "json" "url" $url)) }}
+      {{ .html | safeHTML }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+#+end_src
+
+We use it like: ~{{</* embed "https://youtub.be/kb-Aq6S4QZQ" */>}}~, which displays like this:
+
+{{< embed "https://youtu.be/kb-Aq6S4QZQ" />}}
+
+{{% newthought %}}"But how does it work?"{{% /newthought %}} I hear you ask? It works in conjunction with some per-site data entries that I've added to the directory ~data/embed~ in this site's base directory. You might have guessed that the data entries are maps with two entries, a ~pattern~ and an ~endpoint~. If the URL argument matches the ~.pattern~, then we make a ~getJSON~ request to ~.endpoint~ with a sanitised version of the URL argument tacked on as our query string and inserting the JSON response's ~.html~ entry. {{< marginnote >}}It's rather tricky to implement oembed for on a strictly static site, but I love the simplicity of it. I have a few thoughts abotu that though. Watch this space.{{</marginnote>}}.
+
+I made the data files by taking the big JSON object from https://oembed.com/providers.json and massaging the supplied patterns into regular expressions. In theory, I could write a script to do the conversion for me, but I'm only really interested in four providers for this site, so I just did it by hand. So the entry for [[https://instagram.com/][Instagram]]:
+
+#+caption: The https://oembed.com/providers.json entry for Instagram
+#+begin_src json
+{
+    "provider_name": "Instagram",
+    "provider_url": "https:\/\/instagram.com",
+    "endpoints": [
+        {
+            "schemes": [
+                "http:\/\/instagram.com\/*\/p\/*,",
+                "http:\/\/www.instagram.com\/*\/p\/*,",
+                "https:\/\/instagram.com\/*\/p\/*,",
+                "https:\/\/www.instagram.com\/*\/p\/*,",
+                "http:\/\/instagram.com\/p\/*",
+                "http:\/\/instagr.am\/p\/*",
+                "http:\/\/www.instagram.com\/p\/*",
+                "http:\/\/www.instagr.am\/p\/*",
+                "https:\/\/instagram.com\/p\/*",
+                "https:\/\/instagr.am\/p\/*",
+                "https:\/\/www.instagram.com\/p\/*",
+                "https:\/\/www.instagr.am\/p\/*",
+                "http:\/\/instagram.com\/tv\/*",
+                "http:\/\/instagr.am\/tv\/*",
+                "http:\/\/www.instagram.com\/tv\/*",
+                "http:\/\/www.instagr.am\/tv\/*",
+                "https:\/\/instagram.com\/tv\/*",
+                "https:\/\/instagr.am\/tv\/*",
+                "https:\/\/www.instagram.com\/tv\/*",
+                "https:\/\/www.instagr.am\/tv\/*"
+            ],
+            "url": "https:\/\/api.instagram.com\/oembed",
+            "formats": [
+                "json"
+            ]
+        }
+    ]
+}
+#+end_src
+
+becomes
+
+#+name: instagram.yaml
+#+caption: ~./data/embed/instagram.yaml~
+#+begin_src yaml
+endpoint: "https://api.instagram.com/oembed/"
+pattern: "^https?://(www\\.)?instagr(\\.am|am\\.com)/((.*/)?p/|tv/)"
+#+end_src
+
+Collapsing all those ~scheme~ entries down to a single regular expression was a slight pain to do by hand, and I'm not /entirely/ sure the regular expression will match exactly what the schemes match, but it's not broken on any of the Instagram links I've thrown at it so far, so that's good enough for me.
+
+{{< newthought >}}This isn't the shortcode's final form{{< /newthought >}} -- it's not as robust as I'd like it to be in the face of a missing or temporarily down oembed endpoint, so it would be good to have some kind of fallback in case an endpoint changes or goes away. Also, there are some sites that have their own methods for embedding previews, which don't support oembed {{< marginnote >}}All those IndieWeb sites that use ~h-entry~ and ~h-card~ microformats to make the webpage machine parseable, for instance.{{< /marginnote >}} and it would be great to get at those somehow. I suspect I will end up with a shortcode which is essentially a big case statement dispatching to different partials which will handle the real rendering. Again... watch this space
+
+* DRAFT Footnotes
+
+[fn:2] [[https://gohugo.io][Hugo]] is the static site generator I use to build this blog. Another example of letting the computer do all the fiddly repetitive bits. In this case, to handle all the fiddly bits of writing full HTML pages, building index pages and the rest.
+
+[fn:1] It's also annoyingly temperamental at the moment; I'm working on that though.
