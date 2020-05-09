@@ -1,0 +1,7 @@
+{{ $url := (.Get 0) }}
+{{ $dyn := (partial "dynamic-embed" .) }}
+{{ if findRE "<" $dyn 1 }}
+{{ $dyn }}
+{{ else }}
+<a href="{{ $url }}">{{ if eq .Inner "" }}{{ $url }}{{ else }}{{ .Inner }}{{ end }}</a>
+{{ end }}
