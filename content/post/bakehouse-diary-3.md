@@ -11,7 +11,7 @@ series = "Bakehouse Diary"
 It's the first week in August. As soon as I finished my programming work, I
 drove down to Sidmouth for a couple of days of folkie immersion.
 
-{{< embed "https://www.flickr.com/photos/pdcawley/albums/72157669058818493" >}}
+{{< embed "https://www.flickr.com/photos/pdcawley/albums/72157669058818493" />}}
 <!--more-->
 
 There's not all that much to say. I didn't get to bed before 2am each night. I

@@ -11,7 +11,7 @@ slug = "bakehouse-diary-2"
 
 Not much progress on the "getting the oven ready front this week". I sheared another machine screw!
 
-{{< embed "https://www.instagram.com/p/BIUhqezAacy/" >}}
+{{< embed "https://www.instagram.com/p/BIUhqezAacy/" />}}
 
 At least this one was on the retaining bar that holds the oven soles in place;
 I'd rather not have sheared it, but since I'm going to be drilling stuff out

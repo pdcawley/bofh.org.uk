@@ -7,5 +7,5 @@ draft = false
 
 +++
 
-{{< embed "http://soundcloud.com/pdcawley/the-pretty-ploughboy" >}}
+{{< embed "http://soundcloud.com/pdcawley/the-pretty-ploughboy" />}}
 <!--more-->

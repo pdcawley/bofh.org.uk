@@ -8,7 +8,7 @@ draft = false
 +++
 
 <p>
-{{< embed "http://soundcloud.com/pdcawley/how-can-i-keep-from-singing" >}}
+{{< embed "http://soundcloud.com/pdcawley/how-can-i-keep-from-singing" />}}
 <!--more-->
 
 </p>

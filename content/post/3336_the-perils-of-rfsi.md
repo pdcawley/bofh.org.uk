@@ -11,7 +11,7 @@ If you saw me at YAPC::NA or you follow me on <a href="http://twitter.com/pdcawl
 
 </p>
 <p>
-However, I do need to vent, so I'm starting to use my <a href="http://audiboo.fm/pdcawley">Audioboo</a> (for short audio blog posts) and {{< embed "http://soundcloud.com/pdcawley" >}} accounts. I've been inspired by Jon Boden's wonderful <a href="http://www.afolksongaday.com">A Folk Song A Day</a> project to undertake my own repertoire challenge. There's no way I can set myself Jon's awesome schedule, but I do plan, over the next few months, to record and upload my entire traditional repertoire to Soundcloud. I'll at least try and hit a Perl Iron Man ish schedule of a song a week 'til I run out of repertoire, but I'm not about to make promises.
+However, I do need to vent, so I'm starting to use my <a href="http://audiboo.fm/pdcawley">Audioboo</a> (for short audio blog posts) and {{< embed "http://soundcloud.com/pdcawley" />}} accounts. I've been inspired by Jon Boden's wonderful <a href="http://www.afolksongaday.com">A Folk Song A Day</a> project to undertake my own repertoire challenge. There's no way I can set myself Jon's awesome schedule, but I do plan, over the next few months, to record and upload my entire traditional repertoire to Soundcloud. I'll at least try and hit a Perl Iron Man ish schedule of a song a week 'til I run out of repertoire, but I'm not about to make promises.
 
 </p>
 <p>
