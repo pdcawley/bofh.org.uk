@@ -18,6 +18,13 @@ googleAnalytics = "UA-135014-1"
 [outputs]
     home = ["HTML", "RSS", "ATOM"]
 
+[author]
+    homepage = "/"
+    name = "Piers Cawley"
+    given_name = "Piers"
+    family_name = "Cawley"
+    display_name = "Piers"
+
 [outputFormats.Atom]
   # https://validator.w3.org/feed/docs/atom.html#whatIsAtom
   name = "Atom"
@@ -90,10 +97,6 @@ googleAnalytics = "UA-135014-1"
 [permalinks]
     post = "/:year/:month/:day/:slug"
     page = "/pages/:slug"
-
-[blackfriday]
-    hrefTargetBlank = false
-    fractions = true
 
 [taxonomies]
     series = "series"

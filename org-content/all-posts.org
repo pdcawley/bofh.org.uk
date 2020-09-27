@@ -13,6 +13,7 @@
 * Bakehouse Diary :@bakehouse-diary:
 :PROPERTIES:
 :export_hugo_custom_front_matter: :series "Bakehouse Diary"
+:ID:       1704207D-154F-4BA2-A7AA-35585A21295E
 :END:
 
 ** Bakehouse Diary
@@ -20,6 +21,7 @@
 :export_file_name: back-to-the-bakehouse
 :export_date: [2018-02-01 Thu]
 :export_hugo_custom_front_matter: :description "Back to the bakehouse" :series "Bakehouse Diary"
+:ID:       A734F151-393D-4609-A408-8942FE197BBB
 :END:
 
 I know! It's been a while. But we're in! I have baked, and it was
@@ -36,6 +38,9 @@ would go and making lots of pizzas and a few loaves of bread.
 #+hugo: more
 
 *** The story so far…
+    :PROPERTIES:
+    :ID:       9B5B244B-A654-4254-BCEA-9CE31C600321
+    :END:
 
 In my [[file:/2016/11/11/taking-stock/][last entry]] (over a year ago, argh! Gill is /much/ better) the
 oven and all my kit were still in my garage, up on blocks waiting for
@@ -112,6 +117,9 @@ bits and bobs from [[https://nisbets.co.uk/][Nisbets]]. Fettling the oven wasn't
 but wow, do those baskets add up!
 
 *** It's arrived, and it fits
+    :PROPERTIES:
+    :ID:       AD747BAF-5C59-4456-B10E-EC021530372C
+    :END:
 
 On the 8th of December last year I sent mail Martin some mail with the
 subject "It's arrived, and it fits!" and over the next couple of weeks
@@ -127,22 +135,34 @@ year old oven, and /damn/, but they were good.
 [[file:./back-to-the-bakehouse/first-loaf.jpg]]
 
 *** What next?
+    :PROPERTIES:
+    :ID:       6006477E-9259-4548-BE06-AA284C35787B
+    :END:
 
 Of course, no enterprise like this is ever finished, here's a
 selection from my to do list.
 
 
 **** Plumbing
+     :PROPERTIES:
+     :ID:       C3EF1AE5-0633-4355-9A9E-AADC63202AC2
+     :END:
 A bigger sink! Water near the scale so I'm not carrying buckets
 back and forth! A handwash basin!
 
 **** Qualifications
+     :PROPERTIES:
+     :ID:       D2940478-569D-4A68-8A85-A3FB832E0DD7
+     :END:
 Environmental Health Officers do like you to have a certificate
 to show you're not a complete moron when it comes to hygiene.
 Breadmaking is relatively low risk because everything gets so
 very hot during the cooking process, but even so.
 
 **** Refrigeration
+     :PROPERTIES:
+     :ID:       7C336767-BFD8-4C6F-AB3F-379D615EF2CF
+     :END:
 Right now everything's at the ambient temperature, which can mean
 staying in the bake house until the early hours in order to get
 the loaves into the oven when they're perfectly proved. A better
@@ -153,18 +173,27 @@ retarder, but transport is annoyingly tricky because it's 2m
 tall, and should ideally be transported vertically too.
 
 **** Fitness
+     :PROPERTIES:
+     :ID:       0599F968-72F3-467F-B4A8-5ADE5EBC6548
+     :END:
 Right now, I can just about cope with two bakes a week, but if
 I'm going to actually make money at this, I'm going to need to be
 able to manage more. Hopefully, as I bake it'll improve my
 fitness, so as demand grows I'll be able to meet it.
 
 **** Marketing
+     :PROPERTIES:
+     :ID:       584A5EC0-B1AA-425F-80E1-071BE00980FD
+     :END:
 Oh boy, do I suck at marketing? Still, the product is good and
 there's nobody else in the local area making this sort of bread,
 so I have a few advantages. I still haven't made a Loafery
 website though. At least I have the loafery.co.uk domain.
 
 **** Online ordering
+     :PROPERTIES:
+     :ID:       FD89D3AC-84C8-4884-B2B4-FA445111D76D
+     :END:
 If I can get people ordering online, I can use that to produce
 production schedules, and generally have a better idea of how
 much to make on each bake day, which help minimise any wasted
@@ -172,6 +201,9 @@ bread. With two bakes done this year, I've sold every loaf - I'd
 like to keep that up.
 
 *** In the next bakehouse diary...
+    :PROPERTIES:
+    :ID:       6B4B05DF-007B-4559-ACFE-BB21BCEADA42
+    :END:
 I'll talk about how a bake goes and the process of developing an
 initial range of products, sourcing flour and other ingredients
 and hopefully some news about online ordering.
@@ -183,6 +215,7 @@ and hopefully some news about online ordering.
 :PROPERTIES:
 :EXPORT_DATE: 2018-10-25
 :export_file_name: literate-baking
+:ID:       466D29CA-D294-4651-8529-202BB121098A
 :END:
 
 My baking day goes like this:
@@ -195,6 +228,7 @@ I come into the bakehouse, open up Emacs and type =M-m o c B= and up comes the s
 :export_hugo_slug: baking-with-emacs
 :export_hugo_custom_front_matter: :series "Bakehouse diary"
 :export_date: 2019-02-25
+:ID:       92F8529F-9830-4DE4-8E26-61B606BAF48B
 :END:
 
 Just over a year ago now, I finally opened the bakery I'd been dreaming of for years. It's been a big change in my life, from spending all my time sat in front of a computer, to spending most of it making actual stuff. And stuff that makes people happy, at that. It's been a huge change, but I can't think of a single job change that's ever made me as happy as this one.
@@ -228,6 +262,7 @@ It's the nature of business that you need to keep records. How much got baked? H
 
 One of the features of org-mode is ~org-babel~, a literate programming environment, which lets me write something like:
 
+#+name: 07CEE761-D52F-4A44-B4C6-4F6284D947BB
 #+begin_src org
 ,#+begin_src sql
 SELECT ingredient, quantity
@@ -249,6 +284,7 @@ If that were all org-mode did to assist, it'd be awesome enough, but the queries
 
 So I have a bit of code in my emacs config that tweaks the day's entry in a daybook like so:
 
+#+name: 1A928B6D-FED5-44C5-9AD1-5E50181B0199
 #+begin_src emacs-lisp
   (defun pdc//in-bakery-daybook? ()
     "Are we in the bakery daybook?"
@@ -277,6 +313,9 @@ So I have a bit of code in my emacs config that tweaks the day's entry in a dayb
 It won't win any code beauty contests, but it does the job of setting a ~work_date~ variable for the day's entry and running any code in the subtree as part of the capture process. The capture template has lines like ~#+call:mixes()~, which call the stored code snippets, that reference the variable set in the current subtree and so make the query for the right day. This means that all I have to do to know what I should be doing when I get into the bakehouse is to run an org-capture and check the resulting entry in my daybook. Provided, that is, that I've added the appropriate rows to the database.
 
 *** Next steps
+    :PROPERTIES:
+    :ID:       30E7B083-080A-45CC-AED5-A9D55E210170
+    :END:
 
 The software isn't done, of course, no software ever is. But it's good enough that it's been managing my mixes without a hitch for the last few months, telling me what to pack for which customer and generally removing the need to work anything out with a pencil and paper. It's nowhere near as mature or capable of commercial production management software, but it fits me. I understand what it does and why, how it does it, the limitations it has and how to work around them. When it becomes annoying enough, I might sit down and work out how to fix it, but I'll do that when I'm in the right frame of mind. My current list of niggles looks something like this:
 
@@ -286,6 +325,9 @@ The software isn't done, of course, no software ever is. But it's good enough th
 - Order management :: Right now, I manage orders through Postico talking to the database, which is okay, but a little frustrating in places. An autocompleting environment for orders within emacs would be a much neater way to manage things.
 
 *** Putting the personal in personal computing
+    :PROPERTIES:
+    :ID:       EB0497C2-51A6-4452-8CEE-E587BE2AA695
+    :END:
 Computers are amazing. They are versatile tools even if you don't know how to program them, because there's almost always an app for what you want, or something close enough that you cant work around its infelicities. It's quite remarkable the things that folks can do with their kit with no programming skill at all.
 
 But... learn to program, and a whole other vista of possibility opens up to you. With good programmable tooling you're only really limited by your skill and understanding. Instead of accommodating yourself to your software, you can accommodate your software to you, and make the right functionality trade-offs for you. There's a brilliant commercial piece of music looping sofware I use that could be massively more brilliant if there were a way of picking up the tempo automatically from the first recorded loop - it would free me from having to sing to a click and generally make the whole process easier. The developers have other (understandable) priorities, like porting the app to windows. And they're not wrong to do so. There were folk clamoring for a windows version, and if a developer isn't making money from a commercial application, then development will stop. I'm definitely not complaining, the feature is not so dramatically necessary that I'm prepared to spend the time learning how to do real time music programming in order to implement it, but if I want software to dance to /my/ tune then doing it myself is the only way.
@@ -299,6 +341,7 @@ So... choose tools that let you program them. I choose emacs and PostgreSQL, you
 :export_file_name: recursive-sql-recipes
 :export_date: 2019-03-04
 :export_hugo_custom_front_matter: :series "Bakehouse diary" :math true
+:ID:       F00B26A5-3E3A-42EC-858E-77A47CA209E3
 :END:
 
 In [[file:/2019/02/25/baking-with-emacs][the last post]] I handwaved the way I represented bakery formulae in the bakery database, so here's a little more detail. It helps to think of a bakery formula as a node on a directed acyclic{{% marginnote %}}If you ignore the fact that a starter is made of flour, water and starter. Which, of course, we're going to.{{% /marginnote %}} graph with weighted edges, where the weights are literally weights. Here's the graph a for a  couple of products
@@ -391,6 +434,7 @@ Let's introduct a ~production_order~ table, where we stash our orders{{% marginn
 
 And that's all we need to fire off a recursive query{{% marginnote %}}I'm writing this using the literate programming capabilities of org-mode, so the code you see is being run against my production database, and the results are using my working formulae. Which is why we're not querying the real ~production_order~ table.{{% /marginnote %}}.
 
+#+name: 6A645983-A0FF-42B1-A9D8-A0756FCD1A45
 #+begin_src sql
 WITH RECURSIVE po(product, quantity) AS (
     SELECT 'Small White Wild', 5
@@ -433,6 +477,7 @@ Which gives the following result:
 A quick sanity check seems to show this is correct (we're making 7.75kg of Basic White Sour, which tallies with the weights needed to make the loaves).
 So what's going on in the query? In SQL, ~WITH~ is a way of giving names to your intermediate results, akin to ~let~ in a Lisp. We fake up a table to hold our production orders (~po~) and the ~rw~ clause is totals the weights of all our recipes (in the real database, it's a view). The magic really starts to happen when you use the ~WITH RECURSIVE~ form. With ~RECURSIVE~ in play, the last query is treated differently. Instead of being a simple two part ~UNION~ what happens is that we first run:
 
+#+name: 729E572D-94B2-4170-8561-FA051EE59B22
 #+begin_src sql
 SELECT po.product, ri.ingredient, po.quantity * ri.amount
   FROM po
@@ -461,6 +506,7 @@ We're only making 1.86 kg of dough? What's going on?
 
 It turns out that the way a ~UNION~ works is akin to doing ~SELECT DISTINCT~ on the combined table, so it selects only unique rows. When two orders end up requiring exactly the same amount of the 'same' dough, they get smashed together and we lose half the weight. This is not ideal.{{% marginnote %}}It's /especially/ not ideal when you don't spot there's a problem and end up making far fewer loaves than you expect. Or on one /really/ annoying occasion, making a dough that was far too dry because we lost some water along the way. You can correct this during the mix, but it was a nasty shock.{{% /marginnote %}} I fixed it by adding a 'path' to the query, keeping track of how we arrived at a particular formula. Something like:
 
+#+name: 48148626-CBC5-4AF1-9E88-7821F8099F36
 #+begin_src sql
 WITH RECURSIVE po(product, quantity) AS (
     SELECT 'Small White Wild', 3
@@ -528,10 +574,16 @@ In order to see what's going on, we can change the final ~SELECT~ to ~SELECT for
 Which shows that we're considering two lots of Basic White Sour with exactly the same weights, but we (and more importantly, the database engine) know that they're distinct amounts because we get to them through different routes. Hurrah! The problem is solved and we can accurately work out what we should be mixing.
 
 *** What's still missing
+    :PROPERTIES:
+    :ID:       868FF41D-EB97-4079-8710-EBBE6B50AB15
+    :END:
 
 As a baker, I know  if I've got an order for bread on Friday, then I need to mix the starters on Wednesday night, then spend Tuesday mixing, fermenting and shaping the loaves, which will spend the night in the retarder ready to be baked at 4 on Friday morning. But the schema I've outlined here doesn't. In my full bakehouse schema, I have a few extra tables which hold timing data and such. In particular, I have a ~product~ table, which knows about everything I sell. This table knows holds info about how many I can make per hour of work and the bake time and temperature. Then there's a ~recipe~ table which holds information about how long a formula needs to rest{{% marginnote %}}This could be the bulk fermentation time if it's a formula for a dough or a starter, a proof time if it's a loaf, or a soaking time for a soaker (a soaker is usually a mixture of seeds or fruit and a liquid, usually water, but occasionally fruit juice or booze depending on the final product){{% /marginnote %}}. The real queries take this into account to allow us to work back from the ~due_date~ of a real order to the day we need to do the work. If you want to dig into how I handle dates  you can check out the repository at [[https://github.com/pdcawley/bakehouse/]].
 
 ** The perils of writing stuff up
+   :PROPERTIES:
+   :ID:       4F2A8A82-DA19-41F8-9EDE-B554D29DEE82
+   :END:
 
 Never write your work up for your blog. Especially if you're mostly happy with it. As I was writing this, I realised there's an annoying bit of code duplication that I think I can eliminate. In the current code, I repeat what's essentially the same query structure in a couple of different views, but the formula graph is essentially static unless I add or adjust a recipe. Now I'm wondering if I could make a materialised view that has enough information to shortcut the calculations for both making the production list (what needs to be mixed, when) and for working out my costings (to put a price on a loaf, you need to know how much the raw ingredients cost, and that involves walking the tree again. Maybe a table like:
 
@@ -546,6 +598,7 @@ Never write your work up for your blog. Especially if you're mostly happy with i
 
 If we have that table, then two days before our bread is due, if we have an order for 10 white loaves, we'll need to mix \(9.3 × .288 \approxeq 2.68\) kg of flour and $9.3 × 0.173 \approxeq 1.61$ kg of water. Which we can do with a simple non-recursive ~SELECT~. Something like:{{% marginnote %}}NB: I've not tested this because I don't have the precalculated table, but it seems like it should work. In fact, thinking about it, we could probably build the ~precalc~ table so that we can simply do ~precalc.factor * po.quantity~, since any change that affects recipe weight will also affect our precalculated table.{{% /marginnote %}}
 
+#+name: A9B65C0A-2496-4A3B-B0FB-8AEBE9B5BE6A
 #+begin_src sql
 WITH weighted(formula, ingredient, weight, due) AS (
     SELECT precalc.sub_formula,
@@ -572,6 +625,7 @@ I think, however, I'm going to leave it alone until I have to write another recu
 :export_file_name: devils-advocacy-without-asshattery
 :export_hugo_slug: devils-advocacy-without-tears
 :export_date: 2018-10-25
+:ID:       B96DE889-2A35-4276-B716-EB558186DB55
 :END:
 
 
@@ -580,6 +634,9 @@ So, you want to play Devil's Advocate, but you're afraid you might come across a
 #+hugo: more
 
 ** Maybe don't?
+   :PROPERTIES:
+   :ID:       DFD8CB3D-98AB-414B-8766-B64DBC5E1D04
+   :END:
 
 Seriously, why does the Devil need an advocate? If you want to play DA because you think the position you want to argue has some merit, then argue the position honestly and own it. If it doesn't survive the discussion (or is shouted down), then "Ah right, I hadn't thought of that, you're right" or words to that effect and file that position in your memory as a bad one (along with the skeleton of /why/ it's bad). Nothing wrong with holding strong opinions, the thing that's bad is holding onto them if they're shown to be bad. If the group you're talking with just shouts you down and doesn't convince you that your position is a bad one, maybe find a different group? Or agree with them to steer clear of that topic.
 
@@ -594,6 +651,7 @@ Don't keep doing it, mind, or you'll start looking like the kite flying asshole 
 * Book Reports                                            :@book-report:
 :PROPERTIES:
 :export_hugo_custom_front_matter: :series "Book Reports"
+:ID:       AE556F3E-BD2C-46E6-BE13-AD819A39EE6D
 :END:
 
 ** DONE A Wizard of Earthsea
@@ -601,6 +659,7 @@ Don't keep doing it, mind, or you'll start looking like the kite flying asshole 
 :EXPORT_FILE_NAME: a-wizard-of-earthsea
 :export_hugo_slug: a-wizard-of-earthsea
 :export_date: 2019-05-30
+:ID:       DB913EAC-FB57-44B7-9645-DBD26957CE72
 :END:
 This was the first.
 
@@ -633,6 +692,7 @@ Right... onwards to /The Tombs of Atuan./
 :export_hugo_slug: virtual-gig-like-thing
 :export_date: 2020-04-08T00:00:00
 :EXPORT_FILE_NAME: virtual-gig-like-thing
+:ID:       C2642DFD-B4E8-44DB-B576-BED6A8C96223
 :END:
 
 On Thursday the 9th of April at 7pm UK time, I'm streaming my first attempt
@@ -641,6 +701,9 @@ at a  full folk club style gig from my study to my
 
 
 ** Schedule
+   :PROPERTIES:
+   :ID:       6769254B-F1F3-46DF-814F-63D96F985D7C
+   :END:
 
 It all kicks off at 7pm, UK time with a kind of Q&A session and
 introduction to Twitch for newcomers. I'm particurly planning to help
@@ -660,12 +723,18 @@ hoping it'll be a lot of fun.
 
 
 ** Ticket Prices
+   :PROPERTIES:
+   :ID:       0E43DD7E-5512-435C-B7C4-73910B049C75
+   :END:
 It's the internet! It won't cost you a penny to watch me perform. However,
 right now, daft stuff like this is my only potential source of income, so
 I would be deeply grateful if you could either [[https://ko-fi.com/pdcawley]["Buy me a coffee"]] via Ko-Fi
 or [[https://twitch.tv/signup][sign up]] for a free Twitch account and subscribe to my channel.
 
 *** Free money for your favourites!
+    :PROPERTIES:
+    :ID:       AFDB4ED1-8FAB-461B-816A-CD0BF60D7CC2
+    :END:
 If you are an Amazon Prime subscriber and you don't yet have a Twitch
 Subscription, there's a wonderful thing you can do that means that Amazon
 will give me (or any other streamer you enjoy) some money and it won't
@@ -679,6 +748,9 @@ sub to renew. If you would like to keep making regular payments to the
 streamer of your choice, you need to remember to resubscribe every month.
 
 *** One off tips
+    :PROPERTIES:
+    :ID:       95E39426-BE56-4078-9BF5-E7B2BE229683
+    :END:
 A Ko-Fi coffee comes in at £3, but if you want to tip me or any other
 twitch performer with an arbitrary amount, then Twitch Bits are your
 friend. You buy 'em from [[https://bits.twitch.tv/][Twitch]] and can then use them as a virtual
@@ -695,10 +767,23 @@ public amazon wishlist, paypal tip jar, patreon page or some other service
 I've not heard of yet. In some ways, it's never been easier for you to
 support the work of artists you love.
 
+* DRAFT Stay (The Fuck) At Home                         :@repertoire:project:
+  :PROPERTIES:
+  :export_file_name: stay-at-home
+  :ID:       7066F907-3B4C-437C-86E3-492B48391267
+  :END:
+
+  {{< embed "https://youtu.be/1RiGM6KrH30" />}}
+
+As the lockdown started, some friends{{<marginnote>}}Vikki Appleton Fielden, Heather Charlton, Helen Edwards{{< /marginnote >}} and I wrote what we hoped would be a funny song about the best way to protect yourself and your loved ones as the enormity of the pandemic started to become apparent. Stay the fuck at home. We thought it would be a larky topical song, good for a couple of weeks as it became apparent that the government was being... hesitant, let's say about introducing a firm lockdown. A few digs at the "take it on the chin" or "herd immunity" policy that seemed to see the unnecessary deaths of thousands of elderly vulnerable people as acceptable losses. It didn't exactly go viral, but a bunch of Facebook friends all joined in, leading to the video you see above.
+
+<!--more-->
+
 * DONE Adding a generic oembed handler for Hugo                        :hugo:
 :PROPERTIES:
 :export_hugo_slug: oembed-for-hugo
 :export_file_name: oembed-for-hugo
+:ID:       950F43FF-3632-48D9-B768-02CC5154A220
 :END:
 If you're at all like me, you have content on a bunch of different sites (Instagram, Youtube, Flickr, Soundcloud, Bandcamp...) and, especially for multimedia content, it's great to be able to link to 'live' versions of that content. Of course, all those sites will let you 'share' content and usually have an 'embed' option that hands you a bunch of HTML that you can paste into your blog entry. But screw that! I'm a programmer for whom laziness is one of the cardinal virtues -- if it's at all possible, I prefer to let the computer do the work for me.{{< marginnote >}}If nothing else, once I've got the programming right, it's less likely to screw up than me{{< /marginnote >}}
 
@@ -734,6 +819,7 @@ We use it like: ~{{</* embed "https://youtub.be/kb-Aq6S4QZQ" */>}}~, which displ
 I made the data files by taking the big JSON object from https://oembed.com/providers.json and massaging the supplied patterns into regular expressions. In theory, I could write a script to do the conversion for me, but I'm only really interested in four providers for this site, so I just did it by hand. So the entry for [[https://instagram.com/][Instagram]]:
 
 #+caption: The https://oembed.com/providers.json entry for Instagram
+#+name: 521EC4E0-5CE6-4667-9558-16262848DD6D
 #+begin_src json
 {
     "provider_name": "Instagram",
@@ -784,7 +870,38 @@ Collapsing all those ~scheme~ entries down to a single regular expression was a 
 
 {{< newthought >}}This isn't the shortcode's final form{{< /newthought >}} -- it's not as robust as I'd like it to be in the face of a missing or temporarily down oembed endpoint, so it would be good to have some kind of fallback in case an endpoint changes or goes away. Also, there are some sites that have their own methods for embedding previews, which don't support oembed {{< marginnote >}}All those IndieWeb sites that use ~h-entry~ and ~h-card~ microformats to make the webpage machine parseable, for instance.{{< /marginnote >}} and it would be great to get at those somehow. I suspect I will end up with a shortcode which is essentially a big case statement dispatching to different partials which will handle the real rendering. Again... watch this space
 
+* Streaming Folk Music
+  :PROPERTIES:
+  :ID:       2AB0850A-2FC4-42B3-BAA6-6E1A9512FB3B
+  :END:
+  I'll be entering my sixth month of streaming live folk music on the Internet next month, and I've learned a good deal about it as I've done it. Primarily I've learned that a stream isn't the same as a live gig or a prerecorded concert segment; it's it's own thing and, I think it's something that will continue to be a viable form of performance for people as we finally emerge from lockdown because it offers something that traditional modes of performance don't, and that has value.
+
+  Live streaming isn't the only new form that's emerged from All This. One of the first, and most successful has been the 'virtual festival' that was pretty much pioneered and perfected by the people behind the [[https://folkonfoot.com][Folk On Foot]] podcast. On the early and late May bank holidays, they curated a lot of short performance videos from their artists which were then very capably linked together by Matthew Bannister. It was interesting comparing the relative slickness of Bannister, presenting from his living room and some of the artists who had varying degrees of experience of performing down the lens, but on the whole it was glorious. They solicited donations, which were shared between the artists and the charity [[https://www.helpmusicians.org.uk][Help Musicians]], and the whole thing was glorious. Other festivals have followed suit with greater or lesser success {{marginnote}}I really enjoyed the [[https://www.folkbytheoak.com/about/familynestfest/][Folk by the Oak 'Family Nest' Fest]], which again split the money between the artists and their chosen charity, with some of the real world festival's vibe captured by interspersing the performances with short videos from their regular vendors and kids workshop performers{{/marginnote}}.
+
+** Platforms
+   :PROPERTIES:
+   :ID:       4D0E27C9-6823-4569-80F0-216CBFB0D79B
+   :END:
+
+** Share the load
+   :PROPERTIES:
+   :ID:       78283C00-98D5-40F4-AC1D-5A1FDCFEB1C0
+   :END:
+
+** Payment models
+   :PROPERTIES:
+   :ID:       DFF1A992-401A-46D9-8B64-E35C2CB166D8
+   :END:
+
+** Liveness
+   :PROPERTIES:
+   :ID:       DE8760EC-239D-44A2-A9D4-3D7C2FD433B4
+   :END:
+
 * DRAFT Footnotes
+  :PROPERTIES:
+  :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
+  :END:
 
 [fn:2] [[https://gohugo.io][Hugo]] is the static site generator I use to build this blog. Another example of letting the computer do all the fiddly repetitive bits. In this case, to handle all the fiddly bits of writing full HTML pages, building index pages and the rest.
 

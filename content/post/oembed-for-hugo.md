@@ -1,7 +1,7 @@
 +++
 title = "Adding a generic oembed handler for Hugo"
 author = ["Piers Cawley"]
-lastmod = 2020-05-09T12:24:26+01:00
+lastmod = 2020-05-12T14:03:46+01:00
 slug = "oembed-for-hugo"
 tags = ["hugo"]
 draft = false
