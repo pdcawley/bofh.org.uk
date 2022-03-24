@@ -7,6 +7,17 @@
 
 #+seq_todo: TODO DRAFT DONE
 
+* DONE Tamlyn.co.uk
+:PROPERTIES:
+:export_hugo_slug: about/tamlyn-co-uk
+:EXPORT_FILE_NAME: tamlyn-co-uk
+:END:
+Hi, you ended up here because you visited tamlyn.co.uk, which is a domain my wife and I have been using for private email since 1998, but which we've never bothered setting up a website for.
+
+It's possible that you were looking for the UK arm of [[https://tamlyn.com][Tamlyn.com]], which appears to be building supplies manufacturer based in Texas. If so, you should head on over to their UK site, [[https://tamlyn.uk][tamlyn.uk]].
+
+By the way, if you're in Texas, maybe consider supporting the work of [[https://linktr.ee/lambda_legal][Lambda Legal]], [[https://outyouth.org][Out Youth]], [[https://www.myresourcecenter.org/community/lgbtq-youth-programs/][Resource Centre]] and other organisations working for LGBTQIA+ kids in the state.
+
 * DONE Joining Twitch as a viewer
 :PROPERTIES:
 :EXPORT_FILE_NAME: twitch-viewing
