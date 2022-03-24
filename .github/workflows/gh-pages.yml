@@ -18,12 +18,15 @@ jobs:
           fetch-depth: 0
 
       - name: Clone Org-mode exporter
-        run: git clone https://github.com/kaushalmodi/ox-hugo.git ./ox-hugo
+        run: git clone https://github.com/kaushalmodi/ox-hugo.git ~/ox-hugo
 
       - name: Setup emacs
         uses: purcell/setup-emacs@master
         with:
           version: 27.2
+
+      - name: export posts from Org
+        run: emacs ./org-content/all-posts.org --batch -L ~/ox-hugo -l ox-hugo.el --eval='(org-hugo-export-wim-to-md t)' --kill
 
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
