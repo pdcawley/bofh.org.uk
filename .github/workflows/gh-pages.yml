@@ -25,6 +25,9 @@ jobs:
         with:
           version: 27.2
 
+      - name: Prep .emacs.d for ox-hugo because ???
+        run: mkdir -p ~/.emacs.d
+
       - name: export posts from Org
         run: emacs ./org-content/all-posts.org --batch -L ~/ox-hugo -l ox-hugo.el --eval='(org-hugo-export-wim-to-md t)' --kill
 
