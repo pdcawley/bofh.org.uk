@@ -1,0 +1,47 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Clone Org-mode exporter
+        run: git clone https://github.com/kaushalmodi/ox-hugo.git ox-hugo
+
+      - name: Setup emacs
+        uses: purcell/setup-emacs@master
+        with:
+          version: 27.2
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+
+      - name: Export Org file to Markdown
+        run: emacs ./org-content/all-posts.org --batch -L ./ox-hugo -l ox-hugo.el --eval='(org-hugo-export-wim-to-md t)' --kill
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: latest
+          extended: true
+
+     - name: Build
+       run: hugo --minify
+
+    - name: Copy to server
+      run: rsync -avz ./public/ -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:bofh.org.uk
