@@ -3,10 +3,16 @@
 #+hugo_auto_set_lastmod: t
 #+startup: inlineimages
 #+property: header-args:sql :session reporter :exports result :colnames yes :engine postgresql :results replace table
+#+hugo_paired_shortcodes: %table %marginnote
 
 #+seq_todo: TODO DRAFT DONE
 
-* Joining Twitch as a viewer
+* DONE Joining Twitch as a viewer
+:PROPERTIES:
+:EXPORT_FILE_NAME: twitch-viewing
+:export_hugo_slug: twitch-viewing
+:EXPORT_DATE: 2022-03-24
+:END:
   There are multiple platforms available where you can watch and interact with people sharing music;  how to play their favourite video game; tips on sewing makeshift surgical masks; and a bewildering panoply of other stuff. If you're after carefully edited, scripted and polished stuff, then [[https://youtube.com][YouTube]] and [[https://vimeo.com/][Vimeo]] are the websites for you. If you're after something a little more loose and interactive, where you can ask questions and give immediate feedback and the like, then [[https://twitch.tv/][Twitch.tv]] could easily be Your Place.
 
 
