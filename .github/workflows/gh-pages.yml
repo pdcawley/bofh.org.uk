@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - main
-  pull_request:
-
 jobs:
-  build:
-    runs-on: ubuntu-20.04
+  deploy:
+
+    runs-on: ubuntu-latest
+
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
@@ -40,8 +40,8 @@ jobs:
           hugo-version: latest
           extended: true
 
-     - name: Build
-       run: hugo --minify
+      - name: Build
+        run: hugo --minify
 
-    - name: Copy to server
-      run: rsync -avz ./public/ -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:bofh.org.uk
+      - name: Copy to server
+        run: rsync -avz ./public/ -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:bofh.org.uk
