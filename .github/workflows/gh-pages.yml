@@ -44,4 +44,4 @@ jobs:
         run: hugo --minify
 
       - name: Copy to server
-        run: rsync -avz -e "ssh --port ${{secrets.SSH_PORT}}" ./public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:bofh.org.uk
+        run: rsync -avz -e "ssh -p ${{secrets.SSH_PORT}}" ./public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:bofh.org.uk
