@@ -31,6 +31,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
 
+      - name: setup known_hosts
+        run: ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -41,4 +44,4 @@ jobs:
         run: hugo --minify
 
       - name: Copy to server
-        run: rsync -avz ./public/ -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:bofh.org.uk
+        run: rsync -avz -e "ssh --port ${{secrets.SSH_PORT}}" ./public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:bofh.org.uk
