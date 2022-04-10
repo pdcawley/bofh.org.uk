@@ -4,6 +4,7 @@
 #+export_hugo_weight: auto
 #+hugo_auto_set_lastmod: t
 #+startup: inlineimages
+#+startup: logdone
 #+property: header-args:sql :session reporter :exports result :colnames yes  :engine postgresql :results replace table
 #+hugo_paired_shortcodes: %table %marginnote
 
@@ -783,7 +784,7 @@ As the lockdown started, some friends{{<marginnote>}}Vikki Appleton Fielden, Hea
 :PROPERTIES:
 :export_hugo_slug: oembed-for-hugo
 :export_file_name: oembed-for-hugo
-:export_date: 2020-04-08
+:export_date: 2020-05-12
 :ID:       950F43FF-3632-48D9-B768-02CC5154A220
 :END:
 If you're at all like me, you have content on a bunch of different sites (Instagram, Youtube, Flickr, Soundcloud, Bandcamp...) and, especially for multimedia content, it's great to be able to link to 'live' versions of that content. Of course, all those sites will let you 'share' content and usually have an 'embed' option that hands you a bunch of HTML that you can paste into your blog entry. But screw that! I'm a programmer for whom laziness is one of the cardinal virtues -- if it's at all possible, I prefer to let the computer do the work for me.{{< marginnote >}}If nothing else, once I've got the programming right, it's less likely to screw up than me{{< /marginnote >}}
