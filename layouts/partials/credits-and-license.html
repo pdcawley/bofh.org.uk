@@ -4,7 +4,7 @@
     {{ end }}
 </ul>
 
- <span id="skip-to-licenses">&copy;2003–{{ now.Format "2006" }}&nbsp; <a class="h-card" rel="me" href="/about/">{{ .Site.Params.copyrightHolder }}</a>. See the <a href="/colophon/">colophon</a> for how I built this.</span>
+ <span id="skip-to-licenses">&copy;2003–{{ now.Format "2006" }}&nbsp; <a class="h-card" rel="me" href="/about/">{{ .Site.Params.copyrightHolder }}</a>. See the <a href="/pages/colophon/">colophon</a> for how I built this.</span>
 {{ $context := . }}
 {{ range .Params.licenses }}
   <div class="license" role="complementary">
