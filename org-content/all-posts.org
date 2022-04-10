@@ -783,6 +783,7 @@ As the lockdown started, some friends{{<marginnote>}}Vikki Appleton Fielden, Hea
 :PROPERTIES:
 :export_hugo_slug: oembed-for-hugo
 :export_file_name: oembed-for-hugo
+:export_date: 2020-04-08
 :ID:       950F43FF-3632-48D9-B768-02CC5154A220
 :END:
 If you're at all like me, you have content on a bunch of different sites (Instagram, Youtube, Flickr, Soundcloud, Bandcamp...) and, especially for multimedia content, it's great to be able to link to 'live' versions of that content. Of course, all those sites will let you 'share' content and usually have an 'embed' option that hands you a bunch of HTML that you can paste into your blog entry. But screw that! I'm a programmer for whom laziness is one of the cardinal virtues -- if it's at all possible, I prefer to let the computer do the work for me.{{< marginnote >}}If nothing else, once I've got the programming right, it's less likely to screw up than me{{< /marginnote >}}
@@ -870,9 +871,10 @@ Collapsing all those ~scheme~ entries down to a single regular expression was a 
 
 {{< newthought >}}This isn't the shortcode's final form{{< /newthought >}} -- it's not as robust as I'd like it to be in the face of a missing or temporarily down oembed endpoint, so it would be good to have some kind of fallback in case an endpoint changes or goes away. Also, there are some sites that have their own methods for embedding previews, which don't support oembed {{< marginnote >}}All those IndieWeb sites that use ~h-entry~ and ~h-card~ microformats to make the webpage machine parseable, for instance.{{< /marginnote >}} and it would be great to get at those somehow. I suspect I will end up with a shortcode which is essentially a big case statement dispatching to different partials which will handle the real rendering. Again... watch this space
 
-* Streaming Folk Music
+* DONE Streaming Folk Music
   :PROPERTIES:
   :ID:       2AB0850A-2FC4-42B3-BAA6-6E1A9512FB3B
+  :export_date: 2020-04-08
   :END:
   I'll be entering my sixth month of streaming live folk music on the Internet next month, and I've learned a good deal about it as I've done it. Primarily I've learned that a stream isn't the same as a live gig or a prerecorded concert segment; it's it's own thing and, I think it's something that will continue to be a viable form of performance for people as we finally emerge from lockdown because it offers something that traditional modes of performance don't, and that has value.
 
