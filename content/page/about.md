@@ -8,9 +8,11 @@ date = "2003-01-01T00:00:00+00:00"
 
 I used to be a programmer. I was good at it, but I kind of grew to hate it as a means of making a living, so when RSI came calling and made it near-impossible to type for more than about half an hour before I had to take a 45 minute break, I got properly serious about breadmaking. So since Christmas 2017 I've been baking sourdough bread for money as [The Loafery](https://loafery.co.uk/). It's not (remotely) as lucrative as programming was, but it's infinitely more satisfying. And tasty.
 
+Sadly COVID has done for the bakery, so I'm back to baking occasionally at home. My sleep pattern is delighted by this.
+
 ## Programmer
 
-I was been a Perl programmer for well over 10 years, spent a few years as a Ruby programmer before returning to the Perl fold.
+I was a Perl programmer for well over 10 years, spent a few years as a Ruby programmer before returning to the Perl fold.
 
 ## [Photographer](http://flickr.com/photos/pdcawley/sets/807230)
 
