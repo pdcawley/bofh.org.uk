@@ -16,7 +16,7 @@ googleAnalytics = "UA-135014-1"
     suffixes = ["xml"]
 
 [outputs]
-    home = ["HTML", "RSS", "ATOM"]
+    home = ["HTML", "RSS", "ATOM", "JSON"]
 
 [author]
     homepage = "/"
