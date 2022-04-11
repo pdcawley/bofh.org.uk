@@ -4,12 +4,7 @@ on:
   push:
     branches:
       - main
-    paths:
-      - content/**.md
-      - org-content/*.org
-      - theme/**
-      - layouts/**
-      - .github/**.yml
+
 jobs:
   deploy:
 
