@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+env:
+  emacs-version: 28.1
 
 jobs:
   deploy:
@@ -24,15 +26,15 @@ jobs:
           cache-name: cache-nix-installs
         with:
           path: /nix
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-28.1
-          
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ env.emacs-version }}
+
       - name: Clone Org-mode exporter
         run: git clone https://github.com/kaushalmodi/ox-hugo.git ~/ox-hugo
 
       - name: Setup emacs
         uses: purcell/setup-emacs@master
         with:
-          version: 28.1
+          version: ${{ env.emacs-version }}
 
       - name: Prep .emacs.d for ox-hugo because ???
         run: mkdir -p ~/.emacs.d
