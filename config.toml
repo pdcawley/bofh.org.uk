@@ -50,18 +50,6 @@ googleAnalytics = "UA-135014-1"
     url = "/"
 
 [[menu.topnav]]
-    name = "Bakehouse Diary"
-    pre = "<i class='fa fa-book'></i> "
-    url = "/series/bakehouse-diary"
-    weight = 5
-
-[[menu.topnav]]
-    name = "Recordings"
-    pre = "<i class='fa fa-music'></i> "
-    url = "/series/repertoire-project"
-    weight = 6
-
-[[menu.topnav]]
     name = "Posts"
     pre = "<i class='fa fa-book'></i> "
     url = "/post/"
