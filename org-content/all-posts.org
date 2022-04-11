@@ -10,7 +10,6 @@
 
 #+seq_todo: TODO DRAFT DONE
 
-
 * Bakehouse Diary :@bakehouse-diary:
 :PROPERTIES:
 :export_hugo_custom_front_matter: :series "Bakehouse Diary"
@@ -581,10 +580,8 @@ Which shows that we're considering two lots of Basic White Sour with exactly the
 
 As a baker, I know  if I've got an order for bread on Friday, then I need to mix the starters on Wednesday night, then spend Tuesday mixing, fermenting and shaping the loaves, which will spend the night in the retarder ready to be baked at 4 on Friday morning. But the schema I've outlined here doesn't. In my full bakehouse schema, I have a few extra tables which hold timing data and such. In particular, I have a ~product~ table, which knows about everything I sell. This table knows holds info about how many I can make per hour of work and the bake time and temperature. Then there's a ~recipe~ table which holds information about how long a formula needs to rest{{% marginnote %}}This could be the bulk fermentation time if it's a formula for a dough or a starter, a proof time if it's a loaf, or a soaking time for a soaker (a soaker is usually a mixture of seeds or fruit and a liquid, usually water, but occasionally fruit juice or booze depending on the final product){{% /marginnote %}}. The real queries take this into account to allow us to work back from the ~due_date~ of a real order to the day we need to do the work. If you want to dig into how I handle dates  you can check out the repository at [[https://github.com/pdcawley/bakehouse/]].
 
-** The perils of writing stuff up
-   :PROPERTIES:
-   :ID:       4F2A8A82-DA19-41F8-9EDE-B554D29DEE82
-   :END:
+
+*** The perils of writing stuff up
 
 Never write your work up for your blog. Especially if you're mostly happy with it. As I was writing this, I realised there's an annoying bit of code duplication that I think I can eliminate. In the current code, I repeat what's essentially the same query structure in a couple of different views, but the formula graph is essentially static unless I add or adjust a recipe. Now I'm wondering if I could make a materialised view that has enough information to shortcut the calculations for both making the production list (what needs to be mixed, when) and for working out my costings (to put a price on a loaf, you need to know how much the raw ingredients cost, and that involves walking the tree again. Maybe a table like:
 
@@ -620,34 +617,6 @@ We can use the same table to calculate the raw material costs for a given recipe
 
 I think, however, I'm going to leave it alone until I have to write another recursive view that walks the same graph, at which point I'll bite the bullet and do the pre-calculated version.
 
-
-* DONE Asshole Free Devil's Advocacy                     :philosophy:blether:
-:PROPERTIES:
-:export_file_name: devils-advocacy-without-asshattery
-:export_hugo_slug: devils-advocacy-without-tears
-:export_date: 2018-10-25
-:ID:       B96DE889-2A35-4276-B716-EB558186DB55
-:END:
-
-
-So, you want to play Devil's Advocate, but you're afraid you might come across as a bit (or a lot) of an asshole? Here's some suggestions for how to avoid that.
-
-#+hugo: more
-
-** Maybe don't?
-   :PROPERTIES:
-   :ID:       DFD8CB3D-98AB-414B-8766-B64DBC5E1D04
-   :END:
-
-Seriously, why does the Devil need an advocate? If you want to play DA because you think the position you want to argue has some merit, then argue the position honestly and own it. If it doesn't survive the discussion (or is shouted down), then "Ah right, I hadn't thought of that, you're right" or words to that effect and file that position in your memory as a bad one (along with the skeleton of /why/ it's bad). Nothing wrong with holding strong opinions, the thing that's bad is holding onto them if they're shown to be bad. If the group you're talking with just shouts you down and doesn't convince you that your position is a bad one, maybe find a different group? Or agree with them to steer clear of that topic.
-
-What's really intellectually dishonest is to say "I was only playing Devil's Advocate!" after an idea has been shot down. I'm sure your intentions are entirely honorable, but what if they weren't? Say you genuinely held that the best thing to do with the children of the poor was to turn them into cheap and delicious meals for the richest in society. Say you advanced this position to your friends and were utterly appalled by the idea. Then maybe you'd try to distance yourself from it by saying "Whoah! Guys{{% marginnote %}}​ I know. But the kind of people who make this move in an argument are usually the kind of people who'd address a mixed group of folk as "guys".{{% /marginnote %}}! I was only playing Devil's Advocate!"
-
-When I hear someone playing that card, how am I supposed to distinguish between the well-meaning "There is this argument I've come across that I'm not sure I agree with, but it maybe has some merit and I don't know how I'd argue convincingly against it" types and the assholes who were flying a kite? Maybe the non-assholes will have friends who'll tell me that "They might seem like a bit of an arse, but they're not really." I've been that guy, and I don't want to be him again. Why is it okay for me to load the work of explaining that I'm not dickhead onto my friends rather than just not acting like a dickhead in the first place? Eventually, friends get tired. Eventually they'll shift to "Yeah, I know he seems like an ass, and he kind of is, but..." and then one day, they won't be your friends any more.
-
-{{% newthought %}}Before you introduce the idea{{% /newthought %}} you want to play Devil's Advocate for, say something like "D'you mind if I play Devil's Advocate for a moment?" And when the group tells you "Yes, we do mind. Why help the devil?" listen to them. If it's genuinely that you've heard some argument that on the face of it seems repugnant, but you can't find a hole in it, then say as much: "What's wrong with this idea? Clearly feeding poor babies to the 1% is utterly repellant, but I can't find an effective counterargument."
-
-Don't keep doing it, mind, or you'll start looking like the kite flying asshole again.
 
 * Book Reports                                            :@book-report:
 :PROPERTIES:
@@ -688,7 +657,9 @@ Of course you need to read this book. It's language sings and the places and peo
 
 Right... onwards to /The Tombs of Atuan./
 
-* DONE My Virtual Gig-Like Thing
+
+* Posts
+** DONE My Virtual Gig-Like Thing
 :PROPERTIES:
 :export_hugo_slug: virtual-gig-like-thing
 :export_date: 2020-04-08T00:00:00
@@ -698,10 +669,10 @@ Right... onwards to /The Tombs of Atuan./
 
 On Thursday the 9th of April at 7pm UK time, I'm streaming my first attempt
 at a  full folk club style gig from my study to my
-[[https://twitch.tv/telear][Twitch stream]] and I would  love for you to be there.
+Twitch stream]] and I would  love for you to be there.
 
 
-** Schedule
+*** Schedule
    :PROPERTIES:
    :ID:       6769254B-F1F3-46DF-814F-63D96F985D7C
    :END:
@@ -723,7 +694,7 @@ any folky friends who've managed to get themselves up on Twitch by then. I'm
 hoping it'll be a lot of fun.
 
 
-** Ticket Prices
+*** Ticket Prices
    :PROPERTIES:
    :ID:       0E43DD7E-5512-435C-B7C4-73910B049C75
    :END:
@@ -768,19 +739,63 @@ public amazon wishlist, paypal tip jar, patreon page or some other service
 I've not heard of yet. In some ways, it's never been easier for you to
 support the work of artists you love.
 
-* DRAFT Stay (The Fuck) At Home                         :@repertoire:project:
+
+** TODO Streaming Folk Music
   :PROPERTIES:
-  :export_file_name: stay-at-home
-  :ID:       7066F907-3B4C-437C-86E3-492B48391267
+  :ID:       2AB0850A-2FC4-42B3-BAA6-6E1A9512FB3B
   :END:
+  I'll be entering my sixth month of streaming live folk music on the Internet next month, and I've learned a good deal about it as I've done it. Primarily I've learned that a stream isn't the same as a live gig or a prerecorded concert segment; it's it's own thing and, I think it's something that will continue to be a viable form of performance for people as we finally emerge from lockdown because it offers something that traditional modes of performance don't, and that has value.
+  Live streaming isn't the only new form that's emerged from All This. One of the first, and most successful has been the 'virtual festival' that was pretty much pioneered and perfected by the people behind the [[https://folkonfoot.com][Folk On Foot]] podcast. On the early and late May bank holidays, they curated a lot of short performance videos from their artists which were then very capably linked together by Matthew Bannister. It was interesting comparing the relative slickness of Bannister, presenting from his living room and some of the artists who had varying degrees of experience of performing down the lens, but on the whole it was glorious. They solicited donations, which were shared between the artists and the charity [[https://www.helpmusicians.org.uk][Help Musicians]], and the whole thing was glorious. Other festivals have followed suit with greater or lesser success {{marginnote}}I really enjoyed the [[https://www.folkbytheoak.com/about/familynestfest/][Folk by the Oak 'Family Nest' Fest]], which again split the money between the artists and their chosen charity, with some of the real world festival's vibe captured by interspersing the performances with short videos from their regular vendors and kids workshop performers{{/marginnote}}.
 
-  {{< embed "https://youtu.be/1RiGM6KrH30" />}}
+*** Platforms
+   :PROPERTIES:
+   :ID:       4D0E27C9-6823-4569-80F0-216CBFB0D79B
+   :END:
 
-As the lockdown started, some friends{{<marginnote>}}Vikki Appleton Fielden, Heather Charlton, Helen Edwards{{< /marginnote >}} and I wrote what we hoped would be a funny song about the best way to protect yourself and your loved ones as the enormity of the pandemic started to become apparent. Stay the fuck at home. We thought it would be a larky topical song, good for a couple of weeks as it became apparent that the government was being... hesitant, let's say about introducing a firm lockdown. A few digs at the "take it on the chin" or "herd immunity" policy that seemed to see the unnecessary deaths of thousands of elderly vulnerable people as acceptable losses. It didn't exactly go viral, but a bunch of Facebook friends all joined in, leading to the video you see above.
+*** Share the load
+   :PROPERTIES:
+   :ID:       78283C00-98D5-40F4-AC1D-5A1FDCFEB1C0
+   :END:
 
-<!--more-->
+*** Payment models
+   :PROPERTIES:
+   :ID:       DFF1A992-401A-46D9-8B64-E35C2CB166D8
+   :END:
 
-* DONE Adding a generic oembed handler for Hugo                        :hugo:
+*** Liveness
+   :PROPERTIES:
+   :ID:       DE8760EC-239D-44A2-A9D4-3D7C2FD433B4
+   :END:
+
+** DONE Asshole Free Devil's Advocacy                     :philosophy:blether:
+:PROPERTIES:
+:export_file_name: devils-advocacy-without-asshattery
+:export_hugo_slug: devils-advocacy-without-tears
+:export_date: 2018-10-25
+:ID:       B96DE889-2A35-4276-B716-EB558186DB55
+:END:
+
+
+So, you want to play Devil's Advocate, but you're afraid you might come across as a bit (or a lot) of an asshole? Here's some suggestions for how to avoid that.
+
+#+hugo: more
+
+*** Maybe don't?
+   :PROPERTIES:
+   :ID:       DFD8CB3D-98AB-414B-8766-B64DBC5E1D04
+   :END:
+
+Seriously, why does the Devil need an advocate? If you want to play DA because you think the position you want to argue has some merit, then argue the position honestly and own it. If it doesn't survive the discussion (or is shouted down), then "Ah right, I hadn't thought of that, you're right" or words to that effect and file that position in your memory as a bad one (along with the skeleton of /why/ it's bad). Nothing wrong with holding strong opinions, the thing that's bad is holding onto them if they're shown to be bad. If the group you're talking with just shouts you down and doesn't convince you that your position is a bad one, maybe find a different group? Or agree with them to steer clear of that topic.
+
+What's really intellectually dishonest is to say "I was only playing Devil's Advocate!" after an idea has been shot down. I'm sure your intentions are entirely honorable, but what if they weren't? Say you genuinely held that the best thing to do with the children of the poor was to turn them into cheap and delicious meals for the richest in society. Say you advanced this position to your friends and were utterly appalled by the idea. Then maybe you'd try to distance yourself from it by saying "Whoah! Guys{{% marginnote %}}​ I know. But the kind of people who make this move in an argument are usually the kind of people who'd address a mixed group of folk as "guys".{{% /marginnote %}}! I was only playing Devil's Advocate!"
+
+When I hear someone playing that card, how am I supposed to distinguish between the well-meaning "There is this argument I've come across that I'm not sure I agree with, but it maybe has some merit and I don't know how I'd argue convincingly against it" types and the assholes who were flying a kite? Maybe the non-assholes will have friends who'll tell me that "They might seem like a bit of an arse, but they're not really." I've been that guy, and I don't want to be him again. Why is it okay for me to load the work of explaining that I'm not dickhead onto my friends rather than just not acting like a dickhead in the first place? Eventually, friends get tired. Eventually they'll shift to "Yeah, I know he seems like an ass, and he kind of is, but..." and then one day, they won't be your friends any more.
+
+{{% newthought %}}Before you introduce the idea{{% /newthought %}} you want to play Devil's Advocate for, say something like "D'you mind if I play Devil's Advocate for a moment?" And when the group tells you "Yes, we do mind. Why help the devil?" listen to them. If it's genuinely that you've heard some argument that on the face of it seems repugnant, but you can't find a hole in it, then say as much: "What's wrong with this idea? Clearly feeding poor babies to the 1% is utterly repellant, but I can't find an effective counterargument."
+
+Don't keep doing it, mind, or you'll start looking like the kite flying asshole again.
+
+** DONE Adding a generic oembed handler for Hugo :hugo:
 :PROPERTIES:
 :export_hugo_slug: oembed-for-hugo
 :export_file_name: oembed-for-hugo
@@ -872,34 +887,6 @@ Collapsing all those ~scheme~ entries down to a single regular expression was a 
 
 {{< newthought >}}This isn't the shortcode's final form{{< /newthought >}} -- it's not as robust as I'd like it to be in the face of a missing or temporarily down oembed endpoint, so it would be good to have some kind of fallback in case an endpoint changes or goes away. Also, there are some sites that have their own methods for embedding previews, which don't support oembed {{< marginnote >}}All those IndieWeb sites that use ~h-entry~ and ~h-card~ microformats to make the webpage machine parseable, for instance.{{< /marginnote >}} and it would be great to get at those somehow. I suspect I will end up with a shortcode which is essentially a big case statement dispatching to different partials which will handle the real rendering. Again... watch this space
 
-* DONE Streaming Folk Music
-  :PROPERTIES:
-  :ID:       2AB0850A-2FC4-42B3-BAA6-6E1A9512FB3B
-  :export_date: 2020-04-08
-  :END:
-  I'll be entering my sixth month of streaming live folk music on the Internet next month, and I've learned a good deal about it as I've done it. Primarily I've learned that a stream isn't the same as a live gig or a prerecorded concert segment; it's it's own thing and, I think it's something that will continue to be a viable form of performance for people as we finally emerge from lockdown because it offers something that traditional modes of performance don't, and that has value.
-
-  Live streaming isn't the only new form that's emerged from All This. One of the first, and most successful has been the 'virtual festival' that was pretty much pioneered and perfected by the people behind the [[https://folkonfoot.com][Folk On Foot]] podcast. On the early and late May bank holidays, they curated a lot of short performance videos from their artists which were then very capably linked together by Matthew Bannister. It was interesting comparing the relative slickness of Bannister, presenting from his living room and some of the artists who had varying degrees of experience of performing down the lens, but on the whole it was glorious. They solicited donations, which were shared between the artists and the charity [[https://www.helpmusicians.org.uk][Help Musicians]], and the whole thing was glorious. Other festivals have followed suit with greater or lesser success {{marginnote}}I really enjoyed the [[https://www.folkbytheoak.com/about/familynestfest/][Folk by the Oak 'Family Nest' Fest]], which again split the money between the artists and their chosen charity, with some of the real world festival's vibe captured by interspersing the performances with short videos from their regular vendors and kids workshop performers{{/marginnote}}.
-
-** Platforms
-   :PROPERTIES:
-   :ID:       4D0E27C9-6823-4569-80F0-216CBFB0D79B
-   :END:
-
-** Share the load
-   :PROPERTIES:
-   :ID:       78283C00-98D5-40F4-AC1D-5A1FDCFEB1C0
-   :END:
-
-** Payment models
-   :PROPERTIES:
-   :ID:       DFF1A992-401A-46D9-8B64-E35C2CB166D8
-   :END:
-
-** Liveness
-   :PROPERTIES:
-   :ID:       DE8760EC-239D-44A2-A9D4-3D7C2FD433B4
-   :END:
 
 * DRAFT Footnotes
   :PROPERTIES:
