@@ -11,9 +11,6 @@ on:
       - layouts/**
       - .github/**.yml
 jobs:
-  env:
-    emacs_version: 28.1
-
   deploy:
 
     runs-on: ubuntu-latest
@@ -32,7 +29,7 @@ jobs:
           cache-name: cache-nix-installs
         with:
           path: /nix
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ env.emacs_version }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-28.1
           
       - name: Clone Org-mode exporter
         run: git clone https://github.com/kaushalmodi/ox-hugo.git ~/ox-hugo
@@ -40,7 +37,7 @@ jobs:
       - name: Setup emacs
         uses: purcell/setup-emacs@master
         with:
-          version: ${{ env.emacs_version }}
+          version: 28.1
 
       - name: Prep .emacs.d for ox-hugo because ???
         run: mkdir -p ~/.emacs.d
