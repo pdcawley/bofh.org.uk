@@ -10,9 +10,10 @@ on:
       - theme/**
       - layouts/**
       - .github/**.yml
-env:
-  emacs_version: 28.1
 jobs:
+  env:
+    emacs_version: 28.1
+
   deploy:
 
     runs-on: ubuntu-latest
