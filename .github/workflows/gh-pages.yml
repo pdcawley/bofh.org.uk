@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+    paths:
+      - content/**.md
+      - org-content/*.org
+env:
+  emacs_version: 28.1
 jobs:
   deploy:
 
@@ -17,13 +22,21 @@ jobs:
           submodules: true
           fetch-depth: 0
 
+      - name: Cache Nix installs
+      	uses: actions/cache@v3
+        env:
+          cache-name: cache-nix-installs
+        with:
+          path: /nix
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ env.emacs_version }}
+          
       - name: Clone Org-mode exporter
         run: git clone https://github.com/kaushalmodi/ox-hugo.git ~/ox-hugo
 
       - name: Setup emacs
         uses: purcell/setup-emacs@master
         with:
-          version: 27.2
+          version: ${{ env.emacs_version }}
 
       - name: Prep .emacs.d for ox-hugo because ???
         run: mkdir -p ~/.emacs.d
