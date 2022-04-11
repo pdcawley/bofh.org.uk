@@ -806,7 +806,7 @@ If you're at all like me, you have content on a bunch of different sites (Instag
 
 Hugo[fn:2] sort of supports this out of the box with its ~youtube~, ~instagram~, ~vimeo~ etc. built in shortcodes. The thing is, they're not lazy enough -- you have to dig into each URL to extract a content ID and pass that in to ~{{%/* youtube kb-Aq6S4QZQ */%}}~ or whatever. Which would be kind of fine, if you weren't used to the way sites like Facebook, Twitter, Tumblr and so on work. With those sites, you enter a URL and they disappear off behind the scenes and fill in a fancy preview of the page you linked to. Why can't Hugo do that?
 
-<!--more-->
+#+hugo: more
 
 Well, it can. It just takes a little work.[fn:1] The ~question~ to ask is how do all those user friendly sites do there thing? Twitter and Facebook, being the walled garden behemoths that they are do it by dictating two different microformats{{% marginnote %}}
 Of bloody course!
