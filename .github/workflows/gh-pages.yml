@@ -7,6 +7,9 @@ on:
     paths:
       - content/**.md
       - org-content/*.org
+      - theme/**
+      - layouts/**
+      - .github/**.yml
 env:
   emacs_version: 28.1
 jobs:
