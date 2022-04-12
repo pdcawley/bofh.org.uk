@@ -1,4 +1,4 @@
-# -*- mode: org; mode: visual-line-mode; mode: visual-fill-column-mode; mode: org-hugo-auto-export-mode -*-
+# -*- mode: org; mode: visual-line; mode: visual-fill-column; mode: org-hugo-auto-export -*-
 #+hugo_section: post/
 #+hugo_base_dir: ../
 #+export_hugo_weight: auto
@@ -6,7 +6,11 @@
 #+startup: inlineimages
 #+startup: logdone
 #+property: header-args:sql :session reporter :exports result :colnames yes  :engine postgresql :results replace table
-#+hugo_paired_shortcodes: %table %marginnote
+#+hugo_paired_shortcodes: %table %marginnote %newthought
+#+macro: newthought @@hugo:{{% newthought %}}@@$1@@hugo:{{% /newthought %}}@@
+#+macro: marginnote @@hugo:{{% marginnote %}}@@$1@@hugo:{{% /marginnote %}}@@
+#+macro: sc @@hugo:{{% $1 %}}@@
+
 
 #+seq_todo: TODO DRAFT DONE
 
@@ -886,6 +890,41 @@ Collapsing all those ~scheme~ entries down to a single regular expression was a 
 
 @@hugo:{{< newthought >}}@@This isn't the shortcode's final form@@hugo:{{< /newthought >}}@@ -- it's not as robust as I'd like it to be in the face of a missing or temporarily down oembed endpoint, so it would be good to have some kind of fallback in case an endpoint changes or goes away. Also, there are some sites that have their own methods for embedding previews, which don't support oembed @@hugo:{{< marginnote >}}@@All those IndieWeb sites that use ~h-entry~ and ~h-card~ microformats to make the webpage machine parseable, for instance.@@hugo:{{< /marginnote >}}@@ and it would be great to get at those somehow. I suspect I will end up with a shortcode which is essentially a big case statement dispatching to different partials which will handle the real rendering. Again... watch this space
 
+
+** DONE «tap tap» is this thing on?
+CLOSED: [2022-04-12 Tue 16:26]
+:PROPERTIES:
+:export_file_name: 20220412-is-this-thing-on
+:export_hugo_slug: is-this-thing-still-on
+:END:
+
+#+begin_description
+In which Piers attempts to explain why he's not been blogging in years, and makes vague noises about getting back to it again, in the hope that this time his [[https://indieweb.org/][IndieWeb]] inspired enthusiasm will last longer than a couple of weeks.
+#+end_description
+
+It's been a while hasn't it? I've been blogging on and (mostly) off since 2004 (at least according to the oldest article on here), and the [[https://indieweb.org][IndieWeb]] movement reminds me of those heady days before Facebook, Twitter and the other monoliths scooped up all the bloggers.
+
+It was probably Twitter that killed my regular blogging -- before Twitter, if I had something to say, I'd write a blog (or a LiveJournal for more personal stuff) post. Maybe a few days later, someone would reply, or write a blogpost of their own as a reaction and I'd get a pingback. These days, when I blog, my posts sit in splendid isolation, which wasn't really a thing back in Blogging's heyday. Spam killed my will to support comments and the growing complexity of blogging software was a real turn off. {{{marginnote(And I speak as someone who was the maintainer of [[https://typosphere.org/][Typo]] for a few years.)}}}
+
+I burned out.
+
+I ran this site on Typo, but most of the work I was doing on it was implementing features I didn't need which made the code slower and harder to understand, so I stepped back just as Twitter started its rise.
+
+I've made a few abortive returns to blogging since, prompted by the rise of static site generation engines @@hugo:{{% marginnote %}}@@I'm now using [[https://gohugo.io][Hugo]], [[https://orgmode.org/][org-mode]] and [[https://github.com][Github Actions]] to manage the site, and it's all hosted as a bunch of text files on a Raspberry Pi in one of [[https://mythic-beasts.com/][Mythic Beasts]]' racks somewhere.@@hugo:{{% /marginnote %}}@@ and the fact that I like having something to fiddle with. I could have just installed WordPress, but the idea of simply serving up a pile of static files (and no JavaScript!) seems way more sustainable (and secure) to me. @@hugo:{{% marginnote %}}@@ Executing code that's exposed to the internet when I could just be serving textfiles is a recipe for pain and suffering.@@hugo:{{% /marginnote %}}@@
+
+{{{newthought(Not running code on my server)}}} makes it a bit tricky to be fully engaged in IndieWeb ideal of a /connected/ web of websites using [[https://www.w3.org/TR/webmention/][WebMentions]] to make those interactions visible, but [[https://www.w3.org/TR/webmention/][it can be done]], and I too shall achieve it! One day. Baby steps, eh? I might resort to a Javascript based setup initially, but long term I want to keep the site completely script-free and fast.
+
+*** Other writing
+
+{{{newthought(I've written a few pieces)}}} now for [[https://jonwilks.online/][Jon Wilks]]' new and rather wonderful  [[https://tradfolk.co/][Tradfolk]] website. You can find those (and any future articles) at [[https://tradfolk.co/author/pierscawley/]] if you're interested in my suggestions on how to get started singing without accompaniment and building your repertoire.
+
+I think that's what's got me returning to this site frankly. I'd forgotten how much I enjoyed writing long-ish form stuff rather than 280 character miniatures.
+
+*** Coming up
+
+{{{sc(newthought)}}}I suspect that,{{{sc(/newthought)}}} like every other IndieWeb blogger, I'll have a few upcoming articles detailing how I make things work here, {{{marginnote(Can there be anything more fascinating than tech navel gazing?)}}} but there's a few things in my drafts folder that I want to return to, and probably some discussion of my experiences streaming folk songs every Friday night for the best part of two years now.
+
+Let's revisit this in a couple of months and see if it's still the most recent article on the site, eh?
 
 * DRAFT Footnotes
   :PROPERTIES:
