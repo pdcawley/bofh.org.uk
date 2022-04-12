@@ -902,7 +902,7 @@ CLOSED: [2022-04-12 Tue 16:26]
 In which Piers attempts to explain why he's not been blogging in years, and makes vague noises about getting back to it again, in the hope that this time his [[https://indieweb.org/][IndieWeb]] inspired enthusiasm will last longer than a couple of weeks.
 #+end_description
 
-It's been a while hasn't it? I've been blogging on and (mostly) off since 2004 (at least according to the oldest article on here), and the [[https://indieweb.org][IndieWeb]] movement reminds me of those heady days before Facebook, Twitter and the other monoliths scooped up all the bloggers.
+It's been a while hasn't it? I've been blogging on and (mostly) off since 2004 (at least according to the oldest article on here), and the [[https://indieweb.org/][IndieWeb]] movement reminds me of those heady days before Facebook, Twitter and the other monoliths scooped up all the bloggers.
 
 It was probably Twitter that killed my regular blogging -- before Twitter, if I had something to say, I'd write a blog (or a LiveJournal for more personal stuff) post. Maybe a few days later, someone would reply, or write a blogpost of their own as a reaction and I'd get a pingback. These days, when I blog, my posts sit in splendid isolation, which wasn't really a thing back in Blogging's heyday. Spam killed my will to support comments and the growing complexity of blogging software was a real turn off. {{{marginnote(And I speak as someone who was the maintainer of [[https://typosphere.org/][Typo]] for a few years.)}}}
 
