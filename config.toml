@@ -21,6 +21,7 @@ googleAnalytics = "UA-135014-1"
 
 [outputs]
     home = ["HTML", "ATOM", "JF2Feed"]
+    section = ["HTML", "ATOM", "JF2Feed"]
     page = ["HTML", "JF2Post"]
 [author]
     homepage = "/"
