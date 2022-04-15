@@ -1,0 +1,13 @@
+{{ $time := time "2000-04-01" }}
+{{ with .published }}
+{{ $time = time . }}
+{{ else }}
+{{ $time = time (index . "wm-received") }}
+{{ end }}
+<div class="metaline">
+  <a href="{{.url}}" class="u-url">
+    <time class="dt-published" datetime="{{ time.Format "2006-01-02T15:04:05Z0000" $time }}">
+      {{- time.Format "Mon, 2nd Jan, 2006 3:04pm -0700" $time -}}
+    </time>
+  </a>
+</div>

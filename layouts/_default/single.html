@@ -1,0 +1,87 @@
+{{ define "breadcrumb" }}
+  {{ partial "breadcrumb.html" . }}
+{{ end }}
+{{ define "main" }}
+  <article class="h-entry" id="skip-to-content" role="article" aria-labelledby="{{ anchorize .Title }}">
+    <header aria-labelledby="{{ anchorize .Title }}" role="heading" aria-level="1">
+      <hgroup>
+          <h1 class ="p-name" id="{{ anchorize .Title }}"><a class="u-url" href="{{ .Permalink }}">{{ .Title }}</a></h1>
+          {{- with .Params.title_sub }}<h2>{{ . }}</h2>{{- end }}
+          {{- with .Params.headline }}<h3>{{ . }}</h3>{{- end }}
+      </hgroup>
+      <p class="colophon">Written by <a class="p-author h-card" href="/">{{ .Site.Params.author | safeHTML }}</a> on
+          {{ with .Date }}<time class="dt-published" aria-label="Published On" datetime="{{ dateFormat $.Site.Params.iso8601_format . }}">{{ dateFormat "2006-01-02" . }}</time> {{- end }}
+      </p>
+    </header>
+    <section class="content e-content" role="region" aria-label="Content">
+        {{ .Content }}
+    </section>
+    <section class="content" id="webmenttions">
+	{{ $slug := .RelPermalink | sha256 }}
+	{{ $all_mentions := index $.Site.Data.mentions $slug | default slice }}
+	{{ $likes := slice }}
+	{{ $reposts := slice }}
+	{{ $replies := slice }}
+	{{ $mentions := slice }}
+	{{ $rest := slice }}
+	{{ range $all_mentions }}
+	{{ if (isset . "like-of") }}
+	{{ $likes = $likes | append . }}
+	{{ else if (isset . "repost-of") }}
+	{{ $reposts = $reposts | append . }}
+	{{ else if (isset . "in-reply-to") }}
+	{{ $replies = $replies | append . }}
+	{{ else if (isset . "mention-of") }}
+	{{ $mentions = $mentions | append . }}
+	{{ else }}
+	{{ $rest = $rest | append . }}
+	{{ end }}
+	{{ end }}
+
+	<p>Likes: <span>{{ $likes | len }}</span> 
+	Reposts: <span>{{ $reposts | len }}</span></p>
+
+
+	<ul id="replies">
+	  {{ range $replies }}
+	  {{ $time := time "2000-04-01" }}
+	  {{ with .published }}
+	  {{ $time = time . }}
+	  {{ else }}
+	  {{ $time = time (index . "wm-received") }}
+	  {{ end }}
+	  <li class="p-comment h-cite comment">
+	    {{ with .author }}
+	    {{ partial "author.html" . }}
+	    {{ end }}
+	    {{ partial "wm-content.html" . }}
+	    {{ partial "wm-metaline.html" . }}
+	  </li>
+	  {{ end }}
+	</ul>
+
+	<h3>Other Mentions</h3>
+
+	<ul id="other-mentions">
+	  {{ range $mentions | append $rest }}
+	  <li class="p-comment h-cite comment">
+	    {{ with .author }}
+	    {{ partial "author.html" . }}
+	    {{ end }}
+	    {{ partial "wm-content.html" . }}
+	    {{ partial "wm-metaline.html" . }}
+	  </li>
+	  {{ end }}
+      </ul>
+    </section>
+    <footer role="complementary" aria-label="Metadata and Related Posts">
+        <nav>
+            {{- if .Params.tags }}
+            <p aria-label="Tags">
+                {{- with .Params.tags }}<span id="skip-to-tags">{{ partial "tags.html" . }}</span>{{- end }}
+            </p>
+            {{- end }}
+        </nav>
+    </footer>
+  </article>
+{{ end }}
