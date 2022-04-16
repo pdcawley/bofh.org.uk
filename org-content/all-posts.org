@@ -926,6 +926,20 @@ I think that's what's got me returning to this site frankly. I'd forgotten how m
 
 Let's revisit this in a couple of months and see if it's still the most recent article on the site, eh?
 
+** DONE We have WebMentions
+CLOSED: [2022-04-16 Sat 14:53]
+:PROPERTIES:
+:export_file_name: we-have-webmentions
+:END:
+
+#+begin_description
+Taking one more step on the road to full IndieWeb citizenship or whatever it's called, [[/][Just A Summary]] now displays webmentions.
+#+end_description
+
+After much fiddling with [[https://n8n.io/][N8N]], [[https://webmention.io/][webmention.io]], and the usual combination of [[https://gohugo.io][Hugo]]'s powerful, yet inscrutable templating language and my tenuous understanding of CSS, we're now /displaying/ our webmentions. We've been directing them to webmention.io for years now, but scratching my head over what to do with them.
+
+The way it works at the moment is I run a task every few hours that checks webmention.io, merges the results with the stuff we already know about and commits the updated data files to Github, which triggers a github action that rebuilds the site. This is… inefficient. My next step is to either expose the n8n workflow via a webhook, or work out how to retain some information from the previous run and use that to ensure we only fetch any mentions that've arrived since the last time we checked. But that's work for another day. Right now I'm calling what I have a win, merging this branch to main and basking in the warm glow of taking one more step down the IndieWeb road.
+
 * DRAFT Footnotes
   :PROPERTIES:
   :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
