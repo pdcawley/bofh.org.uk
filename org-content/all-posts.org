@@ -947,6 +947,12 @@ CLOSED: [2022-04-24 Sun 16:30]
 :export_hugo_slug: not-so-simple
 :END:
 
+#+begin_description
+The beauty of using a static site generator to build your website is supposed to be that it's all delightfully simple. Simple markdown formatted files go in at one end and a slim, fast and easy to serve website comes out the other end. All that remains is to upload those files to the appropriate directory on your server and all is well.
+
+But never underestimate the ability of a long time Emacs user to complicate things.
+#+end_description
+
 The beauty of using a static site generator to build your website is supposed to be that it's all delightfully simple. Simple markdown formatted files go in at one end and a slim, fast and easy to serve website comes out the other end. All that remains is to upload those files to the appropriate directory on your server and all is well.
 
 But never underestimate the ability of a long time Emacs user to complicate things. For instance, markdown is all well and good, but I've been doing most of my writing in [[https://orgmode.org/][Org Mode]][fn:5] so I really want to stay in Org mode to write these blog posts. [[https://gohugo.io/][Hugo]] understands =.org= files, so I could just lean on that, but the way Hugo treats org files seems slightly out of whack with what I think of as the Org way and I'd end up having to stick with the subset of org syntax that Hugo know. So I use [[https://ox-hugo.scripter.co][ox-hugo]], there's a bit of configuration needed to make it work the way I like, but I prefer to change software to accommodate me rather than change me to accommodate software
