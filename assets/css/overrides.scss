@@ -44,9 +44,12 @@ article>section.content>footer.metaline {
 
 section#webmentions {
     &>h3 {
-    margin-top: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 0;
     }
 
+
+    
     &>ul {
     padding-left: 0;
     margin-top: 1rem;
@@ -97,4 +100,21 @@ section#webmentions {
         }
     }
     }
+
+    ul.facepile {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	img {
+	    border-radius: 3px;
+	    width: 36px;
+	    height: 36px;
+	}
+	li {
+	    float: left;
+	    margin-left: 3px;
+	    padding: 0;
+	}
+    }
+	
 }

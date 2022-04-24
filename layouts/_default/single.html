@@ -12,17 +12,18 @@
 {{ $rest := slice }}
 
 {{ range $all_mentions }}
-  {{ if (isset . "like-of") }}
-    {{ $likes = $likes | append . }}
-  {{ else if (isset . "repost-of") }}
-    {{ $reposts = $reposts | append . }}
-  {{ else if (isset . "in-reply-to") }}
-    {{ $replies = $replies | append . }}
-  {{ else if (isset . "mention-of") }}
-    {{ $mentions = $mentions | append . }}
-  {{ else }}
-    {{ $rest = $rest | append . }}
-  {{ end }}
+{{ $type := (index . "wm-property") }}
+{{ if (eq $type "like-of") }}
+{{ $likes = $likes | append . }}
+{{ else if (eq $type "repost-of") }}
+{{ $reposts = $reposts | append . }}
+{{ else if (eq $type "in-reply-to") }}
+{{ $replies = $replies | append . }}
+{{ else if (eq $type "mention-of") }}
+{{ $mentions = $mentions | append . }}
+{{ else }}
+{{ $rest = $rest | append . }}
+{{ end }}
 {{ end -}}
 
 <article class="h-entry" id="skip-to-content" role="article" aria-labelledby="{{ anchorize .Title }}">
@@ -48,6 +49,28 @@
       </footer>
     </section>
     <section class="content" id="webmentions">
+      {{- if lt 0 (len $likes) }}
+      <h3>Likes</h3>
+      {{ $.Scratch.Set "class" "p-like" }}
+      <ul class=facepile>
+	{{ range $likes }}
+	{{ partial "facepile-entry.html" . }}
+	{{ end }}
+      </ul>
+      <div style="clear:both;"></div>
+      {{ end -}}
+
+      {{- if lt 0 (len $reposts) }}
+      <h3>Reposts</h3>
+      {{ $.Scratch.Set "class" "p-repost" }}
+      <ul class=facepile>
+	{{ range $reposts }}
+	{{ partial "facepile-entry.html" . }}
+	{{ end }}
+      </ul>
+      <div style="clear:both;"></div>
+      {{ end -}}
+      
       {{ if lt 0 (len $replies) }}
       <h3>Replies</h3>
       <ul id="replies">
@@ -73,13 +96,16 @@
       <h3>Other Mentions</h3>
       <ul id="other-mentions">
 	{{ range $mentions | append $rest }}
+	{{ if lt 0 (len (index .author "url")) }}
 	<li class="p-comment h-cite comment">
 	  {{ with .author }}
 	  {{ partial "author.html" . }}
 	  {{ end }}
 	  {{ partial "wm-content.html" . }}
 	  {{ partial "wm-metaline.html" . }}
+	  
 	</li>
+	{{ end }}
 	{{ end }}
       </ul>
       <div style="clear:both;"></div>
