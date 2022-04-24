@@ -927,10 +927,10 @@ I think that's what's got me returning to this site frankly. I'd forgotten how m
 Let's revisit this in a couple of months and see if it's still the most recent article on the site, eh?
 
 ** DONE We have WebMentions
+CLOSED: [2022-04-16 Sat 14:53]
 :PROPERTIES:
 :export_file_name: we-have-webmentions
 :END:
-CLOSED: [2022-04-16 Sat 14:53]
 
 #+begin_description
 Taking one more step on the road to full IndieWeb citizenship or whatever it's called, [[/][Just A Summary]] now displays webmentions.
