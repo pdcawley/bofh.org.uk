@@ -1,5 +1,9 @@
 <div class="e-content comment-content">
-  {{ with .content }}
-    {{- .text }}
+  {{- with .content }}
+  {{ if isset . "html" }}
+  {{ .html | safeHTML}}
+  {{ else }}
+  {{ .text }}
   {{ end }}
+  {{ end -}}
 </div>
