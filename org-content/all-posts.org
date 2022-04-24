@@ -10,7 +10,7 @@
 #+macro: newthought @@hugo:{{% newthought %}}@@$1@@hugo:{{% /newthought %}}@@
 #+macro: marginnote @@hugo:{{% marginnote %}}@@$1@@hugo:{{% /marginnote %}}@@
 #+macro: sc @@hugo:{{% $1 %}}@@
-
+#+macro: <sc @@hugo:{{< $1 >}}@@
 
 #+seq_todo: TODO DRAFT DONE
 
@@ -891,7 +891,7 @@ Collapsing all those ~scheme~ entries down to a single regular expression was a 
 @@hugo:{{< newthought >}}@@This isn't the shortcode's final form@@hugo:{{< /newthought >}}@@ -- it's not as robust as I'd like it to be in the face of a missing or temporarily down oembed endpoint, so it would be good to have some kind of fallback in case an endpoint changes or goes away. Also, there are some sites that have their own methods for embedding previews, which don't support oembed @@hugo:{{< marginnote >}}@@All those IndieWeb sites that use ~h-entry~ and ~h-card~ microformats to make the webpage machine parseable, for instance.@@hugo:{{< /marginnote >}}@@ and it would be great to get at those somehow. I suspect I will end up with a shortcode which is essentially a big case statement dispatching to different partials which will handle the real rendering. Again... watch this space
 
 
-** DONE «tap tap» is this thing on?
+** DONE «tap tap» is this thing on? :indieweb:
 CLOSED: [2022-04-12 Tue 16:26]
 :PROPERTIES:
 :export_file_name: 20220412-is-this-thing-on
@@ -927,10 +927,10 @@ I think that's what's got me returning to this site frankly. I'd forgotten how m
 Let's revisit this in a couple of months and see if it's still the most recent article on the site, eh?
 
 ** DONE We have WebMentions
-CLOSED: [2022-04-16 Sat 14:53]
 :PROPERTIES:
 :export_file_name: we-have-webmentions
 :END:
+CLOSED: [2022-04-16 Sat 14:53]
 
 #+begin_description
 Taking one more step on the road to full IndieWeb citizenship or whatever it's called, [[/][Just A Summary]] now displays webmentions.
@@ -940,11 +940,207 @@ After much fiddling with [[https://n8n.io/][N8N]], [[https://webmention.io/][web
 
 The way it works at the moment is I run a task every few hours that checks webmention.io, merges the results with the stuff we already know about and commits the updated data files to Github, which triggers a github action that rebuilds the site. This is… inefficient. My next step is to either expose the n8n workflow via a webhook, or work out how to retain some information from the previous run and use that to ensure we only fetch any mentions that've arrived since the last time we checked. But that's work for another day. Right now I'm calling what I have a win, merging this branch to main and basking in the warm glow of taking one more step down the IndieWeb road.
 
-* DRAFT Footnotes
+** DONE Keep it Simple, But Where's The Fun In That? :indieweb:webmentions:
+CLOSED: [2022-04-24 Sun 16:30]
+:PROPERTIES:
+:export_file_name: 20220423-keep-it-simple-but-where-s-the-fun-in-that
+:export_hugo_slug: not-so-simple
+:END:
+
+The beauty of using a static site generator to build your website is supposed to be that it's all delightfully simple. Simple markdown formatted files go in at one end and a slim, fast and easy to serve website comes out the other end. All that remains is to upload those files to the appropriate directory on your server and all is well.
+
+But never underestimate the ability of a long time Emacs user to complicate things. For instance, markdown is all well and good, but I've been doing most of my writing in [[https://orgmode.org/][Org Mode]][fn:5] so I really want to stay in Org mode to write these blog posts. [[https://gohugo.io/][Hugo]] understands =.org= files, so I could just lean on that, but the way Hugo treats org files seems slightly out of whack with what I think of as the Org way and I'd end up having to stick with the subset of org syntax that Hugo know. So I use [[https://ox-hugo.scripter.co][ox-hugo]], there's a bit of configuration needed to make it work the way I like, but I prefer to change software to accommodate me rather than change me to accommodate software
+
+#+begin_marginnote
+I'd go so far as to say it's a point of pride.
+#+end_marginnote
+
+I've had all that set up for a while. As I say, a tad fiddly at first, but once it's in place, it just works.
+
+{{{newthought(Except…)}}} =ox-hugo= works by generating =.md= files from an org source, which are then used to generate the site, and I had things set up to autogenerate the html whenever I commited to the main branch of the blog repo, and the git server hook based system I was using only worked if those exported files were in repo.
+
+That's the sort of thing that makes me itch, because there were two files for any given article:
+
+ - =all-posts.org= :: the org file in which I write all my articles
+ - =article.md= :: the generated file that hugo uses to build the site.
+
+The generated file is an artefact of the build process and simply repeats the info in the org file, which should be our single source of truth. It's not a file that should be left around to be edited willy nilly because it could get out of sync with its source file. It's certainly not the sort of file that should live in the repository.
+
+I didn't worry about this for /ages,/ but it niggled at me. Then one day I read an article about using [[https://github.com/features/actions][Github Actions]] to build an ox-hugo based site by installing emacs and ox-hugo on the VM that does the build step and generating the markdown files during the build by running Emacs
+@@hugo:{{% marginnote %}}@@Yes, Emacs is an editor, but if you do 「@@html:<code>@@emacs all‑posts.org ‑‑batch ‑l ox-hugo ‑‑eval='(org-hugo-export-wim-to-md t)' ‑‑kill@@html:</code>@@」 it will happily execute any lisp code you care to ask it to.@@hugo:{{% /marginnote %}}@@ in batch mode. The markdown files never exist anywhere that anyone can edit them. So, of course I had to do that. Again, fiddly to set up, and arguably only of philosophical benefit, but worth it, I think.[fn:3]
+
+{{{newthought(I could've left it there,)}}} but the thing I miss about the old, slow, hard to maintain version of this site, is the sense of connection. The old site had comments, and pingback links to other blogs. There was a sense of connectedness that's missing from a collection of articles. I want some of that back.
+
+There is a way. In the time I've been mostly not blogging, some the folks who kept at it have been cooking up a collection of tools, technologies and standards under the [[https://indieweb.org][IndieWeb]] banner. There's a whole suite of technologies involved, but the piece of the puzzle that I'm interested in right now is the [[https://indieweb.org/WebMention][WebMention]], described as
+
+#+begin_quote
+… an @ mention that works across websites; so that you don't feel immovable from Twitter or Fb
+#+begin_cite
+[[https://twitter.com/rngala][Roney Ngala]] ([[https://twitter.com/rngala][@rngala]]) on [[https://twitter.com/rngala/status/852354426983591937][Twitter]]
+#+end_cite
+#+end_quote
+
+Now we're talking! It's a really simple standard too. When you mention, like, comment on, repost, reply to, bookmark or simply publicly interact with an "h-entry"[fn:4] on the IndieWeb, you can send a webmention by sending a small chunk of JSON to the webmention endpoint of the entry you mentioned. Assuming all the content is marked up correctly, /sending/ a webmention is delightfully easy. You can do it with ~curl~, if that's your thing, but I'm in an emacs buffer, so let's use [[https://github.com/pashky/restclient.el][~restclient~]]
+
+We mention [[https://indieweb.org]] in this post, so let's find out its webmention endpoint.
+
+#+begin_src restclient :exports both
+  HEAD https://indieweb.org
+       #+end_src
+
+       #+RESULTS:
+       #+BEGIN_SRC html
+       <!-- HEAD https://indieweb.org -->
+       <!-- HTTP/1.1 200 OK -->
+       <!-- Server: nginx/1.14.0 -->
+       <!-- Date: Sun, 24 Apr 2022 13:18:45 GMT -->
+       <!-- Content-Type: text/html; charset=UTF-8 -->
+       <!-- Connection: keep-alive -->
+       <!-- X-Powered-By: PHP/7.2.7-1+ubuntu16.04.1+deb.sury.org+1 -->
+       <!-- Link: <https://webmention.io/indiewebcamp/webmention>; rel="webmention" -->
+       <!-- Cache-Control: no-cache -->
+       <!-- Request duration: 0.833706s -->
+       #+END_SRC
+
+We're looking for the 「@@html:<code>@@Link: … ; rel="webmention"@@html:</code>@@」 line. This tells us that to send a webmention targeting https://indieweb.org, we need to post it to https://webmention.io/indiewebcamp/webmention. Which is almost as simple as finding the end point. Here we go:
+
+  #+begin_src restclient :exports both
+  POST https://webmention.io/indiewebcamp/webmention
+  Content-Type: application/x-www-form-urlencoded
+
+  source=https://bofh.org.uk/2022/04/24/not-so-simple&target=https://indieweb.org
+#+end_src
+
+#+RESULTS:
+#+BEGIN_SRC js
+{
+  "status": "queued",
+  "summary": "Webmention was queued for processing",
+  "location": "https://webmention.io/indiewebcamp/webmention/9Ltol-qmDoZxsD6YQ8U9",
+  "source": "https://bofh.org.uk/2022/04/24/not-so-simple",
+  "target": "https://indieweb.org"
+}
+// POST https://webmention.io/indiewebcamp/webmention
+// HTTP/1.1 201 Created
+// Content-Type: application/json;charset=UTF-8
+// Content-Length: 236
+// Connection: keep-alive
+// Status: 201 Created
+// Cache-Control: no-store
+// Access-Control-Allow-Origin: *
+// Location: https://webmention.io/indiewebcamp/webmention/9Ltol-qmDoZxsD6YQ8U9
+// X-Content-Type-Options: nosniff
+// Date: Sun, 24 Apr 2022 13:18:51 GMT
+// X-Powered-By: Phusion Passenger 5.3.1
+// Server: nginx/1.14.0 + Phusion Passenger 5.3.1
+// Request duration: 0.685421s
+#+END_SRC
+
+The job is done, and we get a nice JSON formatted summary of what's going on to boot.
+
+Of course, if a webmention is so simple to send then it's probably a pain in the bum to receive and it is… sort of. To receive a webmention request, you need to:
+
+  1. Run a web app to handle the request
+  2. Visit the source link
+  3. Parse out the microformats associated with the entry, its author and content
+  4. Figure out how to display the information
+
+Steps 1--3 aren't particularly hard, but they're fiddly to get right and involve making web connections to potentially unsafe sites and I'm using Hugo to generate this site because I don't want to be running potentially insecure code that's exposed to the internet on a server that I own if I can possibly help it. Thankfully, I don't have to. I can take a leaf out of indiweb.org's book and just delegate that part to [[https://webmention.io][webmention.io]]. Webmention.io handles all that icky visiting of foreign websites and parsing out microformats for you and instead presents you with a feed consisting of all the webmention's that've been sent to your site in a variety of formats. I've been consuming their ~.jf2~ formatted feed for a while now. JF2 is a JSON representation of the microformats associated with the webmention's source. Let's grab something from that feed
+
+#+begin_src restclient :exports both
+  GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/
+#+end_src
+
+#+RESULTS:
+#+BEGIN_SRC jsonc
+{
+  "type": "feed",
+  "name": "Webmentions",
+  "children": [
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "David Gallows",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/e7b750d847ffdcfc174845aadc9196125b83647258a1789bb2b92b493d223e8b.jpg",
+        "url": "https://twitter.com/DavidGallows"
+      },
+      "url": "https://twitter.com/pdcawley/status/1517783526049001472#favorited-by-877428607",
+      "published": null,
+      "wm-received": "2022-04-23T09:59:17Z",
+      "wm-id": 1385464,
+      "wm-source": "https://brid.gy/like/twitter/pdcawley/1517783526049001472/877428607",
+      "wm-target": "https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/",
+      "like-of": "https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "David Gallows",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/e7b750d847ffdcfc174845aadc9196125b83647258a1789bb2b92b493d223e8b.jpg",
+        "url": "https://twitter.com/DavidGallows"
+      },
+      "url": "https://twitter.com/DavidGallows/status/1517852498555555840",
+      "published": "2022-04-23T13:06:50+00:00",
+      "wm-received": "2022-04-23T15:12:04Z",
+      "wm-id": 1385681,
+      "wm-source": "https://brid.gy/comment/twitter/pdcawley/1517783526049001472/1517852498555555840",
+      "wm-target": "https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/",
+      "content": {
+        "html": "enjoyed reading about it :)\n\nI've been a trackball man since the word go, But have never been able to move away from Qwerty keyboards\n<a class=\"u-mention\" href=\"http://bofh.org.uk/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/DrugCrazed\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/keyboardio\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/pdcawley\"></a>",
+        "text": "enjoyed reading about it :)\n\nI've been a trackball man since the word go, But have never been able to move away from Qwerty keyboards"
+      },
+      "in-reply-to": "https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    }
+  ]
+}
+// GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/
+// HTTP/1.1 200 OK
+// Content-Type: application/json;charset=UTF-8
+// Transfer-Encoding: chunked
+// Connection: keep-alive
+// Status: 200 OK
+// Cache-Control: no-store
+// Access-Control-Allow-Origin: *
+// X-Content-Type-Options: nosniff
+// Date: Sun, 24 Apr 2022 13:01:16 GMT
+// X-Powered-By: Phusion Passenger 5.3.1
+// Server: nginx/1.14.0 + Phusion Passenger 5.3.1
+// Request duration: 0.721250s
+#+END_SRC
+
+Lot's of lovely structured data. Webmention.io has worked out that one mention was a ~like-of~ [[/2013/03/10/in-which-piers-prepares-to-void-the-warranty/][the blog post]], and the other was ~in-reply-to~ it. We get details of the author of the mentioning post and, where appropriate, its content. If I wanted to run more Javascript on here (and I want to run less), I could attach a script which would consume the post's feed and build a display of all of the mentions. It has a certain appeal, just add one script to the site and a dummy ~<div>~ or ~<ul>~ somewhere and I'm laughing. Plenty of sites do just that.
+
+This is not one of those sites. {{{marginnote(Of course, this couldn't possibly because I tried to use the Javascript, couldn't make it work and decided to actually include webmentions in the generated files, that would be foolish!)}}} It's not even the first statically generated site to go down the route of statically generating a post's webmentions. I was mostly inspired by [[https://randomgeekery.org][Brian Wisti]]'s post about [[https://randomgeekery.org/post/2020/11/using-the-webmentionio-api/][consuming the webmention.io API]] (except, of course, I don't use /any/ of his actual code.)
+
+The site's [[https://github.com/pdcawley/bofh.org.uk/][Github repo]] is configured so any commit on the ~main~  @@hugo:{{% marginnote %}}It's 2022 already -- let's stop having 'master' branches, eh?{{% /marginnote %}}@@ branch fires off a workflow that builds the site and ships all the files over to the webserver using ~rsync.~ If I take Brian's idea for grabbing all my webmentions {{{marginnote(I set up the ~rel="webmention"~ link /ages/ ago and never quite got around to doing anything with the data)}}} and ignore his warning about splitting it out into Hugo data files and just do it, I can start building the webmentions for posts. Huzzah!
+
+{{{newthought(It started so innocently,)}}} I have a server here that hosts a couple of Docker images and one of them is [[https://n8n.io/][N8N]], a super powered, self-hosted open source replacement for [[https://ifttt.com/][IFTTT]] with all sorts of hooks into other services and a much more powerful Github client than the IFTTT offering. It's a bit… JavaScript-y for my tastes, but you can't have everything.
+
+With a bit of fiddling, I had something that grabbed the webmention.io feed for the site every few hours, split it out into multiple files in ~data/mentions~ and updated GitHub. That's what I was celebrating in [[*We have WebMentions][We have WebMentions]]. I've moved on {{{marginnote(A cynical person might well read that as "broken things")}}} since then, because /of course/ sorting out de-duplication and remembering information between runs of the script is annoyingly fiddly and full of edge cases. Basically, I ended up trying to emulate a proper database. Which is why the latest iteration of webmention handling uses a proper database. I would have used [[https://sqlite.org/][SQLite]], but N8N doesn't have a SQLite node available out of the box. It does have a [[https://postgresql.org/][PostgreSQL]] one though, and recent versions of that have really good JSON support. I'd tell you more, but ~wc-mode~ tells me I'm nearly 2500 words in to this article, I think I'll wrap up for now and promise to give you the gory details in an upcoming article.
+
+{{{newthought(To be continued…)}}}
+
+* Footnotes
   :PROPERTIES:
   :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
   :END:
 
+[fn:5]  @@html:<dfn><code>org-mode</code></dfn>@@ is an Emacs outliner that grew into a calendar/outliner/spreadsheet/document processor/literate programming tool/dessert wax/floor topping.
+
+It's what I used to use [[https://bofh.org.uk/2019/02/25/baking-with-emacs/][to manage my bakery]], and it's amazing.
+
+Like Emacs itself, it's almost infinitely flexible, which makes it incredibly hard to get started with. There's oodles of org configurations out there to crib from and all of them are a mixture of the useful and irrelevant, because it turns out that people have different opinions about how they want to organise their writing and/or life. My config is very much under construction.
+
+[fn:4] An @@html:<dfn>@@h-entry@@html:</dfn>@@ is something that a web user might want to mention. At present, all the h-entries on this site are articles, but other people use them to mark up photos, videos, notes, calendar entries or anything else that makes sense to think of as an entry in a collection of stuff. If you'll look at this page in your browser's inspector, you'll see that the content is wrapped in ~<article class="h-entry" …>…</article>~ tags. Other tags within that block are are marked with other classes (so the title has ~p-name~ and the body has ~e-content~), according to the definition of the [[http://microformats.org/wiki/h-entry][h-entry microformat]]. By marking my site up with these micropformats, life becomes much easier for any IndieWeb tools to extract appropriate information from the site.
+
 [fn:2] [[https://gohugo.io][Hugo]] is the static site generator I use to build this blog. Another example of letting the computer do all the fiddly repetitive bits. In this case, to handle all the fiddly bits of writing full HTML pages, building index pages and the rest.
 
 [fn:1] It's also annoyingly temperamental at the moment; I'm working on that though.
+
+[fn:3] The Github Actions based build process is also substantially more reliable than the hand rolled server hook I was using. There's something to be said assembling your build pipeline from a bunch of stuff that lots of other people use (and maintain). Also, it reduces the number of moving parts on the Raspberry Pi that's serving these pages, which is no bad thing.

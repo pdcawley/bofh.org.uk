@@ -40,7 +40,7 @@ jobs:
         run: mkdir -p ~/.emacs.d
 
       - name: export posts from Org
-        run: emacs ./org-content/all-posts.org --batch -q -L ~/ox-hugo -l ox-hugo.el --eval='(org-hugo-export-wim-to-md t)' --kill
+        run: emacs ./org-content/all-posts.org --batch -q -L ~/ox-hugo -l ox-hugo.el --eval='(progn (setq org-confirm-babel-evaluate nil) (org-hugo-export-wim-to-md t))' --kill
 
       - name: export pages from Org
         run: emacs ./org-content/all-pages.org --batch -q -L ~/ox-hugo -l ox-hugo.el --eval='(org-hugo-export-wim-to-md t)' --kill
@@ -66,7 +66,7 @@ jobs:
           key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-hugomod-
-            
+
       - name: Build
         run: hugo --minify --buildFuture
 
