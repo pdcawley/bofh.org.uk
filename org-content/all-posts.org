@@ -977,7 +977,7 @@ I didn't worry about this for /ages,/ but it niggled at me. Then one day I read 
 
 {{{newthought(I could've left it there,)}}} but the thing I miss about the old, slow, hard to maintain version of this site, is the sense of connection. The old site had comments, and pingback links to other blogs. There was a sense of connectedness that's missing from a collection of articles. I want some of that back.
 
-There is a way. In the time I've been mostly not blogging, some the folks who kept at it have been cooking up a collection of tools, technologies and standards under the [[https://indieweb.org][IndieWeb]] banner. There's a whole suite of technologies involved, but the piece of the puzzle that I'm interested in right now is the [[https://indieweb.org/WebMention][WebMention]], described as
+There is a way. In the time I've been mostly not blogging, some of the folks who kept at it have been cooking up a collection of tools, technologies and standards under the [[https://indieweb.org][IndieWeb]] banner. There's a whole suite of technologies involved, but the piece of the puzzle that I'm interested in right now is the [[https://indieweb.org/WebMention][WebMention]], described as
 
 #+begin_quote
 … an @ mention that works across websites; so that you don't feel immovable from Twitter or Fb
