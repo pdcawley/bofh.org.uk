@@ -1,4 +1,4 @@
-# -*- mode: org; mode: visual-line; mode: visual-fill-column; mode: org-hugo-auto-export -*-
+# -*- mode: org; mode: visual-line; mode: visual-fill-column; -*-
 #+hugo_section: post/
 #+hugo_base_dir: ../
 #+export_hugo_weight: auto
@@ -42,9 +42,9 @@ would go and making lots of pizzas and a few loaves of bread.
 #+hugo: more
 
 *** The story so far…
-    :PROPERTIES:
-    :ID:       9B5B244B-A654-4254-BCEA-9CE31C600321
-    :END:
+:PROPERTIES:
+:ID:       9B5B244B-A654-4254-BCEA-9CE31C600321
+:END:
 
 In my [[file:/2016/11/11/taking-stock/][last entry]] (over a year ago, argh! Gill is /much/ better) the
 oven and all my kit were still in my garage, up on blocks waiting for
@@ -121,9 +121,9 @@ bits and bobs from [[https://nisbets.co.uk/][Nisbets]]. Fettling the oven wasn't
 but wow, do those baskets add up!
 
 *** It's arrived, and it fits
-    :PROPERTIES:
-    :ID:       AD747BAF-5C59-4456-B10E-EC021530372C
-    :END:
+:PROPERTIES:
+:ID:       AD747BAF-5C59-4456-B10E-EC021530372C
+:END:
 
 On the 8th of December last year I sent mail Martin some mail with the
 subject "It's arrived, and it fits!" and over the next couple of weeks
@@ -139,34 +139,34 @@ year old oven, and /damn/, but they were good.
 [[file:./back-to-the-bakehouse/first-loaf.jpg]]
 
 *** What next?
-    :PROPERTIES:
-    :ID:       6006477E-9259-4548-BE06-AA284C35787B
-    :END:
+:PROPERTIES:
+:ID:       6006477E-9259-4548-BE06-AA284C35787B
+:END:
 
 Of course, no enterprise like this is ever finished, here's a
 selection from my to do list.
 
 
 **** Plumbing
-     :PROPERTIES:
-     :ID:       C3EF1AE5-0633-4355-9A9E-AADC63202AC2
-     :END:
+:PROPERTIES:
+:ID:       C3EF1AE5-0633-4355-9A9E-AADC63202AC2
+:END:
 A bigger sink! Water near the scale so I'm not carrying buckets
 back and forth! A handwash basin!
 
 **** Qualifications
-     :PROPERTIES:
-     :ID:       D2940478-569D-4A68-8A85-A3FB832E0DD7
-     :END:
+:PROPERTIES:
+:ID:       D2940478-569D-4A68-8A85-A3FB832E0DD7
+:END:
 Environmental Health Officers do like you to have a certificate
 to show you're not a complete moron when it comes to hygiene.
 Breadmaking is relatively low risk because everything gets so
 very hot during the cooking process, but even so.
 
 **** Refrigeration
-     :PROPERTIES:
-     :ID:       7C336767-BFD8-4C6F-AB3F-379D615EF2CF
-     :END:
+:PROPERTIES:
+:ID:       7C336767-BFD8-4C6F-AB3F-379D615EF2CF
+:END:
 Right now everything's at the ambient temperature, which can mean
 staying in the bake house until the early hours in order to get
 the loaves into the oven when they're perfectly proved. A better
@@ -177,27 +177,27 @@ retarder, but transport is annoyingly tricky because it's 2m
 tall, and should ideally be transported vertically too.
 
 **** Fitness
-     :PROPERTIES:
-     :ID:       0599F968-72F3-467F-B4A8-5ADE5EBC6548
-     :END:
+:PROPERTIES:
+:ID:       0599F968-72F3-467F-B4A8-5ADE5EBC6548
+:END:
 Right now, I can just about cope with two bakes a week, but if
 I'm going to actually make money at this, I'm going to need to be
 able to manage more. Hopefully, as I bake it'll improve my
 fitness, so as demand grows I'll be able to meet it.
 
 **** Marketing
-     :PROPERTIES:
-     :ID:       584A5EC0-B1AA-425F-80E1-071BE00980FD
-     :END:
+:PROPERTIES:
+:ID:       584A5EC0-B1AA-425F-80E1-071BE00980FD
+:END:
 Oh boy, do I suck at marketing? Still, the product is good and
 there's nobody else in the local area making this sort of bread,
 so I have a few advantages. I still haven't made a Loafery
 website though. At least I have the loafery.co.uk domain.
 
 **** Online ordering
-     :PROPERTIES:
-     :ID:       FD89D3AC-84C8-4884-B2B4-FA445111D76D
-     :END:
+:PROPERTIES:
+:ID:       FD89D3AC-84C8-4884-B2B4-FA445111D76D
+:END:
 If I can get people ordering online, I can use that to produce
 production schedules, and generally have a better idea of how
 much to make on each bake day, which help minimise any wasted
@@ -205,9 +205,9 @@ bread. With two bakes done this year, I've sold every loaf - I'd
 like to keep that up.
 
 *** In the next bakehouse diary...
-    :PROPERTIES:
-    :ID:       6B4B05DF-007B-4559-ACFE-BB21BCEADA42
-    :END:
+:PROPERTIES:
+:ID:       6B4B05DF-007B-4559-ACFE-BB21BCEADA42
+:END:
 I'll talk about how a bake goes and the process of developing an
 initial range of products, sourcing flour and other ingredients
 and hopefully some news about online ordering.
@@ -316,9 +316,9 @@ So I have a bit of code in my emacs config that tweaks the day's entry in a dayb
 It won't win any code beauty contests, but it does the job of setting a ~work_date~ variable for the day's entry and running any code in the subtree as part of the capture process. The capture template has lines like ~#+call:mixes()~, which call the stored code snippets, that reference the variable set in the current subtree and so make the query for the right day. This means that all I have to do to know what I should be doing when I get into the bakehouse is to run an org-capture and check the resulting entry in my daybook. Provided, that is, that I've added the appropriate rows to the database.
 
 *** Next steps
-    :PROPERTIES:
-    :ID:       30E7B083-080A-45CC-AED5-A9D55E210170
-    :END:
+:PROPERTIES:
+:ID:       30E7B083-080A-45CC-AED5-A9D55E210170
+:END:
 
 The software isn't done, of course, no software ever is. But it's good enough that it's been managing my mixes without a hitch for the last few months, telling me what to pack for which customer and generally removing the need to work anything out with a pencil and paper. It's nowhere near as mature or capable of commercial production management software, but it fits me. I understand what it does and why, how it does it, the limitations it has and how to work around them. When it becomes annoying enough, I might sit down and work out how to fix it, but I'll do that when I'm in the right frame of mind. My current list of niggles looks something like this:
 
@@ -328,9 +328,9 @@ The software isn't done, of course, no software ever is. But it's good enough th
 - Order management :: Right now, I manage orders through Postico talking to the database, which is okay, but a little frustrating in places. An autocompleting environment for orders within emacs would be a much neater way to manage things.
 
 *** Putting the personal in personal computing
-    :PROPERTIES:
-    :ID:       EB0497C2-51A6-4452-8CEE-E587BE2AA695
-    :END:
+:PROPERTIES:
+:ID:       EB0497C2-51A6-4452-8CEE-E587BE2AA695
+:END:
 Computers are amazing. They are versatile tools even if you don't know how to program them, because there's almost always an app for what you want, or something close enough that you cant work around its infelicities. It's quite remarkable the things that folks can do with their kit with no programming skill at all.
 
 But... learn to program, and a whole other vista of possibility opens up to you. With good programmable tooling you're only really limited by your skill and understanding. Instead of accommodating yourself to your software, you can accommodate your software to you, and make the right functionality trade-offs for you. There's a brilliant commercial piece of music looping sofware I use that could be massively more brilliant if there were a way of picking up the tempo automatically from the first recorded loop - it would free me from having to sing to a click and generally make the whole process easier. The developers have other (understandable) priorities, like porting the app to windows. And they're not wrong to do so. There were folk clamoring for a windows version, and if a developer isn't making money from a commercial application, then development will stop. I'm definitely not complaining, the feature is not so dramatically necessary that I'm prepared to spend the time learning how to do real time music programming in order to implement it, but if I want software to dance to /my/ tune then doing it myself is the only way.
@@ -379,7 +379,7 @@ In [[file:/2019/02/25/baking-with-emacs][the last post]] I handwaved the way I r
 # }
 # #+end_src
 
-#+results:
+#+results: 
 #+begin_RESULTS
 [[file:formulae.svg]]
 #+end_RESULTS
@@ -403,7 +403,7 @@ select name, ingredient, format('%s kg', ROUND(amount, 2)) from f order by name;
 #+end_src
 #+end_comment
 
-#+results:
+#+results: 
 | name             | ingredient                    | format  |
 |------------------+-------------------------------+---------|
 | Small Seedy Malt | Seedy Malt Dough              | 0.63 kg |
@@ -465,7 +465,7 @@ SELECT product formula, ingredient, ROUND(sum(quantity),2) quantity from job gro
 
 Which gives the following result:
 
-#+results:
+#+results: 
 | formula          | ingredient          | quantity |
 |------------------+---------------------+----------|
 | Basic White Sour | Sea salt            |     0.09 |
@@ -541,7 +541,7 @@ SELECT product formula, ingredient, round(sum(quantity),2) weight from job group
 
 This query gives us:
 
-#+results:
+#+results: 
 | formula          | ingredient          | weight |
 |------------------+---------------------+--------|
 | Basic White Sour | Sea salt            |   0.05 |
@@ -577,9 +577,9 @@ In order to see what's going on, we can change the final ~SELECT~ to ~SELECT for
 Which shows that we're considering two lots of Basic White Sour with exactly the same weights, but we (and more importantly, the database engine) know that they're distinct amounts because we get to them through different routes. Hurrah! The problem is solved and we can accurately work out what we should be mixing.
 
 *** What's still missing
-    :PROPERTIES:
-    :ID:       868FF41D-EB97-4079-8710-EBBE6B50AB15
-    :END:
+:PROPERTIES:
+:ID:       868FF41D-EB97-4079-8710-EBBE6B50AB15
+:END:
 
 As a baker, I know  if I've got an order for bread on Friday, then I need to mix the starters on Wednesday night, then spend Tuesday mixing, fermenting and shaping the loaves, which will spend the night in the retarder ready to be baked at 4 on Friday morning. But the schema I've outlined here doesn't. In my full bakehouse schema, I have a few extra tables which hold timing data and such. In particular, I have a ~product~ table, which knows about everything I sell. This table knows holds info about how many I can make per hour of work and the bake time and temperature. Then there's a ~recipe~ table which holds information about how long a formula needs to rest. @@hugo:{{% marginnote %}}@@This could be the bulk fermentation time if it's a formula for a dough or a starter, a proof time if it's a loaf, or a soaking time for a soaker (a soaker is usually a mixture of seeds or fruit and a liquid, usually water, but occasionally fruit juice or booze depending on the final product). @@hugo:{{% /marginnote %}}@@ The real queries take this into account to allow us to work back from the ~due_date~ of a real order to the day we need to do the work. If you want to dig into how I handle dates  you can check out the repository at [[https://github.com/pdcawley/bakehouse/]].
 
@@ -676,9 +676,9 @@ Twitch stream]] and I would  love for you to be there.
 
 
 *** Schedule
-   :PROPERTIES:
-   :ID:       6769254B-F1F3-46DF-814F-63D96F985D7C
-   :END:
+:PROPERTIES:
+:ID:       6769254B-F1F3-46DF-814F-63D96F985D7C
+:END:
 
 It all kicks off at 7pm, UK time with a kind of Q&A session and
 introduction to Twitch for newcomers. I'm particurly planning to help
@@ -698,18 +698,18 @@ hoping it'll be a lot of fun.
 
 
 *** Ticket Prices
-   :PROPERTIES:
-   :ID:       0E43DD7E-5512-435C-B7C4-73910B049C75
-   :END:
+:PROPERTIES:
+:ID:       0E43DD7E-5512-435C-B7C4-73910B049C75
+:END:
 It's the internet! It won't cost you a penny to watch me perform. However,
 right now, daft stuff like this is my only potential source of income, so
 I would be deeply grateful if you could either [[https://ko-fi.com/pdcawley]["Buy me a coffee"]] via Ko-Fi
 or [[https://twitch.tv/signup][sign up]] for a free Twitch account and subscribe to my channel.
 
 *** Free money for your favourites!
-    :PROPERTIES:
-    :ID:       AFDB4ED1-8FAB-461B-816A-CD0BF60D7CC2
-    :END:
+:PROPERTIES:
+:ID:       AFDB4ED1-8FAB-461B-816A-CD0BF60D7CC2
+:END:
 If you are an Amazon Prime subscriber and you don't yet have a Twitch
 Subscription, there's a wonderful thing you can do that means that Amazon
 will give me (or any other streamer you enjoy) some money and it won't
@@ -723,9 +723,9 @@ sub to renew. If you would like to keep making regular payments to the
 streamer of your choice, you need to remember to resubscribe every month.
 
 *** One off tips
-    :PROPERTIES:
-    :ID:       95E39426-BE56-4078-9BF5-E7B2BE229683
-    :END:
+:PROPERTIES:
+:ID:       95E39426-BE56-4078-9BF5-E7B2BE229683
+:END:
 A Ko-Fi coffee comes in at £3, but if you want to tip me or any other
 twitch performer with an arbitrary amount, then Twitch Bits are your
 friend. You buy 'em from [[https://bits.twitch.tv/][Twitch]] and can then use them as a virtual
@@ -744,33 +744,33 @@ support the work of artists you love.
 
 
 ** TODO Streaming Folk Music
-  :PROPERTIES:
-  :ID:       2AB0850A-2FC4-42B3-BAA6-6E1A9512FB3B
-  :END:
-  I'll be entering my sixth month of streaming live folk music on the Internet next month, and I've learned a good deal about it as I've done it. Primarily I've learned that a stream isn't the same as a live gig or a prerecorded concert segment; it's it's own thing and, I think it's something that will continue to be a viable form of performance for people as we finally emerge from lockdown because it offers something that traditional modes of performance don't, and that has value.
-  Live streaming isn't the only new form that's emerged from All This. One of the first, and most successful has been the 'virtual festival' that was pretty much pioneered and perfected by the people behind the [[https://folkonfoot.com][Folk On Foot]] podcast. On the early and late May bank holidays, they curated a lot of short performance videos from their artists which were then very capably linked together by Matthew Bannister. It was interesting comparing the relative slickness of Bannister, presenting from his living room and some of the artists who had varying degrees of experience of performing down the lens, but on the whole it was glorious. They solicited donations, which were shared between the artists and the charity [[https://www.helpmusicians.org.uk][Help Musicians]], and the whole thing was glorious. Other festivals have followed suit with greater or lesser success {{marginnote}}I really enjoyed the [[https://www.folkbytheoak.com/about/familynestfest/][Folk by the Oak 'Family Nest' Fest]], which again split the money between the artists and their chosen charity, with some of the real world festival's vibe captured by interspersing the performances with short videos from their regular vendors and kids workshop performers{{/marginnote}}.
+:PROPERTIES:
+:ID:       2AB0850A-2FC4-42B3-BAA6-6E1A9512FB3B
+:END:
+I'll be entering my sixth month of streaming live folk music on the Internet next month, and I've learned a good deal about it as I've done it. Primarily I've learned that a stream isn't the same as a live gig or a prerecorded concert segment; it's it's own thing and, I think it's something that will continue to be a viable form of performance for people as we finally emerge from lockdown because it offers something that traditional modes of performance don't, and that has value.
+Live streaming isn't the only new form that's emerged from All This. One of the first, and most successful has been the 'virtual festival' that was pretty much pioneered and perfected by the people behind the [[https://folkonfoot.com][Folk On Foot]] podcast. On the early and late May bank holidays, they curated a lot of short performance videos from their artists which were then very capably linked together by Matthew Bannister. It was interesting comparing the relative slickness of Bannister, presenting from his living room and some of the artists who had varying degrees of experience of performing down the lens, but on the whole it was glorious. They solicited donations, which were shared between the artists and the charity [[https://www.helpmusicians.org.uk][Help Musicians]], and the whole thing was glorious. Other festivals have followed suit with greater or lesser success {{marginnote}}I really enjoyed the [[https://www.folkbytheoak.com/about/familynestfest/][Folk by the Oak 'Family Nest' Fest]], which again split the money between the artists and their chosen charity, with some of the real world festival's vibe captured by interspersing the performances with short videos from their regular vendors and kids workshop performers{{/marginnote}}.
 
 *** Platforms
-   :PROPERTIES:
-   :ID:       4D0E27C9-6823-4569-80F0-216CBFB0D79B
-   :END:
+:PROPERTIES:
+:ID:       4D0E27C9-6823-4569-80F0-216CBFB0D79B
+:END:
 
 *** Share the load
-   :PROPERTIES:
-   :ID:       78283C00-98D5-40F4-AC1D-5A1FDCFEB1C0
-   :END:
+:PROPERTIES:
+:ID:       78283C00-98D5-40F4-AC1D-5A1FDCFEB1C0
+:END:
 
 *** Payment models
-   :PROPERTIES:
-   :ID:       DFF1A992-401A-46D9-8B64-E35C2CB166D8
-   :END:
+:PROPERTIES:
+:ID:       DFF1A992-401A-46D9-8B64-E35C2CB166D8
+:END:
 
 *** Liveness
-   :PROPERTIES:
-   :ID:       DE8760EC-239D-44A2-A9D4-3D7C2FD433B4
-   :END:
+:PROPERTIES:
+:ID:       DE8760EC-239D-44A2-A9D4-3D7C2FD433B4
+:END:
 
-** DONE Asshole Free Devil's Advocacy                     :philosophy:blether:
+** DONE Asshole Free Devil's Advocacy :philosophy:blether:
 :PROPERTIES:
 :export_file_name: devils-advocacy-without-asshattery
 :export_hugo_slug: devils-advocacy-without-tears
@@ -784,9 +784,9 @@ So, you want to play Devil's Advocate, but you're afraid you might come across a
 #+hugo: more
 
 *** Maybe don't?
-   :PROPERTIES:
-   :ID:       DFD8CB3D-98AB-414B-8766-B64DBC5E1D04
-   :END:
+:PROPERTIES:
+:ID:       DFD8CB3D-98AB-414B-8766-B64DBC5E1D04
+:END:
 
 Seriously, why does the Devil need an advocate? If you want to play DA because you think the position you want to argue has some merit, then argue the position honestly and own it. If it doesn't survive the discussion (or is shouted down), then "Ah right, I hadn't thought of that, you're right" or words to that effect and file that position in your memory as a bad one (along with the skeleton of /why/ it's bad). Nothing wrong with holding strong opinions, the thing that's bad is holding onto them if they're shown to be bad. If the group you're talking with just shouts you down and doesn't convince you that your position is a bad one, maybe find a different group? Or agree with them to steer clear of that topic.
 
@@ -933,7 +933,7 @@ CLOSED: [2022-04-16 Sat 14:53]
 :END:
 
 #+begin_description
-Taking one more step on the road to full IndieWeb citizenship or whatever it's called, [[/][Just A Summary]] now displays webmentions.
+Taking one more step on the road to full IndieWeb citizenship or whatever it's called, [[file:/][Just A Summary]] now displays webmentions.
 #+end_description
 
 After much fiddling with [[https://n8n.io/][N8N]], [[https://webmention.io/][webmention.io]], and the usual combination of [[https://gohugo.io][Hugo]]'s powerful, yet inscrutable templating language and my tenuous understanding of CSS, we're now /displaying/ our webmentions. We've been directing them to webmention.io for years now, but scratching my head over what to do with them.
@@ -967,8 +967,8 @@ I've had all that set up for a while. As I say, a tad fiddly at first, but once 
 
 That's the sort of thing that makes me itch, because there were two files for any given article:
 
- - =all-posts.org= :: the org file in which I write all my articles
- - =article.md= :: the generated file that hugo uses to build the site.
+- =all-posts.org= :: the org file in which I write all my articles
+- =article.md= :: the generated file that hugo uses to build the site.
 
 The generated file is an artefact of the build process and simply repeats the info in the org file, which should be our single source of truth. It's not a file that should be left around to be edited willy nilly because it could get out of sync with its source file. It's certainly not the sort of file that should live in the repository.
 
@@ -992,10 +992,10 @@ We mention [[https://indieweb.org]] in this post, so let's find out its webmenti
 
 #+begin_src restclient :exports both
   HEAD https://indieweb.org
-       #+end_src
+#+end_src
 
-       #+RESULTS:
-       #+BEGIN_SRC html
+#+results: 
+#+begin_src html
        <!-- HEAD https://indieweb.org -->
        <!-- HTTP/1.1 200 OK -->
        <!-- Server: nginx/1.14.0 -->
@@ -1006,19 +1006,19 @@ We mention [[https://indieweb.org]] in this post, so let's find out its webmenti
        <!-- Link: <https://webmention.io/indiewebcamp/webmention>; rel="webmention" -->
        <!-- Cache-Control: no-cache -->
        <!-- Request duration: 0.833706s -->
-       #+END_SRC
+#+end_src
 
 We're looking for the 「@@html:<code>@@Link: … ; rel="webmention"@@html:</code>@@」 line. This tells us that to send a webmention targeting https://indieweb.org, we need to post it to https://webmention.io/indiewebcamp/webmention. Which is almost as simple as finding the end point. Here we go:
 
-  #+begin_src restclient :exports both
+#+begin_src restclient :exports both
   POST https://webmention.io/indiewebcamp/webmention
   Content-Type: application/x-www-form-urlencoded
 
   source=https://bofh.org.uk/2022/04/24/not-so-simple&target=https://indieweb.org
 #+end_src
 
-#+RESULTS:
-#+BEGIN_SRC js
+#+results: 
+#+begin_src json
 {
   "status": "queued",
   "summary": "Webmention was queued for processing",
@@ -1040,16 +1040,16 @@ We're looking for the 「@@html:<code>@@Link: … ; rel="webmention"@@html:</
 // X-Powered-By: Phusion Passenger 5.3.1
 // Server: nginx/1.14.0 + Phusion Passenger 5.3.1
 // Request duration: 0.685421s
-#+END_SRC
+#+end_src
 
 The job is done, and we get a nice JSON formatted summary of what's going on to boot.
 
 Of course, if a webmention is so simple to send then it's probably a pain in the bum to receive and it is… sort of. To receive a webmention request, you need to:
 
-  1. Run a web app to handle the request
-  2. Visit the source link
-  3. Parse out the microformats associated with the entry, its author and content
-  4. Figure out how to display the information
+1. Run a web app to handle the request
+2. Visit the source link
+3. Parse out the microformats associated with the entry, its author and content
+4. Figure out how to display the information
 
 Steps 1--3 aren't particularly hard, but they're fiddly to get right and involve making web connections to potentially unsafe sites and I'm using Hugo to generate this site because I don't want to be running potentially insecure code that's exposed to the internet on a server that I own if I can possibly help it. Thankfully, I don't have to. I can take a leaf out of indiweb.org's book and just delegate that part to [[https://webmention.io][webmention.io]]. Webmention.io handles all that icky visiting of foreign websites and parsing out microformats for you and instead presents you with a feed consisting of all the webmention's that've been sent to your site in a variety of formats. I've been consuming their ~.jf2~ formatted feed for a while now. JF2 is a JSON representation of the microformats associated with the webmention's source. Let's grab something from that feed
 
@@ -1057,8 +1057,8 @@ Steps 1--3 aren't particularly hard, but they're fiddly to get right and involve
   GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/
 #+end_src
 
-#+RESULTS:
-#+BEGIN_SRC jsonc
+#+results: 
+#+begin_src json
 {
   "type": "feed",
   "name": "Webmentions",
@@ -1118,9 +1118,9 @@ Steps 1--3 aren't particularly hard, but they're fiddly to get right and involve
 // X-Powered-By: Phusion Passenger 5.3.1
 // Server: nginx/1.14.0 + Phusion Passenger 5.3.1
 // Request duration: 0.721250s
-#+END_SRC
+#+end_src
 
-Lot's of lovely structured data. Webmention.io has worked out that one mention was a ~like-of~ [[/2013/03/10/in-which-piers-prepares-to-void-the-warranty/][the blog post]], and the other was ~in-reply-to~ it. We get details of the author of the mentioning post and, where appropriate, its content. If I wanted to run more Javascript on here (and I want to run less), I could attach a script which would consume the post's feed and build a display of all of the mentions. It has a certain appeal, just add one script to the site and a dummy ~<div>~ or ~<ul>~ somewhere and I'm laughing. Plenty of sites do just that.
+Lot's of lovely structured data. Webmention.io has worked out that one mention was a ~like-of~ [[file:/2013/03/10/in-which-piers-prepares-to-void-the-warranty/][the blog post]], and the other was ~in-reply-to~ it. We get details of the author of the mentioning post and, where appropriate, its content. If I wanted to run more Javascript on here (and I want to run less), I could attach a script which would consume the post's feed and build a display of all of the mentions. It has a certain appeal, just add one script to the site and a dummy ~<div>~ or ~<ul>~ somewhere and I'm laughing. Plenty of sites do just that.
 
 This is not one of those sites. {{{marginnote(Of course, this couldn't possibly because I tried to use the Javascript, couldn't make it work and decided to actually include webmentions in the generated files, that would be foolish!)}}} It's not even the first statically generated site to go down the route of statically generating a post's webmentions. I was mostly inspired by [[https://randomgeekery.org][Brian Wisti]]'s post about [[https://randomgeekery.org/post/2020/11/using-the-webmentionio-api/][consuming the webmention.io API]] (except, of course, I don't use /any/ of his actual code.)
 
@@ -1128,16 +1128,16 @@ The site's [[https://github.com/pdcawley/bofh.org.uk/][Github repo]] is configur
 
 {{{newthought(It started so innocently,)}}} I have a server here that hosts a couple of Docker images and one of them is [[https://n8n.io/][N8N]], a super powered, self-hosted open source replacement for [[https://ifttt.com/][IFTTT]] with all sorts of hooks into other services and a much more powerful Github client than the IFTTT offering. It's a bit… JavaScript-y for my tastes, but you can't have everything.
 
-With a bit of fiddling, I had something that grabbed the webmention.io feed for the site every few hours, split it out into multiple files in ~data/mentions~ and updated GitHub. That's what I was celebrating in [[*We have WebMentions][We have WebMentions]]. I've moved on {{{marginnote(A cynical person might well read that as "broken things")}}} since then, because /of course/ sorting out de-duplication and remembering information between runs of the script is annoyingly fiddly and full of edge cases. Basically, I ended up trying to emulate a proper database. Which is why the latest iteration of webmention handling uses a proper database. I would have used [[https://sqlite.org/][SQLite]], but N8N doesn't have a SQLite node available out of the box. It does have a [[https://postgresql.org/][PostgreSQL]] one though, and recent versions of that have really good JSON support. I'd tell you more, but ~wc-mode~ tells me I'm nearly 2500 words in to this article, I think I'll wrap up for now and promise to give you the gory details in an upcoming article.
+With a bit of fiddling, I had something that grabbed the webmention.io feed for the site every few hours, split it out into multiple files in ~data/mentions~ and updated GitHub. That's what I was celebrating in [[file:post/we-have-webmentions.pre-processed.org][We have WebMentions]]. I've moved on {{{marginnote(A cynical person might well read that as "broken things")}}} since then, because /of course/ sorting out de-duplication and remembering information between runs of the script is annoyingly fiddly and full of edge cases. Basically, I ended up trying to emulate a proper database. Which is why the latest iteration of webmention handling uses a proper database. I would have used [[https://sqlite.org/][SQLite]], but N8N doesn't have a SQLite node available out of the box. It does have a [[https://postgresql.org/][PostgreSQL]] one though, and recent versions of that have really good JSON support. I'd tell you more, but ~wc-mode~ tells me I'm nearly 2500 words in to this article, I think I'll wrap up for now and promise to give you the gory details in an upcoming article.
 
 {{{newthought(To be continued…)}}}
 
 * Footnotes
-  :PROPERTIES:
-  :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
-  :END:
+:PROPERTIES:
+:ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
+:END:
 
-[fn:5]  @@html:<dfn><code>org-mode</code></dfn>@@ is an Emacs outliner that grew into a calendar/outliner/spreadsheet/document processor/literate programming tool/dessert wax/floor topping.
+[fn:5] @@html:<dfn><code>org-mode</code></dfn>@@ is an Emacs outliner that grew into a calendar/outliner/spreadsheet/document processor/literate programming tool/dessert wax/floor topping.
 
 It's what I used to use [[https://bofh.org.uk/2019/02/25/baking-with-emacs/][to manage my bakery]], and it's amazing.
 
