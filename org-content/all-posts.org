@@ -1020,7 +1020,13 @@ source=https://bofh.org.uk/2022/04/24/not-so-simple&target=https://indieweb.org
 
 #+results: 
 #+BEGIN_SRC json
-{"status":"queued","summary":"Webmention was queued for processing","location":"https://webmention.io/indiewebcamp/webmention/YMT8jtCPTBIjZI_F4xmU","source":"https://bofh.org.uk/2022/04/24/not-so-simple","target":"https://indieweb.org"}
+{
+  "status": "queued",
+  "summary": "Webmention was queued for processing",
+  "location": "https://webmention.io/indiewebcamp/webmention/tkvP5ayea5jYxlo3jvnw",
+  "source": "https://bofh.org.uk/2022/04/24/not-so-simple",
+  "target": "https://indieweb.org"
+}
 // POST https://webmention.io/indiewebcamp/webmention
 // HTTP/1.1 201 Created
 // Content-Type: application/json;charset=UTF-8
@@ -1029,12 +1035,12 @@ source=https://bofh.org.uk/2022/04/24/not-so-simple&target=https://indieweb.org
 // Status: 201 Created
 // Cache-Control: no-store
 // Access-Control-Allow-Origin: *
-// Location: https://webmention.io/indiewebcamp/webmention/YMT8jtCPTBIjZI_F4xmU
+// Location: https://webmention.io/indiewebcamp/webmention/tkvP5ayea5jYxlo3jvnw
 // X-Content-Type-Options: nosniff
-// Date: Wed, 27 Apr 2022 10:49:04 GMT
+// Date: Wed, 27 Apr 2022 15:28:54 GMT
 // X-Powered-By: Phusion Passenger 5.3.1
 // Server: nginx/1.14.0 + Phusion Passenger 5.3.1
-// Request duration: 0.186850s
+// Request duration: 0.737496s
 #+END_SRC
 
 The job is done, and we get a nice JSON formatted summary of what's going on to boot.
@@ -1054,7 +1060,52 @@ GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=
 
 #+results: 
 #+BEGIN_SRC json
-{"type":"feed","name":"Webmentions","children":[{"type":"entry","author":{"type":"card","name":"David Gallows","photo":"https://webmention.io/avatar/pbs.twimg.com/e7b750d847ffdcfc174845aadc9196125b83647258a1789bb2b92b493d223e8b.jpg","url":"https://twitter.com/DavidGallows"},"url":"https://twitter.com/pdcawley/status/1517783526049001472#favorited-by-877428607","published":null,"wm-received":"2022-04-23T09:59:17Z","wm-id":1385464,"wm-source":"https://brid.gy/like/twitter/pdcawley/1517783526049001472/877428607","wm-target":"https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/","like-of":"https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/","wm-property":"like-of","wm-private":false},{"type":"entry","author":{"type":"card","name":"David Gallows","photo":"https://webmention.io/avatar/pbs.twimg.com/e7b750d847ffdcfc174845aadc9196125b83647258a1789bb2b92b493d223e8b.jpg","url":"https://twitter.com/DavidGallows"},"url":"https://twitter.com/DavidGallows/status/1517852498555555840","published":"2022-04-23T13:06:50+00:00","wm-received":"2022-04-23T15:12:04Z","wm-id":1385681,"wm-source":"https://brid.gy/comment/twitter/pdcawley/1517783526049001472/1517852498555555840","wm-target":"https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/","content":{"html":"enjoyed reading about it :)\n\nI've been a trackball man since the word go, But have never been able to move away from Qwerty keyboards\n<a class=\"u-mention\" href=\"http://bofh.org.uk/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/DrugCrazed\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/keyboardio\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/pdcawley\"></a>","text":"enjoyed reading about it :)\n\nI've been a trackball man since the word go, But have never been able to move away from Qwerty keyboards"},"in-reply-to":"https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/","wm-property":"in-reply-to","wm-private":false}]}
+{
+  "type": "feed",
+  "name": "Webmentions",
+  "children": [
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "David Gallows",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/e7b750d847ffdcfc174845aadc9196125b83647258a1789bb2b92b493d223e8b.jpg",
+        "url": "https://twitter.com/DavidGallows"
+      },
+      "url": "https://twitter.com/pdcawley/status/1517783526049001472#favorited-by-877428607",
+      "published": null,
+      "wm-received": "2022-04-23T09:59:17Z",
+      "wm-id": 1385464,
+      "wm-source": "https://brid.gy/like/twitter/pdcawley/1517783526049001472/877428607",
+      "wm-target": "https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/",
+      "like-of": "https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "David Gallows",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/e7b750d847ffdcfc174845aadc9196125b83647258a1789bb2b92b493d223e8b.jpg",
+        "url": "https://twitter.com/DavidGallows"
+      },
+      "url": "https://twitter.com/DavidGallows/status/1517852498555555840",
+      "published": "2022-04-23T13:06:50+00:00",
+      "wm-received": "2022-04-23T15:12:04Z",
+      "wm-id": 1385681,
+      "wm-source": "https://brid.gy/comment/twitter/pdcawley/1517783526049001472/1517852498555555840",
+      "wm-target": "https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/",
+      "content": {
+        "html": "enjoyed reading about it :)\n\nI've been a trackball man since the word go, But have never been able to move away from Qwerty keyboards\n<a class=\"u-mention\" href=\"http://bofh.org.uk/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/DrugCrazed\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/keyboardio\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/pdcawley\"></a>",
+        "text": "enjoyed reading about it :)\n\nI've been a trackball man since the word go, But have never been able to move away from Qwerty keyboards"
+      },
+      "in-reply-to": "https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    }
+  ]
+}
 // GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/
 // HTTP/1.1 200 OK
 // Content-Type: application/json;charset=UTF-8
