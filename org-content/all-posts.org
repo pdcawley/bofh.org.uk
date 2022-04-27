@@ -1,4 +1,4 @@
-# -*- mode: org; mode: visual-line; mode: visual-fill-column; -*-
+# -*- mode: org; -*-
 #+hugo_section: post/
 #+hugo_base_dir: ../
 #+export_hugo_weight: auto
@@ -6,6 +6,7 @@
 #+startup: inlineimages
 #+startup: logdone
 #+property: header-args:sql :session reporter :exports result :colnames yes  :engine postgresql :results replace table
+#+property: header-args: :exports code
 #+hugo_paired_shortcodes: %table %marginnote %newthought
 #+macro: newthought @@hugo:{{% newthought %}}@@$1@@hugo:{{% /newthought %}}@@
 #+macro: marginnote @@hugo:{{% marginnote %}}@@$1@@hugo:{{% /marginnote %}}@@
@@ -973,7 +974,7 @@ That's the sort of thing that makes me itch, because there were two files for an
 The generated file is an artefact of the build process and simply repeats the info in the org file, which should be our single source of truth. It's not a file that should be left around to be edited willy nilly because it could get out of sync with its source file. It's certainly not the sort of file that should live in the repository.
 
 I didn't worry about this for /ages,/ but it niggled at me. Then one day I read an article about using [[https://github.com/features/actions][Github Actions]] to build an ox-hugo based site by installing emacs and ox-hugo on the VM that does the build step and generating the markdown files during the build by running Emacs
-@@hugo:{{% marginnote %}}@@Yes, Emacs is an editor, but if you do 「@@html:<code>@@emacs all‑posts.org ‑‑batch ‑l ox-hugo ‑‑eval='(org-hugo-export-wim-to-md t)' ‑‑kill@@html:</code>@@」 it will happily execute any lisp code you care to ask it to.@@hugo:{{% /marginnote %}}@@ in batch mode. The markdown files never exist anywhere that anyone can edit them. So, of course I had to do that. Again, fiddly to set up, and arguably only of philosophical benefit, but worth it, I think.[fn:3]
+@@hugo:{{% marginnote %}}@@Yes, Emacs is an editor, but if you do 「src_emacs-lisp{emacs all‑posts.org ‑‑batch ‑l ox-hugo ‑‑eval='(org-hugo-export-wim-to-md t)' ‑‑kill} 」 it will happily execute any lisp code you care to ask it to.@@hugo:{{% /marginnote %}}@@ in batch mode. The  markdown files never exist anywhere that anyone can edit them. So, of course I had to do that. Again, fiddly to set up, and arguably only of philosophical benefit, but worth it, I think.[fn:3]
 
 {{{newthought(I could've left it there,)}}} but the thing I miss about the old, slow, hard to maintain version of this site, is the sense of connection. The old site had comments, and pingback links to other blogs. There was a sense of connectedness that's missing from a collection of articles. I want some of that back.
 
@@ -995,20 +996,20 @@ HEAD https://indieweb.org
 #+end_src
 
 #+results: 
-#+begin_src html
-       <!-- HEAD https://indieweb.org -->
-       <!-- HTTP/1.1 200 OK -->
-       <!-- Server: nginx/1.14.0 -->
-       <!-- Date: Sun, 24 Apr 2022 13:18:45 GMT -->
-       <!-- Content-Type: text/html; charset=UTF-8 -->
-       <!-- Connection: keep-alive -->
-       <!-- X-Powered-By: PHP/7.2.7-1+ubuntu16.04.1+deb.sury.org+1 -->
-       <!-- Link: <https://webmention.io/indiewebcamp/webmention>; rel="webmention" -->
-       <!-- Cache-Control: no-cache -->
-       <!-- Request duration: 0.833706s -->
-#+end_src
+#+BEGIN_SRC html
+<!-- HEAD https://indieweb.org -->
+<!-- HTTP/1.1 200 OK -->
+<!-- Server: nginx/1.14.0 -->
+<!-- Date: Wed, 27 Apr 2022 10:55:56 GMT -->
+<!-- Content-Type: text/html; charset=UTF-8 -->
+<!-- Connection: keep-alive -->
+<!-- X-Powered-By: PHP/7.2.7-1+ubuntu16.04.1+deb.sury.org+1 -->
+<!-- Link: <https://webmention.io/indiewebcamp/webmention>; rel="webmention" -->
+<!-- Cache-Control: no-cache -->
+<!-- Request duration: 0.964161s -->
+#+END_SRC
 
-We're looking for the 「@@html:<code>@@Link: … ; rel="webmention"@@html:</code>@@」 line. This tells us that to send a webmention targeting https://indieweb.org, we need to post it to https://webmention.io/indiewebcamp/webmention. Which is almost as simple as finding the end point. Here we go:
+We're looking for the 「src_html{Link: … ; rel="webmention"}」 line. This tells us that to send a webmention targeting https://indieweb.org, we need to post it to https://webmention.io/indiewebcamp/webmention. Which is almost as simple as finding the end point. Here we go:
 
 #+begin_src restclient :exports both
 POST https://webmention.io/indiewebcamp/webmention
@@ -1019,13 +1020,7 @@ source=https://bofh.org.uk/2022/04/24/not-so-simple&target=https://indieweb.org
 
 #+results: 
 #+BEGIN_SRC json
-{
-  "status": "queued",
-  "summary": "Webmention was queued for processing",
-  "location": "https://webmention.io/indiewebcamp/webmention/UxdjFzYKWlNMSHvyJhxI",
-  "source": "https://bofh.org.uk/2022/04/24/not-so-simple",
-  "target": "https://indieweb.org"
-}
+{"status":"queued","summary":"Webmention was queued for processing","location":"https://webmention.io/indiewebcamp/webmention/YMT8jtCPTBIjZI_F4xmU","source":"https://bofh.org.uk/2022/04/24/not-so-simple","target":"https://indieweb.org"}
 // POST https://webmention.io/indiewebcamp/webmention
 // HTTP/1.1 201 Created
 // Content-Type: application/json;charset=UTF-8
@@ -1034,12 +1029,12 @@ source=https://bofh.org.uk/2022/04/24/not-so-simple&target=https://indieweb.org
 // Status: 201 Created
 // Cache-Control: no-store
 // Access-Control-Allow-Origin: *
-// Location: https://webmention.io/indiewebcamp/webmention/UxdjFzYKWlNMSHvyJhxI
+// Location: https://webmention.io/indiewebcamp/webmention/YMT8jtCPTBIjZI_F4xmU
 // X-Content-Type-Options: nosniff
-// Date: Wed, 27 Apr 2022 09:56:03 GMT
+// Date: Wed, 27 Apr 2022 10:49:04 GMT
 // X-Powered-By: Phusion Passenger 5.3.1
 // Server: nginx/1.14.0 + Phusion Passenger 5.3.1
-// Request duration: 0.726216s
+// Request duration: 0.186850s
 #+END_SRC
 
 The job is done, and we get a nice JSON formatted summary of what's going on to boot.
@@ -1059,52 +1054,7 @@ GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=
 
 #+results: 
 #+BEGIN_SRC json
-{
-  "type": "feed",
-  "name": "Webmentions",
-  "children": [
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
-        "name": "David Gallows",
-        "photo": "https://webmention.io/avatar/pbs.twimg.com/e7b750d847ffdcfc174845aadc9196125b83647258a1789bb2b92b493d223e8b.jpg",
-        "url": "https://twitter.com/DavidGallows"
-      },
-      "url": "https://twitter.com/pdcawley/status/1517783526049001472#favorited-by-877428607",
-      "published": null,
-      "wm-received": "2022-04-23T09:59:17Z",
-      "wm-id": 1385464,
-      "wm-source": "https://brid.gy/like/twitter/pdcawley/1517783526049001472/877428607",
-      "wm-target": "https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/",
-      "like-of": "https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/",
-      "wm-property": "like-of",
-      "wm-private": false
-    },
-    {
-      "type": "entry",
-      "author": {
-        "type": "card",
-        "name": "David Gallows",
-        "photo": "https://webmention.io/avatar/pbs.twimg.com/e7b750d847ffdcfc174845aadc9196125b83647258a1789bb2b92b493d223e8b.jpg",
-        "url": "https://twitter.com/DavidGallows"
-      },
-      "url": "https://twitter.com/DavidGallows/status/1517852498555555840",
-      "published": "2022-04-23T13:06:50+00:00",
-      "wm-received": "2022-04-23T15:12:04Z",
-      "wm-id": 1385681,
-      "wm-source": "https://brid.gy/comment/twitter/pdcawley/1517783526049001472/1517852498555555840",
-      "wm-target": "https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/",
-      "content": {
-        "html": "enjoyed reading about it :)\n\nI've been a trackball man since the word go, But have never been able to move away from Qwerty keyboards\n<a class=\"u-mention\" href=\"http://bofh.org.uk/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/DrugCrazed\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/keyboardio\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/pdcawley\"></a>",
-        "text": "enjoyed reading about it :)\n\nI've been a trackball man since the word go, But have never been able to move away from Qwerty keyboards"
-      },
-      "in-reply-to": "https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/",
-      "wm-property": "in-reply-to",
-      "wm-private": false
-    }
-  ]
-}
+{"type":"feed","name":"Webmentions","children":[{"type":"entry","author":{"type":"card","name":"David Gallows","photo":"https://webmention.io/avatar/pbs.twimg.com/e7b750d847ffdcfc174845aadc9196125b83647258a1789bb2b92b493d223e8b.jpg","url":"https://twitter.com/DavidGallows"},"url":"https://twitter.com/pdcawley/status/1517783526049001472#favorited-by-877428607","published":null,"wm-received":"2022-04-23T09:59:17Z","wm-id":1385464,"wm-source":"https://brid.gy/like/twitter/pdcawley/1517783526049001472/877428607","wm-target":"https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/","like-of":"https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/","wm-property":"like-of","wm-private":false},{"type":"entry","author":{"type":"card","name":"David Gallows","photo":"https://webmention.io/avatar/pbs.twimg.com/e7b750d847ffdcfc174845aadc9196125b83647258a1789bb2b92b493d223e8b.jpg","url":"https://twitter.com/DavidGallows"},"url":"https://twitter.com/DavidGallows/status/1517852498555555840","published":"2022-04-23T13:06:50+00:00","wm-received":"2022-04-23T15:12:04Z","wm-id":1385681,"wm-source":"https://brid.gy/comment/twitter/pdcawley/1517783526049001472/1517852498555555840","wm-target":"https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/","content":{"html":"enjoyed reading about it :)\n\nI've been a trackball man since the word go, But have never been able to move away from Qwerty keyboards\n<a class=\"u-mention\" href=\"http://bofh.org.uk/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/DrugCrazed\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/keyboardio\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/pdcawley\"></a>","text":"enjoyed reading about it :)\n\nI've been a trackball man since the word go, But have never been able to move away from Qwerty keyboards"},"in-reply-to":"https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/","wm-property":"in-reply-to","wm-private":false}]}
 // GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/
 // HTTP/1.1 200 OK
 // Content-Type: application/json;charset=UTF-8
@@ -1114,10 +1064,10 @@ GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=
 // Cache-Control: no-store
 // Access-Control-Allow-Origin: *
 // X-Content-Type-Options: nosniff
-// Date: Wed, 27 Apr 2022 09:56:34 GMT
+// Date: Wed, 27 Apr 2022 10:48:54 GMT
 // X-Powered-By: Phusion Passenger 5.3.1
 // Server: nginx/1.14.0 + Phusion Passenger 5.3.1
-// Request duration: 0.275358s
+// Request duration: 0.234278s
 #+END_SRC
 
 Lot's of lovely structured data. Webmention.io has worked out that one mention was a ~like-of~ [[file:/2013/03/10/in-which-piers-prepares-to-void-the-warranty/][the blog post]], and the other was ~in-reply-to~ it. We get details of the author of the mentioning post and, where appropriate, its content. If I wanted to run more Javascript on here (and I want to run less), I could attach a script which would consume the post's feed and build a display of all of the mentions. It has a certain appeal, just add one script to the site and a dummy ~<div>~ or ~<ul>~ somewhere and I'm laughing. Plenty of sites do just that.
