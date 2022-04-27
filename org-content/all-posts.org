@@ -991,7 +991,7 @@ Now we're talking! It's a really simple standard too. When you mention, like, co
 We mention [[https://indieweb.org]] in this post, so let's find out its webmention endpoint.
 
 #+begin_src restclient :exports both
-  HEAD https://indieweb.org
+HEAD https://indieweb.org
 #+end_src
 
 #+results: 
@@ -1011,18 +1011,18 @@ We mention [[https://indieweb.org]] in this post, so let's find out its webmenti
 We're looking for the 「@@html:<code>@@Link: … ; rel="webmention"@@html:</code>@@」 line. This tells us that to send a webmention targeting https://indieweb.org, we need to post it to https://webmention.io/indiewebcamp/webmention. Which is almost as simple as finding the end point. Here we go:
 
 #+begin_src restclient :exports both
-  POST https://webmention.io/indiewebcamp/webmention
-  Content-Type: application/x-www-form-urlencoded
+POST https://webmention.io/indiewebcamp/webmention
+Content-Type: application/x-www-form-urlencoded
 
-  source=https://bofh.org.uk/2022/04/24/not-so-simple&target=https://indieweb.org
+source=https://bofh.org.uk/2022/04/24/not-so-simple&target=https://indieweb.org
 #+end_src
 
 #+results: 
-#+begin_src json
+#+BEGIN_SRC json
 {
   "status": "queued",
   "summary": "Webmention was queued for processing",
-  "location": "https://webmention.io/indiewebcamp/webmention/9Ltol-qmDoZxsD6YQ8U9",
+  "location": "https://webmention.io/indiewebcamp/webmention/UxdjFzYKWlNMSHvyJhxI",
   "source": "https://bofh.org.uk/2022/04/24/not-so-simple",
   "target": "https://indieweb.org"
 }
@@ -1034,13 +1034,13 @@ We're looking for the 「@@html:<code>@@Link: … ; rel="webmention"@@html:</
 // Status: 201 Created
 // Cache-Control: no-store
 // Access-Control-Allow-Origin: *
-// Location: https://webmention.io/indiewebcamp/webmention/9Ltol-qmDoZxsD6YQ8U9
+// Location: https://webmention.io/indiewebcamp/webmention/UxdjFzYKWlNMSHvyJhxI
 // X-Content-Type-Options: nosniff
-// Date: Sun, 24 Apr 2022 13:18:51 GMT
+// Date: Wed, 27 Apr 2022 09:56:03 GMT
 // X-Powered-By: Phusion Passenger 5.3.1
 // Server: nginx/1.14.0 + Phusion Passenger 5.3.1
-// Request duration: 0.685421s
-#+end_src
+// Request duration: 0.726216s
+#+END_SRC
 
 The job is done, and we get a nice JSON formatted summary of what's going on to boot.
 
@@ -1054,11 +1054,11 @@ Of course, if a webmention is so simple to send then it's probably a pain in the
 Steps 1--3 aren't particularly hard, but they're fiddly to get right and involve making web connections to potentially unsafe sites and I'm using Hugo to generate this site because I don't want to be running potentially insecure code that's exposed to the internet on a server that I own if I can possibly help it. Thankfully, I don't have to. I can take a leaf out of indiweb.org's book and just delegate that part to [[https://webmention.io][webmention.io]]. Webmention.io handles all that icky visiting of foreign websites and parsing out microformats for you and instead presents you with a feed consisting of all the webmention's that've been sent to your site in a variety of formats. I've been consuming their ~.jf2~ formatted feed for a while now. JF2 is a JSON representation of the microformats associated with the webmention's source. Let's grab something from that feed
 
 #+begin_src restclient :exports both
-  GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/
+GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/
 #+end_src
 
 #+results: 
-#+begin_src json
+#+BEGIN_SRC json
 {
   "type": "feed",
   "name": "Webmentions",
@@ -1108,17 +1108,17 @@ Steps 1--3 aren't particularly hard, but they're fiddly to get right and involve
 // GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/
 // HTTP/1.1 200 OK
 // Content-Type: application/json;charset=UTF-8
-// Transfer-Encoding: chunked
+// Content-Length: 2019
 // Connection: keep-alive
 // Status: 200 OK
 // Cache-Control: no-store
 // Access-Control-Allow-Origin: *
 // X-Content-Type-Options: nosniff
-// Date: Sun, 24 Apr 2022 13:01:16 GMT
+// Date: Wed, 27 Apr 2022 09:56:34 GMT
 // X-Powered-By: Phusion Passenger 5.3.1
 // Server: nginx/1.14.0 + Phusion Passenger 5.3.1
-// Request duration: 0.721250s
-#+end_src
+// Request duration: 0.275358s
+#+END_SRC
 
 Lot's of lovely structured data. Webmention.io has worked out that one mention was a ~like-of~ [[file:/2013/03/10/in-which-piers-prepares-to-void-the-warranty/][the blog post]], and the other was ~in-reply-to~ it. We get details of the author of the mentioning post and, where appropriate, its content. If I wanted to run more Javascript on here (and I want to run less), I could attach a script which would consume the post's feed and build a display of all of the mentions. It has a certain appeal, just add one script to the site and a dummy ~<div>~ or ~<ul>~ somewhere and I'm laughing. Plenty of sites do just that.
 
