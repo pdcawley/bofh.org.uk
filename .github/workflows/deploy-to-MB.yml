@@ -6,7 +6,7 @@ on:
       - main
 env:
   emacs-version: 28.1
-  EMACSLOADPATH: ~/ox-hugo:~/restclient:~/ob-restclient:~/json-mode
+  EMACSLOADPATH: $HOME/ox-hugo:$HOME/restclient:$HOME/ob-restclient:$HOME/json-mode
 
 jobs:
   deploy:
