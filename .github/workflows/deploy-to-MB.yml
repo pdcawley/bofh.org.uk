@@ -38,8 +38,9 @@ jobs:
         
       - name: Cache ~/.emacs.d
         uses: actions/cache@v3.0.2
-        path: ~/.emacs.d
-        key: ${{ runner.os }}-${{ hashfiles('~emacs.d/straight/build-cache.el') }}
+        with:
+          path: ~/.emacs.d
+          key: ${{ runner.os }}-${{ hashfiles('~emacs.d/straight/build-cache.el') }}
 
       - name: export posts from Org
         run: emacs ./org-content/all-posts.org --batch -q -L $GITHUB_WORKSPACE -l setup-org-export --eval='(progn (setq org-confirm-babel-evaluate nil) (org-hugo-export-wim-to-md t))' --kill
