@@ -45,8 +45,7 @@ jobs:
         with:
           version: ${{ env.emacs-version }}
 
-      - name: Set EMACSLOADPATH
-        run: echo "EMACSLOADPATH=$HOME/ox-hugo:$HOME/restclient:$HOME/ob-restclient:$HOME/json-mode" >> $GITHUB_ENV
+        run: echo "EMACSLOADPATH=$HOME/ox-hugo:$HOME/restclient:$HOME/ob-restclient:$HOME/json-mode:" >> $GITHUB_ENV
 
       - name: Prep .emacs.d for ox-hugo because ???
         run: mkdir -p ~/.emacs.d
