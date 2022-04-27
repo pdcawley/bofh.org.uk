@@ -9,10 +9,8 @@ article>section.content {
     }
 }
 
-article>section.content>footer.metaline {
+article .metaline {
     font-size: 1rem;
-
-
 
     &> ul {
     display: flex;
@@ -22,6 +20,7 @@ article>section.content>footer.metaline {
     padding-top: 0;
     padding-bottom: 0;
     padding-left: 0;
+    width: 100%;
 
     &> li  {
         list-style-type: none;
