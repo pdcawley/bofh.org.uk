@@ -6,7 +6,6 @@ on:
       - main
 env:
   emacs-version: 28.1
-  EMACSLOADPATH: ${{ HOME }}/ox-hugo:${{ HOME }}/restclient:${{ HOME }}/ob-restclient:${{ HOME }}/json-mode
 
 jobs:
   deploy:
@@ -45,6 +44,9 @@ jobs:
         uses: purcell/setup-emacs@master
         with:
           version: ${{ env.emacs-version }}
+
+      - name: Set EMACSLOADPATH
+        run echo "EMACSLOADPATH=$HOME/ox-hugo:$HOME/restclient:$HOME/ob-restclient:$HOME/json-mode" >> $GITHUBENV
 
       - name: Prep .emacs.d for ox-hugo because ???
         run: mkdir -p ~/.emacs.d
