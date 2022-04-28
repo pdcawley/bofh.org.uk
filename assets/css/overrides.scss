@@ -3,7 +3,7 @@
 // Syndication/linkage stuff
 
 .relationships {
-    &>pre, a.bridgy, .our-mentions {
+    &>pre, a.bridgy, .our-mentions, .syndications {
 	display: none;
     }
 }
