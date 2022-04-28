@@ -20,14 +20,6 @@ jobs:
           submodules: true
           fetch-depth: 0
 
-      - name: Cache Nix installs
-        uses: actions/cache@v3.0.2
-        env:
-          cache-name: cache-nix-installs
-        with:
-          path: /nix/store
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ env.emacs-version }}
-
       - name: Setup emacs
         uses: purcell/setup-emacs@master
         with:
