@@ -1,5 +1,21 @@
 @import "settings";
 
+// Syndication/linkage stuff
+
+.relationships {
+    &>pre, a.bridgy, .our-mentions {
+	display: none;
+    }
+}
+
+.p-summary {
+    display: none;
+}
+
+.articles .p-summary {
+    display: revert;
+}
+
 
 /* Webmention stuff */
 
