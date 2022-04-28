@@ -1137,6 +1137,17 @@ With a bit of fiddling, I had something that grabbed the webmention.io feed for 
 {{{newthought(To be continued…)}}}
 
 
+** DONE Quick site update
+CLOSED: [2022-04-28 Thu 13:01]
+:PROPERTIES:
+:export_file_name: 20220428-quick-site-update
+:export_hugo_custom_front_matter: :syndicate true
+:export_hugo_custom_front_matter+: :tweet "I've been doing a bit of gardening on my blog and hopefully setting up auto tweeting too."
+:END:
+I'll get back to the gory details of my webmention catcher later, but I've been doing a bit of site gardening. Hopefully this means that our index page is looking much nicer, and things are a bit more parseable by IndieWeb tools.
+
+Also, I hope, I've added some gadgetry that means that [[https://brid.gy][brid.gy]] will automatically tweet a link to this page once I've posted it.
+
 ** DONE We Deserve Better
 CLOSED: [2014-01-11 Sat 11:01]
 :PROPERTIES:
