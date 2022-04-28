@@ -10,9 +10,8 @@ draft = false
 So, on Saturday, the opening line, and pretty much the entire tune, of a song banged on my head as we went to our local Library to fill our boots with books and generally get with the "Save our Libraries" message. Here it is. Sing it out. Sing it loud.
 
 {{< embed "http://soundcloud.com/pdcawley/child-of-the-library" />}}
-<!--more-->
 
-<iframe width="560" height="345" src="http://www.youtube.com/embed/MDi5JtS1H-g" frameborder="0" allowfullscreen></iframe>
+<!--more-->
 
 ### A Child of the Library
 
