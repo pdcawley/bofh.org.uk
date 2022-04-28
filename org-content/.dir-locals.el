@@ -4,3 +4,4 @@
 						  (:hlines . "yes")))))
  (org-mode . ((mode . visual-line)
 	      (mode . visual-fill-column))))
+
