@@ -1143,6 +1143,7 @@ CLOSED: [2022-04-28 Thu 13:01]
 :export_file_name: 20220428-quick-site-update
 :export_hugo_custom_front_matter: :syndicate true
 :export_hugo_custom_front_matter+: :tweet "I've been doing a bit of gardening on my blog and hopefully setting up auto tweeting too."
+:export_hugo_custom_front_matter+: :syndicated_at '((twitter . "https://twitter.com/pdcawley/status/1519655434818408448?s=20&t=JN0DWp5MSMU_IoGk-NnyvA"))
 :END:
 I'll get back to the gory details of my webmention catcher later, but I've been doing a bit of site gardening. Hopefully this means that our index page is looking much nicer, and things are a bit more parseable by IndieWeb tools.
 
