@@ -1173,7 +1173,7 @@ Ideally, I want to be layering up harmonies on the /Bold Reilly oh, bold Reilly!
 I'll write a full review of Loopy Pro one of these days, but suffice it to say, there is now a better way. Loopy Pro is the long awaited successor to Loopy HD, a software looper for iOS. It's been a very long time coming, but by god, does it deliver! As well as being a looper, it's a great replacement for MainStage and (at least for live use) Logic Pro, and it runs on even pretty ancient iPhones and iPads. It's predecessor was remarkably capable, but was 'just' a looper with a configurable number of loops available. Loopy Pro is fully customisable, supporting any number of loops, one shot samples, beat slicing, AUv3 hosting, mix busses, control widgets, faders and dials. There's a deep system of actions and 'follow actions' that allow you to customize its behaviour as well as its appearance, and the audio routing capabilities could embarrass some far more expensive DAW software. It's astonishingly capable.
 
 #+caption: Loopy Pro configured for singing 'shanty' structured chorus songs
-[[~/Documents/shanty-view.png]]
+[[/ox-hugo/shanty-view.png]]
 
 I've been fiddling with it since it was released, and now have it set up to allow me to sing shanty style songs with harmonies on the refrain as well as stuff like this:
 
