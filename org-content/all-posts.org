@@ -9,7 +9,7 @@
 #+property: header-args: :exports code
 #+hugo_paired_shortcodes: %table %marginnote %newthought
 #+macro: newthought @@hugo:{{% newthought %}}@@$1@@hugo:{{% /newthought %}}@@
-#+macro: marginnote (eval (concat "@@hugo:{{% marginnote %}}@@" (s-join ", " (-non-nil (list $1 $2 $3 $4 $5 $6 $7 $8 $9))) "@@hugo:{{% /marginnote %}}@@"))
+#+macro: marginnote (eval (concat "@@hugo:{{% marginnote %}}@@" (mapconcat 'identity (remove nil (list $1 $2 $3 $4 $5 $6 $7 $8 $9)) ", ") "@@hugo:{{% /marginnote %}}@@"))
 #+macro: sc @@hugo:{{% $1 %}}@@
 #+macro: <sc @@hugo:{{< $1 >}}@@
 
