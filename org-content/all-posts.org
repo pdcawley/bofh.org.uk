@@ -1136,7 +1136,8 @@ The site's [[https://github.com/pdcawley/bofh.org.uk/][Github repo]] is configur
 
 With a bit of fiddling, I had something that grabbed the webmention.io feed for the site every few hours, split it out into multiple files in ~data/mentions~ and updated GitHub. That's what I was celebrating in [[file:post/we-have-webmentions.pre-processed.org][We have WebMentions]]. I've moved on {{{marginnote(A cynical person might well read that as "broken things")}}} since then, because /of course/ sorting out de-duplication and remembering information between runs of the script is annoyingly fiddly and full of edge cases. Basically, I ended up trying to emulate a proper database. Which is why the latest iteration of webmention handling uses a proper database. I would have used [[https://sqlite.org/][SQLite]], but N8N doesn't have a SQLite node available out of the box. It does have a [[https://postgresql.org/][PostgreSQL]] one though, and recent versions of that have really good JSON support. I'd tell you more, but ~wc-mode~ tells me I'm nearly 2500 words in to this article, I think I'll wrap up for now and promise to give you the gory details in an upcoming article.
 
-** DRAFT Evolving my streaming setup
+** DONE Evolving my streaming setup
+CLOSED: [2022-05-10 Tue 17:10]
 :PROPERTIES:
 :export_file_name: 20220510-evolving-my-streaming-setup
 :export_hugo_custom_front_matter: :syndicate true
