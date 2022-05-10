@@ -67,3 +67,10 @@ jobs:
 
       - name: Copy to server
         run: rsync -avz --del -e "ssh -p ${{secrets.SSH_PORT}}" ./public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:bofh.org.uk
+
+      - name: Send Webmentions
+        uses: joelwmale/webhook-action@master
+        with:
+          url: ${{ secrets.WEBHOOK_URL }}
+          headers: '{"repository": "pdcawley/bofh.org.uk"}'
+          body: '{"event": "deployment", "repository": "pdcawley/bofh.org.uk"}'
