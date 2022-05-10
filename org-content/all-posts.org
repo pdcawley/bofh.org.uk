@@ -380,7 +380,7 @@ In [[file:/2019/02/25/baking-with-emacs][the last post]] I handwaved the way I r
 # }
 # #+end_src
 
-#+results: 
+#+results:
 #+begin_RESULTS
 [[file:formulae.svg]]
 #+end_RESULTS
@@ -404,7 +404,7 @@ select name, ingredient, format('%s kg', ROUND(amount, 2)) from f order by name;
 #+end_src
 #+end_comment
 
-#+results: 
+#+results:
 | name             | ingredient                    | format  |
 |------------------+-------------------------------+---------|
 | Small Seedy Malt | Seedy Malt Dough              | 0.63 kg |
@@ -466,7 +466,7 @@ SELECT product formula, ingredient, ROUND(sum(quantity),2) quantity from job gro
 
 Which gives the following result:
 
-#+results: 
+#+results:
 | formula          | ingredient          | quantity |
 |------------------+---------------------+----------|
 | Basic White Sour | Sea salt            |     0.09 |
@@ -542,7 +542,7 @@ SELECT product formula, ingredient, round(sum(quantity),2) weight from job group
 
 This query gives us:
 
-#+results: 
+#+results:
 | formula          | ingredient          | weight |
 |------------------+---------------------+--------|
 | Basic White Sour | Sea salt            |   0.05 |
@@ -622,6 +622,8 @@ We can use the same table to calculate the raw material costs for a given recipe
 I think, however, I'm going to leave it alone until I have to write another recursive view that walks the same graph, at which point I'll bite the bullet and do the pre-calculated version.
 
 
+
+
 * Book Reports                                            :@book-report:
 :PROPERTIES:
 :export_hugo_custom_front_matter: :series "Book Reports"
@@ -663,7 +665,6 @@ Right... onwards to /The Tombs of Atuan./
 
 
 * Posts
-
 
 ** DONE My Virtual Gig-Like Thing
 :PROPERTIES:
@@ -811,11 +812,11 @@ Don't keep doing it, mind, or you'll start looking like the kite flying asshole 
 :END:
 If you're at all like me, you have content on a bunch of different sites (Instagram, Youtube, Flickr, Soundcloud, Bandcamp...) and, especially for multimedia content, it's great to be able to link to 'live' versions of that content. Of course, all those sites will let you 'share' content and usually have an 'embed' option that hands you a bunch of HTML that you can paste into your blog entry. But screw that! I'm a programmer for whom laziness is one of the cardinal virtues -- if it's at all possible, I prefer to let the computer do the work for me.@@hugo:{{< marginnote >}}@@If nothing else, once I've got the programming right, it's less likely to screw up than me@@hugo:{{< /marginnote >}}@@
 
-Hugo[fn:2] sort of supports this out of the box with its ~youtube~, ~instagram~, ~vimeo~ etc. built in shortcodes. The thing is, they're not lazy enough -- you have to dig into each URL to extract a content ID and pass that in to ~{{%/* youtube kb-Aq6S4QZQ */%}}~ or whatever. Which would be kind of fine, if you weren't used to the way sites like Facebook, Twitter, Tumblr and so on work. With those sites, you enter a URL and they disappear off behind the scenes and fill in a fancy preview of the page you linked to. Why can't Hugo do that?
+Hugo[fn:1] sort of supports this out of the box with its ~youtube~, ~instagram~, ~vimeo~ etc. built in shortcodes. The thing is, they're not lazy enough -- you have to dig into each URL to extract a content ID and pass that in to ~{{%/* youtube kb-Aq6S4QZQ */%}}~ or whatever. Which would be kind of fine, if you weren't used to the way sites like Facebook, Twitter, Tumblr and so on work. With those sites, you enter a URL and they disappear off behind the scenes and fill in a fancy preview of the page you linked to. Why can't Hugo do that?
 
 #+hugo: more
 
-Well, it can. It just takes a little work.[fn:1] The ~question~ to ask is how do all those user friendly sites do there thing? Twitter and Facebook, being the walled garden behemoths that they are do it by dictating two different microformats@@hugo:{{% marginnote %}}@@
+Well, it can. It just takes a little work.[fn:2] The ~question~ to ask is how do all those user friendly sites do there thing? Twitter and Facebook, being the walled garden behemoths that they are do it by dictating two different microformats@@hugo:{{% marginnote %}}@@
 Of bloody course!
 @@hugo:{{%/marginnote%}}@@ that live in a page's ~HEAD~ section. The microformat approach has a good deal to be said for it: In theory, you can just make a ~HEAD~ request to the URL you're interested in, parse out the microformat of your choice and build your own media card. I've not worked out how to do this yet though. However, before Twitter and FB started throwing their weight around, there was an open standard that lots of sites support, it's /really/ easy to use. It's called [[https://oembed.com/][oembed]] and it's great. The idea is that it too is discoverable via a ~HEAD~ request to your media page. You look for something matching src_html{<link rel="alternate" type="application/json+oembed" href="..." ...>}, make a JSON request to the ~href~ url and paste in the contents of the ~html~ key in the object you get back. The catch, of course, is that you still end up having to parse the document's HEAD.
 
@@ -959,7 +960,7 @@ But never underestimate the ability of a long time Emacs user to complicate thin
 
 The beauty of using a static site generator to build your website is supposed to be that it's all delightfully simple. Simple markdown formatted files go in at one end and a slim, fast and easy to serve website comes out the other end. All that remains is to upload those files to the appropriate directory on your server and all is well.
 
-But never underestimate the ability of a long time Emacs user to complicate things. For instance, markdown is all well and good, but I've been doing most of my writing in [[https://orgmode.org/][Org Mode]][fn:5] so I really want to stay in Org mode to write these blog posts. [[https://gohugo.io/][Hugo]] understands =.org= files, so I could just lean on that, but the way Hugo treats org files seems slightly out of whack with what I think of as the Org way and I'd end up having to stick with the subset of org syntax that Hugo know. So I use [[https://ox-hugo.scripter.co][ox-hugo]], there's a bit of configuration needed to make it work the way I like, but I prefer to change software to accommodate me rather than change me to accommodate software
+But never underestimate the ability of a long time Emacs user to complicate things. For instance, markdown is all well and good, but I've been doing most of my writing in [[https://orgmode.org/][Org Mode]][fn:3] so I really want to stay in Org mode to write these blog posts. [[https://gohugo.io/][Hugo]] understands =.org= files, so I could just lean on that, but the way Hugo treats org files seems slightly out of whack with what I think of as the Org way and I'd end up having to stick with the subset of org syntax that Hugo know. So I use [[https://ox-hugo.scripter.co][ox-hugo]], there's a bit of configuration needed to make it work the way I like, but I prefer to change software to accommodate me rather than change me to accommodate software
 
 #+begin_marginnote
 I'd go so far as to say it's a point of pride.
@@ -977,7 +978,8 @@ That's the sort of thing that makes me itch, because there were two files for an
 The generated file is an artefact of the build process and simply repeats the info in the org file, which should be our single source of truth. It's not a file that should be left around to be edited willy nilly because it could get out of sync with its source file. It's certainly not the sort of file that should live in the repository.
 
 I didn't worry about this for /ages,/ but it niggled at me. Then one day I read an article about using [[https://github.com/features/actions][Github Actions]] to build an ox-hugo based site by installing emacs and ox-hugo on the VM that does the build step and generating the markdown files during the build by running Emacs
-@@hugo:{{% marginnote %}}@@Yes, Emacs is an editor, but if you do 「src_emacs-lisp{emacs all‑posts.org ‑‑batch ‑l ox-hugo ‑‑eval='(org-hugo-export-wim-to-md t)' ‑‑kill} 」 it will happily execute any lisp code you care to ask it to.@@hugo:{{% /marginnote %}}@@ in batch mode. The  markdown files never exist anywhere that anyone can edit them. So, of course I had to do that. Again, fiddly to set up, and arguably only of philosophical benefit, but worth it, I think.[fn:3]
+
+@@hugo:{{% marginnote %}}@@Yes, Emacs is an editor, but if you do 「src_emacs-lisp{emacs all‑posts.org ‑‑batch ‑l ox-hugo ‑‑eval='(org-hugo-export-wim-to-md t)' ‑‑kill} 」 it will happily execute any lisp code you care to ask it to.@@hugo:{{% /marginnote %}}@@ in batch mode. The  markdown files never exist anywhere that anyone can edit them. So, of course I had to do that. Again, fiddly to set up, and arguably only of philosophical benefit, but worth it, I think.[fn:4]
 
 {{{newthought(I could've left it there,)}}} but the thing I miss about the old, slow, hard to maintain version of this site, is the sense of connection. The old site had comments, and pingback links to other blogs. There was a sense of connectedness that's missing from a collection of articles. I want some of that back.
 
@@ -990,7 +992,7 @@ There is a way. In the time I've been mostly not blogging, some of the folks who
 #+end_cite
 #+end_quote
 
-Now we're talking! It's a really simple standard too. When you mention, like, comment on, repost, reply to, bookmark or simply publicly interact with an "h-entry"[fn:4] on the IndieWeb, you can send a webmention by sending a small chunk of JSON to the webmention endpoint of the entry you mentioned. Assuming all the content is marked up correctly, /sending/ a webmention is delightfully easy. You can do it with ~curl~, if that's your thing, but I'm in an emacs buffer, so let's use [[https://github.com/pashky/restclient.el][~restclient~]]
+Now we're talking! It's a really simple standard too. When you mention, like, comment on, repost, reply to, bookmark or simply publicly interact with an "h-entry"[fn:5] on the IndieWeb, you can send a webmention by sending a small chunk of JSON to the webmention endpoint of the entry you mentioned. Assuming all the content is marked up correctly, /sending/ a webmention is delightfully easy. You can do it with ~curl~, if that's your thing, but I'm in an emacs buffer, so let's use [[https://github.com/pashky/restclient.el][~restclient~]]
 
 We mention [[https://indieweb.org]] in this post, so let's find out its webmention endpoint.
 
@@ -998,7 +1000,7 @@ We mention [[https://indieweb.org]] in this post, so let's find out its webmenti
 HEAD https://indieweb.org
 #+end_src
 
-#+results: 
+#+results:
 #+BEGIN_SRC html
 <!-- HEAD https://indieweb.org -->
 <!-- HTTP/1.1 200 OK -->
@@ -1021,7 +1023,7 @@ Content-Type: application/x-www-form-urlencoded
 source=https://bofh.org.uk/2022/04/24/not-so-simple&target=https://indieweb.org
 #+end_src
 
-#+results: 
+#+results:
 #+BEGIN_SRC json
 {
   "status": "queued",
@@ -1061,7 +1063,7 @@ Steps 1--3 aren't particularly hard, but they're fiddly to get right and involve
 GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/
 #+end_src
 
-#+results: 
+#+results:
 #+BEGIN_SRC json
 {
   "type": "feed",
@@ -1134,7 +1136,70 @@ The site's [[https://github.com/pdcawley/bofh.org.uk/][Github repo]] is configur
 
 With a bit of fiddling, I had something that grabbed the webmention.io feed for the site every few hours, split it out into multiple files in ~data/mentions~ and updated GitHub. That's what I was celebrating in [[file:post/we-have-webmentions.pre-processed.org][We have WebMentions]]. I've moved on {{{marginnote(A cynical person might well read that as "broken things")}}} since then, because /of course/ sorting out de-duplication and remembering information between runs of the script is annoyingly fiddly and full of edge cases. Basically, I ended up trying to emulate a proper database. Which is why the latest iteration of webmention handling uses a proper database. I would have used [[https://sqlite.org/][SQLite]], but N8N doesn't have a SQLite node available out of the box. It does have a [[https://postgresql.org/][PostgreSQL]] one though, and recent versions of that have really good JSON support. I'd tell you more, but ~wc-mode~ tells me I'm nearly 2500 words in to this article, I think I'll wrap up for now and promise to give you the gory details in an upcoming article.
 
-{{{newthought(To be continued…)}}}
+** DRAFT Evolving my streaming setup
+:PROPERTIES:
+:export_file_name: 20220510-evolving-my-streaming-setup
+:export_hugo_custom_front_matter: :syndicate true
+:export_hugo_custom_front_matter+: :tweet "Will I ever learn to leave well enough alone? I've written up the state of my streaming setup here."
+:END:
+
+Back when I first started streaming on the internet, I used a Logitech webcam and some lights I had picked up for doing product photography and such for the Loafery and some audio gear I had because, well, recording stuff is just fascinating. It was okay, but even with decent lighting and audio, the webcam was frustrating to control (basically, there /was/ no control), so I picked up a cheap capture card from Amazon  and drafted my Nikon D810{{{marginnote(Absolutely not the camera I would recommend if you're going out to buy a camera for streaming -- it's primary virtue being that it's the camera I already owned. Get something mirrorless if you're heading down this road)­}} as my webcam and the appearance of my streams improved enormously. This worked fine with my slightly aging PC and /Twitch Sings/.
+
+Then Twitch pulled the plug on /Sings/ and I started doing my regular Friday night folk streams. At first this involved running OBS and Logic Pro on my aging MacBook Pro and it was sort of okay, until I started having guests and doing Song Swaps -- the MacBook simply wasn't up to the job of running Logic, OBS and Zoom, so for a while I had some unholy lashup, with Zoom and OBS running on the PC, my Mac running Logic, with patch leads between the Mac and PC audio interfaces so I could hear my guests and vice versa. It wasn't pretty.
+
+What saved it was adding an [[https://www.blackmagicdesign.com/uk/products/atemmini][ATEM Mini Pro ISO]] from BlackMagic. Now I could hand off all the capturing, streaming and recording duties to that box and run Logic and Zoom on the Mac and everything just worked (with an utter rats nest of cables on my desk). The ATEM takes HDMI input from up to four sources and lets me switch what gets sent to the stream between them. There's also a monitor preview output that can be switched independently between those four sources, as well as multiview and stream previews. Of course, I quickly used up all four sources, and I don't even have a second camera! The way things are arranged by default is that I have a camera feed, my mac's primary and secondary displays, and the output from a Raspberry Pi. Mac screen 2 is where the zoom window lives, and is connected to the ATEM via an HDMI splitter with the second output feeding a 7-inch field monitor that sits on a teleprompter setup so I can look guests in the eye.{{{marginnote(Best purchase ever! I primarily use it with Zoom or to display the YouTube chat when I'm doing solo streams)}}}
+The primary Mac screen is where I set up streams and drive Logic from. It feeds into the ATEM mostly so I can see it in the preview window or full size when I need to without having to have a another screen, but if I ever get a second camera, I'll break mac screen 1 out to its own monitor and dedicate input 2 to that secondary camera. Input 4 is a Raspberry Pi that I use for motion graphics. This used to be a copy of chromium running in kiosk mode to display the [[https://ko-fi.com/pdcawley][Ko-Fi]] stream widget which displays donations as they happen, but I've recently managed to compile OBS studio with a working browser plugin and I'm using that instead now, which should allow me to add more overlays later. The only catch with that is that I've not yet managed to get [[https://bitfocus.io/companion/][Companion]] to compile, {{{marginnote(Companion's a brilliant app for controlling AV gear via a web interface or Stream Deck. I know it works on the Pi because they provide OS images for it.)}}} so I think I'll have to move that onto the Mac.
+
+{{{newthought(This all worked fine)}}} until recently. You see, the thing I love about unaccompanied singing is singing harmonies. And harmonies don't work unless the timing is properly tight. That means I can't sing harmonies with Zoom guests because the speed of light{{{marginnote(and video and audio compression and decompression)}}} screws things up completely. I got around this by harmonising with myself -- either by using a Looper plugin in Logic[fn:6] or just by using Logic's multi-tracking[fn:7] to record multiple layers of a song's chorus. It all works, and works well, but I could never work out how to record harmonies for shanty type refrains.
+
+Consider:
+#+begin_verse
+Oh the rain it rains all day long
+  /Bold Reilly oh, bold Reilly!/
+And them Northern winds they blow so strong
+  /Bold Reilly oh's gone away/
+
+*Chorus:*
+  /Goodbye my sweetheart, goodbye my dear-o/
+    /Bold Reilly oh, bold Reilly/
+  /Goodbye my darling, goodbye my dear-oh/
+    /Bold Reilly oh's gone away/
+#+end_verse
+
+Ideally, I want to be layering up harmonies on the /Bold Reilly oh, bold Reilly!/ and /Bold Reilly oh's gone away/ lines within each verse, as well as on the chorus (and potentially on any chorus repeats too). It should be possible to set up Logic's live looping feature to enable this sort of thing, but I could never work out how, and I wasn't ready to switch to Ableton Live (where I couldn't be sure I knew how to make it work either). So I stuck to just harmonising on the chorus and wishing there was a better way.
+
+*** Enter [[https://loopypro.com/][Loopy Pro]]!
+
+I'll write a full review of Loopy Pro one of these days, but suffice it to say, there is now a better way. Loopy Pro is the long awaited successor to Loopy HD, a software looper for iOS. It's been a very long time coming, but by god, does it deliver! As well as being a looper, it's a great replacement for MainStage and (at least for live use) Logic Pro, and it runs on even pretty ancient iPhones and iPads. It's predecessor was remarkably capable, but was 'just' a looper with a configurable number of loops available. Loopy Pro is fully customisable, supporting any number of loops, one shot samples, beat slicing, AUv3 hosting, mix busses, control widgets, faders and dials. There's a deep system of actions and 'follow actions' that allow you to customize its behaviour as well as its appearance, and the audio routing capabilities could embarrass some far more expensive DAW software. It's astonishingly capable.
+
+#+caption: Loopy Pro configured for singing 'shanty' structured chorus songs
+[[~/Documents/shanty-view.png]]
+
+I've been fiddling with it since it was released, and now have it set up to allow me to sing shanty style songs with harmonies on the refrain as well as stuff like this:
+
+@@hugo:{{< embed "https://youtu.be/hWPmADRfPFQ" />}}@@
+
+so now I'm running Friday night stream audio from the iPad, leaving the Mac to run Zoom. This has all been made /much/ easier since I added a new audio interface: the iConnectivity [[https://www.iconnectivity.com/audio4c][AUDIO4c]] interface is a remarkable bit of kit. Uniquely, as far as I can tell, it can be used as an audio interface simultaneously by my mac and my iPad, and can route audio from the iPad to the mac and vice versa. It's got four inputs and six outputs, which is two more than existing interface. That means I can have my guest and me fed to the ATEM mini on separate channels, as well as giving myself a different headphone mix. And it's only one rack unit high!
+#+begin_marginnote
+Focusrite "small" interfaces, which are what I've used up to now are all about 1.5U high unless you buy the versions with 8 preamps -- lovely bits of kit, but rather more than I either need or can afford.
+#+end_marginnote
+
+The remaining bit of the puzzle is to reliably capture the iPad display. I'm looking for, and so far failing to find, a powered USB-C hub that has a bulletproof iPad HDMI connection and gigabit ethernet, which is much more reliable when it comes to remote control of the ATEM. It's a frustrating search. Everything I've found so far has intermittent HDMI dropouts, which would be annoying enough if it weren't for another 'feature' of iOS and iPadOS.
+
+{{{newthought(It works like this:)}}} on iDevices, you don't have the option to choose which audio interface you want to use, instead the OS autoselects whichever interface was plugged in most recently. Which would be fine (sort of) if it weren't for the fact that an HDMI connection to an audio capable device is treated as a new audio interface. So... if the HDMI connection was reliable, getting prepped for a stream would just involve unplugging the audio interface from the hub, connecting the HDMI and reconnecting to the AUDIO4c. But then the HDMI drops and comes back, and suddenly /it/ is the most recently connected interface and the stream's audio is buggered.
+
+If you know of an iPad friendly USB-C hub that has rock solid HDMI, then I'd love to hear about it because my search is getting really frustrating. Right now I'm working around it by disconnecting the audio, screen sharing to the Mac and reconnecting the audio, but even with a dual screen mac set up, screen sharing takes over both screens{{{marginnote(Well… it takes over one screen and fades the other to black. Thanks Apple!)}}} and the whole thing has a bunch of latency that you don't really want -- it's surprising how little latency will start making audio software in particular seem seriously out of sync. I can correct for that when editing, but not so much on a live stream.
+
+But… once I have reliable HDMI from the iPad I run into another problem. Where do I plug it in? Suddenly four inputs on the ATEM aren't really enough.
+
+Time to start saving up for an ATEM Mini Extreme ISO, which is the extra-wide version of the ATEM Mini Pro ISO, complete with 8 HDMI inputs, 2 HDMI outputs, 2 USB-C connections, a 3.5mm audio jack output (so I can monitor the audio going to the stream rather than just looking at the VU meters on the multiview display) and something called a 'Super Source', which would definitely simplify the business of setting up the split screen view when I have a Zoom guest.
+#+begin_marginnote
+Because of restrictions in the way the ATEM Mini Pro ISO works, I have to sit to one side of the shot because I can only adjust the scale, crop and position of one video source at a time. The Super Source deals with all that.
+#+end_marginnote
+
+The extreme version appears to fix pretty much everything that I find slightly annoying about the Mini, which is brilliant, but could be brillianter. Ah well, a boy can dream.
+
+If you're interested in seeing what all this technology ends up looking like on stream, then I stream at 8pm UK time every Friday night on my [[https://youtube.com/c/PiersCawley][YouTube channel]]. Maybe pop by, and if you like what you see and hear, don't forget to like and subscribe.
 
 
 ** DONE Quick site update
@@ -1190,7 +1255,7 @@ The Tories /hated/ it. Every time they’ve had power since they’ve chipped aw
 
 The 1944 education act was a Tory act, and rather than replace the old system, it /added/ state schools to the mix. The rich were able to opt out and keep their children in the public school system. The public schools and their associated ‘old boy’ networks survived. Etonians don’t just learn Latin and Greek and the art of fagging; they learn that glib smoothness, the art of masking base and selfish motives behind the a veneer of affability. They learn to help their friends and the Devil take the hindmost.
 
-The thing about villains is, they think they’re heroes. They think there’s nothing nobler than helping a chum. They think the world is just. If you’re blessed with the kind of money that Cameron and Osborne inherited you’re going to convince yourself that you somehow deserve your wealth. And if you deserve your wealth, then it’s a small step to thinking that the poor deserve their poverty. 
+The thing about villains is, they think they’re heroes. They think there’s nothing nobler than helping a chum. They think the world is just. If you’re blessed with the kind of money that Cameron and Osborne inherited you’re going to convince yourself that you somehow deserve your wealth. And if you deserve your wealth, then it’s a small step to thinking that the poor deserve their poverty.
 
 If the world is as it is because everyone deserves their station, then the welfare state is going to seem like the next best thing to evil. The state wants to take some of your money and use it to pay some loser’s rent? It wants to give a drunk a liver transplant? Disgusting! If those people /really/ cared about keeping their home, they’d get a decent job — it’s not hard, just have a word with a friend. And the drunk has only himself to blame. They’ve made their bed and they should lie in it.
 
@@ -1198,19 +1263,19 @@ The real trick though, is convincing those who really are a pay cheque or two fr
 
 This government has that down pat. They’ve used a financial crisis — one whose seeds were sown when Thatcher and Reagan deregulated the markets and fertilised by every bloody government since (there are no innocents in this fiasco) — as the excuse and are dismantling what was so hard won by our grandparents. A government that promised “No top down reorganisations of the NHS” is gutting it. The poor are being forced out of rich areas by the benefits cap and the bedroom tax. The young are… oh god, the young… the coalition seems to read /[[http://en.wikipedia.org/wiki/A_modest_proposal][A Modest Proposal]]/ as sound policy. When I went to university, my fees were fully paid (Thatcher had frozen maintenance grants, not that I’d’ve got one after means testing). My step-grandson is looking at a /minimum/ debt of £27,000 — assuming he can live for nothing. If you’ve got the cash to get your kid the best education money can buy, you don’t want some bright lass from the local comprehensive competing with them for the plum jobs. Pull up the ladder Jack!
 
-It doesn’t have to be like this. Ask yourself how it is that, in 1945, when the country was on the bones of its arse with precious few lines of credit and an industrial base battered by years of bombing we built a welfare state and a national health service that have lasted for seventy years? Ask how we could, at the same time, find the money to subsidise the Royal Opera House and Sadlers Wells and many other arts organisations? Ask how we could afford, as a country, to support our university students so they could spend their time concentrating on their degrees and the life of the university and not miring themselves in debt? 
+It doesn’t have to be like this. Ask yourself how it is that, in 1945, when the country was on the bones of its arse with precious few lines of credit and an industrial base battered by years of bombing we built a welfare state and a national health service that have lasted for seventy years? Ask how we could, at the same time, find the money to subsidise the Royal Opera House and Sadlers Wells and many other arts organisations? Ask how we could afford, as a country, to support our university students so they could spend their time concentrating on their degrees and the life of the university and not miring themselves in debt?
 
 Ask how we can afford /not/ to do those things now.
 
 There is no excuse for what our government is doing to the poorest among us. Or for what it’s doing to the middle classes come to that. An underclass is handy thing. They keep those on lower middle incomes so bloody scared of falling into poverty that they’ll put up with gross abuse just so they can hang on to what they have. Some guard their little portion with such jealousy that they will not just tolerate the abuse of the poor, they will be baying for blood.
 
-It pains me to say this, but not everything the coalition has done is evil. And I don’t just mean Equal Marriage. Even Michael “Stopped Clock” Gove’s been right about something — the emphasis on learning to code rather than merely drive Powerpoint and Microsoft Word is a good thing. The gov.uk initiative is good news — anything which reduces the influence of KPMG, Capita, G4S and their cronies (and which employs so many of  my more technical friends) can’t be bad. But a ‘good in parts’ government is still intolerable. 
+It pains me to say this, but not everything the coalition has done is evil. And I don’t just mean Equal Marriage. Even Michael “Stopped Clock” Gove’s been right about something — the emphasis on learning to code rather than merely drive Powerpoint and Microsoft Word is a good thing. The gov.uk initiative is good news — anything which reduces the influence of KPMG, Capita, G4S and their cronies (and which employs so many of  my more technical friends) can’t be bad. But a ‘good in parts’ government is still intolerable.
 
 There’s an election due in 2015. 2015, the 70th anniversary of the Attlee revolution. It’s time to do it again. Vote. Vote progressive. Vote independent or green. Hold your nose and vote Liberal or Labour. Join a fucking party and work to change their outlook. Vote pragmatic. But, whatever you do, vote. /Especially/ if you’re young. Politicians only care about keeping the people who vote happy — if you don’t vote, they’ll ignore you. If it makes some other part of their constituency happy, they’ll shit on you from great height (though I think that may backfire yet — the thing about grandparents is, they tend to like their grandchildren and don’t like seeing them get the shitty end of the stick)
 
 You could listen to Russell Brand and not vote ’cos it’s “irrelevant” — there’s a revolution coming! You could. But you’d be an idiot and you’d be waiting a long time. There’s been one progressive revolution that actually stuck in this country, and that was achieved by voting.
 
-Demand the nationalisation of public goods; the Post Office, Rail, Water, Gas, Electricity. Encourage small businesses and /making/ stuff. Build new public housing. Demand real transparency in markets and government. Fuck landlords. Fuck rentiers. 
+Demand the nationalisation of public goods; the Post Office, Rail, Water, Gas, Electricity. Encourage small businesses and /making/ stuff. Build new public housing. Demand real transparency in markets and government. Fuck landlords. Fuck rentiers.
 
 Change the world. Our grandparents did it seventy years ago. We deserve better. Let’s take a leaf out of their book and do it again.
 
@@ -1562,21 +1627,26 @@ some amazing things.
 
 Some of them are even worth doing.
 
+
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
 :END:
 
-[fn:5] @@html:<dfn><code>org-mode</code></dfn>@@ is an Emacs outliner that grew into a calendar/outliner/spreadsheet/document processor/literate programming tool/dessert wax/floor topping.
+[fn:7] Logic isn't really set up to do live sound, but MainStage, which is, can't do multi track recording and playback and I couldn't work out how to configure its looper to emulate that. So I just used Logic.
+
+[fn:6] I used the delightfully named [[https://www.expert-sleepers.co.uk/augustusloop.html][Augustus Loop]] from Expert Sleepers combined with a Lua script I wrote to make it behave more or less the way I wanted it to. Kind of fiddly to set up, but repaid the effort. There's still a few things that AL can do that I can't do with Loopy Pro, but as I write those are due in the next big Loopy patch.
+
+[fn:1] [[https://gohugo.io][Hugo]] is the static site generator I use to build this blog. Another example of letting the computer do all the fiddly repetitive bits. In this case, to handle all the fiddly bits of writing full HTML pages, building index pages and the rest.
+
+[fn:2] It's also annoyingly temperamental at the moment; I'm working on that though.
+
+[fn:3]  @@html:<dfn><code>org-mode</code></dfn>@@ is an Emacs outliner that grew into a calendar/outliner/spreadsheet/document processor/literate programming tool/dessert wax/floor topping.
 
 It's what I used to use [[https://bofh.org.uk/2019/02/25/baking-with-emacs/][to manage my bakery]], and it's amazing.
 
 Like Emacs itself, it's almost infinitely flexible, which makes it incredibly hard to get started with. There's oodles of org configurations out there to crib from and all of them are a mixture of the useful and irrelevant, because it turns out that people have different opinions about how they want to organise their writing and/or life. My config is very much under construction.
 
-[fn:4] An @@html:<dfn>@@h-entry@@html:</dfn>@@ is something that a web user might want to mention. At present, all the h-entries on this site are articles, but other people use them to mark up photos, videos, notes, calendar entries or anything else that makes sense to think of as an entry in a collection of stuff. If you'll look at this page in your browser's inspector, you'll see that the content is wrapped in ~<article class="h-entry" …>…</article>~ tags. Other tags within that block are are marked with other classes (so the title has ~p-name~ and the body has ~e-content~), according to the definition of the [[http://microformats.org/wiki/h-entry][h-entry microformat]]. By marking my site up with these micropformats, life becomes much easier for any IndieWeb tools to extract appropriate information from the site.
+[fn:4] The Github Actions based build process is also substantially more reliable than the hand rolled server hook I was using. There's something to be said assembling your build pipeline from a bunch of stuff that lots of other people use (and maintain). Also, it reduces the number of moving parts on the Raspberry Pi that's serving these pages, which is no bad thing.
 
-[fn:2] [[https://gohugo.io][Hugo]] is the static site generator I use to build this blog. Another example of letting the computer do all the fiddly repetitive bits. In this case, to handle all the fiddly bits of writing full HTML pages, building index pages and the rest.
-
-[fn:1] It's also annoyingly temperamental at the moment; I'm working on that though.
-
-[fn:3] The Github Actions based build process is also substantially more reliable than the hand rolled server hook I was using. There's something to be said assembling your build pipeline from a bunch of stuff that lots of other people use (and maintain). Also, it reduces the number of moving parts on the Raspberry Pi that's serving these pages, which is no bad thing.
+[fn:5] An @@html:<dfn>@@h-entry@@html:</dfn>@@ is something that a web user might want to mention. At present, all the h-entries on this site are articles, but other people use them to mark up photos, videos, notes, calendar entries or anything else that makes sense to think of as an entry in a collection of stuff. If you'll look at this page in your browser's inspector, you'll see that the content is wrapped in ~<article class="h-entry" …>…</article>~ tags. Other tags within that block are are marked with other classes (so the title has ~p-name~ and the body has ~e-content~), according to the definition of the [[http://microformats.org/wiki/h-entry][h-entry microformat]]. By marking my site up with these micropformats, life becomes much easier for any IndieWeb tools to extract appropriate information from the site.
