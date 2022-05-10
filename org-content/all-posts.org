@@ -1142,6 +1142,7 @@ CLOSED: [2022-05-10 Tue 17:10]
 :export_file_name: 20220510-evolving-my-streaming-setup
 :export_hugo_custom_front_matter: :syndicate true
 :export_hugo_custom_front_matter+: :tweet "Will I ever learn to leave well enough alone? I've written up the state of my streaming setup here."
+:export_hugo_custom_front_matter+: :syndicated_at '((twitter . "https://twitter.com/pdcawley/status/1524062540522790912"))
 :END:
 
 Back when I first started streaming on the internet, I used a Logitech webcam and some lights I had picked up for doing product photography and such for the Loafery and some audio gear I had because, well, recording stuff is just fascinating. It was okay, but even with decent lighting and audio, the webcam was frustrating to control (basically, there /was/ no control), so I picked up a cheap capture card from Amazon  and drafted my Nikon D810{{{marginnote(Absolutely not the camera I would recommend if you're going out to buy a camera for streaming -- it's primary virtue being that it's the camera I already owned. Get something mirrorless if you're heading down this road)­}} as my webcam and the appearance of my streams improved enormously. This worked fine with my slightly aging PC and /Twitch Sings/.
