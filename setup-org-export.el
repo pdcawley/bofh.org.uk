@@ -12,15 +12,15 @@
   (load bootstrap-file nil 'nomessage))
 
 (dolist (pkg '(org-mode
-           ox-hugo
-           json-mode
-           dash
-           s
-           (restclient :type git :host github :repo "pashky/restclient.el"
-               :fork (:host github :repo "pdcawley/restclient.el"))
+               ox-hugo
+               json-mode
+               dash
+               s
+               (restclient :type git :host github :repo "pashky/restclient.el"
+			   :fork (:host github :repo "pdcawley/restclient.el"))
 
-           (ob-restclient :type git :host github :repo "alf/ob-restclient.el"
-                  :fork (:host github :repo "pdcawley/ob-restclient.el"))))
-  (straight-use-package pkg))
+               (ob-restclient :type git :host github :repo "alf/ob-restclient.el"
+			      :fork (:host github :repo "pdcawley/ob-restclient.el"))))
+  (straight-use-package pkg nil t))
 
 (provide 'setup-org-export)
