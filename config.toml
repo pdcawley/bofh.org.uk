@@ -108,8 +108,3 @@ googleAnalytics = "UA-135014-1"
     iso8601_html_format = "<span class='date'>2006-01-02</span><span class='time-sep'>T</span><span class='time-and-zone'><span class='time-part'>15:04:05</span><span class='zone-part'>Z0000</span></span>"
     pagination_size = 40
     microsub_url = "https://aperture.p3k.io/microsub/745"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Content-Security-Policy = "default-src 'self' 'unsave-eval' 'unsave-inline' webmentions.io"
