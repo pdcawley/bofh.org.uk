@@ -4,17 +4,17 @@
 // Syndication/linkage stuff
 
 .relationships {
-    &>pre, a.bridgy, .our-mentions, .syndications {
+  &>pre, a.bridgy, .our-mentions, .syndications {
     display: none;
-    }
+  }
 }
 
 .p-summary {
-    display: none;
+  display: none;
 }
 
 .articles .p-summary {
-    display: revert;
+  display: revert;
 }
 
 // Fixes for .verse
@@ -29,15 +29,15 @@ p.verse, .verse, p.verse + p {
 /* Webmention stuff */
 
 article>section.content {
-    &>p:first-child::first-line, h2+p::first-line {
-        font-variant: small-caps;
-    }
+  &>p:first-child::first-line, h2+p::first-line {
+    font-variant: small-caps;
+  }
 }
 
 article .metaline {
-    font-size: 1rem;
+  font-size: 1rem;
 
-    &> ul {
+  &> ul {
     display: flex;
     margin: 0.25rem 0 0;
     border-top: solid thin $contrast-color;
@@ -48,97 +48,97 @@ article .metaline {
     width: 100%;
 
     &> li  {
-        list-style-type: none;
-        font-size: 1rem;
-        font-family: $small-caps;
-        letter-spacing: 0.15em;
-        text-decoration: none;
-        display: inline-block;
-        margin: 0.2rem 0 0.2rem 0;
-        vertical-align: baseline;
-        font-variant: small-caps;
-        padding-right: 0.5rem;
-        padding-bottom: 0;
-        color: $border-color;
+      list-style-type: none;
+      font-size: 1rem;
+      font-family: $small-caps;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0.2rem 0 0.2rem 0;
+      vertical-align: baseline;
+      font-variant: small-caps;
+      padding-right: 0.5rem;
+      padding-bottom: 0;
+      color: $border-color;
     }
-    }
+  }
 }
 
 
 
 section#webmentions {
-    &>h3 {
+  &>h3 {
     margin-top: 1rem;
     margin-bottom: 0;
-    }
+  }
 
 
 
-    &>ul {
+  &>ul {
     padding-left: 0;
     margin-top: 1rem;
-    }
-    li.comment {
+  }
+  li.comment {
     list-style-type: none;
     font-size: 1rem;
     line-height: 1.2;
     .comment-content {
-        font-size: 1.1rem;
+      font-size: 1.1rem;
     }
-    }
-    .comment {
+  }
+  .comment {
     padding: 0.2rem;
     border: solid thin $border-color;
     margin-bottom: .5rem;
     word-wrap: break-word;
 
     &> .author, &> .comment-content, &> .metaline {
-        margin-left: 53px;
+      margin-left: 53px;
     }
 
     &> .comment-content > p {
-        margin-top: 0;
-        padding: 0;
-        font-height: 1.1rem;
+      margin-top: 0;
+      padding: 0;
+      font-height: 1.1rem;
     }
 
     &>.metaline {
-        margin-top: .25rem;
+      margin-top: .25rem;
     }
 
     &>.author
     {
-        &> img {
+      &> img {
         margin-left: -53px;
         float: left;
         border-radius: 4px;
-        }
+      }
 
-        a {
+      a {
         text-decoration: none;
-        }
+      }
 
-        a.author_url {
+      a.author_url {
         color: $border-color;
         font-weight: normal;
-        }
+      }
     }
-    }
+  }
 
-    ul.facepile {
+  ul.facepile {
     list-style-type: none;
     padding: 0;
     margin: 0;
     img {
-        border-radius: 3px;
-        width: 36px;
-        height: 36px;
+      border-radius: 3px;
+      width: 36px;
+      height: 36px;
     }
     li {
-        float: left;
-        margin-left: 3px;
-        padding: 0;
+      float: left;
+      margin-left: 3px;
+      padding: 0;
     }
-    }
+  }
 
 }
