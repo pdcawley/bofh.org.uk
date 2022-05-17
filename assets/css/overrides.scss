@@ -3,6 +3,10 @@
 
 // Syndication/linkage stuff
 
+article::after {
+  clear:both;
+}
+
 .relationships {
   &>pre, a.bridgy, .our-mentions, .syndications {
     display: none;
@@ -77,6 +81,7 @@ section#webmentions {
   &>ul {
     padding-left: 0;
     margin-top: 1rem;
+    width: 100%;
   }
   li.comment {
     list-style-type: none;
@@ -140,5 +145,112 @@ section#webmentions {
       padding: 0;
     }
   }
+}
 
+// Marginalia stuff
+// Responsible for common rendering behavior of the marginalia. When tinkering
+// with this file, remember to review both the narrow version and the print version
+[role="note"]:not(p) {
+  .fullwidth { max-width: 100%; }
+  margin: 0 calc(-66% - 0.75rem) 1.96rem 0;
+  margin-top: 0.3rem;
+  font-size: 1.0rem;
+  line-height: 1.3rem;
+  // vertical-align: baseline;
+  position: relative;
+  &.margin-table {
+    margin-right: 11%; width: 29%;
+    .table-wrapper {
+      width: 100%;
+      table { width: 100%; }
+    }
+  }
+  p {
+    margin-top: 0;
+    font-size: 1.0rem;
+    width:100%;
+    line-height: 1.3rem;
+    &:last-of-type { margin-top: 0; }
+  }
+
+  code, pre {
+    font-size: 0.85em;
+  }
+}
+
+figure[role="note"] {
+  max-width: 100%;
+  figcaption {
+    margin-right: 0;
+    max-width: 100%; }
+}
+
+
+//added to allow for the fact that lists are indented and marginnotes and sidenotes push to right
+li, blockquote {
+  [role="note"] { margin-right: -80%; }
+}
+
+.sidenote-number { counter-increment: sidenote-counter; }
+.sidenote-number:after, ins[role="note"]:before {
+  content: counter(sidenote-counter) ")\000a0";
+  font-family: $counter-font; color: $contrast-color;
+  position: relative;
+  vertical-align: baseline;
+}
+.sidenote-number:after {
+  content: counter(sidenote-counter);
+  font-size: 1rem;
+  top: -0.5rem;
+  left: 0.1rem;
+}
+
+// TODO: Must figure this out. I don't want to hide marginalia but instead
+//       render it similar to the print style
+.full-width { [role="note"]:not(p), .sidenote-number { display: none; } }
+
+aside[role="note"], figure[role="note"] { margin-right: 12.5%; width: 27%; }
+
+// On a narrow screen, display as a block in the flow of the text.
+
+@media screen {
+  [role="note"] {
+    display: block;
+  }
+  object[role="note"], aside[role="note"], ins[role="note"] {
+    margin-top: -1.45em;
+    margin-left: calc( 2 * min(1200px, 70vw) / 3 + 1rem);
+    width: calc(min(1200px, 70vw) / 3 - 1rem);
+    position: absolute;
+  }
+  object[role="note"], aside[role="note"], figure[role="note"], ins[role="note"] {
+    br {
+      margin-bottom: 0.66rem;
+      &:last-of-type { margin-bottom: 0rem; }
+    }
+  }
+}
+
+body.home {
+  object[role="note"], aside[role="note"], ins[role="note"] {
+    margin-top: 0.2rem;
+    border-left: $contrast-color thin dotted;
+    padding-left: 0.5rem;
+    margin: 1rem 2.5%;
+    position: unset;
+    width: auto;
+  }
+}
+
+
+// @media screen and (max-width: 900px) {
+@media (max-width: 900px) {
+  object[role="note"], aside[role="note"], ins[role="note"] {
+    margin-top: 0.2rem;
+    border-left: $contrast-color thin dotted;
+    padding-left: 0.5rem;
+    margin: 1rem 2.5%;
+    position: unset;
+    width: auto;
+  }
 }
