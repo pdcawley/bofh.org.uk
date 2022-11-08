@@ -9,7 +9,7 @@ title = "Just a Summary"
 PygmentsCodeFences = true
 pygmentsusecolors = true
 pygmentsstyle = "monokai"
-Paginate = 40
+Paginate = 20
 googleAnalytics = "UA-135014-1"
 
 [mediaTypes."application/atom+xml"]
@@ -86,6 +86,13 @@ googleAnalytics = "UA-135014-1"
     weight = -80
     url = "https://twitch.tv/telear"
     identifer = "twitch"
+
+[[menu.footer]]
+    name = ""
+    pre = "<i class='fa fa-mastodon fa-2x'></i> "
+    weight = -70
+    url = "https://mendeddrum.org/@pdcawley"
+    identifier = "mastodon"
 
 [permalinks]
     post = "/:year/:month/:day/:slug"
