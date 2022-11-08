@@ -10,8 +10,10 @@
       (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
+  
+(straight-use-package 'org)
 
-(dolist (pkg '(org
+(dolist (pkg '(
                ;;               (tomelr :type git :host github "kaushalmodi/tomelr")
                tomelr
                ox-hugo
