@@ -16,11 +16,14 @@
                tomelr
                ox-hugo
                json-mode
-               (restclient :type git :host github :repo "pashky/restclient.el"
-               :fork (:host github :repo "pdcawley/restclient.el"))
+               ob-restclient
+               ;; (restclient :type git :host github :repo "pashky/restclient.el"
+               ;;             :fork (:host github :repo "pdcawley/restclient.el"))
 
-               (ob-restclient :type git :host github :repo "alf/ob-restclient.el"
-                              :fork (:host github :repo "pdcawley/ob-restclient.el"))))
+               ;; (ob-restclient :type git :host github :repo "alf/ob-restclient.el"
+               ;;                :fork (:host github :repo "pdcawley/ob-restclient.el"))
+               )
+             )
   (message "Installing %S" pkg)
   (straight-use-package pkg))
 
