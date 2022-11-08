@@ -12,7 +12,8 @@
   (load bootstrap-file nil 'nomessage))
 
 (dolist (pkg '(org-mode
-               (tomelr :type git :host github "kaushalmodi/tomelr")
+               ;;               (tomelr :type git :host github "kaushalmodi/tomelr")
+               tomelr
                ox-hugo
                json-mode
                (restclient :type git :host github :repo "pashky/restclient.el"
