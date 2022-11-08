@@ -1,5 +1,16 @@
 @import "settings";
 
+code.inline {
+  &::before {
+    color: initial;
+    content: "「"
+  }
+  &::after {
+    color: initial;
+    content: "」"
+  }
+
+}
 
 // Syndication/linkage stuff
 
