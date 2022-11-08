@@ -11,7 +11,7 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
   
-(straight-use-package 'org)
+;; (straight-use-package 'org)
 
 (dolist (pkg '(
                ;;               (tomelr :type git :host github "kaushalmodi/tomelr")
