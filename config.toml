@@ -90,7 +90,7 @@ googleAnalytics = "UA-135014-1"
 [[menu.footer]]
     name = ""
     pre = "<i class='fa fa-mastodon fa-2x'></i> "
-    weight = -70
+    weight = -110
     url = "https://mendeddrum.org/@pdcawley"
     identifier = "mastodon"
 
