@@ -1666,8 +1666,16 @@ In the happier timeline, Elton John bought Twitter and it became even more fabul
 
 So I've buggered off to Mastodon. At the time of writing, you'll find me at [[https://mendeddrum.org/@pdcawley][@pdcawley@mendeddrum.org]] and, you might even be reading a version of this via Mastodon rather than directly on the site.
 #+hugo: more
-** DRAFT More Mastodon fiddling
+** DONE More Mastodon fiddling
+CLOSED: [2022-11-20 Sun 22:32]
+:PROPERTIES:
+:export_file_name: 20221120-more-mastodon-fiddling
+:END:
 
+There's a certain frustrating joy in fiddling with the details of a thing so as to improve the formatting of the new thing you've just added to your site, and discovering that a side effect of the change is that a couple of niggles that you'd not quite got to the bottom of on the site itself are fixed in passing.
+
+I /think/ I've got the crossposting to Mastodon looking less awful, and I /know/ I've got [[https://bofh.org.uk/][my front page]] looking better. Isn't that lovely?
+#+hugo: more
 
 * Footnotes
 :PROPERTIES:
