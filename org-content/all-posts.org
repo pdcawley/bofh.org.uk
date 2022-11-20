@@ -1146,7 +1146,7 @@ CLOSED: [2022-05-10 Tue 17:10]
 :END:
 
 Back when I first started streaming on the internet, I used a Logitech webcam and some lights I had picked up for doing product photography and such for the Loafery and some audio gear I had because, well, recording stuff is just fascinating. It was okay, but even with decent lighting and audio, the webcam was frustrating to control (basically, there /was/ no control), so I picked up a cheap capture card from Amazon  and drafted my Nikon D810{{{marginnote(Absolutely not the camera I would recommend if you're going out to buy a camera for streaming -- it's primary virtue being that it's the camera I already owned. Get something mirrorless if you're heading down this road)}}} as my webcam and the appearance of my streams improved enormously. This worked fine with my slightly aging PC and /Twitch Sings/.
-
+#+hugo: more
 Then Twitch pulled the plug on /Sings/ and I started doing my regular Friday night folk streams. At first this involved running OBS and Logic Pro on my aging MacBook Pro and it was sort of okay, until I started having guests and doing Song Swaps -- the MacBook simply wasn't up to the job of running Logic, OBS and Zoom, so for a while I had some unholy lashup, with Zoom and OBS running on the PC, my Mac running Logic, with patch leads between the Mac and PC audio interfaces so I could hear my guests and vice versa. It wasn't pretty.
 
 What saved it was adding an [[https://www.blackmagicdesign.com/uk/products/atemmini][ATEM Mini Pro ISO]] from BlackMagic. Now I could hand off all the capturing, streaming and recording duties to that box and run Logic and Zoom on the Mac and everything just worked (with an utter rats nest of cables on my desk). The ATEM takes HDMI input from up to four sources and lets me switch what gets sent to the stream between them. There's also a monitor preview output that can be switched independently between those four sources, as well as multiview and stream previews. Of course, I quickly used up all four sources, and I don't even have a second camera! The way things are arranged by default is that I have a camera feed, my mac's primary and secondary displays, and the output from a Raspberry Pi. Mac screen 2 is where the zoom window lives, and is connected to the ATEM via an HDMI splitter with the second output feeding a 7-inch field monitor that sits on a teleprompter setup so I can look guests in the eye.{{{marginnote(Best purchase ever! I primarily use it with Zoom or to display the YouTube chat when I'm doing solo streams)}}}
@@ -1638,9 +1638,9 @@ CLOSED: [2022-05-12 Thu 13:21]
 :END:
 
 #+begin_description
-Once I'd added the Mac Mini to the rack, there was a space in the bracket it was mounted on that was designed to hold one or two Raspberry Pis. I had a Pi sitting about, so of course I added it to the rig thinking "I'll work out what to do with that later…"
+Once I'd added the Mac Mini to the rack, there was a space in the bracket it was mounted on that was designed to hold one or two Raspberry Pis. I had a Pi sitting about, so of course I added it to the rig thinking "I'll work out what to do with that later."
 
-Of course, it's proved invaluable…
+It's proved invaluable…
 #+end_description
 
 Sometimes folk ask why there's a [[https://raspberrypi.org/][Raspberry Pi]] in the rack case that holds my streaming rig and I admit that the primary reason is that I had one kicking about the place, and the rack unit that holds my M1 Mac Mini is designed to hold a couple of Pis in the space that isn't holding the Mac, so I might as well attach it. I had the feeling it would come in handy.
@@ -1665,6 +1665,10 @@ Twitter, eh? Elon bloody Musk!
 In the happier timeline, Elton John bought Twitter and it became even more fabulous with every passing day. In the far more depressing timeline we find ourselves living in, Elon seems to be determined to tank the company and fuck the community.
 
 So I've buggered off to Mastodon. At the time of writing, you'll find me at [[https://mendeddrum.org/@pdcawley][@pdcawley@mendeddrum.org]] and, you might even be reading a version of this via Mastodon rather than directly on the site.
+#+hugo: more
+** DRAFT More Mastodon fiddling
+
+
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
