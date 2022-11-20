@@ -1654,6 +1654,17 @@ Once again, I'm reminded that computers can be anything you can program them to 
 There's a Pi 3 plugged in somewhere{{{marginnote(I think I know where it is, but I'm not entirely sure)}}} that runs [[https://pi-hole.net][Pi Hole]] and helps eliminate intrusive ads from my web experience. It has sufficient spare power that, once I get around to it, I plan to hook up a cheap workhorse laser printer to it and configure it to work as a print server, which should let me retire the crappy unreliable bubblejet printer that only prints when you stand over it with a big stick and is always demanding the blood of innocents{{{marginnote(The printer calls it ink, but have you seen the price of that stuff?)}}} before it'll deign to even try to print something.
 
 About the only thing wrong with them (at the moment) is that they're almost permanently out of stock everywhere. I watch [[https://rpilocator.com/][rpilocator]] and it's clear that people do get stock, but they sell out almost immediately. A chum who works for Raspberry Pi says that they are shipping lots and lots of boards, but the demand stays sky high. Which is a nice problem to have for them, I suppose.
+** DONE Migrating to Mastodon
+CLOSED: [2022-11-20 Sun 13:59]
+:PROPERTIES:
+:export_file_name: 20221120-migrating-to-mastodon
+:END:
+
+Twitter, eh? Elon bloody Musk!
+
+In the happier timeline, Elton John bought Twitter and it became even more fabulous with every passing day. In the far more depressing timeline we find ourselves living in, Elon seems to be determined to tank the company and fuck the community.
+
+So I've buggered off to Mastodon. At the time of writing, you'll find me at [[https://mendeddrum.org/@pdcawley][@pdcawley@mendeddrum.org]] and, you might even be reading a version of this via Mastodon rather than directly on the site.
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
