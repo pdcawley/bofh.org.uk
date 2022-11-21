@@ -75,13 +75,6 @@ googleAnalytics = "UA-135014-1"
 
 [[menu.footer]]
     name = ""
-    pre = "<i class='fa fa-twitter fa-2x'></i> "
-    url = "https://twitter.com/pdcawley"
-    identifier = "twitter"
-    weight = -90
-
-[[menu.footer]]
-    name = ""
     pre = "<i class='fa fa-twitch fa-2x'></i> "
     weight = -80
     url = "https://twitch.tv/telear"
