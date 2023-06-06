@@ -5,6 +5,7 @@
 #+hugo_auto_set_lastmod: t
 #+startup: inlineimages
 #+startup: logdone
+#+startup: show2levels
 #+property: header-args:sql :session reporter :exports result :colnames yes  :engine postgresql :results replace table
 #+property: header-args: :exports code
 #+hugo_paired_shortcodes: %table %marginnote %newthought
@@ -13,7 +14,7 @@
 #+macro: sc @@hugo:{{% $1 %}}@@
 #+macro: <sc @@hugo:{{< $1 >}}@@
 
-#+seq_todo: TODO DRAFT DONE
+#+seq_todo: TODO(t) DRAFT(d) | PUBLISHED(p) DONE(D)
 
 * Bakehouse Diary :@bakehouse-diary:
 :PROPERTIES:
@@ -1676,11 +1677,57 @@ There's a certain frustrating joy in fiddling with the details of a thing so as 
 
 I /think/ I've got the crossposting to Mastodon looking less awful, and I /know/ I've got [[https://bofh.org.uk/][my front page]] looking better. Isn't that lovely?
 #+hugo: more
+** TODO What's the saw about the best being the enemy of the good?
+:PROPERTIES:
+:export_file_name: 20230602-what-s-the-saw-about-the-best-being-the-enemy-of-the-good
+:END:
+
+[[https://apps.apple.com/gb/app/loopy-pro-looper-daw-sampler/id1492670451][Loopy Pro]] is bloody awesome. It's a looper app for iDevices (and eventually for the mac) by the developer of Loopy HD (which I'm not linking because, seriously, you want Loopy Pro). What makes it so awesome is its flexibility. If you look for it on YouTube, you'll find people using it in a bewildering number of ways.
+
+I use it primarily for singing chorus harmonies when I'm streaming folk songs on Friday night. I set it up so that, after the first verse, I record the tune, next time through I add a high harmony, then a low harmony, then maybe a doubling of the tune, then I search for another harmony or counter melody, and so on until I reach the end of the song. I used to use Logic Pro on my Mac to do the same thing, it's just easier in Loopy.
+
+
+
+** DONE Impermanence matters
+CLOSED: [2023-06-06 Tue 10:43]
+:PROPERTIES:
+:export_file_name: 20230606-impermanence
+:END:
+
+
+#+begin_description
+Cool URLs don't change they say, and that's true. You'll always find my upcoming livestreams at [[https://youtube.com/pierscawley/live]], along with maybe one or two of the previous ones to catch up with. What you /won't/ find is the full three year archive of streams. Here's why…
+#+end_description
+
+Back when lockdown started, for all we were both classed as 'critically vulnerable', we did pretty well. We had each other for company, the house is paid for, we have some private outdoor space, Doncaster Market remained open and I'd got a 25kg bag of flour. Life was… tolerable.
+
+Except, as any musician will tell you, making music needs company. At least it does if you catch the magic that happens when a group of people are together making something beautiful. Which is why I started singing folk songs to the internet[fn:8] every Friday night.[fn:9]  At first, I just sang into the dark to the two or three people who showed up in the text chat {{{marginnote(Thank you all of you! You were awesome.)}}} but I was still missing harmonies. So I worked out how to use Logic for live sound and did on the fly multitracking of chorus harmonies and that was great. Recently, I've switched to using [[https://apps.apple.com/gb/app/loopy-pro-looper-daw-sampler/id1492670451][Loopy Pro]] on my iPad[fn:10] and it's been great -- I can sing harmonies on far more songs now and I've started experimenting with fancier arrangements too.[fn:11]
+
+{{{newthought(A key realisation came)}}} after a late night conversation with [[https://johnspiers.co.uk/][Squeezy John]] [Spiers] on Twitter about how a YouTube archive of performances can become a millstone around an artist's neck. After all, if someone can catch a performance online from a couple of years ago, why would they pay to watch you doing it again? I don't think most people think this way, but the life of a professional musician is marginal enough that it doesn't take many to have an effect. So I started making the catch-up videos private after a week. {{{marginnote(Or whenever I got round to it, if I'm honest)}}}
+
+It was incredibly liberating. I stopped worrying too much about repeating myself every week -- I always open with the same song, I usually close with one of about three songs, there's a couple of staples that people seem to miss if I don't sing them and if I fuck something up, it's gone in a week and I can concentrate on doing better next time. My audience seem to be fine with it. If I do something particularly well, or something funny happens like my cat bringing the backdrop down on me
+
+@@hugo:{{< embed "https://youtu.be/kbeFRIqSUZg" />}}@@
+
+then I have the original video files, so I can edit and upload a high quality clip that I'm happy to leave available forever.
+
+And it's closer to the experience of music in person, too. Live music is a magical transient thing that lasts as long as the song and then it's gone. Recordings are souvenirs, they can be delightful, but they simply can't be the same as being in the moment.
+
+It's gone. I might sing it again next week, but just as you can't cross the same river twice, that performance will be different. And that's brilliant.
+
+{{{newthought(I'll tell you what is permanent:)}}} the repeating Friday night entry in my diary that reads ‘Folk Stream.’ It doesn't matter whether I'm streaming for 2 people and no tips or a busy room and £100+ in [[https://ko-fi.com/pdcawley][Ko-fi's hat]], singing to the internet never fails to lift my mood. It's like I've made an appointment with joy.
 
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
 :END:
+
+[fn:11] Check out @@hugo:{{< embed "https://youtu.be/hWPmADRfPFQ" />}}@@ for an example.
+
+[fn:10] And a fancy dual-USB audio interface that means I can capture Loopy's audio really cleanly. Check out the [[https://www.amazon.co.uk/iConnectivity-AUDIO4c-Interface-Streaming-Performance/dp/B092L7TXL1?crid=2DB9Z9YW1UMFK&keywords=iconnectivity+audio4c&qid=1686042094&sprefix=iconnectivity+audio4c%2Caps%2C107&sr=8-5&linkCode=ll1&tag=justasummary-21&linkId=7d14e0bff14f201073ea18059f5abde5&language=en_GB&ref_=as_li_ss_tl][iConnectivity AUDIO4c]] (affiliate link) if that's a thing you might need. There are other dual-USB audio interfaces that are probably at least as good, but this is the one I've got experience of using.
+
+[fn:9] I tried a few of the Zoom singarounds that sprang up, but for reasons I can't quite put my finger on, I found them far more stressful than just singing to the camer and interacting with an audience in text chat. The audio only Clubhouse ballad sessions that I started were way less stressy for me too.
+[fn:8] Catch me every Friday night at [[https://youtube.com/pierscawley/live]] from 8pm UK Time.
 
 [fn:7] Logic isn't really set up to do live sound, but MainStage, which is, can't do multi track recording and playback and I couldn't work out how to configure its looper to emulate that. So I just used Logic.
 
