@@ -16,6 +16,28 @@
 
 #+seq_todo: TODO(t) DRAFT(d) | PUBLISHED(p) DONE(D)
 
+
+* Week Notes :weekNotes:
+:PROPERTIES:
+:export_hugo_custom_front_matter: :series Week Notes
+:END:
+** 2023
+*** DONE Week ending 2023-07-16
+CLOSED: [2023-07-16 Sun 18:32]
+:PROPERTIES:
+:export_file_name: week-ending-20230716
+:export_hugo_slug: week-note
+:END:
+Small victory of the week: I'm starting to get on top of the washing
+
+I toddled over for the morning and afternoon sessions at the Bradfield Traditional Music Weekend -- spent a happy few hours singing Americana (I sang /Cabin in Glory/ and /We're Gonna Camp a Little While in the Wilderness/ which seemed to go down well) in the first session, then there was a lovely, ballad heavy, song session. I sang /Tamlyn/ about as well as I've ever sung it, and it went down really well. I was knocked out by a cracking version of /The Famous Flower of Serving Men/ in particular, but the whole session was great.
+
+**** Sunday
+
+Dim sum at the China Palace for lunch with Dougal & Liz, Matt and Jo and a few of the kids. Excellent as always. We may have overordered
+
+I'm off to the closing session of BTMW later. I suspect it will be as good as the Saturday sessions.
+
 * Bakehouse Diary :@bakehouse-diary:
 :PROPERTIES:
 :export_hugo_custom_front_matter: :series "Bakehouse Diary"
@@ -1716,7 +1738,6 @@ And it's closer to the experience of music in person, too. Live music is a magic
 It's gone. I might sing it again next week, but just as you can't cross the same river twice, that performance will be different. And that's brilliant.
 
 {{{newthought(I'll tell you what is permanent:)}}} the repeating Friday night entry in my diary that reads ‘Folk Stream.’ It doesn't matter whether I'm streaming for 2 people and no tips or a busy room and £100+ in [[https://ko-fi.com/pdcawley][Ko-fi's hat]], singing to the internet never fails to lift my mood. It's like I've made an appointment with joy.
-
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
