@@ -30,14 +30,36 @@ CLOSED: [2023-07-16 Sun 18:32]
 :END:
 Small victory of the week: I'm starting to get on top of the washing
 
+#+hugo: more
+
+**** Tuesday
+
+Overwhelm had left us with a huge pile of washing to do, filling the sink, the draining board, and various work surfaces and I kept putting off tackling it because my brainweasels just saw the sheer amount of work involved and shut down. No fun. Anyway, Gill grabbed her perching stool and set to and before I knew it there was a full dishwasher burbling away, an empty sink, a full draining board and the beginnings of a system to keep it that way. The goal is to keep the sink empty and the draining board full. Before I cook, I clear the draining board. Any pans I use go in the sink and the next time I make tea, I wash up what's in the sink and anything that's still not been done of the mahoosive pile, until there's a full draining board again. Next time I'm brewing up, I can put the dry stuff away and, if I have the spoons, chip away at some more of the pile (though, post-COVID, I rarely have the spoons for much -- I can only stand for so long).
+
+It's not perfect, but it gets stuff done, and I'm calling that a win.
+
+**** Wednesday
+
+Emily came over for rehearsal and Carcassonne. It was mostly Carcassonne, if I'm honest, but /The Housewife's Lament/ is starting to seem like we've learned it, as is /We'll Sit Upon The Gate,/ though that one feels like it could use another verse. /The Mary Ellen Carter/ is pretty damned solid too, which is good.
+
+We set a new record city score in Carcassonne too, managing to share a 105 point city. We even managed my first ever draw in the second game.
+
+**** Friday
+
+A solo stream this week. Again with the Overwhelm getting in the way of getting more guests booked, but I'm starting to fill the diary again, which is good. I've got Alex Cumming as my guest in a couple of weeks, and Helen Edwards, Talis Kimberley, Emily, and a folk legend who will remain nameless for the time being lined up for August and September.
+
+Loopy Pro was mostly rock solid. The one-shot overdub whine cropped up once, and there was a hard crash to the home screen at one point, but a restart was fast and clean. Perils of running beta versions of sofware, I guess.
+
+**** Saturday
+
 I toddled over for the morning and afternoon sessions at the Bradfield Traditional Music Weekend -- spent a happy few hours singing Americana (I sang /Cabin in Glory/ and /We're Gonna Camp a Little While in the Wilderness/ which seemed to go down well) in the first session, then there was a lovely, ballad heavy, song session. I sang /Tamlyn/ about as well as I've ever sung it, and it went down really well. I was knocked out by a cracking version of /The Famous Flower of Serving Men/ in particular, but the whole session was great.
+
 
 **** Sunday
 
 Dim sum at the China Palace for lunch with Dougal & Liz, Matt and Jo and a few of the kids. Excellent as always. We may have overordered
 
 I'm off to the closing session of BTMW later. I suspect it will be as good as the Saturday sessions.
-
 * Bakehouse Diary :@bakehouse-diary:
 :PROPERTIES:
 :export_hugo_custom_front_matter: :series "Bakehouse Diary"
