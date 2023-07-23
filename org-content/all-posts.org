@@ -14,7 +14,7 @@
 #+macro: sc @@hugo:{{% $1 %}}@@
 #+macro: <sc @@hugo:{{< $1 >}}@@
 
-#+seq_todo: TODO(t) DRAFT(d) | PUBLISHED(p) DONE(D)
+#+seq_todo: TODO(t) DRAFT(d) OPEN(o) | PUBLISHED(p) DONE(D)
 
 
 * Week Notes :weekNotes:
@@ -60,6 +60,37 @@ I toddled over for the morning and afternoon sessions at the Bradfield Tradition
 Dim sum at the China Palace for lunch with Dougal & Liz, Matt and Jo and a few of the kids. Excellent as always. We may have overordered
 
 I'm off to the closing session of BTMW later. I suspect it will be as good as the Saturday sessions.
+
+
+*** DONE Week ending 2023-07-23
+CLOSED: [2023-07-23 Sun 21:37]
+:PROPERTIES:
+:export_file_name: week-ending-20230723
+:export_hugo_slug: week-note
+:END:
+
+Small victory of the week: Actually got off my arse and did something about selling off my old /Magic the Gathering/ cards. For my next trick, I hope to do the same with my collection of [mostly card] magic books.
+
+#+hugo: more
+
+**** Tuesday
+Made a capture template for adding a week note. Support functions are currently not the prettiest, and don't deal with a bunch of corner cases, but they seem to work for my case, so I'll leave 'em be for the time being. I plan to write it up in a longer post, and that will no doubt tweak my coder pride enough to make things suck a little less.
+
+Oh god, once I start fiddling with my Emacs configuration, it's impossible to stop!
+
+**** Wednesday
+Nipped over to Mum and Dad's for lunch at Zini's, and to borrow dad's drills for my on going cigar box MIDI controller project. Managed to get eight holes accurately placed enough that I only had to drill 7.8mm holes for the M7 threaded rotary encoders I'd soldered to my stripboard. I'm calling that a win! Next trick, get the microcontroller wired up and appropriate software written.
+
+Also discussed making PID controller I promised to make dad for his heat treatment setup a while back. A Pi Pico and one of its mini displays looks like it should do the job nicely. The plan is to make an extension cable with an SSR as a separate bit of kit, then control that from the prototype controller. Once they're working as separate parts, we can work out how to bring it all into one container. I shall wuss out of making the kind of thing I saw in a commercial radio controlled plug, which powered the control circuit with a very simple capacitor based power supply, with the slightly worrying wrinkle that the controller's 0V line was floating at around 5V below mains Vmax. Clever, sure, but scarier than I'm prepared to work with.
+
+**** Friday
+
+Holy crap, but old /Magic the Gathering/ cards are getting horrifically pricy. According to the buy list of the shop I just took my cards in to, I should be expecting about £400 for just four of my cards. And probably another couple of hundred for the two dual lands (assuming they're not from the Unlimited set, in which case they're worth a /lot/ more). All being well that's covered the cost of getting my grandfather's old recliner reupholstered and fixed.
+
+If I could be arsed with it, I could probably get a lot more by selling direct on eBay, but I was already losing the will to live just sorting things out to take in to the shop.
+
+Do /not/ ask me about the /Tabernacle at Pendrell Vale/ and /Black Lotus/ that I sold far too early, because that might make me grumpy.
+
 * Bakehouse Diary :@bakehouse-diary:
 :PROPERTIES:
 :export_hugo_custom_front_matter: :series "Bakehouse Diary"
