@@ -102,7 +102,8 @@ Three weeks on the trot. Definitely calling that a win.
 
 Also, Good Omens 2 is a delight. Still enough of Terry's character hanging
 around it, and the new writers help it not feel too Neil-y.
-#+hugo more
+#+hugo: more
+
 **** Wednesday
 
 After a bit of fiddling, I've worked out how to add helpers to the Emacs `C-x 8` keymap, so now I have shortcuts for typing 'λ', '🙂' and various other characters that I type more or less frequently. Beats the crap out of doing `C-x 8 <ret>` and then typing out the name of the character I'm looking for.
