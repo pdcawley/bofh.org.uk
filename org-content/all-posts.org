@@ -91,6 +91,70 @@ If I could be arsed with it, I could probably get a lot more by selling direct o
 
 Do /not/ ask me about the /Tabernacle at Pendrell Vale/ and /Black Lotus/ that I sold far too early, because that might make me grumpy.
 
+*** DONE Week ending 2023-07-30
+CLOSED: [2023-07-30 Sun 22:48]
+:PROPERTIES:
+:export_file_name: week-ending-20230730
+:export_hugo_slug: week-note
+:END:
+
+Three weeks on the trot. Definitely calling that a win.
+
+Also, Good Omens 2 is a delight. Still enough of Terry's character hanging
+around it, and the new writers help it not feel too Neil-y.
+#+hugo more
+**** Wednesday
+
+After a bit of fiddling, I've worked out how to add helpers to the Emacs `C-x 8` keymap, so now I have shortcuts for typing 'λ', '🙂' and various other characters that I type more or less frequently. Beats the crap out of doing `C-x 8 <ret>` and then typing out the name of the character I'm looking for.
+
+In case you're interested, here's the code:
+
+#+begin_src emacs-lisp
+    (general-define-key
+      :keymaps 'iso-transl-ctl-x-8-map
+      ". ," "…"
+      ": )" "🙂"
+      ": D" "😀"
+      "; )" "😉"
+      "\\"  "λ"
+      "a ^" "↑"
+      "a u" "↑"
+      "a v" "↓"
+      "a d" "↓"
+      "a |" "↕")
+#+end_src
+
+If you're not using `general`, but you've got `use-package` installed, you can do something similar with `bind-keys`:
+
+#+begin_src emacs-lisp
+
+  (bind-keys
+   :map 'iso-transl-ctl-x-8-map
+   (". ," . "…")
+   (": )" . "🙂")
+   (": D" . "😀")
+   (":|"  . "😐")
+   ("; )" . "😉")
+   ("\\"  . "λ")
+   ("a ^" . "↑")
+   ("a u" . "↑")
+   ("a v" . "↓")
+   ("a d" . "↓")
+   ("a |" . "↕"))
+
+#+end_src
+
+You can no doubt use define-key as well, but I find `general` or `bind-keys` to be much nicer to work with. The latter has the advantage that it's included in Emacs as part of `use-package` and plays nice with `which-key`, so I might go and redo my key bindings and get rid of `general`, nice as it is, since the real selling point of that library is how easy it is to bind stuff in `evil-mode` states.
+**** Sunday
+
+I still miss /Twitch Sings./ It's how I started streaming—long before the Friday night Song Swaps and folk streams. I'd be happily belting out Lady Gaga's /Bad Romance/, hamming it up to /You Spin Me Round/ or giving it my best Johnny Cash @@hugo:{{% marginnote %}}@@ Not a particulaly good impression. I can't get that low! @@hugo:{{%/marginnote%}}@@ on /Hurt./ It was just huge fun and a great way to make friends on Twitch.
+
+Twitch ended up pulling the plug because it was a free app and… well, free apps and sync rights really don't play well together.
+
+You'll still find people doing Karaoke on Twitch though, many of them the same faces I met back in /Twitch Sings/ days. This morning, I woke up early and spotted some friends Karaoke-ing it up on a Discord, so I pulled on pyjamas and went and joined 'em for a few songs. These days, I just use [[https://loopypro.com][Loopy Pro]] rather than searching YouTube for backing tracks. It's great fun though, and definitely makes for a more enjoyable way to spend the occasional hour or so of early morning insomnia.
+
+Singing in company, even virtual company is still the best thing you can do in public with your clothes on. I encourage you all to sing more. What's the worst that could happen?
+
 * Bakehouse Diary :@bakehouse-diary:
 :PROPERTIES:
 :export_hugo_custom_front_matter: :series "Bakehouse Diary"
