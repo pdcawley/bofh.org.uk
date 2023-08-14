@@ -155,6 +155,41 @@ Twitch ended up pulling the plug because it was a free app and… well, free app
 You'll still find people doing Karaoke on Twitch though, many of them the same faces I met back in /Twitch Sings/ days. This morning, I woke up early and spotted some friends Karaoke-ing it up on a Discord, so I pulled on pyjamas and went and joined 'em for a few songs. These days, I just use [[https://loopypro.com][Loopy Pro]] rather than searching YouTube for backing tracks. It's great fun though, and definitely makes for a more enjoyable way to spend the occasional hour or so of early morning insomnia.
 
 Singing in company, even virtual company is still the best thing you can do in public with your clothes on. I encourage you all to sing more. What's the worst that could happen?
+*** OPEN Week ending 2023-08-13
+:PROPERTIES:
+:export_file_name: week-ending-20230813
+:export_hugo_slug: week-note
+:END:
+Oops, missed a week; seems I didn't have anything interesting to say, or I was too busy doing stuff to write about it. Probably the former.
+
+Not a bad week, this week. My step daughter and her family called in on their way back from holiday on Friday night and we spent a pleasant evening with them and a few Cawleys who were knocking about, sat outside the Wool Market. Mostly good food, but apparently the Greek place isn't that good. Rustic Pizza is still good though.
+
+#+hugo:more
+**** Friday
+
+Most of the proceeds of my /Magic: The Gathering/ cards will be spent on repairing my grandfather's recliner. But... I wouldn't be me if I didn't spend some of it on something gamelike. So I bought myself a 'GameDad'. In my case, an [[https://anbernic.com/products/rg353v-rg353vs][Anbernic RG 353VS]] and it's a hell of a thing. Not much bigger than an old school Game Boy (and /cheaper!/ Not just in real terms, but the Game Boy launched at $89.99 and I got mine for $87.99), but with a large, bright colour screen and enough grunt to play SNES and PlayStation games at full tilt. Apparently, you can even make it play Nintendo 64 stuff, but not necessarily at full speed.
+
+I don't really care about emulating consoles I never owned though. I want to play /Manic Miner/, /Tempest/, /Dig Dug/, /Galaxians/ and the other games that gladly ate my pocket money, ten pence at a time, down the local arcade (the building's still there in all it's new brutalist concrete glory, but the arcade where I boggled at /I, Robot/ and thrilled to the exploits of the masters of /Defender/ and /Robotron/ is long gone).
+
+So, in search of that heady thrill and those unmistakable sound effects, I've been frequenting archive.org's library of delights and installing a few of my old favourites.
+
+The first to get seriously played was my old favourite /Tempest/ -- Atari's miracle of colour vector graphics where you controlled a spiky yellow thing running around the top of a blue tube shooting the terrifying geometric shapes that were climbing up towards you with deadly intent. When I first started playing it, I'd hold the fire button down and spin madly round the top of the tube and die all too quickly. But it was such fun I'd just shove another coin in the slot until my money was all gone. Then, in an arcade in Whitby, I watched someone playing the game in an entirely new way and my mind was blown. The walls weren't blue! The colours were different and there were new, scary shapes. This guy wasn't spinning around, and he wasn't just holding down the fire button either.
+
+Tempest was unusual for the time in that it had autofire. If you held down the fire button on most games of the era, you'd fire one shot, then nothing would happen. But in Tempest, you'd autofire bursts of eight missiles, then a slight pause and the cycle would repeat. And it was the slight pause that would kill you. The Whitby guy had sussed that out and was mashing the fire button at a measured speed that kept up a constant stream of evenly spaced bullets that were far more likely to save you when a Flipper had reached the top of the tube and was making its way towards you; they could only kill you if they in the same space as you and were vulnerable to your shots while they were flipping that last step towards you. If you were simply relying on autofire, you could bet that that flip would happen during the short pause between bursts.
+
+Whitby guy had also worked out that the larger the angle a flipper had to flip through, the more chance you had of killing it before it killed you, so for lots of levels, it was just a matter of finding the safest place and staying there. There are a couple of levels where you were only 'safe' from flippers coming from one side. Those were the levels that killed you unless you got good at moving from place of safety to place of safety.
+
+I watched intently and, when I returned to my home arcade, suddenly the top three scores -- the ones that got burned into non volatile memory -- on the arcade's machine belonged to PDC. I could reliably reach the red levels and even the next, yellow, set.
+
+I can't do that on the Game Dad. Not yet at least. I'm old enough and RSI'd enough, that the thought of bashing the fire button at 8 Hertz just gives me the shivers.
+
+But! Modern emulators have all sorts of convenience functions, surely I could configure something that would emulate the steady rate of fire that my youthful fingers were capable of. And maybe I could do something about the incredibly sensitive controls, where even the lightest touch of the analog stick would see me moving two or more segments when what I really wanted was a surgical one step move.[fn:12]
+
+I turns out that I could. But, frustratingly, not via the very slick UI. I had to edit text files! I had to make new text files. And because popping the Micro SD card out of the Game Dad and into a card reader, editing a file, putting it back in the GD, testing it and then having to fiddle with the text file again is… less than ideal, I did it by /logging into my handheld games console via SSH from my iPad, editing the file and just restarting the game!/
+
+You can't do that with an original Game Boy can you? The damned thing's running Linux. I'm at once annoyed that I had to log in to it and fiddle with text files and astonished that I could even do that.
+
+It's not the nostalgia that's making me feel old, it's my assumptions about what's capable of what kind of computing.
 
 * Bakehouse Diary :@bakehouse-diary:
 :PROPERTIES:
@@ -1860,6 +1895,8 @@ It's gone. I might sing it again next week, but just as you can't cross the same
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
 :END:
+[fn:12] Real Tempest machines have a gorgeously weighted 'spinner' -- a free spinning rotary encoder with enough resolution that there still multiple 'steps' per tube segment. It meant that your blaster had a lovely fluid movement with very direct control. Basically, Tempest is pretty damned close to perfect on its original hardware and if you ever get the chance to play on a well maintained machine, you should grab it!
+
 
 [fn:11] Check out @@hugo:{{< embed "https://youtu.be/hWPmADRfPFQ" />}}@@ for an example.
 
