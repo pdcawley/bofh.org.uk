@@ -155,7 +155,8 @@ Twitch ended up pulling the plug because it was a free app and… well, free app
 You'll still find people doing Karaoke on Twitch though, many of them the same faces I met back in /Twitch Sings/ days. This morning, I woke up early and spotted some friends Karaoke-ing it up on a Discord, so I pulled on pyjamas and went and joined 'em for a few songs. These days, I just use [[https://loopypro.com][Loopy Pro]] rather than searching YouTube for backing tracks. It's great fun though, and definitely makes for a more enjoyable way to spend the occasional hour or so of early morning insomnia.
 
 Singing in company, even virtual company is still the best thing you can do in public with your clothes on. I encourage you all to sing more. What's the worst that could happen?
-*** OPEN Week ending 2023-08-13
+*** DONE Week ending 2023-08-13
+CLOSED: [2023-08-14 Mon 09:02]
 :PROPERTIES:
 :export_file_name: week-ending-20230813
 :export_hugo_slug: week-note
