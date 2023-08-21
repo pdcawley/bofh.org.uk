@@ -191,6 +191,14 @@ I turns out that I could. But, frustratingly, not via the very slick UI. I had t
 You can't do that with an original Game Boy can you? The damned thing's running Linux. I'm at once annoyed that I had to log in to it and fiddle with text files and astonished that I could even do that.
 
 It's not the nostalgia that's making me feel old, it's my assumptions about what's capable of what kind of computing.
+*** DONE Week ending 2023-08-20
+CLOSED: [2023-08-21 Mon 10:17]
+:PROPERTIES:
+:export_file_name: week-ending-20230820
+:export_hugo_slug: week-note
+:END:
+
+A quiet week. Had to cancel Friday night's singing session with Emily – initially because Emily's still recovering from COVID, but on the night itself, my diabetes meds decided to give me hellacious indigestion. Ozempic/semaglutide might well do wonders for my HBA1c readings, but it can't half mess with my guts as well.
 
 * Bakehouse Diary :@bakehouse-diary:
 :PROPERTIES:
