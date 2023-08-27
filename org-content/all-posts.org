@@ -199,6 +199,50 @@ CLOSED: [2023-08-21 Mon 10:17]
 :END:
 
 A quiet week. Had to cancel Friday night's singing session with Emily – initially because Emily's still recovering from COVID, but on the night itself, my diabetes meds decided to give me hellacious indigestion. Ozempic/semaglutide might well do wonders for my HBA1c readings, but it can't half mess with my guts as well.
+*** DONE Week ending 2023-08-27
+CLOSED: [2023-08-27 Sun 12:32]
+:PROPERTIES:
+:export_file_name: week-ending-20230827
+:export_hugo_slug: week-note
+:END:
+
+A bit of a mixed week, mood wise. Capped by a great day's singing and chatting in Peterborough yesterday.
+
+It's great to get out of the house sometimes. Gill coped really well by herself too -- I'm a full time carer, but it's definitely good to know that I can have the odd day off without it completely buggering things up.
+
+#+hugo: more
+**** Monday
+***** Folk FOMO
+Whitby Folk Festival FOMO is real. But also, there's a COVID spike going on, and crowded rooms full of unmasked singers aren't the safest of environments, so I think I'll comfort myself in the knowledge that at least I won't be likely to bring an infection home with me.
+***** Blog fiddling
+I swear I'm going to wrap my head around the workings of the way to optionally build a custom formatted Date tree using =org-capture=, but for now I've just tweaked the template I use to add
+
+#+begin_src org
+#+hugo: more
+#+end_src
+
+to the heading for the week. This means that, when Hugo's rendering the index page, the week's notes will be represented by a summary which links to the extended per-day notes for the week.
+
+Furthermore, I've added a new capture to let me capture a weeks' summary. I think I'll probably end up wrapping that in a =summarize-week= command that will show me the wider weeknote context while I write the note, then mark the week as =DONE=, then bring up =magit= so I can commit and push the changes. But maybe not for a while yet, on the "fake it until you can't stand /not/ to automate it." principle.
+**** Thursday
+
+So, I have the ADHD thing of putting a thing down and completely forgetting where I put it, or even its very existence. Object permanence is clearly not a thing with me.
+
+Or I thought it was.
+
+We have a house guest right now, and she has this habit of trying to help by tidying putting stuff in 'sensible' places. So I'll find the squash in amongst the bottles of oil, vinegar and sauces in a /completely other part of the kitchen;/ or Gill's socks will show up in an admittedly convenient, but surprising, new place after I've given up looking for them in the place I usually put them, and the airer I dry them on, and in the washing machine and laundry basket. Maybe it's on the floor between any of those places… Grrr.
+
+It turns out I'm kind of comfortable with not quite knowing where a thing is, but I am absolutely viscerally /infuriated/ by finding said thing in the wrong fucking place, somewhere I would never ever ever in a month of Sundays deliberately put it.
+
+And don't… don't get me started on the utter utter utter wrongness of using the lids of things as shelves. I will end up foaming at the mouth and shouting. Ask me how I know.
+
+It's all the more distressing because I hate getting angry about stuff, especially objectively trivial stuff like this, and so the rate spirals. Bah!
+**** Saturday
+
+Had a great day at Mill Con 2 down in Peterborough. I still think filk music as a genre is a bit weird, but there's no denying that the people who make it are lovely people, and it's hard to beat singing in company for lifting your mood.
+
+Mike Whitaker was kind enough to give me a concert spot at a week's notice too, so I did a forty minute set with a couple of songs with Loopy Pro in what was only the second time I've used the gear in any setting but my 'streaming studio.' It went well, but there's still a way larger profusion of wires than I'm happy with, and I definitely want to assemble some kind of all in one pedal setup if I'm going to be taking the gear out of the house more often.
+
 
 * Bakehouse Diary :@bakehouse-diary:
 :PROPERTIES:
