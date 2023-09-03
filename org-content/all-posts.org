@@ -242,7 +242,16 @@ It's all the more distressing because I hate getting angry about stuff, especial
 Had a great day at Mill Con 2 down in Peterborough. I still think filk music as a genre is a bit weird, but there's no denying that the people who make it are lovely people, and it's hard to beat singing in company for lifting your mood.
 
 Mike Whitaker was kind enough to give me a concert spot at a week's notice too, so I did a forty minute set with a couple of songs with Loopy Pro in what was only the second time I've used the gear in any setting but my 'streaming studio.' It went well, but there's still a way larger profusion of wires than I'm happy with, and I definitely want to assemble some kind of all in one pedal setup if I'm going to be taking the gear out of the house more often.
+*** DONE Week ending 2023-09-03
+CLOSED: [2023-09-03 Sun 13:47]
+:PROPERTIES:
+:export_file_name: week-ending-20230903
+:export_hugo_slug: week-note
+:END:
 
+Another quiet week. Streamed tired on Friday night, so quite a bit of pilot error with the looper, but folk still seemed to enjoy it.
+
+Scrooby show was lovely on Saturday. Nice to catch up with a few folk I've not seen in quite a while and the weather was flat out gorgeous. I took some modelling balloons, planning to do a few balloon animals and hats, had something like a 60% burst rate with the Sempertex 260Ss that were all I could get hold of at short notice. Won't be using those again. Qualatex all the way, I think.
 
 * Bakehouse Diary :@bakehouse-diary:
 :PROPERTIES:
