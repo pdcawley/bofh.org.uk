@@ -252,6 +252,25 @@ CLOSED: [2023-09-03 Sun 13:47]
 Another quiet week. Streamed tired on Friday night, so quite a bit of pilot error with the looper, but folk still seemed to enjoy it.
 
 Scrooby show was lovely on Saturday. Nice to catch up with a few folk I've not seen in quite a while and the weather was flat out gorgeous. I took some modelling balloons, planning to do a few balloon animals and hats, had something like a 60% burst rate with the Sempertex 260Ss that were all I could get hold of at short notice. Won't be using those again. Qualatex all the way, I think.
+*** DONE Week ending 2023-09-24
+CLOSED: [2023-09-24 Sun 10:47]
+:PROPERTIES:
+:export_file_name: week-ending-20230924
+:export_hugo_slug: week-note
+:END:
+
+I'm not quite sure where the time went these last couple of weeks, but here we are at another Sunday. We've spent quite a bit of the time watching a new family of kittens that have taken to playing on the flat roof of our garage. They're almost obscenely cute scraps of black and white fur and just delightful to watch.
+
+#+hugo: more
+**** Sunday
+
+Back in 2012, we were living in Cornwall and used to go to the regular Farmers' Markets in Mullion and Helston. One week, at Mullion, a new trader showed up selling home made bean to bar chocolate under the name of [[https://chocolarder.com/][Chocolarder]]. I got chatting with Mike, the guy who made the stuff, and bought a few bars and some of his [[https://www.chocolarder.com/shop/sea-salt-caramel-truffles/][sea salt caramel truffles]]. If we weren't actually his first customer, we were damned close.
+
+Every month, he showed up with plain looking bars of /amazing/ chocolate. One time he'd bought a bunch of rose petals (apparently, they can be had quite reasonably after Valentine's Day because there's something of a glut), dessicated them, ground them fine and added them to the chocolate. Bloody delicious!
+
+I told Mike about some milk chocolate with sea salt that I'd tried and really loved and suggested he do something similar. He'd have a go he said. Months later (after many experiments, apparently) there he was with some bars of salted milk chocolate so I bought as many as I had the cash for and loved every mouthful. He didn't make them again though. Except, today, with a bit of birthday money burning a hole in my pocket, I thought "I'd love some Chocolarder chocolate, it's been an age" and what did they have? You guessed it: [[https://www.chocolarder.com/shop/sea-salt-milk/][Cornish sea salt]] milk chocolate. So that's a chunk of birthday money spent.
+
+Yes, it's a lot of money for a bar of chocolate, but believe me, it's amazing stuff and Mike is as committed to ethical and sustainable manufacture as anyone I've ever met. We've visited the factory a couple of times and I remember the time we visited and he was more excited about showing off his new, plastic free packaging as he was about the chocolate. He buys direct from cacao farmers and has been known to get his beans shipped by sail rather than container ship.
 
 * Bakehouse Diary :@bakehouse-diary:
 :PROPERTIES:
