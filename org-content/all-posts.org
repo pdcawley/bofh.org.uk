@@ -1972,10 +1972,84 @@ And it's closer to the experience of music in person, too. Live music is a magic
 It's gone. I might sing it again next week, but just as you can't cross the same river twice, that performance will be different. And that's brilliant.
 
 {{{newthought(I'll tell you what is permanent:)}}} the repeating Friday night entry in my diary that reads ‘Folk Stream.’ It doesn't matter whether I'm streaming for 2 people and no tips or a busy room and £100+ in [[https://ko-fi.com/pdcawley][Ko-fi's hat]], singing to the internet never fails to lift my mood. It's like I've made an appointment with joy.
+** DRAFT Panning Overdubs in Loopy Pro
+:PROPERTIES:
+:export_file_name: 20240113-panning-overdubs-in-loopy-pro
+:END:
+
+It's common practice in music production that, when you're layering your vocals with harmonies or doubles, you pan everything but the lead vocal around the stereo field. That gives a sense of physical separation between the voices and it feels more realistic -- or artificial, if that's what you're going for.
+
+With loopers though, you'll more usually have your overdubs all in the same place, which is fine at the local open mic, where the front of house PA is often mono anyway, but for streamers like me, it feels a little limiting, so I've been working on a way to get that effect.
+
+This is still a work in progress, but enough people expressed an interest when I showed this off in a "How Do You Loop?" chat with John Paul Music UK [point to top right] here.
+
+I've added links to the plugin you need, the pandomiser preset, and a sample Loopy Pro project that uses it, in the description.
+
+*** Quickstart
+
+If you don't want the gory details of how the pandomiser works, here's how to add it to your Loopy Pro and get going quickly:
+
+**** Set up miRACK in your project
++ Install miRACK from the App store. It's a full-featured modular synthesizer simulator, completely free, and it's capable of far more and weirder things than we're making it do here. Check out the examples.
+
++ Grab the pandomizer bundle from my website and unzip with the Files app on your iDevice. Copy pandomiser.mrk to your miRACK folder so the plugin can find it.
+
++ Open the mixer, tap the ⊕ button and choose 'Add MIDI' and choose the miRack 'MIDI FX' option
+
++ Open the miRACK interface and tap on the four squares icon in the top left, choose 'Open Existing' and load ~pandomiser.mrk~.
+
+
+**** Set Up Loopy's Audio Routing
+I'm a pure vocal looper, so I'm going to assume you have a single audio input for your vocals that's routed to all Loopy's colours. If you've got seperate inputs for your voice and other instruments and not everything is routed to all the colours, you might have to add multiple panning busses, but what follows should give you enough information to get started. This setup also assumes that you don't want to affect the panning of your live audio, only where it gets placed in your loops and oneshots.
+
++ Add a send to your audio input, choose 'new bus' when prompted, then long press on the send and choose 'After All Effects'
++ Tap 'Destinations' in the new bus and turn off the hardware output channels. Tap the 'all' button to turn on all the Color Destinations.
++ Tap 'Destinations' on your audio input and 'none' to turn off all the Color Destinations
+
+Now your input audio is going to your loops via this new bus, which means we can mess with its balance setting and it won't affect the live sound going to your speakers. We can do /anything/ here, and it won't be heard until the clip it's recorded on gets played out. Use this power responsibly. All we're going to do here is mess with the 'balance' setting.
+
+Let's go.
++ Choose 'Control Settings' from the hamburger menu in the top right of Loopy's screen, then choose 'Default' from the Current Project setting.
++ Tap 'Add New Binding' and choose 'Adjust Parameter' from the *Bus Actions* section. Choose your new bus as the target, and make 'Balance' the parameter.
++ Change *Controller Input Start* to 1%. This avoids the problem that 0-127 doesn't have a central value. If you don't change this, then the bus's balance will get reset to 1 and, if you're anything like me, it will drive you up the wall.
+
+Test everything is working by opening the mixer and bringing up the keyboard in the miRACK window then holding down C4. You should see your panning bus's balance jumping to a new random value, then resetting to the centre each time you press and release C4.
+
+*** Basic Pandomiser use
+Here's one simple way of ensuring that all your overdubs are placed at different points in the stereo field using a couple of follow actions.
+
++ Open *Clip Settings* from main menu, scroll down the settings sheet and choose *Follow Actions*
++ Add an action to *Begin Overdub,* choose *Send MIDI Message* with your miRACK as the target. Send a note, C4 on channel 1 with velocity (*Value* in the Loopy UI) 127 (those all the defaults for sending a note, by the way).
++ Go back to Follow Actions and tap the 'Reorder' button, now press and hold the follow action you just added and drag the new action down to *Finish Overdub*.
++ Open the new action and drag the *Value* slider down to zero.
+
+Now, whenever you overdub a clip, as soon as your overdubbing starts, Loopy will 'hold down' C4 and the pandomiser will set the recording balance to a new random value. Once overdubbing stops, Loopy will 'release' the key and the balance will return to the centre.
+
+*** Complicating things
+
+In my Loopy setup, I don't want to change the balance of every overdub of every clip. There might be a couple of clips that will be overdubbed for each verse of the song, and I want the pan to remain the same for each overdub associated with the verse. So I can set the first clip to send the ~noteOn~ message when I start overdubbing and set the second to send a ~noteOff~ when I finish.[fn:13] You might only want to mess with the panning for certain colours, or even for specific clips, or you might want to set up widgets to record with or without messing with the panning. All you have to do is send C4 to miRACK when you want to randomise the balance, and release C4 when you want it reset to the centre. Have fun.
+
+
+*** How does it all work?
+
+A modular synthesizer like miRACK thinks in terms of voltages, and those voltages can mean different things. We use a midi trigger input module that we've configured to send +10V whenever C4 is held and we connect that to the *Gate* input of a Sample & Hold (S&H) module, which we're using as a source of randomness. Whenever the modules *Gate* voltage goes high, the module 'samples' the voltage at its input, and sets its output voltage to the same until the next time it detects a rising edge. If there's nothing connected to the input though, it /samples/ an internal noise generator and outputs that voltage. I've configured the module to so that its noise source is a white noise generator a range of ±5V, and we can think of that as ranging from a hard left pan at -5V through the centre at 0V and on to a hard right pan at +5V.
+
+ The output of the S&H module is now jumping to a new random value every time we press C4, but we really want to output 0V when C4 isn't pressed, so we feed its output into the input of another staple of a modular setup, a Voltage Controlled Amplifier (VCA). We've set this VCA up at unity gain, which means that, when it sees 10V at its Control Voltage (CV) input, it outputs, it sends 100% of its input voltage to its output, and when it sees 0V CV, it sends 0% of its input. So, if we connect the C4 trigger to the VCA's CV input, we've turned it into a gate -- whenever C4 is held, the VCA sends the random voltage from S&H, otherwise it sends 0V.
+
+Now we just need to convert that into something MIDI understands, an unsigned value between 0 and 127. The *MIDI CC Output* module can do some of this for us, but it's expecting a voltage in the range 0--10V, and right now we've got something in the range of ±5V. So we feed the signal from the VCA into the A input of a *CONST ADD MULT* module, set the constant to 5V, and feed the associated A+B output to one of our CC outputs that we've configured to send CC8 to our host app. Job jobbed!
+
+*** Next Steps
+I think the next version of this will allow me to sequence balance for the first few steps, so it might go: hard left, hard right, mid left, mid right, then random pans until the system is reset. I have ideas about how to implement this too, but if you beat me too it, please let me know!
+
+I'll also be making a YouTube video walking you through it (think of this as a draft script for that video).
+
+
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
 :END:
+
+[fn:13] I don't actually do that, because I have a slightly more complex setup that supports multiple song structures with the same set of clips. I'll explain all that later.
 [fn:12] Real Tempest machines have a gorgeously weighted 'spinner' -- a free spinning rotary encoder with enough resolution that there still multiple 'steps' per tube segment. It meant that your blaster had a lovely fluid movement with very direct control. Basically, Tempest is pretty damned close to perfect on its original hardware and if you ever get the chance to play on a well maintained machine, you should grab it!
 
 
