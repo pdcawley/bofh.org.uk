@@ -1972,10 +1972,15 @@ And it's closer to the experience of music in person, too. Live music is a magic
 It's gone. I might sing it again next week, but just as you can't cross the same river twice, that performance will be different. And that's brilliant.
 
 {{{newthought(I'll tell you what is permanent:)}}} the repeating Friday night entry in my diary that reads ‘Folk Stream.’ It doesn't matter whether I'm streaming for 2 people and no tips or a busy room and £100+ in [[https://ko-fi.com/pdcawley][Ko-fi's hat]], singing to the internet never fails to lift my mood. It's like I've made an appointment with joy.
-** DRAFT Panning Overdubs in Loopy Pro
+** PUBLISHED Panning Overdubs in Loopy Pro
+CLOSED: [2024-01-13 Sat 18:03]
 :PROPERTIES:
 :export_file_name: 20240113-panning-overdubs-in-loopy-pro
 :END:
+
+#+begin_description
+A quick introduction to adjusting the panning of overdubs in Loopy Pro clips, including a link to a miRACK configuration and instructions on how to use it in your own Loopy Pro configurations
+#+end_description
 
 It's common practice in music production that, when you're layering your vocals with harmonies or doubles, you pan everything but the lead vocal around the stereo field. That gives a sense of physical separation between the voices and it feels more realistic -- or artificial, if that's what you're going for.
 
