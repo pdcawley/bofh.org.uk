@@ -1986,7 +1986,7 @@ It's common practice in music production that, when you're layering your vocals 
 
 With loopers though, you'll more usually have your overdubs all in the same place, which is fine at the local open mic, where the front of house PA is often mono anyway, but for streamers like me, it feels a little limiting, so I've been working on a way to get that effect.
 
-This is still a work in progress, but enough people expressed an interest when I showed this off in a "How Do You Loop?" chat with John Paul Music UK [point to top right] here.
+This is still a work in progress, but enough people expressed an interest when I showed this off in a [[https://www.youtube.com/live/uaP4np4WoAY?si=zPoXvCthRjsDUKEn]["How Do You Loop?"]] chat with John Paul Music UK here.
 
 *** Quickstart
 
