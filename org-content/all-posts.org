@@ -2246,7 +2246,7 @@ It's a song swap tradition that the first question I ask a new guest is to ask t
 **** Payment
 The show is supported by people chucking money in the virtual hat at [[https://ko-fi.com/pdcawley]]. On the following Monday, I tot up the total takings and send you half through the magic of Paypal.
 
-** DRAFT Emulating Ed Sheeran's Looper X in Loopy Pro
+** TODO Emulating Ed Sheeran's Looper X in Loopy Pro
 :PROPERTIES:
 :export_file_name: 20240301-emulating-ed-sheeran-s-looper-x-in-loopy-pro
 :END:
@@ -2267,7 +2267,7 @@ In the initial looper state, the Rec/Play button's in the 'Playing' state, the M
 |----------+--------+---------------+----------+-----------+----------------------------------------------------------------------------|
 | Play     | Arming | TrackN:Tap    | Play     | Arming    | Arm Track N                                                                |
 | Play     | Arming | TrackN:Hold   | Play     | Arming    | Peel Track N                                                               |
-| Play     | Arming | Stop:Tap      | Play     | Arming    | Stop the clock, resetting the session[fn:14]                               |
+| Play     | Arming | Stop:Tap      | Play     | Arming    | Stop the clock, resetting the session                                      |
 | *        | *      | Stop:Hold     | Play     | Arming    | Clear and reinitialize the session                                         |
 | Play     | Arming | Mode:Tap      | Play     | Muting    |                                                                            |
 | Play     | Muting | TrackN:Tap    | Play     | Muting    | Toggle Muting of Track N                                                   |
@@ -2360,7 +2360,6 @@ Rec/Play responds to more than one possible action, as well as the main button, 
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
 :END:
-[fn:14]
 
 [fn:13] I don't actually do that, because I have a slightly more complex setup that supports multiple song structures with the same set of clips. I'll explain all that later.
 [fn:12] Real Tempest machines have a gorgeously weighted 'spinner' -- a free spinning rotary encoder with enough resolution that there still multiple 'steps' per tube segment. It meant that your blaster had a lovely fluid movement with very direct control. Basically, Tempest is pretty damned close to perfect on its original hardware and if you ever get the chance to play on a well maintained machine, you should grab it!
