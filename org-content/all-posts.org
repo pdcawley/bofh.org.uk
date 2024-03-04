@@ -2045,12 +2045,322 @@ Now we just need to convert that into something MIDI understands, an unsigned va
 I think the next version of this will allow me to sequence balance for the first few steps, so it might go: hard left, hard right, mid left, mid right, then random pans until the system is reset. I have ideas about how to implement this too, but if you beat me too it, please let me know!
 
 I'll also be making a YouTube video walking you through it (think of this as a draft script for that video).
+** TODO Thinking about gear
 
+A friend put up an 'all the gear I use in 2024' and of course, now I'm doing the same thing. I'm a sheep, I tell you, a sheep!
+
+Also, I'm hoping that by writing this all down and and thinking about what works and what doesn't, I'll have a better sense of how to prioritise saving for a few upgrades...
+
+#+hugo: more
+
+*** Streaming
+
+**** Video gear
+
+***** Switcher
+
+At the centre of my streaming set up is a Blackmagic ATEM Mini Pro ISO, which is a lot of name for a surprisingly small box. At the most basic level, I use it to switch between four HDMI inputs and stream that to the internet through its ethernet connection. But also: I'm recording all four inputs to an attached SSD, bringing in a view of my looper in split screen and overlaying motion graphics (the little [[https://ko-fi.com/pdcawley][Ko-Fi]] gadget on my life streams, for instance). It also outputs HDMI to a display that which lets me, independently of what's been streamed, preview a specific camera or see a multiview of all of them. It's great.
+
+It's also kind of limiting. Four inputs should surely be enough for someone who has a single camera and maybe one guest over zoom, no? Well… you'd think wouldn't you? But what I'd really like is two HDMI outputs to let me take advantage of my teleprompter display as well more conveniently. The digital video effects (DVE) engine I use to do the split screen is a bit tricksy because it can only manipulate one stream of video - if I want to put my guest on the right hand side of the display, I need to make sure my camera shot is set up so I'm sat on the left hand side of the shot because I can't do any cropping or scaling of that camera; the DVE engine is fully occupied already. And four inputs just isn't enough; Right now my inputs are:
+
+1. Primary camera
+2. Mac Primary display
+3. Mac Secondary display
+4. iPad Pro Mirror
+5. Raspberry Pi Primary display (Overlays)
+6. Raspberry Pi Secondary display (Media playback)
+7. Gaming PC Primary display
+8. Gaming PC Secondary display
+
+
+The rack case my streaming rig lives in has a physical HDMI patch bay set up so I can choose which four sources I can route to the switcher on a case by case basis, but life would be a /lot/ easier if I could just plug all that in once and have done with it.
+
+Which is why the gadget that sits in prime position on my wishlist is the ATEM Mini Extreme ISO. You can think of it as two ATEM Minis in a single case, with a couple of extra bells and whistles, all of which would make my life easier (like a 3.5mm audio out jack so I could monitor the sound going to my stream!). It has 8 inputs, two HDMI outputs, two USB sockets (so I could plug the SSD into one and connect the other to my Mac and treat the ATEM as a webcam, very handy for Zoom) and a built in 'SuperSource' which would make setting up various multicam split screen shots and transitions a breeze. The only catch is, it's £1,120 new, so I'll be saving a while. I don't /need/ it, I can already do everything I need to do the gear I have, so it sits on the back burner.
+
+****** Source 1 - A Nikon D810 rig
+Believe me, if you're interested in streaming, don't do what I do. I'm using an excellent stills camera in it's not all that great video camera because that's the camera I had and running that through a cheap capture card was /so much/ better quality than my (decent for the time) webcam that it was like night and day. The DSLR or mirrorless camera you have already is substantially cheaper than anything else comparable you might buy, so if it'll give you a clean HDMI feed or work as a webcam, use that first. The camera is strapped into a Glide Gear Teleprompter (but if I were starting today, I'd probably buy the Elgato Telepompter) which sits on a cheap Manfrotto video head on a cheap levelling head on a Manfrotto 055 aluminium tripod. I have a 10' field monitor providing the teleprompter display, which gets its signal from a dumb HDMI selector switch so I can switch between seeing the camera output or the mac's secondary display. I could use at least one more video splitter so I could add another choice to those (probably the iPad mirror).
+
+As a stills camera, the D810 is magnificent. As a video camera… it's got a really nice sensor and the lens is great. Video autofocus on the 810 is terrible, but I work around that by not moving back and forward very much. I would love to replace it with something like a BlackMagic Micro Studio camera which has some nice capabilities when paired with ATEM gear and which would let me shoot stills (and B Roll) with the 810 much more conveniently. Again, it's spendy though, so onto the lottery wishlist it goes.
+
+****** Sources 2 & 3 - Mac Mini M1
+What can I say? The Apple silicon Mac Minis are astonishingly capable, great value, and they fit in half a 1U shelf. If Apple made one with a 12--15V barrel jack power input so I could potentially run whole streaming rig off a few big old V-Mount batteries, I might consider upgrading, but otherwise it's perfect. No notes.
+
+****** Source 4 -- 10″ M1 iPad Pro
+This runs Loopy Pro and controls the ATEM. I've recently treated it to a Reloop powered USB hub/stand (can't say enough nice things about that particular gadget). For live performance where I don't care about capturing the iPad's display, I connect direct to the hub, but when I'm streaming, I go via the Apple USB-C Digital AV Multi-port Adaptor (yes, I /know/ they're expensive, but I've thrown away so many cheap options that purported to do what it does). It's powered by a 90W USB-C PD PSU, which is overkill, but ensures that the audio interface and Novation LaunchPad X connected to it both get enough power to light up and work their magic.
+
+****** Sources 5 & 6 -- Raspberry Pi 4
+If you prod it hard enough, a Raspberry Pi 4 will run OBS with the HTML Source option (it's not officially supported, but I managed to make it work somehow via a process I didn't document and can't remember), which means I can use it to run motion graphics if I don't mind not being able to capture the iPad screen. I do this when I have Zoom guests because the limitations of the ATEM mini mean I can't run them on the secondary mac screen, which holds the Zoom display.
+
+Right now, this is far more fiddly than I'd like, and in the short to medium term, I plan to switch over to a Pi 5, if it'll fit in the same rack mount as the 4, which has substantially more horsepower for the stuff I need it to do. It's attached to the same bit of 1U high bent steel that the mac mini is attached to.
+
+****** Sources 7 & 8 -- Gaming PC
+It was definitely a gaming PC when I built it. It's coming up on eight years old though, so when I have the time, money and inclination I plan to rebuild it with a more modern processor and graphics card (which means a new motherboard -- essentially we're talking an entirely new PC). I've barely turned it on in the last year though, so there's really no rush.
+
+
+***** Lighting
+My key light is a daylight balanced GODOX 100W LED bouncing off a 60″ brolly and diffuser. Not as sexy as a big old parabolic softbox, but cheap, effective and it doesn't chew up as much space. The light is hanging from the arm of a C-stand and I really should attach a safety cable one of these days. My fill light is a PixaPro dual colour 60W circular LED panel in tungsten mode, so even though I end up with very low contrast lighting, there's a small colour temperature difference which fools the eye into thinking there's more actual contrast than there is. The panel is held by a Manfrotto magic arm clamped to the upright of a monitor stand.
+
+When it's charged, I use a small Aputure MC10 set behind me as a hair/rim light.
+
+***** Backdrop
+I have a couple of lightstands holding a crossbar over which I've hung a duvet and kelim rug, held in place by a bunch of cheap A clamps. It's a bit precarious, but it mostly works, and I can't be arsed to set up a more professional backdrop hanging system. The duvet helps with audio as well -- it's a classic Sound on Sound tip for recording vocals in an untreated room and it works remarkably well -- there's no other sound treatment in the room.
+
+**** Audio Gear
+
+***** Interfaces
+Oh, the interfaces I have known and loved! Right now, I have a couple of choices:
+
+For live gigs, I have an SSL2+ that's USB bus powered, sounds great and slips in a small shoulder bag with the folded hub/stand, LaunchPad X, an XLR cable and my mic pouch stuffed with my mic and a bunch of short USB cables for attaching everything to the stand.
+
+For streaming, I have an iConnectivity Audio 4c in my rack case. The 4c doesn't necessarily have the greatest preamps or analog to digital converters, but what it does have is two USB connections, so I can use it as an audio interface for my Mac and my iPad /at the same time/ and use that to send audio between the two, as well as sharing up to four mics (or instruments). I used to have an interface for the iPad and one for mac and I'd send audio between them with balanced jack cables, but that was annoyingly noisy (even with balanced cables) and just too many boxes. I snapped up a 4c as soon as I heard about them and it's been a game changer. Now my audio gets into the ATEM via Mac's two HDMI outputs and it stays digital and interference free all the way from Loopy to the viewer's computer.
+
+I have a Focusrite 2Pre as well, and its preamps sound nicer than the 4c's and I could get clever with aggregate audio devices on the mac and use its pres instead of the 4c pres, but it's fiddly to rig and the 4c doesn't sound /awful./
+** PUBLISHED A Guest's Guide to Zoom Song Swaps
+CLOSED: [2024-03-04 Mon 08:51]
+:PROPERTIES:
+:export_file_name: 20240225-a-guest-s-guide-to-zoom-song-swaps
+:END:
+
+This is intended as a quick guide for anyone who comes on as a Friday night Song Swap guest, but anyone who's thinking of using Zoom (or doing their own streams) to share music with folk might find it useful, so I'm making it public.
+
+#+hugo: more
+
+*** Publicity material
+I'm absolutely terrible at marketing, but it will definitely help me do at least /some/ if you can provide me with some or all of the following:
+
+
+**** A photo of you that you don't hate
+If you've got a standard headshot or publicity photo, that's great. I'll use that to make the YouTube preview card.
+
+If you don't, here's a few tips for taking your own. These are basic guidelines, not rules. You can ignore all of them and still get a great photo, but if you follow them, you should at least get a decent one.
+
+***** Your phone is fine
+Seriously, I would have killed for something the quality of even my iPhone SE back when I first started doing digital photography.
+
+***** Try to enjoy yourself
+If you don't like having your photo taken, it can show and you'll end up with another photo you don't like, so try this. For the duration of the shoot, pretend you're playing the part of someone who actually likes having their photo taken. Weirdly, that will almost certainly make the shoot go faster because you'll get a good shot nice and early and you can stop pretending.
+
+***** Get a friend to take the photo
+It's just easier. You can use a tripod or a selfie stick, but another human being's your best choice. If you've got a friend who's an experienced photographer, then for heaven's sake ask them and ignore the rest of this list -- be guided by them. Or book a session with a professional if you have the time, money and desire.
+
+***** Use a big light
+/Big/ light sources are the most forgiving and flattering ones. I like a nice big north facing window, or bright overcast days. It's not exciting or dramatic light, but that's fine.
+
+***** It's not a firing squad
+You know the typical passport photo shot? The one where you look like you've been lined up against a wall, standing square to the camera and looking nervous. Don't do that.
+
+Here's a pretty foolproof lighting/posing idea:
+
+1. Stand facing the biggest window you can find at a time when the sun isn't shining directly through it.
+2. Turn about 45° to the left or right
+3. Look across at your friend with the camera who's standing at 90° to the window light.
+4. Your friend will, of course, take an otherwise fabulous photograph of you with your eyes closed, so repeat the last step until they manage a shot you like.
+5. *CHECK YOUR BACKGROUND!*
+   Make sure there's no dead flowers apparently growing out of your ears, an embarrasing cat licking its arse, or a pile of washing in the shot.
+
+   Ideally you'll have a nice smooth out of focus thing going on there (portrait mode, if your phone has it can help), but if you can't manage that, shoot for something that's not too busy. You can't go far wrong with a bookshelf, but stand as far away from it as you can so it's not tack sharp and distracting.
+
+***** Portrait or square format, please
+Bear in mind that I'm going to be putting your photo into a square frame in the YouTube title card, so a wide image probably won't work too well.
+
+**** Some links
+Got a website? Bandcamp? YouTube channel? Tell me about them and I'll link to them in the event description and during the show.
+
+**** A short biography
+When I make the YouTube event for a song swap, I write something about my guests. I'll write something anyway, but it really helps if I've got something from you to base it on. After all, I know what I think about you, and I like you or I'd not have asked you to be my guest, but unless you /tell/ me, I don't know what you think is important about yourself. A short bio can really help there.
+
+**** [Optional] Some talking points
+A song swap isn't some kind of forensic interview process; it's supposed to be an informal chat interspersed with songs. If there's something you really want to talk about, please let me know. The same goes if there's anything you want me to steer clear of. It's fine if the conversation gets dark -- folk music's full of murders and misogyny after all -- but it's really not fine if it gets uncomfortable for you.
+
+*** Tech
+Zoom isn't my favourite piece of software and its default settings are definitely slanted towards business meetings rather than helping musicians sound good. The most important thing you can do in your Zoom settings is to turn on 'Original Sound For Musicians', which should show up in the top left of your screen. It's off by default, so click it and turn it on. If it doesn't show, you'll need to dig into Zoom's audio settings and check the box to make it available.
+
+There's a catch: turning on original sound disables /all/ of Zoom's audio processing, including the echo cancellation magic, so it's really best if you can use a pair of headphones or earbuds rather than speakers to hear me. Or you can just remember to turn original sound on when you start singing and off again when we start chatting. Headphones are easier though.
+
+If your laptop or phone's built in camera and microphone are all you have, don't worry, we can work with that. They're not the best, but they are optimised for someone sitting within reach of the keyboard and making human noises from their mouth hole. You'll look and sound fine.
+
+If you've got money to spend and you want to look and sound better on stream then I have a few suggestions, but this is an area where there's no right answers, so do shop around and talk to anyone you know who you reckon looks good on your Zoom calls.
+
+Prioritize your spending on gear. In general (and especially for musicians) sound is more important than lighting, which is more important than camera quality. A pin sharp, beautifully lit video of a muddy sounding performer is much harder to watch than a blurry, crystal clear sounding performer singing in a murky cave.
+
+
+**** Some audio suggestions
+If you're an unaccompanied singer, this is pretty easy because we don't have any problems getting your sound balanced and into Zoom. If you're an instrumentalist, or a band, things get a little more fun, so let's break it down based on the number of mics you'll need.
+
+Bear in mind that there are entire books written on this subject; I'm barely scratching the surface here. If you're serious about getting good sound for streaming and/or recording, it's worth doing your own research. If all else fails, for your upcoming song swap, buy some of the gear recommended here from a reputable mail order site and rely on the 30 day, no questions asked returns policy they all have because that's a legal requirement in the UK. But MAKE SURE that when you know what you /really/ want, you buy from the same supplier.
+
+***** One mic wonders
+If the sound you make in the room is the sound you're happy with (unaccompanied singers, acoustic guitarists, acoustic bands) then it's just a matter of choosing between a USB mic and an XLR mic with an audio interface. Unless you're in a particularly noisy environment, I'd recommend some kind of condenser mic. The Blue Yeti has been the standard starter USB mic for years and you could do far worse than do that yourself. However, I would definitely recommend going down the slightly more expensive XLR mic and audio interface route as it's significantly more flexible and upgradeable.
+
+You'll want a cardioid pattern large diaphragm condenser microphone (I love my Aston Spirit which looks and sounds great, but it's a multi-pattern mic and nearly £300 new). Brands like Rode, Aston and SE Electronics make great mics, and honestly, pretty much anything that comes up on an Amazon search for 'large diaphragm condenser microphone XLR' will still sound better than your laptop or webcam's microphone. You'll use a balanced XLR cable to connect that to your interface (a cheap cable's fine, more expensive ones with Neutrik brand connectors and the like might prove more durable and/or reassuring.)
+
+With a single mic setup you only /need/ a really basic audio interface. Something like the Focusrite Scarlett Solo or 2i2 or any cheap class compliant USB audio interface will do the trick so long has it has phantom power available. Just plug your interface in, connect the mic, turn on 48v/phantom power and tweak the gain until, at your loudest you're not quite going into the red on the meters, select the interface in Zoom, turn on direct monitoring and you're good.
+
+***** Fun with multiple inputs
+If you're a band, or a guitarist where you want to adjust the balance between your voice and your guitar, you're going to need something a little more sophisticated. How much more sophisticated is up to you, of course and I'm a little out of my depth here, but I've got a few suggestions anyway. Don't hesitate to chat to any live sound engineers of your acquaintance -- buy the sound engineer at your local open mic a drink and quiz them, for instance.
+
+The thing to remember here is that Zoom is pretty crap when it comes to audio handling -- it doesn't know anything about pro audio gear, it just expects to receive a mono mix on the first channel of the audio device you select (or a stereo mix on channels 1&2 if you turn stereo on in the audio settings), so you'll need to do the mixing yourself, either with a standalone mixer, the facilities of your audio interface or some other software on your computer.
+
+I'm going to ignore the software option, but investigate software like Loopback on the Mac and Voicemeeter on Windows. Using your audio interface can be more or less easy, depending on what capabilities the interface has, of course. Modern interfaces are generally more capable in this area. I've not actually tried it, but something like the Zoom AMS-24 looks like it would be ideal for a guitarist (put it in 'streaming' mode and turn off loopback).
+
+Once you get past a couple of input channels, you're going to have to go down the mixer route. You can either get a dumb mixer with at least as many inputs as you have instruments and mics, sort out your stereo mix and feed that into a simple two channel audio interface, which will make Zoom happy. That's fine if you're primarily interested in live performance, but if you want to do any recording, you'd be better off with a mixer that can also work as a multi-channel audio interface so you can record your vocals and instruments in separate tracks. Something like the Roland GigCasters or the RodeCaster II, for instance. I think Mackie do something in this space too, but I've not used any myself, but I do know there are plenty of options.
+
+If your guitar's got a built in mic or pickup, just plug it into your mixer with a balanced cable, otherwise, you'll need to mic it up too. There's whole books written on mic placement, but it's generally accepted that a good starting point for micing an acoustic guitar is to point the mic at the place where the neck meets the body rather than at the sound hole, maybe a foot or so away. Again, if you know anyone with any audio engineering experience, then talk to them not me.
+
+Once you've got your mixer, you'll need mics. Generally you'll be close miking things to allow you to mix the different sound sources (if you get lots of bleed between mics, then you have fewer options when it comes to mixing). In /theory/ you use a condenser mic for all these things, just put them close to your mouth or mic, turn the gain down and rely on the inverse square law to give you some separation. In practice, it's more common to grab a dynamic microphone or two and use them. The canonical mic for the job is probably the Shure SM58, which is built like a tank and looks exactly like you think a stage microphone should look. The SM57 is well regarded as an instrument mic too, and there's plenty of knock-offs of both. I have an SE Electronics V7, that I use for open mics which sounds pretty good too.
+
+It /really/ helps to have someone else fiddling with the knobs to get your sound dialled in, because they're not hearing the sound in your head. With decent headphones on, they're primarily hearing the sound that's going through the mixer, so they can have a better chance of getting pre-amp gain dialed in, EQing your voice an instruments so they don't overlap too much and balancing your levels nicely. If /at all/ possible, get some help here.
+
+EQing is a dark art that I'm only vaguely aware of, and mostly don't have to worry about anyway as an unaccompanied singer. I mostly just leave things flat and hope. There's plenty of advice to be found on YouTube or sites like Sound On Sound, so I recommend investigating those.
+
+**** Lighting Suggestions
+
+Again, there are entire books on this, and there's no end of gear you can buy if really fall down the rabbit hole. Elly Lucas made a great [[https://youtu.be/fYYzN2E8eX4]['Visual Content Level Up Tutorial']] that's a great starting point.
+
+Seriously. Just watch that. I was going to write more, but she covers pretty everything I was going to say.
+
+**** Cameras
+
+If at all possible, don't use the webcam in your laptop. Investigate ways to use your phone as a webcam. Certainly that's possible if you're in Apple World -- Zoom can treat your iPhone as a webcam and the camera in your phone is substantially better than almost any webcam you can find. If you've got a mirrorless or dSLR camera, more recent ones often have software that lets you use them as a webcam -- check your manufacturers website. If they can't be used directly as a webcam, check whether they have what's referred to as a 'clean HDMI' output and look at getting a cheap and cheerful usb HDMI capture card (or spend rather more on something like the Elgato Camlink. I went with the cheap and cheerful option and it's fine).
+
+Stick your camera or phone on a good solid tripod, wobbly cameras are really distracting. And level is great. You don't want people wondering why the things on your shelves aren't sliding off. Plain backgrounds make this less critical.
+
+If you're shooting for a solo video, you probably want to frame things so you're slightly off centre in the frame. However, it makes life much easier for me setting up the Song Swap if you frame yourself in the middle of the shot. One of these days I might fix things so that's not necessary, but for now centred is best.
+
+
+
+**** Set dressing
+
+Plain walls are great. If you can arrange to hang something like a duvet behind you, that acts as quick and dirty audio treatment of your room. I have a duvet and a rug hanging behind me as a background and it definitely helps with the sound. Getting some distance between you and your background helps blur it a little and make it less distracting.
+
+The advice on making your own headshot applies here as well.
+
+*** What to expect
+The aim of a song swap is to have a good old natter and sing a bunch of songs and to enjoy ourselves while we do it. It's not an interview, if only because I'm a terrible gobshite with a tendency to go off on tangents. Don't hesitate to tell me to shut up. I try to rein myself in, but every time I watch a show back I think "Yeah, you could have shut up a bit more there Piers."
+
+If you're the sort who likes a set list, I'd suggest planning to cover as much material as you'd get through in a forty minute folk club set with maybe a couple of encore pieces. Nobody's run out of material yet.
+
+It's a song swap tradition that the first question I ask a new guest is to ask them to talk about their first encounter with Martin Carthy, whether in person or recorded. Chris Manners memorably [[https://youtu.be/_wjZAKqdZdg][described first hearing Martin singing /The Bedmaking/ on the John Peel show]] playing a guitar 'hard enough to drive rivets through concrete walls' and rearranging his entire world. My first encounter was at the Soles and 'Eels folk club in Northampton. Everyone had hyped the gig up beforehand like it was the Second Coming and I bloody /hated/ it. Martin was great, as usual, I just wasn't in the right place to realise that. We're not about gatekeeping here though, so if you don't know who I'm talking about, let me know and I'll probably ask you how you came to discover you were a musician.
+
+
+**** Payment
+The show is supported by people chucking money in the virtual hat at [[https://ko-fi.com/pdcawley]]. On the following Monday, I tot up the total takings and send you half through the magic of Paypal.
+
+** DRAFT Emulating Ed Sheeran's Looper X in Loopy Pro
+:PROPERTIES:
+:export_file_name: 20240301-emulating-ed-sheeran-s-looper-x-in-loopy-pro
+:END:
+
+I'm not sure if this will ever see the light of day, but what the hell, I'll do it here in case I can turn it into a proper write up.
+
+#+hugo: more
+
+At the moment, I'm only concerned with emulating Ed's 'multi' workflow. If I get that working, I'll hopefully have a leg up on implementing the other modes. Also, I'm assuming we're working with an unset tempo to begin with.
+
+*** State tables galore
+
+So, the 8 buttons on the looper interact in some fiddly ways, primarily based on the state of the Record/Play button and the Mode button. I'm not worrying about the function button at the moment. Button actions available are Press and Hold. I /think/ Press triggers immediately even when the button is held.
+
+In the initial looper state, the Rec/Play button's in the 'Playing' state, the Mode is 'Rec', Track 1 is selected, and all tracks are unmuted. This isn't a complete table at present, but I think it'll work as a start.
+
+| Rec/Play | Mode   | Button:Action | Next R/P | Next Mode | Side effects                                                               |
+|----------+--------+---------------+----------+-----------+----------------------------------------------------------------------------|
+| Play     | Arming | TrackN:Tap    | Play     | Arming    | Arm Track N                                                                |
+| Play     | Arming | TrackN:Hold   | Play     | Arming    | Peel Track N                                                               |
+| Play     | Arming | Stop:Tap      | Play     | Arming    | Stop the clock, resetting the session[fn:14]                               |
+| *        | *      | Stop:Hold     | Play     | Arming    | Clear and reinitialize the session                                         |
+| Play     | Arming | Mode:Tap      | Play     | Muting    |                                                                            |
+| Play     | Muting | TrackN:Tap    | Play     | Muting    | Toggle Muting of Track N                                                   |
+| Play     | Muting | TrackN:Hold   | Play     | Muting    | Don't Know                                                                 |
+| Play     | *      | Rec/Play:Tap  | Rec/OD   | *         | Start recording/overdubbing selected track. Set Rec/Play state accordingly |
+| Rec      | *      | Rec/Play:Tap  | OD       | *         | Finish initial recording of selected track, start overdubbing              |
+| OD       | *      | Rec/Play:Tap  | Play     | *         | Finish overdubbing selected track immediately                              |
+| Rec/OD   | Arming | TrackN:Tap    | Rec/OD   | Arming    | Start recording/overdubbing selected track. Set Rec/Play state accordingly |
+|          |        |               |          |           |                                                                            |
+
+*** Follow Actions
+
+**** Globals
+
+| State Transition     | Follow Action         |
+|----------------------+-----------------------|
+| Start Initial Record | Rec/Play State -> Rec |
+| Start Overdubbing    | Rec/Play State -> OD  |
+
+
+*** Breaking it down to widgets
+
+**** Button widgets
+
+In general, our button widgets will delegate to stepped dials and will have the following bindings
+
+| Gesture | Action                                 |
+|---------+----------------------------------------|
+| Press   | Nudge associated controller dial by +1 |
+| Hold    | Nudge associated controller dial by +2 |
+
+There are a couple of exceptions (at the moment at least)
+
+***** Stop Button
+
+The stop button is kind of the emergency stop button. Regardless of the state of the rest of the looper, it should stop everything. This will no doubt change as we add more modes, but for now:
+
+| Gesture | Action                     |
+|---------+----------------------------|
+| Press   | Stop the clock             |
+| Hold    | Wipe and reset the session |
+
+
+**** Button Controllers
+
+In general, each button controller is configured in groups of three. The first position of any group is the resting position for that state, +1 is the action to perform on a simple press, +2 is for a hold. These should always set the dial to a state label.
+
+
+***** Track button controllers
+
+All actions return the controller dial back to the state they started in
+
+
+| Mode      | Press Action                               | Hold Action                             |
+|-----------+--------------------------------------------+-----------------------------------------|
+| Muting    | Mute the associated track                  | Peel the associated track               |
+| Recording | Select this track and nudge Rec/Play by +3 | Select this track and nudge Rec/Play +4 |
+
+
+
+***** Mode button controller
+
+| Mode      | Press Action                             | Hold Action |
+|-----------+------------------------------------------+-------------|
+| Muting    | Set all track controllers to 'Recording' | ????        |
+|           | Move this dial to 'Recording'            |             |
+|-----------+------------------------------------------+-------------|
+| Recording | Set all track controllers to 'Muting'    | ????        |
+|           | Move this dial to 'Muting'               |             |
+
+
+***** Rec/Play button controller
+
+When we're in the play mode, the clock is stopped, there's at least one populated clip, and we're in Muting mode, tapping on the button should just restart the clock.
+
+Rec/Play responds to more than one possible action, as well as the main button, it also gets informed when a track button is pressed
+
+| State | Press Action                                   | Hold Action                           | Track Armed Action                   |
+|-------+------------------------------------------------+---------------------------------------+--------------------------------------|
+| Play  | Start recording the selected track             | Peel selected Track                   | Return to play position              |
+|       | Let the track's follow action update our state | Return to Play position               |                                      |
+|-------+------------------------------------------------+---------------------------------------+--------------------------------------|
+| Rec   | Start overdubbing the selected track           | Start playing selected track and peel | Start recording selected track       |
+|       | Let the Follow action update our state         | Return to Play position               | Let the follow action set state      |
+|-------+------------------------------------------------+---------------------------------------+--------------------------------------|
+| OD    | Finish recording selected track                | Finish overdubbing and peel selected  | Start recording/overdubbing selected |
+|       | Move to Play position                          | Return to Play position               | Let the follow action work           |
 
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
 :END:
+[fn:14]
 
 [fn:13] I don't actually do that, because I have a slightly more complex setup that supports multiple song structures with the same set of clips. I'll explain all that later.
 [fn:12] Real Tempest machines have a gorgeously weighted 'spinner' -- a free spinning rotary encoder with enough resolution that there still multiple 'steps' per tube segment. It meant that your blaster had a lovely fluid movement with very direct control. Basically, Tempest is pretty damned close to perfect on its original hardware and if you ever get the chance to play on a well maintained machine, you should grab it!
