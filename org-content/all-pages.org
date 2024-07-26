@@ -32,7 +32,7 @@ This is the horribly expensive section. Sorry.
 
 *** [[https://www.eastwoodsoundandvision.com/blackmagic-design-atem-mini-extreme-iso][BlackMagic ATEM Mini Extreme ISO Switcher]]
 
-This is an upgrade for the ATEM Mini Pro ISO that current runs my YouTube streams, and it would enable me to do a lot of stuff that's currently either fiddly or outright impossible. It has more buttons than you can shake a stick at. It's a cut down version of the sort of thing that sits in a TV control room which the editor uses to cut from camera to camera, add graphics overlays, set up split screen displays and generally run the entire show from the console. It also handles sending the live stream out to the internet and records every input as well, to allow for later editing with editing software as well.
+This is an upgrade for the ATEM Mini Pro ISO that runs my YouTube streams, and it would enable me to do a lot of stuff that's currently either fiddly or outright impossible. It has more buttons than you can shake a stick at. It's a cut down version of the sort of thing that sits in a TV control room which the editor uses to cut from camera to camera, add graphics overlays, set up split screen displays and generally run the entire show from the console. It also handles sending the live stream out to the internet and records every input as well, to allow for later editing with editing software as well.
 
 I don't need one of these -- my Mini Pro has been doing excellent service since I bought it -- but I really /want/ one.
 
@@ -57,10 +57,17 @@ The perfect fountain pen doesn't exist, but these are gorgeous and I'd love to h
 
 Cult Pens sell many other fine stationery related things that tempt me too.
 
-- [[https://cultpens.com/products/pilot-parallel-pen][Pilot Parallel Pen]] :: Because sometimes, I just want to muck about with a really wide italic type nib
-- Rhodia [[https://cultpens.com/products/rhodia-rhodiarama-softcover-notebook-a5][Notebooks]] and [[https://cultpens.com/collections/rhodia-dotpad-notepads][Pads]] :: Just the nicest paper for writing on with ink pens.
-- [[https://cultpens.com/collections/fountain-pen-ink][Ink]] :: I'm still searching for the perfect sepia ink. Something that looks like it was written 200 years ago and has dried to the perfect dark brown. I have the horrible feeling that the only way to actually achieve that look is with some [[https://cultpens.com/products/kwz-iron-gall-ink-60ml][iron/gall]] concotion that's then been left for a long time so the original colour vanishes to be replaced by the permanent colour that comes from the iron/gall reaction. Any colour but green, really.
-- [[https://cultpens.com/products/opus-88-mini-pocket-pen-fountain-pen-check][Opus 88 Mini]] :: Another pocket fountain pen option. Fine nib.
+****  [[https://cultpens.com/products/pilot-parallel-pen][Pilot Parallel Pen]]
+Because sometimes, I just want to muck about with a really wide italic type nib
+
+**** Rhodia [[https://cultpens.com/products/rhodia-rhodiarama-softcover-notebook-a5][Notebooks]] and [[https://cultpens.com/collections/rhodia-dotpad-notepads][Pads]]
+Just the nicest paper for writing on with ink pens.
+
+**** [[https://cultpens.com/collections/fountain-pen-ink][Ink]]
+I'm still searching for the perfect sepia ink. Something that looks like it was written 200 years ago and has dried to the perfect dark brown. I have the horrible feeling that the only way to actually achieve that look is with some [[https://cultpens.com/products/kwz-iron-gall-ink-60ml][iron/gall]] concotion that's then been left for a long time so the original colour vanishes to be replaced by the permanent colour that comes from the iron/gall reaction. Any colour but green, really.
+
+**** [[https://cultpens.com/products/opus-88-mini-pocket-pen-fountain-pen-check][Opus 88 Mini]]
+Another pocket fountain pen option. Fine nib.
 
 ** Almost anything from [[https://souschef.co.uk][Sous Chef]]
 I'm a sucker for a good cookbook. The chocolate and sweets collection is amazing, and I wouldn't say no to a [[https://www.souschef.co.uk/products/microplane-gourmet-extra-coarse-grater][Microplane coarse cheese grater]].
