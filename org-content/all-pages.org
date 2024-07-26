@@ -7,9 +7,21 @@
 
 #+seq_todo: TODO DRAFT DONE
 
+* DONE Tamlyn.co.uk
+:PROPERTIES:
+:export_hugo_slug: about/tamlyn-co-uk
+:EXPORT_FILE_NAME: tamlyn-co-uk
+:END:
+Hi, you ended up here because you visited tamlyn.co.uk, which is a domain my wife and I have been using for private email since 1998, but which we've never bothered setting up a website for.
+
+It's possible that you were looking for the UK arm of [[https://tamlyn.com][Tamlyn.com]], which appears to be building supplies manufacturer based in Texas. If so, you should head on over to their UK site, [[https://tamlyn.uk][tamlyn.uk]].
+
+By the way, if you're in Texas, maybe consider supporting the work of [[https://linktr.ee/lambda_legal][Lambda Legal]], [[https://outyouth.org][Out Youth]], [[https://www.myresourcecenter.org/community/lgbtq-youth-programs/][Resource Centre]] and other organisations working for LGBTQIA+ kids in the state.
+
 * DONE Wishlist
+:PROPERTIES:
 :export_hugo_slug: about/wishlist
-:export_file_name: wishlist
+:EXPORT_FILE_NAME: wishlist
 :END:
 
 You'll find a link to my Amazon wishlist at the bottom of the page, but Amazon no longer allow you to link to stuff from anywhere but them in their wishlists, which is less than ideal, so here goes with the stuff I'd really like that are best bought from somewhere other than Amazon.
@@ -56,17 +68,6 @@ I'm a sucker for a good cookbook. The chocolate and sweets collection is amazing
 ** Almost anything from [[https://chocolarder.com/][Chocolarder]]
 When we lived in Cornwall, we met Mike, the founder of Chocolarder back when he was making small amounts of chocolate in his garden shed and selling them at farmers' markets. I was a sucker for pretty much everything he made, but his [[https://www.chocolarder.com/shop/sea-salt-caramel-truffles/][Sea Salt Caramel Truffles]] were amazing. They still are. It's a little harder to impulse buy stuff from them now we're living up country again.
 
-
-* DONE Tamlyn.co.uk
-:PROPERTIES:
-:export_hugo_slug: about/tamlyn-co-uk
-:EXPORT_FILE_NAME: tamlyn-co-uk
-:END:
-Hi, you ended up here because you visited tamlyn.co.uk, which is a domain my wife and I have been using for private email since 1998, but which we've never bothered setting up a website for.
-
-It's possible that you were looking for the UK arm of [[https://tamlyn.com][Tamlyn.com]], which appears to be building supplies manufacturer based in Texas. If so, you should head on over to their UK site, [[https://tamlyn.uk][tamlyn.uk]].
-
-By the way, if you're in Texas, maybe consider supporting the work of [[https://linktr.ee/lambda_legal][Lambda Legal]], [[https://outyouth.org][Out Youth]], [[https://www.myresourcecenter.org/community/lgbtq-youth-programs/][Resource Centre]] and other organisations working for LGBTQIA+ kids in the state.
 
 * DONE Joining Twitch as a viewer
 :PROPERTIES:
