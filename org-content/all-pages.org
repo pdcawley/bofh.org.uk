@@ -22,6 +22,7 @@ By the way, if you're in Texas, maybe consider supporting the work of [[https://
 :PROPERTIES:
 :export_hugo_slug: about/wishlist
 :EXPORT_FILE_NAME: wishlist
+:export_date: 2024-08-01
 :END:
 
 Amazon no longer allow you to link anything but stuff they sell in their wishlists, which is less than ideal, so here goes with a list of stuff I would really like.
