@@ -52,6 +52,17 @@ article>section.content {
 article .metaline {
   font-size: 1rem;
 
+  &> p {
+    border-top: solid thin $contrast-color;
+    border-bottom: solid thin $contrast-color;
+    font-family: $small-caps;
+    font-variant: small-caps;
+    padding: 0;
+    font-size: 1rem;
+    margin: 0.25rem 0 0;
+    /* color: $border-color; */
+  }
+
   &> ul {
     display: flex;
     margin: 0.25rem 0 0;
