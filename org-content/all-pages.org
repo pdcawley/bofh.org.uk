@@ -33,16 +33,16 @@ This is the horribly expensive section. Sorry.
 
 *** [[https://www.eastwoodsoundandvision.com/blackmagic-design-atem-mini-extreme-iso][BlackMagic ATEM Mini Extreme ISO Switcher]]
 
-This is an upgrade for the ATEM Mini Pro ISO that runs my YouTube streams, and it would enable me to do a lot of stuff that's currently either fiddly or outright impossible. It has more buttons than you can shake a stick at. It's a cut down version of the sort of thing that sits in a TV control room which the editor uses to cut from camera to camera, add graphics overlays, set up split screen displays and generally run the entire show from the console. It also handles sending the live stream out to the internet and records every input as well, to allow for later editing with editing software as well.
+This is an upgrade for the ATEM Mini Pro ISO that runs my YouTube streams, and it would enable me to do a lot of stuff that's currently either fiddly or outright impossible. It has more buttons than you can shake a stick at. It's a cut down version of the console that sits in a TV control room which the editor uses to cut from camera to camera, add graphics overlays, set up split screen displays and generally run the entire show from their desk. It also handles sending the live stream out to the internet and records every input channel, to allow for later editing.
 
-I don't need one of these -- my Mini Pro has been doing excellent service since I bought it -- but I really /want/ one.
+I don't /need/ one of these -- my Mini Pro has been doing excellent service since I bought it -- but I really /want/ one.
 
 *** [[https://www.gear4music.com/PA-DJ-and-Lighting/Mackie-Thump-GO-Portable-Battery-Powered-Speaker/41RC][Mackie Thump Go]] Portable PA
-Emily and I have been experimenting with using a looper to layer up extra harmonies when we're performing. It sounds grand, but the catch is, that requires a PA. Some venues have PAs, but many folk venues don't. Also, it's always nicer to practice without headphones on, so some kind of PA would be really useful.
+Emily and I have been experimenting with using a looper to layer up extra harmonies when we're performing. It sounds grand, but the catch is that it requires a PA. Some venues have PAs, but many folk venues don't. Also, it's always nicer to practice without headphones on, so a small PA of our own would be very useful.
 
 *** [[https://shop.funky-junk.com/shop/recording/microphones/condenser/solid-state/ear-trumpet-labs-myrtle-condenser-microphone/][Ear Trumpet Labs Myrtle]] Microphone
 
-ETL microphones look fantastic and are designed for the kind of music Emily and I make.
+ETL microphones look fantastic and are designed for the kind of music Emily and I make. In the US bluegrass and americana scene they're almost the de facto choice for small ensembles doing the old school 'bunch of performers around a single mic' style of performing.
 
 ** A course of some description
 
@@ -70,15 +70,15 @@ Not quite a traditional darkroom process, but I'd also love to learn [[https://h
 
 *** Music
 
-On the music front, this [[https://www.tickettailor.com/events/stonesbarn/1066362][Performance & Repertoire Skills]] with Maddy Prior(!) course looks fantastic and absolutely up my street (though possibly a little short notice as a birthday present in 2024. If you do decide to go for it, could you let Gill know in advance.)
+On the music front, this [[https://www.tickettailor.com/events/stonesbarn/1066362][Performance & Repertoire Skills]] with Maddy Prior(!) course looks amazing and absolutely up my street (though possibly a little short notice as a birthday present in 2024. If you do decide to go for it, could you let Gill know in advance.)
 
 ** Kitcheny Things
 
 *** [[https://michaelmayknives.com/product/chefs-knife-yorkshire-oak/][A Chef's Knife]] by Michael May
 
-Michael May's a Sheffield knife maker who makes gorgeous knives. I have one of his pocket knives and it's always in my pocket. He recently started making a range of kitchen knives as well, and they're spectacular. Any of his [[https://michaelmayknives.com/product-category/kitchen/][kitchen knives]] would be a delightful thing to have, but I'm an absolute sucker for a chef's knife.
+Michael May's a Sheffield knife maker who makes gorgeous knives. I have one of his pocket knives and it's always with me. He recently started making a range of kitchen knives as well, and they're spectacular. Any of his [[https://michaelmayknives.com/product-category/kitchen/][kitchen knives]] would be a delightful thing to have, but I'm an absolute sucker for a chef's knife.
 
-Even if you're not thinking of buying one of these for me, check out the rest of the site and try to resist one of the pocket knives for yourself.
+Even if you're not thinking of buying one of these for me, check out the rest of the site and try to resist buying one for yourself -- you never know when you'll need a pocket knife that really cuts.
 
 *** [[https://www.amazon.co.uk/T-1-Kitchen-Sharpener-Version-Patented/dp/B0CNKQK9NV/][A Tormek T-1]] Kitchen Knife Sharpener
 
