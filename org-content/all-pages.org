@@ -55,9 +55,10 @@ By the way, if you're in Texas, maybe consider supporting the work of [[https://
 
 * DONE Wishlist
 :PROPERTIES:
-:export_hugo_slug: about/wishlist
 :EXPORT_FILE_NAME: wishlist
 :export_date: 2024-08-01
+:export_hugo_url: /wishlist
+:export_hugo_aliases: /pages/about/wishlist
 :END:
 
 Amazon no longer allow you to link anything but stuff they sell in their wishlists, which is less than ideal, so here goes with a list of stuff I would really like.
@@ -110,7 +111,6 @@ I'd also love to take JoJo Wood's [[https://www.pathcarvers.co.uk/product/eating
 
 
 ** Kitcheny Things
-
 *** [[https://michaelmayknives.com/product/chefs-knife-yorkshire-oak/][A Chef's Knife]] by Michael May
 
 Michael May's a Sheffield knife maker who makes gorgeous knives. I have one of his pocket knives and it's always with me. He recently started making a range of kitchen knives as well, and they're spectacular. Any of his [[https://michaelmayknives.com/product-category/kitchen/][kitchen knives]] would be a delightful thing to have, but I'm an absolute sucker for a chef's knife.
