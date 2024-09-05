@@ -62,6 +62,8 @@ By the way, if you're in Texas, maybe consider supporting the work of [[https://
 
 Amazon no longer allow you to link anything but stuff they sell in their wishlists, which is less than ideal, so here goes with a list of stuff I would really like.
 
+I've broken the list into thematic areas and (roughly) into order of desirability in each of the sections (though not so much in the courses section).
+
 ** Music and Streaming
 
 This is the horribly expensive section. Sorry.
@@ -72,16 +74,25 @@ This is an upgrade for the ATEM Mini Pro ISO that runs my YouTube streams, and i
 
 I don't /need/ one of these -- my Mini Pro has been doing excellent service since I bought it -- but I really /want/ one.
 
-*** [[https://www.gear4music.com/PA-DJ-and-Lighting/Mackie-Thump-GO-Portable-Battery-Powered-Speaker/41RC][Mackie Thump Go]] Portable PA
-Emily and I have been experimenting with using a looper to layer up extra harmonies when we're performing. It sounds grand, but the catch is that it requires a PA. Some venues have PAs, but many folk venues don't. Also, it's always nicer to practice without headphones on, so a small PA of our own would be very useful.
-
 *** [[https://shop.funky-junk.com/shop/recording/microphones/condenser/solid-state/ear-trumpet-labs-myrtle-condenser-microphone/][Ear Trumpet Labs Myrtle]] Microphone
 
 ETL microphones look fantastic and are designed for the kind of music Emily and I make. In the US bluegrass and americana scene they're almost the de facto choice for small ensembles doing the old school 'bunch of performers around a single mic' style of performing.
 
+*** [[https://www.gear4music.com/PA-DJ-and-Lighting/Mackie-Thump-GO-Portable-Battery-Powered-Speaker/41RC][Mackie Thump Go]] Portable PA
+Emily and I have been experimenting with using a looper to layer up extra harmonies when we're performing. It sounds grand, but the catch is that it requires a PA. Some venues have PAs, but many folk venues don't. Also, it's always nicer to practice without headphones on, so a small PA of our own would be very useful.
+
 ** A course of some description
 
 There's so much to learn, isn't there?
+
+*** Photography
+I realise I'm never likely to set up my own darkroom, but I'd love to learn to use one so I can hire one occasionally. The Art House in Wakefield has a [[https://the-arthouse.org.uk/workshops/darkroom-printing-taster-session/][Taster Session]], as well as a [[https://the-arthouse.org.uk/darkroom-one-to-one/][Darkroom One-to-One]] option that looks very tempting, and Wakefield's close enough to Doncaster that their [[https://the-arthouse.org.uk/maker-spaces/darkroom/][Darkroom membership]] looks pretty handy too.
+
+Not quite a traditional darkroom process, but I'd also love to learn [[https://highlandprintstudio.co.uk/classes/photopolymer-gravure/][Photogravure]], which is a cunning technique for printing photos on an etching press to gorgeous effect.
+
+*** Music
+
+On the music front, this [[https://www.tickettailor.com/events/stonesbarn/1066362][Performance & Repertoire Skills]] with Maddy Prior(!) course looks amazing and absolutely up my street (though possibly a little short notice as a birthday present in 2024. If you do decide to go for it, could you let Gill know in advance.)
 
 *** Cookery
 
@@ -97,15 +108,6 @@ This [[https://www.craftcourses.com/courses/kitchen-knife-course-1][Kitchen Knif
 
 I'd also love to take JoJo Wood's [[https://www.pathcarvers.co.uk/product/eating-spoon-masterclass-with-jojo-wood/][Eating Spoon Masterclass]] course, but I'm not sure if it's started up again post-COVID. Gill and I did a couple of her dad's courses in Edale where we met and were very impressed by her.
 
-
-*** Photography
-I realise I'm never likely to set up my own darkroom, but I'd love to learn to use one so I can hire one occasionally. The Art House in Wakefield has a [[https://the-arthouse.org.uk/workshops/darkroom-printing-taster-session/][Taster Session]], as well as a [[https://the-arthouse.org.uk/darkroom-one-to-one/][Darkroom One-to-One]] option that looks very tempting, and Wakefield's close enough to Doncaster that their [[https://the-arthouse.org.uk/maker-spaces/darkroom/][Darkroom membership]] looks pretty handy too.
-
-Not quite a traditional darkroom process, but I'd also love to learn [[https://highlandprintstudio.co.uk/classes/photopolymer-gravure/][Photogravure]], which is a cunning technique for printing photos on an etching press to gorgeous effect.
-
-*** Music
-
-On the music front, this [[https://www.tickettailor.com/events/stonesbarn/1066362][Performance & Repertoire Skills]] with Maddy Prior(!) course looks amazing and absolutely up my street (though possibly a little short notice as a birthday present in 2024. If you do decide to go for it, could you let Gill know in advance.)
 
 ** Kitcheny Things
 
@@ -133,11 +135,11 @@ There's something about a good pen and the paper to use it on. Lots of lovely st
 
 The perfect fountain pen doesn't exist, but these are gorgeous and I'd love to have one in the pen loop of my pocket notebook. A fine nib, please -- I'll be using this with a small pocket notebook and writing small.
 
+*** [[https://cultpens.com/products/opus-88-mini-pocket-pen-fountain-pen-check][Opus 88 Mini]]
+Another pocket fountain pen option. Fine nib, please.
+
 ***  [[https://cultpens.com/products/pilot-parallel-pen][Pilot Parallel Pen]]
 Because sometimes, I just want to muck about with a really wide italic type nib
-
-*** [[https://cultpens.com/products/opus-88-mini-pocket-pen-fountain-pen-check][Opus 88 Mini]]
-Another pocket fountain pen option. Fine nib.
 
 *** Rhodia [[https://cultpens.com/products/rhodia-rhodiarama-softcover-notebook-a5][Notebooks]] and [[https://cultpens.com/collections/rhodia-dotpad-notepads][Pads]]
 Just the nicest paper for writing on with ink pens.
