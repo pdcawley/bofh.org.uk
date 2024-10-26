@@ -14,7 +14,7 @@
 #+macro: sc @@hugo:{{% $1 %}}@@
 #+macro: <sc @@hugo:{{< $1 >}}@@
 
-#+seq_todo: TODO(t) DRAFT(d) OPEN(o) | PUBLISHED(p) DONE(D)
+#+seq_todo: TODO(t) DRAFT(d) OPEN(o) | PUBLISHED(p) DONE(D) CANCELLED(x)
 
 
 * Week Notes :weekNotes:
@@ -473,7 +473,8 @@ and hopefully some news about online ordering.
 
 
 
-** DRAFT Literate Baking
+** CANCELLED Literate Baking
+   CLOSED: [2024-10-19 Sat 16:19]
 :PROPERTIES:
 :EXPORT_DATE: 2018-10-25
 :export_file_name: literate-baking
@@ -1005,7 +1006,8 @@ I've not heard of yet. In some ways, it's never been easier for you to
 support the work of artists you love.
 
 
-** TODO Streaming Folk Music
+** CANCELLED Streaming Folk Music
+   CLOSED: [2024-10-19 Sat 16:19]
 :PROPERTIES:
 :ID:       2AB0850A-2FC4-42B3-BAA6-6E1A9512FB3B
 :END:
@@ -1933,7 +1935,8 @@ There's a certain frustrating joy in fiddling with the details of a thing so as 
 
 I /think/ I've got the crossposting to Mastodon looking less awful, and I /know/ I've got [[https://bofh.org.uk/][my front page]] looking better. Isn't that lovely?
 #+hugo: more
-** TODO What's the saw about the best being the enemy of the good?
+** CANCELLED What's the saw about the best being the enemy of the good?
+   CLOSED: [2024-10-19 Sat 16:19]
 :PROPERTIES:
 :export_file_name: 20230602-what-s-the-saw-about-the-best-being-the-enemy-of-the-good
 :END:
@@ -2045,7 +2048,8 @@ Now we just need to convert that into something MIDI understands, an unsigned va
 I think the next version of this will allow me to sequence balance for the first few steps, so it might go: hard left, hard right, mid left, mid right, then random pans until the system is reset. I have ideas about how to implement this too, but if you beat me too it, please let me know!
 
 I'll also be making a YouTube video walking you through it (think of this as a draft script for that video).
-** TODO Thinking about gear
+** CANCELLED Thinking about gear
+   CLOSED: [2024-10-19 Sat 16:19]
 
 A friend put up an 'all the gear I use in 2024' and of course, now I'm doing the same thing. I'm a sheep, I tell you, a sheep!
 
@@ -2246,7 +2250,7 @@ It's a song swap tradition that the first question I ask a new guest is to ask t
 **** Payment
 The show is supported by people chucking money in the virtual hat at [[https://ko-fi.com/pdcawley]]. On the following Monday, I tot up the total takings and send you half through the magic of Paypal.
 
-** TODO Emulating Ed Sheeran's Looper X in Loopy Pro
+**  Emulating Ed Sheeran's Looper X in Loopy Pro
 :PROPERTIES:
 :export_file_name: 20240301-emulating-ed-sheeran-s-looper-x-in-loopy-pro
 :END:
@@ -2256,6 +2260,81 @@ I'm not sure if this will ever see the light of day, but what the hell, I'll do 
 #+hugo: more
 
 At the moment, I'm only concerned with emulating Ed's 'multi' workflow. If I get that working, I'll hopefully have a leg up on implementing the other modes. Also, I'm assuming we're working with an unset tempo to begin with.
+
+
+*** What do the buttons do?
+
+**** Rec/Play
+
+***** Initial State
+
+Press: Start recording into the selected Loop, go to Initial Recording State.
+
+***** Initial Recording State
+
+Press: Start overdubbing, go to Overdubbing state
+
+***** Overdubbing state
+
+We're in overdubbing state any time we want to record stuff after we've recorded the first layer of the first recorded clip.
+
+Press: Finish overdubbing the active clip, go to Playing state
+
+***** Playing state
+
+Press: Start overdubbing selected clip. Go to Overdubbing state
+
+***** Stopped state
+
+Press: Start all clips. Go to Playing state
+
+
+**** Track N
+
+***** In Arming Mode
+****** Initial State
+
+Press: Select associated Loop
+
+****** Initial Recording State
+
+Press: Select and start recording target loop. Goto Overdubbing state
+
+
+****** Overdubbing State
+
+Press: Select and start recording target loop. Remain in Overdubbing state
+
+****** Playing State
+
+Press: Select target loop. Remain in Playing state
+
+****** Stopped state
+
+Press: Select associated loop.
+
+
+***** In Muting Mode
+
+In all states, just toggle muting of the target loop.
+
+
+**** Stop
+
+In both Arming and Muting mode, a long press will erase all loops, select the first, set the mode to Arming and the state to 'Initial'
+
+
+***** Initial state
+
+Press: Noop
+
+***** Stopped state
+
+Press: Noop
+
+***** All other states
+
+Press: Stop the transport. Goto Stopped state.
 
 *** State tables galore
 
@@ -2355,11 +2434,59 @@ Rec/Play responds to more than one possible action, as well as the main button, 
 |-------+------------------------------------------------+---------------------------------------+--------------------------------------|
 | OD    | Finish recording selected track                | Finish overdubbing and peel selected  | Start recording/overdubbing selected |
 |       | Move to Play position                          | Return to Play position               | Let the follow action work           |
+** CANCELLED A few tips to get you started vocal looping
+   CLOSED: [2024-10-19 Sat 16:19]
+:PROPERTIES:
+:export_file_name: 20240309-a-few-tips-to-get-you-started-vocal-looping
+:END:
+
+
+
+#+hugo: more
+
+*** Don't be scared to suck
+
+This is easily the most important lesson for acquiring any skill. When you start, you're going to suck. The secret is, even when you're experienced, there are still going to be times when you suck. The trick is not to let that phase you; chase the magic moments when you /don't/ suck, or the moments when you use that to learn something new about how not to suck. I /love/ finding new things that I enjoy doing that I suck at, because the great thing about sucking is that you get lots and lots of little dopamine kicks as you learn new things that help you not suck so badly. Once you're good at a thing, those "I learned something!" hits are more widely spaced (but, oh boy, are they great when you get one).
+
+*** Count
+
+Here's a great loop to get you started. Count: One, two, three, four at a steady pace, as you come back around to 'one', hit the record button and, just as you're about to say the next 'one', end the recording. What you want to hear, as it's playing back is:
+
+#+begin_verse
+One, two, three, four, One, two, three, four…
+#+end_verse
+
+Chances are, though, you'll hear
+
+#+begin_verse
+One, two, three, four, … One, two, three, four…
+#+end_verse
+
+Or
+
+#+begin_verse
+One, two, three, fourOne, two, three, four…
+#+end_verse
+
+And that's okay, you're new to this, and what you're working on here is the fundamental skill of looping -- getting your loop point bang on. Once you can do that, it's all just experimentation and doing what interests you, so wipe the loop and try again. And again. And again. And again.
+
+Eventually you'll be dialled in with your looper and its controls[fn:14] and you're ready for the next exciting step to learning to loop:
+
+Start the loop playing and count along with it and, as you get back to the one again, start overdubbing for another four count and go back to playing. What you're aiming for is really tight timing. Listen especially for the 't' of the 'two' -- in a perfect world you should only hear one of them. If you're not happy with what you've got, tap undo and try again. Eventually, your overdubs will start sounding tight too, so try overdubbing multiple repeats and see how many times you can overdub before things start to sound muddy. The more layers you can add this way the better.
+
+I can usually manage four or five repeats before I start to get really unhappy with the timing, but that's mostly okay when I'm actually singing because I'm also singing harmonies and that and reverb can cover for some less than stellar timing. Tighter is always better though.
+
+Fancy a harder challenge? Start another 1,2,3,4 loop and this time, when you're overdubbing, just overdub the 'and's in "one and two and three and four and…" I'll bet that the first few times you try this you're going to get a swing feel going on, which is /great/ when it'd deliberate, but we both know it isn't, is it? Keep undoing and retrying until you're making a tight (kind of boring and foursquare) count and then start working on putting swing in deliberately. This is /hard!/ I'm still working on getting this as locked in as I'd like. If you do get to the point where you're happy with overdubbing the ands, try overdubbing the 'ee's and 'a's to end up with "one-ee and-a two-ee and-a three-ee and-a four-ee and-a" and bask in my admiration if you get good at that.
+
+*** Embrace your inner crappy beatboxer
+
+Unless you're aiming to become a dedicated beatboxer (and if you are, why are you reading this?) then don't
 
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
 :END:
+[fn:14] If you change anything in your setup, pedals, audio interface, looping software, monitoring, or anything that might conceivably affect the latency, expect to spend a little while getting dialled back in with the new setup. Remarkably tiny changes in latency can make a difference to the tightness of your loops, so don't be afraid to go back to the old 1,2,3,4 for a while.
 
 [fn:13] I don't actually do that, because I have a slightly more complex setup that supports multiple song structures with the same set of clips. I'll explain all that later.
 [fn:12] Real Tempest machines have a gorgeously weighted 'spinner' -- a free spinning rotary encoder with enough resolution that there still multiple 'steps' per tube segment. It meant that your blaster had a lovely fluid movement with very direct control. Basically, Tempest is pretty damned close to perfect on its original hardware and if you ever get the chance to play on a well maintained machine, you should grab it!
