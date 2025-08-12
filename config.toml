@@ -9,7 +9,7 @@ title = "Just a Summary"
 PygmentsCodeFences = true
 pygmentsusecolors = true
 pygmentsstyle = "monokai"
-Paginate = 20
+pagination.PagerSize = 20
 googleAnalytics = "UA-135014-1"
 
 [mediaTypes."application/atom+xml"]
