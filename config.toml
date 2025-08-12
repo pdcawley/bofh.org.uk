@@ -23,12 +23,6 @@ googleAnalytics = "UA-135014-1"
     home = ["HTML", "ATOM", "JF2Feed"]
     section = ["HTML", "ATOM", "JF2Feed"]
     page = ["HTML", "JF2Post"]
-[author]
-    homepage = "/"
-    name = "Piers Cawley"
-    given_name = "Piers"
-    family_name = "Cawley"
-    display_name = "Piers"
 
 [outputFormats.Atom]
   # https://validator.w3.org/feed/docs/atom.html#whatIsAtom
@@ -97,7 +91,7 @@ googleAnalytics = "UA-135014-1"
     tag = "tags"
 
 [params]
-    Author = "<span class='given-name'>Piers</span> <span class='surname'>Cawley</span>"
+    OldAuthor = "<span class='given-name'>Piers</span> <span class='surname'>Cawley</span>"
     DateForm = "Jan 1, 2006"
     subtitle = "Piers Cawley practices punditry"
     copyrightHolder = "Piers Cawley"
@@ -108,3 +102,14 @@ googleAnalytics = "UA-135014-1"
     iso8601_html_format = "<span class='date'>2006-01-02</span><span class='time-sep'>T</span><span class='time-and-zone'><span class='time-part'>15:04:05</span><span class='zone-part'>Z0000</span></span>"
     pagination_size = 20
     microsub_url = "https://aperture.p3k.io/microsub/745"
+
+  [params.author]
+    homepage = "/"
+    name = "Piers Cawley"
+    given_name = "Piers"
+    family_name = "Cawley"
+    display_name = "Piers"
+    note_html = "<span class='p-role'>FolkSinger</span>, photographer, carer and occasional programmer."
+    [params.author.pronouns]
+      nominative = "they"
+      oblique = "him"
