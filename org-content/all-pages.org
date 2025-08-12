@@ -10,6 +10,7 @@
 * DONE About Piers
 :PROPERTIES:
 :export_hugo_slug: about
+:export_hugo_aliases: /pages/about
 :EXPORT_FILE_NAME: about
 :EXPORT_DATE: 2003-01-01
 :END:
