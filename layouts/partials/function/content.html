@@ -1,0 +1,9 @@
+{{- $content := .Content -}}
+
+{{- if $content -}}
+
+  {{- $content = partial "function/marked-text.html" $content -}}
+
+{{- end -}}
+
+{{- return $content -}}
