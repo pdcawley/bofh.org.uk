@@ -1,9 +1,10 @@
 {{ $url := (.Get 0) }}
 {{- range $.Site.Data.embed }}
   {{- if le 1 ( findRE .pattern $url | len ) }}
-    {{- with (getJSON .endpoint "?" (querify "format" "json" "url" $url)) }}
+    {{- $full_endpoint :=  (print .endpoint "?" (querify "format" "json" "url" $url )) -}}
+    {{- with ( resources.Get $full_endpoint | transform.Unmarshal ) -}}
       {{ .html | safeHTML }}
-    {{- else }}
+      {{- else }}
       <a href="{{ $url }}">{{ or .Inner $url }}</a>
     {{ end }}
   {{ end }}
