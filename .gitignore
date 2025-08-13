@@ -1,2 +1,5 @@
 /public
 /resources/
+/.hugo_build.lock
+/content/page/*.md
+/go.sum
