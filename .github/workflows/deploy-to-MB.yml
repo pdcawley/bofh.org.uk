@@ -65,6 +65,9 @@ jobs:
       - name: Build
         run: hugo --minify --buildFuture
 
+      - name: Install Rsync
+        run: apt install rsync
+
       - name: Copy to server
         run: rsync -avz --del -e "ssh -p ${{secrets.SSH_PORT}}" ./public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:bofh.org.uk
 
