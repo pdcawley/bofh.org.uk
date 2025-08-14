@@ -17,6 +17,10 @@
 :EXPORT_DATE: 2003-01-01
 :END:
 
+#+begin_description
+A subjective description of Piers and their many virtues
+#+end_description
+
 ** Baker
 I used to be a programmer. I was good at it, but I kind of grew to hate it as a means of making a living, so when RSI came calling and made it near-impossible to type for more than about half an hour before I had to take a 45 minute break, I got properly serious about breadmaking. So since Christmas 2017 I've been baking sourdough bread for money as [[https://loafery.co.uk][The Loafery]]. It's not (remotely) as lucrative as programming was, but it's infinitely more satisfying. And tasty.
 
@@ -50,6 +54,11 @@ Look: I have a weblog; I’ve had the same email address since 1996; I’ve neve
 :export_hugo_slug: about/tamlyn-co-uk
 :EXPORT_FILE_NAME: tamlyn-co-uk
 :END:
+
+#+begin_description
+The domain tamlyn.co.uk is not for sale.
+#+end_description
+
 Hi, you ended up here because you visited tamlyn.co.uk, which is a domain my wife and I have been using for private email since 1998, but which we've never bothered setting up a website for.
 
 It's possible that you were looking for the UK arm of [[https://tamlyn.com][Tamlyn.com]], which appears to be building supplies manufacturer based in Texas. If so, you should head on over to their UK site, [[https://tamlyn.uk][tamlyn.uk]].
@@ -63,6 +72,10 @@ By the way, if you're in Texas, maybe consider supporting the work of [[https://
 :export_hugo_url: /wishlist
 :export_hugo_aliases: /pages/about/wishlist
 :END:
+
+#+begin_description
+Things Piers would quite like as birthday or Christmas presents
+#+end_description
 
 Amazon no longer allow you to link anything but stuff they sell in their wishlists, which is less than ideal, so here goes with a list of stuff I would really like.
 
@@ -155,6 +168,11 @@ I'm still searching for the perfect sepia ink. Something that looks like it was 
 :export_hugo_slug: twitch-viewing
 :EXPORT_DATE: 2022-03-24
 :END:
+
+#+begin_description
+How to join Twitch
+#+end_description
+
   There are multiple platforms available where you can watch and interact with people sharing music;  how to play their favourite video game; tips on sewing makeshift surgical masks; and a bewildering panoply of other stuff. If you're after carefully edited, scripted and polished stuff, then [[https://youtube.com][YouTube]] and [[https://vimeo.com/][Vimeo]] are the websites for you. If you're after something a little more loose and interactive, where you can ask questions and give immediate feedback and the like, then [[https://twitch.tv/][Twitch.tv]] could easily be Your Place.
 
 
@@ -187,6 +205,10 @@ CLOSED: [2025-08-14 Thu 12:08]
 :EXPORT_HUGO_SLUG: colophon
 :export_hugo_aliases: /colophon
 :END:
+
+#+begin_description
+An overview of how the /Just A Summary/ sausage is made.
+#+end_description
 
 I built /Just A Summary/ with the [[https://gohugo.io/][Hugo]] static site generator. The marvellous [[https://mythic-beasts.com/][Mythic Beasts]] host it on one of their [[https://raspberry.com/][Raspberry Pis]].
 
