@@ -1948,7 +1948,7 @@ This is still a work in progress, but enough people expressed an interest when I
 If you don't want the gory details of how the pandomiser works, here's how to add it to your Loopy Pro and get going quickly:
 
 **** Set up miRACK in your project
-+ Install [[https://apps.apple.com/gb/app/mirack/id1468259834][miRACK]] from the App store. It's a full-featured modular synthesizer simulator, completely free, and it's capable of far more and weirder things than we're making it do here. Check out the examples.
++ Install [[https://apps.apple.com/gb/app/mirack/id1468259834][miRACK]] from the App store. It's a full-featured modular synthesizer simulator, and it's capable of far more and weirder things than we're making it do here. Check out the examples.
 
 + Grab the pandomizer bundle from [[/files/pandomiser.zip][my website]] and unzip with the Files app on your iDevice. Copy pandomiser.mrk to your miRACK folder so the plugin can find it.
 
