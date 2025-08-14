@@ -54,190 +54,190 @@ p.verse, .verse, p.verse + p {
 /* Webmention stuff */
 
 article>section.content {
-  &>p:first-child::first-line, h2+p::first-line {
-    font-variant: small-caps;
-  }
+    &>p:first-child::first-line, h2+p::first-line {
+        font-variant: small-caps;
+    }
 }
 
 a.heading-anchor {
     display: none;
 }
 article .metaline {
-  font-size: 1rem;
-
-  &> p {
-    border-top: solid thin $contrast-color;
-    border-bottom: solid thin $contrast-color;
-    font-family: $small-caps;
-    font-variant: small-caps;
-    padding: 0;
     font-size: 1rem;
-    margin: 0.25rem 0 0;
-    /* color: $border-color; */
-  }
 
-  &> ul {
-    display: flex;
-    margin: 0.25rem 0 0;
-    border-top: solid thin $contrast-color;
-    border-bottom: solid thin $contrast-color;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    width: 100%;
-
-    &> li  {
-      list-style-type: none;
-      font-size: 1rem;
-      font-family: $small-caps;
-      letter-spacing: 0.15em;
-      text-decoration: none;
-      display: inline-block;
-      margin: 0.2rem 0 0.2rem 0;
-      vertical-align: baseline;
-      font-variant: small-caps;
-      padding-right: 0.5rem;
-      padding-bottom: 0;
-      color: $border-color;
+    &> p {
+        border-top: solid thin $contrast-color;
+        border-bottom: solid thin $contrast-color;
+        font-family: $small-caps;
+        font-variant: small-caps;
+        padding: 0;
+        font-size: 1rem;
+        margin: 0.25rem 0 0;
+        /* color: $border-color; */
     }
-  }
+
+    &> ul {
+        display: flex;
+        margin: 0.25rem 0 0;
+        border-top: solid thin $contrast-color;
+        border-bottom: solid thin $contrast-color;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        width: 100%;
+
+        &> li  {
+            list-style-type: none;
+            font-size: 1rem;
+            font-family: $small-caps;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0.2rem 0 0.2rem 0;
+            vertical-align: baseline;
+            font-variant: small-caps;
+            padding-right: 0.5rem;
+            padding-bottom: 0;
+            color: $border-color;
+        }
+    }
 }
 
 
 
 section#webmentions {
-  &>h3 {
-    margin-top: 1rem;
-    margin-bottom: 0;
-  }
-
-
-
-  &>ul {
-    padding-left: 0;
-    margin-top: 1rem;
-    width: 100%;
-  }
-  li.comment {
-    list-style-type: none;
-    font-size: 1rem;
-    line-height: 1.2;
-    .comment-content {
-      font-size: 1.1rem;
-    }
-  }
-  .comment {
-    padding: 0.2rem;
-    border: solid thin $border-color;
-    margin-bottom: .5rem;
-    word-wrap: break-word;
-
-    &> .author, &> .comment-content, &> .metaline {
-      margin-left: 53px;
+    &>h3 {
+        margin-top: 1rem;
+        margin-bottom: 0;
     }
 
-    &> .comment-content > p {
-      margin-top: 0;
-      padding: 0;
-      font-height: 1.1rem;
+
+
+    &>ul {
+        padding-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+    }
+    li.comment {
+        list-style-type: none;
+        font-size: 1rem;
+        line-height: 1.2;
+        .comment-content {
+            font-size: 1.1rem;
+        }
+    }
+    .comment {
+        padding: 0.2rem;
+        border: solid thin $border-color;
+        margin-bottom: .5rem;
+        word-wrap: break-word;
+
+        &> .author, &> .comment-content, &> .metaline {
+            margin-left: 53px;
+        }
+
+        &> .comment-content > p {
+            margin-top: 0;
+            padding: 0;
+            font-height: 1.1rem;
+        }
+
+        &>.metaline {
+            margin-top: .25rem;
+        }
+
+        &>.author
+        {
+            &> img {
+                margin-left: -53px;
+                float: left;
+                border-radius: 4px;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            a.author_url {
+                color: $border-color;
+                font-weight: normal;
+            }
+        }
     }
 
-    &>.metaline {
-      margin-top: .25rem;
+    ul.facepile {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        img {
+            border-radius: 3px;
+            width: 36px;
+            height: 36px;
+        }
+        li {
+            float: left;
+            margin-left: 3px;
+            padding: 0;
+        }
     }
-
-    &>.author
-    {
-      &> img {
-        margin-left: -53px;
-        float: left;
-        border-radius: 4px;
-      }
-
-      a {
-        text-decoration: none;
-      }
-
-      a.author_url {
-        color: $border-color;
-        font-weight: normal;
-      }
-    }
-  }
-
-  ul.facepile {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    img {
-      border-radius: 3px;
-      width: 36px;
-      height: 36px;
-    }
-    li {
-      float: left;
-      margin-left: 3px;
-      padding: 0;
-    }
-  }
 }
 
 // Marginalia stuff
 // Responsible for common rendering behavior of the marginalia. When tinkering
 // with this file, remember to review both the narrow version and the print version
 [role="note"]:not(p) {
-  .fullwidth { max-width: 100%; }
-  margin: 0 calc(-66% - 0.75rem) 1.96rem 0;
-  margin-top: 0.3rem;
-  font-size: 1.0rem;
-  line-height: 1.3rem;
-  // vertical-align: baseline;
-  position: relative;
-  &.margin-table {
-    margin-right: 11%; width: 29%;
-    .table-wrapper {
-      width: 100%;
-      table { width: 100%; }
-    }
-  }
-  p {
-    margin-top: 0;
+    .fullwidth { max-width: 100%; }
+    margin: 0 calc(-66% - 0.75rem) 1.96rem 0;
+    margin-top: 0.3rem;
     font-size: 1.0rem;
-    width:100%;
     line-height: 1.3rem;
-    &:last-of-type { margin-top: 0; }
-  }
+    // vertical-align: baseline;
+    position: relative;
+    &.margin-table {
+        margin-right: 11%; width: 29%;
+        .table-wrapper {
+            width: 100%;
+            table { width: 100%; }
+        }
+    }
+    p {
+        margin-top: 0;
+        font-size: 1.0rem;
+        width:100%;
+        line-height: 1.3rem;
+        &:last-of-type { margin-top: 0; }
+    }
 
-  code, pre {
-    font-size: 0.85em;
-  }
+    code, pre {
+        font-size: 0.85em;
+    }
 }
 
 figure[role="note"] {
-  max-width: 100%;
-  figcaption {
-    margin-right: 0;
-    max-width: 100%; }
+    max-width: 100%;
+    figcaption {
+        margin-right: 0;
+        max-width: 100%; }
 }
 
 
 //added to allow for the fact that lists are indented and marginnotes and sidenotes push to right
 li, blockquote {
-  [role="note"] { margin-right: -80%; }
+    [role="note"] { margin-right: -80%; }
 }
 
 .sidenote-number { counter-increment: sidenote-counter; }
 .sidenote-number:after, ins[role="note"]:before {
-  content: counter(sidenote-counter) ")\000a0";
-  font-family: $counter-font; color: $contrast-color;
-  position: relative;
-  vertical-align: baseline;
+    content: counter(sidenote-counter) ")\000a0";
+    font-family: $counter-font; color: $contrast-color;
+    position: relative;
+    vertical-align: baseline;
 }
 .sidenote-number:after {
-  content: counter(sidenote-counter);
-  font-size: 1rem;
-  top: -0.5rem;
-  left: 0.1rem;
+    content: counter(sidenote-counter);
+    font-size: 1rem;
+    top: -0.5rem;
+    left: 0.1rem;
 }
 
 // TODO: Must figure this out. I don't want to hide marginalia but instead
@@ -249,43 +249,43 @@ aside[role="note"], figure[role="note"] { margin-right: 12.5%; width: 27%; }
 // On a narrow screen, display as a block in the flow of the text.
 
 @media screen {
-  [role="note"] {
-    display: block;
-  }
-  object[role="note"], aside[role="note"], ins[role="note"] {
-    margin-top: -1.45em;
-    margin-left: calc( 2 * min(1200px, 70vw) / 3 + 1rem);
-    width: calc(min(1200px, 70vw) / 3 - 1rem);
-    position: absolute;
-  }
-  object[role="note"], aside[role="note"], figure[role="note"], ins[role="note"] {
-    br {
-      margin-bottom: 0.66rem;
-      &:last-of-type { margin-bottom: 0rem; }
+    [role="note"] {
+        display: block;
     }
-  }
+    object[role="note"], aside[role="note"], ins[role="note"] {
+        margin-top: -1.45em;
+        margin-left: calc( 2 * min(1200px, 70vw) / 3 + 1rem);
+        width: calc(min(1200px, 70vw) / 3 - 1rem);
+        position: absolute;
+    }
+    object[role="note"], aside[role="note"], figure[role="note"], ins[role="note"] {
+        br {
+            margin-bottom: 0.66rem;
+            &:last-of-type { margin-bottom: 0rem; }
+        }
+    }
 }
 
 body.home {
-  object[role="note"], aside[role="note"], ins[role="note"] {
-    margin-top: 0.2rem;
-    border-left: $contrast-color thin dotted;
-    padding-left: 0.5rem;
-    margin: 1rem 2.5%;
-    position: unset;
-    width: auto;
-  }
+    object[role="note"], aside[role="note"], ins[role="note"] {
+        margin-top: 0.2rem;
+        border-left: $contrast-color thin dotted;
+        padding-left: 0.5rem;
+        margin: 1rem 2.5%;
+        position: unset;
+        width: auto;
+    }
 }
 
 
 // @media screen and (max-width: 900px) {
 @media (max-width: 900px) {
-  object[role="note"], aside[role="note"], ins[role="note"] {
-    margin-top: 0.2rem;
-    border-left: $contrast-color thin dotted;
-    padding-left: 0.5rem;
-    margin: 1rem 2.5%;
-    position: unset;
-    width: auto;
-  }
+    object[role="note"], aside[role="note"], ins[role="note"] {
+        margin-top: 0.2rem;
+        border-left: $contrast-color thin dotted;
+        padding-left: 0.5rem;
+        margin: 1rem 2.5%;
+        position: unset;
+        width: auto;
+    }
 }
