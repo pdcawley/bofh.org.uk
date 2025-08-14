@@ -56,7 +56,7 @@ googleAnalytics = "UA-135014-1"
 
 [[menu.topnav]]
     name = "About Piers"
-    url = "/page/about/"
+    url = "/pages/about/"
     pre = "<i class='fa fa-info-circle'></i> "
     weight = 20
 
