@@ -182,3 +182,8 @@ A word to the wise; once you set up the account, Twitch will suggest (in manner 
 * Footnotes
 
 [fn:1] Obviously, I'd love it it you subscribed to my channel, but I also like the idea of everyone passing a little of the money that would otherwise be going into Amazon's gaping money maw on to any independent creator at all, whether it's me or not.
+
+* COMMENT Local Variables :ARCHIVE:
+# Local Variables:
+# org-log-done: 'time
+# End:

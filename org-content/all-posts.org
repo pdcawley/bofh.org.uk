@@ -2161,3 +2161,8 @@ Like Emacs itself, it's almost infinitely flexible, which makes it incredibly ha
 [fn:4] The Github Actions based build process is also substantially more reliable than the hand rolled server hook I was using. There's something to be said assembling your build pipeline from a bunch of stuff that lots of other people use (and maintain). Also, it reduces the number of moving parts on the Raspberry Pi that's serving these pages, which is no bad thing.
 
 [fn:5] An @@html:<dfn>@@h-entry@@html:</dfn>@@ is something that a web user might want to mention. At present, all the h-entries on this site are articles, but other people use them to mark up photos, videos, notes, calendar entries or anything else that makes sense to think of as an entry in a collection of stuff. If you'll look at this page in your browser's inspector, you'll see that the content is wrapped in ~<article class="h-entry" …>…</article>~ tags. Other tags within that block are are marked with other classes (so the title has ~p-name~ and the body has ~e-content~), according to the definition of the [[http://microformats.org/wiki/h-entry][h-entry microformat]]. By marking my site up with these micropformats, life becomes much easier for any IndieWeb tools to extract appropriate information from the site.
+
+* COMMENT Local Variables :ARCHIVE:
+# Local Variables:
+# org-log-done: 'time
+# End:
