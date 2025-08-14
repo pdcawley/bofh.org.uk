@@ -180,6 +180,22 @@ A word to the wise; once you set up the account, Twitch will suggest (in manner 
 
    But you don't /have/ to stream; I was on Twitch for the best part of a year, just occasionally hanging in streamers' chats and passing the time of day before I bit the bullet and started to stream myself. Some corners of the site have rather more assholes per square inch than others (popular shooty bang games, I'm looking at you) but if you're like me and enjoy the crafty and artistic areas, you're going to find some really lovely communities to join. Just have a great time!
 
+* DONE Site details
+CLOSED: [2025-08-14 Thu 12:08]
+:PROPERTIES:
+:EXPORT_FILE_NAME: colophon
+:EXPORT_HUGO_SLUG: colophon
+:export_hugo_aliases: /colophon
+:END:
+
+I built /Just A Summary/ with the [[https://gohugo.io/][Hugo]] static site generator. The marvellous [[https://mythic-beasts.com/][Mythic Beasts]] host it on one of their [[https://raspberry.com/][Raspberry Pis]].
+
+The theme is a much messed with version of the [[https://github.com/edwardtufte/tufte-css][Tufte CSS]] theme for Hugo. The most recently maintained version of which is available at [[https://github.com/loikein/hugo-tufte]]
+#+begin_marginnote
+Many /many/ thanks to loikein for taking that on!
+#+end_marginnote
+
+In theory, we are fully [[https://indieweb.org/][IndieWeb]] enabled. In practice, I tend to let that stuff rust and then come back to it in fits and starts.
 
 * Footnotes
 
