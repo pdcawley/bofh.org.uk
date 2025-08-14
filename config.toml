@@ -79,7 +79,14 @@ googleAnalytics = "UA-135014-1"
     pre = "<i class='fa fa-mastodon fa-2x'></i> "
     weight = -110
     url = "https://mendeddrum.org/@pdcawley"
-    identifier = "mastodon"
+  identifier = "mastodon"
+
+[[menu.footer]]
+  name = ""
+  pre = "<i class='fa fa-youtube fa-2x'></i> "
+  weight = -101
+  url = "https://youtube.com/pierscawley"
+  identifier = "youtube"
 
 [permalinks]
     post = "/:year/:month/:day/:slug"
