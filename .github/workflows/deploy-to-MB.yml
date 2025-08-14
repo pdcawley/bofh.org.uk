@@ -29,7 +29,7 @@ jobs:
         run: mkdir -p ~/.emacs.d
         
       - name: Cache ~/.emacs.d
-        uses: actions/cache@v3.0.2
+        uses: actions/cache@v4
         with:
           path: ~/.emacs.d
           key: ${{ runner.os }}-emacs.d-${{ hashfiles('setup-org-export.el') }}
