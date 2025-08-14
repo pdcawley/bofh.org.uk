@@ -70,14 +70,15 @@ By the way, if you're in Texas, maybe consider supporting the work of [[https://
 :EXPORT_FILE_NAME: wishlist
 :export_date: 2024-08-01
 :export_hugo_url: /wishlist
-:export_hugo_aliases: /pages/about/wishlist
+:export_hugo_aliases: /pages/about/wishlist /wish
+:export_hugo_auto_set_lastmod: t
 :END:
 
 #+begin_description
 Things Piers would quite like as birthday or Christmas presents
 #+end_description
 
-Amazon no longer allow you to link anything but stuff they sell in their wishlists, which is less than ideal, so here goes with a list of stuff I would really like.
+I used to keep an Amazon wishlist, but they only let you add things that can be bought from them. Screw that. Here's a list of things I'd really like.
 
 I've broken the list into thematic areas and (roughly) into order of desirability in each of the sections (though not so much in the courses section).
 
@@ -85,17 +86,18 @@ I've broken the list into thematic areas and (roughly) into order of desirabilit
 
 This is the horribly expensive section. Sorry.
 
-*** [[https://www.eastwoodsoundandvision.com/blackmagic-design-atem-mini-extreme-iso][BlackMagic ATEM Mini Extreme ISO Switcher]]
+*** [[https://www.eastwoodsoundandvision.com/video/rode-rodecaster-video][RØDECaster Video]]
 
-This is an upgrade for the ATEM Mini Pro ISO that runs my YouTube streams, and it would enable me to do a lot of stuff that's currently either fiddly or outright impossible. It has more buttons than you can shake a stick at. It's a cut down version of the console that sits in a TV control room which the editor uses to cut from camera to camera, add graphics overlays, set up split screen displays and generally run the entire show from their desk. It also handles sending the live stream out to the internet and records every input channel, to allow for later editing.
+I've been running my YouTube streams with an ATEM Mini Pro ISO and it's great, but a tad fiddly for some of the things I want to do. The RØDECaster Video supports all the extra stuff I'd /like/ to do and it's audio features in particular are a substantial improvement.
 
 I don't /need/ one of these -- my Mini Pro has been doing excellent service since I bought it -- but I really /want/ one.
 
-*** [[https://shop.funky-junk.com/shop/recording/microphones/condenser/solid-state/ear-trumpet-labs-myrtle-condenser-microphone/][Ear Trumpet Labs Myrtle]] Microphone
+*** +[[https://shop.funky-junk.com/shop/recording/microphones/condenser/solid-state/ear-trumpet-labs-myrtle-condenser-microphone/][Ear Trumpet Labs Myrtle]] Microphone+
+
 
 ETL microphones look fantastic and are designed for the kind of music Emily and I make. In the US bluegrass and americana scene they're almost the de facto choice for small ensembles doing the old school 'bunch of performers around a single mic' style of performing.
 
-Since writing this, I've been able to borrow one of these mics and I think I'm even more in love with them.
+I have one of these now. It gives me joy every time I use it. Sometimes, things really do bring joy.
 
 ** A course of some description
 
@@ -108,29 +110,29 @@ Not quite a traditional darkroom process, but I'd also love to learn [[https://h
 
 *** Music
 
-On the music front, this [[https://www.tickettailor.com/events/stonesbarn/1066362][Performance & Repertoire Skills]] with Maddy Prior(!) course looks amazing and absolutely up my street (though possibly a little short notice as a birthday present in 2024. If you do decide to go for it, could you let Gill know in advance.)
+Maddy Prior runs courses for singers at [[https://stonesbarn.co.uk][Stones Barn]] and there's always something on her list that looks tempting. Right now, the [[https://www.tickettailor.com/events/stonesbarn/1430214][Interpretation Work For Traditional Singers]] with Nancy Kerr joining Maddy in November looks rather tasty.
+
+The singing courses at [[https://www.halswaymanor.org.uk/][Halsway Manor]] look great too, and Halsway's a lovely place.
 
 *** Cookery
 
-I've enjoyed [[https://rivercottage.net][River Cottage]] pig related courses, and their fermentation or curing and smoking courses look very tempting.
+I've enjoyed [[https://rivercottage.net][River Cottage]] pig related courses, and could fancy one of their fermentation or curing and smoking courses.
 
-
-I like to think I know what I'm doing with a knife, but a [[https://www.rutlandcookeryschool.co.uk/courses/knife-skills-full-day.html][Knife Skills]] course would go down well.
-
+I like to think I know what I'm doing with a knife, but a [[https://www.rutlandcookeryschool.co.uk/courses/knife-skills-full-day.html][Knife Skills]] course would go down well too.
 
 *** Crafts
 
-This [[https://www.craftcourses.com/courses/kitchen-knife-course-1][Kitchen Knife]] making course looks fab.
+The Kitchen Knife making courses at [[https://craftcourses.com/]] look great.
 
-I'd also love to take JoJo Wood's [[https://www.pathcarvers.co.uk/product/eating-spoon-masterclass-with-jojo-wood/][Eating Spoon Masterclass]] course, but I'm not sure if it's started up again post-COVID. Gill and I did a couple of her dad's courses in Edale where we met and were very impressed by her.
+** Kitchen-y and Foodie Things
+*** A meal in a fancy restaurant
+I say "fancy," but mostly I mean "somewhere you love." The most important part of any meal is the company, after all. I'm more than happy to travel ludicrous distances for a memorable meal, with the caveat that the place needs to be wheelchair accessible for Gill.
 
-
-** Kitcheny Things
 *** [[https://michaelmayknives.com/product/chefs-knife-yorkshire-oak/][A Chef's Knife]] by Michael May
 
 Michael May's a Sheffield knife maker who makes gorgeous knives. I have one of his pocket knives and it's always with me. He recently started making a range of kitchen knives as well, and they're spectacular. Any of his [[https://michaelmayknives.com/product-category/kitchen/][kitchen knives]] would be a delightful thing to have, but I'm an absolute sucker for a chef's knife.
 
-Even if you're not thinking of buying one of these for me, check out the rest of the site and try to resist buying one for yourself -- you never know when you'll need a pocket knife that really cuts.
+Even if you're not thinking of buying one of these for me, check out the rest of the site and try to resist buying one for yourself -- you never know when you'll need a pocket knife that /really/ cuts.
 
 *** [[https://www.amazon.co.uk/T-1-Kitchen-Sharpener-Version-Patented/dp/B0CNKQK9NV/][A Tormek T-1]] Kitchen Knife Sharpener
 
@@ -150,8 +152,10 @@ There's something about a good pen and the paper to use it on. Lots of lovely st
 
 The perfect fountain pen doesn't exist, but these are gorgeous and I'd love to have one in the pen loop of my pocket notebook. A fine nib, please -- I'll be using this with a small pocket notebook and writing small.
 
-*** [[https://cultpens.com/products/opus-88-mini-pocket-pen-fountain-pen-check][Opus 88 Mini]]
+*** +[[https://cultpens.com/products/opus-88-mini-pocket-pen-fountain-pen-check][Opus 88 Mini]]+
 Another pocket fountain pen option. Fine nib, please.
+
+Got myself one. It's lovely, if a little chunkier than I expected.
 
 ***  [[https://cultpens.com/products/pilot-parallel-pen][Pilot Parallel Pen]]
 Because sometimes, I just want to muck about with a really wide italic type nib
