@@ -12,31 +12,41 @@ code.inline {
 
 }
 
+// Tweak the smaller heading sizes
+
+h4 {
+    font-size: 1.6rem
+}
+
+p+p {
+    text-indent: 1.5rem;
+}
+
 // Syndication/linkage stuff
 
 article::after {
-  clear:both;
+    clear:both;
 }
 
 .relationships {
-  &>pre, a.bridgy, .our-mentions, .syndications {
-    display: none;
-  }
+    &>pre, a.bridgy, .our-mentions, .syndications {
+        display: none;
+    }
 }
 
 .p-summary {
-  display: none;
+    display: none;
 }
 
 .articles .p-summary {
-  display: revert;
+    display: revert;
 }
 
 // Fixes for .verse
 p.verse, .verse, p.verse + p {
-  margin-top: 1.4rem;
-  margin-left: 3rem;
-  text-indent: 0;
+    margin-top: 1.4rem;
+    margin-left: 3rem;
+    text-indent: 0;
 }
 
 .figure-number { display: none; }
