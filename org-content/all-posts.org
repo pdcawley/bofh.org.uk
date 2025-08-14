@@ -148,7 +148,11 @@ If you're not using `general`, but you've got `use-package` installed, you can d
 You can no doubt use define-key as well, but I find `general` or `bind-keys` to be much nicer to work with. The latter has the advantage that it's included in Emacs as part of `use-package` and plays nice with `which-key`, so I might go and redo my key bindings and get rid of `general`, nice as it is, since the real selling point of that library is how easy it is to bind stuff in `evil-mode` states.
 **** Sunday
 
-I still miss /Twitch Sings./ It's how I started streaming—long before the Friday night Song Swaps and folk streams. I'd be happily belting out Lady Gaga's /Bad Romance/, hamming it up to /You Spin Me Round/ or giving it my best Johnny Cash @@hugo:{{% marginnote %}}@@ Not a particulaly good impression. I can't get that low! @@hugo:{{%/marginnote%}}@@ on /Hurt./ It was just huge fun and a great way to make friends on Twitch.
+I still miss /Twitch Sings./ It's how I started streaming—long before the Friday night Song Swaps and folk streams. I'd be happily belting out Lady Gaga's /Bad Romance/, hamming it up to /You Spin Me Round/ or giving it my best Johnny Cash
+#+begin_marginnote
+Not a particularly good impression. I can't get that low!
+#+end_marginnote
+on /Hurt./ It was just huge fun and a great way to make friends on Twitch.
 
 Twitch ended up pulling the plug because it was a free app and… well, free apps and sync rights really don't play well together.
 
