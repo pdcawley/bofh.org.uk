@@ -1353,14 +1353,20 @@ HEAD https://indieweb.org
 #+BEGIN_SRC html
 <!-- HEAD https://indieweb.org -->
 <!-- HTTP/1.1 200 OK -->
-<!-- Server: nginx/1.14.0 -->
-<!-- Date: Wed, 27 Apr 2022 10:55:56 GMT -->
+<!-- Date: Thu, 21 Aug 2025 20:55:46 GMT -->
 <!-- Content-Type: text/html; charset=UTF-8 -->
 <!-- Connection: keep-alive -->
-<!-- X-Powered-By: PHP/7.2.7-1+ubuntu16.04.1+deb.sury.org+1 -->
+<!-- Server: cloudflare -->
 <!-- Link: <https://webmention.io/indiewebcamp/webmention>; rel="webmention" -->
 <!-- Cache-Control: no-cache -->
-<!-- Request duration: 0.964161s -->
+<!-- X-No-Cache: 1 -->
+<!-- X-Cache: BYPASS -->
+<!-- Cf-Cache-Status: DYNAMIC -->
+<!-- Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=AcdDojTYPMSIrmWJHpOrSeRUOgkMOS5R%2BU8A%2FpEtRdGdGILIA0DwvJcCiFhtKp6Q1em%2BPnsMp7E8%2BhMzx4JN65Thuu2UeCM3AibOYQ%3D%3D"}]} -->
+<!-- Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800} -->
+<!-- CF-RAY: 972d087bbb33bed7-LHR -->
+<!-- alt-svc: h3=":443"; ma=86400 -->
+<!-- Request duration: 1.125278s -->
 #+END_SRC
 
 We're looking for the 「src_html{Link: … ; rel="webmention"}」 line. This tells us that to send a webmention targeting https://indieweb.org, we need to post it to https://webmention.io/indiewebcamp/webmention. Which is almost as simple as finding the end point. Here we go:
@@ -1377,7 +1383,7 @@ source=https://bofh.org.uk/2022/04/24/not-so-simple&target=https://indieweb.org
 {
   "status": "queued",
   "summary": "Webmention was queued for processing",
-  "location": "https://webmention.io/indiewebcamp/webmention/tkvP5ayea5jYxlo3jvnw",
+  "location": "https://webmention.io/indiewebcamp/webmention/oYamc823u4mVmGD3BmPu",
   "source": "https://bofh.org.uk/2022/04/24/not-so-simple",
   "target": "https://indieweb.org"
 }
@@ -1389,12 +1395,12 @@ source=https://bofh.org.uk/2022/04/24/not-so-simple&target=https://indieweb.org
 // Status: 201 Created
 // Cache-Control: no-store
 // Access-Control-Allow-Origin: *
-// Location: https://webmention.io/indiewebcamp/webmention/tkvP5ayea5jYxlo3jvnw
+// Location: https://webmention.io/indiewebcamp/webmention/oYamc823u4mVmGD3BmPu
 // X-Content-Type-Options: nosniff
-// Date: Wed, 27 Apr 2022 15:28:54 GMT
+// Date: Thu, 21 Aug 2025 20:56:00 GMT
 // X-Powered-By: Phusion Passenger 5.3.1
 // Server: nginx/1.14.0 + Phusion Passenger 5.3.1
-// Request duration: 0.737496s
+// Request duration: 0.590250s
 #+END_SRC
 
 The job is done, and we get a nice JSON formatted summary of what's going on to boot.
@@ -1423,7 +1429,7 @@ GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=
       "author": {
         "type": "card",
         "name": "David Gallows",
-        "photo": "https://webmention.io/avatar/pbs.twimg.com/e7b750d847ffdcfc174845aadc9196125b83647258a1789bb2b92b493d223e8b.jpg",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/e7b750d847ffdcfc174845aadc9196125b83647258a1789bb2b92b493d223e8b.jpg",
         "url": "https://twitter.com/DavidGallows"
       },
       "url": "https://twitter.com/pdcawley/status/1517783526049001472#favorited-by-877428607",
@@ -1432,6 +1438,7 @@ GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=
       "wm-id": 1385464,
       "wm-source": "https://brid.gy/like/twitter/pdcawley/1517783526049001472/877428607",
       "wm-target": "https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/",
+      "wm-protocol": "webmention",
       "like-of": "https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/",
       "wm-property": "like-of",
       "wm-private": false
@@ -1441,7 +1448,7 @@ GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=
       "author": {
         "type": "card",
         "name": "David Gallows",
-        "photo": "https://webmention.io/avatar/pbs.twimg.com/e7b750d847ffdcfc174845aadc9196125b83647258a1789bb2b92b493d223e8b.jpg",
+        "photo": "https://avatars.webmention.io/pbs.twimg.com/e7b750d847ffdcfc174845aadc9196125b83647258a1789bb2b92b493d223e8b.jpg",
         "url": "https://twitter.com/DavidGallows"
       },
       "url": "https://twitter.com/DavidGallows/status/1517852498555555840",
@@ -1450,6 +1457,7 @@ GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=
       "wm-id": 1385681,
       "wm-source": "https://brid.gy/comment/twitter/pdcawley/1517783526049001472/1517852498555555840",
       "wm-target": "https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/",
+      "wm-protocol": "webmention",
       "content": {
         "html": "enjoyed reading about it :)\n\nI've been a trackball man since the word go, But have never been able to move away from Qwerty keyboards\n<a class=\"u-mention\" href=\"http://bofh.org.uk/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/DrugCrazed\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/keyboardio\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/pdcawley\"></a>",
         "text": "enjoyed reading about it :)\n\nI've been a trackball man since the word go, But have never been able to move away from Qwerty keyboards"
@@ -1463,16 +1471,16 @@ GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=
 // GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=https://bofh.org.uk/2013/03/10/in-which-piers-prepares-to-void-the-warranty/
 // HTTP/1.1 200 OK
 // Content-Type: application/json;charset=UTF-8
-// Content-Length: 2019
+// Content-Length: 2075
 // Connection: keep-alive
 // Status: 200 OK
 // Cache-Control: no-store
 // Access-Control-Allow-Origin: *
 // X-Content-Type-Options: nosniff
-// Date: Wed, 27 Apr 2022 10:48:54 GMT
+// Date: Thu, 21 Aug 2025 20:56:16 GMT
 // X-Powered-By: Phusion Passenger 5.3.1
 // Server: nginx/1.14.0 + Phusion Passenger 5.3.1
-// Request duration: 0.234278s
+// Request duration: 0.160096s
 #+END_SRC
 
 Lot's of lovely structured data. Webmention.io has worked out that one mention was a ~like-of~ [[file:/2013/03/10/in-which-piers-prepares-to-void-the-warranty/][the blog post]], and the other was ~in-reply-to~ it. We get details of the author of the mentioning post and, where appropriate, its content. If I wanted to run more Javascript on here (and I want to run less), I could attach a script which would consume the post's feed and build a display of all of the mentions. It has a certain appeal, just add one script to the site and a dummy ~<div>~ or ~<ul>~ somewhere and I'm laughing. Plenty of sites do just that.
