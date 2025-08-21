@@ -1132,7 +1132,10 @@ Don't keep doing it, mind, or you'll start looking like the kite flying asshole 
 :export_date: 2020-05-12
 :ID:       950F43FF-3632-48D9-B768-02CC5154A220
 :END:
-If you're at all like me, you have content on a bunch of different sites (Instagram, Youtube, Flickr, Soundcloud, Bandcamp...) and, especially for multimedia content, it's great to be able to link to 'live' versions of that content. Of course, all those sites will let you 'share' content and usually have an 'embed' option that hands you a bunch of HTML that you can paste into your blog entry. But screw that! I'm a programmer for whom laziness is one of the cardinal virtues -- if it's at all possible, I prefer to let the computer do the work for me.@@hugo:{{< marginnote >}}@@If nothing else, once I've got the programming right, it's less likely to screw up than me@@hugo:{{< /marginnote >}}@@
+If you're at all like me, you have content on a bunch of different sites (Instagram, Youtube, Flickr, Soundcloud, Bandcamp...) and, especially for multimedia content, it's great to be able to link to 'live' versions of that content. Of course, all those sites will let you 'share' content and usually have an 'embed' option that hands you a bunch of HTML that you can paste into your blog entry. But screw that! I'm a programmer for whom laziness is one of the cardinal virtues -- if it's at all possible, I prefer to let the computer do the work for me.
+#+begin_marginnote
+If nothing else, once I've got the programming right, it's less likely to screw up than me
+#+end_marginnote
 
 Hugo[fn:1] sort of supports this out of the box with its ~youtube~, ~instagram~, ~vimeo~ etc. built in shortcodes. The thing is, they're not lazy enough -- you have to dig into each URL to extract a content ID and pass that in to ~{{%/* youtube kb-Aq6S4QZQ */%}}~ or whatever. Which would be kind of fine, if you weren't used to the way sites like Facebook, Twitter, Tumblr and so on work. With those sites, you enter a URL and they disappear off behind the scenes and fill in a fancy preview of the page you linked to. Why can't Hugo do that?
 
@@ -1140,11 +1143,15 @@ Hugo[fn:1] sort of supports this out of the box with its ~youtube~, ~instagram~,
 
 Well, it can. It just takes a little work.[fn:2] The ~question~ to ask is how do all those user friendly sites do there thing? Twitter and Facebook, being the walled garden behemoths that they are do it by dictating two different microformats
 #+begin_marginnote
-
 Of bloody course!
-@@hugo:{{%/marginnote%}}@@ that live in a page's ~HEAD~ section. The microformat approach has a good deal to be said for it: In theory, you can just make a ~HEAD~ request to the URL you're interested in, parse out the microformat of your choice and build your own media card. I've not worked out how to do this yet though. However, before Twitter and FB started throwing their weight around, there was an open standard that lots of sites support, it's /really/ easy to use. It's called [[https://oembed.com/][oembed]] and it's great. The idea is that it too is discoverable via a ~HEAD~ request to your media page. You look for something matching src_html{<link rel="alternate" type="application/json+oembed" href="..." ...>}, make a JSON request to the ~href~ url and paste in the contents of the ~html~ key in the object you get back. The catch, of course, is that you still end up having to parse the document's HEAD.
+#+end_marginnote
+that live in a page's ~HEAD~ section. The microformat approach has a good deal to be said for it: In theory, you can just make a ~HEAD~ request to the URL you're interested in, parse out the microformat of your choice and build your own media card. I've not worked out how to do this yet though. However, before Twitter and FB started throwing their weight around, there was an open standard that lots of sites support, it's /really/ easy to use. It's called [[https://oembed.com/][oembed]] and it's great. The idea is that it too is discoverable via a ~HEAD~ request to your media page. You look for something matching src_html{<link rel="alternate" type="application/json+oembed" href="..." ...>}, make a JSON request to the ~href~ url and paste in the contents of the ~html~ key in the object you get back. The catch, of course, is that you still end up having to parse the document's HEAD.
 
-The cool thing about ~oembed~, though, is that you /can/ discover its endpoints that way,@@hugo:{{<marginnote>}}@@Though, I'm seeing fewer and fewer oembed links cropping up in sites that I /know/ support the protocol@@hugo:{{</marginnote>}}@@ but there's also a big list of known endpoints on the [[https://oembed.com/][Oembed homepage]], which is also available as a big old JSON object if you want to go the full programmatic route. There are JavaScript libraries available that will walk your webpage and the JSON object and replace all your links with chunks of embedded content, that that's what I used to use on this site. But... that's not how I currently roll at Just A Summary. There are currently no ~<script>~ tags to be found on here and I plan to keep it that way. So I wrote a Hugo shortcode. Here it is:
+The cool thing about ~oembed~, though, is that you /can/ discover its endpoints that way,
+#+begin_marginnote
+Though, I'm seeing fewer and fewer oembed links cropping up in sites that I /know/ support the protocol
+#+end_marginnote
+ but there's also a big list of known endpoints on the [[https://oembed.com/][Oembed homepage]], which is also available as a big old JSON object if you want to go the full programmatic route. There are JavaScript libraries available that will walk your webpage and the JSON object and replace all your links with chunks of embedded content, that that's what I used to use on this site. But... that's not how I currently roll at Just A Summary. There are currently no ~<script>~ tags to be found on here and I plan to keep it that way. So I wrote a Hugo shortcode. Here it is:
 
 #+name: Initial embed shortcode
 #+caption: Initial embed shortcode
@@ -1163,7 +1170,10 @@ We use it like: ~{{</* embed "https://youtub.be/kb-Aq6S4QZQ" */>}}~, which displ
 
 @@hugo:{{< embed "https://youtu.be/kb-Aq6S4QZQ" />}}@@
 
-@@hugo:{{% newthought %}}@@"But how does it work?"@@hugo:{{% /newthought %}}@@ I hear you ask? It works in conjunction with some per-site data entries that I've added to the directory ~data/embed~ in this site's base directory. You might have guessed that the data entries are maps with two entries, a ~pattern~ and an ~endpoint~. If the URL argument matches the ~.pattern~, then we make a ~getJSON~ request to ~.endpoint~ with a sanitised version of the URL argument tacked on as our query string and inserting the JSON response's ~.html~ entry. @@hugo:{{< marginnote >}}@@It's rather tricky to implement oembed for on a strictly static site, but I love the simplicity of it. I have a few thoughts abotu that though. Watch this space.@@hugo:{{</marginnote>}}@@
+{{{newthought("But how does it work?")}}} I hear you ask? It works in conjunction with some per-site data entries that I've added to the directory ~data/embed~ in this site's base directory. You might have guessed that the data entries are maps with two entries, a ~pattern~ and an ~endpoint~. If the URL argument matches the ~.pattern~, then we make a ~getJSON~ request to ~.endpoint~ with a sanitised version of the URL argument tacked on as our query string and inserting the JSON response's ~.html~ entry.
+#+begin_marginnote
+It's rather tricky to implement oembed for on a strictly static site, but I love the simplicity of it. I have a few thoughts about that though. Watch this space.
+#+end_marginnote
 
 I made the data files by taking the big JSON object from https://oembed.com/providers.json and massaging the supplied patterns into regular expressions. In theory, I could write a script to do the conversion for me, but I'm only really interested in four providers for this site, so I just did it by hand. So the entry for [[https://instagram.com/][Instagram]]:
 
@@ -1217,7 +1227,11 @@ pattern: "^https?://(www\\.)?instagr(\\.am|am\\.com)/((.*/)?p/|tv/)"
 
 Collapsing all those ~scheme~ entries down to a single regular expression was a slight pain to do by hand, and I'm not /entirely/ sure the regular expression will match exactly what the schemes match, but it's not broken on any of the Instagram links I've thrown at it so far, so that's good enough for me.
 
-@@hugo:{{< newthought >}}@@This isn't the shortcode's final form@@hugo:{{< /newthought >}}@@ -- it's not as robust as I'd like it to be in the face of a missing or temporarily down oembed endpoint, so it would be good to have some kind of fallback in case an endpoint changes or goes away. Also, there are some sites that have their own methods for embedding previews, which don't support oembed @@hugo:{{< marginnote >}}@@All those IndieWeb sites that use ~h-entry~ and ~h-card~ microformats to make the webpage machine parseable, for instance.@@hugo:{{< /marginnote >}}@@ and it would be great to get at those somehow. I suspect I will end up with a shortcode which is essentially a big case statement dispatching to different partials which will handle the real rendering. Again... watch this space
+{{{newthought(This isn't the shortcode's final form)}}} -- it's not as robust as I'd like it to be in the face of a missing or temporarily down oembed endpoint, so it would be good to have some kind of fallback in case an endpoint changes or goes away. Also, there are some sites that have their own methods for embedding previews, which don't support oembed
+#+begin_marginnote
+All those IndieWeb sites that use ~h-entry~ and ~h-card~ microformats to make the webpage machine parseable, for instance.
+#+end_marginnote
+and it would be great to get at those somehow. I suspect I will end up with a shortcode which is essentially a big case statement dispatching to different partials which will handle the real rendering. Again... watch this space
 
 
 ** DONE «tap tap» is this thing on? :indieweb:
@@ -1293,7 +1307,6 @@ But never underestimate the ability of a long time Emacs user to complicate thin
 The beauty of using a static site generator to build your website is supposed to be that it's all delightfully simple. Simple markdown formatted files go in at one end and a slim, fast and easy to serve website comes out the other end. All that remains is to upload those files to the appropriate directory on your server and all is well.
 
 But never underestimate the ability of a long time Emacs user to complicate things. For instance, markdown is all well and good, but I've been doing most of my writing in [[https://orgmode.org/][Org Mode]][fn:3] so I really want to stay in Org mode to write these blog posts. [[https://gohugo.io/][Hugo]] understands =.org= files, so I could just lean on that, but the way Hugo treats org files seems slightly out of whack with what I think of as the Org way and I'd end up having to stick with the subset of org syntax that Hugo know. So I use [[https://ox-hugo.scripter.co][ox-hugo]], there's a bit of configuration needed to make it work the way I like, but I prefer to change software to accommodate me rather than change me to accommodate software
-
 #+begin_marginnote
 I'd go so far as to say it's a point of pride.
 #+end_marginnote
@@ -1313,7 +1326,7 @@ I didn't worry about this for /ages,/ but it niggled at me. Then one day I read 
 
 
 #+begin_marginnote
-Yes, Emacs is an editor, but if you do 「src_emacs-lisp{emacs all‑posts.org ‑‑batch ‑l ox-hugo ‑‑eval='(org-hugo-export-wim-to-md t)' ‑‑kill} 」 it will happily execute any lisp code you care to ask it to.
+Yes, Emacs is an editor, but if you do 「src_emacs-lisp[:exports code]{emacs all‑posts.org ‑‑batch ‑l ox-hugo ‑‑eval='(org-hugo-export-wim-to-md t)' ‑‑kill} 」 it will happily execute any lisp code you care to ask it to.
 #+end_marginnote
 in batch mode. The  markdown files never exist anywhere that anyone can edit them. So, of course I had to do that. Again, fiddly to set up, and arguably only of philosophical benefit, but worth it, I think.[fn:4]
 
@@ -1464,13 +1477,25 @@ GET https://webmention.io/api/mentions.jf2?per-page=2&page=0&sort-dir=up&target=
 
 Lot's of lovely structured data. Webmention.io has worked out that one mention was a ~like-of~ [[file:/2013/03/10/in-which-piers-prepares-to-void-the-warranty/][the blog post]], and the other was ~in-reply-to~ it. We get details of the author of the mentioning post and, where appropriate, its content. If I wanted to run more Javascript on here (and I want to run less), I could attach a script which would consume the post's feed and build a display of all of the mentions. It has a certain appeal, just add one script to the site and a dummy ~<div>~ or ~<ul>~ somewhere and I'm laughing. Plenty of sites do just that.
 
-This is not one of those sites. {{{marginnote(Of course, this couldn't possibly because I tried to use the Javascript, couldn't make it work and decided to actually include webmentions in the generated files, that would be foolish!)}}} It's not even the first statically generated site to go down the route of statically generating a post's webmentions. I was mostly inspired by [[https://randomgeekery.org][Brian Wisti]]'s post about [[https://randomgeekery.org/post/2020/11/using-the-webmentionio-api/][consuming the webmention.io API]] (except, of course, I don't use /any/ of his actual code.)
+This is not one of those sites.
+#+begin_marginnote
+Of course, this couldn't possibly because I tried to use the Javascript, couldn't make it work and decided to actually include webmentions in the generated files, that would be foolish!
+#+end_marginnote
+It's not even the first statically generated site to go down the route of statically generating a post's webmentions. I was mostly inspired by [[https://randomgeekery.org][Brian Wisti]]'s post about [[https://randomgeekery.org/post/2020/11/using-the-webmentionio-api/][consuming the webmention.io API]] (except, of course, I don't use /any/ of his actual code.)
 
-The site's [[https://github.com/pdcawley/bofh.org.uk/][Github repo]] is configured so any commit on the ~main~  @@hugo:{{% marginnote %}}It's 2022 already -- let's stop having 'master' branches, eh?{{% /marginnote %}}@@ branch fires off a workflow that builds the site and ships all the files over to the webserver using ~rsync.~ If I take Brian's idea for grabbing all my webmentions {{{marginnote(I set up the ~rel="webmention"~ link /ages/ ago and never quite got around to doing anything with the data)}}} and ignore his warning about splitting it out into Hugo data files and just do it, I can start building the webmentions for posts. Huzzah!
+The site's [[https://github.com/pdcawley/bofh.org.uk/][Github repo]] is configured so any commit on the ~main~
+#+begin_marginnote
+It's 2022 already -- let's stop having 'master' branches, eh?
+#+end_marginnote
+branch fires off a workflow that builds the site and ships all the files over to the webserver using ~rsync.~ If I take Brian's idea for grabbing all my webmentions {{{marginnote(I set up the ~rel="webmention"~ link /ages/ ago and never quite got around to doing anything with the data)}}} and ignore his warning about splitting it out into Hugo data files and just do it, I can start building the webmentions for posts. Huzzah!
 
 {{{newthought(It started so innocently,)}}} I have a server here that hosts a couple of Docker images and one of them is [[https://n8n.io/][N8N]], a super powered, self-hosted open source replacement for [[https://ifttt.com/][IFTTT]] with all sorts of hooks into other services and a much more powerful Github client than the IFTTT offering. It's a bit… JavaScript-y for my tastes, but you can't have everything.
 
-With a bit of fiddling, I had something that grabbed the webmention.io feed for the site every few hours, split it out into multiple files in ~data/mentions~ and updated GitHub. That's what I was celebrating in [[file:post/we-have-webmentions.pre-processed.org][We have WebMentions]]. I've moved on {{{marginnote(A cynical person might well read that as "broken things")}}} since then, because /of course/ sorting out de-duplication and remembering information between runs of the script is annoyingly fiddly and full of edge cases. Basically, I ended up trying to emulate a proper database. Which is why the latest iteration of webmention handling uses a proper database. I would have used [[https://sqlite.org/][SQLite]], but N8N doesn't have a SQLite node available out of the box. It does have a [[https://postgresql.org/][PostgreSQL]] one though, and recent versions of that have really good JSON support. I'd tell you more, but ~wc-mode~ tells me I'm nearly 2500 words in to this article, I think I'll wrap up for now and promise to give you the gory details in an upcoming article.
+With a bit of fiddling, I had something that grabbed the webmention.io feed for the site every few hours, split it out into multiple files in ~data/mentions~ and updated GitHub. That's what I was celebrating in [[file:post/we-have-webmentions.pre-processed.org][We have WebMentions]]. I've moved on
+#+begin_marginnote
+A cynical person might well read that as "broken things"
+#+end_marginnote
+since then, because /of course/ sorting out de-duplication and remembering information between runs of the script is annoyingly fiddly and full of edge cases. Basically, I ended up trying to emulate a proper database. Which is why the latest iteration of webmention handling uses a proper database. I would have used [[https://sqlite.org/][SQLite]], but N8N doesn't have a SQLite node available out of the box. It does have a [[https://postgresql.org/][PostgreSQL]] one though, and recent versions of that have really good JSON support. I'd tell you more, but ~wc-mode~ tells me I'm nearly 2500 words in to this article, I think I'll wrap up for now and promise to give you the gory details in an upcoming article.
 
 ** DONE Evolving my streaming setup
 CLOSED: [2022-05-10 Tue 17:10]
