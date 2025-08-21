@@ -977,8 +977,34 @@ Now, of course, it all seems a clearer. Thesis. Antithesis. Synthesis. Ged does 
 Of course you need to read this book. It's language sings and the places and people it evokes are beautifully drawn. Rereading this after more than 30 years, so much was familiar. I would have said I'd forgotten almost all of it but the bare outline of the story and a few character names, but that stuff clearly went in deep and helped make me myself because as I read, the whole shape of the thing unfolded in my head. It was almost like recognising roads and pathways in a place you holidayed repeatedly as a kid, then didn't return for 20 years. Familiar and surprising at the same time. "Oh yeah, that's where Daniel used to live! And do you remember walking up there to buy ice creams at the village shop? Oh! I'd forgotten this view!"
 
 Right... onwards to /The Tombs of Atuan./
+** DONE Service Model, by Adrian Tchaikovsky :sf:audiobook:
+CLOSED: [2025-08-21 Thu 21:08]
+:PROPERTIES:
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work-author "Adrian Tchaikovsky"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work-title "Service Model"
+:EXPORT_HUGO_BUNDLE: adrian-tchaikovski-service-model
+:EXPORT_FILE_NAME: index
+:END:
 
+#+begin_description
+A robot valet kills its master for no apparent reason, then heads off on a /Pilgrim's Progress/ to understand his malfunction.
+#+end_description
 
+I'm very late coming to Tchaikovsky's work and picked this up mostly because of an Audible recommendation. A very good recommendation it was too.
+
+Charles is a robotic valet, and one morning, completely out of the blue, he slits his master's throat in lieu of shaving him and (eventually) sets off on a pilgrimage to find out why. The world Charles exists in is… broken and his journey to enlightenment is longer and stranger than he ever expected.
+
+Charles is very definitely /not/ human and his motivations are not exactly what you and I might think of as motivations. He has a task list. He is programmed to work through it. That is all.
+
+He doesn't want anything. He can't feel anything. Not fear, hope, surprise, disappointment. And he's okay with that. Well, he would be if "being okay with something" were something he could do.
+
+Because of Charles' inhuman viewpoint, part of the pleasure of the book is working out what's going on that Charles is incapable of understanding.
+
+It's been a long time since I read /Pilgrim's Progress/, but it's definitely the work that /Service Model/ reminds me of. Charles, despite murdering his master, is an innocent abroad, travelling through a series of encounters that he doesn't necessarily understand in an effort to clear his task list.
+
+It's also bloody funny in a dry, despairing kind of way.
+
+{{{newthought(I listened to audiobook,)}}} read by the author, which I can recommend highly. Tchaikovsky's a great narrator with just the right level of emotional detachment, but the jokes still land beautifully. A very smooth listen.
 * Posts
 
 ** DONE My Virtual Gig-Like Thing
