@@ -53,7 +53,13 @@ p.verse, .verse, p.verse + p {
 
 /* Webmention stuff */
 
-article>section.content {
+article.note section.content{
+    &>p:first-child {
+        margin-top: 0;
+    }
+}
+
+article>section.content, article>section.p-summary {
     &>p:first-child::first-line, h2+p::first-line {
         font-variant: small-caps;
     }

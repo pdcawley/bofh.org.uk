@@ -2132,6 +2132,10 @@ It's a song swap tradition that the first question I ask a new guest is to ask t
 
 **** Payment
 The show is supported by people chucking money in the virtual hat at [[https://ko-fi.com/pdcawley]]. On the following Monday, I tot up the total takings and send you half through the magic of Paypal.
+* Notes :@note:
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: /note
+:END:
 
 * Footnotes
 :PROPERTIES:
