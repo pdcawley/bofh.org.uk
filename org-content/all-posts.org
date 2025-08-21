@@ -877,6 +877,7 @@ I think, however, I'm going to leave it alone until I have to write another recu
 * Book Reports                                            :@book-report:
 :PROPERTIES:
 :export_hugo_custom_front_matter: :series "Book Reports"
+:export_hugo_section: /book
 :ID:       AE556F3E-BD2C-46E6-BE13-AD819A39EE6D
 :END:
 
@@ -885,6 +886,7 @@ I think, however, I'm going to leave it alone until I have to write another recu
 :EXPORT_FILE_NAME: a-wizard-of-earthsea
 :export_hugo_slug: a-wizard-of-earthsea
 :export_date: 2019-05-30
+:export_hugo_aliases: /2019/05/30/a-wizard-of-earthsea/
 :ID:       DB913EAC-FB57-44B7-9645-DBD26957CE72
 :END:
 This was the first.
