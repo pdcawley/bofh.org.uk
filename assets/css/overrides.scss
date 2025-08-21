@@ -18,8 +18,14 @@ h4 {
     font-size: 1.6rem
 }
 
+// And the text indent. 4rem is too much
+
 p+p {
     text-indent: 1.5rem;
+}
+
+p+p > .newthought{
+	margin-left: -3rem;
 }
 
 // Syndication/linkage stuff
