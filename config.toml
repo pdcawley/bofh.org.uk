@@ -12,6 +12,8 @@ pygmentsstyle = "monokai"
 pagination.PagerSize = 20
 googleAnalytics = "UA-135014-1"
 
+summaryLength = 1
+
 [mediaTypes."application/atom+xml"]
     suffixes = ["xml"]
 
