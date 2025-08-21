@@ -1,5 +1,5 @@
 #+hugo_section: page/
-#+hugo_base_dir: ../
+#+hugo_base_dir: .
 #+hugo_auto_set_lastmod: t
 #+startup: inlineimages
 #+property: header-args:sql :session reporter :exports result :colnames yes :engine postgresql :results replace table

@@ -1,6 +1,6 @@
 # -*- mode: org; -*-
 #+hugo_section: post/
-#+hugo_base_dir: ../
+#+hugo_base_dir: .
 #+export_hugo_weight: auto
 #+hugo_auto_set_lastmod: t
 #+startup: inlineimages
