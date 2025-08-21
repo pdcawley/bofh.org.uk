@@ -300,4 +300,18 @@ body.home {
         position: unset;
         width: auto;
     }
+
+    main > article {
+        > section.e-content, section.p-summary {
+            > *, > * > li {
+                padding-right: 0;
+                width: 100%;
+            }
+        }
+    }
+
+    .h-entry .p-summary > p {
+        padding-right: 0;
+        width: 100%;
+    }
 }
