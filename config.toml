@@ -9,7 +9,6 @@ title = "Just a Summary"
 PygmentsCodeFences = true
 pygmentsusecolors = true
 pygmentsstyle = "monokai"
-pagination.PagerSize = 20
 googleAnalytics = "UA-135014-1"
 
 summaryLength = 1
@@ -112,7 +111,7 @@ summaryLength = 1
     Description = "Piers Cawley practices punditry"
     iso8601_format = "2006-01-02T15:04:05Z0000"
     iso8601_html_format = "<span class='date'>2006-01-02</span><span class='time-sep'>T</span><span class='time-and-zone'><span class='time-part'>15:04:05</span><span class='zone-part'>Z0000</span></span>"
-    pagination_size = 20
+    pagination_size = 15
     microsub_url = "https://aperture.p3k.io/microsub/745"
 
   [params.feed]
