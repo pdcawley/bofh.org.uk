@@ -65,6 +65,10 @@ article.note section.content{
     }
 }
 
+article.note {
+    margin-top: 2.1rem;
+}
+
 article>section.content, article>section.p-summary {
     &>p:first-child::first-line, h2+p::first-line {
         font-variant: small-caps;
