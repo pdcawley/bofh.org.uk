@@ -244,6 +244,25 @@ section#webmentions {
         }
     }
 }
+
+.content {
+  ul.tags {
+    padding-left: 0;
+    
+    > li {
+      list-style-type: none;
+      font-family: $small-caps;
+      font-variant: small-caps;
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+      display: inline;
+      padding-right: 0.5rem;
+      margin: 0.2rem 0 0.2rem 0;
+    }
+  }
+}
+
+
 @media screen and (max-width: 480px) {
     .articles article {
         p,li {
