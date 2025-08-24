@@ -211,10 +211,10 @@ section#webmentions {
 }
 
 .h-feed .note {
-  h2:first-child {
+  h2 {
     top: -1.3rem;
-    margin-left: -15vw;
     margin-right: 100%;
+    width: 12vw;
     right: 0;
     font-size: 1rem;
     position: absolute;
@@ -222,14 +222,11 @@ section#webmentions {
     padding-right: 0.5rem;
     padding-left: 1rem;
     vertical-align: baseline;
-    .dt-published {
-      white-space: nowrap;
-    }
   }
 }
 
 
-.h-feed .h-entry,  {
+.h-entry {
   figure.cover-thumbnail {
     position: absolute;
     margin-left: -15vw;
@@ -249,6 +246,12 @@ section#webmentions {
   }
 }
 
+main > .h-entry {
+  figure.cover-thumbnail {
+    top: 0;
+    padding-top: 2.8rem;
+  }
+}
 
 article.t-note > header > p.colophon {
   display: none;
@@ -263,7 +266,7 @@ header p.colophon {
   }
   .dt-published {
     position: absolute;
-    top: .7rem;
+    top: .85rem;
     right: 0;
     font-size: 1rem;
     margin-left: -15vw;
@@ -287,19 +290,43 @@ header p.colophon {
   }
 }
 
+.h-feed .h-entry {
+  footer .colophon, header ul.tags {
+    top: 0.75rem;
+  }
+}
+
 .h-entry {
   position: relative;
+
+  footer .colophon, header ul.tags {
+    position: absolute;
+    top: 1.2rem;
+    padding-top: 0;
+    line-height: 1.4em;
+    vertical-align: baseline;
+
+  }
+
+  header ul.tags {
+    margin-left: 70vw;
+    padding-left: .75rem;
+    padding-right: 1rem;
+    width: calc(15vw);
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    > li {
+      font-size: 1rem;
+      line-height: 1.2rem;
+      padding-right: .25em;
+    }
+  }
 }
 
 .h-feed .h-entry {
   height: auto;
 
-  footer .colophon, h2+ul.tags {
-    position: absolute;
-    top: calc(2.1rem - 1.4em);
-    padding-top: 0;
-    line-height: 1.4em;
-  }
   footer .colophon {
     padding-left: 1rem;
     padding-right: 0.5rem;
@@ -312,22 +339,6 @@ header p.colophon {
     font-weight: 400;
     .authorship, .update-details {
       display: none;
-    }
-  }
-
-  h2+ul.tags {
-    margin-left: 70vw;
-    padding-left: .75rem;
-    padding-right: 1rem;
-    width: calc(15vw - 1rem);
-    text-align: left;
-    font-size: 1rem;
-    line-height: 1.1rem;
-    > li {
-      vertical-align: top;
-      font-size: 1rem;
-      line-height: 1.2rem;
-      padding-right: 0;
     }
   }
 }
