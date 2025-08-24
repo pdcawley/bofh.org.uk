@@ -55,9 +55,15 @@ summaryLength = 1
 
 [[menu.topnav]]
     name = "Posts"
-    pre = "<i class='fa fa-book'></i> "
+    pre = "<i class='fa fa-newspaper-o'></i> "
     url = "/post/"
     weight = 10
+
+[[menu.topnav]]
+    name = "Reading"
+    pre = "<i class='fa fa-book'></i> "
+    url = "/book/"
+    weight = 15
 
 [[menu.topnav]]
     name = "About Piers"
