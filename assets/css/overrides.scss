@@ -1,5 +1,17 @@
 @import "settings";
 
+footer.group.credits {
+  width: 100%;
+  padding-top: 0;
+  .paginator {
+    border-top: none;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+  }
+}
+ul.page-footer-menu {
+  margin-top: .75rem;
+}
 code.inline {
   &::before {
     color: initial;
