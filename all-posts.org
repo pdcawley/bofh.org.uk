@@ -977,11 +977,12 @@ Now, of course, it all seems a clearer. Thesis. Antithesis. Synthesis. Ged does 
 Of course you need to read this book. It's language sings and the places and people it evokes are beautifully drawn. Rereading this after more than 30 years, so much was familiar. I would have said I'd forgotten almost all of it but the bare outline of the story and a few character names, but that stuff clearly went in deep and helped make me myself because as I read, the whole shape of the thing unfolded in my head. It was almost like recognising roads and pathways in a place you holidayed repeatedly as a kid, then didn't return for 20 years. Familiar and surprising at the same time. "Oh yeah, that's where Daniel used to live! And do you remember walking up there to buy ice creams at the village shop? Oh! I'd forgotten this view!"
 
 Right... onwards to /The Tombs of Atuan./
-** DONE Service Model, by Adrian Tchaikovsky :sf:audiobook:
+** DONE /Service Model/, by Adrian Tchaikovsky :sf:audiobook:
 CLOSED: [2025-08-21 Thu 21:08]
 :PROPERTIES:
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work-author "Adrian Tchaikovsky"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work-title "Service Model"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work_author "Adrian Tchaikovsky"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work_title "Service Model"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover '((s . "https://covers.openlibrary.org/b/olid/OL59424202M-S.jpg") (m . "https://covers.openlibrary.org/b/olid/OL59424202M-M.jpg") (l . "https://covers.openlibrary.org/b/olid/OL59424202M-L.jpg") (caption .  "<cite>Service Model</cite> by Adrian Tchaikovsky"))
 :EXPORT_HUGO_BUNDLE: adrian-tchaikovski-service-model
 :EXPORT_FILE_NAME: index
 :END:
@@ -990,7 +991,7 @@ CLOSED: [2025-08-21 Thu 21:08]
 A robot valet kills its master for no apparent reason, then heads off on a /Pilgrim's Progress/ to understand his malfunction.
 #+end_description
 
-I'm very late coming to Tchaikovsky's work and picked this up mostly because of an Audible recommendation. A very good recommendation it was too.
+I'm very late to Tchaikovsky's work and picked this up mostly because of an Audible recommendation. A very good recommendation it was too.
 
 Charles is a robotic valet, and one morning, completely out of the blue, he slits his master's throat in lieu of shaving him and (eventually) sets off on a pilgrimage to find out why. The world Charles exists in is… broken and his journey to enlightenment is longer and stranger than he ever expected.
 
@@ -1005,6 +1006,18 @@ It's been a long time since I read /Pilgrim's Progress/, but it's definitely the
 It's also bloody funny in a dry, despairing kind of way.
 
 {{{newthought(I listened to the audiobook,)}}} read by the author, which I can recommend highly. Tchaikovsky's a great narrator with just the right level of emotional detachment, but the jokes still land beautifully. A very smooth listen.
+** TODO Rivers of London, by Ben Aaronovitch :sf:fantasy:
+:PROPERTIES:
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((type . book) (title . "Rivers of London") (author . "Ben Aaronovitch"))
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover '((s . "https://covers.openlibrary.org/b/olid/OL26814272M-S.jpg") (m . "https://covers.openlibrary.org/b/olid/OL26814272M-M.jpg") (l . "https://covers.openlibrary.org/b/olid/OL26814272M-L.jpg"))
+:EXPORT_HUGO_BUNDLE: ben-aaronovitch-rivers-of-london
+:EXPORT_FILE_NAME: index
+:END:
+
+One of these  fine days I'll actually write a book report on this one! As it is, I'm mostly fiddling with it to check that I'm styling things right. And making this paragraph longer and longer and longer and filling it up with gibberish until the summary as a whole is taller than the thumbnail wants to go.
+
+But, for now, you'll have to make do with placeholder text.
+
 * Posts
 
 ** DONE My Virtual Gig-Like Thing
@@ -2280,7 +2293,23 @@ The show is supported by people chucking money in the virtual hat at [[https://k
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /note
 :END:
+** DONE [2025-08-21 Thu 22:23]
+ocnCLOSED: [2025-08-21 Thu 22:27]
+:PROPERTIES:
+:export_file_name: 1
+:END:
+I'm working on adding short notes without titles to the blog.
 
+Basically something that maps neatly to Mastodon toots or Bluesky skeets. The chief difficulty will likely be styling them in a fashion that's consistent with the rest of the blog, but still compact
+
+** DONE [2025-08-22 Fri 23:12]
+CLOSED: [2025-08-22 Fri 23:14]
+:PROPERTIES:
+:export_file_name: 2
+:END:
+Notes appear to be working.
+
+I have the horrible feeling that the CSS I'm using to style things is about as inelegant as it's possible to be, but things to seem to be looking okay in a decent array of viewport sizes. I'll call that a win.
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
