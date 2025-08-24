@@ -2303,13 +2303,22 @@ I'm working on adding short notes without titles to the blog.
 Basically something that maps neatly to Mastodon toots or Bluesky skeets. The chief difficulty will likely be styling them in a fashion that's consistent with the rest of the blog, but still compact
 
 ** DONE [2025-08-22 Fri 23:12]
-CLOSED: [2025-08-22 Fri 23:14]
+CLOSED: [2025-08-24 Sun 11:42]
 :PROPERTIES:
 :export_file_name: 2
 :END:
-Notes appear to be working.
 
+Notes appear to be working.
 I have the horrible feeling that the CSS I'm using to style things is about as inelegant as it's possible to be, but things to seem to be looking okay in a decent array of viewport sizes. I'll call that a win.
+
+** DONE [2025-08-24 Sun 11:38]
+CLOSED: [2025-08-24 Sun 11:42]
+:PROPERTIES:
+:export_file_name: 3
+:END:
+I feel like I'm in a maze of twisty SCSS files and am getting very confuzzled. However, the layout's mostly working except in a narrow viewport, when the timestamp on a note happily fits in the left margin, but the timestamp on a post is truncated to the left because the font size doesn't seem to reduce as much. As far as I can tell, they're both the same size according to the stylesheet.
+
+Ho hum… mostly working is better than not working. Check out the book cover thumbnails!
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
