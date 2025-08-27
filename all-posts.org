@@ -980,8 +980,7 @@ Right... onwards to /The Tombs of Atuan./
 ** DONE /Service Model/, by Adrian Tchaikovsky :sf:audiobook:
 CLOSED: [2025-08-21 Thu 21:08]
 :PROPERTIES:
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work_author "Adrian Tchaikovsky"
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work_title "Service Model"
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((author . "Adrian Tchaikovsky") (title . "Service Model") (type . "book"))
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover '((s . "https://covers.openlibrary.org/b/olid/OL59424202M-S.jpg") (m . "https://covers.openlibrary.org/b/olid/OL59424202M-M.jpg") (l . "https://covers.openlibrary.org/b/olid/OL59424202M-L.jpg") (caption .  "<cite>Service Model</cite> by Adrian Tchaikovsky"))
 :EXPORT_HUGO_BUNDLE: adrian-tchaikovski-service-model
 :EXPORT_FILE_NAME: index
