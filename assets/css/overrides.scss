@@ -21,7 +21,19 @@ code.inline {
     color: initial;
     content: "」"
   }
+}
 
+.highlight {
+  .chroma code {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    color: rgb(17,17,17);
+    width: 100%;
+  }
+}
+
+pre {
+  width: 100%;
 }
 
 // Tweak the smaller heading sizes
