@@ -6,12 +6,17 @@ canonifyurls = "true"
 theme = ["hugo-tufte"]
 languageCode = "en-gb"
 title = "Just a Summary"
-PygmentsCodeFences = true
-pygmentsusecolors = true
-pygmentsstyle = "monokai"
 googleAnalytics = "UA-135014-1"
 
 summaryLength = 1
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    anchorLineNos = false
+    noClasses = false
 
 [mediaTypes."application/atom+xml"]
     suffixes = ["xml"]
@@ -42,9 +47,6 @@ summaryLength = 1
 
 [services.RSS]
     Limit = 40
-
-[markup.goldmark.renderer]
-    unsafe = true
 
 [[menu.topnav]]
     name = "Home"
