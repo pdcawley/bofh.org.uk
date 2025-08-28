@@ -2288,6 +2288,233 @@ It's a song swap tradition that the first question I ask a new guest is to ask t
 
 **** Payment
 The show is supported by people chucking money in the virtual hat at [[https://ko-fi.com/pdcawley]]. On the following Monday, I tot up the total takings and send you half through the magic of Paypal.
+
+** DONE Fiddling with structural templates in ~Org-mode~
+CLOSED: [2025-08-27 Wed 21:59]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 20250827-fiddling-with-structural-templates-in-org-mode
+:EXPORT_FILE_NAME: index
+:END:
+
+ #+begin_description
+I spent a few hours reducing a small annoyance related to the way I use Emacs to maintain its literate configuration file by incrementally implementing slightly better processes until I reached the point where it was Good Enough to spend several more hours writing it up for the blog.
+
+Not an elevator pitch for Emacs.
+ #+end_description
+
+I've been dealing with some enduring niggles in my literate Emacs configuration, and have just landed [[https://github.com/pdcawley/dotemacs/commit/dbc316bfca27a37319b5316ea1281ccbebd526aa][Commit dbc316b]], and I thought I'd write about it here because it's an example of what keeps me on Emacs more than thirty five years after I first started using it.
+
+Back when I started, Emacs was merely a text editor that felt easier to use than =vi=, but these days, it's all that and more. I don't live in Emacs quite as much as I used to; I don't hang on USENET or IRC any more, and I check my email as little as possible, so I've not got around to configuring Emacs for that again.
+#+begin_marginnote
+Back in the day, it all went through the behemoth that is GNUS, but I lost that version of my =.emacs= file several computers and ISPs ago.
+#+end_marginnote
+
+These days, what I like about Emacs is it's malleability. It's not uniquely malleable, either. Vim and Neovim diehards will no doubt have tales to tell about their setups, but Emacs is my editor. There are  others like it, but this is mine.
+
+I've been seduced by the Literate Programming idea of maintaining my [[https://github.com/pdcawley/dotemacs][=~/.emacs=]]
+#+begin_marginnote
+Emacs used to keep its config in a file in your home directory called =.emacs=, then it moved to =\~/.emacs.d/init.el=, which made it a little easier to break a big config out into multiple files. These days, Emacs looks first in =${XDG_CONFIG_HOME}/emacs=, which defaults to =\~/.config/emacs= and that's where my config files live today.
+#+end_marginnote
+file in a single =org-mode= file, which gets 'tangled' into =early-init.el= and =init.el=, which are the files that Emacs actually loads.
+
+One feature of Org mode's literate programming support that I rather like and take advantage of is the ability to write things out of order and assemble them correctly using =noweb=. The idea is that ~src~ blocks can be named, and then referenced from other source blocks. For instance, you might have:
+
+#+begin_example
+,#+begin_src emacs-lisp
+(dolist (template `(("t" "Task with annotation" entry
+                     (file ,pdc/org-inbox-file)
+                     "* %?\n:PROPERTIES:\n:created: %U\n:END:\n\n%i\n\n~ %a"
+                     :prepend t)
+                    <<capture-templates>>
+                   ))
+    (add-to-list 'org-capture-templates template t
+                 (lambda (a b) (equal (car a) (car b)))))
+,#+end_src
+#+end_example
+
+which will eventually be tangled as a ~dolist~ that adds /all/ your capture templates to ~org-capture-templates~.
+
+That ~<<capture-templates>>~ is what makes the magic happen. When we tangle =README.org=, the exporter gathers up the contents of any source blocks associated with the tag and replaces ~<<capture-templates>>~ with them
+#+begin_marginnote
+It applies some heuristics as well, which is why that ~dolist~ isn't indented exactly how it would be without the noweb reference, but you can read the docs to find out more.
+#+end_marginnote
+
+So, elsewhere in my =README.org=, I can keep capture templates related to a particular app close to the rest of the configuration of that app, where it makes sense to me. For example, in the section where I configure my blogging tools, I do this:
+
+#+begin_example
+,#+begin_src emacs-lisp :tangle nil :noweb-ref capture-templates
+("b" "bofh.org.uk post" entry
+ (file+headline ,(pdc-site-posts-file "bofh") "Posts")
+ (function +org-hugo-new-subtree-post-capture-template))
+,#+end_src
+#+end_example
+
+Notice the header arguments. ~:tangle nil~ tells the exporter not to simply write the code out at the current position, and ~:noweb-ref capture-templates~ tells the exporter to instead write it out wherever it sees ~<<capture-templates>>~ in a source block.
+
+We have to be careful to ensure that the including code gets run when and where all the values variables and functions used in the included fragment are in scope, which can be fiddly, but it's definitely doable.
+
+{{{newthought(Which brings me to what I actually want to write about!)}}} I don't type all that ~#+begin_src …~ stuff out by hand every time. Because doing that is simply asking for errors. Instead, I take advantage of an org feature called structure templates, so I have:
+
+#+begin_example
+,#+begin_src emacs-lisp
+(add-to-list 'org-structure-template-alist <<org-structure-templates>>)
+,#+end_src
+
+,#+begin_src emacs-lisp :tangle nil :noweb-ref org-structure-templates
+'("el" . "src emacs-lisp")
+'("ett" . "src emacs-lisp :tangle nil :noweb-ref")
+,#+end_src
+#+end_example
+
+And, until slightly before I wrote this, I'd type =<el= at the beginning of a line, hit TAB and org would expand that to
+
+#+begin_example
+#+begin_src emacs-lisp
+
+#+end_src
+#+end_example
+
+And =<ett= would expand to
+
+#+begin_example
+,#+begin_src emacs-lisp :tangle nil :noweb-ref
+
+,#+end_src
+#+end_example
+
+Then I'd fill in the correct ~:noweb-ref~ and the appropriate code.
+
+It was fine.
+
+Well, it was better than typing it all by hand, but as soon as I'd expanded a template, I'd immediately hit =C-c '= to edit the code block in a separate buffer that was in the correct mode to edit Emacs Lisp (or whatever language the source block was for).
+
+Eventually, I got annoyed enough by the repetition to work out how to make that happen automatically. Normally, I'd expect to add a function to a hook variable somewhere, but that doesn't quite work here. Time to break out the Swiss Army Knife that is ~advice-add~.
+
+Here's my first take:
+
+#+begin_src emacs-lisp
+(defun +org-insert-structure-template/after-advice (&rest _)
+  (when (derived-mode-p 'org-mode)
+    (org-edit-special)))
+(advice-add 'tempo-insert-template :after #'+org-insert-structure-template/after-advice)
+(advice-add 'org-insert-structure-template #'org-edit-special)
+#+end_src
+
+We're adding advice to two different functions here, because there are two different mechanisms for inserting a structure template, either via the =<foo= expansion, or by calling =M-x org-insert-structure-template=, both of which I make use of on different occasions.
+
+{{{newthought(This version lasted a while.)}}} It did 90% of what I wanted after all. Indeed, for most of my structure templates, it does 100% of what I want.
+
+But there's always that one case, isn't there? Take a look at that =ett= template from earlier. Notice that it's missing the value to assign to =:noweb_ref=. In a perfect world, we should fill that in before we start editing the code. Or rely on remembering to do it after the fact. Because we /always/ do that, don't we?
+
+So, this morning, that chunk of code looked a little like this.
+#+begin_marginnote
+I've had to reconstruct the code from memory, I'm afraid because it never made it into the git repo. You can call me sloppy if you like, but this is personal code written on my own time, so you can fuck off.
+#+end_marginnote
+
+#+begin_src emacs-lisp
+(defun +org-insert-structure-template/after-advice (&rest _)
+  (when (derived-mode-p 'org-mode)
+    (let ((datum (org-element-begin datum)))
+      (save-excursion
+        (goto-char (org-element-begin datum))
+        (when (re-search-forward
+               "\\(:\\S-+\\)\\s-*$" (pos-eol) t)
+          (let ((key (match-string-no-properties 1)))
+            (end-of-line)
+            (unless (looking-back "\\s-" 1)
+              (insert " "))
+            (insert (read-from-minibuffer (format "%s: " key)))))))
+    (org-edit-special)))
+
+(advice-add 'tempo-insert-template
+            :after #'+org-insert-structure-template/after-advice)
+(advice-add 'org-insert-structure-template
+            :after #'+org-insert-structure-template/after-advice)
+#+end_src
+
+Because an org file is Just A Text File™, we could have written this using Emacs' basic buffer editing commands, but we'll take advantage of some of org and =org-babel='s helper functions to make life a little easier and (hopefully) to help me understand what I'm doing and why I'm doing it when I come back to the code later. Named behaviour is great
+#+begin_marginnote
+/Especially/ in a self-documenting editor like Emacs. If I'm not sure what a particular function in this code does, the documentation, or even the source code, is always a couple of keypresses away.
+#+end_marginnote
+for helping make code more understandable.
+
+What we do here is save our place in the buffer, jump back to the very beginning of the source block and look at the header arguments. If they end with a property name (=:like-this=), then we deduce that more information is needed, so we use ~read-from-minibuffer~ to ask for it, add the answer to the end of the header arguments, jump back to wherever the template originally left us (by exiting the ~save-excursion~ block) and call ~org-edit-special~ to start editing the file in a dedicated buffer.
+
+{{{newthought(Job jobbed\, no?)}}}
+
+Well… kinda. See, we're filling in the value of =:noweb-ref= using an error prone free text value, rather than presenting a list of known noweb references to choose from. In the case where the unset parameter is =:noweb-ref=, we really want to use ~completing-read~. A quick trawl through the existing code didn't find a function to do what we want, nor did a web search. An org file's Just A Text File though, and ~org-babel-noweb-wrap~ returns a regular expression that will match a noweb reference in the current file
+#+begin_marginnote
+~<<reference>>~ is the default form for a noweb ref, but the delimiters are overridable. At one point, I was using ~«reference»~ rather than the defaults, so it's handy to have a function that deals with that for us.
+#+end_marginnote
+so we could save our place, jump to the beginning of the file and find every match for that regular expression and use that to build a ~completing-read~ candidates list. But =<<foo>>= is only a noweb reference if it's in a source block, so we could end up with a bunch of false positives. We want to search through every source block, ignoring the rest of the file. Surely there's already something in existence to let us do that since it's the sort of thing that happens during the process of tangling a file.
+
+A quick =M-x describe-function org babel src block= yields a bunch of interesting functions, including the promising sounding ~org-babel-src-blocks~. The documentation reads:
+
+#+begin_example
+Signature
+(org-babel-map-src-blocks FILE &rest BODY)
+
+Documentation
+Evaluate BODY forms on each source-block in FILE.
+
+…
+#+end_example
+
+It goes on to explain that the body is evaluated with some useful variables set. The one we're interested in is ~body~, which is a "string holding the body of the code block". Sorted.
+
+With that, and other helper functions, we can write:
+
+#+begin_src emacs-lisp
+(defun +org-babel-noweb-refs ()
+  "Find all the noweb refs in the current buffer."
+  (require 's)
+  (require 'dash)
+  (let ((match-exp (org-babel-noweb-wrap))
+        result)
+    (org-babel-map-src-blocks nil
+      (let ((plain-body (substring-no-properties body)))
+        (setq result
+              (-concat
+               result
+               (-map (-partial #'s-replace "(.*)\\'" "")
+                     (-map #'second
+                           (s-match-strings-all
+                            match-exp
+                            plain-body)))))))
+    (-sort #'string< result)))
+#+end_src
+
+It's a bit unsubtle, but it's quick enough and accurate enough for my purposes. Then we can rewrite the relevant bit of our advice function along these lines:
+
+#+begin_src emacs-lisp
+(if (re-search-forward "\\(:\\S-+\\)\\s-*$" (pos-eol) t)
+    (let* (arg (match-string-no-properties 1))
+      (value
+       (cond ((string= arg ":noweb-ref")
+              (completing-read ":noweb-ref: "
+                               (+org-babel-noweb-refs)))
+             (t (read-from-minibuffer (concat arg ": "))))))
+  (end-of-line)
+  (unless (looking-back "\\s-" 1)
+    (insert " "))
+  (insert-value))
+
+#+end_src
+
+Note the use of ~cond~ here even though we could use a single ~if~. I'm making it easier to special case behaviour for header arguments other than =:noweb-ref=. I'm probably not gonna need it, but it's easy enough to be kind to the future me who /does/ need it.
+
+{{{newthought(I'm sure your editor of preference)}}} can do something like this. If it can't, then why on earth do you put up with it? I know Emacs though, and it it's taken me longer to write about this whole process of eliminating a bump in my road than it did to implement the necessary functions and advice in the first place. I didn't even have to restart Emacs, and it remained usable throughout the process
+#+begin_marginnote
+The code was actually written within a source block
+#+end_marginnote
+but it got smoother and smoother with every step.
+
+I'm not the first person to point out how powerful Just A Text File can be, especially if you've also got a huge pile of functions at your disposal to manipulate that file in useful ways and with mode specific semantics. Provided, of course, you've got decent tools to search through that pile. Emacs is just such a pile of useful functions and is a great tool for sifting through it. Give it a go, why don't you.
+
+Take the time to look at how you use your editor. I'm sure some point of friction will come to mind. Then work out how to write some code that will make things a bit smoother. You're not looking for perfect here, you're looking for /better./ The remaining roughness will no doubt niggle at you enough for you to take another pass at sanding it down one day, but for now luxuriate in the fact you've made life a little better for yourself.
+
+I'd suggest that, if you keep doing that as part of your practice, you'll eventually have your tools working exactly how you want them to. But I've been an Emacs user since 1988 and I've yet to reach that point. But it's about the journey, not the destination, isn't it?
+
 * Notes :@note:
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /note
