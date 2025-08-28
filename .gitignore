@@ -3,3 +3,4 @@
 /.hugo_build.lock
 /content/page/*.md
 /go.sum
+/content/note/
