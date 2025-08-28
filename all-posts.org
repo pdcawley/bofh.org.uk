@@ -2545,6 +2545,15 @@ CLOSED: [2025-08-24 Sun 11:42]
 I feel like I'm in a maze of twisty SCSS files and am getting very confuzzled. However, the layout's mostly working except in a narrow viewport, when the timestamp on a note happily fits in the left margin, but the timestamp on a post is truncated to the left because the font size doesn't seem to reduce as much. As far as I can tell, they're both the same size according to the stylesheet.
 
 Ho hum… mostly working is better than not working. Check out the book cover thumbnails!
+
+** DONE [2025-08-28 Thu 08:39]
+CLOSED: [2025-08-28 Thu 08:39]
+:PROPERTIES:
+:export_file_name: 4
+:END:
+I confess that the blog is implying that it works with webmentions, but the infrastructure I used to display them isn't working at the moment. Fixing it's on the long TODO list that I might never get around to. However, the service that catches any webmentions is still in operation, so I'm not keen to remove it entirely.
+
+Maybe I need to bump fixing things up the priority list.
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
