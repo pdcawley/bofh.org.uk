@@ -2571,6 +2571,43 @@ CLOSED: [2025-08-28 Thu 09:00]
 I really should get around to replacing bloody GitHub.
 
 God help me if I end up self-hosting my own instance of some code forge, but AI bollocks can fuck right off. I keep hoping that people are going to wake up and realise it's the very worst kind of emperor's new clothes bullshit, but they're taking their own sweet time about it.
+
+** DONE [2025-08-28 Thu 17:30]
+CLOSED: [2025-08-28 Thu 17:33]
+:PROPERTIES:
+:export_file_name: 6
+:END:
+
+This is absolutely what a sane person might write in their blog, isn't it?
+
+#+begin_example
+,#+begin_example
+,,#+begin_src emacs-lisp :tangle nil :noweb-ref bibble
+,#+end_example
+,#+begin_src emacs-lisp
+#+end_example
+#+begin_src emacs-lisp
+(setq some-variable 'some-value)
+#+end_src
+#+begin_example
+,#+end_src
+,#+begin_example
+,,#+end_src
+,#+end_example
+#+end_example
+
+And then doing this to their CSS to make it work
+
+#+begin_src css
+.highlight+.highlight {
+    margin-top: 0;
+}
+#+end_src
+
+I'm going to hell, aren't I?
+
+{{{newthought(For bonus points\,)}}} see if you can work out what's /actually/ written in the source file for this note.
+
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
