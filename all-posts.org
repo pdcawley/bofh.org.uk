@@ -2553,6 +2553,15 @@ CLOSED: [2025-08-28 Thu 08:39]
 I confess that the blog is implying that it works with webmentions, but the infrastructure I used to display them isn't working at the moment. Fixing it's on the long TODO list that I might never get around to. However, the service that catches any webmentions is still in operation, so I'm not keen to remove it entirely.
 
 Maybe I need to bump fixing things up the priority list.
+
+** DONE [2025-08-28 Thu 08:59] :noteToSelf:
+CLOSED: [2025-08-28 Thu 09:00]
+:PROPERTIES:
+:export_file_name: 5
+:END:
+I really should get around to replacing bloody GitHub.
+
+God help me if I end up self-hosting my own instance of some code forge, but AI bollocks can fuck right off. I keep hoping that people are going to wake up and realise it's the very worst kind of emperor's new clothes bullshit, but they're taking their own sweet time about it.
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
