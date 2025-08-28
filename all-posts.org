@@ -2320,6 +2320,8 @@ One feature of Org mode's literate programming support that I rather like and ta
 
 #+begin_example
 ,#+begin_src emacs-lisp
+#+end_example
+#+begin_src emacs-lisp
 (dolist (template `(("t" "Task with annotation" entry
                      (file ,pdc/org-inbox-file)
                      "* %?\n:PROPERTIES:\n:created: %U\n:END:\n\n%i\n\n~ %a"
@@ -2328,6 +2330,8 @@ One feature of Org mode's literate programming support that I rather like and ta
                    ))
     (add-to-list 'org-capture-templates template t
                  (lambda (a b) (equal (car a) (car b)))))
+#+end_src
+#+begin_example
 ,#+end_src
 #+end_example
 
@@ -2342,9 +2346,13 @@ So, elsewhere in my =README.org=, I can keep capture templates related to a part
 
 #+begin_example
 ,#+begin_src emacs-lisp :tangle nil :noweb-ref capture-templates
+#+end_example
+#+begin_src emacs-lisp
 ("b" "bofh.org.uk post" entry
  (file+headline ,(pdc-site-posts-file "bofh") "Posts")
  (function +org-hugo-new-subtree-post-capture-template))
+#+end_src
+#+begin_example
 ,#+end_src
 #+end_example
 
@@ -2355,22 +2363,23 @@ We have to be careful to ensure that the including code gets run when and where 
 {{{newthought(Which brings me to what I actually want to write about!)}}} I don't type all that ~#+begin_src …~ stuff out by hand every time. Because doing that is simply asking for errors. Instead, I take advantage of an org feature called structure templates, so I have:
 
 #+begin_example
-,#+begin_src emacs-lisp
-(add-to-list 'org-structure-template-alist <<org-structure-templates>>)
-,#+end_src
-
 ,#+begin_src emacs-lisp :tangle nil :noweb-ref org-structure-templates
+#+end_example
+#+begin_src emacs-lisp
+(add-to-list 'org-structure-template-alist <<org-structure-templates>>)
 '("el" . "src emacs-lisp")
 '("ett" . "src emacs-lisp :tangle nil :noweb-ref")
+#+end_src
+#+begin_example
 ,#+end_src
 #+end_example
 
 And, until slightly before I wrote this, I'd type =<el= at the beginning of a line, hit TAB and org would expand that to
 
 #+begin_example
-#+begin_src emacs-lisp
+,#+begin_src emacs-lisp
 
-#+end_src
+,#+end_src
 #+end_example
 
 And =<ett= would expand to

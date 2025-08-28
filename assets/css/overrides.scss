@@ -24,6 +24,9 @@ code.inline {
 }
 
 .highlight {
+  &+.highlight {
+    margin-top: 0;
+  }
   .chroma code {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
