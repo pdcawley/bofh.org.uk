@@ -33,6 +33,9 @@ code.inline {
     color: rgb(17,17,17);
     width: 100%;
   }
+  pre, pre code {
+    padding: 0;
+  }
 }
 
 pre {
