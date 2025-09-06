@@ -4,3 +4,4 @@
 /content/page/*.md
 /go.sum
 /content/note/
+/.envrc
