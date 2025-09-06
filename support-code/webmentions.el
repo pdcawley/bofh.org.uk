@@ -1,0 +1,82 @@
+;;; webmentions.el --- Code to manage webmentions    -*- lexical-binding: t; -*-
+
+;; First saved in 2025 by  Piers Cawley
+
+
+;; Author: Piers Cawley <pdcawley@Studio-Mini.lan>
+
+
+;;; Commentary:
+
+;; One of these days, this will be fully automated, but right now, this is just
+;; a pile of helper code
+
+;;; Code:
+
+(defvar wm-webmention-endpoint "https://webmention.io/api/mentions.jf2")
+(defvar wm-data-dir (if (fboundp 'pdc/site-dir)
+                        (expand-file-name "data/mentions/" (pdc/site-dir "bofh"))
+                      (expand-file-name "data/mentions/")))
+(defvar wm-last-mention-timestamp)
+(defvar wm-site-key)
+(defun wm-last-checked ()
+  ;; Eventually use the most recent web mention in our feed
+  nil)
+
+
+(defun wm-fetch-mentions ()
+  "Fetch the webmentions of `wm-domain'."
+  (use-package request
+    :autoload request)
+  (require 'seq)
+  (require 'ht)
+  (let ((page-index 0)
+        (page-size 100)
+        (more? t)
+        (all-entries (vector))
+        entries)
+    (while more?
+      (request
+        wm-webmention-endpoint
+        :params `(("domain" . ,(or (getenv "WM_API_DOMAIN")
+                                   (error "WM_API_DOMAIN not set!")))
+                  ("token" . ,(or (getenv "WM_API_TOKEN")
+                                  (error "WM_API_TOKEN not set!")))
+                  ("page" . ,page-index)
+                  ("per-page" . ,page-size)
+                  ("sort-dir" . "up"))
+        :parser 'json-parse-buffer
+        :sync t
+        :success (cl-function
+                  (lambda (&key data &allow-other-keys)
+                    (if-let* ((entries (ht-get data "children")))
+                        (progn
+                          (setq all-entries (vconcat all-entries entries)
+                                more? (and entries (eql page-size (length entries)))
+                                page-index (1+ page-index)))
+                      (setq more? nil))))))
+    (let ((last-entry (seq-elt all-entries (1- (length all-entries)))))
+      (modify-dir-local-variable nil
+                                 'wm-last-mention-timestamp
+                                 (ht-get last-entry "wm-received")
+                                 'add-or-replace
+                                 (expand-file-name ".dir-locals.el" (pdc/site-dir "bofh"))))
+    (let ((mentions-by-filename
+           (seq-group-by
+            (-compose (-rpartial #'expand-file-name wm-data-dir)
+                      (-partial #'format "%s.json")
+                      (-partial #'secure-hash 'sha256)
+                      #'url-filename
+                      #'url-generic-parse-url
+                      (-rpartial #'ht-get "wm-target"))
+            all-entries)))
+      (make-directory wm-data-dir)
+      (pcase-dolist (`(,file . ,value-list) mentions-by-filename)
+        (with-temp-file file
+          (erase-buffer)
+          (json-insert (vconcat value-list)))))))
+
+
+
+(provide 'webmentions)
+;;; webmentions.el ends here
