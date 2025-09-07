@@ -1272,7 +1272,6 @@ and the fact that I like having something to fiddle with. I could have just inst
 #+begin_marginnote
  Executing code that's exposed to the internet when I could just be serving textfiles is a recipe for pain and suffering.
 #+end_marginnote
-@@
 
 {{{newthought(Not running code on my server)}}} makes it a bit tricky to be fully engaged in IndieWeb ideal of a /connected/ web of websites using [[https://www.w3.org/TR/webmention/][WebMentions]] to make those interactions visible, but [[https://www.w3.org/TR/webmention/][it can be done]], and I too shall achieve it! One day. Baby steps, eh? I might resort to a Javascript based setup initially, but long term I want to keep the site completely script-free and fast.
 
@@ -2522,6 +2521,349 @@ I'm not the first person to point out how powerful Just A Text File can be, espe
 Take the time to look at how you use your editor. I'm sure some point of friction will come to mind. Then work out how to write some code that will make things a bit smoother. You're not looking for perfect here, you're looking for /better./ The remaining roughness will no doubt niggle at you enough for you to take another pass at sanding it down one day, but for now luxuriate in the fact you've made life a little better for yourself.
 
 I'd suggest that, if you keep doing that as part of your practice, you'll eventually have your tools working exactly how you want them to. But I've been an Emacs user since 1988 and I've yet to reach that point. But it's about the journey, not the destination, isn't it?
+** DONE Fetching webmentions again. With Emacs this time! :webmentions:indieweb:
+CLOSED: [2025-09-07 Sun 17:17]
+:PROPERTIES:
+:EXPORT_HUGO_SLUG: fetching-webmentions-again-with-emacs
+:EXPORT_HUGO_BUNDLE: 20250907-fetching-webmentions-again-with-emacs
+:EXPORT_FILE_NAME: index
+:END:
+
+#+begin_description
+I've reinstated webmention processing here and have semi-automated it with a pile of Emacs Lisp and a =Makefile=, so I thought I'd write up some of the gory details.
+
+Part 1 of… some?
+#+end_description
+
+You might have noticed, if you're a regular visitor that webmentions have started showing up on the site again. I turned them off a while ago, {{{marginnote(I turned off the home server that was handling the web hook calls from Webmention.io, planning to quickly move it and spin it up again. Ask me how that's going.)}}} but [[https://aaronparecki.com][Aaron Parecki]]'s invaluable [[https://webmention.io][Webmention.io]] service has still been gathering them for me, so I've turned them back on. But in the mean time, I mislaid the code I was using to populate the necessary Hugo data files from Webmention. Exploratory code ahoy.
+
+*** Start by faking it
+
+I'm heavily indebted to [[https://masto.hackers.town/@randomgeek][Brian Wisti]] for his post, [[https://randomgeekery.org/post/2020/11/using-the-webmention.io-api/][Using the Webmention.io API]] as the starting point to my explorations, but since I can't be doing with Python, I used emacs.
+
+I started with my very minor fork of [[https://github.com/pdcawley/restclient.el][=restclient=]]
+
+#+name: wm-token
+#+begin_src emacs-lisp :exports none
+(setq restclient-response-body-only t)
+(getenv "WM_API_TOKEN")
+#+end_src
+
+#+begin_highlight
+#+name: last5
+#+begin_src restclient :var token=wm-token()
+# Grab the most recent 5 webmentions of bofh.org.uk
+GET https://webmention.io/api/mentions.jf2?domain=bofh.org.uk&sort-dir=down&per-page=5&token=:token
+#+end_src
+#+end_highlight
+
+Which produces the following JSON data:
+#+begin_details
+#+begin_summary
+
+Disclose this for the full wall of JSON
+
+Don't say you weren't warned!
+#+end_summary
+
+#+call: last5()
+
+#+results:
+#+BEGIN_SRC json
+{
+  "type": "feed",
+  "name": "Webmentions",
+  "children": [
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Mike Spencer",
+        "photo": "https://avatars.webmention.io/fsn1.your-objectstorage.com/3ba5a0fdc660c44995fef428a601770fd0fe2619fc1f8c7e70ec7e9e1da66d4b.jpg",
+        "url": "https://mastodon.scot/@mikerspencer"
+      },
+      "url": "https://mendeddrum.org/@pdcawley/115162152891409560#favorited-by-109365771998686190",
+      "published": null,
+      "wm-received": "2025-09-07T09:35:22Z",
+      "wm-id": 1936897,
+      "wm-source": "https://brid.gy/like/mastodon/@pdcawley@mendeddrum.org/115162152891409560/109365771998686190",
+      "wm-target": "https://bofh.org.uk/note/8/",
+      "wm-protocol": "webmention",
+      "like-of": "https://bofh.org.uk/note/8/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Jess Robinson",
+        "photo": "https://avatars.webmention.io/fsn1.your-objectstorage.com/a11ee0a58e54873140bf1f1965900378d866fce3fafae79e116b979bea3a8773.jpg",
+        "url": "https://fosstodon.org/@castaway"
+      },
+      "url": "https://mendeddrum.org/@pdcawley/115160370354067277#favorited-by-109562941096076318",
+      "published": null,
+      "wm-received": "2025-09-07T07:19:01Z",
+      "wm-id": 1936873,
+      "wm-source": "https://brid.gy/like/mastodon/@pdcawley@mendeddrum.org/115160370354067277/109562941096076318",
+      "wm-target": "https://bofh.org.uk/note/7/",
+      "wm-protocol": "webmention",
+      "like-of": "https://bofh.org.uk/note/7/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Daniel Kelly Music",
+        "photo": "https://avatars.webmention.io/fsn1.your-objectstorage.com/7aa4815cbc1f993c0e2a6df03280dc168f5ad07fecd0313ddfc27eeb02e0b437.png",
+        "url": "https://aus.social/@yasslad"
+      },
+      "url": "https://mendeddrum.org/@pdcawley/115160370354067277#favorited-by-109307830089461078",
+      "published": null,
+      "wm-received": "2025-09-07T01:31:46Z",
+      "wm-id": 1936817,
+      "wm-source": "https://brid.gy/like/mastodon/@pdcawley@mendeddrum.org/115160370354067277/109307830089461078",
+      "wm-target": "https://bofh.org.uk/note/7/",
+      "wm-protocol": "webmention",
+      "like-of": "https://bofh.org.uk/note/7/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Nick Anderson",
+        "photo": "https://avatars.webmention.io/fsn1.your-objectstorage.com/856b210b0770a292a4f9e76699c84aa3833f9252716ad3cab58b50a7b57205ee.jpg",
+        "url": "https://fosstodon.org/@nickanderson"
+      },
+      "url": "https://mendeddrum.org/@pdcawley/115107421781297473#favorited-by-109475479621313511",
+      "published": null,
+      "wm-received": "2025-08-28T21:48:52Z",
+      "wm-id": 1934308,
+      "wm-source": "https://brid.gy/like/mastodon/@pdcawley@mendeddrum.org/115107421781297473/109475479621313511",
+      "wm-target": "https://bofh.org.uk/note/6/",
+      "wm-protocol": "webmention",
+      "like-of": "https://bofh.org.uk/note/6/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Nick Anderson",
+        "photo": "https://avatars.webmention.io/fsn1.your-objectstorage.com/856b210b0770a292a4f9e76699c84aa3833f9252716ad3cab58b50a7b57205ee.jpg",
+        "url": "https://fosstodon.org/@nickanderson"
+      },
+      "url": "https://fosstodon.org/@nickanderson/115108589417986943",
+      "published": "2025-08-28T21:48:05+00:00",
+      "wm-received": "2025-08-28T21:48:51Z",
+      "wm-id": 1934307,
+      "wm-source": "https://brid.gy/comment/mastodon/@pdcawley@mendeddrum.org/115107421781297473/115108589456284711",
+      "wm-target": "https://bofh.org.uk/note/6/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "<p><span class=\"h-card\"><a href=\"https://mendeddrum.org/@pdcawley\" class=\"u-url\">@<span>pdcawley</span></a></span> I was gonna say, that looks like a source block within a source block which means there's another src block to make it render. Nice</p>",
+        "text": "@pdcawley I was gonna say, that looks like a source block within a source block which means there's another src block to make it render. Nice"
+      },
+      "in-reply-to": "https://bofh.org.uk/note/6/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    }
+  ]
+}
+#+END_SRC
+#+end_details
+
+The essential shape is something like this:
+
+#+BEGIN_SRC json
+{ "type": "feed",
+  "name": "Webmentions",
+  "children": [
+    { "wm-target": "https://bofh.org.uk/note/8/",
+      "wm-property": "like-of",
+      ... },
+    { "wm-target": "https://bofh.org.uk/note/8/",
+      "wm-property": "in-reply-to",
+      ... },
+    ... }]}
+#+END_SRC
+
+Restclient is great for interactively exploring a RESTful API, but it's not so great for slicing and dicing the data in a Emacs-y way. I could sit down and learn =jq= again, but I know Lisp, dammit, so after a frustrating hour or so trying to wrap my head around the default ~url-retrieve~ interfaces, I went and grabbed the [[https://github.com/tkf/emacs-request][=emacs-request=]] package instead because I found its API more comprehensible.
+
+Because ~request~ is a function where ~restclient~ is more like an application running in Emacs, it's way more useful for automating things. Here's more or less the same request as above done in Lisp.
+
+#+name: request-mentions
+#+begin_src emacs-lisp :var wm-api-token=wm-token()
+(let (response)
+  (request
+    "https://webmention.io/api/mentions.jf2"
+    :params `(("domain" . "bofh.org.uk")
+              ("token" . ,wm-api-token)
+              ("per-page" . "5")
+              ("sort-dir" . "down"))
+    :parser 'json-parse-buffer
+    :sync t
+    :success (cl-function
+              (lambda (&key data &allow-other-keys)
+                (setq response data))))
+  response)
+#+end_src
+
+The code is obviously fiddlier, but it's also programmable and, because we set an arbitrary ~:parser~ function, it's trivial to convert the returned JSON into a native Emacs lisp hash table
+#+begin_marginnote
+It's not hard to generate an old school alist either, but that was annoyingly hard to serialise back to JSON, so I went with the default types because they seem to just work.
+#+end_marginnote
+which looks a bit like this:
+
+#+begin_details
+
+#+begin_summary
+A wall of Lisp
+#+end_summary
+
+#+call: request-mentions() :results pp
+
+#+results:
+#+begin_example
+#s(hash-table test equal data
+              ("type" "feed" "name" "Webmentions" "children"
+               [#s(hash-table test equal data
+                              ("type" "entry" "author"
+                               #s(hash-table test equal data
+                                             ("type" "card" "name"
+                                              "Mike Spencer" "photo"
+                                              "https://avatars.webmention.io/fsn1.your-objectstorage.com/3ba5a0fdc660c44995fef428a601770fd0fe2619fc1f8c7e70ec7e9e1da66d4b.jpg"
+                                              "url"
+                                              "https://mastodon.scot/@mikerspencer"))
+                               "url"
+                               "https://mendeddrum.org/@pdcawley/115162152891409560#favorited-by-109365771998686190"
+                               "published" :null "wm-received"
+                               "2025-09-07T09:35:22Z" "wm-id" 1936897
+                               "wm-source"
+                               "https://brid.gy/like/mastodon/@pdcawley@mendeddrum.org/115162152891409560/109365771998686190"
+                               "wm-target" "https://bofh.org.uk/note/8/"
+                               "wm-protocol" "webmention" "like-of"
+                               "https://bofh.org.uk/note/8/" "wm-property"
+                               "like-of" "wm-private" :false))
+                  #s(hash-table test equal data
+                                ("type" "entry" "author"
+                                 #s(hash-table test equal data
+                                               ("type" "card" "name"
+                                                "Jess Robinson" "photo"
+                                                "https://avatars.webmention.io/fsn1.your-objectstorage.com/a11ee0a58e54873140bf1f1965900378d866fce3fafae79e116b979bea3a8773.jpg"
+                                                "url"
+                                                "https://fosstodon.org/@castaway"))
+                                 "url"
+                                 "https://mendeddrum.org/@pdcawley/115160370354067277#favorited-by-109562941096076318"
+                                 "published" :null "wm-received"
+                                 "2025-09-07T07:19:01Z" "wm-id" 1936873
+                                 "wm-source"
+                                 "https://brid.gy/like/mastodon/@pdcawley@mendeddrum.org/115160370354067277/109562941096076318"
+                                 "wm-target" "https://bofh.org.uk/note/7/"
+                                 "wm-protocol" "webmention" "like-of"
+                                 "https://bofh.org.uk/note/7/" "wm-property"
+                                 "like-of" "wm-private" :false))
+                  #s(hash-table test equal data
+                                ("type" "entry" "author"
+                                 #s(hash-table test equal data
+                                               ("type" "card" "name"
+                                                "Daniel Kelly Music" "photo"
+                                                "https://avatars.webmention.io/fsn1.your-objectstorage.com/7aa4815cbc1f993c0e2a6df03280dc168f5ad07fecd0313ddfc27eeb02e0b437.png"
+                                                "url"
+                                                "https://aus.social/@yasslad"))
+                                 "url"
+                                 "https://mendeddrum.org/@pdcawley/115160370354067277#favorited-by-109307830089461078"
+                                 "published" :null "wm-received"
+                                 "2025-09-07T01:31:46Z" "wm-id" 1936817
+                                 "wm-source"
+                                 "https://brid.gy/like/mastodon/@pdcawley@mendeddrum.org/115160370354067277/109307830089461078"
+                                 "wm-target" "https://bofh.org.uk/note/7/"
+                                 "wm-protocol" "webmention" "like-of"
+                                 "https://bofh.org.uk/note/7/" "wm-property"
+                                 "like-of" "wm-private" :false))
+                  #s(hash-table test equal data
+                                ("type" "entry" "author"
+                                 #s(hash-table test equal data
+                                               ("type" "card" "name"
+                                                "Nick Anderson" "photo"
+                                                "https://avatars.webmention.io/fsn1.your-objectstorage.com/856b210b0770a292a4f9e76699c84aa3833f9252716ad3cab58b50a7b57205ee.jpg"
+                                                "url"
+                                                "https://fosstodon.org/@nickanderson"))
+                                 "url"
+                                 "https://mendeddrum.org/@pdcawley/115107421781297473#favorited-by-109475479621313511"
+                                 "published" :null "wm-received"
+                                 "2025-08-28T21:48:52Z" "wm-id" 1934308
+                                 "wm-source"
+                                 "https://brid.gy/like/mastodon/@pdcawley@mendeddrum.org/115107421781297473/109475479621313511"
+                                 "wm-target" "https://bofh.org.uk/note/6/"
+                                 "wm-protocol" "webmention" "like-of"
+                                 "https://bofh.org.uk/note/6/" "wm-property"
+                                 "like-of" "wm-private" :false))
+                  #s(hash-table test equal data
+                                ("type" "entry" "author"
+                                 #s(hash-table test equal data
+                                               ("type" "card" "name"
+                                                "Nick Anderson" "photo"
+                                                "https://avatars.webmention.io/fsn1.your-objectstorage.com/856b210b0770a292a4f9e76699c84aa3833f9252716ad3cab58b50a7b57205ee.jpg"
+                                                "url"
+                                                "https://fosstodon.org/@nickanderson"))
+                                 "url"
+                                 "https://fosstodon.org/@nickanderson/115108589417986943"
+                                 "published" "2025-08-28T21:48:05+00:00"
+                                 "wm-received" "2025-08-28T21:48:51Z" "wm-id"
+                                 1934307 "wm-source"
+                                 "https://brid.gy/comment/mastodon/@pdcawley@mendeddrum.org/115107421781297473/115108589456284711"
+                                 "wm-target" "https://bofh.org.uk/note/6/"
+                                 "wm-protocol" "webmention" "content"
+                                 #s(hash-table test equal data
+                                               ("html"
+                                                "<p><span class=\"h-card\"><a href=\"https://mendeddrum.org/@pdcawley\" class=\"u-url\">@<span>pdcawley</span></a></span> I was gonna say, that looks like a source block within a source block which means there's another src block to make it render. Nice</p>"
+                                                "text"
+                                                "@pdcawley I was gonna say, that looks like a source block within a source block which means there's another src block to make it render. Nice"))
+                                 "in-reply-to" "https://bofh.org.uk/note/6/"
+                                 "wm-property" "in-reply-to" "wm-private"
+                                 :false))]))
+#+end_example
+
+#+end_details
+
+Verbose as hell, but something we can work with. Here's a simplified alist representation which might be a little easier to understand.
+
+#+begin_src emacs-lisp
+'((type . "feed")
+  (name . "Webmentions")
+  (children
+   . [((wm-property . "like-of")
+       (wm-target . "https://bofh.org.uk/note/8/")
+       ...)
+      ((wm-property . "in-reply-to")
+       (wm-target . "https://bofh.org.uk/note/8/")
+       ...)]))
+#+end_src
+
+The interesting stuff lives under the ="children"= key, which we can get with ~(gethash "children" data)~.
+
+To get all the webmentions for our domain, the Webmention API allows for pagination. We can ask for pages of, say 100 entries and if we get 100 entries back, append the result to our running collection of entries and request the next page. Once we get a result with fewer than 100 entries, we know we're done and we can massage the data into a shape that Hugo can cope with
+
+*** Then turn what we learn into a commands
+
+Now we know what the data coming from Webmention.io looks like, and how we can page through it, let's write a function, ~wm--fetch-all~ to do that for us.
+
+#+transclude: [[file:./support-code/webmentions.el::wm--fetch-all]] :lines 1-38 :src emacs-lisp
+
+The ~(while more? ...)~ loop keeps requesting more data until it gets a short response, at which point ~more?~ becomes false and we return the accumulated ~all-entries~ vector
+
+
+*** And relax
+
+We now have a handy list of all the webmentions relating to our site. The next step is to massage it into a data structure that will suit Hugo and export it as JSON files in the site's =data= directory. Which is a topic for another blog post, I think. If only because I'm reasonably sure that the data structure I'm currently using isn't great.
+
+I'll hack it about a bit and report back.
 
 * Notes :@note:
 :PROPERTIES:
@@ -2615,6 +2957,13 @@ CLOSED: [2025-09-07 Sun 02:11]
 I /think/ I have webmentions displaying correctly again. However, we're updating everything manually again at the moment, at least until I get a webhook up and running again, so it might take a while for your replies, reposts &c. to show up on the site.
 
 Still, it does appear to be working again.
+
+** DONE [2025-09-07 Sun 09:19]
+CLOSED: [2025-09-07 Sun 09:22]
+:PROPERTIES:
+:export_file_name: 8
+:END:
+Yay! Kicking it old school with a =Makefile= to automate building and deploying this site. I don't know if I can entrust it to a cron job yet because the deployment involves ssh, and I'm a bit fuzzy on the workings of key management in such circumstances
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
@@ -2653,4 +3002,5 @@ Like Emacs itself, it's almost infinitely flexible, which makes it incredibly ha
 * COMMENT Local Variables :ARCHIVE:
 # Local Variables:
 # org-log-done: 'time
+# eval: (org-transclusion-mode)
 # End:
