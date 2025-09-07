@@ -33,6 +33,7 @@
                request
                dash
                ht
+               org-transclusion
                ))
   (straight-use-package pkg))
 
@@ -66,11 +67,19 @@
 
 (add-to-list 'load-path (expand-file-name "./support-code/"))
 
+(with-eval-after-load 'ox-hugo
+  (defun +org-hugo-set-shortcode-props (code &rest props)
+    (setf (alist-get code org-hugo-special-block-type-properties)
+          props))
+  (+org-hugo-set-shortcode-props "newthought" :trim-pre nil :trim-post t)
+  (+org-hugo-set-shortcode-props "marginnote" :trim-pre t :trim-post t))
+
 (require 'webmentions)
 
 (defun script/export-to-hugo ()
   (message "Exporting current buffer to hugo")
   (setq org-confirm-babel-evaluate nil)
+  (org-transclusion-add-all)
   (org-hugo-export-wim-to-md t))
 
 (provide 'setup-org-export)
