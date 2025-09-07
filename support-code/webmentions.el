@@ -69,9 +69,8 @@
           (kill-buffer buf)))
       (let ((mentions-by-filename
              (seq-group-by
-              (-compose (-rpartial #'expand-file-name wm-data-dir)
-                        (-partial #'format "%s.json")
-                        (-partial #'secure-hash 'sha256)
+              (-compose (-rpartial #'expand-file-name (pdc/site-dir "bofh"))
+                        (-partial #'format "data/mentions/%smentions.json")
                         #'url-filename
                         #'url-generic-parse-url
                         (-rpartial #'ht-get "wm-target"))
@@ -79,6 +78,8 @@
         (unless (file-exists-p wm-data-dir)
           (make-directory wm-data-dir))
         (pcase-dolist (`(,file . ,value-list) mentions-by-filename)
+          (message "Saving file %s" file)
+          (make-directory (file-name-directory file) t)
           (with-temp-file file
             (erase-buffer)
             (json-insert (vconcat value-list))))))))

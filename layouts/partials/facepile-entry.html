@@ -1,21 +1,23 @@
-{{ $class := $.Scratch.Get "class" }}
-<li class="{{ $class }} h-cite">
-  <a href="{{ .url }}" class="u-url">
+{{ $class := .class }}
+{{ with .mention }}
+  <li class="{{ $class }} h-cite">
+    <a href="{{ .url }}" class="u-url">
+      {{ with .author }}
+        <span class="p-author h-card">
+          {{- with .photo }}
+            <img class="u-photo" src="{{ . }}" data-src="{{ . }}" height=36>
+          {{ else }}
+            <img class="u-photo" src="/images/no-profile-photo.png" height=36>
+          {{ end -}}
+        </span>
+      {{ end }}
+    </a>
     {{ with .author }}
-    <span class="p-author h-card">
-      {{- with .photo }}
-      <img class="u-photo" src="{{ . }}" data-src="{{ . }}" height=36>
+      {{ if isset . "name" }}
+        <a style="display:none;" class="p-name u-url" href="{{ .url }}">{{ .name }}</a>
       {{ else }}
-      <img class="u-photo" src="/images/no-profile-photo.png" height=36>
-      {{ end -}}
-    </span>
-    {{ end }}
-  </a>
-  {{ with .author }}
-  {{ if isset . "name" }}
-  <a style="display:none;" class="p-name u-url" href="{{ .url }}">{{ .name }}</a>
-  {{ else }}
-  <a style="display:none;" class="author_url" href="{{ .url }}">{{ .url }}</a>
-  {{ end }}
-  {{ end -}}
-</li>
+        <a style="display:none;" class="author_url" href="{{ .url }}">{{ .url }}</a>
+      {{ end }}
+    {{ end -}}
+  </li>
+{{ end }}
