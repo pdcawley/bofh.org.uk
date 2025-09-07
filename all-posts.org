@@ -2607,7 +2607,14 @@ And then doing this to their CSS to make it work
 I'm going to hell, aren't I?
 
 {{{newthought(For bonus points\,)}}} see if you can work out what's /actually/ written in the source file for this note.
+** DONE [2025-09-07 Sun 02:09]
+CLOSED: [2025-09-07 Sun 02:11]
+:PROPERTIES:
+:export_file_name: 7
+:END:
+I /think/ I have webmentions displaying correctly again. However, we're updating everything manually again at the moment, at least until I get a webhook up and running again, so it might take a while for your replies, reposts &c. to show up on the site.
 
+Still, it does appear to be working again.
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
