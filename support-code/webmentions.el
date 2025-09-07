@@ -14,9 +14,8 @@
 ;;; Code:
 
 (defvar wm-webmention-endpoint "https://webmention.io/api/mentions.jf2")
-(defvar wm-data-dir (if (fboundp 'pdc/site-dir)
-                        (expand-file-name "data/mentions/" (pdc/site-dir "bofh"))
-                      (expand-file-name "data/mentions/")))
+(defvar wm-site-dir (locate-dominating-file (or load-file-name buffer-file-name) ".git/"))
+(defvar wm-data-dir (expand-file-name "data/mentions/" wm-site-dir))
 (defvar wm-last-mention-timestamp)
 (defvar wm-site-key)
 (defun wm-last-checked ()
@@ -29,6 +28,8 @@
   (interactive)
   (use-package request
     :autoload request)
+  (use-package dash
+    :autoload (-compose -rpartial -partial))
   (require 'seq)
   (require 'ht)
   (save-current-buffer
@@ -58,7 +59,7 @@
                                   page-index (1+ page-index)))
                         (setq more? nil))))))
       (let ((last-entry (seq-elt all-entries (1- (length all-entries))))
-            (site-dirlocals-file (expand-file-name ".dir-locals.el" (pdc/site-dir "bofh"))))
+            (site-dirlocals-file (expand-file-name ".dir-locals.el" ())))
         (modify-dir-local-variable nil
                                    'wm-last-mention-timestamp
                                    (ht-get last-entry "wm-received")
@@ -69,13 +70,14 @@
           (kill-buffer buf)))
       (let ((mentions-by-filename
              (seq-group-by
-              (-compose (-rpartial #'expand-file-name (pdc/site-dir "bofh"))
-                        (-partial #'format "data/mentions/%smentions.json")
+              (-compose (-rpartial #'expand-file-name wm-site-dir)
+                        (-partial #'format "data/mentions%smentions.json")
                         #'url-filename
                         #'url-generic-parse-url
                         (-rpartial #'ht-get "wm-target"))
               all-entries)))
         (unless (file-exists-p wm-data-dir)
+          (message "Making data-dir: %s" wm-data-dir)
           (make-directory wm-data-dir))
         (pcase-dolist (`(,file . ,value-list) mentions-by-filename)
           (message "Saving file %s" file)
