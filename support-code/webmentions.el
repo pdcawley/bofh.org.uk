@@ -3,7 +3,7 @@
 ;; First saved in 2025 by  Piers Cawley
 
 
-;; Author: Piers Cawley <pdcawley@Studio-Mini.lan>
+;; Author: Piers Cawley <piers@singingtogether.co.uk>
 
 
 ;;; Commentary:
@@ -26,10 +26,8 @@
 (defun wm-fetch-mentions ()
   "Fetch the webmentions of `wm-domain'."
   (interactive)
-  (use-package request
-    :autoload request)
-  (use-package dash
-    :autoload (-compose -rpartial -partial))
+  (require 'request)
+  (require 'dash)
   (require 'seq)
   (require 'ht)
   (save-current-buffer
@@ -58,16 +56,6 @@
                                   more? (and entries (eql page-size (length entries)))
                                   page-index (1+ page-index)))
                         (setq more? nil))))))
-      (let ((last-entry (seq-elt all-entries (1- (length all-entries))))
-            (site-dirlocals-file (expand-file-name ".dir-locals.el" ())))
-        (modify-dir-local-variable nil
-                                   'wm-last-mention-timestamp
-                                   (ht-get last-entry "wm-received")
-                                   'add-or-replace
-                                   site-dirlocals-file)
-        (when-let* ((buf (get-file-buffer site-dirlocals-file)))
-          (save-buffer buf)
-          (kill-buffer buf)))
       (let ((mentions-by-filename
              (seq-group-by
               (-compose (-rpartial #'expand-file-name wm-site-dir)
