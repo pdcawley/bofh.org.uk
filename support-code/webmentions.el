@@ -22,6 +22,44 @@
   ;; Eventually use the most recent web mention in our feed
   nil)
 
+(defun wm--fetch-all ()
+  "Fetch all the webmentions relating to our domain.
+
+We fetch them 100 a time and return a vector. The domain of interest is grabbed
+from the `WM_API_DOMAIN' environment variable, and the necessary Webmention API
+token comes from `WM_API_TOKEN', also in the environment. The idea being that
+these values don't sneak into a git repo and can be easily supplied by any CI
+tools, or something like `direnv'.i"
+  (let ((all-entries (vector))
+        (page-size 100)
+        (wm-domain (or (getenv "WM_API_DOMAIN")
+                       (error "WM_API_DOMAIN not in the environment")))
+        (wm-token (or (getenv "WM_API_TOKEN")
+                      (error "WM_API_TOKEN not in the environment"))))
+    (let (entries
+          (page-index 0)
+          (more? t))
+      (while more?
+        (request
+          wm-webmention-endpoint
+          :params `(("domain"   . ,wm-domain)
+                    ("token"    . ,wm-token)
+                    ("page"     . ,page-index)
+                    ("per-page" . ,page-size)
+                    ("sort-dir" . "up"))
+          :parser 'json-parse-buffer
+          :sync t
+          :success (cl-function
+                    (lambda (&key data &allow-other-keys)
+                      (if-let* ((entries (gethash "children" data (vector))))
+                          (progn
+                            (setq all-entries (vconcat all-entries entries)
+                                  more? (and entries (eql page-size (length entries)))
+                                  page-index (1+ page-index)))
+                        (setq more? nil)))))
+        ;; Be a good netizen
+        (sleep-for 1)))
+    all-entries))
 
 (defun wm-fetch-mentions ()
   "Fetch the webmentions of `wm-domain'."
@@ -31,31 +69,31 @@
   (require 'seq)
   (require 'ht)
   (save-current-buffer
-    (let ((page-index 0)
-          (page-size 100)
-          (more? t)
-          (all-entries (vector))
-          entries)
-      (while more?
-        (request
-          wm-webmention-endpoint
-          :params `(("domain" . ,(or (getenv "WM_API_DOMAIN")
-                                     (error "WM_API_DOMAIN not set!")))
-                    ("token" . ,(or (getenv "WM_API_TOKEN")
-                                    (error "WM_API_TOKEN not set!")))
-                    ("page" . ,page-index)
-                    ("per-page" . ,page-size)
-                    ("sort-dir" . "up"))
-          :parser 'json-parse-buffer
-          :sync t
-          :success (cl-function
-                    (lambda (&key data &allow-other-keys)
-                      (if-let* ((entries (ht-get data "children")))
-                          (progn
-                            (setq all-entries (vconcat all-entries entries)
-                                  more? (and entries (eql page-size (length entries)))
-                                  page-index (1+ page-index)))
-                        (setq more? nil))))))
+    (let ((all-entries (vector)))
+      (let (entries
+            (page-index 0)
+            (page-size 100)
+            (more? t))
+        (while more?
+          (request
+            wm-webmention-endpoint
+            :params `(("domain" . ,(or (getenv "WM_API_DOMAIN")
+                                       (error "WM_API_DOMAIN not set!")))
+                      ("token" . ,(or (getenv "WM_API_TOKEN")
+                                      (error "WM_API_TOKEN not set!")))
+                      ("page" . ,page-index)
+                      ("per-page" . ,page-size)
+                      ("sort-dir" . "up"))
+            :parser 'json-parse-buffer
+            :sync t
+            :success (cl-function
+                      (lambda (&key data &allow-other-keys)
+                        (if-let* ((entries (gethash "children" data nil)))
+                            (progn
+                              (setq all-entries (vconcat all-entries entries)
+                                    more? (and entries (eql page-size (length entries)))
+                                    page-index (1+ page-index)))
+                          (setq more? nil)))))))
       (let ((mentions-by-filename
              (seq-group-by
               (-compose (-rpartial #'expand-file-name wm-site-dir)
