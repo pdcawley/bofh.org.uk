@@ -9,15 +9,11 @@ all: clean build
 deploy:
 	rsync -avz --del ./public/ mbpi:bofh.org.uk
 
-build: webmentions org-posts org-pages hugo-build
+build: webmentions org-export hugo-build
 
-org-posts:
-	@echo "Exporting posts from Org"
-	$(BATCH) ./all-posts.org --eval='(script/export-to-hugo)'
-
-org-pages:
-	@echo "Exporting pages from Org"
-	$(BATCH) ./all-pages.org --eval='(script/export-to-hugo)'
+org-export:
+	@echo "Exporting from Org"
+	$(BATCH) ./Content.org --eval='(script/export-to-hugo)'
 
 webmentions:
 	@echo "Exporting webmentions data"

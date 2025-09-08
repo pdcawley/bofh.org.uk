@@ -1,11 +1,10 @@
-# -*- mode: org; -*-
-#+hugo_section: post/
+-*- mode:org; lexical-binding: t; -*-
 #+hugo_base_dir: .
 #+export_hugo_weight: auto
 #+startup: inlineimages
 #+startup: logdone
-#+startup: show2levels
-#+property: header-args:sql :session reporter :exports result :colnames yes  :engine postgresql :results replace table
+#+startup: show3levels
+#+property: header-args:sql :session reporter :exports result :colnames yes :engine postgresql :results replace table
 #+property: header-args: :exports code
 #+hugo_paired_shortcodes: %table %marginnote %newthought
 #+macro: newthought @@hugo:{{% newthought %}}@@$1@@hugo:{{% /newthought %}}@@
@@ -14,273 +13,371 @@
 #+macro: <sc @@hugo:{{< $1 >}}@@
 #+seq_todo: TODO(t) DRAFT(d) OPEN(o) | DONE(D) PUBLISHED(p) CANCELLED(x)
 
-
-* Week Notes :weekNotes:
+* Pages
 :PROPERTIES:
-:export_hugo_custom_front_matter: :series Week Notes
+:export_hugo_section: /page/
+:export_hugo_custom_front_matter: :hiddenFromFeed true :nocomment true :nodate true :nopaging true :noread true
 :END:
-** 2023
-*** DONE Week ending 2023-07-16
-CLOSED: [2023-07-16 Sun 18:32]
+** DONE Site details
+CLOSED: [2025-08-14 Thu 12:08]
 :PROPERTIES:
-:export_file_name: week-ending-20230716
-:export_hugo_slug: week-note
-:END:
-Small victory of the week: I'm starting to get on top of the washing
-
-#+hugo: more
-
-**** Tuesday
-
-Overwhelm had left us with a huge pile of washing to do, filling the sink, the draining board, and various work surfaces and I kept putting off tackling it because my brainweasels just saw the sheer amount of work involved and shut down. No fun. Anyway, Gill grabbed her perching stool and set to and before I knew it there was a full dishwasher burbling away, an empty sink, a full draining board and the beginnings of a system to keep it that way. The goal is to keep the sink empty and the draining board full. Before I cook, I clear the draining board. Any pans I use go in the sink and the next time I make tea, I wash up what's in the sink and anything that's still not been done of the mahoosive pile, until there's a full draining board again. Next time I'm brewing up, I can put the dry stuff away and, if I have the spoons, chip away at some more of the pile (though, post-COVID, I rarely have the spoons for much -- I can only stand for so long).
-
-It's not perfect, but it gets stuff done, and I'm calling that a win.
-
-**** Wednesday
-
-Emily came over for rehearsal and Carcassonne. It was mostly Carcassonne, if I'm honest, but /The Housewife's Lament/ is starting to seem like we've learned it, as is /We'll Sit Upon The Gate,/ though that one feels like it could use another verse. /The Mary Ellen Carter/ is pretty damned solid too, which is good.
-
-We set a new record city score in Carcassonne too, managing to share a 105 point city. We even managed my first ever draw in the second game.
-
-**** Friday
-
-A solo stream this week. Again with the Overwhelm getting in the way of getting more guests booked, but I'm starting to fill the diary again, which is good. I've got Alex Cumming as my guest in a couple of weeks, and Helen Edwards, Talis Kimberley, Emily, and a folk legend who will remain nameless for the time being lined up for August and September.
-
-Loopy Pro was mostly rock solid. The one-shot overdub whine cropped up once, and there was a hard crash to the home screen at one point, but a restart was fast and clean. Perils of running beta versions of sofware, I guess.
-
-**** Saturday
-
-I toddled over for the morning and afternoon sessions at the Bradfield Traditional Music Weekend -- spent a happy few hours singing Americana (I sang /Cabin in Glory/ and /We're Gonna Camp a Little While in the Wilderness/ which seemed to go down well) in the first session, then there was a lovely, ballad heavy, song session. I sang /Tamlyn/ about as well as I've ever sung it, and it went down really well. I was knocked out by a cracking version of /The Famous Flower of Serving Men/ in particular, but the whole session was great.
-
-
-**** Sunday
-
-Dim sum at the China Palace for lunch with Dougal & Liz, Matt and Jo and a few of the kids. Excellent as always. We may have overordered
-
-I'm off to the closing session of BTMW later. I suspect it will be as good as the Saturday sessions.
-
-
-*** DONE Week ending 2023-07-23
-CLOSED: [2023-07-23 Sun 21:37]
-:PROPERTIES:
-:export_file_name: week-ending-20230723
-:export_hugo_slug: week-note
+:EXPORT_FILE_NAME: colophon
+:EXPORT_HUGO_SLUG: colophon
+:export_hugo_aliases: /colophon
 :END:
 
-Small victory of the week: Actually got off my arse and did something about selling off my old /Magic the Gathering/ cards. For my next trick, I hope to do the same with my collection of [mostly card] magic books.
+#+begin_description
+An overview of how the /Just A Summary/ sausage is made.
+#+end_description
 
-#+hugo: more
+I built /Just A Summary/ with the [[https://gohugo.io/][Hugo]] static site generator. The marvellous [[https://mythic-beasts.com/][Mythic Beasts]] host it on one of their [[https://raspberry.com/][Raspberry Pis]].
 
-**** Tuesday
-Made a capture template for adding a week note. Support functions are currently not the prettiest, and don't deal with a bunch of corner cases, but they seem to work for my case, so I'll leave 'em be for the time being. I plan to write it up in a longer post, and that will no doubt tweak my coder pride enough to make things suck a little less.
-
-Oh god, once I start fiddling with my Emacs configuration, it's impossible to stop!
-
-**** Wednesday
-Nipped over to Mum and Dad's for lunch at Zini's, and to borrow dad's drills for my on going cigar box MIDI controller project. Managed to get eight holes accurately placed enough that I only had to drill 7.8mm holes for the M7 threaded rotary encoders I'd soldered to my stripboard. I'm calling that a win! Next trick, get the microcontroller wired up and appropriate software written.
-
-Also discussed making PID controller I promised to make dad for his heat treatment setup a while back. A Pi Pico and one of its mini displays looks like it should do the job nicely. The plan is to make an extension cable with an SSR as a separate bit of kit, then control that from the prototype controller. Once they're working as separate parts, we can work out how to bring it all into one container. I shall wuss out of making the kind of thing I saw in a commercial radio controlled plug, which powered the control circuit with a very simple capacitor based power supply, with the slightly worrying wrinkle that the controller's 0V line was floating at around 5V below mains Vmax. Clever, sure, but scarier than I'm prepared to work with.
-
-**** Friday
-
-Holy crap, but old /Magic the Gathering/ cards are getting horrifically pricy. According to the buy list of the shop I just took my cards in to, I should be expecting about £400 for just four of my cards. And probably another couple of hundred for the two dual lands (assuming they're not from the Unlimited set, in which case they're worth a /lot/ more). All being well that's covered the cost of getting my grandfather's old recliner reupholstered and fixed.
-
-If I could be arsed with it, I could probably get a lot more by selling direct on eBay, but I was already losing the will to live just sorting things out to take in to the shop.
-
-Do /not/ ask me about the /Tabernacle at Pendrell Vale/ and /Black Lotus/ that I sold far too early, because that might make me grumpy.
-
-*** DONE Week ending 2023-07-30
-CLOSED: [2023-07-30 Sun 22:48]
-:PROPERTIES:
-:export_file_name: week-ending-20230730
-:export_hugo_slug: week-note
-:END:
-
-Three weeks on the trot. Definitely calling that a win.
-
-Also, Good Omens 2 is a delight. Still enough of Terry's character hanging
-around it, and the new writers help it not feel too Neil-y.
-#+hugo: more
-
-**** Wednesday
-
-After a bit of fiddling, I've worked out how to add helpers to the Emacs `C-x 8` keymap, so now I have shortcuts for typing 'λ', '🙂' and various other characters that I type more or less frequently. Beats the crap out of doing `C-x 8 <ret>` and then typing out the name of the character I'm looking for.
-
-In case you're interested, here's the code:
-
-#+begin_src emacs-lisp
-    (general-define-key
-      :keymaps 'iso-transl-ctl-x-8-map
-      ". ," "…"
-      ": )" "🙂"
-      ": D" "😀"
-      "; )" "😉"
-      "\\"  "λ"
-      "a ^" "↑"
-      "a u" "↑"
-      "a v" "↓"
-      "a d" "↓"
-      "a |" "↕")
-#+end_src
-
-If you're not using `general`, but you've got `use-package` installed, you can do something similar with `bind-keys`:
-
-#+begin_src emacs-lisp
-
-  (bind-keys
-   :map 'iso-transl-ctl-x-8-map
-   (". ," . "…")
-   (": )" . "🙂")
-   (": D" . "😀")
-   (":|"  . "😐")
-   ("; )" . "😉")
-   ("\\"  . "λ")
-   ("a ^" . "↑")
-   ("a u" . "↑")
-   ("a v" . "↓")
-   ("a d" . "↓")
-   ("a |" . "↕"))
-
-#+end_src
-
-You can no doubt use define-key as well, but I find `general` or `bind-keys` to be much nicer to work with. The latter has the advantage that it's included in Emacs as part of `use-package` and plays nice with `which-key`, so I might go and redo my key bindings and get rid of `general`, nice as it is, since the real selling point of that library is how easy it is to bind stuff in `evil-mode` states.
-**** Sunday
-
-I still miss /Twitch Sings./ It's how I started streaming—long before the Friday night Song Swaps and folk streams. I'd be happily belting out Lady Gaga's /Bad Romance/, hamming it up to /You Spin Me Round/ or giving it my best Johnny Cash
+The theme is a much messed with version of the [[https://github.com/edwardtufte/tufte-css][Tufte CSS]] theme for Hugo. The most recently maintained version of which is available at [[https://github.com/loikein/hugo-tufte]]
 #+begin_marginnote
-Not a particularly good impression. I can't get that low!
+Many /many/ thanks to loikein for taking that on!
 #+end_marginnote
-on /Hurt./ It was just huge fun and a great way to make friends on Twitch.
 
-Twitch ended up pulling the plug because it was a free app and… well, free apps and sync rights really don't play well together.
+In theory, we are fully [[https://indieweb.org/][IndieWeb]] enabled. In practice, I tend to let that stuff rust and then come back to it in fits and starts.
 
-You'll still find people doing Karaoke on Twitch though, many of them the same faces I met back in /Twitch Sings/ days. This morning, I woke up early and spotted some friends Karaoke-ing it up on a Discord, so I pulled on pyjamas and went and joined 'em for a few songs. These days, I just use [[https://loopypro.com][Loopy Pro]] rather than searching YouTube for backing tracks. It's great fun though, and definitely makes for a more enjoyable way to spend the occasional hour or so of early morning insomnia.
-
-Singing in company, even virtual company is still the best thing you can do in public with your clothes on. I encourage you all to sing more. What's the worst that could happen?
-*** DONE Week ending 2023-08-13
-CLOSED: [2023-08-14 Mon 09:02]
+** DONE Joining Twitch as a viewer
 :PROPERTIES:
-:export_file_name: week-ending-20230813
-:export_hugo_slug: week-note
-:END:
-Oops, missed a week; seems I didn't have anything interesting to say, or I was too busy doing stuff to write about it. Probably the former.
-
-Not a bad week, this week. My step daughter and her family called in on their way back from holiday on Friday night and we spent a pleasant evening with them and a few Cawleys who were knocking about, sat outside the Wool Market. Mostly good food, but apparently the Greek place isn't that good. Rustic Pizza is still good though.
-
-#+hugo:more
-**** Friday
-
-Most of the proceeds of my /Magic: The Gathering/ cards will be spent on repairing my grandfather's recliner. But... I wouldn't be me if I didn't spend some of it on something gamelike. So I bought myself a 'GameDad'. In my case, an [[https://anbernic.com/products/rg353v-rg353vs][Anbernic RG 353VS]] and it's a hell of a thing. Not much bigger than an old school Game Boy (and /cheaper!/ Not just in real terms, but the Game Boy launched at $89.99 and I got mine for $87.99), but with a large, bright colour screen and enough grunt to play SNES and PlayStation games at full tilt. Apparently, you can even make it play Nintendo 64 stuff, but not necessarily at full speed.
-
-I don't really care about emulating consoles I never owned though. I want to play /Manic Miner/, /Tempest/, /Dig Dug/, /Galaxians/ and the other games that gladly ate my pocket money, ten pence at a time, down the local arcade (the building's still there in all it's new brutalist concrete glory, but the arcade where I boggled at /I, Robot/ and thrilled to the exploits of the masters of /Defender/ and /Robotron/ is long gone).
-
-So, in search of that heady thrill and those unmistakable sound effects, I've been frequenting archive.org's library of delights and installing a few of my old favourites.
-
-The first to get seriously played was my old favourite /Tempest/ -- Atari's miracle of colour vector graphics where you controlled a spiky yellow thing running around the top of a blue tube shooting the terrifying geometric shapes that were climbing up towards you with deadly intent. When I first started playing it, I'd hold the fire button down and spin madly round the top of the tube and die all too quickly. But it was such fun I'd just shove another coin in the slot until my money was all gone. Then, in an arcade in Whitby, I watched someone playing the game in an entirely new way and my mind was blown. The walls weren't blue! The colours were different and there were new, scary shapes. This guy wasn't spinning around, and he wasn't just holding down the fire button either.
-
-Tempest was unusual for the time in that it had autofire. If you held down the fire button on most games of the era, you'd fire one shot, then nothing would happen. But in Tempest, you'd autofire bursts of eight missiles, then a slight pause and the cycle would repeat. And it was the slight pause that would kill you. The Whitby guy had sussed that out and was mashing the fire button at a measured speed that kept up a constant stream of evenly spaced bullets that were far more likely to save you when a Flipper had reached the top of the tube and was making its way towards you; they could only kill you if they in the same space as you and were vulnerable to your shots while they were flipping that last step towards you. If you were simply relying on autofire, you could bet that that flip would happen during the short pause between bursts.
-
-Whitby guy had also worked out that the larger the angle a flipper had to flip through, the more chance you had of killing it before it killed you, so for lots of levels, it was just a matter of finding the safest place and staying there. There are a couple of levels where you were only 'safe' from flippers coming from one side. Those were the levels that killed you unless you got good at moving from place of safety to place of safety.
-
-I watched intently and, when I returned to my home arcade, suddenly the top three scores -- the ones that got burned into non volatile memory -- on the arcade's machine belonged to PDC. I could reliably reach the red levels and even the next, yellow, set.
-
-I can't do that on the Game Dad. Not yet at least. I'm old enough and RSI'd enough, that the thought of bashing the fire button at 8 Hertz just gives me the shivers.
-
-But! Modern emulators have all sorts of convenience functions, surely I could configure something that would emulate the steady rate of fire that my youthful fingers were capable of. And maybe I could do something about the incredibly sensitive controls, where even the lightest touch of the analog stick would see me moving two or more segments when what I really wanted was a surgical one step move.[fn:12]
-
-I turns out that I could. But, frustratingly, not via the very slick UI. I had to edit text files! I had to make new text files. And because popping the Micro SD card out of the Game Dad and into a card reader, editing a file, putting it back in the GD, testing it and then having to fiddle with the text file again is… less than ideal, I did it by /logging into my handheld games console via SSH from my iPad, editing the file and just restarting the game!/
-
-You can't do that with an original Game Boy can you? The damned thing's running Linux. I'm at once annoyed that I had to log in to it and fiddle with text files and astonished that I could even do that.
-
-It's not the nostalgia that's making me feel old, it's my assumptions about what's capable of what kind of computing.
-*** DONE Week ending 2023-08-20
-CLOSED: [2023-08-21 Mon 10:17]
-:PROPERTIES:
-:export_file_name: week-ending-20230820
-:export_hugo_slug: week-note
+:EXPORT_FILE_NAME: twitch-viewing
+:export_hugo_slug: twitch-viewing
+:EXPORT_DATE: 2022-03-24
 :END:
 
-A quiet week. Had to cancel Friday night's singing session with Emily – initially because Emily's still recovering from COVID, but on the night itself, my diabetes meds decided to give me hellacious indigestion. Ozempic/semaglutide might well do wonders for my HBA1c readings, but it can't half mess with my guts as well.
-*** DONE Week ending 2023-08-27
-CLOSED: [2023-08-27 Sun 12:32]
+#+begin_description
+How to join Twitch
+#+end_description
+
+  There are multiple platforms available where you can watch and interact with people sharing music;  how to play their favourite video game; tips on sewing makeshift surgical masks; and a bewildering panoply of other stuff. If you're after carefully edited, scripted and polished stuff, then [[https://youtube.com][YouTube]] and [[https://vimeo.com/][Vimeo]] are the websites for you. If you're after something a little more loose and interactive, where you can ask questions and give immediate feedback and the like, then [[https://twitch.tv/][Twitch.tv]] could easily be Your Place.
+
+
+*** Just watching anonymously
+   You /can/ treat Twitch as just another TV channel -- find something that interests you and just watch. But, if you're anything like I was when I first started watching people playing [[https://dwarffortresswiki.org/][Dwarf Fortress]] to pick up tips on how to avoid killing all my dwarfs quite so quickly, you will end up wanting to ask questions. You might fancy chucking them the digital equivalent of a few coins, or paying a subscription to support their work. To do that, you're going to need a Twitch account.
+
+A word to the wise; once you set up the account, Twitch will suggest (in manner that seems to imply that there is no alternative) that you download their desktop app. You don't need to do this. I have the Twitch app on my mobile devices, but on a desktop system, everything works brilliantly from the browser and I suggest you stick with that.
+
+**** Signing up with Amazon Prime
+
+   If you're an Amazon Prime subscriber, subscribe via [[https://twitch.amazon.com/prime][twitch.amazon.com/prime]] and Amazon will let you subscribe to one favoured Twitch streamer for free. You don't pay a penny, but they get paid as if you'd taken out a basic subscription. The only catch is that these subscriptions do not autorenew. You have to resubscribe every month, or subscribe to someone else if you feel like spreading the love.[fn:1]
+
+**** Signing up without Amazon Prime
+
+    No Amazon Prime? No matter, [[https://twitch.tv/signup][twitch.tv/signup]] is the place to go. It's a pretty straightforward free account. You can make a dedicated Twitch account (which would be my choice) or you can just login with Facebook.
+
+
+*** Using your account
+
+   Once you have an account, you can start to participate in the chat associated with the channels you're watching. You can follow people and get notifications when they come on line (I confess, I turn the notifications off, but my default page when I go to Twitch is [[https://twitch.tv/following/live][twitch.tv/following/live]], which shows me which of my favourites are online at the moment.
+
+   Now you've got an account, there's nothing to stop you streaming yourself; if you are, in any way, a singer, I can't recommend downloading [[https://twitch.tv/sings/download][Twitch Sings]] and having a play. Lots of great karaoke tunes to have a crack at, join in with other singers and share duet seeds so they can join in with you, and if you fancy going live, there's a big friendly button down in the bottom left hand corner that will get you online with nothing extra to download. Find out if you enjoy yourself before fiddling with all the extra software.
+
+   But you don't /have/ to stream; I was on Twitch for the best part of a year, just occasionally hanging in streamers' chats and passing the time of day before I bit the bullet and started to stream myself. Some corners of the site have rather more assholes per square inch than others (popular shooty bang games, I'm looking at you) but if you're like me and enjoy the crafty and artistic areas, you're going to find some really lovely communities to join. Just have a great time!
+
+** DONE Wishlist
 :PROPERTIES:
-:export_file_name: week-ending-20230827
-:export_hugo_slug: week-note
+:EXPORT_FILE_NAME: wishlist
+:export_date: 2024-08-01
+:export_hugo_url: /wishlist
+:export_hugo_aliases: /pages/about/wishlist /wish
+:export_hugo_auto_set_lastmod: t
 :END:
 
-A bit of a mixed week, mood wise. Capped by a great day's singing and chatting in Peterborough yesterday.
+#+begin_description
+Things Piers would quite like as birthday or Christmas presents
+#+end_description
 
-It's great to get out of the house sometimes. Gill coped really well by herself too -- I'm a full time carer, but it's definitely good to know that I can have the odd day off without it completely buggering things up.
+I used to keep an Amazon wishlist, but they only let you add things that can be bought from them. Screw that. Here's a list of things I'd really like.
+
+I've broken the list into thematic areas and (roughly) into order of desirability in each of the sections (though not so much in the courses section).
+
+*** Music and Streaming
+
+This is the horribly expensive section. Sorry.
+
+**** [[https://www.eastwoodsoundandvision.com/video/rode-rodecaster-video][RØDECaster Video]]
+
+I've been running my YouTube streams with an ATEM Mini Pro ISO and it's great, but a tad fiddly for some of the things I want to do. The RØDECaster Video supports all the extra stuff I'd /like/ to do and it's audio features in particular are a substantial improvement.
+
+I don't /need/ one of these -- my Mini Pro has been doing excellent service since I bought it -- but I really /want/ one.
+
+**** +[[https://shop.funky-junk.com/shop/recording/microphones/condenser/solid-state/ear-trumpet-labs-myrtle-condenser-microphone/][Ear Trumpet Labs Myrtle]] Microphone+
+
+
+ETL microphones look fantastic and are designed for the kind of music Emily and I make. In the US bluegrass and americana scene they're almost the de facto choice for small ensembles doing the old school 'bunch of performers around a single mic' style of performing.
+
+I have one of these now. It gives me joy every time I use it. Sometimes, things really do bring joy.
+
+*** A course of some description
+
+There's so much to learn, isn't there?
+
+**** Photography
+I realise I'm never likely to set up my own darkroom, but I'd love to learn to use one so I can hire one occasionally. The Art House in Wakefield has a [[https://the-arthouse.org.uk/workshops/darkroom-printing-taster-session/][Taster Session]], as well as a [[https://the-arthouse.org.uk/darkroom-one-to-one/][Darkroom One-to-One]] option that looks very tempting, and Wakefield's close enough to Doncaster that their [[https://the-arthouse.org.uk/maker-spaces/darkroom/][Darkroom membership]] looks pretty handy too.
+
+Not quite a traditional darkroom process, but I'd also love to learn [[https://highlandprintstudio.co.uk/classes/photopolymer-gravure/][Photogravure]], which is a cunning technique for printing photos on an etching press to gorgeous effect.
+
+**** Music
+
+Maddy Prior runs courses for singers at [[https://stonesbarn.co.uk][Stones Barn]] and there's always something on her list that looks tempting. Right now, the [[https://www.tickettailor.com/events/stonesbarn/1430214][Interpretation Work For Traditional Singers]] with Nancy Kerr joining Maddy in November looks rather tasty.
+
+The singing courses at [[https://www.halswaymanor.org.uk/][Halsway Manor]] look great too, and Halsway's a lovely place.
+
+**** Cookery
+
+I've enjoyed [[https://rivercottage.net][River Cottage]] pig related courses, and could fancy one of their fermentation or curing and smoking courses.
+
+I like to think I know what I'm doing with a knife, but a [[https://www.rutlandcookeryschool.co.uk/courses/knife-skills-full-day.html][Knife Skills]] course would go down well too.
+
+**** Crafts
+
+The Kitchen Knife making courses at [[https://craftcourses.com/]] look great.
+
+*** Kitchen-y and Foodie Things
+**** A meal in a fancy restaurant
+I say "fancy," but mostly I mean "somewhere you love." The most important part of any meal is the company, after all. I'm more than happy to travel ludicrous distances for a memorable meal, with the caveat that the place needs to be wheelchair accessible for Gill.
+
+**** [[https://michaelmayknives.com/product/chefs-knife-yorkshire-oak/][A Chef's Knife]] by Michael May
+
+Michael May's a Sheffield knife maker who makes gorgeous knives. I have one of his pocket knives and it's always with me. He recently started making a range of kitchen knives as well, and they're spectacular. Any of his [[https://michaelmayknives.com/product-category/kitchen/][kitchen knives]] would be a delightful thing to have, but I'm an absolute sucker for a chef's knife.
+
+Even if you're not thinking of buying one of these for me, check out the rest of the site and try to resist buying one for yourself -- you never know when you'll need a pocket knife that /really/ cuts.
+
+**** [[https://www.amazon.co.uk/T-1-Kitchen-Sharpener-Version-Patented/dp/B0CNKQK9NV/][A Tormek T-1]] Kitchen Knife Sharpener
+
+I'm not denying that this is complete overkill, but I do like a sharp knife, and I would be honour bound to sharpen any kitchen knife you brought to me for the foreseeable future.
+
+**** Almost anything from [[https://souschef.co.uk][Sous Chef]]
+I'm a sucker for a good cookbook. The chocolate and sweets collection is amazing, and I wouldn't say no to a [[https://www.souschef.co.uk/products/microplane-gourmet-extra-coarse-grater][Microplane coarse cheese grater]].
+
+**** Almost anything from [[https://chocolarder.com/][Chocolarder]]
+When we lived in Cornwall, we met Mike, the founder of Chocolarder back when he was making small amounts of chocolate in his garden shed and selling them at farmers' markets. I was a sucker for pretty much everything he made, but his [[https://www.chocolarder.com/shop/sea-salt-caramel-truffles/][Sea Salt Caramel Truffles]] were amazing. They still are. It's a little harder to impulse buy stuff from them now we're living up country again.
+
+*** Stationery
+
+There's something about a good pen and the paper to use it on. Lots of lovely stuff at [[https://cultpens.com][Cult Pens]], including:
+
+**** [[https://cultpens.com/products/kaweco-liliput-fireblue-fountain-pen][Kaweco Liliput Fireblue Fountain Pen]]
+
+The perfect fountain pen doesn't exist, but these are gorgeous and I'd love to have one in the pen loop of my pocket notebook. A fine nib, please -- I'll be using this with a small pocket notebook and writing small.
+
+**** +[[https://cultpens.com/products/opus-88-mini-pocket-pen-fountain-pen-check][Opus 88 Mini]]+
+Another pocket fountain pen option. Fine nib, please.
+
+Got myself one. It's lovely, if a little chunkier than I expected.
+
+****  [[https://cultpens.com/products/pilot-parallel-pen][Pilot Parallel Pen]]
+Because sometimes, I just want to muck about with a really wide italic type nib
+
+**** Rhodia [[https://cultpens.com/products/rhodia-rhodiarama-softcover-notebook-a5][Notebooks]] and [[https://cultpens.com/collections/rhodia-dotpad-notepads][Pads]]
+Just the nicest paper for writing on with ink pens.
+
+**** [[https://cultpens.com/collections/fountain-pen-ink][Ink]]
+I'm still searching for the perfect sepia ink. Something that looks like it was written 200 years ago and has dried to the perfect dark brown. I have the horrible feeling that the only way to achieve that look is with some [[https://cultpens.com/products/kwz-iron-gall-ink-60ml][iron/gall]] concoction that's then been left for a long time so the original colour vanishes to be replaced by the permanent colour that comes from the iron/gall reaction. Any colour but green, really.
+
+** DONE Tamlyn.co.uk
+:PROPERTIES:
+:export_hugo_slug: about/tamlyn-co-uk
+:EXPORT_FILE_NAME: tamlyn-co-uk
+:END:
+
+#+begin_description
+The domain tamlyn.co.uk is not for sale.
+#+end_description
+
+Hi, you ended up here because you visited tamlyn.co.uk, which is a domain my wife and I have been using for private email since 1998, but which we've never bothered setting up a website for.
+
+It's possible that you were looking for the UK arm of [[https://tamlyn.com][Tamlyn.com]], which appears to be building supplies manufacturer based in Texas. If so, you should head on over to their UK site, [[https://tamlyn.uk][tamlyn.uk]].
+
+By the way, if you're in Texas, maybe consider supporting the work of [[https://linktr.ee/lambda_legal][Lambda Legal]], [[https://outyouth.org][Out Youth]], [[https://www.myresourcecenter.org/community/lgbtq-youth-programs/][Resource Centre]] and other organisations working for LGBTQIA+ kids in the state.
+
+** DONE About Piers
+:PROPERTIES:
+:export_hugo_slug: about
+:EXPORT_FILE_NAME: about
+:EXPORT_DATE: 2003-01-01
+:export_hugo_aliases: /about
+:END:
+
+#+begin_description
+A subjective description of Piers and their many virtues
+#+end_description
+
+*** Baker
+I used to be a programmer. I was good at it, but I kind of grew to hate it as a means of making a living, so when RSI came calling and made it near-impossible to type for more than about half an hour before I had to take a 45 minute break, I got properly serious about breadmaking. So since Christmas 2017 I've been baking sourdough bread for money as [[https://loafery.co.uk][The Loafery]]. It's not (remotely) as lucrative as programming was, but it's infinitely more satisfying. And tasty.
+
+Sadly COVID has done for the bakery, so I'm back to baking occasionally at home. My sleep pattern is delighted by this.
+
+*** Programmer
+I was a Perl programmer for well over 10 years, spent a few years as a Ruby programmer before returning to the Perl fold. These days, what little code I write is usually in some sort of Lisp.
+
+*** [[http://flickr.com/photos/pdcawley/sets/807230][Photographer]]
+Discovering that you are good at something is wonderful. I was working in Amsterdam on one of my first programming gigs and commuting back to England most weekends. One day, passing through duty free, I bought myself a cheapish Nikon SLR, loaded it up with black and white film and was almost immediately hooked. Through the simple expedient of burning lots and lots of film and ruthless editing of contact sheets, I got better at it.
+
+Of the images in the portfolio linked to, only one was taken with that first camera; see if you can guess which one it is.
+
+*** Singer
+Singing is comfort food for my soul. Singing is something to be shared. And, because I sing traditional songs, I don’t have to worry about licensing issues if I want to distribute any recordings I make.
+
+Traditional songs — free software for the soul.
+
+Pretentious? Moi?
+
+*** Cook
+
+Mmm… Chinese food.
+
+*** All round geek
+
+Look: I have a weblog; I’ve had the same email address since 1996; I’ve never met the majority of my friends in person; I ran my bakery with Emacs; I’d rather spend an evening hacking on the laptop than watching TV. What else could I be?
+
+
+* Posts
+:PROPERTIES:
+:export_hugo_section: post/
+:END:
+
+** Book Reports                                            :@book-report:
+:PROPERTIES:
+:export_hugo_custom_front_matter: :series "Book Reports"
+:export_hugo_section: /book
+:ID:       AE556F3E-BD2C-46E6-BE13-AD819A39EE6D
+:END:
+
+*** DONE Picks and Shovels, by Cory Doctorow
+CLOSED: [2025-09-08 Mon 10:34]
+:PROPERTIES:
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((author . "Cory Doctorow") (title . "Picks and Shovels") (type . "Picks and Shovels"))
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover '((s . "https://covers.openlibrary.org/b/olid/OL57554724M-S.jpg") (m . "https://covers.openlibrary.org/b/olid/OL57554724M-M.jpg") (l . "https://covers.openlibrary.org/b/olid/OL57554724M-L.jpg"))
+:EXPORT_HUGO_BUNDLE: cory-doctorow-picks-and-shovels
+:EXPORT_FILE_NAME: index
+:END:
+
+#+begin_description
+Cory Doctorow has an axe to grind.
+
+Cory /always/ has an axe to grind, of course, but since the upshot of that is books like Picks and Shovels, then I'm okay with that.
+
+This is the third Marty Hench thriller and it's a cracking read
+#+end_description
+
+[[https://craphound.com/][Cory Doctorow]] has an axe to grind.
+
+This is, of course, nothing new. Cory's anger at The Way Things Are, and his revolutionary zeal to bring the whole towering edifice of modern capitalism tumbling down is what makes him Cory, and what makes his books so good to read.
+
+This is the third of his Marty Hench techno thrillers, but chronologically the earliest. Marty's just out of accountancy school after his MIT degree was derailed because he discovered personal computers. He moves to Silicon Valley because of course he does and falls in with a punky crowd and does what he can to help three religious women liberate themselves and their customers from a deeply dodgy totalitarian company that's locking decent churchgoing folk across the country into an abusive pyramid scheme of a computer system.
+
+He fails, of course.
+
+@@hugo:{{%newthought %}}@@I could quibble@@hugo:{{% /newthought %}}@@ about some of the computer history/dates, but that would be to miss the point. I can't help noticing the occasional flub because that's the kind of geek I am, but I'm learning not to let it spoil my enjoyment of something.
+
+Oh yeah, and thank god for this, Cory's got /way/ better at writing sex scenes over the years. I still shudder at the memory of some of the stuff in /Makers/,
+#+begin_marginnote
+Great book with some /skincrawlingly/ bad sex scenes. I can't even put my finger on why, I'm afraid.
+#+end_marginnote
+but he finds a decent balance here. The age gap thing is still there though. It seems to be a /thing/ for him. Not that I'm one to throw stones, being married to someone nineteen years older than me.
+
+
+@@hugo:{{%newthought %}}@@Wil Wheaton just gets better and better@@hugo:{{% /newthought %}}@@ as an audio book narrator. He really gets inside Marty on this one. Frankly, I can't imagine ever reading Cory on paper so long as Wil's doing such a bang up job of narrating his books.
+
+*** DONE A Wizard of Earthsea
+:PROPERTIES:
+:EXPORT_FILE_NAME: a-wizard-of-earthsea
+:export_hugo_slug: a-wizard-of-earthsea
+:export_date: 2019-05-30
+:export_hugo_aliases: /2019/05/30/a-wizard-of-earthsea/
+:ID:       DB913EAC-FB57-44B7-9645-DBD26957CE72
+:END:
+This was the first.
+
+Before I read Tolkien at the suggestion of the wonderful Miss Reese, my teacher for my last year of primary school; before I pulled Diana Wynne Jones, Alan Garner, Susan Cooper and others from the shelves of Bawtry's small, but enchanting branch library; before Anne McCaffrey's DragonSong found me in my school library and set a fire in my imagination. Before all that, I read /A Wizard of Earthsea/ and it stuck with me.
 
 #+hugo: more
-**** Monday
-***** Folk FOMO
-Whitby Folk Festival FOMO is real. But also, there's a COVID spike going on, and crowded rooms full of unmasked singers aren't the safest of environments, so I think I'll comfort myself in the knowledge that at least I won't be likely to bring an infection home with me.
-***** Blog fiddling
-I swear I'm going to wrap my head around the workings of the way to optionally build a custom formatted Date tree using =org-capture=, but for now I've just tweaked the template I use to add
 
-#+begin_src org
-#+hugo: more
-#+end_src
+I remember one Saturday with 50p in my pocket from singing for a couple of weddings at St George's church in Doncaster (25p for each wedding, paid cash in hand on the day. It always felt like a bonus after singing Bach's /Jesu Joy of Man's Desiring/ in the side chapel as the register was signed in the vestry and Magnus Black, the choir and organmaster, brought that beautiful tune dancing with such delicacy from in instrument that would shake the walls later as the happy couple left the church to Vidor's toccata and fugue).
+#+begin_marginnote
+That was if we were lucky. It was usually Mendelssohn – not bad, Magnus was far too good an organist for it to sound dull, but not a patch on Vidor.
+#+end_marginnote
+I was never one for saving, I'm still not, so I was straight round to Donny's nearest thing to a bookshop, the WH Smith in the Arndale in search of something to read. A voracious reader, I'd gone through all the /Swallows and Amazons/ and /Narnia/ books and I needed more. The cover of the second Puffin edition, with its white youth and bizzare half man half hawk fascinated me, so I handed over my 50p
+#+begin_marginnote
+The bibliography I found tells me that it probably cost 35p, so I no doubt bought a load of sweets as well – books and sugar have always been my vices.
+#+end_marginnote
+and headed home with my prize.
 
-to the heading for the week. This means that, when Hugo's rendering the index page, the week's notes will be represented by a summary which links to the extended per-day notes for the week.
+I read /A Wizard of Earthsea/ once or twice and loved it, but I've not reread it since. As a kid, I borrowed rest of the then trilogy from the library and found them rather hard going at  (my memory says that I found /The Tombs of Atuan/ a real slog. I got through it, but it took a couple of goes and at least one renewal to get to the end). A few weeks ago though, I went to the [[https://www.soundpost.org.uk/][Sound Post]] 'Modern Fairies' singing weekend and fell into conversation with [[https://terriwindling.com][Terri Windling]] about the books that had shaped me and I told her about my experience with the Earthsea trilogy and I thought maybe I'd been a little too young for them (I think I was eight or nine when I read AWoE, and maybe twelve when I read /The Tombs of Atuan/ and /The Furthest Shore/). I hadn't revisted them since. Terri made me promise to reread them and to let her know what I thought. So that's what I'm doing. Terri, this book report's for you. I owe you a few more and I promise I'll get to them.
 
-Furthermore, I've added a new capture to let me capture a weeks' summary. I think I'll probably end up wrapping that in a =summarize-week= command that will show me the wider weeknote context while I write the note, then mark the week as =DONE=, then bring up =magit= so I can commit and push the changes. But maybe not for a while yet, on the "fake it until you can't stand /not/ to automate it." principle.
-**** Thursday
+By the way, if you've never read /A Wizard of Earthsea,/ there will be spoilers in this article. Read the book before continuing. It shouldn't take you long, and it's well worth the time.
 
-So, I have the ADHD thing of putting a thing down and completely forgetting where I put it, or even its very existence. Object permanence is clearly not a thing with me.
+It's not so much what happens in this story as the way it's told that left its impression on me. Earthsea is made of words – all stories are, of course – sung into being by Segoy. Words are power. A wizard spends a large part of his
+#+begin_marginnote
+The wizards are all men. There are female witches in the story, but at this stage of the tale they're definitely underpowered and untrustworthy compared to the men. Le Guin fixes this later.
+#+end_marginnote
+education learning the "the Deeds of heroes and the Lays of wisdom" and year under the Master Namer just learning the true names of things in the Old Speech: the language of dragons; the language in which the world was made. In the period when the book is set, there is written language, but I get the feeling that it's very much the preserve of the wise. Songs, orally transmitted, are how the people of the archipelago hold their history and Le Guin's language reflects that. Every sentence seems to have been shaped to be spoken, and beautifully so. I kept stopping and reading passages out because the words were just so... right.
 
-Or I thought it was.
+I sometimes wonder who the tale's narrator is telling the story to. It's a question that can break a lot of first person SF and exposes lazy storytelling. If a book that's supposedly the product of a completely different culture or time feels like it's written for an early 21st century reader, it breaks the book for me.
+#+begin_marginnote
+Sometimes I don't care though. God alone knows why Bertie Wooster is telling the Jeeves stories, or who he's telling them too – I'm just very glad he's chosen to tell them at all.
+#+end_marginnote
+The language and idiom of /A Wizard of Earthsea/ seem entirely right and consistent. We learn so much about the world as Ged's story is told from things mentioned in passing. We know that this happened a long time ago and it's assumed we already know about /The Deed of Ged/, /The Creation of Ea/ and all the other songs, deeds and festivals that are referred to in passing through the book. At the end we are told that no songs have survived that tell how Ged came to terms with his shadow – the entire book is a footnote in a much larger story that's just out of reach. I'm reminded of the fact that we only have the Norse myths we know because an ancient Icelander worried that readers wouldn't recognize the allusions in the sagas and eddas, so they wrote down the bones of the older stories to help future readers understand. If Le Guin had left Earthsea at this point, all we would know of Earthsea would be the glimpses of it in this story. And what glimpses they are.
 
-We have a house guest right now, and she has this habit of trying to help by tidying putting stuff in 'sensible' places. So I'll find the squash in amongst the bottles of oil, vinegar and sauces in a /completely other part of the kitchen;/ or Gill's socks will show up in an admittedly convenient, but surprising, new place after I've given up looking for them in the place I usually put them, and the airer I dry them on, and in the washing machine and laundry basket. Maybe it's on the floor between any of those places… Grrr.
+You can find echoes /A Wizard of Earthsea/ in so much subsequent fantasy literature. The possibility of a wizard being trapped in another, for instance. Pratchett plays with and develops this in the /Witches/ sequence of Discworld books, for instance. I loved this sentence though: "And no one knows how many of the dolphins that leap in the waters of the Inmost Sea were men once, wise men, who forgot their wisdom and their name in the joy of the restless sea." If I had the power to become a dolphin I wouldn't be keen to return to the body of a fat 51 year old with diabetes and a bunch of aches and pains that I try not to think about. You can keep your wisdom sometimes.
 
-It turns out I'm kind of comfortable with not quite knowing where a thing is, but I am absolutely viscerally /infuriated/ by finding said thing in the wrong fucking place, somewhere I would never ever ever in a month of Sundays deliberately put it.
+As a kid, I didn't really understand what was going on with Ged and his Shadow. It was easy to see myself in the ever noticed that he didn't have the same colour skin as me). I loved learning and especially /knowing/. It wasn't hard to take my undoubtedly superior intelligence
+#+begin_marginnote
+Yeah. I know. I must have been insufferable as a kid (and an adult, if I'm honest). First to stick their hand up in every class. Happy to "Well, actually..." at every opportunity.
+#+end_marginnote
+as analogous to a wizard's power. Then, though, the shape of the story confused me, especially the ending. Ged and his friend sail off the page. The sea becomes land. Ged steps off the boat and confronts the Shadow, addressing it with his own name. And the shadow disappears/merges with Ged. And they all live on to do the Deeds which are sung of them. What? Nine year old me had no /idea/ what was going on there, but the imagery stuck.
 
-And don't… don't get me started on the utter utter utter wrongness of using the lids of things as shelves. I will end up foaming at the mouth and shouting. Ask me how I know.
+Now, of course, it all seems a clearer. Thesis. Antithesis. Synthesis. Ged does a terrible thing in his ignorance  and pride. In shame he runs from it, almost losing his humanity in the process. He is tempted by a dark power, but rejects it. A friend and teacher restores him to himself and tells him that running is the sure road to doom. He turns and chases his Shadow instead. Finally he comes to an acceptance that the Shadow is a part of himself and by giving it his name he reintegrates that part into himself and finally becomes a whole man. There you go – no need to read the book now.
 
-It's all the more distressing because I hate getting angry about stuff, especially objectively trivial stuff like this, and so the rate spirals. Bah!
-**** Saturday
+Of course you need to read this book. It's language sings and the places and people it evokes are beautifully drawn. Rereading this after more than 30 years, so much was familiar. I would have said I'd forgotten almost all of it but the bare outline of the story and a few character names, but that stuff clearly went in deep and helped make me myself because as I read, the whole shape of the thing unfolded in my head. It was almost like recognising roads and pathways in a place you holidayed repeatedly as a kid, then didn't return for 20 years. Familiar and surprising at the same time. "Oh yeah, that's where Daniel used to live! And do you remember walking up there to buy ice creams at the village shop? Oh! I'd forgotten this view!"
 
-Had a great day at Mill Con 2 down in Peterborough. I still think filk music as a genre is a bit weird, but there's no denying that the people who make it are lovely people, and it's hard to beat singing in company for lifting your mood.
-
-Mike Whitaker was kind enough to give me a concert spot at a week's notice too, so I did a forty minute set with a couple of songs with Loopy Pro in what was only the second time I've used the gear in any setting but my 'streaming studio.' It went well, but there's still a way larger profusion of wires than I'm happy with, and I definitely want to assemble some kind of all in one pedal setup if I'm going to be taking the gear out of the house more often.
-*** DONE Week ending 2023-09-03
-CLOSED: [2023-09-03 Sun 13:47]
+Right... onwards to /The Tombs of Atuan./
+*** DONE /Service Model/, by Adrian Tchaikovsky :sf:audiobook:
+CLOSED: [2025-08-21 Thu 21:08]
 :PROPERTIES:
-:export_file_name: week-ending-20230903
-:export_hugo_slug: week-note
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((author . "Adrian Tchaikovsky") (title . "Service Model") (type . "book"))
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover '((s . "https://covers.openlibrary.org/b/olid/OL59424202M-S.jpg") (m . "https://covers.openlibrary.org/b/olid/OL59424202M-M.jpg") (l . "https://covers.openlibrary.org/b/olid/OL59424202M-L.jpg") (caption .  "<cite>Service Model</cite> by Adrian Tchaikovsky"))
+:EXPORT_HUGO_BUNDLE: adrian-tchaikovski-service-model
+:EXPORT_FILE_NAME: index
 :END:
 
-Another quiet week. Streamed tired on Friday night, so quite a bit of pilot error with the looper, but folk still seemed to enjoy it.
+#+begin_description
+A robot valet kills its master for no apparent reason, then heads off on a /Pilgrim's Progress/ to understand his malfunction.
+#+end_description
 
-Scrooby show was lovely on Saturday. Nice to catch up with a few folk I've not seen in quite a while and the weather was flat out gorgeous. I took some modelling balloons, planning to do a few balloon animals and hats, had something like a 60% burst rate with the Sempertex 260Ss that were all I could get hold of at short notice. Won't be using those again. Qualatex all the way, I think.
-*** DONE Week ending 2023-09-24
-CLOSED: [2023-09-24 Sun 10:47]
+I'm very late to Tchaikovsky's work and picked this up mostly because of an Audible recommendation. A very good recommendation it was too.
+
+Charles is a robotic valet, and one morning, completely out of the blue, he slits his master's throat in lieu of shaving him and (eventually) sets off on a pilgrimage to find out why. The world Charles exists in is… broken and his journey to enlightenment is longer and stranger than he ever expected.
+
+Charles is very definitely /not/ human and his motivations are not exactly what you and I might think of as motivations. He has a task list. He is programmed to work through it. That is all.
+
+He doesn't want anything. He can't feel anything. Not fear, hope, surprise, disappointment. And he's okay with that. Well, he would be if "being okay with something" were something he could do.
+
+Because of Charles' inhuman viewpoint, part of the pleasure of the book is working out what's going on that Charles is incapable of understanding.
+
+It's been a long time since I read /Pilgrim's Progress/, but it's definitely the work that /Service Model/ reminds me of. Charles, despite murdering his master, is an innocent abroad, travelling through a series of encounters that he doesn't necessarily understand in an effort to clear his task list.
+
+It's also bloody funny in a dry, despairing kind of way.
+
+{{{newthought(I listened to the audiobook,)}}} read by the author, which I can recommend highly. Tchaikovsky's a great narrator with just the right level of emotional detachment, but the jokes still land beautifully. A very smooth listen.
+*** TODO Captain Vorpatril's Alliance, by Lois McMaster Bujold
 :PROPERTIES:
-:export_file_name: week-ending-20230924
-:export_hugo_slug: week-note
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((author . "Lois McMaster Bujold") (title . "Captain Vorpatril's Alliance") (type . "Captain Vorpatril's Alliance"))
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover '((s . "https://covers.openlibrary.org/b/olid/OL25361837M-S.jpg") (m . "https://covers.openlibrary.org/b/olid/OL25361837M-M.jpg") (l . "https://covers.openlibrary.org/b/olid/OL25361837M-L.jpg"))
+:EXPORT_HUGO_BUNDLE: lois-mcmaster-bujold-captain-vorpatril-s-alliance
+:EXPORT_FILE_NAME: index
 :END:
 
-I'm not quite sure where the time went these last couple of weeks, but here we are at another Sunday. We've spent quite a bit of the time watching a new family of kittens that have taken to playing on the flat roof of our garage. They're almost obscenely cute scraps of black and white fur and just delightful to watch.
-
-#+hugo: more
-**** Sunday
-
-Back in 2012, we were living in Cornwall and used to go to the regular Farmers' Markets in Mullion and Helston. One week, at Mullion, a new trader showed up selling home made bean to bar chocolate under the name of [[https://chocolarder.com/][Chocolarder]]. I got chatting with Mike, the guy who made the stuff, and bought a few bars and some of his [[https://www.chocolarder.com/shop/sea-salt-caramel-truffles/][sea salt caramel truffles]]. If we weren't actually his first customer, we were damned close.
-
-Every month, he showed up with plain looking bars of /amazing/ chocolate. One time he'd bought a bunch of rose petals (apparently, they can be had quite reasonably after Valentine's Day because there's something of a glut), dessicated them, ground them fine and added them to the chocolate. Bloody delicious!
-
-I told Mike about some milk chocolate with sea salt that I'd tried and really loved and suggested he do something similar. He'd have a go he said. Months later (after many experiments, apparently) there he was with some bars of salted milk chocolate so I bought as many as I had the cash for and loved every mouthful. He didn't make them again though. Except, today, with a bit of birthday money burning a hole in my pocket, I thought "I'd love some Chocolarder chocolate, it's been an age" and what did they have? You guessed it: [[https://www.chocolarder.com/shop/sea-salt-milk/][Cornish sea salt]] milk chocolate. So that's a chunk of birthday money spent.
-
-Yes, it's a lot of money for a bar of chocolate, but believe me, it's amazing stuff and Mike is as committed to ethical and sustainable manufacture as anyone I've ever met. We've visited the factory a couple of times and I remember the time we visited and he was more excited about showing off his new, plastic free packaging as he was about the chocolate. He buys direct from cacao farmers and has been known to get his beans shipped by sail rather than container ship.
-
-* Bakehouse Diary :@bakehouse-diary:
+Continues the family saga
+** Bakehouse Diary :@bakehouse-diary:
 :PROPERTIES:
 :export_hugo_custom_front_matter: :series "Bakehouse Diary"
 :ID:       1704207D-154F-4BA2-A7AA-35585A21295E
 :END:
 
-** Bakehouse Diary
+*** Bakehouse Diary
 :PROPERTIES:
 :export_file_name: back-to-the-bakehouse
 :export_date: [2018-02-01 Thu]
@@ -301,7 +398,7 @@ would go and making lots of pizzas and a few loaves of bread.
 
 #+hugo: more
 
-*** The story so far…
+**** The story so far…
 :PROPERTIES:
 :ID:       9B5B244B-A654-4254-BCEA-9CE31C600321
 :END:
@@ -380,7 +477,7 @@ workwear, flour, wire shelving, and a bewildering amount of janitorial
 bits and bobs from [[https://nisbets.co.uk/][Nisbets]]. Fettling the oven wasn't exactly cheap,
 but wow, do those baskets add up!
 
-*** It's arrived, and it fits
+**** It's arrived, and it fits
 :PROPERTIES:
 :ID:       AD747BAF-5C59-4456-B10E-EC021530372C
 :END:
@@ -398,7 +495,7 @@ year old oven, and /damn/, but they were good.
 #+caption: The first loaf
 [[file:./back-to-the-bakehouse/first-loaf.jpg]]
 
-*** What next?
+**** What next?
 :PROPERTIES:
 :ID:       6006477E-9259-4548-BE06-AA284C35787B
 :END:
@@ -407,14 +504,14 @@ Of course, no enterprise like this is ever finished, here's a
 selection from my to do list.
 
 
-**** Plumbing
+***** Plumbing
 :PROPERTIES:
 :ID:       C3EF1AE5-0633-4355-9A9E-AADC63202AC2
 :END:
 A bigger sink! Water near the scale so I'm not carrying buckets
 back and forth! A handwash basin!
 
-**** Qualifications
+***** Qualifications
 :PROPERTIES:
 :ID:       D2940478-569D-4A68-8A85-A3FB832E0DD7
 :END:
@@ -423,7 +520,7 @@ to show you're not a complete moron when it comes to hygiene.
 Breadmaking is relatively low risk because everything gets so
 very hot during the cooking process, but even so.
 
-**** Refrigeration
+***** Refrigeration
 :PROPERTIES:
 :ID:       7C336767-BFD8-4C6F-AB3F-379D615EF2CF
 :END:
@@ -436,7 +533,7 @@ first thing in the morning after a decent night's sleep. I have a
 retarder, but transport is annoyingly tricky because it's 2m
 tall, and should ideally be transported vertically too.
 
-**** Fitness
+***** Fitness
 :PROPERTIES:
 :ID:       0599F968-72F3-467F-B4A8-5ADE5EBC6548
 :END:
@@ -445,7 +542,7 @@ I'm going to actually make money at this, I'm going to need to be
 able to manage more. Hopefully, as I bake it'll improve my
 fitness, so as demand grows I'll be able to meet it.
 
-**** Marketing
+***** Marketing
 :PROPERTIES:
 :ID:       584A5EC0-B1AA-425F-80E1-071BE00980FD
 :END:
@@ -454,7 +551,7 @@ there's nobody else in the local area making this sort of bread,
 so I have a few advantages. I still haven't made a Loafery
 website though. At least I have the loafery.co.uk domain.
 
-**** Online ordering
+***** Online ordering
 :PROPERTIES:
 :ID:       FD89D3AC-84C8-4884-B2B4-FA445111D76D
 :END:
@@ -464,7 +561,7 @@ much to make on each bake day, which help minimise any wasted
 bread. With two bakes done this year, I've sold every loaf - I'd
 like to keep that up.
 
-*** In the next bakehouse diary...
+**** In the next bakehouse diary...
 :PROPERTIES:
 :ID:       6B4B05DF-007B-4559-ACFE-BB21BCEADA42
 :END:
@@ -475,7 +572,7 @@ and hopefully some news about online ordering.
 
 
 
-** DONE Running a bakery on Emacs and PostgreSQL
+*** DONE Running a bakery on Emacs and PostgreSQL
 :PROPERTIES:
 :EXPORT_FILE_NAME: baking-with-emacs
 :export_hugo_slug: baking-with-emacs
@@ -580,7 +677,7 @@ So I have a bit of code in my emacs config that tweaks the day's entry in a dayb
 
 It won't win any code beauty contests, but it does the job of setting a ~work_date~ variable for the day's entry and running any code in the subtree as part of the capture process. The capture template has lines like ~#+call:mixes()~, which call the stored code snippets, that reference the variable set in the current subtree and so make the query for the right day. This means that all I have to do to know what I should be doing when I get into the bakehouse is to run an org-capture and check the resulting entry in my daybook. Provided, that is, that I've added the appropriate rows to the database.
 
-*** Next steps
+**** Next steps
 :PROPERTIES:
 :ID:       30E7B083-080A-45CC-AED5-A9D55E210170
 :END:
@@ -592,7 +689,7 @@ The software isn't done, of course, no software ever is. But it's good enough th
 - Better scheduling :: things get weird if a batch of dough would be more than I can mix in a single go. Right now there are other physical limitations that mean that I simply can't make that much bread anyway, but once I get a few more bannetons and racks, this will become a much more pressing issue.
 - Order management :: Right now, I manage orders through Postico talking to the database, which is okay, but a little frustrating in places. An autocompleting environment for orders within emacs would be a much neater way to manage things.
 
-*** Putting the personal in personal computing
+**** Putting the personal in personal computing
 :PROPERTIES:
 :ID:       EB0497C2-51A6-4452-8CEE-E587BE2AA695
 :END:
@@ -603,7 +700,7 @@ But... learn to program, and a whole other vista of possibility opens up to you.
 So... choose tools that let you program them. I choose emacs and PostgreSQL, you might choose vim and SQLite or Atom and a NoSQL database, or you might just live in your Smalltalk image. Once you start to see your computing environment as truly soft and malleable, you can do amazing things, assisted by a computer that is truly /yours/.
 
 
-** DONE "A recipe is just a directed acyclic graph…"
+*** DONE "A recipe is just a directed acyclic graph…"
 :PROPERTIES:
 :export_hugo_slug: recursive-sql-recipes
 :export_file_name: recursive-sql-recipes
@@ -860,7 +957,7 @@ In order to see what's going on, we can change the final ~SELECT~ to ~SELECT for
 
 Which shows that we're considering two lots of Basic White Sour with exactly the same weights, but we (and more importantly, the database engine) know that they're distinct amounts because we get to them through different routes. Hurrah! The problem is solved and we can accurately work out what we should be mixing.
 
-*** What's still missing
+**** What's still missing
 :PROPERTIES:
 :ID:       868FF41D-EB97-4079-8710-EBBE6B50AB15
 :END:
@@ -872,7 +969,7 @@ This could be the bulk fermentation time if it's a formula for a dough or a star
 The real queries take this into account to allow us to work back from the ~due_date~ of a real order to the day we need to do the work. If you want to dig into how I handle dates  you can check out the repository at [[https://github.com/pdcawley/bakehouse/]].
 
 
-*** The perils of writing stuff up
+**** The perils of writing stuff up
 
 Never write your work up for your blog. Especially if you're mostly happy with it. As I was writing this, I realised there's an annoying bit of code duplication that I think I can eliminate. In the current code, I repeat what's essentially the same query structure in a couple of different views, but the formula graph is essentially static unless I add or adjust a recipe. Now I'm wondering if I could make a materialised view that has enough information to shortcut the calculations for both making the production list (what needs to be mixed, when) and for working out my costings (to put a price on a loaf, you need to know how much the raw ingredients cost, and that involves walking the tree again. Maybe a table like:
 
@@ -915,107 +1012,264 @@ I think, however, I'm going to leave it alone until I have to write another recu
 
 
 
-* Book Reports                                            :@book-report:
+** Week Notes :weekNotes:
 :PROPERTIES:
-:export_hugo_custom_front_matter: :series "Book Reports"
-:export_hugo_section: /book
-:ID:       AE556F3E-BD2C-46E6-BE13-AD819A39EE6D
+:export_hugo_custom_front_matter: :series Week Notes
 :END:
-
-** DONE A Wizard of Earthsea
+*** 2023
+**** DONE Week ending 2023-07-16
+CLOSED: [2023-07-16 Sun 18:32]
 :PROPERTIES:
-:EXPORT_FILE_NAME: a-wizard-of-earthsea
-:export_hugo_slug: a-wizard-of-earthsea
-:export_date: 2019-05-30
-:export_hugo_aliases: /2019/05/30/a-wizard-of-earthsea/
-:ID:       DB913EAC-FB57-44B7-9645-DBD26957CE72
+:export_file_name: week-ending-20230716
+:export_hugo_slug: week-note
 :END:
-This was the first.
-
-Before I read Tolkien at the suggestion of the wonderful Miss Reese, my teacher for my last year of primary school; before I pulled Diana Wynne Jones, Alan Garner, Susan Cooper and others from the shelves of Bawtry's small, but enchanting branch library; before Anne McCaffrey's DragonSong found me in my school library and set a fire in my imagination. Before all that, I read /A Wizard of Earthsea/ and it stuck with me.
+Small victory of the week: I'm starting to get on top of the washing
 
 #+hugo: more
 
-I remember one Saturday with 50p in my pocket from singing for a couple of weddings at St George's church in Doncaster (25p for each wedding, paid cash in hand on the day. It always felt like a bonus after singing Bach's /Jesu Joy of Man's Desiring/ in the side chapel as the register was signed in the vestry and Magnus Black, the choir and organmaster, brought that beautiful tune dancing with such delicacy from in instrument that would shake the walls later as the happy couple left the church to Vidor's toccata and fugue).
-#+begin_marginnote
-That was if we were lucky. It was usually Mendelssohn – not bad, Magnus was far too good an organist for it to sound dull, but not a patch on Vidor.
-#+end_marginnote
-I was never one for saving, I'm still not, so I was straight round to Donny's nearest thing to a bookshop, the WH Smith in the Arndale in search of something to read. A voracious reader, I'd gone through all the /Swallows and Amazons/ and /Narnia/ books and I needed more. The cover of the second Puffin edition, with its white youth and bizzare half man half hawk fascinated me, so I handed over my 50p
-#+begin_marginnote
-The bibliography I found tells me that it probably cost 35p, so I no doubt bought a load of sweets as well – books and sugar have always been my vices.
-#+end_marginnote
-and headed home with my prize.
+***** Tuesday
 
-I read /A Wizard of Earthsea/ once or twice and loved it, but I've not reread it since. As a kid, I borrowed rest of the then trilogy from the library and found them rather hard going at  (my memory says that I found /The Tombs of Atuan/ a real slog. I got through it, but it took a couple of goes and at least one renewal to get to the end). A few weeks ago though, I went to the [[https://www.soundpost.org.uk/][Sound Post]] 'Modern Fairies' singing weekend and fell into conversation with [[https://terriwindling.com][Terri Windling]] about the books that had shaped me and I told her about my experience with the Earthsea trilogy and I thought maybe I'd been a little too young for them (I think I was eight or nine when I read AWoE, and maybe twelve when I read /The Tombs of Atuan/ and /The Furthest Shore/). I hadn't revisted them since. Terri made me promise to reread them and to let her know what I thought. So that's what I'm doing. Terri, this book report's for you. I owe you a few more and I promise I'll get to them.
+Overwhelm had left us with a huge pile of washing to do, filling the sink, the draining board, and various work surfaces and I kept putting off tackling it because my brainweasels just saw the sheer amount of work involved and shut down. No fun. Anyway, Gill grabbed her perching stool and set to and before I knew it there was a full dishwasher burbling away, an empty sink, a full draining board and the beginnings of a system to keep it that way. The goal is to keep the sink empty and the draining board full. Before I cook, I clear the draining board. Any pans I use go in the sink and the next time I make tea, I wash up what's in the sink and anything that's still not been done of the mahoosive pile, until there's a full draining board again. Next time I'm brewing up, I can put the dry stuff away and, if I have the spoons, chip away at some more of the pile (though, post-COVID, I rarely have the spoons for much -- I can only stand for so long).
 
-By the way, if you've never read /A Wizard of Earthsea,/ there will be spoilers in this article. Read the book before continuing. It shouldn't take you long, and it's well worth the time.
+It's not perfect, but it gets stuff done, and I'm calling that a win.
 
-It's not so much what happens in this story as the way it's told that left its impression on me. Earthsea is made of words – all stories are, of course – sung into being by Segoy. Words are power. A wizard spends a large part of his
-#+begin_marginnote
-The wizards are all men. There are female witches in the story, but at this stage of the tale they're definitely underpowered and untrustworthy compared to the men. Le Guin fixes this later.
-#+end_marginnote
-education learning the "the Deeds of heroes and the Lays of wisdom" and year under the Master Namer just learning the true names of things in the Old Speech: the language of dragons; the language in which the world was made. In the period when the book is set, there is written language, but I get the feeling that it's very much the preserve of the wise. Songs, orally transmitted, are how the people of the archipelago hold their history and Le Guin's language reflects that. Every sentence seems to have been shaped to be spoken, and beautifully so. I kept stopping and reading passages out because the words were just so... right.
+***** Wednesday
 
-I sometimes wonder who the tale's narrator is telling the story to. It's a question that can break a lot of first person SF and exposes lazy storytelling. If a book that's supposedly the product of a completely different culture or time feels like it's written for an early 21st century reader, it breaks the book for me.
-#+begin_marginnote
-Sometimes I don't care though. God alone knows why Bertie Wooster is telling the Jeeves stories, or who he's telling them too – I'm just very glad he's chosen to tell them at all.
-#+end_marginnote
-The language and idiom of /A Wizard of Earthsea/ seem entirely right and consistent. We learn so much about the world as Ged's story is told from things mentioned in passing. We know that this happened a long time ago and it's assumed we already know about /The Deed of Ged/, /The Creation of Ea/ and all the other songs, deeds and festivals that are referred to in passing through the book. At the end we are told that no songs have survived that tell how Ged came to terms with his shadow – the entire book is a footnote in a much larger story that's just out of reach. I'm reminded of the fact that we only have the Norse myths we know because an ancient Icelander worried that readers wouldn't recognize the allusions in the sagas and eddas, so they wrote down the bones of the older stories to help future readers understand. If Le Guin had left Earthsea at this point, all we would know of Earthsea would be the glimpses of it in this story. And what glimpses they are.
+Emily came over for rehearsal and Carcassonne. It was mostly Carcassonne, if I'm honest, but /The Housewife's Lament/ is starting to seem like we've learned it, as is /We'll Sit Upon The Gate,/ though that one feels like it could use another verse. /The Mary Ellen Carter/ is pretty damned solid too, which is good.
 
-You can find echoes /A Wizard of Earthsea/ in so much subsequent fantasy literature. The possibility of a wizard being trapped in another, for instance. Pratchett plays with and develops this in the /Witches/ sequence of Discworld books, for instance. I loved this sentence though: "And no one knows how many of the dolphins that leap in the waters of the Inmost Sea were men once, wise men, who forgot their wisdom and their name in the joy of the restless sea." If I had the power to become a dolphin I wouldn't be keen to return to the body of a fat 51 year old with diabetes and a bunch of aches and pains that I try not to think about. You can keep your wisdom sometimes.
+We set a new record city score in Carcassonne too, managing to share a 105 point city. We even managed my first ever draw in the second game.
 
-As a kid, I didn't really understand what was going on with Ged and his Shadow. It was easy to see myself in the ever noticed that he didn't have the same colour skin as me). I loved learning and especially /knowing/. It wasn't hard to take my undoubtedly superior intelligence
-#+begin_marginnote
-Yeah. I know. I must have been insufferable as a kid (and an adult, if I'm honest). First to stick their hand up in every class. Happy to "Well, actually..." at every opportunity.
-#+end_marginnote
-as analogous to a wizard's power. Then, though, the shape of the story confused me, especially the ending. Ged and his friend sail off the page. The sea becomes land. Ged steps off the boat and confronts the Shadow, addressing it with his own name. And the shadow disappears/merges with Ged. And they all live on to do the Deeds which are sung of them. What? Nine year old me had no /idea/ what was going on there, but the imagery stuck.
+***** Friday
 
-Now, of course, it all seems a clearer. Thesis. Antithesis. Synthesis. Ged does a terrible thing in his ignorance  and pride. In shame he runs from it, almost losing his humanity in the process. He is tempted by a dark power, but rejects it. A friend and teacher restores him to himself and tells him that running is the sure road to doom. He turns and chases his Shadow instead. Finally he comes to an acceptance that the Shadow is a part of himself and by giving it his name he reintegrates that part into himself and finally becomes a whole man. There you go – no need to read the book now.
+A solo stream this week. Again with the Overwhelm getting in the way of getting more guests booked, but I'm starting to fill the diary again, which is good. I've got Alex Cumming as my guest in a couple of weeks, and Helen Edwards, Talis Kimberley, Emily, and a folk legend who will remain nameless for the time being lined up for August and September.
 
-Of course you need to read this book. It's language sings and the places and people it evokes are beautifully drawn. Rereading this after more than 30 years, so much was familiar. I would have said I'd forgotten almost all of it but the bare outline of the story and a few character names, but that stuff clearly went in deep and helped make me myself because as I read, the whole shape of the thing unfolded in my head. It was almost like recognising roads and pathways in a place you holidayed repeatedly as a kid, then didn't return for 20 years. Familiar and surprising at the same time. "Oh yeah, that's where Daniel used to live! And do you remember walking up there to buy ice creams at the village shop? Oh! I'd forgotten this view!"
+Loopy Pro was mostly rock solid. The one-shot overdub whine cropped up once, and there was a hard crash to the home screen at one point, but a restart was fast and clean. Perils of running beta versions of sofware, I guess.
 
-Right... onwards to /The Tombs of Atuan./
-** DONE /Service Model/, by Adrian Tchaikovsky :sf:audiobook:
-CLOSED: [2025-08-21 Thu 21:08]
+***** Saturday
+
+I toddled over for the morning and afternoon sessions at the Bradfield Traditional Music Weekend -- spent a happy few hours singing Americana (I sang /Cabin in Glory/ and /We're Gonna Camp a Little While in the Wilderness/ which seemed to go down well) in the first session, then there was a lovely, ballad heavy, song session. I sang /Tamlyn/ about as well as I've ever sung it, and it went down really well. I was knocked out by a cracking version of /The Famous Flower of Serving Men/ in particular, but the whole session was great.
+
+
+***** Sunday
+
+Dim sum at the China Palace for lunch with Dougal & Liz, Matt and Jo and a few of the kids. Excellent as always. We may have overordered
+
+I'm off to the closing session of BTMW later. I suspect it will be as good as the Saturday sessions.
+
+
+**** DONE Week ending 2023-07-23
+CLOSED: [2023-07-23 Sun 21:37]
 :PROPERTIES:
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((author . "Adrian Tchaikovsky") (title . "Service Model") (type . "book"))
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover '((s . "https://covers.openlibrary.org/b/olid/OL59424202M-S.jpg") (m . "https://covers.openlibrary.org/b/olid/OL59424202M-M.jpg") (l . "https://covers.openlibrary.org/b/olid/OL59424202M-L.jpg") (caption .  "<cite>Service Model</cite> by Adrian Tchaikovsky"))
-:EXPORT_HUGO_BUNDLE: adrian-tchaikovski-service-model
-:EXPORT_FILE_NAME: index
+:export_file_name: week-ending-20230723
+:export_hugo_slug: week-note
 :END:
 
-#+begin_description
-A robot valet kills its master for no apparent reason, then heads off on a /Pilgrim's Progress/ to understand his malfunction.
-#+end_description
+Small victory of the week: Actually got off my arse and did something about selling off my old /Magic the Gathering/ cards. For my next trick, I hope to do the same with my collection of [mostly card] magic books.
 
-I'm very late to Tchaikovsky's work and picked this up mostly because of an Audible recommendation. A very good recommendation it was too.
+#+hugo: more
 
-Charles is a robotic valet, and one morning, completely out of the blue, he slits his master's throat in lieu of shaving him and (eventually) sets off on a pilgrimage to find out why. The world Charles exists in is… broken and his journey to enlightenment is longer and stranger than he ever expected.
+***** Tuesday
+Made a capture template for adding a week note. Support functions are currently not the prettiest, and don't deal with a bunch of corner cases, but they seem to work for my case, so I'll leave 'em be for the time being. I plan to write it up in a longer post, and that will no doubt tweak my coder pride enough to make things suck a little less.
 
-Charles is very definitely /not/ human and his motivations are not exactly what you and I might think of as motivations. He has a task list. He is programmed to work through it. That is all.
+Oh god, once I start fiddling with my Emacs configuration, it's impossible to stop!
 
-He doesn't want anything. He can't feel anything. Not fear, hope, surprise, disappointment. And he's okay with that. Well, he would be if "being okay with something" were something he could do.
+***** Wednesday
+Nipped over to Mum and Dad's for lunch at Zini's, and to borrow dad's drills for my on going cigar box MIDI controller project. Managed to get eight holes accurately placed enough that I only had to drill 7.8mm holes for the M7 threaded rotary encoders I'd soldered to my stripboard. I'm calling that a win! Next trick, get the microcontroller wired up and appropriate software written.
 
-Because of Charles' inhuman viewpoint, part of the pleasure of the book is working out what's going on that Charles is incapable of understanding.
+Also discussed making PID controller I promised to make dad for his heat treatment setup a while back. A Pi Pico and one of its mini displays looks like it should do the job nicely. The plan is to make an extension cable with an SSR as a separate bit of kit, then control that from the prototype controller. Once they're working as separate parts, we can work out how to bring it all into one container. I shall wuss out of making the kind of thing I saw in a commercial radio controlled plug, which powered the control circuit with a very simple capacitor based power supply, with the slightly worrying wrinkle that the controller's 0V line was floating at around 5V below mains Vmax. Clever, sure, but scarier than I'm prepared to work with.
 
-It's been a long time since I read /Pilgrim's Progress/, but it's definitely the work that /Service Model/ reminds me of. Charles, despite murdering his master, is an innocent abroad, travelling through a series of encounters that he doesn't necessarily understand in an effort to clear his task list.
+***** Friday
 
-It's also bloody funny in a dry, despairing kind of way.
+Holy crap, but old /Magic the Gathering/ cards are getting horrifically pricy. According to the buy list of the shop I just took my cards in to, I should be expecting about £400 for just four of my cards. And probably another couple of hundred for the two dual lands (assuming they're not from the Unlimited set, in which case they're worth a /lot/ more). All being well that's covered the cost of getting my grandfather's old recliner reupholstered and fixed.
 
-{{{newthought(I listened to the audiobook,)}}} read by the author, which I can recommend highly. Tchaikovsky's a great narrator with just the right level of emotional detachment, but the jokes still land beautifully. A very smooth listen.
-** TODO Rivers of London, by Ben Aaronovitch :sf:fantasy:
+If I could be arsed with it, I could probably get a lot more by selling direct on eBay, but I was already losing the will to live just sorting things out to take in to the shop.
+
+Do /not/ ask me about the /Tabernacle at Pendrell Vale/ and /Black Lotus/ that I sold far too early, because that might make me grumpy.
+
+**** DONE Week ending 2023-07-30
+CLOSED: [2023-07-30 Sun 22:48]
 :PROPERTIES:
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((type . book) (title . "Rivers of London") (author . "Ben Aaronovitch"))
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover '((s . "https://covers.openlibrary.org/b/olid/OL26814272M-S.jpg") (m . "https://covers.openlibrary.org/b/olid/OL26814272M-M.jpg") (l . "https://covers.openlibrary.org/b/olid/OL26814272M-L.jpg"))
-:EXPORT_HUGO_BUNDLE: ben-aaronovitch-rivers-of-london
-:EXPORT_FILE_NAME: index
+:export_file_name: week-ending-20230730
+:export_hugo_slug: week-note
 :END:
 
-One of these  fine days I'll actually write a book report on this one! As it is, I'm mostly fiddling with it to check that I'm styling things right. And making this paragraph longer and longer and longer and filling it up with gibberish until the summary as a whole is taller than the thumbnail wants to go.
+Three weeks on the trot. Definitely calling that a win.
 
-But, for now, you'll have to make do with placeholder text.
+Also, Good Omens 2 is a delight. Still enough of Terry's character hanging
+around it, and the new writers help it not feel too Neil-y.
+#+hugo: more
 
-* Posts
+***** Wednesday
+
+After a bit of fiddling, I've worked out how to add helpers to the Emacs `C-x 8` keymap, so now I have shortcuts for typing 'λ', '🙂' and various other characters that I type more or less frequently. Beats the crap out of doing `C-x 8 <ret>` and then typing out the name of the character I'm looking for.
+
+In case you're interested, here's the code:
+
+#+begin_src emacs-lisp
+    (general-define-key
+      :keymaps 'iso-transl-ctl-x-8-map
+      ". ," "…"
+      ": )" "🙂"
+      ": D" "😀"
+      "; )" "😉"
+      "\\"  "λ"
+      "a ^" "↑"
+      "a u" "↑"
+      "a v" "↓"
+      "a d" "↓"
+      "a |" "↕")
+#+end_src
+
+If you're not using `general`, but you've got `use-package` installed, you can do something similar with `bind-keys`:
+
+#+begin_src emacs-lisp
+
+  (bind-keys
+   :map 'iso-transl-ctl-x-8-map
+   (". ," . "…")
+   (": )" . "🙂")
+   (": D" . "😀")
+   (":|"  . "😐")
+   ("; )" . "😉")
+   ("\\"  . "λ")
+   ("a ^" . "↑")
+   ("a u" . "↑")
+   ("a v" . "↓")
+   ("a d" . "↓")
+   ("a |" . "↕"))
+
+#+end_src
+
+You can no doubt use define-key as well, but I find `general` or `bind-keys` to be much nicer to work with. The latter has the advantage that it's included in Emacs as part of `use-package` and plays nice with `which-key`, so I might go and redo my key bindings and get rid of `general`, nice as it is, since the real selling point of that library is how easy it is to bind stuff in `evil-mode` states.
+***** Sunday
+
+I still miss /Twitch Sings./ It's how I started streaming—long before the Friday night Song Swaps and folk streams. I'd be happily belting out Lady Gaga's /Bad Romance/, hamming it up to /You Spin Me Round/ or giving it my best Johnny Cash
+#+begin_marginnote
+Not a particularly good impression. I can't get that low!
+#+end_marginnote
+on /Hurt./ It was just huge fun and a great way to make friends on Twitch.
+
+Twitch ended up pulling the plug because it was a free app and… well, free apps and sync rights really don't play well together.
+
+You'll still find people doing Karaoke on Twitch though, many of them the same faces I met back in /Twitch Sings/ days. This morning, I woke up early and spotted some friends Karaoke-ing it up on a Discord, so I pulled on pyjamas and went and joined 'em for a few songs. These days, I just use [[https://loopypro.com][Loopy Pro]] rather than searching YouTube for backing tracks. It's great fun though, and definitely makes for a more enjoyable way to spend the occasional hour or so of early morning insomnia.
+
+Singing in company, even virtual company is still the best thing you can do in public with your clothes on. I encourage you all to sing more. What's the worst that could happen?
+**** DONE Week ending 2023-08-13
+CLOSED: [2023-08-14 Mon 09:02]
+:PROPERTIES:
+:export_file_name: week-ending-20230813
+:export_hugo_slug: week-note
+:END:
+Oops, missed a week; seems I didn't have anything interesting to say, or I was too busy doing stuff to write about it. Probably the former.
+
+Not a bad week, this week. My step daughter and her family called in on their way back from holiday on Friday night and we spent a pleasant evening with them and a few Cawleys who were knocking about, sat outside the Wool Market. Mostly good food, but apparently the Greek place isn't that good. Rustic Pizza is still good though.
+
+#+hugo:more
+***** Friday
+
+Most of the proceeds of my /Magic: The Gathering/ cards will be spent on repairing my grandfather's recliner. But... I wouldn't be me if I didn't spend some of it on something gamelike. So I bought myself a 'GameDad'. In my case, an [[https://anbernic.com/products/rg353v-rg353vs][Anbernic RG 353VS]] and it's a hell of a thing. Not much bigger than an old school Game Boy (and /cheaper!/ Not just in real terms, but the Game Boy launched at $89.99 and I got mine for $87.99), but with a large, bright colour screen and enough grunt to play SNES and PlayStation games at full tilt. Apparently, you can even make it play Nintendo 64 stuff, but not necessarily at full speed.
+
+I don't really care about emulating consoles I never owned though. I want to play /Manic Miner/, /Tempest/, /Dig Dug/, /Galaxians/ and the other games that gladly ate my pocket money, ten pence at a time, down the local arcade (the building's still there in all it's new brutalist concrete glory, but the arcade where I boggled at /I, Robot/ and thrilled to the exploits of the masters of /Defender/ and /Robotron/ is long gone).
+
+So, in search of that heady thrill and those unmistakable sound effects, I've been frequenting archive.org's library of delights and installing a few of my old favourites.
+
+The first to get seriously played was my old favourite /Tempest/ -- Atari's miracle of colour vector graphics where you controlled a spiky yellow thing running around the top of a blue tube shooting the terrifying geometric shapes that were climbing up towards you with deadly intent. When I first started playing it, I'd hold the fire button down and spin madly round the top of the tube and die all too quickly. But it was such fun I'd just shove another coin in the slot until my money was all gone. Then, in an arcade in Whitby, I watched someone playing the game in an entirely new way and my mind was blown. The walls weren't blue! The colours were different and there were new, scary shapes. This guy wasn't spinning around, and he wasn't just holding down the fire button either.
+
+Tempest was unusual for the time in that it had autofire. If you held down the fire button on most games of the era, you'd fire one shot, then nothing would happen. But in Tempest, you'd autofire bursts of eight missiles, then a slight pause and the cycle would repeat. And it was the slight pause that would kill you. The Whitby guy had sussed that out and was mashing the fire button at a measured speed that kept up a constant stream of evenly spaced bullets that were far more likely to save you when a Flipper had reached the top of the tube and was making its way towards you; they could only kill you if they in the same space as you and were vulnerable to your shots while they were flipping that last step towards you. If you were simply relying on autofire, you could bet that that flip would happen during the short pause between bursts.
+
+Whitby guy had also worked out that the larger the angle a flipper had to flip through, the more chance you had of killing it before it killed you, so for lots of levels, it was just a matter of finding the safest place and staying there. There are a couple of levels where you were only 'safe' from flippers coming from one side. Those were the levels that killed you unless you got good at moving from place of safety to place of safety.
+
+I watched intently and, when I returned to my home arcade, suddenly the top three scores -- the ones that got burned into non volatile memory -- on the arcade's machine belonged to PDC. I could reliably reach the red levels and even the next, yellow, set.
+
+I can't do that on the Game Dad. Not yet at least. I'm old enough and RSI'd enough, that the thought of bashing the fire button at 8 Hertz just gives me the shivers.
+
+But! Modern emulators have all sorts of convenience functions, surely I could configure something that would emulate the steady rate of fire that my youthful fingers were capable of. And maybe I could do something about the incredibly sensitive controls, where even the lightest touch of the analog stick would see me moving two or more segments when what I really wanted was a surgical one step move.[fn:12]
+
+I turns out that I could. But, frustratingly, not via the very slick UI. I had to edit text files! I had to make new text files. And because popping the Micro SD card out of the Game Dad and into a card reader, editing a file, putting it back in the GD, testing it and then having to fiddle with the text file again is… less than ideal, I did it by /logging into my handheld games console via SSH from my iPad, editing the file and just restarting the game!/
+
+You can't do that with an original Game Boy can you? The damned thing's running Linux. I'm at once annoyed that I had to log in to it and fiddle with text files and astonished that I could even do that.
+
+It's not the nostalgia that's making me feel old, it's my assumptions about what's capable of what kind of computing.
+**** DONE Week ending 2023-08-20
+CLOSED: [2023-08-21 Mon 10:17]
+:PROPERTIES:
+:export_file_name: week-ending-20230820
+:export_hugo_slug: week-note
+:END:
+
+A quiet week. Had to cancel Friday night's singing session with Emily – initially because Emily's still recovering from COVID, but on the night itself, my diabetes meds decided to give me hellacious indigestion. Ozempic/semaglutide might well do wonders for my HBA1c readings, but it can't half mess with my guts as well.
+**** DONE Week ending 2023-08-27
+CLOSED: [2023-08-27 Sun 12:32]
+:PROPERTIES:
+:export_file_name: week-ending-20230827
+:export_hugo_slug: week-note
+:END:
+
+A bit of a mixed week, mood wise. Capped by a great day's singing and chatting in Peterborough yesterday.
+
+It's great to get out of the house sometimes. Gill coped really well by herself too -- I'm a full time carer, but it's definitely good to know that I can have the odd day off without it completely buggering things up.
+
+#+hugo: more
+***** Monday
+****** Folk FOMO
+Whitby Folk Festival FOMO is real. But also, there's a COVID spike going on, and crowded rooms full of unmasked singers aren't the safest of environments, so I think I'll comfort myself in the knowledge that at least I won't be likely to bring an infection home with me.
+****** Blog fiddling
+I swear I'm going to wrap my head around the workings of the way to optionally build a custom formatted Date tree using =org-capture=, but for now I've just tweaked the template I use to add
+
+#+begin_src org
+#+hugo: more
+#+end_src
+
+to the heading for the week. This means that, when Hugo's rendering the index page, the week's notes will be represented by a summary which links to the extended per-day notes for the week.
+
+Furthermore, I've added a new capture to let me capture a weeks' summary. I think I'll probably end up wrapping that in a =summarize-week= command that will show me the wider weeknote context while I write the note, then mark the week as =DONE=, then bring up =magit= so I can commit and push the changes. But maybe not for a while yet, on the "fake it until you can't stand /not/ to automate it." principle.
+***** Thursday
+
+So, I have the ADHD thing of putting a thing down and completely forgetting where I put it, or even its very existence. Object permanence is clearly not a thing with me.
+
+Or I thought it was.
+
+We have a house guest right now, and she has this habit of trying to help by tidying putting stuff in 'sensible' places. So I'll find the squash in amongst the bottles of oil, vinegar and sauces in a /completely other part of the kitchen;/ or Gill's socks will show up in an admittedly convenient, but surprising, new place after I've given up looking for them in the place I usually put them, and the airer I dry them on, and in the washing machine and laundry basket. Maybe it's on the floor between any of those places… Grrr.
+
+It turns out I'm kind of comfortable with not quite knowing where a thing is, but I am absolutely viscerally /infuriated/ by finding said thing in the wrong fucking place, somewhere I would never ever ever in a month of Sundays deliberately put it.
+
+And don't… don't get me started on the utter utter utter wrongness of using the lids of things as shelves. I will end up foaming at the mouth and shouting. Ask me how I know.
+
+It's all the more distressing because I hate getting angry about stuff, especially objectively trivial stuff like this, and so the rate spirals. Bah!
+***** Saturday
+
+Had a great day at Mill Con 2 down in Peterborough. I still think filk music as a genre is a bit weird, but there's no denying that the people who make it are lovely people, and it's hard to beat singing in company for lifting your mood.
+
+Mike Whitaker was kind enough to give me a concert spot at a week's notice too, so I did a forty minute set with a couple of songs with Loopy Pro in what was only the second time I've used the gear in any setting but my 'streaming studio.' It went well, but there's still a way larger profusion of wires than I'm happy with, and I definitely want to assemble some kind of all in one pedal setup if I'm going to be taking the gear out of the house more often.
+**** DONE Week ending 2023-09-03
+CLOSED: [2023-09-03 Sun 13:47]
+:PROPERTIES:
+:export_file_name: week-ending-20230903
+:export_hugo_slug: week-note
+:END:
+
+Another quiet week. Streamed tired on Friday night, so quite a bit of pilot error with the looper, but folk still seemed to enjoy it.
+
+Scrooby show was lovely on Saturday. Nice to catch up with a few folk I've not seen in quite a while and the weather was flat out gorgeous. I took some modelling balloons, planning to do a few balloon animals and hats, had something like a 60% burst rate with the Sempertex 260Ss that were all I could get hold of at short notice. Won't be using those again. Qualatex all the way, I think.
+**** DONE Week ending 2023-09-24
+CLOSED: [2023-09-24 Sun 10:47]
+:PROPERTIES:
+:export_file_name: week-ending-20230924
+:export_hugo_slug: week-note
+:END:
+
+I'm not quite sure where the time went these last couple of weeks, but here we are at another Sunday. We've spent quite a bit of the time watching a new family of kittens that have taken to playing on the flat roof of our garage. They're almost obscenely cute scraps of black and white fur and just delightful to watch.
+
+#+hugo: more
+***** Sunday
+
+Back in 2012, we were living in Cornwall and used to go to the regular Farmers' Markets in Mullion and Helston. One week, at Mullion, a new trader showed up selling home made bean to bar chocolate under the name of [[https://chocolarder.com/][Chocolarder]]. I got chatting with Mike, the guy who made the stuff, and bought a few bars and some of his [[https://www.chocolarder.com/shop/sea-salt-caramel-truffles/][sea salt caramel truffles]]. If we weren't actually his first customer, we were damned close.
+
+Every month, he showed up with plain looking bars of /amazing/ chocolate. One time he'd bought a bunch of rose petals (apparently, they can be had quite reasonably after Valentine's Day because there's something of a glut), dessicated them, ground them fine and added them to the chocolate. Bloody delicious!
+
+I told Mike about some milk chocolate with sea salt that I'd tried and really loved and suggested he do something similar. He'd have a go he said. Months later (after many experiments, apparently) there he was with some bars of salted milk chocolate so I bought as many as I had the cash for and loved every mouthful. He didn't make them again though. Except, today, with a bit of birthday money burning a hole in my pocket, I thought "I'd love some Chocolarder chocolate, it's been an age" and what did they have? You guessed it: [[https://www.chocolarder.com/shop/sea-salt-milk/][Cornish sea salt]] milk chocolate. So that's a chunk of birthday money spent.
+
+Yes, it's a lot of money for a bar of chocolate, but believe me, it's amazing stuff and Mike is as committed to ethical and sustainable manufacture as anyone I've ever met. We've visited the factory a couple of times and I remember the time we visited and he was more excited about showing off his new, plastic free packaging as he was about the chocolate. He buys direct from cacao farmers and has been known to get his beans shipped by sail rather than container ship.
 
 ** DONE My Virtual Gig-Like Thing
 :PROPERTIES:
@@ -2975,6 +3229,7 @@ The pull of "One Big Text File" is strong
 I'm semi-seriously contemplating pulling the Hugo theme that I use to generate this website into a single Org file and using Org's Literate Programming tooling to spit it out into individual layout files.
 
 I may need an intervention.
+
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
