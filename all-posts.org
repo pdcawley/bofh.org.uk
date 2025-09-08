@@ -2963,6 +2963,18 @@ CLOSED: [2025-09-07 Sun 09:22]
 :export_file_name: 8
 :END:
 Yay! Kicking it old school with a =Makefile= to automate building and deploying this site. I don't know if I can entrust it to a cron job yet because the deployment involves ssh, and I'm a bit fuzzy on the workings of key management in such circumstances
+
+** DONE [2025-09-08 Mon 07:22] :emacs:temptations:
+CLOSED: [2025-09-08 Mon 07:27]
+:PROPERTIES:
+:export_file_name: 9
+:END:
+
+The pull of "One Big Text File" is strong
+
+I'm semi-seriously contemplating pulling the Hugo theme that I use to generate this website into a single Org file and using Org's Literate Programming tooling to spit it out into individual layout files.
+
+I may need an intervention.
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
