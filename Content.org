@@ -272,7 +272,7 @@ He fails, of course.
 
 @@hugo:{{%newthought %}}@@I could quibble@@hugo:{{% /newthought %}}@@ about some of the computer history/dates, but that would be to miss the point. I can't help noticing the occasional flub because that's the kind of geek I am, but I'm learning not to let it spoil my enjoyment of something.
 
-Oh yeah, and thank god for this, Cory's got /way/ better at writing sex scenes over the years. I still shudder at the memory of some of the stuff in /Makers/,
+Oh yeah—and thank god for this—Cory's got /way/ better at writing sex scenes over the years. I still shudder at the memory of some of the stuff in /Makers/,
 #+begin_marginnote
 Great book with some /skincrawlingly/ bad sex scenes. I can't even put my finger on why, I'm afraid.
 #+end_marginnote
