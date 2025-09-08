@@ -61,6 +61,40 @@ tools, or something like `direnv'.i"
         (sleep-for 1)))
     all-entries))
 
+(defun wm-toplevel-reducer (acc mention)
+  (require 'dash)
+  (let* ((path (--> mention
+                    (gethash "wm-target" it)
+                    (url-generic-parse-url it)
+                    (url-path-and-query it)
+                    (car it)))
+         (subgroup (vconcat (gethash path acc (vector)) (vector mention))))
+
+    (puthash path subgroup acc)
+    acc))
+
+(defun wm-group-mentions-by-type (mentions-vec)
+  (seq-reduce (lambda (acc mention)
+                (let* ((type (gethash "wm-property" mention))
+                       (group (vconcat (gethash type acc (vector))
+                                       (vector mention))))
+                  (puthash type group acc)
+                  acc))
+              mentions-vec (make-hash-table :test 'equal)))
+
+(defun wm-fixup-simple-hash (mentions-hash)
+  (let ((result (make-hash-table :test 'equal)))
+    (maphash (lambda (key value)
+               (puthash key (wm-group-mentions-by-type value) result))
+             mentions-hash)
+    result))
+
+(defun wm-unflatten-mentions (mentions-vec)
+  (wm-fixup-simple-hash
+   (seq-reduce 'wm-toplevel-reducer mentions-vec
+               (make-hash-table :test 'equal))))
+
+
 (defun wm-fetch-mentions ()
   "Fetch the webmentions of `wm-domain'."
   (interactive)
@@ -69,50 +103,11 @@ tools, or something like `direnv'.i"
   (require 'seq)
   (require 'ht)
   (save-current-buffer
-    (let ((all-entries (vector)))
-      (let (entries
-            (page-index 0)
-            (page-size 100)
-            (more? t))
-        (while more?
-          (request
-            wm-webmention-endpoint
-            :params `(("domain" . ,(or (getenv "WM_API_DOMAIN")
-                                       (error "WM_API_DOMAIN not set!")))
-                      ("token" . ,(or (getenv "WM_API_TOKEN")
-                                      (error "WM_API_TOKEN not set!")))
-                      ("page" . ,page-index)
-                      ("per-page" . ,page-size)
-                      ("sort-dir" . "up"))
-            :parser 'json-parse-buffer
-            :sync t
-            :success (cl-function
-                      (lambda (&key data &allow-other-keys)
-                        (if-let* ((entries (gethash "children" data nil)))
-                            (progn
-                              (setq all-entries (vconcat all-entries entries)
-                                    more? (and entries (eql page-size (length entries)))
-                                    page-index (1+ page-index)))
-                          (setq more? nil)))))))
-      (let ((mentions-by-filename
-             (seq-group-by
-              (-compose (-rpartial #'expand-file-name wm-site-dir)
-                        (-partial #'format "data/mentions%smentions.json")
-                        #'url-filename
-                        #'url-generic-parse-url
-                        (-rpartial #'ht-get "wm-target"))
-              all-entries)))
-        (unless (file-exists-p wm-data-dir)
-          (message "Making data-dir: %s" wm-data-dir)
-          (make-directory wm-data-dir))
-        (pcase-dolist (`(,file . ,value-list) mentions-by-filename)
-          (message "Saving file %s" file)
-          (make-directory (file-name-directory file) t)
-          (with-temp-file file
-            (erase-buffer)
-            (json-insert (vconcat value-list))))))))
-
-
+    (let ((all-entries (wm--fetch-all)))
+      (with-temp-file (expand-file-name "all.json" wm-data-dir)
+        (message "Writing to %s" (buffer-file-name))
+        (erase-buffer)
+        (json-insert (wm-unflatten-mentions all-entries))))))
 
 (provide 'webmentions)
 ;;; webmentions.el ends here
