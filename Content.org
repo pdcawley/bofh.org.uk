@@ -3334,7 +3334,7 @@ With that done, it's a simple matter of opening =data/mentions/all.json=, erasin
 
 @@hugo:{{%newthought %}}@@Over in the Hugo partial@@hugo:{{% /newthought %}}@@ that renders the bit of the page immediately after this, we can get at the data like this:
 
-#+begin_src html
+#+begin_src go-html-template
 {{- $all_mentions := index site.Data.mentions.all .RelPermalink  -}}
 {{ $likes := index $all_mentions "like-of" | default slice -}}
 {{ $reposts := index $all_mentions "repost-of" | default slice -}}
@@ -3496,7 +3496,7 @@ Progress!
 
 Hmm, so which file pertains to which post?
 
-#+begin_src html
+#+begin_src go-html-template
 {{ $slug := .RelPermalink | sha256 }}
 {{ $all_mentions := index site.Data.mentions $slug | default slice }}
 {{ $likes := where $all_mentions "wm-property" "like-of" }}
@@ -3513,7 +3513,7 @@ At least the template code to get at it is more or less sane.
 
 Well, that's clear as day!
 
-#+begin_src html
+#+begin_src go-html-template
 {{ $key := (split path.Dir .RelPermalink) "/" | after 1 | append "mentions" }}
 {{ $all_mentions := index site.Data.mentions $key | default slice }}
 {{ $likes := where $all_mentions "wm-property" "like-of" }}
@@ -3529,7 +3529,7 @@ What the actual fuck? I /want/ to write ~{{ index site.Data.mentions .RelPermali
 
 That's a tad more opaque, isn't it? Ah well, there's always =jq=. I can't see what's got new mentions from git status any more, but also, I can't forget to add any new data files either. Call it a win on aggregate.
 
-#+begin_src html
+#+begin_src go-html-template
 {{ $all_mentions = index site.Data.mentions.all .RelPermalink | default dict }}
 {{ $likes := index $all_mentions "like-of" | default slice }}
 #+end_src
