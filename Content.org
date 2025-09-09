@@ -3117,6 +3117,254 @@ The ~(while more? ...)~ loop keeps requesting more data until it gets a short re
 We now have a handy list of all the webmentions relating to our site. The next step is to massage it into a data structure that will suit Hugo and export it as JSON files in the site's =data= directory. Which is a topic for another blog post, I think. If only because I'm reasonably sure that the data structure I'm currently using isn't great.
 
 I'll hack it about a bit and report back.
+** DONE Making use of Webmentions :webmentions:indieweb:hugo:
+CLOSED: [2025-09-09 Tue 20:49]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 20250909-making-use-of-webmentions
+:EXPORT_FILE_NAME: index
+:END:
+
+#+begin_description
+In which we finish with Webmentions for the time being by massaging a flat list of mentions into a two-level hash table/JSON object that's easy to make use of in Hugo.
+
+And speculate about how we could improve things further, because things can always be improved.
+#+end_description
+
+When [[/2025/09/07/fetching-webmentions-again-with-emacs/][last we left off]] we had worked out how to grab all the mentions of this site that [[https://webmentions.io/][Webmentions.io]] knew about and now we want to write that out to the =data/= directory in a format that's easy to deal with in Hugo.
+
+If you've read [[*\[2025-09-09 Tue 06:55\]][my earlier note]], you'll know that I've been evolving the data schema towards something that's easy for Hugo to deal with and reasonably comprehensible for me too.
+
+As things currently stand, I've settled on dropping all the mentions in a single file, =data/mentions/all.json=
+#+begin_marginnote
+I'd rather use =data/mentions.json=, but Hugo's data system doesn't seem to pick that up, so I'll live with the slightly more clunky option.
+#+end_marginnote
+which is structured along these lines:
+
+#+begin_src json
+{
+  "/note/7/": {
+    "like-of": [
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Daniel Kelly Music",
+          "photo": "https://avatars.webmention.io/fsn1.your-objectstorage.com/7aa4815cbc1f993c0e2a6df03280dc168f5ad07fecd0313ddfc27eeb02e0b437.png",
+          "url": "https://aus.social/@yasslad"
+        },
+        "url": "https://mendeddrum.org/@pdcawley/115160370354067277#favorited-by-109307830089461078",
+        "published": null,
+        "wm-received": "2025-09-07T01:31:46Z",
+        "wm-id": 1936817,
+        "wm-source": "https://brid.gy/like/mastodon/@pdcawley@mendeddrum.org/115160370354067277/109307830089461078",
+        "wm-target": "https://bofh.org.uk/note/7/",
+        "wm-protocol": "webmention",
+        "like-of": "https://bofh.org.uk/note/7/",
+        "wm-property": "like-of",
+        "wm-private": false
+      },
+      {
+        "type": "entry",
+        "author": {
+          "type": "card",
+          "name": "Jess Robinson",
+          "photo": "https://avatars.webmention.io/fsn1.your-objectstorage.com/a11ee0a58e54873140bf1f1965900378d866fce3fafae79e116b979bea3a8773.jpg",
+          "url": "https://fosstodon.org/@castaway"
+        },
+        "url": "https://mendeddrum.org/@pdcawley/115160370354067277#favorited-by-109562941096076318",
+        "published": null,
+        "wm-received": "2025-09-07T07:19:01Z",
+        "wm-id": 1936873,
+        "wm-source": "https://brid.gy/like/mastodon/@pdcawley@mendeddrum.org/115160370354067277/109562941096076318",
+        "wm-target": "https://bofh.org.uk/note/7/",
+        "wm-protocol": "webmention",
+        "like-of": "https://bofh.org.uk/note/7/",
+        "wm-property": "like-of",
+        "wm-private": false
+      }
+    ],
+    "in-reply-to": [],
+    "mention-of": [],
+    "repost-of": [],
+    "other": []
+  }
+}
+#+end_src
+
+Just imagine that JSON object has a bunch more paths as keys referencing similar objects keyed by mention type.
+
+As it stands, ~wm--fetch-all~ is returning a flat sequence of webmention objects that we want to process into a more structured object,
+#+begin_marginnote
+JSON/Javascript calls them objects, old Perl heads like me think of them as hashes, and they're "Hash Tables" in Emacs Lisp. I'll be calling them hashes from now on.
+#+end_marginnote
+in other words we want to fold (or "reduce" in Emacs Lisp terminology) the sequence into a hash. And I know just the function for that. Let's see what ~describe-function~ has to say about ~seq-reduce~:
+
+#+begin_example
+seq-reduce is a byte-compiled function defined in seq.el.gz.
+
+*Signature*
+(seq-reduce FUNCTION SEQUENCE INITIAL-VALUE)
+
+*Documentation*
+
+Reduce the function FUNCTION across SEQUENCE, starting
+with INITIAL-VALUE.
+
+Return the result of calling FUNCTION with INITIAL-VALUE
+and the first element of SEQUENCE, then calling FUNCTION
+with that result and the second element of SEQUENCE,
+then with that result and the third element of SEQUENCE,
+etc. FUNCTION will be called with INITIAL-VALUE (and then
+the accumulated value) as the first argument, and the
+elements from SEQUENCE as the second argument.
+
+If SEQUENCE is empty, return INITIAL-VALUE and FUNCTION
+is not called.
+
+This does not modify SEQUENCE.
+#+end_example
+
+So we can write
+
+#+begin_src emacs-lisp
+(seq-reduce #'wm--add-mention-to-hash-table
+            (wm--fetch-all)
+            (make-hash-table :test 'equal))
+#+end_src
+
+and that will handle the business of iterating over the sequence of mentions for us, and all we have to do is write ~wm--add-mention-to-hash-table~ to populate the hash we made with ~(make-hash-table :test 'equal)~
+#+begin_marginnote
+We need to use that ~:test 'equal~ part because ~json-insert~ wants a hash with strings as keys and the default hash returned by ~(make-hash-table)~ compares keys using ~eql~ which might or might not work when comparing strings. Not a problem which ~equal~ has.
+#+end_marginnote
+one mention at a time, and return the modified hash (You and I both know that it's the same old hash mutated, but let's pretend it isn't, eh?).
+
+What does that function look like? Here's what I wrote:
+
+#+begin_src emacs-lisp
+(defun wm--add-mention-to-hash-table (acc mention)
+  "Helps reduce a list of mentions into a two level hash."
+  (require 'dash)
+  (let* ((path (--> mention
+                    (gethash "wm-target" it)
+                    (url-generic-parse-url it)
+                    (url-path-and-query it)
+                    (car it)))
+         (mentions-hash (or (gethash path acc nil)
+                            (wm-new-mentions-hash)))
+         (mention-type (gethash "wm-property" mention))
+         (mentions (or (gethash mention-type mentions-hash)
+                       (progn
+                         (setq mention-type "other")
+                         (gethash mention-type mentions-hash))))
+         (new-mentions (if (seq-contains mentions mention)
+                           mentions
+                         (vconcat mentions (list mention)))))
+    (puthash mention-type new-mentions mentions-hash)
+    (puthash path mentions-hash acc)
+    acc))
+
+#+end_src
+
+We grab the path from the ="wm-target"= key, which is actually a URL rather than a simple path
+#+begin_marginnote
+We /could/ just use the URL, and that would work fine on this site, but not when I'm running on localhost. The path will always match with ~.RelPermalink~, but the host part of ~.Permalink~ is different in development than in production.
+#+end_marginnote
+so, rather than writing
+
+#+begin_src emacs-lisp
+(car
+ (url-path-and-query
+  (url-generic-parse-url
+   (gethash "wm-target" mention))))
+#+end_src
+
+we'll thread ~mention~ through that series of transformations using =dash.el='s threading macro, ~-->~.
+
+We use the path to grab ~mentions-hash~ from the ~acc~-umulating hash and, if there isn't already one there, we grab an empty, but structured hash using ~wm-new-mentions-hash~, which looks like this:
+
+#+begin_src emacs-lisp
+(defun wm-new-mentions-hash ()
+  "Make a new empty hash to hold categorised webmention data."
+  (copy-hash-table
+   #s(hash-table
+      test equal
+      data ("like-of" [] "in-reply-to" []
+            "mention-of" [] "repost-of" []
+            "other" []))))
+#+end_src
+
+Now we look up ~"wm-property"~ in ~mention~, and use that to grab its associated vector of mentions. Well, we would, but there's a small wrinkle.
+
+@@hugo:{{%newthought %}}@@@@hugo:We're only currently interested in four kinds of mention,{{% /newthought %}}@@ but Webmention.io doesn't know that. We could throw the extras away, but what if we became interested in =bookmark-of= mentions or whatever somewhere down the road. So let's collect them under the =other= key. Which is where this hacky section of our ~let*~ form comes in:
+
+#+begin_src emacs-lisp
+(mention-type
+ (gethash "wm-property" mention))
+(mentions
+ (or (gethash mention-type mentions-hash)
+     (progn
+       (setq mention-type "other")
+       (gethash mention-type mentions-hash))))
+#+end_src
+
+What's going on here then?
+
+First, we make a guess at the ~mention-type~ we're going to file the current mention under by grabbing the ="wm-property"= and use that value to lookup the mention type in ~mentions-hash~. If it's one of the four types we're interested in, that will be a vector, which is truth-y, otherwise we get ~nil~, which is false-y so we change the mention type to "other" and grab that vector from the mention hash.
+
+We now know the key path we're going to store our mentions in, and we have the current vector of mentions associated with it. So, if we already know ~(seq-contains mentions mention)~ about the current mention, we reuse that, otherwise we make a new vector with the current mention added to it.
+
+That done, it's a simple matter of putting the new mentions vector into our mentions hash, putting the mentions hash into our accumulating hash and returning that.
+
+With that done, it's a simple matter of opening =data/mentions/all.json=, erasing the buffer, calling =(json-insert (seq-reduce ...))= to update the data and saving it. Here's the code which does exactly that.
+
+#+begin_src emacs-lisp
+(defun wm-unflatten-mentions (mentions-vec)
+  (seq-reduce 'wm--add-mention-to-hash-table mentions-vec
+              (make-hash-table :test 'equal)))
+
+(defun wm-fetch-mentions ()
+  "Fetch the webmentions of `wm-domain'."
+  (interactive)
+  (save-current-buffer
+    (let ((all-entries (wm--fetch-all)))
+      (with-temp-file (expand-file-name "all.json" wm-data-dir)
+        (erase-buffer)
+        (json-insert (wm-unflatten-mentions all-entries))))))
+#+end_src
+
+@@hugo:{{%newthought %}}@@Over in the Hugo partial@@hugo:{{% /newthought %}}@@ that renders the bit of the page immediately after this, we can get at the data like this:
+
+#+begin_src html
+{{- $all_mentions := index site.Data.mentions.all .RelPermalink  -}}
+{{ $likes := index $all_mentions "like-of" | default slice -}}
+{{ $reposts := index $all_mentions "repost-of" | default slice -}}
+{{ $replies := index $all_mentions "in-reply-to" | default slice -}}
+{{ $mentions := index $all_mentions "mention-of" | default slice -}}
+<footer class="metaline">
+  <ul class="response-summary">
+    <li>{{ $likes | len }} {{ if eq 1 (len $likes) }}like{{ else }}likes{{ end }}</li>
+    <li>{{ $reposts | len }} {{ if eq 1 (len $reposts) }}repost{{ else }}reposts{{ end }}</li>
+    <li>{{ $replies | len }} {{ if eq 1 (len $replies) }}reply{{ else }}replies{{ end }}</li>
+    <li>{{ $mentions | len }} {{ if eq 1 (len $mentions) }}mention{{ else }}mentions{{ end }}</li>
+  </ul>
+</footer>
+...
+#+end_src
+
+I'll leave the rest as an exercise for the interested reader. However, I will note that the Webmention.io API includes the option to pass in a =since= argument, so it wouldn't be hard to write
+
+#+begin_src emacs-lisp
+(seq-reduce
+ 'wm--add-mention-to-hash-table
+ (wm-fetch-mentions-since wm-last-checked)
+ (wm-parse-mentions-file
+  (expand-file-name "mentions/all.json"
+                    wm-data-dir)))
+#+end_src
+
+without having to change our reducing function at all.
+
+Separation of concerns, baby! Separation of concerns!
 
 * Notes :@note:
 :PROPERTIES:
@@ -3287,9 +3535,6 @@ That's a tad more opaque, isn't it? Ah well, there's always =jq=. I can't see wh
 #+end_src
 
 Well structured data for the win! And I'm working on eliminating the annoying ~default dict~ and ~default slice~ in that too.
-
-[[*Joining Twitch as a viewer][Joining Twitch as a viewer]]
-
 
 * Footnotes
 :PROPERTIES:
