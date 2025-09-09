@@ -1632,7 +1632,7 @@ HEAD https://indieweb.org
 <!-- Request duration: 1.125278s -->
 #+END_SRC
 
-We're looking for the 「src_html{Link: … ; rel="webmention"}」 line. This tells us that to send a webmention targeting https://indieweb.org, we need to post it to https://webmention.io/indiewebcamp/webmention. Which is almost as simple as finding the end point. Here we go:
+We're looking for the 「src_html[:exports code]{Link: … ; rel="webmention"}」 line. This tells us that to send a webmention targeting https://indieweb.org, we need to post it to https://webmention.io/indiewebcamp/webmention. Which is almost as simple as finding the end point. Here we go:
 
 #+begin_src restclient :exports both
 POST https://webmention.io/indiewebcamp/webmention
