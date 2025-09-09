@@ -74,6 +74,32 @@
   (+org-hugo-set-shortcode-props "newthought" :trim-pre nil :trim-post t)
   (+org-hugo-set-shortcode-props "marginnote" :trim-pre t :trim-post t))
 
+(defun +org-hugo-output-file-name (&optional subtreep)
+  "Return the output file name of the current org-hugo article."
+  (interactive)
+  (let ((subtree (org-hugo--get-valid-subtree)))
+    (if subtree
+        (let* ((org-use-property-inheritance (org-hugo--selective-property-inheritance))
+               (info (org-combine-plists
+                      (org-export--get-export-attributes
+                       'hugo subtreep nil)
+                      (org-export--get-buffer-attributes)
+                      (org-export-get-environment 'hugo subtreep)))
+               (pub-dir (s-chop-prefix (expand-file-name wm-site-dir)
+                                       (org-hugo--get-pub-dir info))))
+          (org-export-output-file-name ".md" subtreep pub-dir)))))
+
+(defun +org-hugo-targets ()
+  (interactive)
+  (let (files)
+    (org-map-entries
+     (lambda ()
+       (if-let* ((file (+org-hugo-output-file-name t)))
+           (setq files (cons file files)))
+       "EXPORT_FILE_NAME<>\"\""))
+    (seq-uniq files)))
+
+
 (require 'webmentions)
 
 (defun script/export-to-hugo ()
@@ -81,6 +107,12 @@
   (setq org-confirm-babel-evaluate nil)
   (org-transclusion-add-all)
   (org-hugo-export-wim-to-md t))
+
+(defun script/print-hugo-targets ()
+  (require 'ox-hugo)
+  (dolist (file (+org-hugo-targets))
+    (print file)))
+
 
 (provide 'setup-org-export)
 ;;; setup-org-export.el ends here
