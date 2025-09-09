@@ -61,39 +61,40 @@ tools, or something like `direnv'.i"
         (sleep-for 1)))
     all-entries))
 
-(defun wm-toplevel-reducer (acc mention)
+(defun wm-new-mentions-hash ()
+  "Make a new empty hash to hold categorised webmention data."
+  (copy-hash-table #s(hash-table
+                      test equal
+                      data ("like-of" [] "in-reply-to" []
+                            "mention-of" [] "repost-of" []
+                            "other" []))))
+
+
+(defun wm--add-mention-to-hash-table (acc mention)
+  "Helps reduce a list of mentions into a two level hash."
   (require 'dash)
   (let* ((path (--> mention
                     (gethash "wm-target" it)
                     (url-generic-parse-url it)
                     (url-path-and-query it)
                     (car it)))
-         (subgroup (vconcat (gethash path acc (vector)) (vector mention))))
-
-    (puthash path subgroup acc)
+         (mentions-hash (or (gethash path acc nil)
+                            (wm-new-mentions-hash)))
+         (mention-type (gethash "wm-property" mention))
+         (mentions (or (gethash mention-type mentions-hash)
+                       (progn
+                         (setq mention-type "other")
+                         (gethash mention-type mentions-hash))))
+         (new-mentions (if (seq-contains mentions mention)
+                           mentions
+                         (vconcat mentions (list mention)))))
+    (puthash mention-type new-mentions mentions-hash)
+    (puthash path mentions-hash acc)
     acc))
 
-(defun wm-group-mentions-by-type (mentions-vec)
-  (seq-reduce (lambda (acc mention)
-                (let* ((type (gethash "wm-property" mention))
-                       (group (vconcat (gethash type acc (vector))
-                                       (vector mention))))
-                  (puthash type group acc)
-                  acc))
-              mentions-vec (make-hash-table :test 'equal)))
-
-(defun wm-fixup-simple-hash (mentions-hash)
-  (let ((result (make-hash-table :test 'equal)))
-    (maphash (lambda (key value)
-               (puthash key (wm-group-mentions-by-type value) result))
-             mentions-hash)
-    result))
-
 (defun wm-unflatten-mentions (mentions-vec)
-  (wm-fixup-simple-hash
-   (seq-reduce 'wm-toplevel-reducer mentions-vec
-               (make-hash-table :test 'equal))))
-
+  (seq-reduce 'wm--add-mention-to-hash-table mentions-vec
+              (make-hash-table :test 'equal)))
 
 (defun wm-fetch-mentions ()
   "Fetch the webmentions of `wm-domain'."
