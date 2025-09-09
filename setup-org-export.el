@@ -63,7 +63,31 @@
      (raku . t)
      (yaml . t)
      (shell . t)
-     (restclient . t))))
+     (restclient . t)))
+
+  (require 'ol)
+  (org-link-set-parameters "reply"
+                           :follow #'+org-reply-open
+                           :export #'+org-reply-export)
+
+  (defun +org-reply-open (path _)
+    "Visit the link being replied to"
+    (org-open-link-from-string (format "[[%s]]" path)))
+
+  )
+(defun +org-reply-export (link description format _arg)
+  (unless (eq description guard)
+    (let* ((type (org-element-property :type link))
+           (link-is-url (member type '("http" "https" "ftp" "mailto")))
+           (path link)
+           (desc (or description link)))
+      (unless (link-is-url)
+        (pcase format
+          (`html (format "<a target=\"_blank\" rel=\"in-reply-to\" href=\"%s\">%s</a>" path desc))
+          (`md (+org-reply-export link description 'html))
+          (_ path))))))
+
+
 
 (add-to-list 'load-path (expand-file-name "./support-code/"))
 
