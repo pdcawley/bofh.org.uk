@@ -101,13 +101,10 @@ tools, or something like `direnv'.i"
   (require 'request)
   (require 'dash)
   (require 'seq)
-  (require 'ht)
   (save-current-buffer
     (let ((all-entries (wm--fetch-all)))
       (with-temp-file (expand-file-name "all.json" wm-data-dir)
-        (message "Writing to %s" (buffer-file-name))
         (erase-buffer)
         (json-insert (wm-unflatten-mentions all-entries))))))
-
 (provide 'webmentions)
 ;;; webmentions.el ends here
