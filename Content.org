@@ -1409,7 +1409,7 @@ Well, it can. It just takes a little work.[fn:2] The ~question~ to ask is how do
 #+begin_marginnote
 Of bloody course!
 #+end_marginnote
-that live in a page's ~HEAD~ section. The microformat approach has a good deal to be said for it: In theory, you can just make a ~HEAD~ request to the URL you're interested in, parse out the microformat of your choice and build your own media card. I've not worked out how to do this yet though. However, before Twitter and FB started throwing their weight around, there was an open standard that lots of sites support, it's /really/ easy to use. It's called [[https://oembed.com/][oembed]] and it's great. The idea is that it too is discoverable via a ~HEAD~ request to your media page. You look for something matching src_html{<link rel="alternate" type="application/json+oembed" href="..." ...>}, make a JSON request to the ~href~ url and paste in the contents of the ~html~ key in the object you get back. The catch, of course, is that you still end up having to parse the document's HEAD.
+that live in a page's ~HEAD~ section. The microformat approach has a good deal to be said for it: In theory, you can just make a ~HEAD~ request to the URL you're interested in, parse out the microformat of your choice and build your own media card. I've not worked out how to do this yet though. However, before Twitter and FB started throwing their weight around, there was an open standard that lots of sites support, it's /really/ easy to use. It's called [[https://oembed.com/][oembed]] and it's great. The idea is that it too is discoverable via a ~HEAD~ request to your media page. You look for something matching src_html[:exports code]{<link rel="alternate" type="application/json+oembed" href="..." ...>}, make a JSON request to the ~href~ url and paste in the contents of the ~html~ key in the object you get back. The catch, of course, is that you still end up having to parse the document's HEAD.
 
 The cool thing about ~oembed~, though, is that you /can/ discover its endpoints that way,
 #+begin_marginnote
@@ -3229,6 +3229,67 @@ The pull of "One Big Text File" is strong
 I'm semi-seriously contemplating pulling the Hugo theme that I use to generate this website into a single Org file and using Org's Literate Programming tooling to spit it out into individual layout files.
 
 I may need an intervention.
+
+** DONE [2025-09-09 Tue 06:55] :emacs:hugo:kaizen:
+CLOSED: [2025-09-09 Tue 07:51]
+:PROPERTIES:
+:export_file_name: 10
+:END:
+
+Progress!
+
+@@hugo:{{%newthought %}}@@Before:@@hugo:{{% /newthought %}}@@
+
+#+begin_example
+./data/mentions/3f256ff[...]494.json
+./data/mentions/62afe34[...]020.json
+...
+#+end_example
+
+Hmm, so which file pertains to which post?
+
+#+begin_src html
+{{ $slug := .RelPermalink | sha256 }}
+{{ $all_mentions := index site.Data.mentions $slug | default slice }}
+{{ $likes := where $all_mentions "wm-property" "like-of" }}
+#+end_src
+
+At least the template code to get at it is more or less sane.
+
+@@hugo:{{%newthought %}}@@During:@@hugo:{{% /newthought %}}@@
+
+#+begin_example
+./data/mentions/note/8/mentions.json
+./data/mentions/note/9/mentions.json
+#+end_example
+
+Well, that's clear as day!
+
+#+begin_src html
+{{ $key := (split path.Dir .RelPermalink) "/" | after 1 | append "mentions" }}
+{{ $all_mentions := index site.Data.mentions $key | default slice }}
+{{ $likes := where $all_mentions "wm-property" "like-of" }}
+#+end_src
+
+What the actual fuck? I /want/ to write ~{{ index site.Data.mentions .RelPermalink }}~ and have done with it. To the data mungery!
+
+@@hugo:{{%newthought %}}@@Now@@hugo:{{% /newthought %}}@@
+
+#+begin_example
+./data/mentions/all.json
+#+end_example
+
+That's a tad more opaque, isn't it? Ah well, there's always =jq=. I can't see what's got new mentions from git status any more, but also, I can't forget to add any new data files either. Call it a win on aggregate.
+
+#+begin_src html
+{{ $all_mentions = index site.Data.mentions.all .RelPermalink | default dict }}
+{{ $likes := index $all_mentions "like-of" | default slice }}
+#+end_src
+
+Well structured data for the win! And I'm working on eliminating the annoying ~default dict~ and ~default slice~ in that too.
+
+[[*Joining Twitch as a viewer][Joining Twitch as a viewer]]
+
 
 * Footnotes
 :PROPERTIES:
