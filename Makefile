@@ -11,9 +11,12 @@ deploy:
 
 build: webmentions org-export hugo-build
 
-org-export:
-	@echo "Exporting from Org"
+targets = content/*/*/index.md
+
+$(targets) &: ./Content.org
 	$(BATCH) ./Content.org --eval='(script/export-to-hugo)'
+
+org-export: $(targets)
 
 webmentions:
 	@echo "Exporting webmentions data"
