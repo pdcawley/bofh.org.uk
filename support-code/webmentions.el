@@ -15,7 +15,7 @@
 
 (defvar wm-webmention-endpoint "https://webmention.io/api/mentions.jf2")
 (defvar wm-site-dir (locate-dominating-file (or load-file-name buffer-file-name) ".git/"))
-(defvar wm-data-dir (expand-file-name "data/mentions/" wm-site-dir))
+(defvar wm-data-dir (expand-file-name "data/" wm-site-dir))
 (defvar wm-last-mention-timestamp)
 (defvar wm-site-key)
 (defun wm-last-checked ()
@@ -104,7 +104,7 @@ tools, or something like `direnv'.i"
   (require 'seq)
   (save-current-buffer
     (let ((all-entries (wm--fetch-all)))
-      (with-temp-file (expand-file-name "all.json" wm-data-dir)
+      (with-temp-file (expand-file-name "webmentions.json" wm-data-dir)
         (erase-buffer)
         (json-insert (wm-unflatten-mentions all-entries))))))
 (provide 'webmentions)
