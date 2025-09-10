@@ -3535,7 +3535,23 @@ That's a tad more opaque, isn't it? Ah well, there's always =jq=. I can't see wh
 #+end_src
 
 Well structured data for the win! And I'm working on eliminating the annoying ~default dict~ and ~default slice~ in that too.
+** DONE [2025-09-10 Wed 06:38]
+CLOSED: [2025-09-10 Wed 06:40]
+:PROPERTIES:
+:export_file_name: 11
+:END:
+Oh! The reason Hugo didn't load =data/mentions.json= was that the directory =data/mentions/= exists!
 
+Moved the webmentions data to =data/webmentions.json= and all is fine.
+
+** DONE [2025-09-10 Wed 07:15] :fingers_crossed:automation:
+CLOSED: [2025-09-10 Wed 07:16]
+:PROPERTIES:
+:export_file_name: 12
+:END:
+All being well, this note was deployed here by a cron job, and all the webmentions data got updated too.
+
+All being well…
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
@@ -3575,4 +3591,5 @@ Like Emacs itself, it's almost infinitely flexible, which makes it incredibly ha
 # Local Variables:
 # org-log-done: 'time
 # eval: (org-transclusion-mode)
+# eval: (org-hugo-auto-export-mode t)
 # End:
