@@ -2,9 +2,10 @@ DESTDIR     =public
 
 EMACS ?= emacs
 BATCH  = $(EMACS) -Q -batch -l ./setup-org-export.el
+HUGO ?= /opt/homebrew/bin/hugo
 
 .PHONY: all
-all: clean build
+all: build
 
 deploy:
 	rsync -avz --del ./public/ mbpi:bofh.org.uk
@@ -24,7 +25,7 @@ webmentions:
 
 hugo-build:
 	@echo "Building site with Hugo"
-	hugo --gc --minify -d $(DESTDIR)
+	$(HUGO) --gc --minify -d $(DESTDIR)
 
 clean: clean-content clean-public
 
