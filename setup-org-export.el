@@ -124,7 +124,7 @@
     (seq-uniq files)))
 
 
-(require 'webmentions)
+(require 'wm)
 
 (defun script/export-to-hugo ()
   (message "Exporting current buffer to hugo")

@@ -1,4 +1,4 @@
-;;; webmentions.el --- Code to manage webmentions    -*- lexical-binding: t; -*-
+;;; wm.el --- Code to manage webmentions    -*- lexical-binding: t; -*-
 
 ;; First saved in 2025 by  Piers Cawley
 
@@ -12,12 +12,17 @@
 ;; a pile of helper code
 
 ;;; Code:
+(use-package webmentions
+  :straight (:type git :host github :repo "wkearn/webmentions")
+  :init (require 'webmentions))
 
 (defvar wm-webmention-endpoint "https://webmention.io/api/mentions.jf2")
 (defvar wm-site-dir (locate-dominating-file (or load-file-name buffer-file-name) ".git/"))
 (defvar wm-data-dir (expand-file-name "data/" wm-site-dir))
 (defvar wm-last-mention-timestamp)
 (defvar wm-site-key)
+(defvar wm-hugo-public-dir (expand-file-name "public/" wm-site-dir))
+(defvar wm-base-url "https://bofh.org.uk/")
 (defun wm-last-checked ()
   ;; Eventually use the most recent web mention in our feed
   nil)
@@ -107,5 +112,47 @@ tools, or something like `direnv'.i"
       (with-temp-file (expand-file-name "webmentions.json" wm-data-dir)
         (erase-buffer)
         (json-insert (wm-unflatten-mentions all-entries))))))
-(provide 'webmentions)
-;;; webmentions.el ends here
+
+
+(defun wm-url-for-file (file)
+  "Given a file name"
+  (format "%s%s"
+          wm-base-url
+          (s-chop-prefixes
+           (list (expand-file-name wm-site-dir)
+                 "testing/"
+                 "public/")
+           (expand-file-name file wm-site-dir))))
+
+
+(defun wm-outgoing-links ()
+  "Collect outgoing link dom elements from the current buffer's h-entry."
+  (--> (libxml-parse-html-region (point-min) (point-max))
+       (dom-by-tag it 'article)
+       (dom-by-class it "h-entry")
+       (dom-by-class (car it) "e-content")
+       (dom-by-tag it 'a)
+       (mapcar (lambda (node)
+                 (url-expand-file-name
+                  (dom-attr node 'href)
+                  (wm-url-for-file (buffer-file-name))))
+               it)
+       (-uniq it)))
+
+(defun wm-send-mentions (file)
+  "Send all the mentions in the given file"
+  (interactive "fFile: ")
+  (save-excursion
+    (find-file file)
+    (let ((source (wm-url-for-file file)))
+      (dolist (target (wm-outgoing-links))
+        (message "Sending %s -> %s" source target)
+        (webmention-send-post source target))))
+  )
+
+
+
+
+;;; This section is straight up lifted from
+(provide 'wm)
+;;; wm.el ends here
