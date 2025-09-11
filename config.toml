@@ -10,6 +10,9 @@ googleAnalytics = "UA-135014-1"
 
 summaryLength = 1
 
+[build]
+  useResourceCacheWhen = 'always'
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
