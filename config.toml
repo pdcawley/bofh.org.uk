@@ -1,7 +1,4 @@
 baseurl = "https://bofh.org.uk/"
-layoutdir = "layouts"
-contentdir = "content"
-publishdir = "public"
 canonifyurls = "true"
 theme = ["hugo-tufte"]
 languageCode = "en-gb"
@@ -29,6 +26,12 @@ summaryLength = 1
       path = "github.com/kaushalmodi/hugo-jf2"
     [[module.imports]]
       path = "github.com/hugo-fixit/hugo-atom-feed"
+    [[module.mounts]]
+      source = 'content'
+      target = 'content'
+    [[module.mounts]]
+      source = 'legacy-content'
+      target = 'content'
 
 [outputs]
     # home = ["HTML", "ATOM", "JF2Feed"]
