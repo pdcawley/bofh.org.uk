@@ -3369,6 +3369,948 @@ without having to change our reducing function at all.
 
 Separation of concerns, baby! Separation of concerns!
 
+** Recovered Posts
+*** REVISING Laying out code
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 20030816-laying-out-code
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "REVISING"   from "DONE"       [2025-09-20 Sat]
+- State "DONE"       from "TODO"       [2003-08-16 Sat]
+:END:
+
+#+begin_subsection
+*2025 Editor's Note:*\\
+What the hell was I thinking?
+#+end_subsection
+
+A couple of articles back, I reviewed /Smalltalk Best Practice Patterns/
+and mentioned that it's a book that concentrates on the tactics of
+programming rather than the big strategic stuff. Beck even takes his
+life in his hands and lays down a set of patterns for laying out code.
+The (very short) set of patterns he comes up with do seem to generate
+remarkably clear code.
+
+I'm a big fan of this book, and I've lifted many of the ideas about how
+to structure Smalltalk code and used them when I'm writing OO Perl (to
+the extent that I sometimes find myself wishing that Perl had Smalltalk
+like message selectors), so now I'm toying with the idea of using Beck's
+rules, or something like them, for laying out my Perl code.
+
+Here's a method from Pixie::Proxy (one of the scarier classes in Pixie I
+must admit):\\
+
+#+begin_src perl
+sub _px_extraction_thaw {
+  my $self = shift;
+  my $pixie = Pixie->get_the_current_pixie;
+  my $ret = $pixie->cache_get($self->_oid);
+  if ( defined $ret ) { $pixie->obliterate($self); return $ret; }
+  $self->px_lock_strategy( $pixie->get_the_current_lock_strategy );
+  if ($self->px_class->px_is_immediate) {
+      my $oid = $self->_oid;
+      $pixie->obliterate($self);
+    return $pixie->_get($oid);
+  }
+  else {
+      $self->px_the_store($pixie);
+      $pixie->cache_insert($self);
+    return $self;
+  }
+}
+#+end_src
+
+Now, here it is again reformatted according to my adaptation of Beck's rules.
+
+#+begin_src perl
+sub _px_extraction_thaw {
+  my $self = shift;
+  my $pixie = Pixie->get_the_current_pixie;
+  my $ret = $pixie->cache_get($self->_oid);
+  if ( defined $ret ) { $pixie->obliterate($self); return $ret; }
+  $self->px_lock_strategy( $pixie->get_the_current_lock_strategy );
+  if ($self->px_class->px_is_immediate)
+  { my $oid = $self->_oid;
+    $pixie->obliterate($self);
+    return $pixie->_get($oid) }
+  else
+  { $self->px_the_store($pixie);
+    $pixie->cache_insert($self);
+    return $self; }
+}
+#+end_src
+
+
+The main change in appearance comes from using what Beck calls
+rectangular blocks. Moving to this style has shortened the method by
+three lines, which isn't bad. Moving to using cuddled
+elses
+#+begin_marginnote
+A cuddled else looks like ~} else {~ and is evil, bad
+and wrong.
+#+end_marginnote
+would only have saved one line and I don't like them
+anyway because I tend to lose the ~else~. With rectangular blocks, the
+control structure is still evident, which is nice.
+It's quite strange looking at that code; it looks odd, but I don't think
+it looks actively /bad/. I'm off to recast a whole module in this style
+and see if I can boil things down to as compact a set of rules as Beck
+came up with. Or I might decide it looks horrible, but I do think it's
+worth a look.
+
+Has anyone else tried anything like this? Did it work for you?
+
+
+
+*** DONE Essential Perl 6
+CLOSED: [2025-09-20 Sat 22:53]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 20030815-essential-perl-6
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((author . "Allison Randal") (title . "Perl 6 Essentials") (type . "Perl 6 Essentials"))
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover '((s . "https://covers.openlibrary.org/b/olid/OL3327054M-S.jpg") (m . "https://covers.openlibrary.org/b/olid/OL3327054M-M.jpg") (l . "https://covers.openlibrary.org/b/olid/OL3327054M-L.jpg"))
+:EXPORT_HUGO_BUNDLE: allison-randal-perl-6-essentials
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-20 Sat 22:53]
+- State "REVISING"   from "DONE"       [2025-09-20 Sat]
+- State "DONE"       from "TODO"       [2003-08-15 Fri]
+:END:
+
+As most of you probably know, unless you came
+here via a link from
+[[http://weblogs.java.net/pub/wlg/353][java.net,]]
+I write a summary every week of the ongoing developments on the Perl 6
+development mailing lists. Which means, if nothing else, that my review
+of
+#+header: :trim-pre t :trim-post t
+#+begin_cite
+Perl 6 Essentials
+#+end_cite
+by Randal, Sugalski & Tötsch might be just a little
+partial.
+
+#+hugo: more
+
+Any book which aims to hit a target as mobile as Perl 6 and
+Parrot
+#+begin_marginnote
+Parrot is the register based virtual machine that will host Perl 6.
+#+end_marginnote
+is always going to have a hard time, but the
+writers are all intimately involved in their design and development, so
+they're going to be closer to the mark than most. Allison Randal is a
+member of the core team designing Perl 6 the language; Dan Sugalski is
+the project leader for Parrot and Leopold Tötsch, generally described in
+my
+[[http://www.perl.com/pub/at/16][Perl
+6 Summaries]] as the Patch Monster has a phenomenal work rate and knows
+Parrot inside out.
+
+The book opens with a short overview of the genesis of Perl 6 and how
+the project is structured and managed, and how you can get involved in
+the various subprojects. Included in this section is an overview of how
+Perl 6 the language is being designed. One of the criticisms that's been
+levelled at Perl 6 is that it's being
+[[http://bleaklow.com/alanbur/p6_cover.gif][designed
+by a committee.]] However, this isn't the way most of the people
+involved in Perl 6 see it. The language is being designed by Larry Wall,
+with direct support from Damian Conway, Allison Randal and the others on
+the core team. Meanwhile mailing list participants pitch in with new
+ideas, questions, clarifications etc. It might look like there's a lot
+of noise and disparate voices if you're watching the mailing lists, but
+it's very apparent from reading the design documents that Larry puts out
+([[http://www.perl.com/pub/au/Wall_Larry][The
+Apocalypses]]) that Larry is /the/ designer of Perl 6. There's a
+distinctive Wallian feel to them that's very different from the stuff
+produced on the mailing lists, and even from the stuff Damian Conway did
+in his
+[[http://www.yetanother.org/damian/Perl5+i/][Perl
+5+i]] effort. It's quite weird---often I'll see an idea on the mailing
+list and think “No, that's just going too far.”, then along comes Larry
+in the next Apocalypse and he's taken the idea I'd previously rejected,
+pushes it even further and comes back with something that's powerful,
+Perlish and broadly useful.
+
+Ahem, I digress.
+
+Next up is an overview of the Perl 6 design philosophy. If you've seen
+Allison speaking about this at OSCON or YAPC then much of the material
+in this chapter will be familiar (I do find myself wondering which came
+first, the talk or the chapter).
+#+begin_marginnote
+Ah… I just got mail from Allison, the chapter got done
+first and the process of writing it inspired the talk.
+#+end_marginnote
+This is a well written,
+thoughtful explanation of the principles underlying the language design.
+In a sense, this chapter can be thought of as an essence of
+Perl---There is very little in here that doesn't apply equally to earlier
+Perls, possibly right back to Perl 0.whatever. Even if you're not
+particularly interested in Perl 6 (or even Perl) there's a good deal to
+think about here---the importance of considering natural languages
+when designing programming languages, and of giving the program the
+freedom to express her intent in several ways (and the responsibility to
+choose the clearest option of course)---there's certainly plenty of
+meat for the
+[[http://lambda.weblogs.com/][Lambda
+the Ultimate]] and
+[[http://ll1.ai.mit.edu/][LL1]]
+crowds.
+
+Chapter 4 covers the syntax of Perl 6. It's written as if it's an early
+draft of the Perl 6 edition of Programming Perl. I really like this
+chapter, it covers an awful lot of ground and it does so with admirable
+clarity. The most obvious change is Larry's total rethink of the pattern
+matching syntax, which is a fantastic piece of work and no mistake, but
+a no less important change (to my way of thinking at least) is the
+changes in the way blocks work.
+
+If you listen to the likes of
+[[http://perl.plover.com/][Mark
+Jason Dominus]] (and if you don't listen to Mark, you really should)
+you'll be aware of the importance that he places on Perl's very high
+level capabilities, particularly its functional programming
+capabilities. Well, in Perl 6, functional programming just got a whole
+lot less wordy. And with tail call elimination on the cards, it should
+be getting faster too.
+
+The shift to function signatures which name the arguments helps to
+reduce the ‘noise' in the body of the the subroutine. Hoisting parameter
+naming into the signature gets rid of all the tedious manipulation of
+~@_~ that characterises every single subroutine block in Perl. I
+sometimes think that the parameter handling folderol is one of the main
+reasons that too many Perl 5 functions and methods stay long and don't
+get factored into small, comprehensible units of code.
+
+Perl 6 has also dropped the requirement to use ~sub~ to declare
+anonymous subroutines, making it far easier to write methods and
+functions that can be used as if they were part of the language. And
+hey, it's four characters less to type every time you call a higher
+order function or method. It doesn't /sound/ like much, but if you go
+and take a look at Ruby or Smalltalk and the way in which so many of
+those languages' powerful constructs make heavy use of syntactically
+light
+#+begin_marginnote
+By which I mean blocks are introduced with a minimum of
+gubbins, no keywords required.
+#+end_marginnote
+blocks. See
+[[http://www.perl.com/pub/a/2003/07/29/exegesis6.html][Exegesis
+6]] for a very good set of examples covering almost everything to do
+with subroutines, methods and blocks.
+
+Also in this chapter is coverage of Perl 6's replacement for Perl
+Compatible Regular Expressions. Wow. If I were a Python or Ruby
+evangelist, then I'd currently be busy stealing the ideas and syntax in
+the new Perl 6 Rules and trying to get something up and running before
+Perl 6 does. The new Perl 6 Rules/Grammar system is a comprehensive
+rethink of how pattern matching works and should work. As I've mentioned
+in an earlier entry, I went to Damian Conway's talk on Perl 6 Rules at
+OSCON this year, and he showed off a partial implementation (in Perl 5)
+and they're phenomenal parsing tools. That afternoon, I rode in Ward
+Cunningham's Jeep back from Portland Zoo and we talked about Perl 6
+rules. I may not have got my Ward number down to 1 at OSCON, but I can
+say that Ward seemed excited by the possibilities inherent in the new
+rules system. He's not alone.
+
+{{{newthought(The rest of the book is concerned with Parrot\,)}}} Perl 6's target VM.
+Unlike Perl 6, Parrot is available to download and run today. It's not
+finished, but it's becoming more capable as every day passes (thanks in
+no small part to Leo Tötsch's phenomenal workrate, and, in recent weeks,
+Michal Wallace's sterling work on getting Python up and running on
+Parrot). This does mean that the Parrot section of the book has a few
+inaccuracies where Parrot has changed the way it works. My favourite is
+found in the discussion of Coroutines on p93 where Dan writes
+“Coroutines can be implemented in terms of continuations if need by, but
+that requires using a full continuation-passing function call system,
+something we choose not to do”. Well, that's what most copies say; Mine
+has a signed correction from Dan as I believe that particular statement
+was out of date about a day after too book went to press. There aren't
+many of these however, and I'd be worried if there weren't /any/ ---
+good design arises from experience, and there aren't too many people
+with experience of writing a register based VM. Overall, the Parrot
+Internals chapter is strong on the structure of Parrot, and offers
+insight into the /why/ of it. If you intend to help with the task of
+implementing Parrot then this is an excellent place to start; you'll
+still have to read the source, and the detailed design documents, but if
+you've read this you'll have a good map in your head of how things hang
+together.
+
+The last two chapters are concerned with writing assembly programs to
+run on Parrot. Essentially the would be language implementer can either
+write all his code in native Parrot Assembly Language, managing register
+allocations and the like himself and generally getting all those
+associated headaches. Or, he can write code for IMCC using Parrot
+Intermediate Language (known as PIR for reasons that aren't entirely
+clear even to one who has been watching the mailing list since the
+Parrot project started) which is an ‘overlay' on top of PASM. IMCC
+handles all your register allocation needs, implements macros, handles
+the parrot callling conventions and generally makes the poor compiler
+writer's life easier. The idea is that IMCC will provide language
+independent optimizations such as automatic inlining of function calls,
+loop unrolling and (eventually) the whole arsenal of assembly level
+optimization tricks that have been developed down the years. All you
+have to do is write your compiler/interpreter reasonably simply and let
+IMCC handle the bookkeeping. But, I'm getting ahead of myself again.
+
+Reading the chapter on Parrot Assembly Language can be a strange
+experience, especially if you're used to ‘real' assembly languages. It
+starts off gently, looking pretty much like ‘real' machine code, but
+with the odd wrinkle that there seems to be no way of accessing the main
+memory, and there's PMCs to worry about that don't look like anything
+you'd get in a ‘real' assembler---what was the last chip you saw with
+a fully functioning =sprintf= opcode? The chapter finishes with a handy
+reference of Parrot ops and how to use them, which is excellent; I
+generally don't have sufficient screen real estate to go tracking
+through doc files in search of something, but a book open beside you is
+a godsend. Parrot Assembly is a remarkably powerful and expressive
+assembly language, but for anything serious you should really press on
+to the next chapter, which covers IMCC.
+
+IMCC is great. Although it was intended as a target for compilers that
+didn't want to have to worry about the register allocation bookkeeping,
+it's also a very pleasant environment in which to write your own code.
+Again, this section of the book is well written and makes a very handy
+reference. Last but not least is a decent index (given the speed with
+which this book was put together I'm amazed that it has /an/ index, let
+alone a decent one.)
+
+Perl 6 Essentials
+has had a somewhat mixed reception in various places. The major
+criticism (from those who have neither read it nor intend to read it) is
+along the lines of “Even by the most optimistic estimates, Perl 6 is at
+least a couple of years away, why do we need this book?” Well, yes, Perl
+6 is at least a couple of years away, but Parrot (or something very like
+it) is here right now and it's supporting some ‘real' programming
+languages, not just toys like BASIC and Python, it can even host
+Brainfuck and Befunge. If you want to start targetting Parrot, then this
+book is a great place to start.
+
+The Perl 6 half of the book is important too. Allison has pulled
+together the existing Apocalypses and Exegeses, taken the various
+changes that have happened since they were written and boiled the state
+of Perl 6 down into a straightforward and readable description of where
+we stand. From the feedback I've been getting about my weekly Perl 6
+Summaries, I know that there are plenty of people out there who are
+interested in what's going on in Perl 6, but who don't have the time to
+read the mailing lists. I don't doubt that there are also people out
+there who are interested in Perl 6 but who don't have time to read the
+summaries for whom this book would also be ideal.
+
+{{{newthought(I do wish it had larger margins though.)}}} I can see this becoming a book
+that I end up covering with annotations and addenda as the language
+changes with each new Apocalypse, Exegesis, Parrot Design Document and
+large patch from Leo Tötsch. And I do wonder if it wouldn't have been
+better entitled /The Perl 6 Annual 2003./
+
+*** DONE Certification and Standards
+CLOSED: [2025-09-20 Sat 22:21]
+:PROPERTIES:
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_BUNDLE: 20030807-the-quality-without-a-name
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-20 Sat 22:21]
+- State "REVISING"   from "DONE"       [2025-09-20 Sat 22:10]
+- State "DONE"       from "TODO"       [2003-08-07 Thu 00:01]
+:END:
+
+One of the less satisfying sessions/panels at OSCON this year was the
+‘Perl Certification' Panel, in which a panel of various luminaries,
+moderated by Tim Maher of the Seattle Perl Users' Group spoke
+inconclusively about whether there was a need for Perl Certification. It
+seems to me that, if you're going to have a panel on this kind of topic,
+you /must/ make sure that your moderator is impartial (but not
+uninterested). Tim Maher, for all his many virtues, was not impartial.
+
+I arrived late to the panel, so I could be forming a bad impression, but
+it seemed to me the panel had the cart before the horse, and any similar
+panel will also have such an ungainly configuration, and here's why:
+
+#+hugo: more
+
+The important thing about certification is not the certificate but the
+standards on which it is based.
+
+My wife has been involved in the business of producing standards for
+trainers, health and safety professionals and others here in the UK;
+these standards are used as the basis of high level vocational
+qualifications for such professionals, and they seem to be successful.
+The way the process works in the UK is as follows:
+
+1. Employers, professionals and people with experience writing standards
+   meet and thrash out the competencies required in their field. At this
+   stage, the role of the standards developers is purely to /describe/ competence.
+2. Once consensus is reached, the standards are published. You could,
+   theoretically stop there, and have a useful set of guidelines for
+   trainers, professionals and employers.
+3. An awarding body may then go on to develop qualifications based on
+   these standards. This includes developing ways of assessing
+   candidate's competence through any or all of
+   - Observation of practical work
+   - Written work
+   - Verbal questioning and discussion
+4. The qualification is published.
+5. Trainers develop training programs and materials aimed at bringing
+   candidates up to the standards required.
+
+In order to qualify there is no requirement placed on the candidate to
+undergo training, they can simply pay an assessment fee and if they can
+show competence they qualify. This assessment may well be a relatively
+expensive process; competency cannot usually (ever?) be assessed with a
+simple paper examination. Passing a written exam simply proves you can
+answer questions, but says nothing at all about your ability to do
+anything else.
+
+Also, trainers/assessors /must themselves be competent/ (and they must
+also be competent assessors). Under the NVQ system there's a whole
+series of checks and balances involving external assessors and
+supporting materials. In essence though, the whole thing is
+straightforward, a candidate goes to a competent assessor, demonstrates their
+competence and receives either a qualification or guidance on what areas
+they need to develop further. That is all. The whole edifice stands or
+falls on the quality and integrity of this assessments, but that was
+always the case, it's just made explicit with standards based
+qualifications.
+
+One of the things that slowed the take up of standards based vocational
+qualifications in the UK has been the inertia of the training
+organisations. Trainers like to sell training packages, but the
+qualifications emphasise assessment---Training requirements may arise
+where more competence is required. Trainers need to rethink their
+priorities; when assessment is what counts, trainers should become
+assessors too and start making money from the assessment process as well
+as from any training requirements that arise. Many UK trainers have now
+made this jump.
+
+I doubt very much that we'll ever get a single standard in this area.
+But that's fine, I'm sure that the various software tribes will be able
+to agree on a core set of standards, then the Crafty Camp can go on to
+develop standards for competence in, say, CRC Manipulation, Estimation,
+Test Infection, Pair Programming etc. Meanwhile the Software Engineering
+Collective can develop standards in UML Reading, Formal Analysis
+Techniques, Bogging the Project Down in Use Case Writing... (can you
+tell which side of that particular divide I'm on?)
+
+{{{newthought(Of course\, if the Agile camp had standards\,)}}} they might encourage the
+development of standards for customers. I can just imagine the pre-sale
+conversation:
+
+“Ah, you have a level III Extreme Customer NVQ, that carries a 10%
+increase in velocity over a project with an inexperienced customer”
+
+“And I see your team has an average Level IV in Refactoring and Test
+Writing, but your Estimation could use some work, let's see if we can't
+all improve while we work on this”
+
+“Okay, so what are the stories?”
+
+...
+
+“So, three months to start with, fortnightly iterations, the standard XP
+contract?”
+
+“Yeah, let's get started”
+
+*** DONE The Quality Without A Name
+CLOSED: [2025-09-20 Sat 22:06]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 20030729-the-quality-without-a-name
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((author . "Kent Beck") (title . "Smalltalk Best Practice Patterns") (type . "Smalltalk Best Practice Patterns"))
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover '((s . "https://covers.openlibrary.org/b/olid/OL991031M-S.jpg") (m . "https://covers.openlibrary.org/b/olid/OL991031M-M.jpg") (l . "https://covers.openlibrary.org/b/olid/OL991031M-L.jpg"))
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-20 Sat 22:06]
+- State "REVISING"   from "DONE"       [2025-09-20 Sat 21:33]
+- State "DONE"       from "TODO"       [2003-07-29 Tue 00:01]
+:END:
+"The Quality Without A Name" is a phrase coined by Christopher Alexander
+in The Timeless Way of Building to describe the feeling of satisfaction
+and contentment engendered by good building. He later went on to call it
+‘life', but a friend of mine described it as ‘The Tao of Building',
+which seems rather appropriate too.
+#+header: :trim-pre t :trim-post t
+#+begin_cite
+The Timeless Way of Building
+#+end_cite
+is a fantastic, if somewhat overwritten book, introducing Alexander's themes
+and ideas about how modern architects and builders can recapture the
+qualities inherent in great (usually old) buildings.
+
+Alexander later went on to crystallise his ideas about how
+
+to lay out
+cities, towns, neighbourhoods, houses, rooms, windows, etc. in his
+massively influential book,
+#+header: :trim-pre t :trim-post t
+#+begin_cite
+A Pattern Language,
+#+end_cite
+in which Alexander and
+his co-authors attempted to set down a ‘language' that would enable
+anyone to design and build somewhere that possessed the Quality Without
+a Name for themselves. Sadly, as they admit later, they failed in this
+attempt; efforts to use this pattern language by laymen resulted in
+interesting, but flawed, buildings. Despite the failure (in Alexander's
+terms) it's a great book; the prose can be a little annoying at times,
+but the analysis is deep, and mind-changing.
+
+Here's an extract from one of the patterns:
+
+#+begin_quote
+*208. Gradual Stiffening*
+
+*The Fundamental philosophy behind the use of pattern languages in
+buildings is that buildings should be uniquely adapted to individual
+needs and sites; and that the plans of buildings should be rather loose
+and fluid, in order to accommodate these subtleties.*
+
+[An essay describing the problem more fully, and the reasoning behind
+the solution presented]
+
+Therefore:
+
+*Recognize that you are not assembling a building from components like
+an erector set, but that you are instead weaving a structure which
+starts out globally complete, but flimsy; then gradually making it
+stiffer buit still rather flimsy; and only finally making it completely
+stiff and strong.*
+
+*We believe that in our own time, the most natural version of this
+process is to put up a shell of sheet materials, and then to make it
+fully strong by filling it with compressive fill.*
+#+end_quote
+
+Look, Agile Building!
+
+Alexander and his co-authors have found a powerful way of
+managing complexity by isolating parts of the process of building to
+individual patterns, but neatly tying them into the greater whole by
+their use of introductory and closing paragraphs to explain the context
+to which the pattern applies. When I read it, I find I'm constantly
+flipping back and forth to look at these contextual patterns that
+support (or use) the pattern that I'm concentrating on. The book itself
+has the Quality Without a Name.
+
+It was only after I'd read /The Timeless Way…/ and /A Pattern Language/ that
+I came across the idea of Design Patterns in programming
+#+begin_marginnote
+In fact, I was
+working as a contractor and had a copy of /The Timeless Way…/ on my desk
+when a coworker spotted it and made a remark along the lines of “Ah,
+going back to the source eh?”, which he then had to explain as I didn't
+know what he was talking about.
+#+end_marginnote
+when a friend lent me the Gang of
+Four's
+#+header: :trim-pre t
+#+begin_cite
+Design Patterns.
+#+end_cite
+
+I don't really like /Design Patterns/. Too many of the patterns seem to be
+concerned with working around problems with the static nature of C++ and
+Java---not exactly useful if you're used to a more dynamic OO
+language. Another, deeper failing, is the disjointed nature of the
+patterns presented; there's no attempt to tie the patterns together in a
+coherent language and the whole thing feels like a mishmash of ideas
+waiting to be turned into a finished book.
+
+There is one software patterns book I've read that gets it though, that
+has The Quality Without A Name in the same way that /A Pattern Language/
+does. That book is
+#+header: :trim-pre t :trim-post t
+#+begin_cite
+Smalltalk Best Practice Patterns
+#+end_cite
+by [[http://www.c2.com/cgi/wiki?KentBeck][Kent Beck]]. If you don't know Smalltalk, don't be put off by that title though. Most of the patterns in the book can be applied directly to any
+suitably dynamic OO language (Perl, Python, Perl 6, Javascript...) and
+the syntax of Smalltalk is virtually nonexistent and easy enough to pick
+up.
+
+The book works well because Beck, quite deliberately, limits its scope
+to the "tactics" of coding. Instead of going for the big things, we're
+dealing with the nuts and bolts: how to choose good names, how to write
+methods in ways that encourage reuse and flexibility, how to keep things
+loosely coupled. Beck explains this stuff with concrete examples and
+simple rules, that work phenomenally well together. It's hard to put my
+finger on /why/ it works so well, but my gut feeling is that it's
+because Beck has not forgotten the importance of context.
+
+Very few of the patterns are strictly standalone, they refer to each
+other up and down the ‘levels' of the various patterns and the
+individual patterns are small enough, and well enough supported by the
+other patterns in the language that they remain tightly focussed on the
+issue they address.
+#+header: :trim-post nil
+#+begin_marginnote
+2025 Piers here. When I read /Design Patterns,/ I get a nagging sense that there are patterns missing between the ones in the book. There are no such gaps in /Best Practice Patterns./
+#+end_marginnote
+
+/Smalltalk Best Practice Patterns/ is a complete pattern language,
+something that I've not seen achieved in any other software patterns
+book (though Martin Fowler's
+#+header: :trim-pre t :trim-post t
+#+begin_cite
+Refactoring: Improving the Design of Existing Code
+#+end_cite
+gets pretty close.) It's easy to read; full of practical
+wisdom from someone who knows their stuff and can explain it well.
+
+I recommend this book wholeheartedly to anyone who wants to become a
+better programmer, and especially to anyone who does object oriented
+programming in a dynamic language of any kind. If you find me in a bar
+amongst programmers, and we're talking about how to get better at our
+craft, then I'll almost certainly be banging on about how good this book
+is.
+
+I believe the Java types are fans too, but if I were a java programmer
+then I'd find the kind of flexibility inherent in Smalltalk as expressed
+in this book would just make me want to abandon Java in favour of
+something more expressive.
+
+*** DONE The Fine Art of Complexity Management
+CLOSED: [2025-09-20 Sat 12:02]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 20030801-the-fine-art-of-complexity-management
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- Note taken on [2025-09-20 Sat 12:28] \\
+  <ul><li>Restored lost data from the Wayback Machine</li>
+  <li>Added a margin note about Pixie</li></ul>
+- State "DONE"       from "REVISING"   [2025-09-20 Sat 12:02] \\
+  A note
+- State "REVISING"   from "DONE"       [2025-09-20 Sat 11:49]
+- State "DONE"       from "REVISING"   [2025-09-20 Sat 11:48]
+- State "REVISING"   from "TODO"       [2025-09-20 Sat 11:48]
+- State "DONE"       from "TODO"   [2003-08-01 Fri 11:46]
+:END:
+
+Picture this: A magician sits in front of you with a pack of cards in
+his hands. He turns over the top card, it's the Two of Hearts. He has
+you sign it. He then turns the card back over then takes the top card
+from the deck and pushes it home somewhere in the middle. He asks you to
+snap your fingers, then he turns over the top card of the deck again.
+It's your signed Two of Hearts.
+
+What I've described is the opening of one of the classics of card magic,
+called
+#+header: :trim-pre t :trim-post t
+#+begin_cite
+The Ambitious Card,
+#+end_cite
+in which a signed, selected card repeatedly
+jumps to the top of the deck in ever more implausible conditions. On the
+face of it, the effect is simple, the card just keeps jumping to the top
+of the deck. Behind the scenes, the method is simple too; you just have
+to execute a hidden move so that it looks like you're really doing what
+you claim to be doing. And there's the rub. I
+can execute the required move with no little skill, but if I stop to
+think of the complexities of what I'm doing, I won't be able to do it
+well. I certainly can't explain how it's done to another magician, well,
+I can, but the explanation goes along the lines of "Just practice until
+it looks like the real thing".
+
+What does this have to do with complexity management? Well, apart from
+the fact that a good magic trick should be presented in such a way that,
+no matter how complex the method, the audience just sees the magic,
+obviously. But there I go again, using the tool we all instinctively use
+to manage complexity. That tool is the word 'just'. We all do it, we
+push the complexities of something behind what I've taken to calling a
+'Just Story'. Here's a just story for /sole meunière:/
+
+#+begin_quote
+The fish, fried in butter, is transferred to a serving dish and over it
+is poured a quantity of /freshly cooked/, hissing, foaming butter. A
+squeeze of lemon juice, a scrap of parsley, and the dish is ready.
+#+end_quote
+
+Couldn't be simpler, could it? Well... Elizabeth David, in
+#+header: :trim-pre t :trim-post t
+#+begin_cite
+French Provincial Cookery
+#+end_cite
+goes on to explain the full complexity of the dish
+so:
+
+#+hugo: more
+
+#+begin_quote
+But do they think to tell you, the instructors of the nothing-is-simpler
+school,
+that the butter in which you fry your sole must be clarified
+butter, that you must watch your fish like a hawk to see that it does
+not stick and burn, that to turn it without breaking it is a tricky
+business, that you should discard the remains of the butter in which
+your fish was cooked, and that you must start again with a clean pan and
+a quantity of fresh butter, not clarified, and that this butter must be
+brought just exactly to the right point when it turns a pale hazel-nut
+colour, no more and no less, that it must be poured instantly over the
+waiting fish which must with equal immediacy be set in front of those
+who are to eat it? Do they even tell you, the optimists who have seen
+the dish being cooked without doing it themselves, or the professionals
+who have special pans at their disposal, that in the ordinary 10-inch
+frying pan to be found in most households there will not be room to cook
+more than one not very large sole?
+
+Few small households possess the large oval pans especially designed for
+the shallow frying of fish, and one must be realistic about this point.
+What is the use of instructing the housewife to cook /sole meunière/ for
+six, or even four people in one small pan? By the time the second and
+third batches have been cooked, the first will be cold and sodden. In a
+restaurant or hotel the cooks can perhaps get away with this sort of
+thing---they are not paying for spoiled materials. The housewife with
+a critical family, or guests accustomed to good cooking, cannot take the
+risk of wasting fine-quality and expensive ingredients. So, unless your
+kitchen is supplied with a suitable pan, it is best not to try to cook
+/sole meunière/ or similar dishes for more than two people.
+#+end_quote
+
+Ah, sorry, it does go on a bit I know, but Elizabeth David is a delight
+to read (and even to transcribe). Now, David is writing here for someone
+who wants to cook /sole meunière/, so the extended level of description
+(rant?) is right for her intended audience. But someone who is thinking
+of eating the dish only needs the just story. (Incidentally, should you
+ever find a restaurant serving /sole meunière/, you can probably make
+yourself really popular with your chef by all ordering it at once).
+
+{{{newthought(The idea of hiding complexity behind ‘just')}}} is extremely powerful when
+you are designing interfaces to programs and libraries. Think of a
+module you're working on and try and describe the most useful part of
+what it does in a single sentence. Now write the code and the interface
+so the library does just that. This ties in remarkably well with Test
+Driven Development. You just write a test that exercises the simple
+interface, code 'til it passes and then refactor.
+
+When you need to add a little more functionality, tell yourself another
+just story (keeping it as simple as you possibly can), write the test,
+code, refactor. Rinse and repeat. Can you tell how much complexity I'm
+hiding behind this ‘simple' development cycle?
+
+Damian Conway is an absolute master at the art of pushing complexity
+behind simple just stories (abstractions). Take a look at
+anything in his CPAN directory. Almost without exception, his code is
+doing ingenious things, but he hides the complexity behind interfaces
+of exquisite simplicity. Take a look at
+
+[[https://metacpan.org/pod/Text::Autoformat][Text::Autoformat]], or [[cpandoc:Class::Multimethods][Class::Multimethods]] or, well almost anything he's
+ever written and you'll see careful attention to interface.
+
+We did a similar thing when we were working on Pixie.
+#+begin_marginnote
+Pixie was insanely ambitious failed attempt to make an object database for Perl. The idea was to marshal and unmarshal data from the backing store in a manner that was entirely transparent to the end user. They would just walk a normal Perl data structure.
+#+end_marginnote
+In essence you
+just give Pixie an object, and it gives you a cookie back, which you can
+use later to retrieve the object. Most of the time that's all you need.
+Sometimes you want to give an object a memorable name, so you use
+~$pixie->bind_name(aName => $the_object)~. Pixie handles the problems that
+arise when you have complex nets of objects, it handles (in theory) the
+issue of locking objects (but that bit's slightly broken at the moment),
+in general it just works. But when it doesn't (suppose you have an
+object that keeps its state somewhere that [[cpandoc:Data::Dumper][Data::Dumper]] can't see it)
+you can just become complicit with Pixie and implement ~px_freeze~ and
+~px_thaw~ methods extract state before saving. Our goal, at all times, is
+to make everything as simple as possible for the end user, which can
+increase the level of code complexity on the implementation side of the
+interface (Perl's reflection capabilities, whilst extensive, often
+require some serious hoop jumping to access), but hiding it behind the
+interface in the way that we do means we only have to deal with it
+once, making life easier for the user.
+
+It could be said that Larry's doing the same thing with the design of
+Perl 6. Don't believe me? Take a look at
+[[http://www.perl.com/pub/2003/07/29/exegesis6.html][the latest
+exegesis]] and count the just stories (I would say count the 'just's,
+but Damian uses about 3 different meanings and not all of ‘em count for
+'just story' purposes).
+
+So, if you want to write a tool with a useful, humane interface, here's
+the steps you need to go through once more:
+
+1. Pick the most important/frequent thing that your module does/needs to
+   do
+2. Frame it as a simple story about what's happening
+3. Recast that simple story as test code
+4. Make the tests pass
+5. Refactor
+6. If you haven't run out of time/money/features to add, return to step 1.
+
+And that's all there is to it. I didn't mean to end up with another
+description of the process of Test-Driven Development, it just fell out
+of my thinking about managing complexity.
+
+Here's one last idea to take from this approach. Next time your boss
+comes to you and asks “Can't you just...?” Stop. Think about what he
+just asked. Your boss is managing complexity and she doesn't even know
+it, and she's just described the interface she wants. Before you dismiss
+her as asking for the impossible, at least consider whether or not you
+could arrange things so that it looks like you're doing the really
+simple thing she's asking for, rather than making it obvious to all your
+users that you're doing the really complex thing that you have to do to
+achieve it. You know that's what you're doing, but you
+don't have to share your pain with people who don't know or care about
+the underlying complexity.
+
+Of course, you need a boss who'll trust you when you tell her that,
+although what she just asked for sounds simple, implementing it is
+rather more complicated and it's going to take some time. But do tell
+her, that way she can decide if she really wants it. (Which is an
+article for another day I think.)
+
+*** DONE The Importance of Style
+CLOSED: [2025-09-20 Sat 21:01]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 20030718-the-importance-of-style
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-20 Sat 21:01]
+- State "DONE"       from "TODO"   [2003-07-18 Fri 11:46]
+:END:
+I was talking to
+[[http://use.perl.org/~gav/journal/][Gavin Estey]] on iChat about the problems inherent in interviewing a new
+programmer. The cost of screwing up can be enormous. How do you find out
+whether the candidate is for real? How do you do it quickly?
+
+Well, those are sticky questions, and there's a discussion of Perl
+certification and standards coming up once I've marshalled my thoughts
+properly.
+
+Anyway, Gavin showed me one of the quiz questions they used in his
+organization:
+
+What's wrong with the following code?
+
+#+begin_src perl
+open FILE, "<$filename";
+print FILE '$parameter1, ';
+print FILE '$parameter2, ';
+print FILE '$parameter3\n';
+close FILE;
+#+end_src
+
+#+hugo: more
+
+Here's my thoughts, in the order I came up with them:
+
+1. Where's the =or die "Can't open $filename: $!"= at the end of the
+   first line?
+2. Globally scoped filenames are bad, m'kay? That first line would be
+   better written as:
+   ~open my $fh, '<', $filename or die "Can't open $filename for reading: $!"~
+3. Why so /many/ print statements? And what kind of variable names are
+   those? Replace ~$parameter1, $parameter2, $parameter3~ with a
+   ~parameter~ array. Then those print statements could become
+   ~{ print join(', ', @parameter), "\n" }~, which is a little ugly, so
+   extract the hack into a helper function, let's call it ~sprint_list~.
+
+So, the code becomes
+
+#+begin_src perl
+sub sprint_list { join ', ', @_ }
+
+open my $fh, '<', $filename or die "Couldn't open $filename for reading: $!";
+print $fh sprint_list(@parameter), "\n";
+close $fh;
+#+end_src
+
+Given time I'd do something about ~sprint_list~ so I could just do
+~println_list $fh, @parameter~, but this is, after all, only an
+interview quiz I'm doing for fun.
+
+Now, these are all matters of style, rather than syntax. The thing I
+completely missed when I first looked at the code was a simple matter of
+syntax that would have leapt out at me if I'd actually tried to run the
+code. The /deliberate/ mistake in the above code stems from the use of
+single quotes instead of double quotes. Of course, the rewritten code
+fixes that bug almost incidentally --- Gav actually had to point it out
+to me.
+
+Which set me thinking. I contend (and I would do wouldn't I?) that the
+kind of mind that looks at that code sample from the point of view of
+good style and tries to fix that is more useful as a programmer than the
+one that looks at the code and sees the typos. It's a little
+like the difference between a proofreader who reads a manuscript looking
+for literals, and the far more useful editor who reads the manuscript
+gives feedback which improves its readability.
+
+This comes back to the point that (I think) Larry Wall has made
+regarding programming languages: The reason for writing any program in a
+high level language is to communicate the original programmer's intent
+/to other programmers/. If they were purely for telling the computer
+what to do we might as well be programming in assembly language. Given
+this, the programmer's job becomes the same as that of the writer---to
+communicate effectively with other human beings. And we do that through
+good style, not through good spelling.
+
+Of course, at some point we're going to have to make sure that all the
+is are dotted and the ts are crossed in our program, but that's why we
+have the ‘-w' switch, test suites and all the other paraphenalia.
+
+I have the feeling I shall be returning to this area soon.
+
+*** DONE Extreme Speaking
+CLOSED: [2025-09-20 Sat 21:25]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 20030724-extreme-speaking
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-20 Sat 21:25]
+- State "DONE"       from "TODO"   [2003-07-24 Thu 11:46]
+:END:
+Somewhat to my own surprise, I'm at
+[[http://yapc.mongueurs.fr/][YAPC::Europe]]
+in Paris. I pitched up to the early birds session and offered a talk if
+they'd had any people pull out and it turned out that they had --- Ronan
+Oger was due to give a half day tutorial on [[http://yapc.mongueurs.net/yapc/talk/?tid=46][SVG-based GUIs]] on the first afternoon of the conference, but he wasn't going to
+make it in time, so the organisers swapped his talk with Dave Cross's
+talk on [[http://yapc.mongueurs.net/yapc/talk/?tid=26][Tieing and Overloading Objects in Perl]].
+
+Dave's talk is an hour shorter than Ronan's, so Simon Wistow, Richard
+Clamp and me offered three 20 minute talks to fill the gaps.
+
+There was a catch; all the talks I'd taken to America had been aimed at
+40 minutes and for the life of me I couldn't see how to make them any
+shorter.
+
+“Never mind,” I thought, "I can waffle about Pixie or refactoring or
+something, or if all else fails I can brush off 12 Step Perl and get my
+audience to do at least half of the work for me.
+
+This was my plan, but then I had this idea for a cunning trick to make
+Perl's method inheritance system a little more sane.
+
+There's at least one problem with Perl's inheritance system --- if I
+bless a hash into a class, then the blessed object ~isa~ HASH, but method
+dispatch will not see any methods in the HASH class. So I fixed that.
+The resulting code is faintly evil and I'm not going to show it here,
+but there will be an [[http://search.cpan.org/search?query=Acme&#38;mode=all][Acme]]
+#+header: :trim-post nil
+#+begin_marginnote
+2025 Piers here. There wasn't. I can't even remember how I made it work. The slides are long gone.
+#+end_marginnote
+
+So, having written the code in the morning I spent the first part of the
+afternoon writing slides.
+
+{{{newthought(It's surprisingly easy to do this sort of thing;)}}} the trick is the same as one that lies at the heart of Extreme Programming: Trust. In an XP environment you trust
+yourself and the rest of your team to be smart enough to do the Right
+Thing at the Right Time. Which isn't as scary as it might sound. In a programming context, if I trust myself to make a decision now,
+then surely I can trust myself to make a decision that's at least as
+good at some point in the future when I have more of the facts. As a
+speaker, if I trust myself to be able to deliver a talk I wrote three
+weeks before, then I can surely trust myself to deliver a talk I wrote
+five minutes ago.
+
+Try it, it works. But don't make a habit of it.
+
 * Notes :@note:
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /note
