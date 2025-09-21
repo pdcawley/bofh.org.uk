@@ -1,9 +1,10 @@
--*- mode:org; lexical-binding: t; -*-
 #+hugo_base_dir: .
 #+export_hugo_weight: auto
 #+startup: inlineimages
-#+startup: logdone
 #+startup: show3levels
+#+startup: logdrawer
+#+startup: logdone
+#+options: d:t
 #+property: header-args:sql :session reporter :exports result :colnames yes :engine postgresql :results replace table
 #+property: header-args: :exports code
 #+hugo_paired_shortcodes: %table %marginnote %newthought
@@ -11,7 +12,7 @@
 #+macro: marginnote (eval (concat "@@hugo:{{% marginnote %}}@@" (mapconcat 'identity (remove nil (list $1 $2 $3 $4 $5 $6 $7 $8 $9)) ", ") "@@hugo:{{% /marginnote %}}@@"))
 #+macro: sc @@hugo:{{% $1 %}}@@
 #+macro: <sc @@hugo:{{< $1 >}}@@
-#+seq_todo: TODO(t) DRAFT(d) OPEN(o) | DONE(D) PUBLISHED(p) CANCELLED(x)
+#+seq_todo: TODO(t) DRAFT(d) REVISING(r!) | DONE(D!) PUBLISHED(p!) CANCELLED(x@)
 
 * Pages
 :PROPERTIES:
@@ -3589,7 +3590,8 @@ Like Emacs itself, it's almost infinitely flexible, which makes it incredibly ha
 
 * COMMENT Local Variables :ARCHIVE:
 # Local Variables:
-# org-log-done: 'time
-# eval: (org-transclusion-mode)
+# org-log-into-drawer: "LOGBOOK"
+# org-hugo-suppress-lastmod-period: 86400.0
+# eval: (org-transclusion-mode t)
 # eval: (org-hugo-auto-export-mode t)
 # End:

@@ -7,3 +7,5 @@
 /.envrc
 /org-persist/
 /content/
+/rsync.log
+/testing/
