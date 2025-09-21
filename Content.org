@@ -3553,6 +3553,37 @@ CLOSED: [2025-09-10 Wed 07:16]
 All being well, this note was deployed here by a cron job, and all the webmentions data got updated too.
 
 All being well…
+** DONE [2025-09-11 Thu 08:21] :indieweb:webmentions:
+CLOSED: [2025-09-11 Thu 08:25]
+:PROPERTIES:
+:export_file_name: 13
+:END:
+Now I can display received Webmentions, I need to start working on sending them.
+
+I don't want to rely on an external service if I can help it, because that's how my old setup decayed, so don't hold your breath.
+
+But the output of =rsync --itemize-changes ...= is looking tasty as a mechanism for spotting which URLs have changed between deployment runs.
+
+Time to start experimenting.
+
+Hmm… the first experiment doesn't look too promising.
+** DONE [2025-09-11 Thu 16:27]
+CLOSED: [2025-09-13 Sat 14:07]
+:PROPERTIES:
+:export_file_name: 14
+:export_hugo_custom_front_matter: :mentions '(((url . "/note/13/") (type . in-reply-to)))
+:END:
+Further to my [[*\[2025-09-11 Thu 08:21\]][last note]], I think I might have a working script to send webmentions for any updated pages.  Now to plumb it into the rest of the automation!
+
+~#!/usr/bin/env emacs -script~ is a powerful drug!
+** DONE [2025-09-20 Sat 09:50]
+CLOSED: [2025-09-20 Sat 09:59]
+:PROPERTIES:
+:EXPORT_FILE_NAME: 15
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :mentions '(((url . "https://bofh.org.uk/2003/08/01/the-fine-art-of-complexity-management/") (type . in-reply-to)))
+:END:
+For… reasons, I found myself trawling back through the early entries here and found that a bunch of them had been truncated at some point in the blog's history of migrating from engine to engine. Luckily, the [[https://web.archive.org/][Wayback Machine]] has a sufficiently complete archive, so I'm slowly working my way through the broken posts, bringing them into the big old =Content.org= file that the site's generated from and adding a margin note or two to supply a bit of 2025 context where appropriate. [[https://bofh.org.uk/2003/08/01/the-fine-art-of-complexity-management/][The Fine Art of Complexity Management]] is the first post to receive such attention. Twenty two years on, I still think it's good advice.
+
 * Footnotes
 :PROPERTIES:
 :ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
