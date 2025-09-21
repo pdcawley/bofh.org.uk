@@ -3108,7 +3108,9 @@ To get all the webmentions for our domain, the Webmention API allows for paginat
 
 Now we know what the data coming from Webmention.io looks like, and how we can page through it, let's write a function, ~wm--fetch-all~ to do that for us.
 
-#+transclude: [[file:./support-code/webmentions.el::wm--fetch-all]] :lines 1-38 :src emacs-lisp
+#+transclude: [[file:./support-code/wm.el::wm--fetch-all]] :lines 1-38 :src emacs-lisp
+
+
 
 The ~(while more? ...)~ loop keeps requesting more data until it gets a short response, at which point ~more?~ becomes false and we return the accumulated ~all-entries~ vector
 
