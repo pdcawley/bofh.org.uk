@@ -34,6 +34,7 @@
                dash
                ht
                org-transclusion
+	       s
                ))
   (straight-use-package pkg))
 
@@ -89,7 +90,10 @@
 
 
 
-(add-to-list 'load-path (expand-file-name "./support-code/"))
+(add-to-list 'load-path
+             (expand-file-name "./support-code/"
+                               (file-name-directory
+                                (or load-file-name buffer-file-name))))
 
 (with-eval-after-load 'ox-hugo
   (defun +org-hugo-set-shortcode-props (code &rest props)
