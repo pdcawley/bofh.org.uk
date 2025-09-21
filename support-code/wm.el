@@ -116,6 +116,7 @@ tools, or something like `direnv'.i"
 
 (defun wm-url-for-file (file)
   "Given a file name"
+  (require 's)
   (format "%s%s"
           wm-base-url
           (s-chop-prefixes
@@ -127,16 +128,18 @@ tools, or something like `direnv'.i"
 
 (defun wm-outgoing-links ()
   "Collect outgoing link dom elements from the current buffer's h-entry."
+  (require 'dom)
   (--> (libxml-parse-html-region (point-min) (point-max))
        (dom-by-tag it 'article)
        (dom-by-class it "h-entry")
-       (dom-by-class (car it) "e-content")
-       (dom-by-tag it 'a)
+       (dom-by-tag (car it) 'a)
        (mapcar (lambda (node)
+                 (require 'dom)
                  (url-expand-file-name
                   (dom-attr node 'href)
                   (wm-url-for-file (buffer-file-name))))
                it)
+       (-reject (-partial #'s-prefix-p "mailto:") it)
        (-uniq it)))
 
 (defun wm-send-mentions (file)
@@ -147,10 +150,8 @@ tools, or something like `direnv'.i"
     (let ((source (wm-url-for-file file)))
       (dolist (target (wm-outgoing-links))
         (message "Sending %s -> %s" source target)
-        (webmention-send-post source target))))
-  )
-
-
+        (ignore-errors
+          (webmention-send-post source target))))))
 
 
 ;;; This section is straight up lifted from
