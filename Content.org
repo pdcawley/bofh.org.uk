@@ -3370,12 +3370,14 @@ without having to change our reducing function at all.
 Separation of concerns, baby! Separation of concerns!
 
 ** Recovered Posts
-*** REVISING Laying out code
+*** DONE Laying out code
+CLOSED: [2025-09-24 Wed 21:50]
 :PROPERTIES:
 :EXPORT_HUGO_BUNDLE: 20030816-laying-out-code
 :EXPORT_FILE_NAME: index
 :END:
 :LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-24 Wed 21:50]
 - State "REVISING"   from "DONE"       [2025-09-20 Sat]
 - State "DONE"       from "TODO"       [2003-08-16 Sat]
 :END:
@@ -3397,6 +3399,8 @@ to structure Smalltalk code and used them when I'm writing OO Perl (to
 the extent that I sometimes find myself wishing that Perl had Smalltalk
 like message selectors), so now I'm toying with the idea of using Beck's
 rules, or something like them, for laying out my Perl code.
+
+#+hugo: more
 
 Here's a method from Pixie::Proxy (one of the scarier classes in Pixie I
 must admit):\\
@@ -3470,8 +3474,6 @@ CLOSED: [2025-09-20 Sat 22:53]
 :EXPORT_FILE_NAME: index
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((author . "Allison Randal") (title . "Perl 6 Essentials") (type . "Perl 6 Essentials"))
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover '((s . "https://covers.openlibrary.org/b/olid/OL3327054M-S.jpg") (m . "https://covers.openlibrary.org/b/olid/OL3327054M-M.jpg") (l . "https://covers.openlibrary.org/b/olid/OL3327054M-L.jpg"))
-:EXPORT_HUGO_BUNDLE: allison-randal-perl-6-essentials
-:EXPORT_FILE_NAME: index
 :END:
 :LOGBOOK:
 - State "DONE"       from "REVISING"   [2025-09-20 Sat 22:53]
@@ -3829,7 +3831,7 @@ CLOSED: [2025-09-20 Sat 22:06]
 - State "DONE"       from "TODO"       [2003-07-29 Tue 00:01]
 :END:
 "The Quality Without A Name" is a phrase coined by Christopher Alexander
-in The Timeless Way of Building to describe the feeling of satisfaction
+in /The Timeless Way of Building/ to describe the feeling of satisfaction
 and contentment engendered by good building. He later went on to call it
 ‘life', but a friend of mine described it as ‘The Tao of Building',
 which seems rather appropriate too.
@@ -4311,12 +4313,549 @@ five minutes ago.
 
 Try it, it works. But don't make a habit of it.
 
+*** DONE Learning to Trust
+CLOSED: [2025-09-24 Wed 21:44]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: learning-to-trust
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-24 Wed 21:44]
+- State "REVISING"   from "DONE"      [2025-09-24 Wed]
+- State "DONE"       from "TODO"      [2003-08-20 Wed]
+:END:
+
+I've bounced off writing this article several times in the past and I'm
+still trying to find a good way into it. Here's the (n+1)th take on it
+anyway.
+
+Trust is everything. Trust is what keeps the wheels turning. Trust is
+when all parties are pointing in the right direction and nobody's
+playing CYA games. Trust is opening a joint account and moving in
+together. Trust is when you stop using contraception...
+
+#+hugo: more
+
+It's not just emotional relationships, it's vital in business too. Too
+often one comes across business cultures where nobody trusts anyone
+else; it's endemic in the Dilbert worldview and it can cripple an
+organisation. It's so easy to do: everyone knows that
+Marketing/Sales/IT/Management/Finance/The Programmers/Creatives are Evil
+Trolls/Self Serving Prima Donnas/Idiots/Leeches/Whatever. But... imagine
+that isn't true; imagine instead that everyone in the company cares about doing a good job and delivering stuff of value.
+Now act as if you believe it.
+
+That's why it's so refreshing to read about Agile methods. Trust is
+hardwired into them at such a deep level that almost nobody bothers to
+mention it. It's why they seem like such radical ideas, they are so far
+removed from the standard view of how organisations work. Much of the
+(remarkably vehement) criticism (and subsequent failure to communicate)
+that I've seen seems to stem from the fact that the critics are worried
+about the downside when trust breaks down and the advocates are just
+getting on with trusting each other because it works.
+
+It's so easy to be cynical; to sit back and say “The world doesn't work
+that way.” After all, simply by doing so you prove yourself right. But
+so what? You were right. Well whoopee doo. Apart from a warm glow of
+self-righteousness, what did that achieve?
+
+I used to despair of my mother, who goes through life with the blithe
+assumption that people are generally good and kind and honest, and who
+is good and kind and honest herself. I used to think that she was going
+to be ripped off at every turn but, do you know, she wasn't. Yes, it
+happened occasionally, and when it did she was deeply hurt, but it
+didn't change the way she lives her life. To change, to become
+suspicious and cynical about other people's motives would be a far, far
+greater loss than anything that was lost through trusting freely. So
+that's how I try to live too. It is both easy and hard to do.
+
+I've come to believe that people repay trust with trustworthiness. I was
+delighted to read in the New Scientist about
+[[http://fac.cgu.edu/~zakp/publications/CAPCOTrust.pdf][an experiment]] which seemed to back up my intuition. In an experiment,
+randomly selected people were asked to give up to $10 dollars to a
+person who was unknown to them. That other person would receive 3 times
+as much money as the first person gave, and could then return any amount
+of money to the first person. (The subjects didn't know who the other
+party was, the ‘game' was handled by software). Economic theory, in the
+shape of the Nash Equilibrium says that the rational thing to do is for
+the first person to give $0. The second person's rational strategy would
+be to keep all money they were given and to return none of it. This is
+not what happened. It turns out that 50% of the first subjects sent some
+money, and of those who received money, 75% returned some. (There
+appears to be a reasonably simple neurological mechanism underlying
+this surprising (to economists) high level of trust, the paper has more
+details).
+
+So, how do you increase the level of trust around you? Start by trusting
+yourself. Start trusting others and expecting to be trusted in return.
+Start being open about problems and triumphs; if you finish some code
+early, let your manager know, if you realise that what you're working on
+is going to to be late, let him know as soon as you know, maybe then he
+can reprioritise to make sure the important stuff is done --- he
+certainly can't do that if you don't tell him. And keep doing it. It's
+no good if you give up after a week. NB: This doesn't mean always
+agreeing with people, but remember that, no matter how stupid a request
+may seem, there's a reason for it; don't just dismiss it out of hand.
+And if you can't change your organisation, change your organisation ---
+being in a no/low trust environment is a soul destroying process, you
+owe it to yourself to move on to somewhere better. Trust yourself to
+find the right place.
+
+Trust is its own reward; betrayal its own punishment. A few years ago
+now, my wife was talking to a Quaker friend of hers and said “It must be
+awful to be in prison knowing you are innocent.”
+
+“Oh,” said her friend, “it must be far worse to be in prison knowing you
+are guilty.”
+
+*** DONE Speaking of Trust...
+CLOSED: [2025-09-24 Wed 22:02]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: speaking-of-trust
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-24 Wed 22:02]
+- State "REVISING"   from "DONE"      [2025-09-24 Wed]
+- State "DONE"       from "TODO"      [2003-08-20 Wed]
+:END:
+
+I really don't have time for those complete and utter arseholes who
+abuse trust. In my narcissistic way I was going through my referer logs
+to find out who was linking to me and what they were saying about me, as
+I'm sure everyone does. Anyhow, I came across one URL that looked
+slightly out of place, claiming as it did to come from a php programming
+site...
+
+#+hugo: more
+
+So, I took a look. Strange... no mention of this site on the page
+anywhere. And then I took a look at what these bastards were selling.
+They were hawking a cunning tool, it looked for openly accessible
+logstats scripts and then made a connection to them whilst lying about
+the referring page so that the logs (and hence the stats pages) would
+have a link to the URL this script was ‘promoting'.
+
+The theory goes that, because Google ranks pages according to the number
+of inbound links, this would increase your Google pagerank, and for
+commercial sites pagerank is all. For instance, my brother's company
+specialises in selling [[https://web.archive.org/web/20111112115729/http://www.longstonetyres.co.uk/][Vintage Tyres]] and, for a while after they
+spruced up the website they got to the top of Google's ranking when
+you searched for “Vintage Tyres”, and their hit rate (and the number
+of sales enquiries coming from the internet) shot up, until someone
+else topped the rankings for the same search.
+
+Of course, the theory behind this tool is somewhat flawed, since the
+pagerank is based on the pagerank of the site doing the linking if that
+makes sense; 1000 links from low ranked sites are worth substantially
+less than a link from the front page of a popular site.
+
+What the pondlife who sell this software are doing is attempting to spam
+Google. And they're not even doing it that well, but idiots are
+presumably forking over more than $100 to use a tool whose express
+purpose is to make the web less useful for the rest of us. (And I know
+that there are buyers out there because I've seen said this tool's
+fingerprints associated with another website in my logs).
+
+In my last article I wrote about learning to trust people; to give the
+people you deal with on a day to day basis the benefit of the doubt. But
+bastards like these referer spammers are abusing trust on a massive
+scale. The software they peddle deliberately attempts to subvert tools
+that make the web that bit more useful. Because of this abuse of my
+trust, I've had to drop back into sysadmin mode, and I /hate/ having to
+think like a sysadmin. Sure I can do it, I did it professionally for
+years, but I got out of it because to be any good you have to be
+paranoid, and maintaining the appropriate level of paranoia was doing me
+no good at all. I've had to password protect my stats page, tweak my
+robots.txt file and generally fiddle around with things to make this
+site less vulnerable to this particular abuse.
+
+And I /hate/ having to do it. I hate the fact that being a good net
+citizen means having to go through these paranoid hoops because their
+are malicious bastards and ignorant innocents out there who, in their
+greed are trying to turn the web into the cesspit that Usenet became,
+and who are trying to abuse Google and other search engines in the same
+way that the spammers are abusing email.
+
+At YAPC::Europe this year I came as close as I've come in recent years
+to attempting to hit someone who was openly bragging about doing this
+sort of thing. I'm sure he knew that what he was doing was wrong, he
+just didn't care. About the only thing that stopped me really losing it
+was remembering the old adage “Do not wrestle with pigs; you only get
+muddy and the pig enjoys it.”
+
+*** DONE /The best thing for being sad/
+CLOSED: [2025-09-24 Wed 22:09]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: the-best-thing-for-being-sad
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((author . "T. H. White") (title . "The Once and Future King") (type . "The Once and Future King"))
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover '((s . "https://covers.openlibrary.org/b/olid/OL23243757M-S.jpg") (m . "https://covers.openlibrary.org/b/olid/OL23243757M-M.jpg") (l . "https://covers.openlibrary.org/b/olid/OL23243757M-L.jpg"))
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-24 Wed 22:09]
+- State "REVISING"   from "DONE"      [2025-09-24 Wed]
+- State "DONE"       from "TODO"      [2003-08-29 Fri]
+:END:
+
+#+begin_quote
+“The best thing for being sad,” replied Merlin, beginning to puff and
+blow, “is to learn something. That's the only thing that never fails.
+You may grow old and trembling in your anatomies, you may lie awake at
+night listening to the disorder of your veins, you may miss your only
+love, you may see the world about you devastated by evil lunatics, or
+know your honour trampled in the sewers of baser minds. There is only
+one thing for it then---to learn. Learn why the world wags and what
+wags it. That is the only thing which the mind can never exhaust, never
+alienate, never be tortured by, never fear or distrust, and never dream
+of regretting. Learning is the only thing for you. Look what a lot of
+things there are to learn.”\\
+       --- T.H. White, The Once and Future King
+#+end_quote
+
+#+hugo: more
+
+T.H. White is one of my favourite writers. It's easy to be dismissive of
+The Once and Future King, based on the Disney adaptation---which, like
+their version of The Jungle Books, is great fun but a travesty of the
+original. However, as I hope the extract shows, there's rather more to
+him than that.
+
+My favourite chapter in the book was the one dealing with the night Wart
+spent in the castle mews with the falcons and the baleful nightmare,
+Cully. Ever since I read it I've been fascinated by falconry---I'll
+know I've made my fortune when I can retire to a large house in the
+country and keep and become a falconer. I mentioned this to Gill shortly
+after we met and she pressed The Goshawk on me. Wow. This is a
+fabulously written account of White's attempts to train a Goshawk using
+a medieval textbook as his guide (even when he wrote the book, the
+profession had moved on a great deal, but White didn't know that). It's
+been described by austringers
+#+begin_marginnote
+Great word, no? An austringer is someone who flies hawks, as opposed to a falconer, who flies falcons.
+#+end_marginnote
+as the ideal ‘how not to'
+book. But you don't read it for the techniques, you read it for White's
+perfect prose, for the boundless patience of the man and the seemingly
+boundless stubbornness of the bloodyminded Cully. I've flown a Harris
+Hawk on a course that Gill arranged for my birthday one year. Walking
+around with a hawk on your fist, calmly talking to it and getting it
+used to you is (for me) an indescribable experience; the best I can do
+is point at The Goshawk and say “Read that!”
+
+I wish I could say that Merlin's speech branded itself on my brain when
+I first read it around 25 years ago, but sadly, I can't. It only had
+that effect when I logged into my Linux box one morning and my standard
+=.profile= ran [[https://web.archive.org/web/20111109163101/http://linux.ctyme.com/man/man0810.htm][~fortune~]] and up it popped. Merlin's dead right you know, the process of learning
+things is the finest pill to purge melancholy I know. At my
+father-in-law's funeral,
+#+begin_marginnote
+he had been a stalwart of the [[https://web.archive.org/web/20111109163101/http://www.wea.org.uk/][WEA]]
+for a large part of his life
+#+end_marginnote
+we took that passage and had it printed
+up on cards for the mourners, and Gill used it as a reading. Everyone
+who knew him remarked on how appropriate and cheering it was. I hope
+that it will be just as appropriate a reading for me when my time comes.
+*** DONE ‘Extreme Building’
+CLOSED: [2025-09-24 Wed 22:26]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: extreme-building
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((author . "Christopher Alexander") (title . "The Mary Rose Museum") (type . "The Mary Rose Museum"))
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover '((s . "https://covers.openlibrary.org/b/olid/OL1409575M-S.jpg") (m . "https://covers.openlibrary.org/b/olid/OL1409575M-M.jpg") (l . "https://covers.openlibrary.org/b/olid/OL1409575M-L.jpg"))
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-24 Wed 22:26]
+- State "REVISING"   from "DONE"       [2025-09-24 Wed]
+- State "DONE"       from "TODO"       [2003-08-30 Sat]
+:END:
+
+#+begin_description
+#+begin_quote
+Our experience as contractors, engineers and architects during the last
+15 years has proved one thing over and over again: The things placed on
+drawings are inevitably -- always -- wrong in many particulars. Drawings
+serve as an important rough sketch of something that will be built, but
+must be executed with constant attention to room shape, light, wall and
+ceiling detail, openings -- above all to the feelings which arise in
+each place, in the construction, as it is taking shape. These feelings
+are too complicated to predict and /cannot/ be predicted. When a
+building is built from plans that are conceived on the drawing board and
+then simply built, the result is sterile at best -- silly most of the
+time -- and sometimes unthinkably bad. This is something familiar in
+virtually all large buildings that have been built since 1950. It is
+inevitable, given the process of construction used to build them. And it
+is inevitable that this process must lead to unsatisfactory results.
+
+--- Christopher Alexander, Gary Black & Miyoko Tsutsui /The Mary Rose
+Museum/
+#+end_quote
+
+Another installment in my ongoing series of reviews of books that Amazon
+will take an age to deliver.
+#+end_description
+
+#+begin_quote
+Our experience as contractors, engineers and architects during the last
+15 years has proved one thing over and over again: The things placed on
+drawings are inevitably -- always -- wrong in many particulars. Drawings
+serve as an important rough sketch of something that will be built, but
+must be executed with constant attention to room shape, light, wall and
+ceiling detail, openings -- above all to the feelings which arise in
+each place, in the construction, as it is taking shape. These feelings
+are too complicated to predict and /cannot/ be predicted. When a
+building is built from plans that are conceived on the drawing board and
+then simply built, the result is sterile at best -- silly most of the
+time -- and sometimes unthinkably bad. This is something familiar in
+virtually all large buildings that have been built since 1950. It is
+inevitable, given the process of construction used to build them. And it
+is inevitable that this process must lead to unsatisfactory results.
+
+--- Christopher Alexander, Gary Black & Miyoko Tsutsui /The Mary Rose
+Museum/
+#+end_quote
+
+#+header: :trim-pre nil :trim-post t
+#+begin_cite
+The /Mary Rose/ Museum
+#+end_cite
+is an account of the Center for Environmental
+Structure's bid to build a museum around the /Mary Rose/, Henry VIII's
+flagship, which, in 1545 unaccountably sank in calm seas, in the sight
+of the King himself
+#+begin_marginnote
+One theory my wife has heard is that someone on board
+said “Ee look, there's t' King!” at which point everyone on board rushed
+over to one side of the ship to take a look, and the subsequent heeling
+of the ship meant she started shipping water through the lowest gun
+ports.
+#+end_marginnote
+with the loss of nearly 700 men. The
+story of how the wreck was [[https://web.archive.org/web/20111112072501/http://www.maryrose.org/project/proj1.htm][found, raised and conserved]] is impressive in itself. I can remember
+watching BBC specials on the process as it was happening and my
+amazement at the dedication/insanity of those involved, but that's not
+what Alexander's book is about.
+
+In 1991, Christopher Alexander was in conversation with Prince Charles
+(whose interest in architecture is (in)famous). They were lamenting the
+then design for a museum to be built over where the /Mary Rose/ still
+lies beneath a huge tent, continuously sprayed with a cold mist of water
+to prevent any decay of the timbers. The proposed design was for yet
+another anonymous hangar-like structure at odds with the other buildings
+in the Portsmouth Naval Dockyard, and not exactly sympathetic to either
+the /Mary Rose/ or /HMS Victory/ which sits in a nearby dry dock. The
+Prince sketched (probably not on a fag packet, but who knows) a profile,
+saying to Alexander “What about something like this?”, and off Alexander
+went.
+
+At Charles' request, the /Mary Rose/ Trust commissioned Alexander to
+produce the proposal for building The /Mary Rose/ Museum that is,
+ostensibly what this book is about. The bulk of the book's 128 pages is
+taken up by a description of the proposed museum, outlining its
+development from the original rough sketch through to a fully costed,
+structurally feasible design.
+
+At this point, the principle sponsor backed out leaving the project with
+no funds and it had to be shelved. Alexander says that, by then, he and
+his team had put in some 5000 man hours of work on the project; I'm sure
+they must have been gutted to have the plug pulled. A smaller section at
+the back then goes on to discuss the (much rougher) work the team did on
+redesigning the museum so that it could be built in incremental fashion
+without needing all the funds up front in the hope that the Trust's
+funding could be spent on something permanent rather than having to
+spend a large amount of the donated money on temporary measures to
+maintain the structural integrity of the current ‘tent' over the ship.
+
+So, it's a war story from a failed project, why should you part with the
+thick end of £30 to read about that? And what does all this have to do
+with programming? Here's why: Christopher Alexander is the most
+influential bricks and mortar architect that the world of computer
+programming has ever known, if only for his work on Pattern Languages
+and ‘The Quality Without a Name'. As a literary form, the design pattern
+and the larger pattern language are fabulously useful (and egregiously
+abused) ways of describing how to solve many of the problems we face as
+programmers.
+
+However, what is often overlooked about Alexander's work is that an
+awful lot of what he advocates about the process of generating a room,
+building or town foreshadows the processes advocated by the Extreme
+Programming people. You should not be surprised to learn that Kent Beck,
+author of the seminal book on XP, was also one of the earliest writers
+to use design patterns as a way of addressing programming issues.
+
+In /The Mary Rose Museum,/ Alexander describes the ‘agile' process his
+team uses on projects, and he also shows the basic contracts between
+Owner and Architect, and Architect and Subcontractor that he and his
+team use when building.
+
+As a house owner who had some substantial house renovation done
+I've been a signatory to a standard RIBA contract for building works,
+and it's a very different beast indeed from the Center for Environmental
+Structure (CES) contracts. I would rather have signed the CES ones.
+Alexander maintains, and I think I agree with him, that his form of
+contract deliberately nurtures the process of building something that
+will live, while the standard contracts are based on the myth that the
+plan is how it will be and any variation will cost the client. The CES
+contracts state up front that change happens, and handle that change
+without having tons of ‘extras' added to the cost. Here's an extract
+from the Craftsman/Subcontractor
+#+begin_marginnote
+The contract is careful always to refer to
+subcontractors as craftsmen “in order to emphasize the craft-like nature
+of the work which CES expects.”
+#+end_marginnote
+contract.
+
+#+begin_quote
+ARTICLE 5. CRAFTSMAN'S GOAL. The ultimate purpose of this agreement is
+to secure the craftsman's work under conditions which make the
+craftsman's work a work of beauty and pride and self-respect, and in
+which the craftsman leaves behind work he is proud of, and can cherish
+in the future.
+#+end_quote
+
+#+begin_quote
+It is specifically understood that the craftsman's goal is not only to
+be paid for his work, but that the beauty and satisfaction of the work
+itself provide part of the craftsman's reward. To this end, the
+craftsman shall be treated as an artist who has some power and control
+over his work as necessary to allow the creation of a beautiful and
+fitting work within limits accepted by CES.
+#+end_quote
+
+It seems to me, as someone who believes that we programmers are more
+craftsmen than engineers, that the CES contracts for building works may
+well offer a useful model for designing contracts for building software
+using agile processes. Certainly Alexander has interesting things to say
+that will repay your careful reading and consideration.
+*** DONE Reading 'The Traits Paper'
+CLOSED: [2025-09-25 Thu 09:23]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 130414-reading-the-traits-paper
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-25 Thu 09:23]
+- State "REVISING"   from "DONE"       [2025-09-25 Thu]
+- State "DONE"       from "TODO"       [2013-04-14 Sun]
+:END:
+
+#+begin_description
+"Where do Moose roles come from and what are they for?"
+#+end_description
+
+
+There appear to be two camps around The One True =Moose::Roles= Way busily arguing about whether the following code should emit a warning:
+
+#+begin_src perl
+package Provider {
+    use Moose::Role;
+
+    sub foo { 'foo' };
+    1;
+}
+
+package Consumer {
+    package Moose;
+
+    with 'Provider';
+
+    sub foo { 'no, bar' }
+    1;
+}
+#+end_src
+
+One camp holds that the code should at least emit a warning and ideally
+blow up at compile time. The other camp (Moose as implemented), holds
+that it shouldn't. The debate gets somewhat heated, people end up
+appealing to the [[http://scg.unibe.ch/archive/papers/Scha03aTraits.pdf][Traits paper]]
+as if it were some kind of holy writ. What's annoying is that the folk
+who appeal to that paper appear to have read a different paper from the
+one I remember reading. So I went and read it again, and here's what it
+has to say about overriding methods got from traits:
+
+#+begin_quote
+Trait composition enjoys the flattening property. This property says
+that the semantics of a class defined using traits is exactly the same
+as that of a class constructed directly from all of the non-overridden
+methods of the traits. So, if class A is defined using trait T, and T
+defines methods a and b, then the semantics of A is the same as it would
+be if a and b were defined directly in the class A. Naturally, if the
+glue code of A defines a method b directly, then this b would override
+the method b obtained from T. Specifically, the flattening property
+implies that the keyword super has no special semantics for traits; it
+simply causes the method lookup to be started in the superclass of the
+class that uses the trait.
+
+Another property of trait composition is that the composition order is
+irrelevant, and hence conflicting trait methods must be explicitly
+disambiguated (cf. section 3.5). Conflicts between methods defined in
+classes and methods defined by incorporated traits are resolved using
+the following two precedence rules.
+
+- Class methods take precedence over trait methods.
+- Trait methods take precedence over superclass methods. This follows
+  from the flattening property, which states that trait methods behave
+  as if they were defined in the class itself.
+#+end_quote
+
+Which is pretty much as I remember, and strongly implies that Moose is
+right not to issue a warning.
+
+The paper has more to say on overriding trait implementations in its
+section on 'Evaluation against the identified problems' (my italics):
+
+#+begin_quote
+Method conflicts may be resolved within traits by explicitly selecting
+one of the conflicting methods, but more commonly conflicts are resolved
+in classes by /overriding conflicts./
+#+end_quote
+
+And (relevant to another argument around role composition that's more or
+less current):
+
+#+begin_quote
+... sometimes a trait needs to access a conflicting feature, e.g., in
+order to resolve the conflict. These features are accessed by aliases,
+rather than by explicitly naming the trait that provides the desired
+feature. This leads to more robust trait hierarchies, since aliases
+remain outside the implementations of methods. Contrast this approach
+with multiple inheritance languages in which one must explicitly name
+the class that provides a method in order to resolve an ambiguity. The
+aliasing approach both avoids tangled class references in the source
+code, and eliminates code that is hard to understand and fragile with
+respect to change.
+#+end_quote
+
+There are folk arguing for removing the aliasing support from Moose role
+composition, but I have to say that I find this argument compelling.
+
+{{{newthought(When it comes down to it\,)}}} referencing the traits paper is just argument from authority, which is a classic logical fallacies. However,
+if you /are/ going to appeal to an authority, try to make sure that
+you're not misrepresenting what that authority says. The original traits
+paper does not suggest that overriding a method got from a trait should
+come with a warning. On the contrary, it recommends overriding as the
+right way to resolve conflicts between multiple composed roles.
+
+You may well think that this is problematic. You may be able to show
+examples where silent overriding has bit you on the arse. You may even
+have a good argument for introducing warnings. But "Because that's how
+the traits paper says you should do it!" is a lousy argument, made
+doubly lousy by the fact that is precisely /not/ what the traits paper
+says you should do.
+
+**** The view from 2025
+I don't know whether this argument is still live, but I think what I missed is that when you use Smalltalk traits, there's nothing so ungainly or 'loud' as a warning when you do this kind of overriding, but there is an unobtrusive but distinctive mark next to the method in question's name in the browser so you can see at a glance that it's overriding something and, if that's a surprise, you can investigate further.
+
+Throwing a warning (or even an error) on every run is the opposite of unobtrusive, so I'd still lean towards not doing that. Instead, I suggest checking an environment variable and only warning (or dieing, depending on the setting) if it's present. But I'm not the implementer, so I don't have these headaches. Thank goodness.
+
 * Notes :@note:
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /note
 :END:
 ** DONE [2025-08-21 Thu 22:23]
-ocnCLOSED: [2025-08-21 Thu 22:27]
+CLOSED: [2025-08-21 Thu 22:27]
 :PROPERTIES:
 :export_file_name: 1
 :END:
