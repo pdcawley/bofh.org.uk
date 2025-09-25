@@ -25,7 +25,7 @@ webmentions:
 
 hugo-build:
 	@echo "Building site with Hugo"
-	$(HUGO) --gc --minify -d $(DESTDIR)
+	$(HUGO) --gc --minify -d $(DESTDIR) -b https://bofh.org.uk/
 
 clean: clean-content clean-public
 
