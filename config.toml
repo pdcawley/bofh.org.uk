@@ -108,6 +108,7 @@ summaryLength = 1
   identifier = "youtube"
 
 [permalinks]
+  [permalinks.page]
     post = "/:year/:month/:day/:slug"
     page = "/pages/:slug"
 
