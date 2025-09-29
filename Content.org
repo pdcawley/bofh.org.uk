@@ -7188,7 +7188,414 @@ disputandum/ and all that) is supposed to contribute to a discussion.
 I suppose I should be grateful that you haven't also inferred from my
 post that my momma wears army boots. Or maybe you did, but were too
 polite to mention it.
+*** DONE Code is data, and it always has been :codeIsData:compSci:ScotlandOnRails:Turing:
+CLOSED: [2025-09-29 Mon 23:04]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 080407-code-is-data-and-it-always-has-been
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-29 Mon 23:04]
+- State "REVISING"   from "DONE"       [2025-09-29 Mon]
+- State "DONE"       from "TODO"       [2008-04-07 Mon]
+:END:
 
+I'm just back from the first [[http://www.scotlandonrails.com/][Scotland on Rails]] conference, and a jolly fine conference it was too. Much kudos is due to
+[[http://www.alancfrancis.com/][Alan]], [[http://woss.name/][Graeme]], Abdel and [[http://merecomplexities.com/][Paul]].
+It was hard to believe that this was the first conference these guys
+have run and I think all my fellow delegates hope it won't be the last.
+As I said in the Pub on Saturday night, I'd had a talk proposal knocked
+back and, in that situation, it's terribly easy to find yourself sitting
+in a session thinking “Bloody hell, my talk would have been better than
+this!”, but not at this conference.
+
+A phrase that cropped up a couple of times was the old saw that “Data ==
+Code” -- it's very hard to avoid the idea once you start talking about
+code generation or Domain Specific Pidgins, parsing... I first came
+across the idea in /The Structure And Interpretation of Computer Programs/ where it's elegantly phrased as “Data is just
+dumb code, and code is just smart data”. Traditionally, the idea seems
+to be attributed to [[http://en.wikipedia.org/wiki/John_McCarthy_%28computer_scientist%29][John McCarthy]], the inventor of Lisp. But it's older than that. Way older
+than that. The idea is actually older than Computer Science. It lies at
+the core of [[http://en.wikipedia.org/wiki/Alan_Turing][Turing's]] original paper
+[[http://www.thocp.net/biographies/papers/turing_oncomputablenumbers_1936.pdf][On Computable Numbers, with an Application to the Entscheidungsproblem]] in
+which he invents computer science on the way to proving that it's
+impossible to decide algorithmically whether a given statement of
+arithmetic is true or false.
+
+In the course of the paper, Turing posits what has become known as the
+Halting Problem:
+
+#+begin_quote
+Given a description of a program and a finite input, decide whether the
+program finishes running or will run forever, given that input.
+#+end_quote
+
+Turing's proof runs something like this:
+
+Suppose we have a subroutine ~halts?(code,data)~ which solves the
+halting problem. Let's use that to write something like:
+
+#+begin_src ruby
+def counter_example(code)
+  if halts? code, code
+    for (;;)
+    end
+  else
+    return
+  end
+end
+
+counter_example(File.read(==STDIN==))
+#+end_src
+
+and ask the question “What happens when we run
+~counter_example.rb < counter_example.rb~?” If ~halts?~ reckons that
+~counter_example~ would halt, given itself as input, then counter
+example will enter an infinite loop, but if ~halts?~ reckon that it
+would enter an infinite loop, then it would halt. Which is a
+contradiction. Which means that there can be no subroutine ~halts?~,
+which means that maths is hard enough to be interesting and occasionally
+undecidable.
+
+Look at how the proof works -- it's built around the idea that code can
+be treated as data. In fact, you could say that the Turing Machine looks
+like it does because Turing was working backwards from this core idea to
+describe a sufficiently powerful machine that could obviously treat it's
+own description as data. Certainly when you compare the clarity of his
+proof that the halting problem is undecidable (given the idea of the
+universal Turing machine) with the contortions required to make
+mathematics swallow its own tail in similar fashion so that Gödel could
+prove his Incompleteness Theorem.
+
+So, if you want to know who the idea that code is data is due to, the
+answer (as is so often the case in our field) is Turing.
+
+**** Postscript
+:PROPERTIES:
+:CUSTOM_ID: postscript
+:END:
+Incidentally, Turing is also responsible for the first ever bug -- his
+original implementation of a Universal Turing Machine has a couple, one
+of which is probably a dumb typo (which even I could spot when I read
+the paper). Another is more subtle, but still fixable. Somewhat
+delightfully, a young grad student,
+([[http://en.wikipedia.org/wiki/Donald_Davies][Donald W Davies]], who invented packet switching) spotted these bugs and told Turing:
+
+#+begin_quote
+I ... found a number of quite bad programming errors, in effect, in the
+specification of the machine that he had written down, and I had worked
+out how to overcome these. I went along to tell him and I was rather
+cock-a-hoop ... I thought he would say ‘Oh fine, I'll send along an
+addendum. But in fact he was very annoyed, and pointed out furiously
+that really it didn't matter, the thing was right in principle, and
+altogether I found him extremely touchy on this subject.
+#+end_quote
+
+Nearly fifty years later Davies wrote and published a debugged version
+of the code, which you can find in The /Essential Turing/. One lesson to draw from the above is that getting annoyed at
+people pointing out trivial bugs in example code is also at least as old
+as computer science. Rather splendidly, there's also a story of the chap
+who wrote the first ever assembler getting a serious telling off from
+Turing because the computer's time was too valuable to waste it on
+converting symbols into machine code when humans were perfectly capable
+of doing it themselves. Who knows, maybe Turing's contention was
+actually true back in the days of the Manchester Baby...
+
+**** [[http://www.bofh.org.uk/2008/04/07/code-is-data-and-it-always-has-been][3 historic comments]] »
+:PROPERTIES:
+:CUSTOM_ID: commentary
+:CLASS: feedback
+:END:
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=]] By she Mon, 07 Apr 2008 08:15:57 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-she-mon-07-apr-2008-081557-gmt
+:END:
+Haha that story about the turing bug is hilarious :)
+
+Must have been a funny time
+
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=]] By paulcc Wed, 09 Apr 2008 07:02:47 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-paulcc-wed-09-apr-2008-070247-gmt
+:END:
+Don't forget lambda calculus, which is slightly older (and invented by
+Turing's doctoral supervisor)
+
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=]] By horia314 Fri, 11 Apr 2008 13:43:43 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-horia314-fri-11-apr-2008-134343-gmt
+:END:
+Nice. I had no idea Alan Turing worked on actual computers doing the
+down and dirty work of programming -- always though he just did the
+theory.
+
+*** DONE JavaScript scoping makes my head hurt
+CLOSED: [2025-09-30 Tue 00:23]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 080320-javascript-scoping-makes-my-head-hurt
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-30 Tue 00:23]
+- State "REVISING"   from "DONE"       [2025-09-30 Tue]
+- State "DONE"       from "TODO"       [2008-03-20 Thu]
+:END:
+
+#+begin_description
+In which I grumble about JavaScript's dodgy scoping (more or less solved by ~let~ in modern JavaScript.)
+#+end_description
+
+Who came up with the JavaScript scoping rules? What were they smoking.
+Here's some Noddy Perl that demonstrates what I'm on about:
+
+#+begin_src perl
+my @subs;
+for my $i (0..4) {
+  push @subs, sub { $i }
+}
+
+print $subs[0]->(); # => 0;
+
+#+end_src
+
+Here's the equivalent (or what I thought should be the equivalent) in
+JavaScript:
+
+#+begin_src javascript
+var subs  [];
+for (var i in [0,1,2,3,4]) {
+  subs[i] = function () {
+    return i;
+  }
+}
+alert subs[0]() // => 4
+#+end_src
+
+What's going on? In Perl, ~$i~ is scoped to the ~for~ block.
+Essentially, each time through the loop, a new variable is created, so
+each generated closure refers to a different ~$i~. In Javascript, ~i~
+is scoped to the ~for~ loop's containing function. Each of the generated
+closures refer to the same ~i~. Which means that, to get the same effect
+as the Perl code, you must write:
+
+#+begin_src javascript
+var subs = [];
+for (var shared_i in [0,1,2,3,4]) {
+  (function (i) {
+    subs[i] = function () {
+      return i;
+    };
+  })(shared_i);
+}
+
+subs[0]() // => 0
+#+end_src
+
+**** Dodgy Ruby scoping
+:PROPERTIES:
+:CUSTOM_ID: dodgy-ruby-scoping
+:END:
+I had initially planned to write the example “How it should work” code
+in Ruby, but it turns out that Ruby's ~for~ has the same problem:
+
+#+begin_src ruby
+subs = [];
+for i in 0..4
+  subs << lambda { i }
+end
+subs[0].call # => 4
+#+end_src
+
+Which is one reason why sensible Ruby programmers don't use ~for~. If I
+were writing the snippet in ‘real' Ruby, I'd write:
+
+#+begin_src ruby
+subs = (0..4).collect { |i|
+  lambda { i }
+}
+subs[0].call # => 0
+#+end_src
+
+**** My conclusion
+:PROPERTIES:
+:CUSTOM_ID: my-conclusion
+:END:
+JavaScript is weird. Okay, so you already know this. In so many ways
+it's a lovely language, but it does have some annoyingly odd corners.
+
+**** [[http://www.bofh.org.uk/2008/03/20/javascript-scoping-makes-my-head-hurt][13 historic comments]] »
+:PROPERTIES:
+:CUSTOM_ID: commentary
+:CLASS: feedback
+:END:
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=40f438095ffe6ce6a6ccffc4837e80d2&size=48&url=http://threebrothers.org/brendan/][http://www.gravatar.com/avatar.php?gravatar_id=40f438095ffe6ce6a6ccffc4837e80d2&size=48&url=http://threebrothers.org/brendan/]] By [[http://threebrothers.org/brendan/][Brendan]] Thu, 20 Mar 2008 13:31:29 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-brendan-thu-20-mar-2008-133129-gmt
+:END:
+Here's how I would have done this sort of thing in JavaScript:
+
+#+begin_src javascript
+var subs = [];
+for (var i in [0,1,2,3,4]) {
+  subs[i] = {
+    execute: function() {return this.i;}
+  };
+  subs[i].i = i;
+}
+alert(subs[0].execute());
+#+end_src
+
+You're right, though: JavaScript's scoping is very often contrary to
+expectations.
+
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=]] By anon Thu, 20 Mar 2008 16:02:40 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-anon-thu-20-mar-2008-160240-gmt
+:END:
+I think it's Perl that's being dodgy here, for a ‘scripting' language.
+The equivalent in python behaves the same as js and ruby:
+
+#+begin_src python
+[lambda: i for i in range(5)]0() # 4
+#+end_src
+
+Note though, if you /use/ the value of ~i~ in the list comprehension
+scope rather than keeping the reference alive with the lambda, it acts
+as you want it to:
+
+#+begin_src python
+[lambda n=i: n for i in range(5)]0() # 0
+#+end_src
+
+A bit of a cheat, but a short way to spell it.
+
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/][http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/]] By [[http://www.bofh.org.uk/][Piers Cawley]] Thu, 20 Mar 2008 17:12:28 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-piers-cawley-thu-20-mar-2008-171228-gmt
+:END:
+@Brendan: I've always disliked that style -- what's the point of
+manually unpicking a perfectly serviceable closure?
+
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/][http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/]] By [[http://www.bofh.org.uk/][Piers Cawley]] Thu, 20 Mar 2008 17:17:07 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-piers-cawley-thu-20-mar-2008-171707-gmt
+:END:
+@anon: Ah, one more reason to maintain my dislike for Python.
+
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=http://whoot.org][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=http://whoot.org]] By [[http://whoot.org/][James Duncan]] Thu, 20 Mar 2008 19:19:10 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-james-duncan-thu-20-mar-2008-191910-gmt
+:END:
+In [[http://developer.mozilla.org/en/docs/New_in_JavaScript_1.7][JavaScript 1.7]] you get “let” which does what you're looking for. Of course that
+doesn't help you in the majority of browsers, but it is a recognised
+problem.
+
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=e17949267bbfe21a0fadf1bbf00592b4&size=48&url=http://plasmasturm.org/][http://www.gravatar.com/avatar.php?gravatar_id=e17949267bbfe21a0fadf1bbf00592b4&size=48&url=http://plasmasturm.org/]] By [[http://plasmasturm.org/][Aristotle Pagaltzis]] Thu, 20 Mar 2008 19:59:50 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-aristotle-pagaltzis-thu-20-mar-2008-195950-gmt
+:END:
+Yeah, scoping is insufficiently thought out in JavaScript and
+downright braindead in Python. At least in JavaScript, you can fix
+this particular example by reformulating it in the same way as the
+reformulated Ruby example:
+
+#+begin_src javascript
+var subs = [0,1,2,3,4].map( function(i) {
+  return function() { i };
+} );
+#+end_src
+
+Of course I'd write this in Perl just like you did in "real
+Ruby":
+
+#+begin_src perl
+my @subs = map { my $i = $_; sub { $i } } 0 .. 4;
+#+end_src
+
+And gosh, here I was annoyed by the verbosity of having to write
+~sub~ in front of every block snippet. Welcome to JavaScript
+which makes you write ~function()~!
+
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/][http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/]] By [[http://www.bofh.org.uk/][Piers Cawley]] Fri, 21 Mar 2008 14:56:20 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-piers-cawley-fri-21-mar-2008-145620-gmt
+:END:
+Heh. JavaScript continues in its mission to turn people onto Lisp (but
+with extra syntax) eh? Are any of the various JavaScript
+implementations doing tail call optimisation yet? It'd certainly make
+continuation passing style a good deal easier to manage.
+
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/][http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/]] By [[http://www.bofh.org.uk/][Piers Cawley]] Fri, 21 Mar 2008 15:06:59 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-piers-cawley-fri-21-mar-2008-150659-gmt
+:END:
+@Aristotle: And no way to alias ~function~ either. Giles Bowkett came
+up with a neat ruby hack:
+
+#+begin_src ruby
+alias :L :lambda
+#+end_src
+
+Which I find rather delightful.
+
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=e17949267bbfe21a0fadf1bbf00592b4&size=48&url=http://plasmasturm.org/][http://www.gravatar.com/avatar.php?gravatar_id=e17949267bbfe21a0fadf1bbf00592b4&size=48&url=http://plasmasturm.org/]] By [[http://plasmasturm.org/][Aristotle Pagaltzis]] Fri, 21 Mar 2008 18:53:53 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-aristotle-pagaltzis-fri-21-mar-2008-185353-gmt
+:END:
+Ah, then you'll enjoy
+[[http://search.cpan.org/dist/lambda/lib/lambda.pm][~lambda~]].
+:-)
+
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=]] By Daniel Berger Mon, 24 Mar 2008 11:05:01 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-daniel-berger-mon-24-mar-2008-110501-gmt
+:END:
+Pssh, Ruby doesn't require a third party library:
+
+[[http://www.oreillynet.com/ruby/blog/2007/10/fun_with_unicode_1.html][http://www.oreillynet.com/ruby/blog/2007/10/fun_with_unicode_1.html]]
+
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://bofh.org.uk][http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://bofh.org.uk]] By [[http://bofh.org.uk/][Piers Cawley]] Mon, 24 Mar 2008 14:13:37 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-piers-cawley-mon-24-mar-2008-141337-gmt
+:END:
+@Daniel: You obviously haven't looked at =lambda.pm= very closely. It's
+not substantially longer than the ruby implementation, but it has some
+very neat tricks for lexically scoping the λ.
+
+Perl's conventions for module inclusion and pragma-like modules knock
+Ruby's into a cocked hat, frankly.
+
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=]] By David Cantrell Tue, 25 Mar 2008 04:00:57 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-david-cantrell-tue-25-mar-2008-040057-gmt
+:END:
+The loop counter is declared outside the ~for{}~ block, so to me it
+makes sense that it could be scoped to the containing block. Perl's
+the odd one out here. I like the way it's odd, but it's still odd.
+
+And, digging into the dusty recesses of my memory, isn't that the same
+as how a for-loop counter would be scoped in C?
+
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/][http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/]] By [[http://www.bofh.org.uk/][Piers Cawley]] Tue, 25 Mar 2008 05:26:33 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-piers-cawley-tue-25-mar-2008-052633-gmt
+:END:
+Who cares how it's scoped in C? Frankly, the difference in scope only
+really becomes important/noticeable when your language gets closures.
+The slight weirdness of the Perl 5 scoping's been addressed in Perl 6:
+It's now:
+
+#+begin_src raku
+foreach @array -> $each {
+  ...
+}
+#+end_src
+
+Where ~-> $whatever { ... }~ is the new way of declaring parameterised
+anonymous blocks. I'm sure it won't be long before someone writes a
+library to let them spell that as ~→ $foo { ... }~
+
+--------------
 * Notes :@note:
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /note
