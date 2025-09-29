@@ -372,6 +372,13 @@ It's also bloody funny in a dry, despairing kind of way.
 :END:
 
 Continues the family saga
+
+*** TODO Programming Ruby: The pragmatic programmers' guide, by Dave Thomas
+:PROPERTIES:
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((author . "Dave Thomas") (title . "Programming Ruby: The pragmatic programmers' guide") (type . "Programming Ruby: The pragmatic programmers' guide"))
+:EXPORT_HUGO_BUNDLE: dave-thomas-programming-ruby-the-pragmatic-programmers-guide
+:EXPORT_FILE_NAME: index
+:END:
 ** Bakehouse Diary :@bakehouse-diary:
 :PROPERTIES:
 :export_hugo_custom_front_matter: :series "Bakehouse Diary"
@@ -1184,7 +1191,7 @@ I watched intently and, when I returned to my home arcade, suddenly the top thre
 
 I can't do that on the Game Dad. Not yet at least. I'm old enough and RSI'd enough, that the thought of bashing the fire button at 8 Hertz just gives me the shivers.
 
-But! Modern emulators have all sorts of convenience functions, surely I could configure something that would emulate the steady rate of fire that my youthful fingers were capable of. And maybe I could do something about the incredibly sensitive controls, where even the lightest touch of the analog stick would see me moving two or more segments when what I really wanted was a surgical one step move.[fn:12]
+But! Modern emulators have all sorts of convenience functions, surely I could configure something that would emulate the steady rate of fire that my youthful fingers were capable of. And maybe I could do something about the incredibly sensitive controls, where even the lightest touch of the analog stick would see me moving two or more segments when what I really wanted was a surgical one step move.[fn:2]
 
 I turns out that I could. But, frustratingly, not via the very slick UI. I had to edit text files! I had to make new text files. And because popping the Micro SD card out of the Game Dad and into a card reader, editing a file, putting it back in the GD, testing it and then having to fiddle with the text file again is… less than ideal, I did it by /logging into my handheld games console via SSH from my iPad, editing the file and just restarting the game!/
 
@@ -1406,7 +1413,7 @@ Hugo[fn:1] sort of supports this out of the box with its ~youtube~, ~instagram~,
 
 #+hugo: more
 
-Well, it can. It just takes a little work.[fn:2] The ~question~ to ask is how do all those user friendly sites do there thing? Twitter and Facebook, being the walled garden behemoths that they are do it by dictating two different microformats
+Well, it can. It just takes a little work.[fn:3] The ~question~ to ask is how do all those user friendly sites do there thing? Twitter and Facebook, being the walled garden behemoths that they are do it by dictating two different microformats
 #+begin_marginnote
 Of bloody course!
 #+end_marginnote
@@ -1570,7 +1577,7 @@ But never underestimate the ability of a long time Emacs user to complicate thin
 
 The beauty of using a static site generator to build your website is supposed to be that it's all delightfully simple. Simple markdown formatted files go in at one end and a slim, fast and easy to serve website comes out the other end. All that remains is to upload those files to the appropriate directory on your server and all is well.
 
-But never underestimate the ability of a long time Emacs user to complicate things. For instance, markdown is all well and good, but I've been doing most of my writing in [[https://orgmode.org/][Org Mode]][fn:3] so I really want to stay in Org mode to write these blog posts. [[https://gohugo.io/][Hugo]] understands =.org= files, so I could just lean on that, but the way Hugo treats org files seems slightly out of whack with what I think of as the Org way and I'd end up having to stick with the subset of org syntax that Hugo know. So I use [[https://ox-hugo.scripter.co][ox-hugo]], there's a bit of configuration needed to make it work the way I like, but I prefer to change software to accommodate me rather than change me to accommodate software
+But never underestimate the ability of a long time Emacs user to complicate things. For instance, markdown is all well and good, but I've been doing most of my writing in [[https://orgmode.org/][Org Mode]][fn:4] so I really want to stay in Org mode to write these blog posts. [[https://gohugo.io/][Hugo]] understands =.org= files, so I could just lean on that, but the way Hugo treats org files seems slightly out of whack with what I think of as the Org way and I'd end up having to stick with the subset of org syntax that Hugo know. So I use [[https://ox-hugo.scripter.co][ox-hugo]], there's a bit of configuration needed to make it work the way I like, but I prefer to change software to accommodate me rather than change me to accommodate software
 #+begin_marginnote
 I'd go so far as to say it's a point of pride.
 #+end_marginnote
@@ -1592,7 +1599,7 @@ I didn't worry about this for /ages,/ but it niggled at me. Then one day I read 
 #+begin_marginnote
 Yes, Emacs is an editor, but if you do 「src_emacs-lisp[:exports code]{emacs all‑posts.org ‑‑batch ‑l ox-hugo ‑‑eval='(org-hugo-export-wim-to-md t)' ‑‑kill} 」 it will happily execute any lisp code you care to ask it to.
 #+end_marginnote
-in batch mode. The  markdown files never exist anywhere that anyone can edit them. So, of course I had to do that. Again, fiddly to set up, and arguably only of philosophical benefit, but worth it, I think.[fn:4]
+in batch mode. The  markdown files never exist anywhere that anyone can edit them. So, of course I had to do that. Again, fiddly to set up, and arguably only of philosophical benefit, but worth it, I think.[fn:5]
 
 {{{newthought(I could've left it there,)}}} but the thing I miss about the old, slow, hard to maintain version of this site, is the sense of connection. The old site had comments, and pingback links to other blogs. There was a sense of connectedness that's missing from a collection of articles. I want some of that back.
 
@@ -1605,7 +1612,7 @@ There is a way. In the time I've been mostly not blogging, some of the folks who
 #+end_cite
 #+end_quote
 
-Now we're talking! It's a really simple standard too. When you mention, like, comment on, repost, reply to, bookmark or simply publicly interact with an "h-entry"[fn:5] on the IndieWeb, you can send a webmention by sending a small chunk of JSON to the webmention endpoint of the entry you mentioned. Assuming all the content is marked up correctly, /sending/ a webmention is delightfully easy. You can do it with ~curl~, if that's your thing, but I'm in an emacs buffer, so let's use [[https://github.com/pashky/restclient.el][~restclient~]]
+Now we're talking! It's a really simple standard too. When you mention, like, comment on, repost, reply to, bookmark or simply publicly interact with an "h-entry"[fn:6] on the IndieWeb, you can send a webmention by sending a small chunk of JSON to the webmention endpoint of the entry you mentioned. Assuming all the content is marked up correctly, /sending/ a webmention is delightfully easy. You can do it with ~curl~, if that's your thing, but I'm in an emacs buffer, so let's use [[https://github.com/pashky/restclient.el][~restclient~]]
 
 We mention [[https://indieweb.org]] in this post, so let's find out its webmention endpoint.
 
@@ -1785,7 +1792,7 @@ Then Twitch pulled the plug on /Sings/ and I started doing my regular Friday nig
 What saved it was adding an [[https://www.blackmagicdesign.com/uk/products/atemmini][ATEM Mini Pro ISO]] from BlackMagic. Now I could hand off all the capturing, streaming and recording duties to that box and run Logic and Zoom on the Mac and everything just worked (with an utter rats nest of cables on my desk). The ATEM takes HDMI input from up to four sources and lets me switch what gets sent to the stream between them. There's also a monitor preview output that can be switched independently between those four sources, as well as multiview and stream previews. Of course, I quickly used up all four sources, and I don't even have a second camera! The way things are arranged by default is that I have a camera feed, my mac's primary and secondary displays, and the output from a Raspberry Pi. Mac screen 2 is where the zoom window lives, and is connected to the ATEM via an HDMI splitter with the second output feeding a 7-inch field monitor that sits on a teleprompter setup so I can look guests in the eye.{{{marginnote(Best purchase ever! I primarily use it with Zoom or to display the YouTube chat when I'm doing solo streams)}}}
 The primary Mac screen is where I set up streams and drive Logic from. It feeds into the ATEM mostly so I can see it in the preview window or full size when I need to without having to have a another screen, but if I ever get a second camera, I'll break mac screen 1 out to its own monitor and dedicate input 2 to that secondary camera. Input 4 is a Raspberry Pi that I use for motion graphics. This used to be a copy of chromium running in kiosk mode to display the [[https://ko-fi.com/pdcawley][Ko-Fi]] stream widget which displays donations as they happen, but I've recently managed to compile OBS studio with a working browser plugin and I'm using that instead now, which should allow me to add more overlays later. The only catch with that is that I've not yet managed to get [[https://bitfocus.io/companion/][Companion]] to compile, {{{marginnote(Companion's a brilliant app for controlling AV gear via a web interface or Stream Deck. I know it works on the Pi because they provide OS images for it.)}}} so I think I'll have to move that onto the Mac.
 
-{{{newthought(This all worked fine)}}} until recently. You see, the thing I love about unaccompanied singing is singing harmonies. And harmonies don't work unless the timing is properly tight. That means I can't sing harmonies with Zoom guests because the speed of light{{{marginnote(and video and audio compression and decompression)}}} screws things up completely. I got around this by harmonising with myself -- either by using a Looper plugin in Logic[fn:6] or just by using Logic's multi-tracking[fn:7] to record multiple layers of a song's chorus. It all works, and works well, but I could never work out how to record harmonies for shanty type refrains.
+{{{newthought(This all worked fine)}}} until recently. You see, the thing I love about unaccompanied singing is singing harmonies. And harmonies don't work unless the timing is properly tight. That means I can't sing harmonies with Zoom guests because the speed of light{{{marginnote(and video and audio compression and decompression)}}} screws things up completely. I got around this by harmonising with myself -- either by using a Looper plugin in Logic[fn:7] or just by using Logic's multi-tracking[fn:8] to record multiple layers of a song's chorus. It all works, and works well, but I could never work out how to record harmonies for shanty type refrains.
 
 Consider:
 #+begin_verse
@@ -2322,7 +2329,7 @@ Cool URLs don't change they say, and that's true. You'll always find my upcoming
 
 Back when lockdown started, for all we were both classed as 'critically vulnerable', we did pretty well. We had each other for company, the house is paid for, we have some private outdoor space, Doncaster Market remained open and I'd got a 25kg bag of flour. Life was… tolerable.
 
-Except, as any musician will tell you, making music needs company. At least it does if you catch the magic that happens when a group of people are together making something beautiful. Which is why I started singing folk songs to the internet[fn:8] every Friday night.[fn:9]  At first, I just sang into the dark to the two or three people who showed up in the text chat {{{marginnote(Thank you all of you! You were awesome.)}}} but I was still missing harmonies. So I worked out how to use Logic for live sound and did on the fly multitracking of chorus harmonies and that was great. Recently, I've switched to using [[https://apps.apple.com/gb/app/loopy-pro-looper-daw-sampler/id1492670451][Loopy Pro]] on my iPad[fn:10] and it's been great -- I can sing harmonies on far more songs now and I've started experimenting with fancier arrangements too.[fn:11]
+Except, as any musician will tell you, making music needs company. At least it does if you catch the magic that happens when a group of people are together making something beautiful. Which is why I started singing folk songs to the internet[fn:9] every Friday night.[fn:10]  At first, I just sang into the dark to the two or three people who showed up in the text chat {{{marginnote(Thank you all of you! You were awesome.)}}} but I was still missing harmonies. So I worked out how to use Logic for live sound and did on the fly multitracking of chorus harmonies and that was great. Recently, I've switched to using [[https://apps.apple.com/gb/app/loopy-pro-looper-daw-sampler/id1492670451][Loopy Pro]] on my iPad[fn:11] and it's been great -- I can sing harmonies on far more songs now and I've started experimenting with fancier arrangements too.[fn:12]
 
 {{{newthought(A key realisation came)}}} after a late night conversation with [[https://johnspiers.co.uk/][Squeezy John]] [Spiers] on Twitter about how a YouTube archive of performances can become a millstone around an artist's neck. After all, if someone can catch a performance online from a couple of years ago, why would they pay to watch you doing it again? I don't think most people think this way, but the life of a professional musician is marginal enough that it doesn't take many to have an effect. So I started making the catch-up videos private after a week. {{{marginnote(Or whenever I got round to it, if I'm honest)}}}
 
@@ -4846,9 +4853,1798 @@ doubly lousy by the fact that is precisely /not/ what the traits paper
 says you should do.
 
 **** The view from 2025
-I don't know whether this argument is still live, but I think what I missed is that when you use Smalltalk traits, there's nothing so ungainly or 'loud' as a warning when you do this kind of overriding, but there is an unobtrusive but distinctive mark next to the method in question's name in the browser so you can see at a glance that it's overriding something and, if that's a surprise, you can investigate further.
+I don't know whether this argument is still live, but I think what I missed is that when you use Smalltalk traits, there's nothing so ungainly or ‘loud’ as a warning when you do this kind of overriding, but there is an unobtrusive but distinctive mark next to the method in question's name in the browser so you can see at a glance that it's overriding something and, if that's a surprise, you can investigate further.
 
 Throwing a warning (or even an error) on every run is the opposite of unobtrusive, so I'd still lean towards not doing that. Instead, I suggest checking an environment variable and only warning (or dieing, depending on the setting) if it's present. But I'm not the implementer, so I don't have these headaches. Thank goodness.
+*** DONE Halfway through September and nothing new!
+CLOSED: [2025-09-25 Thu 20:36]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 030917-halfway-through-september-and-nothing-new
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-25 Thu 20:36]
+- State "REVISING"   from "DONE"       [2025-09-25 Thu]
+- State "DONE"       from "TODO"       [2003-09-17 Wed]
+:END:
+
+And there's nothing new in this post really. I've been indulging myself
+in a gadget buying spree including finally getting myself a decent film
+scanner and starting to get some of my old negatives and slides scanned
+in. I'll be putting more stuff online as time goes on, but for the time
+being here's a few photos from [[/photos/Silverstone/][Silverstone]] a
+couple of years ago.
+
+I've also finally bought myself a digital camera, in theory so I can't
+use the 'but film/dev costs so much!' excuse. Asking how much the
+camera, power grip and decently short lens are going to cost me is, of
+course, beside the point.
+[[http://homepage.mac.com/pdcawley/PhotoAlbum1.html][Here]] is an album
+of photos that will mostly be be of interest to my family. The
+[[http://homepage.mac.com/pdcawley/.Pictures/Photo%20Album%20Pictures/2003-09-12%2004.19.30%20-0700/Image-8B5395A4E51211D7.jpg][last one]] is probably decent even if you're not related to the subject
+though.
+
+*** DONE Monstrous Regiment :truncated:
+CLOSED: [2025-09-25 Thu 20:43]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 031003-monstrous-regiment
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((author . "Terry Pratchett") (title . "Monstrous Regiment") (type . "Monstrous Regiment"))
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover '((s . "https://covers.openlibrary.org/b/olid/OL7441386M-S.jpg") (m . "https://covers.openlibrary.org/b/olid/OL7441386M-M.jpg") (l . "https://covers.openlibrary.org/b/olid/OL7441386M-L.jpg"))
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-25 Thu 20:43]
+- State "REVISING"   from "DONE"       [2025-09-25 Thu]
+- State "DONE"       from "TODO"       [2003-10-03 Fri]
+:END:
+
+Once upon a time, when the world was still enormously old but I was a
+good deal younger, a friend with whom I played D&D
+#+begin_marginnote
+First edition AD&D actually
+#+end_marginnote
+pressed a copy of Terry Pratchett's The Colour of Magic on me, telling me it was the best thing ever. So off I went and read it and it was indeed the best thing ever.
+
+Well, I was 14 at the time.
+
+#+hugo: more
+
+**** 2025 Piers Here
+Sadly, this one didn't survive my botched import of a typo database, and it didn't get archived by the Wayback Machine either. I should definitely re-read and re-review /Monstrous Regiment/ though.
+*** DONE Recent problems
+CLOSED: [2025-09-25 Thu 20:48]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 031004-recent-problems
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-25 Thu 20:48]
+- State "REVISING"   from "DONE"       [2025-09-25 Thu]
+- State "DONE"       from "TODO"       [2003-10-04 Sat]
+:END:
+
+
+
+My new firewall seems to have forgotten all about port forwarding rules
+for a week or so. Which isn't good when that's how this site is served.
+
+All better now. I hope.
+
+*** DONE Back on the Air
+CLOSED: [2025-09-25 Thu 20:50]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 031102-back-on-the-air
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-25 Thu 20:50]
+- State "REVISING"   from "DONE"       [2025-09-25 Thu]
+- State "DONE"       from "TODO"       [2003-11-02 Sun]
+:END:
+
+How long did it take me to finally get my finger out and move this blog
+over to the new box?
+
+I think the only answer that makes sense is "Too long".
+
+Now I just have to wrestle the godawful CSS into submission.
+
+*** DONE Staff of Life :truncated:
+CLOSED: [2025-09-25 Thu 20:52]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 031102-staff-of-life
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-25 Thu 20:52]
+- State "REVISING"   from "DONE"       [2025-09-25 Thu]
+- State "DONE"       from "TODO"       [2003-11-02 Sun]
+:END:
+
+One of my earliest memories is of standing on a low stool, stirring a
+teaspoonful of sugar into fresh yeast to wake it up while mum heated a
+pan of milk to blood heat before everything all got mixed together to
+make a lovely, enriched bread dough that, now I think about it, I could
+probably make tomorrow without recourse to a recipe book.
+
+She'd cover it with a tea towel and set it to rise, until the dough would
+be lifting the centre of the towel slightly. Once it had risen she'd tip
+the dough out and knock it back before dividing it up into buns and
+plaits (if I'd been good, I was allowed to do some plaiting...). She'd
+lay 'em out on baking sheets to recover slightly, then, just before they
+went into the oven they'd get a quick egg or milk wash and a quick
+sprinkling of poppy seeds.
+
+*** DONE Not my best week... :truncated:
+CLOSED: [2025-09-25 Thu 21:11]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 031116-not-my-best-week
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-25 Thu 21:11]
+- State "REVISING"   from "DONE"       [2025-09-25 Thu]
+- State "DONE"       from "TODO"       [2003-11-16 Sun]
+:END:
+
+Remember boys and girls, always, always, always have a backup.
+
+**** 2025 Here
+Yeah, tell me about it!
+*** DONE Finding a problem... :truncated:
+CLOSED: [2025-09-25 Thu 21:12]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 031128-finding-a-problem
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-25 Thu 21:12]
+- State "REVISING"   from "DONE"       [2025-09-25 Thu]
+- State "DONE"       from "TODO"       [2003-11-28 Fri]
+:END:
+
+You probably don't know this yet, but I'm in the process of preparing a
+course on Test Driven Development & Refactoring with Perl which I hope
+will find me some favour and income.
+
+One of the trickier aspects, daft as it sounds, is finding a good
+problem to use for the course. Ideally you need something that you can
+see measurable improvement in as the code is developed, and a well
+defined set of requirements. One of the standard problems I've come
+across is that of scoring 10-pin bowling.
+
+**** 2025 thoughts
+I have no recollection of this at all.
+*** DONE Am I awfully intolerant? :truncated:
+CLOSED: [2025-09-25 Thu 21:16]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 031202-am-i-awfully-intolerant
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-25 Thu 21:16]
+- State "REVISING"   from "DONE"       [2025-09-25 Thu]
+- State "DONE"       from "TODO"       [2003-12-02 Tue]
+:END:
+
+According to a quick search of groups.google.com, I've been using the
+same [[mailto:pdcawley@bofh.org.uk][email address]] for almost exactly 9 years now and in that time I've never succumbed to the temptation to monkey with my mail headers and start hiding my obscured email address down in my sigfile beneath a sign saying 'Beware of the leopard'.
+
+Why? Because, if someone wants to respond to something I've said, it
+seems to be the height of rudeness to expect them to do anything other
+than simply hit the reply button of their mail client -- generally
+people (well me for certain, I can't be sure about everyone else) don't
+bother.
+
+But there's something worse (apart from the spammers who cause the
+problem in the first place) than the invalid 'From' header.
+
+**** 2025 Note
+Another one I have no recollection of. And I have no idea what I'd put below the fold on this.
+
+*** DONE The pleasures of orthogonality
+CLOSED: [2025-09-25 Thu 21:36]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 031203-the-pleasures-of-orthogonality
+:EXPORT_FILE_NAME: index
+:END:
+Focusing a large format camera can be a tricky process if you're not
+used to it. Unless you have a remarkably simple scene there's usually a
+period of frantic adjustment of swings and tilts to try and get the
+plane of focus running through the most important elements of the scene.
+Most large format photographers will have heard of the Scheimpflug Rule
+which says that the plane of sharp focus, the film plane and the lens
+plane must all intersect in a single line. This is one of those useful
+in theory but useless in practice maxims.
+
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-25 Thu 21:36]
+- State "REVISING"   from "DONE"       [2025-09-25 Thu]
+- State "DONE"       from "TODO"       [2003-12-03 Wed]
+:END:
+
+The problem is that you can end up chasing your tail. Adjusting the
+focus moves the line of intersection, which means that the plane of
+sharp focus is suddenly missing the nearest point, so you adjust the
+tilt to take that into account, but that changes the angle of the plane
+of sharp focus so it misses the far point, so you adjust the focus,
+but...
+
+#+hugo: more
+
+{{{newthought(Which is why a Harold Merklinger is a hero.)}}} He took another look at Scheimpflug's work and discovered what he
+calls the ‘Hinge Rule'. Essentially the Hinge Rule lets you choose a
+fixed pivot line that doesn't move about as you adjust lens:film
+distance (there's a couple of caveats but they're easily worked around).
+Knowing how to take advantage of the Hinge Rule means that your
+focusing process has disentangled itself slightly and you don't suffer
+from a single control altering two or three different things at the same
+time. (Actually, it /still/ alters two or three different things, but it
+/doesn't/ alter the thing you care about). It won't guarantee you get a
+good photo, you still have to know where to stand and where to put the
+edges, but it does make the process of making a photograph easier.
+
+There's all sorts of other areas in photography where the battle is to
+find controls which don't alter 5 things at once, usually they can't be
+found so the trick is to get a good understanding of what the available
+controls do to what, and use that knowledge to produce a final image
+that looks right. I'd go so far as to argue that PhotoShop is so popular
+is because it provides the skilled worker with a set of controls that
+genuinely do alter one thing at a time rather than monkeying with an
+entanglement.
+
+In other words, PhotoShop introduces orthogonality. Orthogonality is a
+term that comes from mathematics, a set of variables is orthogonal if
+adjusting one variable has no effect on any of the others.
+
+{{{newthought(Orthogonality is a desireable trait in programs too.)}}} When I change
+something in the source code of my program, I don't want to have to go
+changing stuff elsewhere to compensate for that change. Both Functional
+Programming and Object Orientation are approaches that, used well, help
+to increase the orthogonality of your program source, the process of
+refactoring code is another process that should tend towards having a
+neatly orthogonal code base.
+
+And Programming /languages/ benefit from increased orthogonality. One of
+the trends that I've noticed in Larry Wall's work on designing Perl 6 is
+that Larry seems to be favouring solutions that disentangle things and
+introduce orthogonal features. For instance, in a post about how
+properties and object orientation will work in Perl 6 Larry said (my
+italics):
+
+#+begin_quote
+The basic underlying philosophy is that classes should not be used both
+to create objects and to specify the scope of reusable code. At least,
+they should not be forced to do both of those. So I think /Perl 6 will
+attempt to divorce those concerns./
+#+end_quote
+
+Talking about Perl's multimethod dispatch, he pointed out that =multi=
+is “now completely orthogonal to scoping”.
+
+Orthogonality's a strange thing though. Seeing it is often a matter of
+point of view. A photographer focusing using the Scheimpflug Rule sees
+no orthogonality or fixed points at all. Another photographer, with
+exactly the same camera, scene and controls who is using the Hinge Rule
+sees a fixed point and a set of neatly orthogonal adjustments that he
+can make. When you're introducing new orthogonality to a programming
+language, the trick is choosing which bits to make independent. Based on
+his work so far, I'd say Larry is doing a good job of making those
+choices.
+*** DONE It's obvious...
+CLOSED: [2025-09-25 Thu 21:54]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 040116-its-obvious
+:EXPORT_FILE_NAME: index
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((author . "Simon Winchester") (title . "The Meaning of Everything") (type . "The Meaning of Everything"))
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover '((s . "https://covers.openlibrary.org/b/olid/OL3323872M-S.jpg") (m . "https://covers.openlibrary.org/b/olid/OL3323872M-M.jpg") (l . "https://covers.openlibrary.org/b/olid/OL3323872M-L.jpg"))
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-25 Thu 21:54]
+- State "REVISING"   from "DONE"       [2025-09-25 Thu]
+- State "DONE"       from "TODO"       [2004-01-16 Fri]
+:END:
+
+I've been reading /The Meaning of Everything/ by Simon Winchester, a
+history of the /Oxford English Dictionary/ and, whilst I find his style
+a little annoying, the story is fascinating. In the first chapter,
+Winchester discusses the history of earlier English dictionaries
+#+begin_marginnote
+A subject covered in far more detail in the excellent /Chasing the
+Sun/, by Jonathon Green if you're interested.
+#+end_marginnote
+One thing I find strange is that it took so
+long for dictionaries to progress from lists of 'hard' words to becoming
+the all inclusive things we know today. Early dictionary makers were
+happy to simply list and define the kinds of words that I imagine you'd
+find in a /Readers' Digest/ Word Power column whilst ignoring the nuts and
+bolts of the language. Maybe they just assumed that everyone already
+knew them.
+
+#+hugo: more
+
+But it turns out that dictionaries become really potent tools when they
+are complete. After all, perfectly good, commonplace words fall out of use and others, once pure jargon, become current.
+#+begin_marginnote
+If you've read the Jargon
+File (or the OED) you'll know that ‘emailled’ once meant ‘embossed (with
+a raised pattern) or perhaps arranged in a net or open work’ though I
+doubt it was ever a commonplace word back then
+#+end_marginnote
+Other words change
+their meaning over time and a good dictionary, like the /OED,/ will trace
+these shifts in meaning.
+
+A good dictionary isn't afraid to state the obvious, if only because
+it's not always obvious which words are obvious.
+
+{{{newthought(Nor should we be.)}}} Which brings me, by a somewhat roundabout route to my
+point. All too often I've seen books on the practise of programming that
+I respect (/Refactoring/ and /The Pragmatic Programmer/ are two good
+examples) dismissed out of hand because they are "just stating the
+obvious". Christopher Alexander's books on building receive flak along
+the same lines; architects dismiss /A Pattern Language,/ arguing that many
+of the patterns are obvious and that, anyway, such a collection can't
+really generate a beautiful town/room/building.
+
+That Alexander now agrees with them on the latter point doesn't detract
+from /A Pattern Language's/ greatness. It's a great book because it states
+the obvious with such clarity and focus. It gives the reader names for
+things that were nameless intuitions and it enables meaningful
+discussion about those ideas because it provides a shared vocabulary.
+The same can be said of programming books; /Refactoring/ is a
+classic if only because if gives us a new vocabulary. /The Pragmatic
+Programmer/ is a great book because it collects those gems of coder
+wisdom that we've all come across between two covers, and because it
+expresses them so well. Bentley's /Programming Pearls/ did the same thing
+years ago, but we've learned
+#+begin_marginnote
+And forgotten, of course
+#+end_marginnote
+a few things since then...
+
+Stating the obvious isn't a bad thing. Doing so poorly, without due
+attention to your audience is the only sin. So don't be offended when
+someone tells you something you already know. Think about what's been
+said, maybe the other persons's perspective will improve your
+understanding. Maybe the confirmation is good. Or maybe it's
+unnecessary. So, politely let on that you already know this stuff and
+let the conversation move on.
+
+*** DONE Welcome to the world
+CLOSED: [2025-09-25 Thu 22:00]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 040317-welcome-to-the-world
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-25 Thu 22:00]
+- State "REVISING"   from "DONE"       [2025-09-25 Thu]
+- State "DONE"       from "TODO"       [2004-03-17 Wed]
+:END:
+
+At twelve minutes past noon today, my stepdaughter Iona gave birth to a
+7lb 2oz son, Isaac Stamper.
+
+I never expected I'd be a grandfather by 36...
+
+*** DONE It's been a while...
+CLOSED: [2025-09-25 Thu 22:05]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 040825-its-been-a-while
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-25 Thu 22:05]
+- State "REVISING"   from "DONE"       [2025-09-25 Thu]
+- State "DONE"       from "TODO"       [2004-08-25 Wed]
+:END:
+
+Mmm... Eurofoo. At what other technical conference could you spend an
+afternoon in an improvised comedy workshop, marvel at the bandwidth of
+five guys from Fotango toting a terabyte from London to Amsterdam in 45
+minutes, gasp at the audacity of the BBC's Creative Archive project and
+rave about a favourite tech book before discovering that said book's
+editor is sat next to you?
+
+EuroFoo was the European iteration of the Friends Of O'Reilly Camp first
+held at the O'Reilly offices in Sebastapol last year and jolly good fun
+it was too. On the evidence of this conference there's a good deal to be
+said for getting a bunch of smart people into a conference centre and
+divvying up the program on the first night. The improvised comedy
+workshop got on the program because, as we went round the room
+introducing ourselves a couple of people mentioned that they did improv
+and a bunch of us yelled out for a session. I missed them, but everyone
+who went to the lockpicking sessions really enjoyed them.
+#+header: :trim-post nil
+#+begin_marginnote
+and, owing to a
+slight cockup with a car key, a Guildford Perl Monger's pocket and the
+train to Schipol. Well, let's just say that the acquired skills came in
+handy---last I heard they were stymied by the steering lock.
+#+end_marginnote
+
+As anyone who's read almost anything I've written about the practice of
+programming in these pages knows, I'm rather keen on the underlying idea
+of deciding things as late as possible; many of the talks had a
+freshness to them that I don't think you'd get at a conference where
+talk proposals got submitted 3 or 4 months earlier. Also, because there
+were all of 140 or so delegates, the bar track was rather more laid
+back; when I went to OSCON last year, the choice seemed to be between
+running around like a blue arsed fly trying to network with all and
+sundry all the time, or to form up into a relatively small circle of
+acquaintance and just hang out with those guys. I ended up playing a
+good deal of Zendo, and had a few games of Go with Holger Krekel, who,
+at 3 dan is a good deal stronger than me and trounced me in all three
+games, but who taught me a good deal in the process. Thanks Holger.
+
+Oh yeah, and Python and PHP types aren't evil. Who'd've thought it?
+
+This is probably my last /Just a Summary/ post before I begin the slow
+morph into a teacher; if I can work out how to continue blogging my
+teaching experiences here without compromising anyone's privacy I hope
+that those of you who are still looking in on this blog despite the
+ongoing lack of posts for the last n months will enjoy reading them as
+much as you've enjoyed my wibbling about programming.
+
+*** DONE Eurofoo photos
+CLOSED: [2025-09-25 Thu 23:00]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 040825-eurofoo-photos
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-25 Thu 23:00]
+- State "REVISING"   from "DONE"       [2025-09-25 Thu]
+- State "DONE"       from "TODO"       [2004-08-25 Wed]
+:END:
+
+Here's one of my photos from Eurofoo. I appear to have caught DJ Adams
+at a particularly gormless looking moment. [[file:~/Documents/DJ-Gormless.png]]
+*** DONE Cooking Fat!
+CLOSED: [2025-09-26 Fri 00:13]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 040910-cooking-fat :truncated:
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-26 Fri 00:13]
+- State "REVISING"   from "DONE"       [2025-09-25 Thu]
+- State "DONE"       from "TODO"       [2004-09-10 Fri]
+:END:
+
+The weather recently has been remarkably muggy, so I’ve been keeping
+my office window open while I’m working. Which is all very well, but
+we’re trying to keep the cats in, so I have to keep the office door
+closed. Of course, it shouldn’t be too much of a worry, we’re on the
+first floor (2nd floor if you’re American) and surely the cats
+wouldn’t be so stupid as to go leaping out of the window. Still, best
+to keep the door shut.
+
+You can tell where this is going can’t you?
+
+**** 2025 Update
+Yeah, the cat jumped out of the window and woke me up with his yowling at some ungodly hour in the morning.
+
+There was probably more detail in the bit that got lost during a migration and didn't get picked up by the [[https://web.archive.org/][Wayback Machine]], but the above is the nub of it.
+*** DONE WYL: Introducing myself
+CLOSED: [2025-09-25 Thu 23:21]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 041011-wyl-introducing-myself
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-25 Thu 23:21]
+- State "REVISING"   from "DONE"       [2025-09-25 Thu]
+- State "DONE"       from "TODO"       [2004-10-11 Mon]
+:END:
+
+This is the first exercise in chromatic's
+[[http://www.wgz.org/chromatic/writeyourlife][Write Your Life]] essay writing project. Follow the link for more information.
+
+#+hugo: more
+
+How do I look? Right now, I look uncomfortable; I've just changed career
+tracks and after years as a happy Perl programmer, I'm training to be a
+maths teacher. Which is fine, not a problem. What makes me uncomfortable
+is the dress code. After years of working in environments where the most
+formal outfit you're likely to see is a polo shirt with the name of the
+company embroidered on it (worn only by weirdoes and the poor schmucks
+who drew the “Manning the trade show stand” short straw), suddenly, I'm
+having to wear a suit.
+
+It's not all bad; when one is as generously proportioned as me,
+off-the-peg suits aren't an option. Once you reach the realms of the 64
+inch waist and the 60 inch chest the only option is bespoke. So, right
+now I'm wearing two pieces of a bespoke dark grey woollen suit that (oh
+joy of joys!) fits me. It doesn't ride up around my ears when I'm
+writing on the board. Give me a few more weeks and I might even start
+feeling comfortable in it. I already look slimmer in it.
+
+Hmm... somehow I don't think you'd recognize me from the above. So...
+I've a large head, crew cut dark brown (and rapidly greying) hair. I
+wear a full, but close cropped, beard which is slightly redder than the
+hair on my head, but it's going grey too. My eyes are grey/blue behind a
+pair of rimless glasses with rounded rectangular lenses that turn dark
+brown in UV light. I'm 6 feet tall and weigh more than my bathroom
+scales can measure (and they top out at 25 stones).
+
+There are very few photos of me; I'm generally the one behind the
+camera. I enjoy taking what I think of as ‘candid portraits' of friends
+at parties, but I don't always carry my camera with me. Photography's a
+strange thing, if I want to take good photos, then it's as if the social
+part of my brain gets turned off, or turned to other things as I
+concentrate on where the light is, where I need to stand, where to put
+the edges and all the other minutiae of taking a photograph instead of a
+snap. I've taken some great photos at parties, but I haven't really
+enjoyed the parties as much as I would if I were actually taking part.
+The “photographer's stance” almost requires you to stand apart. People
+have commented on how, when I'm taking photos I kind of disappear into
+the background---no mean feat when you're built to my scale and
+shooting with long, fast lenses. I've no idea how I do it. I prefer film
+to digital for most things, but I've still gone with a digital SLR
+camera. Just because I prefer the quality of a black and white silver
+print doesn't mean I can't appreciate the benefits of almost instant
+feedback that digital gives you. A couple of months ago I was shooting
+at my cousin's wedding. With my laptop and an appropriate card reader
+I'd put together a slide show of everyone's digital photos before the
+party had finished, which went down rather well with the bride and
+groom.
+
+I'm generally laid back. All the courses and material I've seen on
+behaviour management in the classroom emphasises the importance of
+under-reacting; responding with the head, not the gut. Most of the time
+I do this naturally, I'm not pretty when I lose my temper, and I try not
+to do it most of the time.
+
+I am naturally argumentative though. As far as I'm concerned, argument
+is a sport. I think it runs in my family. My dad's long enjoyed a good
+argument with my uncle Joe, who seems to enjoy it too. A good argument
+is far more enjoyable if both parties are aware that it's not ‘for
+blood'. The old saw, “Do not wrestle with pigs, you only get muddy and
+the pig enjoys it” is appropriate here. I've noticed that, sometimes, it
+can be hard to tell who's the pig in the more vicious kind of argument.
+
+Politically I'm a pragmatic anarchic atheist pacifist, which tends to
+boil down to something approximating ‘woolly liberal' most of the time.
+The problem with anarchy as a system of government is that it requires
+good will and understanding from all concerned, which is probably
+possible to maintain if you already have a functioning anarchy, but a
+complete bloody nightmare if you want to get to a functioning anarchy
+from anything else. Being a pacifist/coward means I'm not about to
+propose any bloody revolutions, so I'll continue to choose the
+alternatives that tend to increase freedom.
+
+I'm not a big fan of recorded music. As far as I'm concerned a recording
+is a pale shadow of what happens between musicians and the audience
+during a live performance. Live performance is what it's about, whether
+music, comedy, theatre or poetry reading. Nothing else comes close. As a
+folk singer, I prefer the informal performance of a session or
+singaround to formal performance with a stage and PA and all that jazz.
+When audience and performers are sitting together, when the audience is
+made up of performers waiting their turn. Well, it doesn't take much for
+the magic to happen. Once there's a stage, and PA, and all that stuff in
+the way it's far harder for the thing to catch light. It takes a
+Springsteen, a Prince, a U2, or your favourite live band here, to really
+do the business in a big arena.
+
+Having said I don't particularly like recorded music, I still have a
+home studio and a small collection of condenser microphones. Just
+because listening to a recording isn't as good as being there doesn't
+mean that recording has no value. My recording gear is a tool; an
+objective listener if you like. Just because I'm not a professional
+performer doesn't mean I don't want to get better at the craft of
+singing, and one way to do that is to record myself then listen to the
+results critically, to think about how I did something and how that made
+it sound. It's a good deal easier to try something for the first time in
+front of a microphone than it is to try it in front of an audience...
+
+*** DONE WYL2: Putting Myself On The Map
+CLOSED: [2025-09-26 Fri 00:13]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 041013-wyl2-putting-myself-on-the-map
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-26 Fri 00:13]
+- State "REVISING"   from "DONE"       [2025-09-26 Fri]
+- State "DONE"       from "TODO"       [2004-10-13 Wed]
+:END:
+
+This is exercise 2 in chromatic's excellent
+[[http://www.wgz.org/chromatic/writeyourlife/][Write your life]] exercise.
+
+Home. Four letters. Easy to understand. Hard to pin down.
+
+If we take home as being “The place where one sleeps”, then home is a
+two bedroom first floor Tyneside flat. If you are fortunate enough to
+know Tyneside well, then I've just told you a great deal about where I
+live; you can probably sketch the floor plan, especially if I tell you
+that there's the usual extension at the back with a kitchen and bathroom
+in it.
+
+#+hugo: more
+
+For the majority of you: Tyneside flats are purpose built flats.
+Originally built as rental accommodation, a large proportion of them are
+now owned by their occupiers. Built in terraces of two storey buildings,
+flats are arranged in pairs; upper and lower. Ours is an upstairs flat,
+which means it's slightly larger than the flat below it because there's
+no hallway apart from the stairs, there's also a possibility of
+extending up into the roof void.
+
+You enter the flat through the right hand door and come straight
+upstairs to a small inner hall with three doors leading from it. The
+door to your left leads through into my office, a small, cluttered space
+which barely contains a huge, height adjustable desk with a dual screen
+PowerMac G5 setup, a Digidesign Command|8, a couple of audio monitors
+and an A4 Wacom tablet on it. There's a certain amount of other detritus
+on the desk, and every other available horizontal surface. I really
+should tidy the place up;
+#+begin_marginnote
+*2025 update:* I'm still crap at tidying, but I've been diagnosed with ADHD. Hopefully, once I get on the appropriate meds, that should improve
+#+end_marginnote
+it's driving Gill up the wall, but somehow I
+never seem to get around to it.
+
+Back at the hall, the next door, moving clockwise from my office door,
+is the door to our bedroom. It's a large room, with a King size bed, a
+couple of built in wardrobes, a couple of bedside tables overflowing
+with stuff, and an airer full of drying clothes. Gill's side of the bed
+is the tidy side, my bedside table is as disorganised as my office.
+Unusually, there are no dirty clothes on the floor by the bed at the
+moment. Probably because we've just done a load of washing.
+
+The last door on the landing leads into the sitting room, which is
+reasonably large, and it needs to be. There's a small sofa; an easy
+chair; a Stressless recliner (which is causing a depressing amount of
+stress at the moment --- it keeps breaking); Gill's desk; three deep
+bookshelves filled with books (most of the books aren't here yet); a
+(small) dining table; a small dresser base with a mini hi-fi on top; the
+TV/TiVo/DVD collection; a surprisingly pretty new gas fire; and an
+annoyingly proportioned built in cupboard.
+
+Opposite the door you came into the room through is the door into the
+small galley kitchen. It's cramped but there's all the essentials there,
+except for a dishwasher (we're still trying to work out how to cram one
+in. If you've ever owned a dishwasher you will no doubt be aware
+that they very rapidly decay from luxury to essential). Carrying on
+through the kitchen there's the cats' landing (where their food and
+drink bowls live) to the left, stairs lead down to the back door and the
+litter tray and straight ahead is the bathroom complete with too small
+bath and the depressingly cramped (when you're built on my scale) shower
+over it.
+
+We spend most of our time in the sitting room, as you can tell from the
+books scattered about, the teapot that always seems to be on a side
+table or in the kitchen beside a kettle that's about to boil...
+
+However, I wouldn't call this flat /home/. Not properly. It's a
+transitional space; where we live until we've sold the Newark house,
+when we'll be able to sell this flat too and move into big old house
+somewhere, with room for guests, an office for Gill, a recording area, a
+darkroom, a decent sized kitchen...
+
+The Newark house?
+
+The Newark house is where we used to live, and it's far nearer to the
+kind of place I want to make my home in. From the street, it almost
+looks like a child's drawing of a house. Four windows, a door in the
+middle, a pan tiled roof with a chimney stack right in the middle of the
+roof. The bit you can see from the road is an approximately 400 year
+old, timber framed cottage. You come in through the front door into a
+long, low-ceilinged dining room with a 12 foot long dining table running
+the length of it. The Newark house is a huge, rambling building, from
+the road it looks like a simple two up/two down cottage, but it's
+deceptive, the house goes back a long way. There's four bedrooms; a big
+kitchen with massive range cooker; a library with built in shelving holding
+some of the books; small bathroom holding a lovely long, deep and wide bath and a shower room
+with a fabulously large shower.
+
+There's a lot wrong with it too. For a start, it's in Newark, which is a
+little tricky when I'm training as a maths teacher in Middlesbrough and
+Gill's doing a degree at Newcastle University. Then there's the
+surveys...
+
+We thought we'd sold it. We really did. The buyers liked the fact that
+it's old. They liked the eccentricity and general lack of verticality in
+the front section. They liked the beams and the lime plaster. They even
+liked the 4' high door from the main bedroom into the bathroom. What
+they didn't like was the results of their structural survey. According
+to their surveyor, the house is subsiding and subject to progressive and
+continuing movement and even if remedial action is taken, he can't
+guarantee that the house will remain standing. The phrase “only delaying
+the inevitable” was used in his report. Understandably, our buyers were
+somewhat taken aback by this.
+
+So, we've called in our original structural surveyor, who reckons that
+there's been no movement since he surveyed the building over a year ago.
+Our insurers' surveyor has paid a visit and reckons there's no
+subsidence (but there's some engineers turning up for a peace of mind
+check on the drains). With any luck we'll be able to get away with
+reinforcing some of the ties and supplying a bunch of certifications
+from the various surveyors and the buyers (who love the house) will be
+willing to complete. Or they won't.
+
+If they don't, it looks like we might be moving back to Newark for a
+while come the summer while we get the work done and maybe while I do my
+induction year as a newly qualified teacher, then sell the house and
+move back to the North East so Gill can either complete her degree or
+switch to a masters. Or we'll stay in Newark for a while longer; it does
+have the advantage of being a good deal nearer to friends in the South,
+but it's still within striking distance of Gateshead, which is where my
+step-daughter lives.
+*** DONE WYL3: A Day In The Life
+CLOSED: [2025-09-26 Fri 11:32]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 041013-wyl3-a-day-in-the-life
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-26 Fri 11:32]
+- State "REVISING"   from "DONE"       [2025-09-26 Fri]
+- State "DONE"       from "TODO"       [2004-10-13 Wed]
+:END:
+
+Exercise 3 in the [[http://www.wgz.org/chromatic/writeyourlife/][Write Your Life]] project.
+
+On a typical morning, I wake up before the alarm goes at 0630, stumble
+through into the bathroom, then back into the sitting room where I get
+suited and booted for the day. (Gill, being a sensible type, gets to
+sleep in some more, so banging around the bedroom in the dark isn't a
+particularly good idea). If I'm running to time, I nip into the office,
+check my mail and skim through my RSS feeds.
+
+#+hugo: more
+
+Because the commute into Middlesbrough is time dependent, I try
+to get out of the house by 0715. If I manage to do that, the run into
+the school where I'm on placement takes about 45 minutes---if I leave
+much later then it'll take at least an hour, and punctuality is
+essential when you're teaching.
+
+I still find being in school as a
+‘teacher' a little weird; it's like being backstage. Right now, I'm
+spending most of my time observing classes. I'll be doing a little bit
+of teaching in the next week though, and I start my teaching practice
+proper at the beginning of November.
+
+I'm enjoying lesson observations, but I'm itching to get teaching now.
+The way observations work is that I watch while the teacher introduces the
+topic, and then we both help the pupils with their exercises. I
+sometimes find it shocking what the kids get wrong though and, after
+spending almost all my school years ignoring teachers who nagged me to
+show my working and do some bloody homework for once, I'm finally
+starting to understand where they were coming from. I've even managed to
+explain to kids why it's a good idea without having to resort to the “If
+you show the working and you go wrong, we can spot where you went wrong
+and you might not lose all the marks” gambit by pointing out that,
+whilst they may understand what they're doing now, they'll be coming
+back to these books in two years time when they're revising for exams
+and a page full of answers isn't that useful.
++header: :trim-post nil
+#+begin_marginnote
+Note to Extreme Programmers: this argument may be familiar.
+#+end_marginnote
+
+The school day finishes at 1530 and it takes about an hour to get home
+(Middlesbrough's clogged with parents doing the school run, so things
+take longer). Once I'm home I'll either sit and read, do some
+preparation for the next day, burn some time on the X Box or hang out on
+IRC and generally catch up with mail and stuff. Gill's usually home
+before me, and she's recently been drawing the cooking short straw.
+Lately I've been going to bed by nine---I dread to think how I'm going
+to cope once I've started teaching;
+#+begin_marginnote
+Spoiler from 2025: I didn't cope.
+#+end_marginnote
+I'm exhausted now.
+
+Every other Tuesday night however, I head over to the Cumberland for a
+singing session with a bunch of fellow folkies. The Cumberland session
+is one of the most enjoyable singarounds I've been to, it's relatively
+small with a really high proportion of good singers. And, unusually
+these days, the majority of ’em sing traditional songs instead of
+modern songs in the 'folk idiom'. Last night saw a particularly bloody
+selection of Child ballads, a couple of delightfully bawdy songs and the
+odd selection from the Sacred Harp. I think I may have been the only
+person who sang a ‘written' song, and that was
+[[http://www.worldburnsclub.com/poems/translations/434.htm][Composed in August]], which isn't exactly a new song. I've had some fabulous nights there, including one glorious evening with
+[[http://www.ncl.ac.uk/sacs/staff/profile/anderson][Alistair Anderson]], [[http://www.ncl.ac.uk/sacs/staff/profile/sj.kerr][Sandra Kerr]], three of the
+[[http://www.threescompany.org.uk/][Witches of Elswick]] and “fiddly”
+[[http://www.squeezy.fsnet.co.uk/spiers_boden/][Jon Boden]]; at one point we were competing for who could sing the longest
+ballad (Fay Hield won with a 15 minute reading of
+[[http://www.tam-lin.org/][Tam Lin]]) which we followed up with a couple of rounds of Peter Bellamy
+appreciation. We were glad there was an extension that night.
+
+And then to bed. Not the most exciting of daily routines I'd be the
+first to admit, but I'm happy enough on it.
+*** DONE WYL4: Easy Life
+CLOSED: [2025-09-26 Fri 10:32]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 041018-wyl4-easy-life
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-26 Fri 10:32]
+- State "REVISING"   from "DONE"       [2025-09-26 Fri]
+- State "DONE"       from "TODO"       [2004-10-18 Mon]
+:END:
+
+Exercise 4 of chromatic's [[http://www.wgz.org/chromatic/writeyourlife/][Write Your Life]] tells me to:
+
+#+begin_quote
+Create a new invention, change your life circumstances, or somehow write
+away a difficult or time-consuming task. First define the problem, show
+how it affects you, and then invent it away.
+#+end_quote
+
+But I'm not going to do that, exactly, because I already did it.
+
+#+hugo: more
+
+The Perl 6 Summary is a weekly summary of the traffic in the various
+Perl 6 related mailing lists. I've written it for the last two and a
+half years, and I've managed to pretty much stick to a weekly schedule.
+But it's a resource hog. Even once I got into the swing of it, a busy
+week on the lists could easily mean I would spend 8 hours writing the
+summary --- after all, if you want to write a decent précis of a thread
+with 100 or so messages in it you're going to need to read (or at least
+skim) it. Some threads were easy to handle, especially those in
+[[http://www.nntp.perl.org/group/perl.perl6.internals][perl6-internals]]
+which could often be summarized as
+
+#+begin_quote
+Joe Bloggs had a problem with IMCC's string parsing. He and
+Leo discussed it for a while to nail down the problem,
+then Leo fixed it.
+#+end_quote
+
+[[http://www.sidhe.org/~dan/blog/][Dan Sugalski]]'s design documents often prompted rather more discussion, but
+I could usually hand-wave it away with “... then it all got a bit
+technical” and simply link to the root of the thread for those who were
+interested.
+
+The other list, perl6-language is a different matter. It would go quiet
+for weeks at a time before pulling a Mount Saint Helens and exploding
+into life. Sometimes there was provocation---an Apocalypse or an
+Exegesis, say. Sometimes a seeming innocuous starter question or
+proposal would precipitate a pyroclastic torrent of proposal, counter
+proposal and the odd moment of sanity. Once things quietened down, you
+could usually rely on Larry
+#+begin_marginnote
+Larry Wall, creator of Perl. If you're reading this and
+don't know who Larry is already then I'm curious to know how you found
+this blog.
+#+end_marginnote
+to extract the good stuff, but discussions could run for weeks.
+
+Whilst such behaviour can be seen as a sign of a healthy list, it was
+far from easy to summarise. Threads would branch off in weird
+directions, only occasionally reuniting with the main line of the
+discussion (assuming there even was a main line anyway). Getting
+something I was happy with could take ages.
+
+Ages I can't spare any more. So, last week, I gave up writing the
+summaries. My teacher training course is using too many of my own
+personal computrons for me to be able to spare the mental effort
+required to get the summaries written. It's been a wrench to do it, but
+it's a big weight off my mind.
+
+And the feedback from summary readers has been phenomenal. I've always
+solicited feedback in the summaries, and the little I got was positive,
+but I've had more feedback since I stopped than I've had in, probably,
+the last year, and it's all been good. Which is lovely.
+
+****** Bah! Paperwork.
+:PROPERTIES:
+:CUSTOM_ID: bah-paperwork.
+:END:
+As you may or may not know, one of the banes of a teacher's life is the
+paperwork. There's /tons/ of it. Timetables, lesson plans, seating
+plans, medium term plans, schemes of work. If you're a trainee then you
+have fewer lessons, but twice as much paperwork per lesson. UK teacher
+training is now ‘evidence based' which means that part of your job as a
+trainee is to collect evidence of your competence as a teacher. And
+evidence is usually on paper.
+
+So, anything I can do to reduce the weight of paper I have to tote
+around every day has to be a good thing. Ideally I want some way of
+tying everything together. I want clickable seating plans so I can
+quickly check my notes on a particular pupil. I want all my lesson plans
+in one place, linked back to any assessments of the lesson as taught. I
+want links from my timetable to the sets I'm teaching...
+
+In short, I want a Wiki.
+
+One of the great things about the web is that often you don't have to
+invent something yourself, you just have to be aware of possible
+solutions. So on Thursday I grabbed a Wiki installation
+#+begin_marginnote
+I went with [[http://www.instiki.org/][Instiki]]
+for reasons of not wanting to be arsed with Apache configuration,
+coupled with a desire to learn more Ruby if the time presents itself
+#+end_marginnote
+and spent a couple of hours feeding it some of the information I've been
+gathering about the classes I'll be teaching in the next half term. It's
+great.
+
+I've not used a personal Wiki before---I've not had the need---but now I've started with one,
+#+begin_marginnote
+It didn't last. That kind of thing rarely does. Probably down to the ADHD, I now realise. These days, what notes I have tend to live in one big Org file, parts of which occasionally get published here -- 2025 Piers
+#+end_marginnote
+I'm not sure why it's taken me this
+long. It's great. Now, if I can just hack it to generate inline images
+from TeX markup.
+
+****** I'll tell you what I want, what I really really want
+Teleportation. That's what I want. I really resent losing an hour and
+half of every week day to the delights of commuting to Middlesbrough
+from Gateshead. I drive a Mini Cooper, and it's a lovely car to drive.
+But plugging up and down a dual carriageway isn't where it's at it's
+best. If I could zap myself to and from school every day the problem
+would be solved. What a shame that our current understanding of The
+Rules seems to imply that, whilst quantum weirdness doesn't rule out
+teleportation, other complexities seem to rule it out big style for
+anything on the macro scale. Bummer.
+
+*** DONE Wilf on the Best Swing Ever
+CLOSED: [2025-09-28 Sun 11:25]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 040827-wilf-on-the-best-swing-ever
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-28 Sun 11:25]
+- State "REVISING"   from "DONE"       [2025-09-28 Sun]
+- State "DONE"       from "TODO"       [2004-08-27 Fri]
+:END:
+
+
+[[file:~/tmp/best-swing.jpg]]
+In the garden of my parents' house is a
+big old willow tree. Attached to a branch some 30 or 40 feet up is this
+swing, which swings out over a tiny stream. Because the swing is
+actually attached to a block and tackle, it's possible, once you have
+the knack to keep it swinging (and indeed increase the swing's
+amplitude) by judiciously shortening and releasing the rope.
+
+This is, truly, the swing of the gods.
+
+One day, when my nephews Bert and Wilf are older, they'll realise this.
+Until then it's just the best fun ever.
+
+*** DONE Developments
+CLOSED: [2025-09-28 Sun 16:44]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 050714-developments
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-28 Sun 16:44]
+- State "REVISING"   from "DONE"       [2025-09-28 Sun]
+- State "DONE"       from "TODO"       [2005-07-14 Thu]
+:END:
+
+There were many things I didn't like about working in London: the long
+commute in, the bloody tube, the long commute home, the expense...
+
+But then there are the things I miss. Here's a small example.
+
+#+hugo: more
+
+I used to send my negatives to [[http://www.metroimaging.co.uk/][Metro Imaging]] to be developed and contact printed. Back in the Fat Times I
+had an account, so I'd phone them up and an hour or so later a courier
+would appear at reception, pick up my films and haul ‘em off to
+Clerkenwell. The next day, another courier would arrive with my contacts
+and the negatives all neatly filed. The service was (and presumably
+still is) exemplary, with no extra charge for their couriers (they were
+reassuringly expensive in the first place). In all the time I used Metro
+I /never/ got anything back where the standard of work was less than
+excellent. Okay, there was one time they cross processed a roll of slide
+film as C41, but I'd dropped it off at the C41 desk and not the E6 desk
+and I hadn't given them correct instructions---they waived that charge
+immediately without any hassle though.
+
+Maybe I've been spoiled, but if you're going to call yourself a pro lab
+then the very minimum you should be providing to your customers is a
+guarantee of clean negs and no quibbles when things go wrong.
+
+Then I moved to Newcastle. I might be using the wrong lab, but there
+appears to be only one pro lab in town that handles black and white. And
+in the last 10 or so rolls of film they've handled, 80% of them have
+come back covered in dust, drying marks or both. 5 of those rolls were
+from my stepdaughter's wedding. Almost every image I've scanned has
+needed substantial work with PhotoShop's (marvellous) healing brush
+before they were fit to be put on Flickr. When I raised this with them,
+expecting a grovelling apology and a full refund, the first response I
+got was positively confrontational and I only ever managed to get a 40%
+discount on the spoiled films.
+
+I had initially thought that it was only the wedding films that had been
+screwed and they'd mended their ways, but over the past couple of days
+I've finally got round to scanning in some photos I took on St George's
+day, and there's those drying marks again, which means an extra 30
+minutes per image (and probably more needed, this was pretty quick and
+dirty).
+
+So, if you're reading this in the north east and you shoot on black and
+white film, who do you use for dev and print? Or maybe I should just see
+if Metro will let me mail my film to them. I've got another five rolls
+of unprocessed film and I don't want the pain of drying marks again. Nor
+do I want the hassle of learning to do it myself with so little space in
+the flat.
+*** DONE I was a choirboy once... :truncated:
+CLOSED: [2025-09-28 Sun 17:09]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 050716-i-was-a-choirboy-once
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-28 Sun 17:09]
+- State "REVISING"   from "DONE"       [2025-09-28 Sun]
+- State "DONE"       from "TODO"       [2005-07-16 Sat]
+:END:
+
+I remember, from about the age of 9, setting out from our tall Georgian
+terraced house with the green door and the brass lion knocker to walk
+the mile or so to choir practice. Through the park in the middle of the
+square, past the Gaumont Cinema (the last of its chain to bear the name
+-- it became the Odeon only when the headed paper ran out) and on down
+Hall Gate past Barker & Wigfall with its bewildering window display of
+bicycles, televisions and furniture. Past the godawful concrete arcade
+that still contained the Pilgrim Bookshop, Doncaster's only specialist
+bookshop. Past the Odeon arcade and right into Silver Street passing the
+High Class Butchers and Dad's tailor, then through Bowers Fold, the
+little pedestrianized snicket that leads through to the market place
+with a little toy shop in the middle.
+
+#+hugo: more
+
+... and that's all there is. Another one lost to my slapdash approach to data migration.
+
+
+*** DONE Argh! My Ears!
+CLOSED: [2025-09-28 Sun 17:05]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 050716-argh-my-ears
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-28 Sun 17:05]
+- State "REVISING"   from "DONE"       [2025-09-28 Sun]
+- State "DONE"       from "TODO"       [2005-07-16 Sat]
+:END:
+
+
+It's two in the morning, I can't sleep and someone's attempting to
+commit an outrage upon my ears. According to the BBC's website, I have
+been watching
+
+#+begin_quote
+**Myth and Music**
+
+Open University. Composer Judith Weir explains why she wrote a series of
+works based on Scottish folktales about people who have disappeared
+mysteriously.
+#+end_quote
+
+Which sounds like it might be interesting. And it is interesting ---
+people slow down to look at traffic accidents don't they?
+
+#+hugo: more
+
+Ms Weir witters on about all being part of a tradition and how she's
+just carrying that on, and then we cut away to listen to a singer and
+pianist doing grave damage to /Bonny George Campbell./
+
+/Bonny George Campbell/ concerns a lord who rode out one day and never
+came back. It doesn't say why, nor why he rode out with a sword at his
+knee in the first place. Here's the full text of the version I sing:
+
+#+begin_quote
+High upon highland and low upon Tay\\
+Bonny George Campbell rode out on a day.\\
+Saddled and bridled and booted rode he.\\
+Home came his good horse, but never came he.\\
+\\
+Down came his mother with her heart full of care.\\
+Down came his pretty wife, a curling of her hair\\
+The meadow lies green, and the corn is unshorn\\
+And bonny George Campbell he'll never return\\
+\\
+Saddled and bridled, so gallant rode he\\
+With a plume in his helmet and a sword by his knee.\\
+Home came his saddle so bloody to see.\\
+Home came his good horse, but never came he.
+#+end_quote
+
+Gill sings “The meadow lies green and my baby's unborn”, but I reckon
+that rather lays it on with a trowel.
+
+Now, I've heard classically trained singers having a crack at
+traditional songs---it's almost never a good idea. The daft buggers
+only sing the dots. And they're so mannered. It's cruel; folk songs and
+tunes are living things, what brings them to life is the variation and
+ornamentation a particular singer brings to them. Classical singers
+don't seem to know how to do that.
+
+Oh, and another thing, the piano is not traditionally used to accompany
+the singing of Border ballads. The traditional accompaniment is the
+silence of a listening audience.
+
+So, you can imagine my reaction when I hear a gruesomely operatic tenor
+and his partner in crime on the piano proceed to perform Ms Weir's
+setting of the song. She's changed the tune, and some of the words
+(reducing the strength of the second stanza for my money), and for extra
+points, the piano accompaniment seems to bear no relationship to...
+well... anything. To compound the injury (and I know this sounds like
+someone complaining about how the dreadful food at their hotel came in
+such small portions) the narrator proceeded to talk all over the piece.
+The song ends and we cut back to the composer and she's patently /proud/
+of the festering pile of aural muck she's foisted on those members of
+license paying public who are still up at 2 in the morning. She has the
+air of someone who's rescuing something.
+
+Music is something for everyone to listen to, make and participate in.
+The composer who takes a tune with a beautiful, singable set of words
+and serves ‘em up in a new setting that can only be attempted by
+professionals who have to be careful not to listen too hard to each
+other for fear of hitting notes that sound good together is missing the
+point. I loathe the 'professionals only' attitude.
+
+The music industry says that sharing music is bad because the music
+shared will obviously be the product of an artist with a record
+deal whose income will be hurt. Peer-to-peer distribution has the
+potential to be more than that, it enables anyone to distribute /their/
+music. Lots of it will be, um, not to my taste, but that's fine. The bar
+to entry is so low; a decent microphone and the kit to record yourself
+is, whilst not cheap, far from the kind of expensive it used to be.
+
+But no, to the mainstream, music is a product, made by highly skilled
+professionals who Autotune and comp their ‘talent' into shiny
+chromeplated loveliness and serve it up as the latest thing, whilst
+always, always, looking out for the next thing. After all, you wouldn't
+want the talent to think it has a career would you?
+
+Music is too important for that.
+
+In his song Here is my Home Si Kahn writes about the act of singing
+together as a secular sacrament and I think he's dead right.
+
+Music is about a connection between musician and audience, something we
+share, something that makes us better people for the length of a song.
+I'm not sure it's possible to make music without an audience. Oh you can
+practice, but the real stuff comes out when you're playing with and for
+other people.
+
+Whatever else you do this week, try and hear (or make) some live music.
+It doesn't really matter if it's any good, what matters is the sharing.
+
+But if it's a performance of Judith Weir's work, I suggest you try
+somewhere else first---find the worst busker on the planet, the bloke
+with a tin whistle, a dog on a string and about three quarters of a half
+remembered tune. Trust me, it's still an improvement.
+
+******* COMMENT Comments
+:PROPERTIES:
+:CUSTOM_ID: comments
+:END:
+
+<<comments_div>>
+1.
+
+   <<comment-80>>
+
+   [[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=60]]
+
+   roofpant@hotmail.com over 1 year later:
+
+   I like your version -- as per Nic Jones
+
+   I did find this on the web, which explains his loss
+   ([[http://www.kyloerecords.co.uk/100/03.htm][http://www.kyloerecords.co.uk/100/03.htm]])
+
+   I couldn't agree more with your sentiments about classical singers
+   who make complete dog's breakfasts of decent songs.
+
+   3. Bonny George Campbell (Roud 338)
+
+   High in the Highlands, oh, laich by the Tay,\\
+   Bonny George Campbell went riding one day.\\
+   He saddled and he bridled, so gallant and so free.\\
+   But hame came his good horse, but never came he.
+
+   Out comes his mother a-tearing her hair,\\
+   Then out comes his young wife so lovely and fair.\\
+   Oh, the valleys they lie so green and the corn lies unshorn,\\
+   But for bonny George Campbell, he will never return.
+
+   For a band of MacDonalds he met on his way,\\
+   For they took him and they hung him,\\
+   And they strung him to a tree.\\
+   So hame came his good horse, but never came he.
+
+   Now the valleys they lie so green and the corn lies unshorn,\\
+   But for bonny George Campbell, he will never return.
+
+2.
+
+   <<comment-81>>
+
+   [[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=60]]
+
+   [[http://www.bofh.org.uk/][Piers
+   Cawley]] over 1 year later:
+
+   Wow. Thanks.
+
+*** DONE We're getting there
+CLOSED: [2025-09-28 Sun 17:22]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 050728-were-getting-there
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-28 Sun 17:22]
+- State "REVISING"   from "DONE"       [2025-09-28 Sun]
+- State "DONE"       from "TODO"       [2005-07-28 Thu]
+:END:
+
+#+begin_subsection
+**View from 2025**\\
+None of this works at the moment, and I'm highly unlikely to reinstate it the form described here.
+#+end_subsection
+
+After much poring over /The Truck Wheels/ pdf [fn:14] and the /Pickaxe book,/
+accompanied by a certain amount of waving of dead chickens, I'm
+pleased to direct your attention to the sidebar where you will find a
+selection of relevant links to Amazon. If your interest is piqued, maybe
+you'd like to toddle over there and spend your hard earned cash on these
+and other fine books, enabling me to live in the lap of luxury on
+kickbacks from everyone's favourite book pimp.
+
+In the future I hope to have slightly prettier links, but I'm still
+finding my way around the code, and Amazon Web Services, and...
+
+Still, I'm pleased with it so far.
+*** DONE What's the right answer?
+CLOSED: [2025-09-28 Sun 17:27]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 050728-whats-the-right-answer
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-28 Sun 17:27]
+- State "REVISING"   from "DONE"       [2025-09-28 Sun]
+- State "DONE"       from "TODO"       [2005-07-28 Thu]
+:END:
+
+So, in my quest to get Amazon links working I've been spending time
+hanging out on the =#rubyonrails= irc channel asking dumb questions and
+generally liking the place, when someone asked “Are you the famous
+Perl Programmer, Piers Cawley?”
+
+What's the right answer? Sadly, I wasn't shameless enough to simply
+answer “Yes.”
+
+Coincidence is good isn't it? A couple of hours earlier, I'd been
+reading [[http://www.livejournal.com/users/marypcb/][Mary Branscombe]] on the talk [[http://www.oblomovka.com/][Danny O'Brien]] gave at this year's OpenTech about ‘geek micro celebrity' or some such topic. How very odd.
+*** DONE The Latest Paypal Phisherman
+CLOSED: [2025-09-28 Sun 17:32]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 050729-the-latest-paypal-phisherman
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-28 Sun 17:32]
+- State "REVISING"   from "DONE"       [2025-09-28 Sun]
+- State "DONE"       from "TODO"       [2005-07-29 Fri]
+:END:
+
+So, I just read the latest phishing attempt. Someone purporting to be
+[[http://www.paypal.com/][Paypal]]
+tells me that someone else has sent me £12. Which would be lovely, if
+true.
+
+However, a cursory inspection of the HTML source shows that it's a scam
+site. Lovely.
+
+Interestingly, the mail refers to images served by Paypal. If I were
+paypal, or any of the other online money handlers come to that, I'd be
+seriously considering tweaking my image servers to return “The page you
+are currently looking at is probably a scam” type images to any request
+that doesn't come with the appropriate referer and/or cookie. Sure, it
+uses up processor cycles, but I'm guessing that processor cycles are
+cheaper than fraud.
+
+Just a thought.
+
+*** DONE Javascript heresy
+CLOSED: [2025-09-29 Mon 08:42]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 081029-javascript-heresy
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-29 Mon 08:42]
+- State "REVISING"   from "DONE"       [2025-09-29 Mon]
+- State "DONE"       from "TODO"       [2008-10-29 Wed]
+:END:
+
+So, remind me, what's the rationale for always using the optional =;=
+when you're writing Javascript? The only reasons I can think of, off the
+top of my head are, “Because you'll break minifiers without it” and
+“Because Douglas Crockford doesn't like it”. Well, broken minifiers that
+can't parse the language correctly can kiss my fat hairy arse and
+argument from authority cuts little ice here.
+
+[[http://morethanseven.net/][Gareth Rushgrove]] pointed me at
+[[http://icanhaz.com/semicoloninsertion][an article]], which suggested that it's because Javascript will insert a
+semicolon after the =return= in:
+
+#+begin_src javascript
+return
+{ key: "value" }
+#+end_src
+
+But that's not exactly surprising, and falls squarely into the “Don't do
+that then” category of bugs, or putting it another way, the [[http://blog.plover.com/][Dominus]]
+Doctrine (“You can't just make shit up and expect the computer to know
+what you mean, retardo!”) applies.
+
+Ruby also has an optional semicolon, but good style is avoid using them
+and we seem to survive. In fact, the Ruby parser is rather less capable
+than Javascript's:
+
+#+begin_src javascript
+jQuery('.class')
+  .addClass('whatever')
+  .html('New inner HTML')
+#+end_src
+
+is legal Javascript, but, in Ruby you have to write:
+
+#+begin_src ruby
+jQuery('.class') \
+  .addClass('whatever') \
+  .html('New inner HTML')
+#+end_src
+
+because if you don't the compiler throws its toys out of the pram and,
+for bonus
+points, the resulting parse error implies that the parser
+knows what you meant but decided to throw the error anyway. Ho hum.
+
+Is there something I've missed? Or should I make a preemptive stand
+against incompetent minifiers and start writing my Javascript without
+semicolons?
+
+***** Updates
+:PROPERTIES:
+:CUSTOM_ID: updates
+:END:
+In the comments, “James” offers a succinct piece of code using Prototype
+that demonstrates the problem rather neatly. In the absence of
+semicolons, code like:
+
+#+begin_src javascript
+var foo = 3
+, bar = 2 + foo
+
+[foo, bar].each(function (i) { console.log(i) })
+#+end_src
+
+gets parsed as
+
+#+begin_src javascript
+var foo = 3
+, bar = 2 + foo[foo, bar].each(...)
+#+end_src
+
+Which isn't exactly what you want. If I were feeling churlish, I might
+argue that such problems are one reason why the jQueryish way:
+
+#+begin_src javascript
+var foo = 3
+, bar = 2 + foo
+$.each([foo, bar], function () {...})
+#+end_src
+
+is a better way of iterating over things, but I'm not entirely sure that
+it is. Looks like I'll keep taking the semicolons.
+
+***** [[http://www.bofh.org.uk/2008/10/29/javascript-heresy#commentary][5 historic comments]] »
+:PROPERTIES:
+:CUSTOM_ID: commentary
+:CLASS: feedback
+:END:
+#+begin_marginnote
+This old comment system doesn't work any more, but you can use webmentions to
+respond and they'll show up here eventually.
+#+end_marginnote
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=49d7ddd7cad2d9fefa8b75ac3acc75dd&size=48&url=http://notes.infomixer.com/][http://www.gravatar.com/avatar.php?gravatar_id=49d7ddd7cad2d9fefa8b75ac3acc75dd&size=48&url=http://notes.infomixer.com/]] By [[http://notes.infomixer.com/][Mario]] Wed, 29 Oct 2008 12:08:11 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-mario-wed-29-oct-2008-120811-gmt
+:END:
+
+I remember a time when one of the two main webbrowsers didn't cope
+well if you left semi-colons out. It was Netscape, and it's been a
+while since that was a main webbrowser, so I wonder whether this is
+just collectively remembered, but nobody dares to mention it because
+it would imply that Internet Explorer was doing something right all
+along.
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=]] By James Wed, 29 Oct 2008 20:07:00 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-james-wed-29-oct-2008-200700-gmt
+:END:
+#+begin_src html
+<script src="http://prototypejs.org/assets/2008/9/29/prototype-1.6.0.3.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    var foo = 3
+    var bar = 2 + foo
+    [foo, bar].each(function(i) { console.log(i) })
+</script>
+#+end_src
+
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=]] By bitherder Thu, 30 Oct 2008 04:45:31 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-bitherder-thu-30-oct-2008-044531-gmt
+:END:
+I've run into problems in the past where I've gotten some JS code
+working in FF, but doesn't work with IE when semi's are left out.
+
+Also, for splitting Ruby statements with long call sequences in them,
+you /can/ do the following:
+
+#+begin_src ruby
+jQuery('.class').
+  addClass('whatever').
+  html('New inner HTML')
+#+end_src
+
+But, as you point out, you can't do it with the period (.) at the
+beginning of statement segments, because Ruby will only figure out
+that the line needs to be continued if there is an “operator” at the
+end of the line.
+
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk][http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk]] By [[http://www.bofh.org.uk/][Piers Cawley]] Thu, 30 Oct 2008 05:38:30 GMT
+  :PROPERTIES:
+  :CUSTOM_ID: by-piers-cawley-thu-30-oct-2008-053830-gmt
+  :END:
+@bitherder: But the trailing dot style is gruesome, as I have ranted
+before (I was arguing for a compulsory semicolon in Ruby at the time
+-- I am nothing if not various in my opinions).
+
+@James: Ah... yes. That'd be a nasty surprise and no mistake. I knew
+there had to be a better reason than making minifiers happy.
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=9bc66138520204ede006080dedfefc1a&size=48&url=http://www.greenhometherapy.com/][http://www.gravatar.com/avatar.php?gravatar_id=9bc66138520204ede006080dedfefc1a&size=48&url=http://www.greenhometherapy.com/]] By [[http://www.greenhometherapy.com/][Dr. Green]] Sun, 30 Nov 2008 13:52:55 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-dr.-green-sun-30-nov-2008-135255-gmt
+:END:
+
+Interesting argument. I must admit that I use the ; to finish lines
+and have never thought about not using it. As someone who uses
+minifies to reduce load time, I guess I'll be sticking with it.
+
+  --------------
+
+*** DONE I think I'm in love with an Axe
+CLOSED: [2025-09-29 Mon 09:35]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 080929-i-think-im-in-love-with-an-axe
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-29 Mon 09:35]
+- State "REVISING"   from "DONE"       [2025-09-29 Mon]
+- State "DONE"       from "TODO"       [2008-09-29 Mon]
+:END:
+
+We've just spent the weekend on one of [[http://www.robin-wood.co.uk/][Robin Wood's]] spoon carving workshops, which was my 41st birthday present
+from Gill. It was great fun, if a little tiring. There is something
+primally satisfying about turning a piece of wood into woodchips.
+Getting a spoon or spatula at the end of the process is a huge bonus. We
+came away with a bag full of more or less decent [[http://en.wikipedia.org/wiki/Treen_(wooden)][treen]],
+a couple of woodcarving knives and a burning desire to own one of
+Robin's small drinking vessels.
+
+Oh. And I fell in love with an Axe. The Gränsfors Bruks
+[[http://www.gransfors.com/htm_eng/produkter/new_prod/p_slojdbila.html][Swedish Carving Axe]] to be precise. This is the tool you use for turning a log
+into a spoon blank, and for much of the rough shaping of that blank.
+During the course of the weekend, I tried both the Gränsfors axe and an
+English ‘Kent pattern' axe of the sort that can be picked up at car boot
+sales for pennies and sharpened and rehandled easily (quite what you use
+to rough out the new handle is left as an exercise to the interested
+reader). The English axe was very nice, but the Swedish one was just
+lovely. In particular, there's a move which involves gripping the handle
+right by the head and flicking your wrist. This takes the top half of
+the blade through the wood in a precise sweeping motion that slices off
+wood in a way that's almost erotically satisfying.
+
+Yup. I don't get out much. Why do you ask?
+
+My choice lies before me: an English blade for maybe a fiver from a car boot
+sale or a sultry Swedish beauty for seventy quid from [[http://www.gransfors.co.uk/gransfors%20tools.html][gransfors.co.uk]]? It's not
+even a choice. The Swedish beauty had me at ‘car boot sale' -- I'm not sure
+which circle of hell car boot sales belong in, but I'm certain I don't want
+want to go there. Besides, I'm a photographer and a computer programmer. Most
+of the [[http://www.dpreview.com/previews/nikond700/][bits]] [[http://www.ebonycamera.com/][and]] [[http://www.apple.com/macbookair/][pieces]] cost hundreds or thousands of pounds.
+
+Now, where did I put my credit card?
+*** DONE If you're going to add a hook, make it a big one
+CLOSED: [2025-09-29 Mon 09:51]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 080908-if-youre-going-to-add-a-hook-make-it-a-big-one
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-29 Mon 09:51]
+- State "REVISING"   from "DONE"       [2025-09-29 Mon]
+- State "DONE"       from "TODO"       [2008-09-08 Mon]
+:END:
+
+
+
+Jay Fields [[http://blog.jayfields.com/2008/09/domain-specific-languages-dont-follow.html][responds to]] Ola Bini's [[http://olabini.com/blog/2008/09/evil-hook-methods/][Evil Hook Methods?]] about the common ruby
+idiom that lets us write:
+
+#+begin_src ruby
+class Fruit
+  include DataMapper::Resource
+  property :id, Integer, :serial => true
+  property :name, String
+  property :notes, Text, :lazy => false
+end
+#+end_src
+
+What Ola and Jay don't like about that is the way that a single
+=include DataMapper::Resource= actually adds class methods to Fruit
+because the implementation of =DataMapper::Resource.included= looks
+like:
+
+#+begin_src ruby
+module DataMapper::Resource
+  def included(module)
+    module.send :include, InstanceMethods
+    module.send :extend, ClassMethods
+  end
+end
+#+end_src
+
+Which is a perfectly common idiom nowadays, but which breaks =include='s
+contract in annoying ways. Jay proposes fixing this by adding a =become=
+method to Object which would wrap the =include= and =extend= in such
+away that they'd be called by the including class. Huzzah. And it makes
+sense... sort of. But it really doesn't go far enough.
+
+Let's take another look at the original code snippet shall we? The thing
+that I notice is the wide scope of that ‘property' method. It really
+isn't needed anywhere except for defining how a =Fruit= is mapped onto
+the database. What happens if we take a leaf out of Perl's book:
+
+#+begin_src ruby
+class Fruit
+  use DataMapper::Resource {
+    property :id, Integer, :serial => true
+    property :name, String
+    property :notes, Text, :lazy => false
+  }
+  property :foo # => raises an exception
+end
+#+end_src
+
+The block gives our extending module somewhere to play, it can introduce
+a full on domain specific pidgin for the duration of the block with no
+fear of polluting the including class with anything but the methods its
+contracted to provide. So, how do we implement =use=. Something like the
+following should serve the purpose:
+
+#+begin_src ruby
+class Module
+  def self.use(mod, *args, &block)
+    mod.used_by(self, *args, &block)
+  end
+
+  def self.used_by(mod, *args, &block)
+    if instance_behaviours || class_behaviours
+      mod.become(self)
+    else
+      mod.send(:include, self)
+    end
+  end
+
+  def self.become(mod)
+    include mod.instance_behaviours) if mod.instance_behaviours
+    extend mod.class_behaviours if mod.class_behaviours
+  end
+
+  def self.instance_behaviours
+    nil
+  end
+
+  def self.class_behaviours
+    nil
+  end
+end
+#+end_src
+
+The key idea here is that, in the default case, =use= will ignore all
+its arguments beyond the first and just include that module (a more
+robust implementation would probably ensure that an exception was raised
+if any extra arguments got passed). If the module author had written her
+module to comply with Jay's proposed =become=, then we simply call
+=become=.
+
+The interesting stuff happens when a module wants to do something a
+little more trick. So a version of DataMapper might do something like:
+
+#+begin_src ruby
+class DataMapper::Resource
+  def self.used_by(mod, &block)
+    mod.become build_behaviours(mod, &block)
+  end
+end
+#+end_src
+
+And =build_behaviours= would =instance_eval= the block with an object
+that would capture the properties and use them to build a set of class
+and instance methods appropriate to the description.
+
+Another module might simply take a hash to describe how things should be
+parameterized. It all depends on the needs of the module being used. The
+aim being to avoid polluting the caller's namespace any more than
+necessary. If I use a DataMapper type package, then all I want to end up
+with in my client classes are appropriate instance accessor methods, I
+don't need spare class methods like =property= or =storage_names= that
+are only of any use when I'm describing my class.
+
+***** Updates
+:PROPERTIES:
+:CUSTOM_ID: updates
+:END:
+I edited one of the code snippets to remove a particularly heinous piece
+of brace matching. Thanks to Giles Bowkett for the catch. Also edited
+another snippet to make it into real ruby rather than some bastard
+combination of Ruby and Perl. Thanks to Yossef for that catch.
+
+***** [[http://www.bofh.org.uk/2008/09/08/if-youre-going-to-add-a-hook-make-it-a-big-one][10 historic comments]] »
+:PROPERTIES:
+:CUSTOM_ID: commentary
+:CLASS: feedback
+:END:
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=ce8b03e5750097942c58e12b46724312&size=48&url=http://gilesbowkett.blogspot.com][http://www.gravatar.com/avatar.php?gravatar_id=ce8b03e5750097942c58e12b46724312&size=48&url=http://gilesbowkett.blogspot.com]] By [[http://gilesbowkett.blogspot.com/][Giles Bowkett]] Mon, 08 Sep 2008 03:23:44 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-giles-bowkett-mon-08-sep-2008-032344-gmt
+:END:
+I think starting a block with ~{~ and ending it with ~end~ is evil. Either
+~{}~, or ~do/end~. Anything else is the work of the devil.
+
+Further, I demand that Matz alter the language to prevent people from
+using it in a way that I personally do not approve of.
+
+I demand satisfaction!
+
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/][http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/]] By [[http://www.bofh.org.uk/][Piers Cawley]] Mon, 08 Sep 2008 04:12:40 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-piers-cawley-mon-08-sep-2008-041240-gmt
+:END:
+Christ! If that works then consider me boggled.
+
+I'll fix the typo immediately sir!
+
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=http://blog.tracefunc.com][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=http://blog.tracefunc.com]] By [[http://blog.tracefunc.com/][Jamie Macey]] Mon, 08 Sep 2008 09:20:53 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-jamie-macey-mon-08-sep-2008-092053-gmt
+:END:
+This isn't a workable solution, as it doesn't provide a mechanism for
+the other important public class-methods like Model.all and
+Model.first.
+
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/][http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/]] By [[http://www.bofh.org.uk/][Piers Cawley]] Mon, 08 Sep 2008 11:19:42 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-piers-cawley-mon-08-sep-2008-111942-gmt
+:END:
+@Jamie: How do you work that out?
+
+The instance methods generated by ~build_behaviours~ get put on the
+~instance_behaviours~ attribute of whatever it returns, the public
+class methods get put on the ~class_behaviours~ attribute. Problem
+solved.
+
+~used_by~ gets license to do whatever the hell it likes to its user
+after all. Yes, so can ~include/included~, but that's not how its
+contract is documented, so it's problematic. A new interface for
+extending modules and classes gets to write its own contract, the
+trick is coming up with a minimal interface which allows for richer
+possibilities than the existing interfaces.
+
+Experience with Perl shows that having an extension method that you
+can pass arbitrary arguments allows a great deal of flexibility in
+this area.
+
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=]] By Yossef Tue, 09 Sep 2008 22:59:50 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-yossef-tue-09-sep-2008-225950-gmt
+:END:
+~sub~  included? Someone's been thinking about Perl just a little too
+much.
+
+Also, there's no reason to use send to extend an object. That's a
+public method.
+
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk][http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk]] By [[http://www.bofh.org.uk/][Piers Cawley]] Wed, 10 Sep 2008 01:25:12 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-piers-cawley-wed-10-sep-2008-012512-gmt
+:END:
+Argh! Thanks for spotting the sub. You should see what happens when I
+try to write Perl nowadays...
+
+I haven't changed the =send :extend= part though, mostly because of
+the company it's keeping in its method.
+
+#+begin_src ruby
+def included(module)
+  module.send :include, instance_behaviours
+  module.extend, :class_behaviours
+end
+#+end_src
+
+Just looks weird.
+
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=]] By Yossef Wed, 10 Sep 2008 22:01:09 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-yossef-wed-10-sep-2008-220109-gmt
+:END:
+I tried to write some Perl after spending at least a year away. It was
+an awkward, bumbling experiment. I couldn't even remember that I had
+to use ~package~.
+
+I guess what I meant to say was that there's no reason other than
+aesthetics to use ~send~ to extend an object. It's valid enough in
+this context, but there are times I've seen it on its own, and that's
+just wrong. And note that I whole-heartedly agree with your comment on
+Jay Fields's post regarding ~extend~ vs. ~extend_with~.
+
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=http://blog.tracefunc.com][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=http://blog.tracefunc.com]] By [[http://blog.tracefunc.com/][Jamie Macey]] Thu, 11 Sep 2008 17:25:35 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-jamie-macey-thu-11-sep-2008-172535-gmt
+:END:
+@Piers I must have missed that 4th code block that handled the
+include/extend (where the class methods obviously go) and was just
+looking at the 3rd one, with the block for local extension.
+
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=3efeaee8256d256a05c4a19c3a57001a&size=48&url=http://www.brikd.com][http://www.gravatar.com/avatar.php?gravatar_id=3efeaee8256d256a05c4a19c3a57001a&size=48&url=http://www.brikd.com]] By [[http://www.brikd.com/][Mr eel]] Fri, 12 Sep 2008 01:04:51 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-mr-eel-fri-12-sep-2008-010451-gmt
+:END:
+Personally, I think using include in this way has become a common and
+well-understood idiom. Doing backflips to avoid it isn't really
+worthwhile.
+
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/][http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/]] By [[http://www.bofh.org.uk/][Piers Cawley]] Sun, 14 Sep 2008 16:18:00 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-piers-cawley-sun-14-sep-2008-161800-gmt
+:END:
+@Mr eel: I tend to agree with you. If all we were buying was avoiding
+that, I wouldn't be bothered. However, I think there's value in
+something which makes it easy to pass an argument or block to the
+mixed in module as it's mixed in.
 
 * Notes :@note:
 :PROPERTIES:
@@ -5067,42 +6863,46 @@ CLOSED: [2025-09-20 Sat 09:59]
 :END:
 For… reasons, I found myself trawling back through the early entries here and found that a bunch of them had been truncated at some point in the blog's history of migrating from engine to engine. Luckily, the [[https://web.archive.org/][Wayback Machine]] has a sufficiently complete archive, so I'm slowly working my way through the broken posts, bringing them into the big old =Content.org= file that the site's generated from and adding a margin note or two to supply a bit of 2025 context where appropriate. [[https://bofh.org.uk/2003/08/01/the-fine-art-of-complexity-management/][The Fine Art of Complexity Management]] is the first post to receive such attention. Twenty two years on, I still think it's good advice.
 
+* COMMENT Local Variables :ARCHIVE:
+
 * Footnotes
-:PROPERTIES:
-:ID:       43822ABC-ED28-4066-82D3-040188E7A6E6
-:END:
-[fn:14] If you change anything in your setup, pedals, audio interface, looping software, monitoring, or anything that might conceivably affect the latency, expect to spend a little while getting dialled back in with the new setup. Remarkably tiny changes in latency can make a difference to the tightness of your loops, so don't be afraid to go back to the old 1,2,3,4 for a while.
-
-[fn:13] I don't actually do that, because I have a slightly more complex setup that supports multiple song structures with the same set of clips. I'll explain all that later.
-[fn:12] Real Tempest machines have a gorgeously weighted 'spinner' -- a free spinning rotary encoder with enough resolution that there still multiple 'steps' per tube segment. It meant that your blaster had a lovely fluid movement with very direct control. Basically, Tempest is pretty damned close to perfect on its original hardware and if you ever get the chance to play on a well maintained machine, you should grab it!
-
-
-[fn:11] Check out @@hugo:{{< embed "https://youtu.be/hWPmADRfPFQ" />}}@@ for an example.
-
-[fn:10] And a fancy dual-USB audio interface that means I can capture Loopy's audio really cleanly. Check out the [[https://www.amazon.co.uk/iConnectivity-AUDIO4c-Interface-Streaming-Performance/dp/B092L7TXL1?crid=2DB9Z9YW1UMFK&keywords=iconnectivity+audio4c&qid=1686042094&sprefix=iconnectivity+audio4c%2Caps%2C107&sr=8-5&linkCode=ll1&tag=justasummary-21&linkId=7d14e0bff14f201073ea18059f5abde5&language=en_GB&ref_=as_li_ss_tl][iConnectivity AUDIO4c]] (affiliate link) if that's a thing you might need. There are other dual-USB audio interfaces that are probably at least as good, but this is the one I've got experience of using.
-
-[fn:9] I tried a few of the Zoom singarounds that sprang up, but for reasons I can't quite put my finger on, I found them far more stressful than just singing to the camer and interacting with an audience in text chat. The audio only Clubhouse ballad sessions that I started were way less stressy for me too.
-[fn:8] Catch me every Friday night at [[https://youtube.com/pierscawley/live]] from 8pm UK Time.
-
-[fn:7] Logic isn't really set up to do live sound, but MainStage, which is, can't do multi track recording and playback and I couldn't work out how to configure its looper to emulate that. So I just used Logic.
-
-[fn:6] I used the delightfully named [[https://www.expert-sleepers.co.uk/augustusloop.html][Augustus Loop]] from Expert Sleepers combined with a Lua script I wrote to make it behave more or less the way I wanted it to. Kind of fiddly to set up, but repaid the effort. There's still a few things that AL can do that I can't do with Loopy Pro, but as I write those are due in the next big Loopy patch.
 
 [fn:1] [[https://gohugo.io][Hugo]] is the static site generator I use to build this blog. Another example of letting the computer do all the fiddly repetitive bits. In this case, to handle all the fiddly bits of writing full HTML pages, building index pages and the rest.
 
-[fn:2] It's also annoyingly temperamental at the moment; I'm working on that though.
+[fn:2] Real Tempest machines have a gorgeously weighted 'spinner' -- a free spinning rotary encoder with enough resolution that there still multiple 'steps' per tube segment. It meant that your blaster had a lovely fluid movement with very direct control. Basically, Tempest is pretty damned close to perfect on its original hardware and if you ever get the chance to play on a well maintained machine, you should grab it!
 
-[fn:3]  @@html:<dfn><code>org-mode</code></dfn>@@ is an Emacs outliner that grew into a calendar/outliner/spreadsheet/document processor/literate programming tool/dessert wax/floor topping.
+[fn:3] It's also annoyingly temperamental at the moment; I'm working on that though.
+
+[fn:4]  @@html:<dfn><code>org-mode</code></dfn>@@ is an Emacs outliner that grew into a calendar/outliner/spreadsheet/document processor/literate programming tool/dessert wax/floor topping.
 
 It's what I used to use [[https://bofh.org.uk/2019/02/25/baking-with-emacs/][to manage my bakery]], and it's amazing.
 
 Like Emacs itself, it's almost infinitely flexible, which makes it incredibly hard to get started with. There's oodles of org configurations out there to crib from and all of them are a mixture of the useful and irrelevant, because it turns out that people have different opinions about how they want to organise their writing and/or life. My config is very much under construction.
 
-[fn:4] The Github Actions based build process is also substantially more reliable than the hand rolled server hook I was using. There's something to be said assembling your build pipeline from a bunch of stuff that lots of other people use (and maintain). Also, it reduces the number of moving parts on the Raspberry Pi that's serving these pages, which is no bad thing.
+[fn:5] The Github Actions based build process is also substantially more reliable than the hand rolled server hook I was using. There's something to be said assembling your build pipeline from a bunch of stuff that lots of other people use (and maintain). Also, it reduces the number of moving parts on the Raspberry Pi that's serving these pages, which is no bad thing.
 
-[fn:5] An @@html:<dfn>@@h-entry@@html:</dfn>@@ is something that a web user might want to mention. At present, all the h-entries on this site are articles, but other people use them to mark up photos, videos, notes, calendar entries or anything else that makes sense to think of as an entry in a collection of stuff. If you'll look at this page in your browser's inspector, you'll see that the content is wrapped in ~<article class="h-entry" …>…</article>~ tags. Other tags within that block are are marked with other classes (so the title has ~p-name~ and the body has ~e-content~), according to the definition of the [[http://microformats.org/wiki/h-entry][h-entry microformat]]. By marking my site up with these micropformats, life becomes much easier for any IndieWeb tools to extract appropriate information from the site.
+[fn:6] An @@html:<dfn>@@h-entry@@html:</dfn>@@ is something that a web user might want to mention. At present, all the h-entries on this site are articles, but other people use them to mark up photos, videos, notes, calendar entries or anything else that makes sense to think of as an entry in a collection of stuff. If you'll look at this page in your browser's inspector, you'll see that the content is wrapped in ~<article class="h-entry" …>…</article>~ tags. Other tags within that block are are marked with other classes (so the title has ~p-name~ and the body has ~e-content~), according to the definition of the [[http://microformats.org/wiki/h-entry][h-entry microformat]]. By marking my site up with these micropformats, life becomes much easier for any IndieWeb tools to extract appropriate information from the site.
 
-* COMMENT Local Variables :ARCHIVE:
+[fn:7] I used the delightfully named [[https://www.expert-sleepers.co.uk/augustusloop.html][Augustus Loop]] from Expert Sleepers combined with a Lua script I wrote to make it behave more or less the way I wanted it to. Kind of fiddly to set up, but repaid the effort. There's still a few things that AL can do that I can't do with Loopy Pro, but as I write those are due in the next big Loopy patch.
+
+[fn:8] Logic isn't really set up to do live sound, but MainStage, which is, can't do multi track recording and playback and I couldn't work out how to configure its looper to emulate that. So I just used Logic.
+
+[fn:9] Catch me every Friday night at [[https://youtube.com/pierscawley/live]] from 8pm UK Time.
+
+[fn:10] I tried a few of the Zoom singarounds that sprang up, but for reasons I can't quite put my finger on, I found them far more stressful than just singing to the camer and interacting with an audience in text chat. The audio only Clubhouse ballad sessions that I started were way less stressy for me too.
+
+[fn:11] And a fancy dual-USB audio interface that means I can capture Loopy's audio really cleanly. Check out the [[https://www.amazon.co.uk/iConnectivity-AUDIO4c-Interface-Streaming-Performance/dp/B092L7TXL1?crid=2DB9Z9YW1UMFK&keywords=iconnectivity+audio4c&qid=1686042094&sprefix=iconnectivity+audio4c%2Caps%2C107&sr=8-5&linkCode=ll1&tag=justasummary-21&linkId=7d14e0bff14f201073ea18059f5abde5&language=en_GB&ref_=as_li_ss_tl][iConnectivity AUDIO4c]] (affiliate link) if that's a thing you might need. There are other dual-USB audio interfaces that are probably at least as good, but this is the one I've got experience of using.
+
+[fn:12] Check out @@hugo:{{< embed "https://youtu.be/hWPmADRfPFQ" />}}@@ for an example.
+
+[fn:13] I don't actually do that, because I have a slightly more complex setup that supports multiple song structures with the same set of clips. I'll explain all that later.
+
+[fn:14]  The Pragmatic Programmers are fine people. Rails is a well thought
+out and documented framework. However, I'm really struggling to come up
+with a pithy description of the picture on the cover of /Agile Web
+Development with Rails./ Do I lack the word power, or have Dave and
+David dropped the ball on cover design?
+
 # Local Variables:
 # org-log-into-drawer: "LOGBOOK"
 # org-hugo-suppress-lastmod-period: 86400.0
