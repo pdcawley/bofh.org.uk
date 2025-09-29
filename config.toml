@@ -5,7 +5,7 @@ languageCode = "en-gb"
 title = "Just a Summary"
 googleAnalytics = "UA-135014-1"
 
-summaryLength = 1
+summaryLength = 25
 
 [build]
   useResourceCacheWhen = 'always'
