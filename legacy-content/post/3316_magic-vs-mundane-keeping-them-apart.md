@@ -8,29 +8,26 @@ draft = false
 
 In which your correspondent does magical battle with the guts of Perl and emerges bloodied, but unbowed with a useful principle to code by.
 
+<!--more-->
+
 ### Skip to the [conclusion](#conclusion) if you're uncomfortable with the guts of the Perl runtime
 
 [`Test::Class`](http://search.cpan.org/dist/Test-Class) had me tearing my hair out earlier. There I was, happily transforming
 
-<code>
-
-<pre>
+```perl
 test something {
-ok 1;
+  ok 1;
 };
-</code>
+```
 
 into something very like[1]:
 
-<code>
-
-<pre>
-\*test\_something =
-Sub::Name::subname(
-'test\_something'
-=&gt; sub : Test { ok 1 }
-);
-</code>
+```perl
+*test_something =
+  Sub::Name::subname(
+    'test_something' => sub : Test { ok 1 }
+  );
+```
 
 through the magic of [`Devel::Declare`](http://search.cpan.org/dist/Devel-Declare), but Test::Class didn't seem to be playing fair. Instead of letting my tests run happily, it was complaining that it:
 
@@ -42,19 +39,15 @@ The thing is, I wasn't loading Test::Class too late. The problem is that, at the
 
 The trouble is, Test::Class does what it does through the magic of compile time code attributes, and, further, it relies on the fact that if a perl subroutine that gets inserted into the symbol table like this:
 
-<code>
-
-<pre>
-sub has\_a\_name {...}
-</code>
+```perl
+sub has_a_name {...}
+```
 
 Then, when you get hold of a reference to that code by other means (say, in the subroutine that handles the setting of an attribute, that code ref knows its own name. However, if a subroutine that ends up in the symbol table like this:
 
-<code>
-
-<pre>
-\*anonymous\_ref = sub {...};
-</code>
+```perl
+*anonymous_ref = sub {...};
+```
 
 Doesn't know its name, unless you take advantage of the [`Sub::Name`](http://search.cpan.org/dist/Sub-Name) module.
 
@@ -64,14 +57,12 @@ My magic and Test::Class's magic were incompatible.
 
 The thing is, both sorts of magic are really just sugar for some pretty mundane donkey work. Test::Class does what it does through attributes because no flesh and blood programmer in their right mind would want to write something like this every time they wanted to write a test method:
 
-<code>
-
-<pre>
-sub test\_something {
-...
+```perl
+sub test_something {
+  ...
 }
-*PACKAGE*-&gt;mark\_as\_special\_method('test\_something', 'test', '3');
-</code>
+__PACKAGE__->mark_as_special_method('test_something', 'test', '3');
+```
 
 In fact, `mark_as_special_method` doesn't even exist as its own subroutine. The code that marks a method as special is just part of the body of the `Test` attribute handler.
 
