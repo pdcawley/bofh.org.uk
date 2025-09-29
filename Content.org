@@ -286,13 +286,15 @@ but he finds a decent balance here. The age gap thing is still there though. It 
 :PROPERTIES:
 :EXPORT_FILE_NAME: a-wizard-of-earthsea
 :export_hugo_slug: a-wizard-of-earthsea
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((author . "Ursula K Le Guin") (title . "A Wizard of Earthsea") (type . "A Wizard of Earthsea"))
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :cover '((s . "https://covers.openlibrary.org/b/olid/OL9137999M-S.jpg") (m . "https://covers.openlibrary.org/b/olid/OL9137999M-M.jpg") (l . "https://covers.openlibrary.org/b/olid/OL9137999M-L.jpg"))
 :export_date: 2019-05-30
 :export_hugo_aliases: /2019/05/30/a-wizard-of-earthsea/
 :ID:       DB913EAC-FB57-44B7-9645-DBD26957CE72
 :END:
 This was the first.
 
-Before I read Tolkien at the suggestion of the wonderful Miss Reese, my teacher for my last year of primary school; before I pulled Diana Wynne Jones, Alan Garner, Susan Cooper and others from the shelves of Bawtry's small, but enchanting branch library; before Anne McCaffrey's DragonSong found me in my school library and set a fire in my imagination. Before all that, I read /A Wizard of Earthsea/ and it stuck with me.
+Before I read Tolkien at the suggestion of the wonderful Miss Reese, my teacher for my last year of primary school; before I pulled Diana Wynne Jones, Alan Garner, Susan Cooper and others from the shelves of Bawtry's small, but enchanting branch library; before Anne McCaffrey's /DragonSong/ found me in my school library and set a fire in my imagination. Before all that, I read /A Wizard of Earthsea/ and it stuck with me.
 
 #+hugo: more
 
@@ -300,7 +302,7 @@ I remember one Saturday with 50p in my pocket from singing for a couple of weddi
 #+begin_marginnote
 That was if we were lucky. It was usually Mendelssohn – not bad, Magnus was far too good an organist for it to sound dull, but not a patch on Vidor.
 #+end_marginnote
-I was never one for saving, I'm still not, so I was straight round to Donny's nearest thing to a bookshop, the WH Smith in the Arndale in search of something to read. A voracious reader, I'd gone through all the /Swallows and Amazons/ and /Narnia/ books and I needed more. The cover of the second Puffin edition, with its white youth and bizzare half man half hawk fascinated me, so I handed over my 50p
+I was never one for saving, I'm still not, so I was straight round to Donny's nearest thing to a bookshop, the WH Smith in the Arndale in search of something to read. A voracious reader, I'd gone through all the /Swallows and Amazons/ and /Narnia/ books and I needed more. The cover of the second Puffin edition, with its white youth and bizarre half man half hawk fascinated me, so I handed over my 50p
 #+begin_marginnote
 The bibliography I found tells me that it probably cost 35p, so I no doubt bought a load of sweets as well – books and sugar have always been my vices.
 #+end_marginnote
@@ -320,19 +322,19 @@ I sometimes wonder who the tale's narrator is telling the story to. It's a quest
 #+begin_marginnote
 Sometimes I don't care though. God alone knows why Bertie Wooster is telling the Jeeves stories, or who he's telling them too – I'm just very glad he's chosen to tell them at all.
 #+end_marginnote
-The language and idiom of /A Wizard of Earthsea/ seem entirely right and consistent. We learn so much about the world as Ged's story is told from things mentioned in passing. We know that this happened a long time ago and it's assumed we already know about /The Deed of Ged/, /The Creation of Ea/ and all the other songs, deeds and festivals that are referred to in passing through the book. At the end we are told that no songs have survived that tell how Ged came to terms with his shadow – the entire book is a footnote in a much larger story that's just out of reach. I'm reminded of the fact that we only have the Norse myths we know because an ancient Icelander worried that readers wouldn't recognize the allusions in the sagas and eddas, so they wrote down the bones of the older stories to help future readers understand. If Le Guin had left Earthsea at this point, all we would know of Earthsea would be the glimpses of it in this story. And what glimpses they are.
+The language and idiom of /A Wizard of Earthsea/ seem entirely right and consistent. We learn so much about the world as Ged's story is told from things mentioned in passing. We know that this happened a long time ago and it's assumed we already know about /The Deed of Ged/, /The Creation of Ea/ and all the other songs, deeds and festivals that are referred to in passing through the book. At the end we are told that no songs have survived that tell how Ged came to terms with his shadow – the entire book is a footnote in a much larger story that's just out of reach. I'm reminded of the fact that we only have the Norse myths we know because an ancient Icelander worried that readers wouldn't recognize the allusions in the sagas and eddas, so they wrote down the bones of the older stories to help future readers. If Le Guin had left Earthsea at this point, all we would know of it would be the glimpses of it in this story. And what glimpses they are.
 
-You can find echoes /A Wizard of Earthsea/ in so much subsequent fantasy literature. The possibility of a wizard being trapped in another, for instance. Pratchett plays with and develops this in the /Witches/ sequence of Discworld books, for instance. I loved this sentence though: "And no one knows how many of the dolphins that leap in the waters of the Inmost Sea were men once, wise men, who forgot their wisdom and their name in the joy of the restless sea." If I had the power to become a dolphin I wouldn't be keen to return to the body of a fat 51 year old with diabetes and a bunch of aches and pains that I try not to think about. You can keep your wisdom sometimes.
+You can find echoes /A Wizard of Earthsea/ in so much subsequent fantasy literature. The possibility of a wizard being trapped in another shape, for instance. Pratchett plays with and develops this in the /Witches/ sequence of Discworld books, for instance. I loved this sentence though: "And no one knows how many of the dolphins that leap in the waters of the Inmost Sea were men once, wise men, who forgot their wisdom and their name in the joy of the restless sea." If I had the power to become a dolphin I wouldn't be keen to return to the body of a fat 51 year old with diabetes and a bunch of aches and pains that I try not to think about. You can keep your wisdom sometimes.
 
-As a kid, I didn't really understand what was going on with Ged and his Shadow. It was easy to see myself in the ever noticed that he didn't have the same colour skin as me). I loved learning and especially /knowing/. It wasn't hard to take my undoubtedly superior intelligence
+As a kid, I didn't really understand what was going on with Ged and his Shadow. It was easy to see myself in him (and I never noticed that he didn't have the same colour skin as me). I loved learning and especially /knowing/. It wasn't hard to take my undoubtedly superior intelligence
 #+begin_marginnote
 Yeah. I know. I must have been insufferable as a kid (and an adult, if I'm honest). First to stick their hand up in every class. Happy to "Well, actually..." at every opportunity.
 #+end_marginnote
 as analogous to a wizard's power. Then, though, the shape of the story confused me, especially the ending. Ged and his friend sail off the page. The sea becomes land. Ged steps off the boat and confronts the Shadow, addressing it with his own name. And the shadow disappears/merges with Ged. And they all live on to do the Deeds which are sung of them. What? Nine year old me had no /idea/ what was going on there, but the imagery stuck.
 
-Now, of course, it all seems a clearer. Thesis. Antithesis. Synthesis. Ged does a terrible thing in his ignorance  and pride. In shame he runs from it, almost losing his humanity in the process. He is tempted by a dark power, but rejects it. A friend and teacher restores him to himself and tells him that running is the sure road to doom. He turns and chases his Shadow instead. Finally he comes to an acceptance that the Shadow is a part of himself and by giving it his name he reintegrates that part into himself and finally becomes a whole man. There you go – no need to read the book now.
+Now, of course, it all seems clearer. Thesis. Antithesis. Synthesis. Ged does a terrible thing in his ignorance and pride. In shame he runs from it, almost losing his humanity in the process. He is tempted by a dark power, but rejects it. A friend and teacher restores him to himself and tells him that running is the sure road to doom. He turns and chases his Shadow instead. Finally he comes to an acceptance that the Shadow is a part of himself and by giving it his name he reintegrates that part into himself and finally becomes a whole man. There you go – no need to read the book now.
 
-Of course you need to read this book. It's language sings and the places and people it evokes are beautifully drawn. Rereading this after more than 30 years, so much was familiar. I would have said I'd forgotten almost all of it but the bare outline of the story and a few character names, but that stuff clearly went in deep and helped make me myself because as I read, the whole shape of the thing unfolded in my head. It was almost like recognising roads and pathways in a place you holidayed repeatedly as a kid, then didn't return for 20 years. Familiar and surprising at the same time. "Oh yeah, that's where Daniel used to live! And do you remember walking up there to buy ice creams at the village shop? Oh! I'd forgotten this view!"
+Of /course/ you need to read this book. Its language sings and the places and people it evokes are beautifully drawn. Rereading this after more than 30 years, so much was familiar. I would have said I'd forgotten almost all of it but the bare outline of the story and a few character names, but that stuff clearly went in deep and helped make me myself because as I read, the whole shape of the thing unfolded in my head. It was almost like recognising roads and pathways in a place you holidayed repeatedly as a kid, then didn't return for 20 years. Familiar and surprising at the same time. "Oh yeah, that's where Daniel used to live! And do you remember walking up there to buy ice creams at the village shop? Oh! I'd forgotten this view!"
 
 Right... onwards to /The Tombs of Atuan./
 *** DONE /Service Model/, by Adrian Tchaikovsky :sf:audiobook:
@@ -373,12 +375,6 @@ It's also bloody funny in a dry, despairing kind of way.
 
 Continues the family saga
 
-*** TODO Programming Ruby: The pragmatic programmers' guide, by Dave Thomas
-:PROPERTIES:
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER+: :work '((author . "Dave Thomas") (title . "Programming Ruby: The pragmatic programmers' guide") (type . "Programming Ruby: The pragmatic programmers' guide"))
-:EXPORT_HUGO_BUNDLE: dave-thomas-programming-ruby-the-pragmatic-programmers-guide
-:EXPORT_FILE_NAME: index
-:END:
 ** Bakehouse Diary :@bakehouse-diary:
 :PROPERTIES:
 :export_hugo_custom_front_matter: :series "Bakehouse Diary"
@@ -1363,7 +1359,6 @@ Other performers have other ways for you to support them, whether it be
 public amazon wishlist, paypal tip jar, patreon page or some other service
 I've not heard of yet. In some ways, it's never been easier for you to
 support the work of artists you love.
-
 
 ** DONE Asshole Free Devil's Advocacy :philosophy:blether:
 :PROPERTIES:
@@ -6518,6 +6513,10 @@ combination of Ruby and Perl. Thanks to Yossef for that catch.
 :CUSTOM_ID: commentary
 :CLASS: feedback
 :END:
+#+begin_marginnote
+This old comment system doesn't work any more, but you can use webmentions to
+respond and they'll show up here eventually.
+#+end_marginnote
 
 ****** ![[http://www.gravatar.com/avatar.php?gravatar_id=ce8b03e5750097942c58e12b46724312&size=48&url=http://gilesbowkett.blogspot.com][http://www.gravatar.com/avatar.php?gravatar_id=ce8b03e5750097942c58e12b46724312&size=48&url=http://gilesbowkett.blogspot.com]] By [[http://gilesbowkett.blogspot.com/][Giles Bowkett]] Mon, 08 Sep 2008 03:23:44 GMT
 :PROPERTIES:
@@ -6886,6 +6885,10 @@ actually ~if @lang != nil && @lang != ''~
 :CUSTOM_ID: commentary
 :CLASS: feedback
 :END:
+#+begin_marginnote
+This old comment system doesn't work any more, but you can use webmentions to
+respond and they'll show up here eventually.
+#+end_marginnote
 
 ****** ![[http://www.gravatar.com/avatar.php?gravatar_id=35b8082323b6218ec21c53d386986848&size=48&url=http://www.lunar-ocean.com/blog][http://www.gravatar.com/avatar.php?gravatar_id=35b8082323b6218ec21c53d386986848&size=48&url=http://www.lunar-ocean.com/blog]] By [[http://www.lunar-ocean.com/blog][Antoine]] Wed, 20 Aug 2008 12:42:32 GMT
 :PROPERTIES:
@@ -6954,6 +6957,238 @@ single place to prevent all XSS errors from ever occurring. The same
 goes for Unicode-conversion problems.
 
 --------------
+
+*** DONE A quick JavaScript formatting tip :javascript:formatting:tips:
+CLOSED: [2025-09-29 Mon 16:15]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 080416-a-quick-javascript-formatting-tip
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-29 Mon 16:15]
+- State "REVISING"   from "DONE"       [2025-09-29 Mon]
+- State "DONE"       from "TODO"       [2008-04-16 Wed]
+:END:
+
+IE's a pain. The particular pain I want to write about is its pickiness
+about JavaScript object literals. Consider the following JavaScript
+object:
+
+#+begin_src javascript
+{ success: function () { ... },
+  failure: function () { ... },
+}
+#+end_src
+
+If you're used to programming in Perl or Ruby, that trailing comma's
+perfectly fine, in fact leaving it there is sometimes considered good
+practice because it makes it easy to extend the hash, just add a new row
+and leave another trailing comma.
+
+The trouble is, it's not strictly legal to do that in JavaScript. Pretty
+much every implementation out there will allow it though.
+
+Except IE.
+
+So, I've taken a leaf out of Damian Conway's /Perl Best Practices/ and
+am writing my object literals as:
+
+#+begin_src javascript
+{ success: function () { ... }
+, failure: function () { ... }
+}
+#+end_src
+
+By sticking the comma at the beginning of the line, I'm never going to
+make an object that breaks IE, and adding a new line to the hash is
+straightforward too. Just stick the cursor in front of the ~}~, type my
+leading comma, space, attribute name, and hit return when I'm finished.
+
+I've also started using the same practice pretty much everywhere else
+that I've got a comma separated list of things:
+
+#+begin_src javascript
+var foo
+  , bar
+  , baz
+  ;
+$.each( anArray
+      , function () { ... }
+);
+#+end_src
+It looks weird at first, but trust me, it grows on you.
+
+***** Update
+:PROPERTIES:
+:CUSTOM_ID: update
+:END:
+In the comments, I make reference to tweaking Steve Yegge's excellent
+[[http://code.google.com/p/js2-mode/][js2-mode]] to handle leading comma style a little more gracefully. Since then, I've made it work and attached a diff to
+[[http://code.google.com/p/js2-mode/issues/detail?id=64][this issue]] on the project's issue tracker.
+
+***** [[http://www.bofh.org.uk/2008/04/16/a-quick-javascript-formatting-tip][10 historic comments]] »
+:PROPERTIES:
+:CUSTOM_ID: commentary
+:CLASS: feedback
+:END:
+#+begin_marginnote
+This old comment system doesn't work any more, but you can use webmentions to
+respond and they'll show up here eventually.
+#+end_marginnote
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=5c3b7d74954c39aad5a42e670b913e84&size=48&url=http://pne.livejournal.com/][http://www.gravatar.com/avatar.php?gravatar_id=5c3b7d74954c39aad5a42e670b913e84&size=48&url=http://pne.livejournal.com/]] By [[http://pne.livejournal.com/][Philip Newton]] Wed, 16 Apr 2008 07:34:16 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-philip-newton-wed-16-apr-2008-073416-gmt
+:END:
+That reminds me of a coding convention I've seen for Pascal, where --
+as in Perl -- semicolon is used as a statement separator (rather than
+as a statement terminator, as -- for example -- in C).
+
+So one place put semicolons at the beginning of each line but the
+first, rather than at the end of each line but the last. (The latter
+would have been legal in most places, but it would have introduced an
+empty statement.)
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=]] By rhesa Wed, 16 Apr 2008 07:43:33 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-rhesa-wed-16-apr-2008-074333-gmt
+:END:
+Reminds me a bit of [[http://perl.4pro.net/pcs.html][Perlish coding style]] ([[http://www.perlmonks.org/?node_id=592616][mentioned briefly on PerlMonks]] by brian d foy).
+
+Maybe it'll grow on you, but I think it's icky.
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=]] By nicholas a. evans Wed, 16 Apr 2008 15:40:51 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-nicholas-a.-evans-wed-16-apr-2008-154051-gmt
+:END:
+I've been using the same trick when formatting my SQL. e.g:
+
+#+begin_src sql
+select
+  a.foo     as a_foo
+  , b.bar   as b_foo
+  , c.blatz as c_foo
+from
+  table1 a
+  inner join      table2 b on a.id   = b.a_id
+  left outer join table3 c on b.c_id = c.id
+where
+  a.foo is not null
+  and b.bacon = “chunky”
+#+end_src
+
+... using the same technique with the join operators and the boolean
+operators. I've found that it not only makes it easier to comment out
+a line or add a new line, but it also makes it easier (for me) to read
+than most other SQL formatting techniques.
+
+It's still mildly annoying whenever you deal with the *first* item in
+the list though: you need to make sure to remove that leading join
+operator (comma, etc). If I'm editing the query a lot, I'll add a
+“dummy” item to the front, just to alleviate that specific pain.
+e.g:
+
+#+begin_src sql
+where true
+  and a.foo is not null
+  and b.bacon = “chunky”
+#+end_src
+
+But I haven't used this style as comprehensively as you have (“pretty
+much everywhere else that I've got a comma separated list of
+things”), or as the Perlish coding style... yet. :-)
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/][http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/]] By [[http://www.bofh.org.uk/][Piers Cawley]] Wed, 16 Apr 2008 16:21:48 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-piers-cawley-wed-16-apr-2008-162148-gmt
+:END:
+The ‘Perlish coding style' is definitely a misnomer and also barking
+mad. If you have leading punctuation on /every/ line, then you start
+to lose the differences. If you keep your semicolons as statement
+terminators, then the presence of a ~,~ tells you that the new line is
+in some sense a continuation of the previous line. Same goes for
+things like:
+
+#+begin_src javascript
+clone[property]
+  = YAHOO.lang.isObject(source[property])
+    ? deepCopy(source[property])
+    : source[property];
+#+end_src
+
+symbol on the first non-blank column? This line is a continuation of
+the previous one. Leading semicolons would break that rule.
+
+It's definitely weird the first few times you see it, but it doesn't
+take long before code that doesn't follow this convention starts
+looking odd.
+
+Now, if I can just persuade Steve Yegge's excellent =js2-mode.el= to get
+the indentation right first time when I'm writing JavaScript in this
+style...
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=086e5b232508e13d262ed6c98b949402&size=48&url=http://asbjor.nu/][http://www.gravatar.com/avatar.php?gravatar_id=086e5b232508e13d262ed6c98b949402&size=48&url=http://asbjor.nu/]] By [[http://asbjor.nu/][Asbjãrn Ulsberg]] Thu, 17 Apr 2008 03:35:58 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-asbjãrn-ulsberg-thu-17-apr-2008-033558-gmt
+:END:
+I use this coding convention in SQL, because it's possible to
+vertically align stuff so it looks neat, but with all other languages
+I think it just looks strange.
+
+I've tried to write code like that in every C-inspired language I've
+ever written, but it has never grown on me and it probably never will.
+I just don't like it. :-)
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=http://www.spket.com][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=http://www.spket.com]] By [[http://www.spket.com/][Eric Suen]] Thu, 17 Apr 2008 09:49:55 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-eric-suen-thu-17-apr-2008-094955-gmt
+:END:
+Hi, you should try [[http://www.spket.com/][Spket IDE]], Its JavaScript editor has an option “Report Unnecessary
+Trailing Comma”, and it has a very powerful JavaScript formatter which
+has an option “remove unnecessary trailing comma”...
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=http://blogs.pathf.com/agileajax/][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=http://blogs.pathf.com/agileajax/]] By [[http://blogs.pathf.com/agileajax/][Brian Dillard]] Thu, 17 Apr 2008 10:58:54 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-brian-dillard-thu-17-apr-2008-105854-gmt
+:END:
+This convention was a lifesaver back in the days before there were any
+decent IE debugging tools I used it for years when I was a JavaScript
+soloist. But when I started working on large teams at Fortune 500
+companies, everybody else freaked out on me about it and I had to
+stop. Luckily, I'm back to projects where I work on my own and can
+follow any coding convention I wish.
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/][http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/]] By [[http://www.bofh.org.uk/][Piers Cawley]] Thu, 17 Apr 2008 11:36:23 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-piers-cawley-thu-17-apr-2008-113623-gmt
+:END:
+@Eric: Thanks, but I have 20 years of Emacs; I'm unlikely to go
+changing now.
+
+@Brian: Dang! So I'm not original. I'm still in the process of
+retraining my fingers.
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=df1a2e354954a986763edabffbf00e1c&size=48&url=http://blog.tkbe.org][http://www.gravatar.com/avatar.php?gravatar_id=df1a2e354954a986763edabffbf00e1c&size=48&url=http://blog.tkbe.org]] By [[http://blog.tkbe.org/][Bjorn]] Fri, 09 May 2008 03:16:18 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-bjorn-fri-09-may-2008-031618-gmt
+:END:
+Can I just say... eeewwh! So instead of remembering a simple syntax
+rule, you make all your code look crappy? I'm guessing your
+indentation is equally ‘creative'... (thank goodness Python saves us
+from much random code vomit like this!)
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/][http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/]] By [[http://www.bofh.org.uk/][Piers Cawley]] Sun, 11 May 2008 01:24:39 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-piers-cawley-sun-11-may-2008-012439-gmt
+:END:
+Well, you can say it, but it does leave the rest of us to wonder what
+publicly insulting somebody's taste (and /de gustibus non est
+disputandum/ and all that) is supposed to contribute to a discussion.
+
+I suppose I should be grateful that you haven't also inferred from my
+post that my momma wears army boots. Or maybe you did, but were too
+polite to mention it.
+
 * Notes :@note:
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /note
