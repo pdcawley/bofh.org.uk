@@ -6645,7 +6645,315 @@ worthwhile.
 that, I wouldn't be bothered. However, I think there's value in
 something which makes it easy to pass an argument or block to the
 mixed in module as it's mixed in.
+*** DONE Get sophisticated
+CLOSED: [2025-09-29 Mon 10:17]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 080820-get-sophisticated
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-29 Mon 10:17]
+- State "REVISING"   from "DONE"       [2025-09-29 Mon]
+- State "DONE"       from "TODO"       [2008-08-20 Wed]
+:END:
 
+Ruby's primitives (Strings, Hashes, Arrays, Numbers -- anything that has
+a literal syntax) are fine things. But that doesn't mean you should use
+them everywhere. You're often much better off wrapping them up in your
+own Value Objects.
+
+#+hugo:more
+
+Something I was working on at Railscamp this weekend threw up a great
+example of why it makes sense to replace primitives with more specific
+objects as soon as possible.
+[[http://tommorris.org/][Tom Morris]] asked me to take a look at [[http://github.com/tommorris/rena][Rena]], an RDF/Semantic Web thingy.
+
+The RDF spec describes two types of literals: a plain literal, which is
+a string with an optional language attribute and a typed literal, which
+is a string and an encoding (so the string might represent an integer,
+float, or anything else that your schema feels like expressing).
+
+These literals can be output in one of (at least) two formats. We'll
+start by looking at ~Literal#to_trix~ and see where that takes us:
+
+#+begin_src ruby
+def to_trix
+  if @lang != nil && @lang != ""
+    out = "<plainLiteral xml:lang=\"" + @lang + "\">"
+  else
+    out = "<plainLiteral>"
+  end
+  out += @contents
+  out += "</plainLiteral>"
+  return out
+end
+#+end_src
+
+If we look over at ~TypedLiteral#to_trix~ we see a much more
+straightforward implementation:
+
+#+begin_src ruby
+def to_trix
+  "<typedLiteral datatype=\"#{@encoding}\">#{@contents}</typedLiteral>"
+end
+#+end_src
+
+How do we eliminate that ugly conditional at the beginning of
+~Literal#to_trix~, and analogous conditionals in ~Literal#to_n3~ and
+~TypedLiteral#to_n3~?
+
+My first thought was that I wanted to be able to write something like:
+
+#+name: code
+#+begin_src ruby
+def to_trix
+  "<plainLiteral#{@lang.to_trix}>#{@contents}</plainLiteral>"
+end
+#+end_src
+
+But I didn't want every string in the world suddenly acquiring a
+~to_trix~ method. So, the solution was to intoduce a ~Literal::Language~
+class and coerce our language into it, so ~Literal#initialize~ became:
+
+#+begin_src ruby
+def initialize(contents, lang = nil)
+  @contents = contents
+  @lang = Language.coerce(lang)
+end
+#+end_src
+
+And Language would look something like:
+
+#+begin_src ruby
+def self.coerce(lang)
+  if lang.is_a?(self)
+    return lang
+  end
+
+  new(lang.to_s.downcase)
+end
+
+def initialize(lang)
+  @value = lang
+end
+
+def to_trix
+  if @value == ''
+    ''
+  else
+    " xml:lang=\"#{@value}\""
+  end
+end
+#+end_src
+
+That ugly conditional's still there though, so we introduced the Null
+Object pattern, and things started to look a good deal cleaner:
+
+#+begin_src ruby
+class Language
+  class Null
+    include Singleton
+
+    def to_trix
+      ''
+    end
+  end
+
+  def self.coerce(lang)
+    case lang
+    when self
+      return lang
+    when nil, ''
+      return Null.instance
+    else
+      return new(lang.to_s.downcase)
+    end
+  end
+
+  ...
+
+  def to_trix
+    " xml:lang=\"#{@value}\""
+  end
+end
+#+end_src
+
+At this point, we're still just pushing code around. If anything, we've
+got more lines of code now than when we started, but we're starting to
+move behaviour nearer to the data it relates to, and our objects are
+starting to look like objects rather than data structures. So, we press
+on and make a ~TypedLiteral::Encoding~ class and, at this point things
+start to look interesting. TypedLiteral is starting to look almost
+exactly the same as Literal, but with an Encoding rather than a
+language.
+
+That strange leading space in ~Language#to_trix~ is starting bug me.
+Let's rewrite like so:
+
+#+begin_src ruby
+class Literal
+  class Language
+    def format_as_trix(literal)
+      "<plainLiteral xml:lang=\"#{@value}\">#{literal}</plainLiteral>"
+    end
+
+    class Null
+      def format_as_trix(literal)
+        "<plainLiteral>#{literal}</plainLiteral>"
+      end
+    end
+  end
+
+  def to_trix
+    @lang.format_as_trix(@contents)
+  end
+end
+#+end_src
+
+If we make analogous change to ~TypedLiteral~ and
+~TypedLiteral::Encoding~ it's obvious that TypedLiteral and Literal were
+essentially the same class. Renaming ~@lang~ and ~@encoding~ to
+~@language_or_encoding~ makes this blindingly obvious, so we'll remove
+all of TypedLiteral's methods except initialize. All that remains is to
+introduce ~Literal.untyped~ and ~Literal.typed~ factory methods to
+Literal, and make ~Literal.new~ into a private method and we can remove
+TypedLiteral in its entireity. So we change the specs to reflect the new
+API (wrong way round I know). Now we have a chunk of shorter, clearer
+code that will hopefully be easier to extend to cope with outputting
+literals in other formats.
+
+***** Retrospective
+:PROPERTIES:
+:CUSTOM_ID: retrospective
+:END:
+I realise that patterns aren't the goal of development, but by the end
+of the process we have a Strategy (Language/Encoding), a couple of
+Factory Methods (~Literal.typed~, ~Literal.untyped~) and a couple of
+factoryish methods (~Language.coerce~, ~Encoding.coerce~).
+
+The most important aspect of the change was the introduction of the two
+new value object classes. Once they were introduced, they became the
+obvious places in which to put the varying behaviour and eliminate the
+repeatition of conditional code from the ~to_*~ methods. If there were
+to be a third output style, I would look at introducing classes like
+~N3Stream~, ~TrixStream~ and ~WhateverStream~ and have a scheme like:
+
+#+begin_src ruby
+def to_n3
+  print_on( N3Stream.new )
+end
+
+def print_on(stream)
+  language_or_encoding.print_on(stream, value)
+end
+#+end_src
+
+but that's almost certainly over complicating things right now.
+
+The other thing I like about this kind of refactoring is that it drives
+the code towards methods and classes which obey the single
+responsibility principle and, at the end of the process, not only do we
+have fewer lines of code in total, but the individual methods involved
+are /all/ substantially shorter and closer to the left hand margin.
+
+I really should start doing this kind of thing more in my Rails practice
+-- I keep being put off by the fact that the ~composed_of~ helper is so
+annoyingly not quite right and, rather than submitting a patch or making
+a plugin I go “Ah well... I can live with a string for a bit longer...”
+and I /know/. From hard won experience at that, that it's going to come
+and bite me. It's already bitten Rails recently when Ruby got a new
+~@String#to/chars@~ which doesn't work like the ActiveSupport version.
+
+***** Notes
+:PROPERTIES:
+:CUSTOM_ID: notes
+:END:
+If you want to see the gory details of how the change got made, Tom has
+merged this weekends changes into the github repository. It didn't
+happen in quite the order I've described it in this post, but neither is
+this post a complete fabrication.
+
+***** Changes
+:PROPERTIES:
+:CUSTOM_ID: changes
+:END:
+Corrected a stupid typo in the first block of code. Ugly condition is
+actually ~if @lang != nil && @lang != ''~
+
+***** [[http://www.bofh.org.uk/2008/08/20/get-sophisticated][6 historic comments]] »
+:PROPERTIES:
+:CUSTOM_ID: commentary
+:CLASS: feedback
+:END:
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=35b8082323b6218ec21c53d386986848&size=48&url=http://www.lunar-ocean.com/blog][http://www.gravatar.com/avatar.php?gravatar_id=35b8082323b6218ec21c53d386986848&size=48&url=http://www.lunar-ocean.com/blog]] By [[http://www.lunar-ocean.com/blog][Antoine]] Wed, 20 Aug 2008 12:42:32 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-antoine-wed-20-aug-2008-124232-gmt
+:END:
+About that ugly condition... ain't
+
+=<pre>if @lang != nil && @lang != false</pre>=\\
+equivalent to\\
+=<pre>if @lang</pre>=\\
+?
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=35b8082323b6218ec21c53d386986848&size=48&url=http://www.lunar-ocean.com/blog][http://www.gravatar.com/avatar.php?gravatar_id=35b8082323b6218ec21c53d386986848&size=48&url=http://www.lunar-ocean.com/blog]] By [[http://www.lunar-ocean.com/blog][Antoine]] Wed, 20 Aug 2008 12:51:38 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-antoine-wed-20-aug-2008-125138-gmt
+:END:
+Tried that in irb:
+
+#+begin_example
+>> @contents = "something"
+=> "something"
+>> puts "<plainLiteral#{" xml:lang='" + @lang + "'" if @lang }>#{@contents}</plainLiteral>"
+<plainLiteral>something</plainLiteral>
+=> nil
+>> @lang = "en_US"
+=> "en_US"
+>> puts "<plainLiteral#{" xml:lang='" + @lang + "'" if @lang }>#{@contents}</plainLiteral>"
+<plainLiteral xml:lang='en_US'>something</plainLiteral>
+=> nil
+>>
+#+end_example
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=35b8082323b6218ec21c53d386986848&size=48&url=http://www.lunar-ocean.com/blog][http://www.gravatar.com/avatar.php?gravatar_id=35b8082323b6218ec21c53d386986848&size=48&url=http://www.lunar-ocean.com/blog]] By [[http://www.lunar-ocean.com/blog][Antoine]] Wed, 20 Aug 2008 12:52:37 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-antoine-wed-20-aug-2008-125237-gmt
+:END:
+Well, my XML is a bit garbled by Textile + pre. It works fine though.
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk][http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk]] By [[http://www.bofh.org.uk/][Piers Cawley]] Wed, 20 Aug 2008 14:01:50 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-piers-cawley-wed-20-aug-2008-140150-gmt
+:END:
+@Antoine # 1: Yes, it is the same, but it's also a typo. I've
+corrected it in the post.
+
+@Antoine # 2: Well, it works, but it's code that only a mother could
+love. You've just moved the unpleasantness inline.
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=35b8082323b6218ec21c53d386986848&size=48&url=http://www.lunar-ocean.com/blog][http://www.gravatar.com/avatar.php?gravatar_id=35b8082323b6218ec21c53d386986848&size=48&url=http://www.lunar-ocean.com/blog]] By [[http://www.lunar-ocean.com/blog][Antoine]] Wed, 20 Aug 2008 17:10:34 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-antoine-wed-20-aug-2008-171034-gmt
+:END:
+​#1: Ah, makes way more sense, thanks for clarifying.
+
+​#2: yep. Well, it's just that I would rather use Stax and Java to do
+things cleanly like you describe in this post ; in Ruby I would go for
+this trick as I find it readable. But that's just me.
+
+****** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=http://wgz.org/chromatic/][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=http://wgz.org/chromatic/]] By [[http://wgz.org/chromatic/][chromatic]] Mon, 25 Aug 2008 13:32:07 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-chromatic-mon-25-aug-2008-133207-gmt
+:END:
+Dropping that primitive obsession in a web toolkit not only helps you
+avoid the fragile monkeypatching situation, but it gives you a sane,
+single place to prevent all XSS errors from ever occurring. The same
+goes for Unicode-conversion problems.
+
+--------------
 * Notes :@note:
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /note
