@@ -7428,6 +7428,9 @@ it's a lovely language, but it does have some annoyingly odd corners.
 :CUSTOM_ID: commentary
 :CLASS: feedback
 :END:
+#+begin_marginnote
+These are archived comments. To respond to this post, use a webmention
+#+end_marginnote
 ***** ![[http://www.gravatar.com/avatar.php?gravatar_id=40f438095ffe6ce6a6ccffc4837e80d2&size=48&url=http://threebrothers.org/brendan/][http://www.gravatar.com/avatar.php?gravatar_id=40f438095ffe6ce6a6ccffc4837e80d2&size=48&url=http://threebrothers.org/brendan/]] By [[http://threebrothers.org/brendan/][Brendan]] Thu, 20 Mar 2008 13:31:29 GMT
 :PROPERTIES:
 :CUSTOM_ID: by-brendan-thu-20-mar-2008-133129-gmt
@@ -7596,6 +7599,74 @@ anonymous blocks. I'm sure it won't be long before someone writes a
 library to let them spell that as ~→ $foo { ... }~
 
 --------------
+
+*** DONE Supporting the good guys :mathie:pledgie:ruby:st:
+CLOSED: [2025-09-30 Tue 12:01]
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: 100329-supporting-the-good-guys
+:EXPORT_FILE_NAME: index
+:END:
+:LOGBOOK:
+- State "DONE"       from "REVISING"   [2025-09-30 Tue 12:01]
+- State "REVISING"   from "DONE"       [2025-09-30 Tue]
+- State "DONE"       from "TODO"       [2010-03-29 Mon]
+:END:
+
+
+
+Graeme ([[http://twitter.com/mathie][@mathie]]) Matthieson is one of the good guys. He's also one of the people behind
+the [[http://scottishrubyconference.com/][Scottish Ruby Conference]] (né Scotland on Rails).
+
+I spent my own money to go to the first one they ran, and it was a great
+conference. To judge from the tweets around this year's conference,
+they're not slacking off at all. Even though I'm back to being a Perl
+programmer nowadays, I wish I'd been in Edinburgh last week.
+
+However it seems that some contemptible fuck at this year's conference
+took the opportunity to walk off with Graeme's iPhone. Way to go
+asshole.
+
+So, [[http://www.bofh.org.uk/2010/03/29/objo.com/][Joe O'Brien]] set up [[http://pledgie.com/campaigns/9721][a pledgie]] and, in slightly more than 24 hours, the pledge has raised the
+500 notes required to cover the cost of replacing the phone. The pledge
+is still open with the suggestion that any excess will be, at Graeme's
+discretion, used to buy the conference organizers a slap up feed, or
+donated to the Children's Hospice Association.
+
+So, pledge away. It's a good cause.
+
+**** [[http://www.bofh.org.uk/2010/03/29/supporting-the-good-guys][2 historic comments]] »
+:PROPERTIES:
+:CUSTOM_ID: commentary
+:CLASS: feedback
+:END:
+#+begin_marginnote
+These are archived comments. To respond to this post, use a webmention
+#+end_marginnote
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=][http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&size=48&url=]] By Dave Tue, 30 Mar 2010 15:07:19 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-dave-tue-30-mar-2010-150719-gmt
+:END:
+Your phrasing makes it seem like a fellow attendee took the phone
+rather than just an opportunist thief attracted by the likely large
+number of laptops and sundry gadgets. I'm guessing that's unintended.
+
+
+***** ![[http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/][http://www.gravatar.com/avatar.php?gravatar_id=0196ff65610046d2f8ba58bc4a45f144&size=48&url=http://www.bofh.org.uk/]] By [[http://www.bofh.org.uk/][Piers Cawley]] Wed, 31 Mar 2010 14:07:12 GMT
+:PROPERTIES:
+:CUSTOM_ID: by-piers-cawley-wed-31-mar-2010-140712-gmt
+:END:
+Well, that's roughly the conclusion
+[[http://woss.name/blog/2010/3/29/the-ruby-community.html][drawn
+by Graeme himself]]. Any community has bad apples -- but, as Graeme
+says, what matters is how the bulk of the community reacts.
+
+In my
+[[http://www.bofh.org.uk/2010/03/10/falling-out-of-love-with-a-language][last
+post]], I talked about how I felt I didn't fit in the ruby community,
+but it's good to see it confirmed that, whether I belong there or not,
+ruby people are generous and supportive.
+
+
 * Notes :@note:
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: /note
